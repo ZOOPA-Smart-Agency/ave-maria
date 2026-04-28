@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 309.05 421.11">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Montserrat-Black, Montserrat;
+        font-weight: 800;
+      }
+
+      .cls-1, .cls-2 {
+        font-size: 45.77px;
+      }
+
+      .cls-3 {
+        fill: #595959;
+      }
+
+      .cls-2 {
+        font-family: Montserrat-Light, Montserrat;
+        font-weight: 300;
+      }
+
+      .cls-4 {
+        fill: #ccc;
+      }
+
+      .cls-5 {
+        letter-spacing: .16em;
+      }
+
+      .cls-6 {
+        letter-spacing: .17em;
+      }
+
+      .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        fill: #1a1a1a;
+      }
+
+      .cls-10 {
+        letter-spacing: .04em;
+      }
+
+      .cls-11 {
+        fill: #999;
+      }
+
+      .cls-12 {
+        letter-spacing: .03em;
+      }
+    </style>
+  </defs>
+  <g id="Capa_1-2" data-name="Capa 1">
+    <rect class="cls-7" x="84.24" y="78.92" width="136.95" height="132.23"/>
+    <rect class="cls-7" x="6.09" width="100" height="100"/>
+    <rect class="cls-4" x="106.09" width="100" height="100"/>
+    <path class="cls-11" d="M206.09,0v100h-100L206.09,0Z"/>
+    <rect class="cls-11" x="206.09" width="100" height="100"/>
+    <path class="cls-3" d="M206.09,0v100h100L206.09,0Z"/>
+    <rect class="cls-11" x="206.09" y="100" width="100" height="100"/>
+    <path class="cls-9" d="M206.09,100h100v100l-100-100Z"/>
+    <rect class="cls-3" x="6.09" y="100" width="100" height="100"/>
+    <path class="cls-11" d="M6.09,150c0-27.61,22.39-50,50-50s50,22.39,50,50-22.39,50-50,50S6.09,177.61,6.09,150"/>
+    <rect class="cls-9" x="7.09" width="100" height="100"/>
+    <path class="cls-4" d="M7.09,100V0c55.23,0,100,44.77,100,100H7.09Z"/>
+    <rect class="cls-4" x="6.09" y="200" width="100" height="100"/>
+    <path class="cls-9" d="M6.09,200h100L6.09,300v-100Z"/>
+    <rect class="cls-3" x="106.09" y="200" width="100" height="100"/>
+    <path class="cls-11" d="M106.09,200c27.61,0,50,22.39,50,50s-22.39,50-50,50v-100Z"/>
+    <rect class="cls-4" x="206.09" y="200" width="100" height="100"/>
+    <rect class="cls-9" x="206.09" y="240" width="100" height="60"/>
+    <rect class="cls-9" x="256.09" y="200" width="50" height="39.92"/>
+    <text class="cls-1" transform="translate(7.18 359.82)"><tspan class="cls-8" x="0" y="0">A</tspan><tspan class="cls-12" x="37.02" y="0">V</tspan><tspan class="cls-10" x="74.28" y="0">E MARIA</tspan></text>
+    <text class="cls-2" transform="translate(0 409.17)"><tspan class="cls-6" x="0" y="0">FUN</tspan><tspan class="cls-5" x="125.08" y="0">DA</tspan><tspan class="cls-6" x="209.33" y="0">CIÓ</tspan></text>
+  </g>
+</svg>

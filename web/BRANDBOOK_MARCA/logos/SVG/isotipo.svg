@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211.92 211.92">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d4859a;
+      }
+
+      .cls-2 {
+        fill: #f2c14e;
+      }
+
+      .cls-3 {
+        fill: #5dade2;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        fill: #e85d75;
+      }
+
+      .cls-6 {
+        fill: #2d936c;
+      }
+
+      .cls-7 {
+        fill: #e8863a;
+      }
+    </style>
+  </defs>
+  <g id="Capa_1-2" data-name="Capa 1">
+    <g>
+      <rect class="cls-4" x="55.21" y="55.75" width="96.74" height="93.41"/>
+      <rect class="cls-4" x="0" y="0" width="70.64" height="70.64"/>
+      <rect class="cls-2" x="70.64" y="0" width="70.64" height="70.64"/>
+      <path class="cls-6" d="M141.28,0v70.64h-70.64L141.28,0Z"/>
+      <rect class="cls-3" x="141.28" y="0" width="70.64" height="70.64"/>
+      <path class="cls-7" d="M141.28,0v70.64h70.64L141.28,0Z"/>
+      <rect class="cls-1" x="141.28" y="70.64" width="70.64" height="70.64"/>
+      <path class="cls-5" d="M141.28,70.64h70.64v70.64l-70.64-70.64Z"/>
+      <rect class="cls-7" x="0" y="70.64" width="70.64" height="70.64"/>
+      <path class="cls-3" d="M0,105.96c0-19.51,15.81-35.32,35.32-35.32s35.32,15.81,35.32,35.32-15.81,35.32-35.32,35.32S0,125.47,0,105.96"/>
+      <rect class="cls-1" x=".71" y="0" width="70.64" height="70.64"/>
+      <path class="cls-2" d="M.71,70.64V0c39.01,0,70.64,31.63,70.64,70.64H.71Z"/>
+      <rect class="cls-2" x="0" y="141.28" width="70.64" height="70.64"/>
+      <path class="cls-3" d="M0,141.28h70.64L0,211.92v-70.64Z"/>
+      <rect class="cls-5" x="70.64" y="141.28" width="70.64" height="70.64"/>
+      <path class="cls-6" d="M70.64,141.28c19.51,0,35.32,15.81,35.32,35.32s-15.81,35.32-35.32,35.32v-70.64Z"/>
+      <rect class="cls-7" x="141.28" y="141.28" width="70.64" height="70.64"/>
+      <rect class="cls-3" x="141.28" y="169.54" width="70.64" height="42.38"/>
+      <rect class="cls-3" x="176.6" y="141.28" width="35.32" height="35.32"/>
+    </g>
+  </g>
+</svg>

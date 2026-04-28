@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Carpetes internes de tooling
+.claude/
+.playwright-mcp/
+**/.claude/
+**/.playwright-mcp/
+
+# Referencies pesades (PDFs d'inspiracio externs ~360MB)
+brandbooks/
+
+# Fitxers temporals d'Illustrator
+*.tmp
+*~ai-*
+
+# Logs
+*.log

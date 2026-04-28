@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundació Ave Maria - Continguts Web per a Revisió</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --light-gray: #999999;
+            --lighter-gray: #e5e5e5;
+            --off-white: #f5f5f5;
+            --white: #ffffff;
+            --accent: #c41e3a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: var(--black);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 6px;
+            margin-bottom: 16px;
+        }
+
+        header p {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--light-gray);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--off-white);
+            border-bottom: 1px solid var(--lighter-gray);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 24px;
+        }
+
+        nav a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--black);
+        }
+
+        /* Section Divider */
+        .section-divider {
+            background: var(--black);
+            color: var(--white);
+            padding: 48px 0;
+            margin: 80px 0 0 0;
+        }
+
+        .section-divider h2 {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .section-divider p {
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--light-gray);
+        }
+
+        /* Content Block */
+        .content-block {
+            padding: 48px 0;
+            border-bottom: 1px solid var(--lighter-gray);
+        }
+
+        .content-block:last-child {
+            border-bottom: none;
+        }
+
+        .block-title {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--light-gray);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--lighter-gray);
+        }
+
+        /* Content Item */
+        .content-item {
+            margin-bottom: 32px;
+        }
+
+        .content-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--light-gray);
+            margin-bottom: 6px;
+        }
+
+        .value {
+            font-size: 16px;
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        .value.large {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.4;
+            color: var(--black);
+        }
+
+        .value.medium {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .cards-grid.three-cols {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 700px) {
+            .cards-grid, .cards-grid.three-cols {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--off-white);
+            padding: 24px;
+            border-left: 3px solid var(--black);
+        }
+
+        .card.accent {
+            border-left-color: var(--accent);
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+
+        .card-text {
+            font-size: 14px;
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .stat {
+            text-align: center;
+            padding: 24px 16px;
+            background: var(--off-white);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 300;
+            color: var(--black);
+            display: block;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--light-gray);
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 24px 16px;
+            background: var(--off-white);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px auto;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .step-title {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .step-desc {
+            font-size: 13px;
+            color: var(--medium-gray);
+            line-height: 1.5;
+        }
+
+        /* Tabs */
+        .tab-container {
+            margin-top: 24px;
+        }
+
+        .tab-header {
+            background: var(--black);
+            color: var(--white);
+            padding: 12px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .tab-content {
+            background: var(--off-white);
+            padding: 24px;
+        }
+
+        .tab-intro {
+            font-size: 15px;
+            color: var(--dark-gray);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--lighter-gray);
+        }
+
+        .service-item {
+            margin-bottom: 20px;
+        }
+
+        .service-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 4px;
+        }
+
+        .service-desc {
+            font-size: 14px;
+            color: var(--medium-gray);
+        }
+
+        /* Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 24px;
+            font-size: 13px;
+        }
+
+        .data-table th {
+            background: var(--black);
+            color: var(--white);
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .data-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid var(--lighter-gray);
+        }
+
+        .data-table tr:nth-child(even) {
+            background: var(--off-white);
+        }
+
+        .data-table td:first-child {
+            font-weight: 500;
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 700px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--lighter-gray);
+            margin: 0 auto 12px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: var(--light-gray);
+        }
+
+        .team-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .team-role {
+            font-size: 12px;
+            color: var(--light-gray);
+        }
+
+        /* Note Box */
+        .note-box {
+            background: var(--off-white);
+            border-left: 3px solid var(--light-gray);
+            padding: 16px 20px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--medium-gray);
+            font-style: italic;
+        }
+
+        /* Quote */
+        .quote-box {
+            background: var(--off-white);
+            border-left: 3px solid var(--accent);
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .quote-text {
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .quote-author {
+            font-size: 13px;
+            color: var(--light-gray);
+        }
+
+        /* CTA Block */
+        .cta-block {
+            background: var(--off-white);
+            padding: 48px;
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .cta-title {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 16px;
+            color: var(--black);
+        }
+
+        .cta-text {
+            font-size: 15px;
+            color: var(--medium-gray);
+            margin-bottom: 24px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--black);
+            color: var(--white);
+            padding: 14px 32px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 4px 12px;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin-top: 24px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 24px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--lighter-gray);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-year {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--black);
+            min-width: 60px;
+        }
+
+        .timeline-text {
+            font-size: 14px;
+            color: var(--medium-gray);
+        }
+
+        /* FAQ */
+        .faq-item {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--lighter-gray);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .faq-a {
+            font-size: 14px;
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+
+        /* Footer Preview */
+        .footer-preview {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 48px 0;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+        }
+
+        @media (max-width: 700px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--light-gray);
+            margin-top: 12px;
+        }
+
+        .footer-title {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            color: var(--light-gray);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--medium-gray);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 12px;
+            color: var(--light-gray);
+        }
+
+        /* Print styles */
+        @media print {
+            nav {
+                display: none;
+            }
+            .section-divider {
+                break-before: page;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>FUNDACIÓ AVE MARIA</h1>
+        <p>Continguts Web per a Revisió</p>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#quisom">Qui Som</a></li>
+        <li><a href="#serveis">Serveis</a></li>
+        <li><a href="#collabora">Col·labora</a></li>
+        <li><a href="#art">Art i Botiga</a></li>
+        <li><a href="#contacte">Contacte</a></li>
+        <li><a href="#footer">Footer</a></li>
+    </ul>
+</nav>
+
+<!-- ============================================ -->
+<!-- HOME -->
+<!-- ============================================ -->
+
+<div class="section-divider" id="home">
+    <h2>HOME</h2>
+    <p>Pàgina d'inici / Landing</p>
+</div>
+
+<div class="container">
+
+    <!-- HERO -->
+    <div class="content-block">
+        <div class="block-title">Bloc 1 — Hero Principal</div>
+
+        <div class="content-item">
+            <div class="label">H1 — Titular</div>
+            <div class="value large">Fundació Ave Maria</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">Cuidem amb passió. Donem suport amb compromís.</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">CTA Principal</div>
+            <div class="value">Col·labora</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">CTA Secundari</div>
+            <div class="value">Els nostres serveis</div>
+        </div>
+
+        <div class="note-box">
+            <strong>Imatge/Vídeo de fons:</strong> Usuaris realitzant activitats al jardí del campus. Ambient càlid, llum natural, somriures.
+        </div>
+    </div>
+
+    <!-- IMPACTE -->
+    <div class="content-block">
+        <div class="block-title">Bloc 2 — Impacte en Xifres</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value medium">El nostre impacte</div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat">
+                <span class="stat-number">37</span>
+                <span class="stat-label">Anys d'atenció</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">60</span>
+                <span class="stat-label">Places residencials</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">+65</span>
+                <span class="stat-label">Professionals</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">110K</span>
+                <span class="stat-label">Hores d'atenció anuals</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVEIS -->
+    <div class="content-block">
+        <div class="block-title">Bloc 3 — Els Nostres Serveis (3 targetes)</div>
+
+        <div class="cards-grid three-cols">
+            <div class="card">
+                <div class="card-title">Campus Residencial</div>
+                <div class="card-text">60 places al cor de Sitges. Atenció integral les 24 hores del dia, els 365 dies de l'any.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Llars amb Suport</div>
+                <div class="card-text">Viure de manera autònoma amb el suport que cada persona necessita.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Suport a Famílies</div>
+                <div class="card-text">Acompanyem les famílies en el camí. Informació, orientació i formació.</div>
+            </div>
+        </div>
+
+        <div class="content-item" style="margin-top: 24px;">
+            <div class="label">Botó</div>
+            <div class="value">Veure tots els serveis →</div>
+        </div>
+    </div>
+
+    <!-- CTA DONACIÓ -->
+    <div class="content-block">
+        <div class="block-title">Bloc 4 — CTA Donació</div>
+
+        <div class="cta-block">
+            <div class="cta-title">Amb la teva ajuda, tot és possible</div>
+            <div class="cta-text">Amb només 20€ al mes, una persona amb discapacitat intel·lectual pot participar en activitats de lleure i teràpies que milloren la seva qualitat de vida.</div>
+            <a href="#" class="cta-button">Vull fer un donatiu</a>
+        </div>
+
+        <div class="content-item" style="margin-top: 24px;">
+            <div class="label">Nota fiscal</div>
+            <div class="value">Desgrava fins al 80% a la declaració de la renda</div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIS -->
+    <div class="content-block">
+        <div class="block-title">Bloc 5 — Testimonis</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value medium">Històries reals</div>
+        </div>
+
+        <div class="quote-box">
+            <div class="quote-text">"El meu fill ha trobat a l'Ave Maria una segona família. Després de 10 anys, veig com cada dia és més feliç i autònom. Els professionals l'estimen i el cuiden com si fos seu."</div>
+            <div class="quote-author">— Maria López, mare d'usuari</div>
+        </div>
+
+        <div class="quote-box">
+            <div class="quote-text">"Quan vaig arribar no coneixia ningú. Ara tinc molts amics i fem moltes coses junts. M'agrada anar a la piscina i fer teatre."</div>
+            <div class="quote-author">— Pere, usuari del Campus Residencial</div>
+        </div>
+
+        <div class="quote-box">
+            <div class="quote-text">"Com a voluntària, he rebut molt més del que he donat. Les persones de l'Ave Maria t'ensenyen a veure la vida d'una altra manera."</div>
+            <div class="quote-author">— Laia Martínez, voluntària</div>
+        </div>
+    </div>
+
+    <!-- NOTÍCIES I LOGOS -->
+    <div class="content-block">
+        <div class="block-title">Bloc 6 — Notícies i Col·laboradors</div>
+
+        <div class="content-item">
+            <div class="label">Últimes notícies</div>
+            <div class="value">Mostrar les 3 notícies més recents del blog amb: imatge, data, títol i extracte (màx. 2 línies).</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Botó</div>
+            <div class="value">Veure totes les notícies →</div>
+        </div>
+
+        <div class="note-box">
+            <strong>Logos col·laboradors:</strong> Generalitat de Catalunya, Unió Europea FEDER, Ajuntament de Sitges, empreses col·laboradores.<br>
+            <strong>Text de suport:</strong> Col·laboren amb nosaltres
+        </div>
+    </div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- QUI SOM -->
+<!-- ============================================ -->
+
+<div class="section-divider" id="quisom">
+    <h2>QUI SOM</h2>
+    <p>Pàgina corporativa</p>
+</div>
+
+<div class="container">
+
+    <!-- INTRO -->
+    <div class="content-block">
+        <div class="block-title">Introducció</div>
+
+        <div class="content-item">
+            <div class="label">H1 — Titular</div>
+            <div class="value large">Qui som</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">Des del 1987 al servei de les persones amb diversitat funcional</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Paràgraf 1</div>
+            <div class="value">La Fundació Ave Maria és una institució privada sense ànim de lucre, reconeguda per la Generalitat de Catalunya, que des de l'any 1987 ofereix atenció especialitzada a persones adultes amb discapacitat intel·lectual.</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Paràgraf 2</div>
+            <div class="value">Ubicada a Sitges, al cor de la comarca del Garraf, la nostra missió és proporcionar una atenció integral i de qualitat que permeti a cada persona desenvolupar al màxim les seves capacitats i gaudir d'una vida plena i digna.</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Paràgraf 3</div>
+            <div class="value">Amb més de 65 professionals i un model d'atenció centrat en la persona, treballem cada dia per millorar la qualitat de vida dels nostres usuaris i les seves famílies.</div>
+        </div>
+
+        <div class="note-box">
+            <strong>Imatge:</strong> Vista de la Villa Havemann
+        </div>
+    </div>
+
+    <!-- HISTÒRIA -->
+    <div class="content-block">
+        <div class="block-title">Història</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">La nostra història</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Paràgraf 1</div>
+            <div class="value">Tot va començar gràcies a la generositat de Rosalía Dalmau, una sitgetana que va decidir destinar el seu patrimoni a crear un espai d'atenció per a persones amb discapacitat intel·lectual.</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Paràgraf 2</div>
+            <div class="value">L'any 1987, el seu llegat es va fer realitat amb la inauguració de la Fundació Ave Maria, ubicada a la Villa Havemann, un edifici modernista emblemàtic al centre de Sitges.</div>
+        </div>
+
+        <div class="quote-box">
+            <div class="quote-text">"El llegat de Rosalía Dalmau no va ser només un edifici o uns diners. Va ser un somni de dignitat i esperança que seguim construint cada dia."</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Línia Temporal</div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1987</div>
+                <div class="timeline-text">Fundació de l'Ave Maria amb el llegat de Rosalía Dalmau. Inauguració de la seu a la Villa Havemann.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1995</div>
+                <div class="timeline-text">Primera ampliació de places residencials per respondre a la demanda creixent.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2005</div>
+                <div class="timeline-text">Inauguració de les noves instal·lacions del campus amb més de 3.000 m².</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2010</div>
+                <div class="timeline-text">Inici del programa de Llars amb Suport: un nou model d'habitatge autònom.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2015</div>
+                <div class="timeline-text">Llançament del programa d'Inclusió Laboral en col·laboració amb empreses de l'entorn.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2018</div>
+                <div class="timeline-text">Incorporació de la robòtica assistencial com a eina terapèutica innovadora.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2020</div>
+                <div class="timeline-text">Superació de la pandèmia COVID-19 amb zero baixes gràcies a protocols rigorosos.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-text">L'Ajuntament de Vilanova i la Geltrú cedeix un terreny per al Projecte Benviure.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-text">Posada en marxa del nou Servei d'Atenció Domiciliària (SAD) al Garraf.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MISSIÓ, VISIÓ I VALORS -->
+    <div class="content-block">
+        <div class="block-title">Missió, Visió i Valors</div>
+
+        <div class="cards-grid">
+            <div class="card accent">
+                <div class="card-title">Missió</div>
+                <div class="card-text">Oferir atenció integral i de qualitat a persones adultes amb discapacitat intel·lectual, promovent el seu desenvolupament personal, la seva autonomia i la seva integració social, en un entorn de respecte, dignitat i afecte.</div>
+            </div>
+            <div class="card accent">
+                <div class="card-title">Visió</div>
+                <div class="card-text">Ser una entitat de referència a Catalunya en l'atenció a persones amb diversitat funcional, reconeguda per la innovació, la qualitat dels seus serveis i l'impacte positiu en la vida dels usuaris i les seves famílies.</div>
+            </div>
+        </div>
+
+        <div class="content-item" style="margin-top: 32px;">
+            <div class="label">Valors (5 targetes)</div>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-title">Qualitat</div>
+                <div class="card-text">Busquem l'excel·lència en tot el que fem. Disposem de protocols rigorosos, certificacions de qualitat i formació contínua del nostre equip.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Innovació</div>
+                <div class="card-text">Apostem per la recerca i les noves tecnologies per millorar l'atenció. Pioners a Catalunya en incorporar la robòtica assistencial.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Compromís</div>
+                <div class="card-text">Cada persona del nostre equip està compromesa amb el benestar dels usuaris i les seves famílies. No és només una feina: és una vocació.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Proximitat</div>
+                <div class="card-text">Tractem cada usuari com una persona única, amb un pla d'atenció individualitzat que respecta les seves preferències i capacitats.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Transparència</div>
+                <div class="card-text">Rendim comptes a la societat. Les nostres memòries, auditories i informació rellevant estan disponibles públicament.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EQUIP -->
+    <div class="content-block">
+        <div class="block-title">Equip</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Les persones que ho fan possible</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Paràgraf</div>
+            <div class="value">Darrere de la Fundació Ave Maria hi ha un equip de més de 65 professionals compromesos amb l'atenció i el benestar de les persones amb discapacitat intel·lectual.</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Patronat</div>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Càrrec</th>
+                    <th>Nom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>President</td>
+                    <td>Jaume Cladellas</td>
+                </tr>
+                <tr>
+                    <td>Vicepresident</td>
+                    <td>[Nom]</td>
+                </tr>
+                <tr>
+                    <td>Secretari/ària</td>
+                    <td>[Nom]</td>
+                </tr>
+                <tr>
+                    <td>Tresorer/a</td>
+                    <td>[Nom]</td>
+                </tr>
+                <tr>
+                    <td>Vocals</td>
+                    <td>[Noms]</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="content-item" style="margin-top: 32px;">
+            <div class="label">Equip professional</div>
+            <div class="value">Director/a general · Psicòleg/a · Pedagog/a · Psicopedagog/a · Treballador/a social · Fisioterapeuta · Terapeuta ocupacional · Infermers/es · Educadors/es socials · Cuidadors/es (+30)</div>
+        </div>
+    </div>
+
+    <!-- TRANSPARÈNCIA -->
+    <div class="content-block">
+        <div class="block-title">Transparència</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Compromís amb la transparència</div>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Camp</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Denominació</td>
+                    <td>Fundació Privada del Ave María de Sitges</td>
+                </tr>
+                <tr>
+                    <td>CIF</td>
+                    <td>G58511981</td>
+                </tr>
+                <tr>
+                    <td>Adreça</td>
+                    <td>Av. Artur Carbonell, 11 — 08870 Sitges (Barcelona)</td>
+                </tr>
+                <tr>
+                    <td>Any de constitució</td>
+                    <td>1987</td>
+                </tr>
+                <tr>
+                    <td>Utilitat pública</td>
+                    <td>Sí</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="content-item" style="margin-top: 24px;">
+            <div class="label">Documents disponibles (PDF)</div>
+            <div class="value">Memòria anual 2025 · Memòria anual 2024 · Memòria anual 2023 · Comptes anuals auditats · Estatuts de la Fundació · Pla estratègic 2024-2027 · Política de qualitat · Certificat d'utilitat pública</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- SERVEIS -->
+<!-- ============================================ -->
+
+<div class="section-divider" id="serveis">
+    <h2>SERVEIS</h2>
+    <p>Pàgina de serveis</p>
+</div>
+
+<div class="container">
+
+    <!-- INTRO -->
+    <div class="content-block">
+        <div class="block-title">Introducció</div>
+
+        <div class="content-item">
+            <div class="label">H1 — Titular</div>
+            <div class="value large">Els nostres serveis</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Paràgraf 1</div>
+            <div class="value">A la Fundació Ave Maria oferim un model d'atenció integral i personalitzat, adaptat a les necessitats de cada persona.</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Paràgraf 2</div>
+            <div class="value">Els nostres serveis cobreixen des de l'atenció residencial completa fins al suport puntual a domicili, sempre amb l'objectiu de potenciar l'autonomia i la qualitat de vida dels nostres usuaris.</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Paràgraf 3</div>
+            <div class="value">Tots els nostres serveis estan concertats o homologats per la Generalitat de Catalunya.</div>
+        </div>
+
+        <div class="note-box">
+            <strong>Model d'atenció centrat en la persona:</strong> Cada usuari té un pla d'atenció individualitzat que es revisa periòdicament i s'adapta a les seves necessitats, preferències i objectius personals.
+        </div>
+    </div>
+
+    <!-- CAMPUS RESIDENCIAL -->
+    <div class="content-block">
+        <div class="block-title">Servei 1 — Campus Residencial</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Campus Residencial</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">Una llar al cor de Sitges</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Descripció</div>
+            <div class="value">El Campus Residencial és el servei principal de la Fundació Ave Maria. Ubicat en un edifici modernista al centre de Sitges, ofereix 60 places per a persones adultes amb discapacitat intel·lectual que requereixen suport continuat. Les nostres instal·lacions, de més de 3.000 m², inclouen habitacions individuals i dobles, sales d'activitats, gimnàs, spa amb hidroteràpia, jardins i espais comuns pensats per al confort i el benestar dels usuaris.</div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat">
+                <span class="stat-number">60</span>
+                <span class="stat-label">Places</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">3.000</span>
+                <span class="stat-label">m² instal·lacions</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Atenció contínua</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">+45</span>
+                <span class="stat-label">Professionals</span>
+            </div>
+        </div>
+
+        <div class="content-item" style="margin-top: 32px;">
+            <div class="label">Serveis inclosos</div>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-title">Atenció mèdica 24h</div>
+                <div class="card-text">Infermeria permanent, metge i psiquiatre periòdics</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Estimulació cognitiva</div>
+                <div class="card-text">Programes personalitzats de manteniment i millora cognitiva</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Activitats creatives</div>
+                <div class="card-text">Tallers d'art, música, manualitats i expressió</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Spa i relaxació</div>
+                <div class="card-text">Hidroteràpia, aromateràpia, massatges i relaxació</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Robòtica assistencial</div>
+                <div class="card-text">Teràpia amb robots socials per a estimulació i companyia</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Sortides comunitàries</div>
+                <div class="card-text">Excursions, visites culturals i activitats d'oci a l'exterior</div>
+            </div>
+        </div>
+
+        <div class="content-item" style="margin-top: 32px;">
+            <div class="label">FAQ</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Quin és el perfil d'usuari del Campus?</div>
+            <div class="faq-a">Atenem persones adultes (majors de 18 anys) amb discapacitat intel·lectual i grau de dependència reconegut. Cada sol·licitud es valora individualment.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Com puc sol·licitar una plaça?</div>
+            <div class="faq-a">Contacta amb nosaltres per telèfon (938 94 86 46) o a través del formulari web. Concertarem una visita al centre i us informarem del procés d'admissió.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Quin és el cost del servei?</div>
+            <div class="faq-a">El Campus Residencial està concertat amb la Generalitat de Catalunya (ICASS). El cost per a les famílies depèn del grau de dependència i la situació econòmica de l'usuari.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Puc visitar el meu familiar quan vulgui?</div>
+            <div class="faq-a">Sí. Tenim un horari de visites ampli i flexible. A més, organitzem activitats familiars periòdiques i celebracions on les famílies són benvingudes.</div>
+        </div>
+    </div>
+
+    <!-- LLARS AMB SUPORT -->
+    <div class="content-block">
+        <div class="block-title">Servei 2 — Llars amb Suport</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Llars amb Suport</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">Viure de manera autònoma és possible</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Descripció</div>
+            <div class="value">Les Llars amb Suport són pisos ubicats a Sitges on persones amb discapacitat intel·lectual viuen de manera semi-autònoma amb el suport intermitent del nostre equip. Seguint el model Housing First, apostem perquè cada persona pugui viure al seu propi espai, amb el nivell de suport que necessiti.</div>
+        </div>
+
+        <div class="tab-container">
+            <div class="tab-header">Què oferim?</div>
+            <div class="tab-content">
+                <div class="service-item">
+                    <div class="service-name">Suport en gestió de la llar</div>
+                    <div class="service-desc">Neteja, cuina, compres i gestió domèstica</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-name">Acompanyament en tràmits</div>
+                    <div class="service-desc">Gestions administratives i burocràtiques</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-name">Seguiment de salut</div>
+                    <div class="service-desc">Medicació i coordinació mèdica</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-name">Suport emocional</div>
+                    <div class="service-desc">Escolta activa i resolució de conflictes</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-name">Activitats d'oci</div>
+                    <div class="service-desc">Lleure comunitari i connexió amb el Campus</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SAD -->
+    <div class="content-block">
+        <div class="block-title">Servei 3 — Servei d'Atenció Domiciliària (SAD)</div>
+
+        <div class="badge">Nou Servei 2025</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Servei d'Atenció Domiciliària</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">T'ajudem a casa teva</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Descripció</div>
+            <div class="value">El Servei d'Atenció Domiciliària (SAD) és el nostre nou servei per oferir suport a persones amb dependència al seu propi domicili. Amb un equip de professionals formats i compromesos, proporcionem atenció de qualitat a casa teva.</div>
+        </div>
+
+        <div class="tab-container">
+            <div class="tab-header">Què oferim?</div>
+            <div class="tab-content">
+                <div class="service-item">
+                    <div class="service-name">Ajuda a les activitats de la vida diària</div>
+                    <div class="service-desc">Higiene personal, vestir-se, alimentació, mobilitat</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-name">Suport a la llar</div>
+                    <div class="service-desc">Neteja, cuina, compres, gestió domèstica</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-name">Acompanyament</div>
+                    <div class="service-desc">Visites mèdiques, passejos, gestions</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-name">Coordinació sociosanitària</div>
+                    <div class="service-desc">Enllaç amb metges, infermeres i serveis socials</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-name">Respir familiar</div>
+                    <div class="service-desc">Relleu temporal per a cuidadors principals</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-item" style="margin-top: 24px;">
+            <div class="label">Àmbit territorial</div>
+            <div class="value">Comarca del Garraf: Sitges · Vilanova i la Geltrú · Sant Pere de Ribes · Cubelles · Canyelles · Olivella</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Contacte</div>
+            <div class="value">📞 938 94 86 46 · 📧 sad@avemariafundacio.org</div>
+        </div>
+    </div>
+
+    <!-- SUPORT A FAMÍLIES -->
+    <div class="content-block">
+        <div class="block-title">Servei 4 — Suport a Famílies</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Suport a Famílies</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">No esteu sols</div>
+        </div>
+
+        <div class="quote-box">
+            <div class="quote-text">"Les famílies són part fonamental del nostre model d'atenció. Quan una família es sent recolzada, l'usuari també ho nota."</div>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-title">Informació i orientació</div>
+                <div class="card-text">Us ajudem a navegar el sistema de serveis socials, sol·licitar ajudes, conèixer els vostres drets i accedir als recursos disponibles.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Formació</div>
+                <div class="card-text">Organitzem tallers i sessions formatives sobre temes d'interès: cura del dependent, gestió emocional, comunicació efectiva.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Grups de suport</div>
+                <div class="card-text">Espais per compartir experiències amb altres famílies en situació similar. El millor suport és saber que no estàs sol.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Servei de respir</div>
+                <div class="card-text">Servei d'atenció temporal per donar un descans als cuidadors principals. Per cuidar bé cal cuidar-se també.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INCLUSIÓ LABORAL -->
+    <div class="content-block">
+        <div class="block-title">Servei 5 — Inclusió Laboral</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Inclusió Laboral</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">Treballar amb propòsit</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Descripció</div>
+            <div class="value">Les persones amb discapacitat intel·lectual tenen molt a aportar al món laboral. A través del nostre programa d'Inclusió Laboral, facilitem la seva incorporació a llocs de treball amb el suport que necessitin. Creiem que tothom té talents i capacitats.</div>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-title">Treball intern</div>
+                <div class="card-text">Dins de la Fundació, els usuaris participen en tasques de suport: jardineria, bugaderia, ajuda a cuina, manteniment. Són tasques reals amb valor i reconeixement.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Treball amb suport</div>
+                <div class="card-text">Col·laborem amb empreses de l'entorn per oferir oportunitats laborals en entorns normalitzats. El nostre equip acompanya l'usuari durant el procés d'adaptació.</div>
+            </div>
+        </div>
+
+        <div class="cta-block" style="margin-top: 32px;">
+            <div class="cta-title">Vols apostar per la inclusió?</div>
+            <div class="cta-text">Si la teva empresa vol incorporar persones amb discapacitat, nosaltres t'ajudem.</div>
+            <a href="#" class="cta-button">Contactar</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- COL·LABORA -->
+<!-- ============================================ -->
+
+<div class="section-divider" id="collabora">
+    <h2>COL·LABORA</h2>
+    <p>Pàgina de col·laboració</p>
+</div>
+
+<div class="container">
+
+    <!-- INTRO -->
+    <div class="content-block">
+        <div class="block-title">Introducció</div>
+
+        <div class="content-item">
+            <div class="label">H1 — Titular</div>
+            <div class="value large">Junts, arribem més lluny</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Paràgraf 1</div>
+            <div class="value">La col·laboració desinteressada de persones, empreses i altres entitats és molt valuosa per poder arribar allà on la Fundació, amb els seus mitjans, difícilment podria fer-ho.</div>
+        </div>
+
+        <div class="quote-box">
+            <div class="quote-text">"Són diverses les maneres amb les quals pots fer possible la teva ajuda: fer un donatiu, deixar un llegat, fer-te voluntari, participar amb la teva empresa, comprar els nostres productes solidaris o difondre el nostre missatge."</div>
+        </div>
+
+        <div class="cards-grid three-cols">
+            <div class="card">
+                <div class="card-title">💰 Donatiu</div>
+                <div class="card-text">Aportació puntual o periòdica. Desgrava a la renda!</div>
+            </div>
+            <div class="card">
+                <div class="card-title">🤝 Voluntariat</div>
+                <div class="card-text">Comparteix el teu temps lliure amb els nostres usuaris.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">🏢 Empreses</div>
+                <div class="card-text">Patrocini, RSC, màrqueting amb causa, voluntariat corporatiu.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">📜 Llegats</div>
+                <div class="card-text">Inclou'ns al teu testament. El teu suport, per sempre.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">🎉 Celebracions</div>
+                <div class="card-text">Converteix el teu aniversari, boda o festa en un acte solidari.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">🛒 Botiga</div>
+                <div class="card-text">Compra els nostres productes solidaris: cava, art, complements.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AVANTATGES FISCALS -->
+    <div class="content-block">
+        <div class="block-title">Avantatges Fiscals</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">A la Renda, et tornaran fins al 80% del teu donatiu!</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Paràgraf</div>
+            <div class="value">Ara ser solidari costa menys. Els donatius a entitats sense ànim de lucre desgraven a la declaració de la Renda.</div>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Import</th>
+                    <th>Deducció</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Primers 250€ donats</td>
+                    <td><strong>80%</strong> de deducció</td>
+                </tr>
+                <tr>
+                    <td>Resta de l'import</td>
+                    <td><strong>40%</strong> de deducció</td>
+                </tr>
+                <tr>
+                    <td>Si dones 3 anys seguits</td>
+                    <td><strong>45%</strong> de deducció (a partir del 3r any)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note-box">
+            <strong>Exemple pràctic:</strong> Si dones 300€ a l'any, et retornaran aproximadament 220€ a la declaració de la renda. El cost real del teu donatiu serà de només 80€!
+        </div>
+    </div>
+
+    <!-- DONAR -->
+    <div class="content-block">
+        <div class="block-title">Fer un Donatiu</div>
+
+        <div class="content-item">
+            <div class="label">Nota</div>
+            <div class="value">Landing page optimitzada per a conversió</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Fes el teu donatiu</div>
+        </div>
+
+        <div class="quote-box">
+            <div class="quote-text">"Gràcies a vosaltres, el meu germà té una vida plena. No sé què faríem sense l'Ave Maria."</div>
+            <div class="quote-author">— Anna, germana d'usuari</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Impacte dels donatius</div>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Import mensual</th>
+                    <th>Què aconseguim</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10€/mes</td>
+                    <td>Material per a tallers creatius (pintures, paper, argila...)</td>
+                </tr>
+                <tr>
+                    <td>25€/mes</td>
+                    <td>1 sessió setmanal de fisioteràpia per a un usuari</td>
+                </tr>
+                <tr>
+                    <td>50€/mes</td>
+                    <td>1 sortida comunitària mensual (cinema, teatre, excursió)</td>
+                </tr>
+                <tr>
+                    <td>100€/mes</td>
+                    <td>Programa complet d'estimulació cognitiva per a un usuari</td>
+                </tr>
+                <tr>
+                    <td>200€/mes</td>
+                    <td>Teràpia amb robots assistencials durant un mes</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note-box">
+            <strong>Elements del formulari:</strong> Selector puntual/mensual · Botons d'import (10€ | 25€ | 50€ | 100€ | 200€ | Altre) · Nom · Email · Telèfon (opcional) · Checkbox certificat fiscal + DNI · Mètode de pagament (Targeta | Bizum | Domiciliació | Transferència) · Botó DONAR ARA
+        </div>
+
+        <div class="content-item" style="margin-top: 24px;">
+            <div class="label">Elements de confiança</div>
+            <div class="value">🔒 Pagament 100% segur · 📄 Certificat fiscal automàtic · ✅ Entitat d'utilitat pública · 📊 Auditoria externa anual</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Altres maneres de donar</div>
+            <div class="value"><strong>IBAN:</strong> ES00 0000 0000 0000 0000 0000 · <strong>Bizum solidari:</strong> Codi 00000</div>
+        </div>
+    </div>
+
+    <!-- VOLUNTARIAT -->
+    <div class="content-block">
+        <div class="block-title">Voluntariat</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Voluntariat</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">Comparteix el teu temps, canvia vides</div>
+        </div>
+
+        <div class="quote-box">
+            <div class="quote-text">"Com a voluntària, he rebut molt més del que he donat. Les persones de l'Ave Maria t'ensenyen a veure la vida d'una altra manera. Són autèntics mestres de l'alegria."</div>
+            <div class="quote-author">— Laia, voluntària des de 2019</div>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-title">Acompanyament en sortides</div>
+                <div class="card-text">Participar en excursions, visites culturals, passejos i activitats d'oci fora del centre.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Suport en activitats</div>
+                <div class="card-text">Col·laborar en tallers, activitats esportives, festes i celebracions al centre.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Amistat</div>
+                <div class="card-text">Passar temps amb els usuaris: conversar, passejar, jugar a cartes, veure una pel·lícula junts.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Compartir habilitats</div>
+                <div class="card-text">Si tens coneixements de música, art, esport, jardineria, pots compartir-los en tallers especials.</div>
+            </div>
+        </div>
+
+        <div class="content-item" style="margin-top: 24px;">
+            <div class="label">Requisits</div>
+            <div class="value">✓ Major de 18 anys · ✓ Compromís mínim 2h/setmana × 6 mesos · ✓ Formació inicial (3 hores) · ✓ Certificat de delictes sexuals · ✓ Ganes d'aprendre i empatia</div>
+        </div>
+
+        <div class="note-box">
+            <strong>No cal experiència prèvia.</strong> Nosaltres et formem i t'acompanyem.
+        </div>
+    </div>
+
+    <!-- EMPRESES -->
+    <div class="content-block">
+        <div class="block-title">Empreses i RSC</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Empreses</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">La responsabilitat social que marca la diferència</div>
+        </div>
+
+        <div class="cards-grid three-cols">
+            <div class="card">
+                <div class="card-title">Patrocini</div>
+                <div class="card-text">Associa la teva marca a la nostra causa amb el patrocini d'activitats, esdeveniments o programes específics.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Donació corporativa</div>
+                <div class="card-text">Aportació econòmica puntual o periòdica. Fins al 40% de deducció en Impost de Societats.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Voluntariat corporatiu</div>
+                <div class="card-text">Jornades de voluntariat amb els teus treballadors. Team building diferent que reforça valors i cohesió.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Màrqueting amb causa</div>
+                <div class="card-text">Vincula les teves vendes a una donació. "X€ de cada producte destinat a la Fundació Ave Maria".</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Cessió de productes</div>
+                <div class="card-text">Si la teva empresa pot oferir-nos descomptes, productes o serveis que necessitem, contacta'ns.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Inserció laboral</div>
+                <div class="card-text">Contracta persones amb discapacitat intel·lectual. Nosaltres t'assessorem i fem seguiment. Compleix la LISMI.</div>
+            </div>
+        </div>
+
+        <div class="content-item" style="margin-top: 24px;">
+            <div class="label">Contacte empreses</div>
+            <div class="value">📧 empreses@avemariafundacio.org · 📞 938 94 86 46</div>
+        </div>
+    </div>
+
+    <!-- LLEGATS -->
+    <div class="content-block">
+        <div class="block-title">Llegats i Herències</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Llegats i herències</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">El teu suport, per sempre</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Paràgraf</div>
+            <div class="value">Incloure la Fundació Ave Maria al teu testament és una manera de garantir que el teu suport perduri en el temps i continuï ajudant persones amb discapacitat intel·lectual quan tu ja no hi siguis.</div>
+        </div>
+
+        <div class="quote-box">
+            <div class="quote-text">"Tot va començar així: amb el llegat de Rosalía Dalmau. Gràcies a la seva generositat, fa gairebé 40 anys que canviem vides. El teu llegat pot continuar aquest somni."</div>
+        </div>
+
+        <div class="cards-grid three-cols">
+            <div class="card">
+                <div class="card-title">Llegat</div>
+                <div class="card-text">Deixar un bé concret a la Fundació: una quantitat de diners, un immoble, accions, obres d'art, joies...</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Herència</div>
+                <div class="card-text">Designar la Fundació com a hereva d'un percentatge del teu patrimoni.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Beneficiari assegurança</div>
+                <div class="card-text">Designar la Fundació com a beneficiària d'una assegurança de vida o pla de pensions.</div>
+            </div>
+        </div>
+
+        <div class="content-item" style="margin-top: 24px;">
+            <div class="label">Dades per al testament</div>
+        </div>
+
+        <table class="data-table">
+            <tbody>
+                <tr>
+                    <td>Denominació</td>
+                    <td>Fundació Privada del Ave María de Sitges</td>
+                </tr>
+                <tr>
+                    <td>CIF</td>
+                    <td>G58511981</td>
+                </tr>
+                <tr>
+                    <td>Adreça</td>
+                    <td>Av. Artur Carbonell, 11 — 08870 Sitges (Barcelona)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note-box">
+            <strong>Confidencialitat total.</strong> El teu llegat és un assumpte privat. Sense compromisos, sense pressions. Pots modificar o revocar el teu testament en qualsevol moment.
+        </div>
+    </div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- ART I BOTIGA -->
+<!-- ============================================ -->
+
+<div class="section-divider" id="art">
+    <h2>ART I BOTIGA</h2>
+    <p>Fons d'art i productes solidaris</p>
+</div>
+
+<div class="container">
+
+    <!-- FONS D'ART -->
+    <div class="content-block">
+        <div class="block-title">Fons d'Art</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Fons d'Art</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">Art i solidaritat, units</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Descripció</div>
+            <div class="value">La Fundació Ave Maria custodia un important Fons d'Art format per donacions d'artistes i mecenes que creuen en la nostra missió. La col·lecció inclou obres de pintors, escultors i artistes gràfics de reconegut prestigi. Part de les obres estan disponibles per a la venda, i els fons recaptats es destinen íntegrament a finançar les activitats de la Fundació.</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Artistes a la col·lecció</div>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-title">Lluïsa Sallent</div>
+                <div class="card-text">Escultora i pintora. Elegància i equilibri en pinzellades lliures.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Frederic Anguera</div>
+                <div class="card-text">Nous enfocaments, de l'especulació pictòrica a la manipulació d'objectes.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Pierre Tchetverikoff</div>
+                <div class="card-text">Art geomètric, joc entre el real i l'irreal.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Germans Grangel</div>
+                <div class="card-text">Dissenyadors de personatges per a Hollywood.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Maria Pilar Igual</div>
+                <div class="card-text">Llegat complet de la seva obra.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTIGA -->
+    <div class="content-block">
+        <div class="block-title">Botiga Solidària</div>
+
+        <div class="content-item">
+            <div class="label">Titular</div>
+            <div class="value large">Botiga Solidària</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">Compra solidària, impacte real</div>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Producte</th>
+                    <th>Descripció</th>
+                    <th>Preu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🍾 Cava Solidari</td>
+                    <td>Edició limitada anual. Etiqueta dissenyada per artista diferent cada any.</td>
+                    <td>12,00€</td>
+                </tr>
+                <tr>
+                    <td>📮 Col·lecció Postals</td>
+                    <td>20 postals de les platges de Sitges, pintades per artistes locals.</td>
+                    <td>7,00€</td>
+                </tr>
+                <tr>
+                    <td>📚 Llibre Mirabent i Gatell</td>
+                    <td>Llibre d'Isabel Coll sobre un dels millors decoradors catalans.</td>
+                    <td>35,00€</td>
+                </tr>
+                <tr>
+                    <td>👧 Meninas Solidàries</td>
+                    <td>Peces de terrissa úniques de Lluís Barbadillo. Disseny exclusiu.</td>
+                    <td>50,00€</td>
+                </tr>
+                <tr>
+                    <td>💎 Polsera Havemann</td>
+                    <td>Polsera de plata amb la silueta de la Villa Havemann. Edició limitada.</td>
+                    <td>59,00€</td>
+                </tr>
+                <tr>
+                    <td>📎 Pitjapapers Havemann</td>
+                    <td>Ferro envellit amb la silueta de la Villa Havemann.</td>
+                    <td>36,05€</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="content-item" style="margin-top: 24px;">
+            <div class="label">Com comprar</div>
+            <div class="value">📧 botiga@avemariafundacio.org · 📞 938 94 86 46 · Recollida gratuïta a la seu de la Fundació</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- CONTACTE -->
+<!-- ============================================ -->
+
+<div class="section-divider" id="contacte">
+    <h2>CONTACTE</h2>
+    <p>Pàgina de contacte</p>
+</div>
+
+<div class="container">
+
+    <div class="content-block">
+        <div class="block-title">Contingut</div>
+
+        <div class="content-item">
+            <div class="label">H1 — Titular</div>
+            <div class="value large">Contacta amb nosaltres</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Subtítol</div>
+            <div class="value medium">Estem aquí per ajudar-te</div>
+        </div>
+    </div>
+
+    <div class="content-block">
+        <div class="block-title">Dades de Contacte</div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-title">Adreça</div>
+                <div class="card-text">
+                    <strong>Fundació Ave Maria</strong><br>
+                    Av. Artur Carbonell, 11<br>
+                    08870 Sitges (Barcelona)
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Contacte</div>
+                <div class="card-text">
+                    <strong>Telèfon:</strong> (+34) 938 94 86 46<br>
+                    <strong>Email:</strong> info@avemariafundacio.org
+                </div>
+            </div>
+        </div>
+
+        <div class="content-item" style="margin-top: 24px;">
+            <div class="label">Horari d'atenció</div>
+            <div class="value">Dilluns a divendres: 9:00-14:00 i 15:00-18:00</div>
+        </div>
+    </div>
+
+    <div class="content-block">
+        <div class="block-title">Emails Específics</div>
+
+        <table class="data-table">
+            <tbody>
+                <tr>
+                    <td>Informació general</td>
+                    <td>info@avemariafundacio.org</td>
+                </tr>
+                <tr>
+                    <td>Serveis i admissions</td>
+                    <td>serveis@avemariafundacio.org</td>
+                </tr>
+                <tr>
+                    <td>Atenció domiciliària (SAD)</td>
+                    <td>sad@avemariafundacio.org</td>
+                </tr>
+                <tr>
+                    <td>Donatius i col·laboració</td>
+                    <td>donatius@avemariafundacio.org</td>
+                </tr>
+                <tr>
+                    <td>Empreses i RSC</td>
+                    <td>empreses@avemariafundacio.org</td>
+                </tr>
+                <tr>
+                    <td>Voluntariat</td>
+                    <td>voluntariat@avemariafundacio.org</td>
+                </tr>
+                <tr>
+                    <td>Llegats</td>
+                    <td>llegats@avemariafundacio.org</td>
+                </tr>
+                <tr>
+                    <td>Botiga</td>
+                    <td>botiga@avemariafundacio.org</td>
+                </tr>
+                <tr>
+                    <td>Premsa i comunicació</td>
+                    <td>comunicacio@avemariafundacio.org</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="content-block">
+        <div class="block-title">Xarxes Socials</div>
+
+        <div class="content-item">
+            <div class="label">Plataformes</div>
+            <div class="value">Facebook: facebook.com/avemariafundacio · Instagram: @funavemaria · Twitter/X: @funavemaria · LinkedIn: linkedin.com/company/funavemaria · YouTube: @funavemaria</div>
+        </div>
+    </div>
+
+    <div class="content-block">
+        <div class="block-title">Formulari de Contacte</div>
+
+        <div class="note-box">
+            <strong>Camps del formulari:</strong> Nom * · Cognoms * · Email * · Telèfon · Motiu de la consulta (desplegable): Informació general | Serveis i admissions | Donatius | Voluntariat | Empreses | Premsa | Altres · Missatge * · Checkbox: Subscriure'm al butlletí · Checkbox: Accepto política de privacitat * · Botó: Enviar
+        </div>
+
+        <div class="content-item" style="margin-top: 24px;">
+            <div class="label">Mapa</div>
+            <div class="value">[EMBED GOOGLE MAPS] Ubicació: Av. Artur Carbonell, 11, 08870 Sitges</div>
+        </div>
+
+        <div class="content-item">
+            <div class="label">Accessos ràpids</div>
+            <div class="value">👔 Vull treballar amb vosaltres → /treballa-amb-nosaltres · 🤝 Vull ser voluntari → /voluntariat · ❤️ Vull fer un donatiu → /donar</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- FOOTER -->
+<!-- ============================================ -->
+
+<div class="section-divider" id="footer">
+    <h2>FOOTER</h2>
+    <p>Element comú en totes les pàgines</p>
+</div>
+
+<div class="footer-preview">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <strong style="font-size: 18px; letter-spacing: 2px;">FUNDACIÓ AVE MARIA</strong>
+                <p>Atenció integral a persones amb discapacitat intel·lectual des del 1987.</p>
+                <p style="margin-top: 16px;">
+                    Av. Artur Carbonell, 11<br>
+                    08870 Sitges (Barcelona)<br>
+                    Tel. 938 94 86 46
+                </p>
+            </div>
+
+            <div>
+                <div class="footer-title">Navegació Principal</div>
+                <ul class="footer-links">
+                    <li><a href="#">Inici</a></li>
+                    <li><a href="#">Qui som</a></li>
+                    <li><a href="#">Serveis</a></li>
+                    <li><a href="#">Col·labora</a></li>
+                    <li><a href="#">Fons d'Art</a></li>
+                    <li><a href="#">Botiga</a></li>
+                    <li><a href="#">Contacte</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="footer-title">Col·labora</div>
+                <ul class="footer-links">
+                    <li><a href="#">Fer un donatiu</a></li>
+                    <li><a href="#">Voluntariat</a></li>
+                    <li><a href="#">Empreses</a></li>
+                    <li><a href="#">Llegats</a></li>
+                </ul>
+
+                <div class="footer-title" style="margin-top: 24px;">Xarxes Socials</div>
+                <ul class="footer-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Fundació Ave Maria — Tots els drets reservats</span>
+            <span>Avís legal · Política de privacitat · Política de cookies</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

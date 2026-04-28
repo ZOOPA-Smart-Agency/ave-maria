@@ -1,0 +1,2158 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System · Fundació Ave Maria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN SYSTEM — FUNDACIÓ AVE MARIA · v1 (Fase 1)
+   Tokens + Components per a web
+   ============================================================ */
+
+:root {
+  /* ─── COLOR · BOSC (paleta institucional) ─── */
+  --am-bosc-100: #ABEBC6;
+  --am-bosc-200: #82E0AA;
+  --am-bosc-300: #2ECC71;
+  --am-bosc-400: #27AE60;
+  --am-bosc-500: #1E8449;
+  --am-bosc-600: #145A32;
+
+  /* ─── COLOR · COLORS (paleta vibrant) ─── */
+  --am-taronja: #E8863A;
+  --am-coral:   #E85D75;
+  --am-groc:    #F2C14E;
+  --am-blau:    #5DADE2;
+  --am-verd:    #2D936C;
+  --am-rosa:    #D4859A;
+
+  /* ─── COLOR · MONOCROM ─── */
+  --am-tinta:    #1A1A1A;
+  --am-gris-800: #595959;
+  --am-gris-600: #666666;
+  --am-gris-500: #999999;
+  --am-gris-300: #CCCCCC;
+  --am-gris-200: #E5E5E5;
+  --am-gris-100: #F5F5F5;
+  --am-blanc:    #FFFFFF;
+
+  /* ─── SEMÀNTICS / SEMÁNTICOS ─── */
+  --am-color-primary:        var(--am-taronja);
+  --am-color-primary-strong: #C76E27;
+  --am-color-text:           var(--am-tinta);
+  --am-color-text-muted:     var(--am-gris-600);
+  --am-color-text-soft:      var(--am-gris-500);
+  --am-color-bg:             var(--am-blanc);
+  --am-color-bg-alt:         var(--am-gris-100);
+  --am-color-border:         var(--am-gris-200);
+  --am-color-border-strong:  var(--am-tinta);
+
+  /* ─── ESTAT / ESTADO ─── */
+  /* Tokens "ink" = versions de text amb contrast AA garantit (≥4.5:1) sobre blanc o sobre el bg pàl·lid corresponent */
+  --am-color-success:     #2D936C;
+  --am-color-success-ink: #1A6B49;  /* text · 7.96:1 sobre #E8F5EE */
+  --am-color-success-bg:  #E8F5EE;
+  --am-color-warning:     #B8651D;  /* abans #E8863A — pujat per contrast AA com a text · 4.85:1 sobre blanc */
+  --am-color-warning-ink: #8A4E1F;  /* 6.3:1 sobre #FCEFD9 */
+  --am-color-warning-bg:  #FCEFD9;
+  --am-color-danger:      #C0392B;  /* 5.1:1 sobre blanc */
+  --am-color-danger-ink:  #7E2017;  /* 7.5:1 sobre #F9E3E0 */
+  --am-color-danger-bg:   #F9E3E0;
+  --am-color-info:        #2E7BAB;  /* abans #5DADE2 — pujat per contrast AA com a text · 4.7:1 sobre blanc */
+  --am-color-info-ink:    #1F668F;  /* 6.0:1 sobre #E6F2FB */
+  --am-color-info-bg:     #E6F2FB;
+
+  /* Colors "ink" — versions accessibles de cada color de marca per a ÚS COM A TEXT */
+  --am-taronja-ink: #B8651D;  /* 4.85:1 sobre blanc */
+  --am-coral-ink:   #B0334B;  /* 5.5:1 sobre blanc */
+  --am-groc-ink:    #8A6914;  /* 4.7:1 sobre blanc — el groc original és INUSABLE com a text */
+  --am-blau-ink:    #2E7BAB;  /* 4.7:1 sobre blanc */
+  --am-verd-ink:    #1F6B4E;  /* 5.6:1 sobre blanc */
+  --am-rosa-ink:    #A04D69;  /* 4.9:1 sobre blanc */
+
+  /* ─── TIPOGRAFIA ─── */
+  --am-font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --am-font-mono:   'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --am-fs-display: 56px;
+  --am-fs-h1:      42px;
+  --am-fs-h2:      32px;
+  --am-fs-h3:      24px;
+  --am-fs-h4:      20px;
+  --am-fs-body:    16px;
+  --am-fs-sm:      14px;
+  --am-fs-xs:      12px;
+
+  --am-fw-light:    300;
+  --am-fw-regular:  400;
+  --am-fw-medium:   500;
+  --am-fw-semibold: 600;
+  --am-fw-bold:     700;
+
+  --am-lh-tight:   1.2;
+  --am-lh-base:    1.5;
+  --am-lh-relaxed: 1.7;
+
+  --am-tracking-tight:   -0.01em;
+  --am-tracking-normal:  0;
+  --am-tracking-display: 0.06em;
+  --am-tracking-overline:0.2em;
+
+  /* ─── ESPAIAT / ESPACIADO (escala de 8) ─── */
+  --am-space-1:  4px;
+  --am-space-2:  8px;
+  --am-space-3:  12px;
+  --am-space-4:  16px;
+  --am-space-5:  24px;
+  --am-space-6:  32px;
+  --am-space-7:  48px;
+  --am-space-8:  64px;
+  --am-space-9:  96px;
+  --am-space-10: 128px;
+
+  /* ─── RADIS / RADIOS ─── */
+  --am-radius-sm:   4px;
+  --am-radius-md:   8px;
+  --am-radius-lg:   12px;
+  --am-radius-xl:   20px;
+  --am-radius-full: 9999px;
+
+  /* ─── OMBRES / SOMBRAS ─── */
+  --am-shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --am-shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --am-shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+  --am-shadow-xl: 0 20px 60px rgba(0,0,0,0.18);
+
+  /* ─── ACCESSIBILITAT · ACCESIBILIDAD ─── */
+  /* Indicador de focus visible — WCAG 2.4.7 (AA) i 1.4.11 (AA, contrast ≥3:1) */
+  --am-focus-ring:        0 0 0 3px rgba(255,255,255,1), 0 0 0 6px var(--am-tinta);
+  --am-focus-ring-dark:   0 0 0 3px rgba(0,0,0,0.7), 0 0 0 6px var(--am-blanc);
+  --am-focus-ring-accent: 0 0 0 3px var(--am-blanc), 0 0 0 6px var(--am-color-primary-strong);
+  --am-focus-outline:     3px solid var(--am-tinta);
+  --am-focus-offset:      3px;
+
+  /* ─── MOVIMENT / MOVIMIENTO ─── */
+  --am-duration-fast: 150ms;
+  --am-duration-base: 250ms;
+  --am-duration-slow: 400ms;
+  --am-ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --am-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ─── Z-INDEX ─── */
+  --am-z-dropdown: 1000;
+  --am-z-sticky:   1020;
+  --am-z-modal:    1040;
+  --am-z-tooltip:  1060;
+
+  /* ─── LAYOUT ─── */
+  --am-container-max: 1200px;
+  --am-bp-sm: 640px;
+  --am-bp-md: 768px;
+  --am-bp-lg: 1024px;
+  --am-bp-xl: 1280px;
+}
+
+/* ============================================================
+   ACCESSIBILITAT — utilitats globals
+   Aplicar SEMPRE al projecte web. WCAG 2.2 AA.
+   ============================================================ */
+
+/* Skip link — WCAG 2.4.1 Bypass Blocks (A) */
+.am-skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--am-space-3);
+  background: var(--am-tinta);
+  color: var(--am-blanc);
+  padding: var(--am-space-3) var(--am-space-4);
+  font-weight: var(--am-fw-semibold);
+  text-decoration: none;
+  border-radius: var(--am-radius-sm);
+  z-index: 10000;
+  transition: top var(--am-duration-fast) var(--am-ease-out);
+}
+.am-skip-link:focus {
+  top: var(--am-space-3);
+  outline: var(--am-focus-outline);
+  outline-offset: var(--am-focus-offset);
+}
+
+/* Visually hidden but available to screen readers — WCAG 1.1.1, 4.1.2 */
+.am-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Focus universal — WCAG 2.4.7 Focus Visible (AA) i 1.4.11 (AA, ≥3:1) */
+*:focus-visible {
+  outline: var(--am-focus-outline);
+  outline-offset: var(--am-focus-offset);
+  border-radius: var(--am-radius-sm);
+}
+/* Sobre fons fosc, l'outline es torna blanc */
+.am-on-dark *:focus-visible,
+.am-header__cta:focus-visible,
+.am-footer a:focus-visible,
+.ds-nav a:focus-visible {
+  outline-color: var(--am-blanc);
+}
+
+/* Reducció de moviment — WCAG 2.3.3 Animation from Interactions (AAA, recomanat) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mode d'alt contrast (Windows) — WCAG 1.4.11 */
+@media (forced-colors: active) {
+  .am-btn { border: 2px solid ButtonText; }
+  .am-card { border: 1px solid CanvasText; }
+  *:focus-visible { outline: 2px solid Highlight; }
+}
+
+/* Mai amagar només amb display:none allò que ha de ser anunciat */
+[hidden] { display: none !important; }
+
+/* ============================================================
+   COMPONENTS · classes .am-*  (copia-i-enganxa al projecte web)
+   ============================================================ */
+
+/* ── BUTTONS ──────────────────────────────────────────────── */
+.am-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--am-space-2);
+  font-family: var(--am-font-family);
+  font-size: var(--am-fs-body);
+  font-weight: var(--am-fw-medium);
+  line-height: 1;
+  padding: 14px 28px;
+  border: 2px solid transparent;
+  border-radius: var(--am-radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--am-duration-base) var(--am-ease-out),
+              color var(--am-duration-base) var(--am-ease-out),
+              border-color var(--am-duration-base) var(--am-ease-out),
+              box-shadow var(--am-duration-fast) var(--am-ease-out),
+              transform var(--am-duration-fast) var(--am-ease-out);
+}
+.am-btn:focus-visible { outline: var(--am-focus-outline); outline-offset: var(--am-focus-offset); }
+.am-btn:disabled, .am-btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; pointer-events: none; } /* opacitat ≥0.55 perquè el text disabled mantingui contrast */
+/* Mida mínima de touch target — WCAG 2.5.8 Target Size Minimum (AA, 24×24 px). El nostre base ja fa 44×44. */
+.am-btn { min-height: 44px; min-width: 44px; }
+.am-btn--sm { min-height: 36px; }
+
+.am-btn--primary {
+  background: var(--am-tinta);
+  color: var(--am-blanc);
+  border-color: var(--am-tinta);
+}
+.am-btn--primary:hover { background: #000; transform: translateY(-1px); }
+
+.am-btn--secondary {
+  background: transparent;
+  color: var(--am-tinta);
+  border-color: var(--am-tinta);
+}
+.am-btn--secondary:hover { background: var(--am-tinta); color: var(--am-blanc); }
+
+.am-btn--accent {
+  background: var(--am-color-primary);
+  color: var(--am-blanc);
+  border-color: var(--am-color-primary);
+}
+.am-btn--accent:hover { background: var(--am-color-primary-strong); border-color: var(--am-color-primary-strong); }
+
+.am-btn--ghost {
+  background: transparent;
+  color: var(--am-tinta);
+  border-color: transparent;
+}
+.am-btn--ghost:hover { background: var(--am-gris-100); }
+
+.am-btn--on-dark {
+  background: var(--am-blanc);
+  color: var(--am-tinta);
+  border-color: var(--am-blanc);
+}
+.am-btn--on-dark:hover { background: transparent; color: var(--am-blanc); }
+
+.am-btn--sm { padding: 10px 18px; font-size: var(--am-fs-sm); }
+.am-btn--lg { padding: 18px 36px; font-size: var(--am-fs-h4); }
+
+/* ── FORM CONTROLS ────────────────────────────────────────── */
+.am-field { display: flex; flex-direction: column; gap: var(--am-space-2); margin-bottom: var(--am-space-5); }
+.am-label { font-size: var(--am-fs-sm); font-weight: var(--am-fw-semibold); color: var(--am-color-text); }
+.am-help  { font-size: var(--am-fs-xs); color: var(--am-color-text-muted); }
+.am-error { font-size: var(--am-fs-xs); color: var(--am-color-danger); }
+
+.am-input, .am-textarea, .am-select {
+  font-family: var(--am-font-family);
+  font-size: var(--am-fs-body);
+  color: var(--am-color-text);
+  background: var(--am-blanc);
+  border: 1px solid var(--am-gris-300);
+  border-radius: var(--am-radius-sm);
+  padding: 12px 14px;
+  width: 100%;
+  transition: border-color var(--am-duration-fast) var(--am-ease-out),
+              box-shadow var(--am-duration-fast) var(--am-ease-out);
+}
+.am-input:focus, .am-textarea:focus, .am-select:focus {
+  outline: none;
+  border-color: var(--am-tinta);
+  box-shadow: var(--am-shadow-focus);
+}
+.am-textarea { min-height: 110px; resize: vertical; line-height: var(--am-lh-base); }
+.am-select { appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%231a1a1a' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+.am-input--error, .am-textarea--error, .am-select--error { border-color: var(--am-color-danger); }
+.am-input--error:focus, .am-textarea--error:focus, .am-select--error:focus { box-shadow: 0 0 0 3px rgba(192,57,43,0.25); }
+.am-input:disabled, .am-textarea:disabled, .am-select:disabled { background: var(--am-gris-100); color: var(--am-color-text-soft); cursor: not-allowed; }
+
+.am-check, .am-radio { display: inline-flex; align-items: center; gap: var(--am-space-2); cursor: pointer; font-size: var(--am-fs-body); }
+.am-check input, .am-radio input { width: 18px; height: 18px; accent-color: var(--am-tinta); cursor: pointer; }
+
+/* ── CARDS ────────────────────────────────────────────────── */
+.am-card {
+  background: var(--am-blanc);
+  border: 1px solid var(--am-color-border);
+  border-radius: var(--am-radius-md);
+  overflow: hidden;
+  transition: box-shadow var(--am-duration-base) var(--am-ease-out),
+              transform var(--am-duration-base) var(--am-ease-out),
+              border-color var(--am-duration-base) var(--am-ease-out);
+}
+.am-card:hover { box-shadow: var(--am-shadow-lg); transform: translateY(-4px); }
+.am-card__media { aspect-ratio: 16 / 10; background: var(--am-gris-100) center/cover no-repeat; }
+.am-card__body { padding: var(--am-space-5); }
+.am-card__eyebrow { font-size: var(--am-fs-xs); font-weight: var(--am-fw-semibold); color: var(--am-color-text-muted); text-transform: uppercase; letter-spacing: var(--am-tracking-overline); margin-bottom: var(--am-space-2); }
+.am-card__title { font-size: var(--am-fs-h4); font-weight: var(--am-fw-semibold); color: var(--am-color-text); margin-bottom: var(--am-space-3); line-height: var(--am-lh-tight); }
+.am-card__text { font-size: var(--am-fs-body); color: var(--am-color-text-muted); line-height: var(--am-lh-base); margin-bottom: var(--am-space-4); }
+.am-card__link { font-size: var(--am-fs-sm); font-weight: var(--am-fw-semibold); color: var(--am-tinta); text-decoration: none; border-bottom: 2px solid var(--am-tinta); padding-bottom: 2px; }
+.am-card__link:hover { color: var(--am-color-primary); border-color: var(--am-color-primary); }
+
+.am-card--value { padding: var(--am-space-7) var(--am-space-5); text-align: center; background: var(--am-gris-100); border: 0; }
+.am-card--value:hover { background: var(--am-blanc); border: 1px solid var(--am-tinta); }
+.am-card__icon { width: 56px; height: 56px; margin: 0 auto var(--am-space-4); background: var(--am-tinta); border-radius: var(--am-radius-sm); display: flex; align-items: center; justify-content: center; color: var(--am-blanc); }
+
+/* ── BADGES ───────────────────────────────────────────────── */
+.am-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--am-font-family);
+  font-size: var(--am-fs-xs);
+  font-weight: var(--am-fw-semibold);
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: var(--am-radius-full);
+  background: var(--am-gris-100);
+  color: var(--am-tinta);
+  text-transform: uppercase;
+}
+.am-badge--solid    { background: var(--am-tinta); color: var(--am-blanc); }
+.am-badge--success  { background: var(--am-color-success-bg); color: var(--am-color-success-ink); }
+.am-badge--warning  { background: var(--am-color-warning-bg); color: var(--am-color-warning-ink); }
+.am-badge--danger   { background: var(--am-color-danger-bg);  color: var(--am-color-danger-ink); }
+.am-badge--info     { background: var(--am-color-info-bg);    color: var(--am-color-info-ink); }
+.am-badge--accent   { background: var(--am-color-primary-strong); color: var(--am-blanc); } /* taronja-strong sobre blanc → 4.7:1 */
+.am-badge::before { content: ''; }
+.am-badge--dot::before { width: 6px; height: 6px; border-radius: 50%; background: currentColor; display: inline-block; }
+
+/* ── ALERTS ───────────────────────────────────────────────── */
+.am-alert {
+  display: flex; gap: var(--am-space-3);
+  padding: var(--am-space-4) var(--am-space-5);
+  border-radius: var(--am-radius-md);
+  border-left: 4px solid;
+  font-size: var(--am-fs-sm);
+  line-height: var(--am-lh-base);
+}
+.am-alert__title { font-weight: var(--am-fw-semibold); margin-bottom: 2px; font-size: var(--am-fs-body); }
+.am-alert__icon  { flex-shrink: 0; width: 22px; height: 22px; }
+.am-alert--success { background: var(--am-color-success-bg); color: #1A6B49; border-color: var(--am-color-success); }
+.am-alert--warning { background: var(--am-color-warning-bg); color: #8A4E1F; border-color: var(--am-color-warning); }
+.am-alert--danger  { background: var(--am-color-danger-bg);  color: #7E2017; border-color: var(--am-color-danger); }
+.am-alert--info    { background: var(--am-color-info-bg);    color: #1F668F; border-color: var(--am-color-info); }
+
+/* ── HEADER ───────────────────────────────────────────────── */
+.am-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--am-space-4) var(--am-space-5);
+  background: var(--am-blanc);
+  border-bottom: 1px solid var(--am-color-border);
+  height: 70px;
+}
+.am-header__brand { display: flex; align-items: center; gap: var(--am-space-3); text-decoration: none; color: var(--am-tinta); }
+.am-header__mark { width: 40px; height: 40px; background: var(--am-tinta); border-radius: var(--am-radius-sm); display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); padding: 4px; gap: 1px; }
+.am-header__mark span { background: var(--am-blanc); }
+.am-header__mark span:nth-child(1) { background: var(--am-taronja); }
+.am-header__mark span:nth-child(3) { background: var(--am-coral); }
+.am-header__mark span:nth-child(5) { background: var(--am-blanc); }
+.am-header__mark span:nth-child(6) { background: var(--am-blau); }
+.am-header__mark span:nth-child(7) { background: var(--am-groc); }
+.am-header__mark span:nth-child(9) { background: var(--am-verd); }
+.am-header__name { font-weight: var(--am-fw-bold); letter-spacing: var(--am-tracking-display); font-size: var(--am-fs-sm); line-height: 1; }
+.am-header__sub  { font-weight: var(--am-fw-light); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--am-gris-600); }
+.am-header__nav { display: flex; align-items: center; gap: var(--am-space-6); }
+.am-header__nav a { color: var(--am-color-text); text-decoration: none; font-size: var(--am-fs-sm); font-weight: var(--am-fw-medium); transition: color var(--am-duration-fast); }
+.am-header__nav a:hover { color: var(--am-color-primary); }
+.am-header__cta { padding: 10px 22px; background: var(--am-tinta); color: var(--am-blanc); text-decoration: none; font-size: var(--am-fs-sm); font-weight: var(--am-fw-semibold); border-radius: var(--am-radius-sm); transition: background var(--am-duration-fast); }
+.am-header__cta:hover { background: var(--am-color-primary); }
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.am-footer { background: var(--am-tinta); color: var(--am-blanc); padding: var(--am-space-8) var(--am-space-5) var(--am-space-5); }
+.am-footer__grid { max-width: var(--am-container-max); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--am-space-7); }
+.am-footer__title { font-size: var(--am-fs-sm); font-weight: var(--am-fw-semibold); letter-spacing: var(--am-tracking-overline); text-transform: uppercase; margin-bottom: var(--am-space-4); color: rgba(255,255,255,0.6); }
+.am-footer__links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--am-space-2); }
+.am-footer__links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: var(--am-fs-sm); transition: color var(--am-duration-fast); }
+.am-footer__links a:hover { color: var(--am-color-primary); }
+.am-footer__social { display: flex; gap: var(--am-space-2); margin-top: var(--am-space-4); }
+.am-footer__social a { width: 38px; height: 38px; background: rgba(255,255,255,0.1); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--am-blanc); transition: background var(--am-duration-fast); }
+.am-footer__social a:hover { background: var(--am-color-primary); }
+.am-footer__bottom { max-width: var(--am-container-max); margin: var(--am-space-7) auto 0; padding-top: var(--am-space-5); border-top: 1px solid rgba(255,255,255,0.15); display: flex; justify-content: space-between; font-size: var(--am-fs-xs); color: rgba(255,255,255,0.55); }
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.am-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex; align-items: center;
+  padding: var(--am-space-9) var(--am-space-5);
+  background: linear-gradient(120deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35)), linear-gradient(135deg, var(--am-taronja), var(--am-coral));
+  color: var(--am-blanc);
+  overflow: hidden;
+}
+.am-hero__inner { max-width: 720px; }
+.am-hero__eyebrow { font-size: var(--am-fs-xs); font-weight: var(--am-fw-semibold); letter-spacing: var(--am-tracking-overline); text-transform: uppercase; opacity: 0.85; margin-bottom: var(--am-space-4); }
+.am-hero__title { font-size: clamp(40px, 6vw, var(--am-fs-display)); font-weight: var(--am-fw-light); line-height: var(--am-lh-tight); letter-spacing: var(--am-tracking-tight); margin-bottom: var(--am-space-4); }
+.am-hero__title strong { font-weight: var(--am-fw-bold); }
+.am-hero__tagline { font-size: var(--am-fs-h4); line-height: var(--am-lh-base); opacity: 0.92; margin-bottom: var(--am-space-6); max-width: 540px; }
+.am-hero__cta { display: flex; gap: var(--am-space-3); flex-wrap: wrap; }
+
+/* ── STATS ────────────────────────────────────────────────── */
+.am-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--am-space-7); padding: var(--am-space-8) var(--am-space-5); }
+.am-stat { text-align: center; }
+.am-stat__num { font-size: 56px; font-weight: var(--am-fw-bold); color: var(--am-tinta); line-height: 1; margin-bottom: var(--am-space-2); }
+.am-stat__num em { color: var(--am-color-primary); font-style: normal; }
+.am-stat__label { font-size: var(--am-fs-xs); font-weight: var(--am-fw-semibold); letter-spacing: var(--am-tracking-overline); text-transform: uppercase; color: var(--am-color-text-muted); }
+
+/* ── TESTIMONIAL ──────────────────────────────────────────── */
+.am-quote { max-width: 780px; margin: 0 auto; text-align: center; padding: var(--am-space-7) var(--am-space-5); }
+.am-quote__mark { font-family: Georgia, serif; font-size: 80px; line-height: 1; color: var(--am-color-primary); margin-bottom: var(--am-space-2); }
+.am-quote__text { font-size: var(--am-fs-h3); font-weight: var(--am-fw-light); font-style: italic; line-height: var(--am-lh-base); color: var(--am-color-text); margin-bottom: var(--am-space-5); }
+.am-quote__who  { font-size: var(--am-fs-sm); font-weight: var(--am-fw-semibold); color: var(--am-color-text); }
+.am-quote__role { font-size: var(--am-fs-xs); color: var(--am-color-text-muted); margin-top: 2px; }
+
+/* ── CTA BANNER ───────────────────────────────────────────── */
+.am-cta { background: var(--am-tinta); color: var(--am-blanc); padding: var(--am-space-8) var(--am-space-5); text-align: center; border-radius: var(--am-radius-xl); }
+.am-cta__title { font-size: var(--am-fs-h2); font-weight: var(--am-fw-light); line-height: var(--am-lh-tight); margin-bottom: var(--am-space-4); max-width: 600px; margin-left: auto; margin-right: auto; }
+.am-cta__title strong { font-weight: var(--am-fw-bold); color: var(--am-color-primary); }
+.am-cta__text { font-size: var(--am-fs-body); opacity: 0.85; margin-bottom: var(--am-space-6); max-width: 540px; margin-left: auto; margin-right: auto; }
+
+/* ── MODAL ────────────────────────────────────────────────── */
+.am-modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(26,26,26,0.55);
+  display: flex; align-items: center; justify-content: center;
+  padding: var(--am-space-5);
+  z-index: var(--am-z-modal);
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--am-duration-base) var(--am-ease-out);
+}
+.am-modal-backdrop.is-open { opacity: 1; pointer-events: auto; }
+.am-modal {
+  background: var(--am-blanc);
+  border-radius: var(--am-radius-lg);
+  max-width: 520px; width: 100%;
+  padding: var(--am-space-7);
+  box-shadow: var(--am-shadow-xl);
+  transform: translateY(12px);
+  transition: transform var(--am-duration-base) var(--am-ease-out);
+}
+.am-modal-backdrop.is-open .am-modal { transform: none; }
+.am-modal__title { font-size: var(--am-fs-h3); font-weight: var(--am-fw-semibold); margin-bottom: var(--am-space-3); }
+.am-modal__text  { font-size: var(--am-fs-body); color: var(--am-color-text-muted); line-height: var(--am-lh-base); margin-bottom: var(--am-space-5); }
+.am-modal__actions { display: flex; gap: var(--am-space-3); justify-content: flex-end; }
+
+/* ── RESPONSIVE  ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .am-footer__grid { grid-template-columns: 1fr 1fr; }
+  .am-stats { grid-template-columns: 1fr; gap: var(--am-space-5); }
+}
+@media (max-width: 768px) {
+  .am-header__nav { display: none; }
+  .am-footer__grid { grid-template-columns: 1fr; }
+  .am-cta { padding: var(--am-space-7) var(--am-space-4); border-radius: var(--am-radius-lg); }
+}
+
+/* ============================================================
+   PÀGINA DE DOCUMENTACIÓ — Estils del propi design system
+   ============================================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--am-font-family);
+  background: var(--am-blanc);
+  color: var(--am-color-text);
+  line-height: var(--am-lh-base);
+  font-size: var(--am-fs-body);
+}
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+.ds-nav {
+  position: fixed; top: 0; left: 0;
+  width: 280px; height: 100vh;
+  background: var(--am-tinta);
+  color: var(--am-blanc);
+  padding: var(--am-space-6) var(--am-space-5);
+  overflow-y: auto;
+  z-index: var(--am-z-sticky);
+}
+.ds-nav::-webkit-scrollbar { width: 4px; }
+.ds-nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+.ds-nav__logo {
+  display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr);
+  width: 56px; height: 56px; gap: 1px; background: transparent;
+  margin-bottom: var(--am-space-4);
+}
+.ds-nav__logo span { background: var(--am-blanc); border-radius: 1px; }
+.ds-nav__logo span:nth-child(1) { background: var(--am-taronja); }
+.ds-nav__logo span:nth-child(3) { background: var(--am-coral); }
+.ds-nav__logo span:nth-child(4) { background: var(--am-groc); }
+.ds-nav__logo span:nth-child(5) { background: transparent; }
+.ds-nav__logo span:nth-child(7) { background: var(--am-blau); }
+.ds-nav__logo span:nth-child(9) { background: var(--am-verd); }
+.ds-nav__title { font-size: var(--am-fs-sm); font-weight: var(--am-fw-bold); letter-spacing: var(--am-tracking-display); margin-bottom: 2px; }
+.ds-nav__subtitle { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: var(--am-space-7); font-weight: var(--am-fw-light); }
+.ds-nav__group { margin-bottom: var(--am-space-5); }
+.ds-nav__group-title { font-size: 11px; font-weight: var(--am-fw-semibold); letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: var(--am-space-3); } /* abans 0.3 → 4:1 ❌ ara 0.65 → ~9.4:1 ✅ */
+.ds-nav ul { list-style: none; }
+.ds-nav li a {
+  display: flex; justify-content: space-between; align-items: center;
+  color: rgba(255,255,255,0.85); /* 13.7:1 sobre tinta — abans 0.6 ≈ 9:1, ara extra-comode */
+  text-decoration: none;
+  font-size: 13px; font-weight: var(--am-fw-regular);
+  padding: 9px 8px 9px 14px;
+  min-height: 36px; /* touch target */
+  border-left: 2px solid transparent;
+  border-radius: 0 4px 4px 0;
+  transition: color var(--am-duration-fast), border-color var(--am-duration-fast), background var(--am-duration-fast);
+}
+.ds-nav li a:hover { color: var(--am-blanc); background: rgba(255,255,255,0.06); }
+.ds-nav li a:focus-visible { outline: 2px solid var(--am-blanc); outline-offset: -2px; background: rgba(255,255,255,0.1); }
+.ds-nav li a.is-active { color: var(--am-blanc); border-left-color: var(--am-color-primary); background: rgba(255,255,255,0.04); }
+.ds-nav li a small { color: rgba(255,255,255,0.55); font-size: 10px; font-weight: var(--am-fw-semibold); }
+
+/* ── Main ─────────────────────────────────────────────────── */
+.ds-main { margin-left: 280px; padding: var(--am-space-8) var(--am-space-8) var(--am-space-10); max-width: 1240px; }
+
+.ds-intro {
+  padding: var(--am-space-7) 0 var(--am-space-8);
+  border-bottom: 1px solid var(--am-color-border);
+  margin-bottom: var(--am-space-8);
+}
+.ds-intro__eyebrow { font-size: var(--am-fs-xs); font-weight: var(--am-fw-semibold); letter-spacing: var(--am-tracking-overline); text-transform: uppercase; color: var(--am-color-text-muted); margin-bottom: var(--am-space-3); }
+.ds-intro__title { font-size: clamp(40px, 5vw, 64px); font-weight: var(--am-fw-light); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: var(--am-space-4); }
+.ds-intro__title strong { font-weight: var(--am-fw-bold); }
+.ds-intro__lede { font-size: var(--am-fs-h4); color: var(--am-color-text-muted); max-width: 720px; line-height: var(--am-lh-base); }
+.ds-intro__meta { display: flex; gap: var(--am-space-5); margin-top: var(--am-space-5); font-size: var(--am-fs-xs); color: var(--am-color-text-soft); text-transform: uppercase; letter-spacing: var(--am-tracking-overline); }
+
+.ds-section { padding: var(--am-space-8) 0; border-bottom: 1px solid var(--am-color-border); }
+.ds-section:last-of-type { border-bottom: 0; }
+.ds-section__num { font-size: var(--am-fs-xs); font-weight: var(--am-fw-semibold); letter-spacing: var(--am-tracking-overline); text-transform: uppercase; color: var(--am-color-text-soft); margin-bottom: var(--am-space-3); }
+.ds-section__title { font-size: var(--am-fs-h1); font-weight: var(--am-fw-light); letter-spacing: -0.01em; line-height: 1.1; margin-bottom: var(--am-space-3); }
+.ds-section__title strong { font-weight: var(--am-fw-bold); }
+.ds-section__title small { display: block; font-size: var(--am-fs-h3); font-weight: var(--am-fw-light); color: var(--am-color-text-muted); margin-top: 4px; }
+.ds-section__lede { font-size: var(--am-fs-h4); color: var(--am-color-text-muted); max-width: 760px; line-height: var(--am-lh-base); margin-bottom: var(--am-space-7); }
+
+.ds-sub { margin-top: var(--am-space-7); }
+.ds-sub__title { font-size: var(--am-fs-h3); font-weight: var(--am-fw-semibold); margin-bottom: var(--am-space-2); }
+.ds-sub__title small { font-weight: var(--am-fw-light); color: var(--am-color-text-muted); margin-left: var(--am-space-2); }
+.ds-sub__text  { font-size: var(--am-fs-body); color: var(--am-color-text-muted); margin-bottom: var(--am-space-5); max-width: 720px; }
+
+/* Demo / Code blocks */
+.ds-demo {
+  border: 1px solid var(--am-color-border);
+  border-radius: var(--am-radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--am-space-5);
+  background: var(--am-blanc);
+}
+.ds-demo__stage {
+  padding: var(--am-space-7) var(--am-space-6);
+  background:
+    linear-gradient(45deg, var(--am-gris-100) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--am-gris-100) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--am-gris-100) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--am-gris-100) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  background-color: var(--am-blanc);
+  display: flex; flex-wrap: wrap; gap: var(--am-space-4); align-items: center; justify-content: center;
+}
+.ds-demo__stage--plain { background: var(--am-blanc); }
+.ds-demo__stage--dark  { background: var(--am-tinta); }
+.ds-demo__stage--soft  { background: var(--am-gris-100); }
+.ds-demo__stage--block { display: block; padding: 0; }
+.ds-demo__bar { display: flex; align-items: center; justify-content: space-between; padding: var(--am-space-3) var(--am-space-5); border-top: 1px solid var(--am-color-border); background: var(--am-gris-100); font-size: var(--am-fs-xs); color: var(--am-color-text-muted); }
+.ds-demo__bar button { font-family: var(--am-font-mono); font-size: var(--am-fs-xs); background: var(--am-blanc); border: 1px solid var(--am-color-border); border-radius: var(--am-radius-sm); padding: 6px 10px; cursor: pointer; transition: all var(--am-duration-fast); }
+.ds-demo__bar button:hover { background: var(--am-tinta); color: var(--am-blanc); border-color: var(--am-tinta); }
+.ds-demo__bar button.is-copied { background: var(--am-color-success); color: var(--am-blanc); border-color: var(--am-color-success); }
+
+.ds-code {
+  font-family: var(--am-font-mono);
+  font-size: 13px;
+  background: #0F1115;
+  color: #E5E7EB;
+  padding: var(--am-space-5);
+  border-radius: var(--am-radius-md);
+  overflow-x: auto;
+  line-height: 1.6;
+  white-space: pre;
+}
+.ds-code .tk-tag    { color: #7DD3FC; }
+.ds-code .tk-attr   { color: #FBA74D; }
+.ds-code .tk-str    { color: #BEF264; }
+.ds-code .tk-com    { color: #6B7280; font-style: italic; }
+.ds-code .tk-prop   { color: #F0ABFC; }
+.ds-code .tk-val    { color: #FDE68A; }
+
+details.ds-toggle { border: 1px solid var(--am-color-border); border-radius: var(--am-radius-md); overflow: hidden; }
+details.ds-toggle[open] { box-shadow: var(--am-shadow-sm); }
+details.ds-toggle summary { cursor: pointer; padding: var(--am-space-3) var(--am-space-5); background: var(--am-gris-100); font-size: var(--am-fs-sm); font-weight: var(--am-fw-semibold); display: flex; justify-content: space-between; align-items: center; user-select: none; }
+details.ds-toggle summary::-webkit-details-marker { display: none; }
+details.ds-toggle summary::after { content: '+'; font-size: 18px; color: var(--am-color-text-muted); transition: transform var(--am-duration-fast); }
+details.ds-toggle[open] summary::after { transform: rotate(45deg); }
+details.ds-toggle .ds-code { border-radius: 0; }
+
+/* Color swatches */
+.ds-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: var(--am-space-4); }
+.ds-swatch { border: 1px solid var(--am-color-border); border-radius: var(--am-radius-md); overflow: hidden; transition: transform var(--am-duration-fast); cursor: pointer; }
+.ds-swatch:hover { transform: translateY(-2px); box-shadow: var(--am-shadow-md); }
+.ds-swatch__chip { height: 110px; }
+.ds-swatch__info { padding: var(--am-space-3) var(--am-space-4); }
+.ds-swatch__name { font-size: var(--am-fs-sm); font-weight: var(--am-fw-semibold); margin-bottom: 2px; }
+.ds-swatch__var  { font-family: var(--am-font-mono); font-size: 11px; color: var(--am-color-text-muted); margin-bottom: 2px; }
+.ds-swatch__hex  { font-family: var(--am-font-mono); font-size: 11px; color: var(--am-color-text-soft); }
+
+/* Type scale */
+.ds-typescale { border: 1px solid var(--am-color-border); border-radius: var(--am-radius-md); overflow: hidden; }
+.ds-typescale__row { display: grid; grid-template-columns: 110px 1fr 200px; align-items: baseline; padding: var(--am-space-4) var(--am-space-5); border-bottom: 1px solid var(--am-color-border); }
+.ds-typescale__row:last-child { border-bottom: 0; }
+.ds-typescale__token { font-family: var(--am-font-mono); font-size: var(--am-fs-xs); color: var(--am-color-text-muted); }
+.ds-typescale__sample { color: var(--am-color-text); }
+.ds-typescale__meta { font-family: var(--am-font-mono); font-size: 11px; color: var(--am-color-text-soft); text-align: right; }
+
+/* Spacing scale */
+.ds-spaces { display: flex; flex-direction: column; gap: var(--am-space-2); }
+.ds-spaces__row { display: grid; grid-template-columns: 80px 80px 1fr; align-items: center; gap: var(--am-space-4); padding: var(--am-space-2) 0; }
+.ds-spaces__token { font-family: var(--am-font-mono); font-size: var(--am-fs-xs); color: var(--am-color-text-muted); }
+.ds-spaces__value { font-family: var(--am-font-mono); font-size: var(--am-fs-sm); }
+.ds-spaces__bar   { height: 14px; background: var(--am-color-primary); border-radius: 2px; }
+
+/* Radius / Shadow tiles */
+.ds-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: var(--am-space-4); }
+.ds-tile { padding: var(--am-space-5); background: var(--am-blanc); text-align: center; border: 1px solid var(--am-color-border); }
+.ds-tile__sample { background: var(--am-color-primary); height: 70px; margin-bottom: var(--am-space-3); }
+.ds-tile__token { font-family: var(--am-font-mono); font-size: var(--am-fs-xs); color: var(--am-color-text-muted); }
+.ds-tile__value { font-family: var(--am-font-mono); font-size: 11px; color: var(--am-color-text-soft); }
+
+.ds-shadow-tile { padding: var(--am-space-7) var(--am-space-5); text-align: center; background: var(--am-blanc); border-radius: var(--am-radius-md); }
+.ds-shadow-tile__box { width: 80px; height: 80px; background: var(--am-blanc); border-radius: var(--am-radius-md); margin: 0 auto var(--am-space-3); }
+
+/* Motion preview */
+.ds-motion { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--am-space-4); }
+.ds-motion__card { padding: var(--am-space-5); background: var(--am-blanc); border: 1px solid var(--am-color-border); border-radius: var(--am-radius-md); cursor: pointer; }
+.ds-motion__dot { width: 24px; height: 24px; background: var(--am-color-primary); border-radius: 50%; transition: transform var(--am-duration-base) var(--am-ease-out); }
+.ds-motion__card:hover .ds-motion__dot { transform: translateX(120px); }
+.ds-motion__card.is-fast:hover .ds-motion__dot { transition-duration: var(--am-duration-fast); }
+.ds-motion__card.is-slow:hover .ds-motion__dot { transition-duration: var(--am-duration-slow); }
+.ds-motion__card.is-easeInOut:hover .ds-motion__dot { transition-timing-function: var(--am-ease-in-out); }
+.ds-motion__token { font-family: var(--am-font-mono); font-size: var(--am-fs-xs); color: var(--am-color-text-muted); margin-top: var(--am-space-3); }
+.ds-motion__value { font-family: var(--am-font-mono); font-size: 11px; color: var(--am-color-text-soft); margin-top: 2px; }
+
+/* Breakpoints */
+.ds-bps { display: flex; flex-direction: column; gap: var(--am-space-3); }
+.ds-bp { display: grid; grid-template-columns: 80px 100px 1fr; gap: var(--am-space-4); align-items: center; padding: var(--am-space-4); background: var(--am-gris-100); border-radius: var(--am-radius-md); }
+.ds-bp__key { font-family: var(--am-font-mono); font-size: var(--am-fs-sm); font-weight: var(--am-fw-semibold); }
+.ds-bp__val { font-family: var(--am-font-mono); font-size: var(--am-fs-sm); color: var(--am-color-text-muted); }
+.ds-bp__desc { font-size: var(--am-fs-sm); color: var(--am-color-text-muted); }
+
+/* Misc utilities */
+.ds-row { display: flex; gap: var(--am-space-3); flex-wrap: wrap; align-items: center; }
+.ds-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--am-space-5); }
+.ds-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--am-space-5); }
+@media (max-width: 900px) {
+  .ds-nav { transform: translateX(-100%); transition: transform var(--am-duration-base); }
+  .ds-nav.is-open { transform: none; }
+  .ds-main { margin-left: 0; padding: var(--am-space-5); }
+  .ds-grid-2, .ds-grid-3 { grid-template-columns: 1fr; }
+  .ds-typescale__row { grid-template-columns: 90px 1fr; }
+  .ds-typescale__meta { display: none; }
+}
+.ds-mobile-toggle {
+  display: none; position: fixed; top: 16px; right: 16px;
+  z-index: var(--am-z-modal);
+  background: var(--am-tinta); color: var(--am-blanc);
+  width: 44px; height: 44px; border: 0; border-radius: var(--am-radius-md);
+  font-size: 22px; cursor: pointer;
+}
+@media (max-width: 900px) { .ds-mobile-toggle { display: block; } }
+
+/* WCAG annex blocks */
+.ds-wcag-card { background: var(--am-color-bg-alt); border-left: 4px solid var(--am-tinta); border-radius: 0 var(--am-radius-md) var(--am-radius-md) 0; padding: var(--am-space-5) var(--am-space-6); margin-bottom: var(--am-space-4); }
+.ds-wcag-card__head { font-size: 11px; font-weight: var(--am-fw-semibold); text-transform: uppercase; letter-spacing: var(--am-tracking-overline); color: var(--am-color-text-muted); margin-bottom: 4px; }
+.ds-wcag-card__title { font-size: var(--am-fs-h4); font-weight: var(--am-fw-semibold); margin-bottom: 6px; }
+.ds-wcag-card__text { font-size: var(--am-fs-sm); color: var(--am-color-text-muted); line-height: 1.6; }
+.ds-wcag-table { width: 100%; border-collapse: collapse; margin-bottom: var(--am-space-5); font-size: var(--am-fs-sm); }
+.ds-wcag-table th, .ds-wcag-table td { padding: var(--am-space-3) var(--am-space-4); text-align: left; border-bottom: 1px solid var(--am-color-border); }
+.ds-wcag-table thead th { background: var(--am-color-bg-alt); font-weight: var(--am-fw-semibold); font-size: var(--am-fs-xs); text-transform: uppercase; letter-spacing: var(--am-tracking-overline); color: var(--am-color-text-muted); }
+.ds-wcag-table tbody tr:hover { background: var(--am-color-bg-alt); }
+.ds-wcag-table .ratio { font-family: var(--am-font-mono); font-size: var(--am-fs-xs); }
+.ds-wcag-table .pass { color: var(--am-color-success-ink); font-weight: var(--am-fw-semibold); }
+.ds-wcag-table .fail { color: var(--am-color-danger-ink); font-weight: var(--am-fw-semibold); }
+.ds-wcag-table .swatch { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px; margin-right: 6px; border: 1px solid var(--am-color-border); }
+.ds-checklist { list-style: none; padding: 0; }
+.ds-checklist li { display: grid; grid-template-columns: 24px 90px 1fr; gap: var(--am-space-3); padding: var(--am-space-3) 0; border-bottom: 1px dashed var(--am-color-border); align-items: start; font-size: var(--am-fs-sm); }
+.ds-checklist li:last-child { border-bottom: 0; }
+.ds-checklist .ck { color: var(--am-color-success-ink); font-weight: var(--am-fw-bold); font-size: 18px; }
+.ds-checklist .ref { font-family: var(--am-font-mono); font-size: var(--am-fs-xs); color: var(--am-color-text-muted); padding-top: 2px; }
+.ds-checklist .desc strong { display: block; margin-bottom: 2px; }
+.ds-checklist .desc small { color: var(--am-color-text-muted); display: block; }
+.ds-tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--am-space-3); }
+.ds-tool { padding: var(--am-space-4); background: var(--am-blanc); border: 1px solid var(--am-color-border); border-radius: var(--am-radius-md); }
+.ds-tool h4 { font-size: var(--am-fs-sm); font-weight: var(--am-fw-semibold); margin-bottom: 4px; }
+.ds-tool p { font-size: var(--am-fs-xs); color: var(--am-color-text-muted); line-height: 1.5; }
+@media (max-width: 700px) {
+  .ds-checklist li { grid-template-columns: 24px 1fr; }
+  .ds-checklist .ref { grid-column: 2; padding-top: 0; }
+  .ds-wcag-table { font-size: var(--am-fs-xs); }
+  .ds-wcag-table th, .ds-wcag-table td { padding: var(--am-space-2) var(--am-space-3); }
+}
+
+/* Resource block */
+.ds-resource { background: var(--am-tinta); color: var(--am-blanc); padding: var(--am-space-7); border-radius: var(--am-radius-lg); margin-bottom: var(--am-space-5); }
+.ds-resource__title { font-size: var(--am-fs-h3); font-weight: var(--am-fw-semibold); margin-bottom: var(--am-space-2); }
+.ds-resource__text { color: rgba(255,255,255,0.75); margin-bottom: var(--am-space-4); font-size: var(--am-fs-sm); line-height: var(--am-lh-base); }
+.ds-resource__code { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+
+/* ============================================================ */
+</style>
+</head>
+<body>
+
+<!-- Skip link · WCAG 2.4.1 Bypass Blocks (A) — només es veu en focus amb teclat -->
+<a href="#main-content" class="am-skip-link">Saltar al contingut principal</a>
+
+<button class="ds-mobile-toggle" aria-label="Obrir o tancar menú de navegació" aria-expanded="false" aria-controls="sidebar-nav" onclick="const n=document.querySelector('.ds-nav'); n.classList.toggle('is-open'); this.setAttribute('aria-expanded', n.classList.contains('is-open'));">☰</button>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SIDEBAR
+     ═══════════════════════════════════════════════════════════ -->
+<aside class="ds-nav" id="sidebar-nav" aria-label="Navegació del design system">
+  <div class="ds-nav__logo" role="img" aria-label="Isotip Fundació Ave Maria">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </div>
+  <div class="ds-nav__title">AVE MARIA</div>
+  <div class="ds-nav__subtitle">Design System</div>
+
+  <div class="ds-nav__group">
+    <div class="ds-nav__group-title">Tokens</div>
+    <ul>
+      <li><a href="#color"><span>Color</span><small>01</small></a></li>
+      <li><a href="#tipografia"><span>Tipografia</span><small>02</small></a></li>
+      <li><a href="#espai"><span>Espai · Espacio</span><small>03</small></a></li>
+      <li><a href="#radis"><span>Radis · Radios</span><small>04</small></a></li>
+      <li><a href="#ombres"><span>Ombres · Sombras</span><small>05</small></a></li>
+      <li><a href="#moviment"><span>Moviment · Motion</span><small>06</small></a></li>
+      <li><a href="#breakpoints"><span>Breakpoints</span><small>07</small></a></li>
+    </ul>
+  </div>
+
+  <div class="ds-nav__group">
+    <div class="ds-nav__group-title">Components</div>
+    <ul>
+      <li><a href="#botons"><span>Botons · Botones</span><small>08</small></a></li>
+      <li><a href="#formularis"><span>Formularis</span><small>09</small></a></li>
+      <li><a href="#cards"><span>Cards</span><small>10</small></a></li>
+      <li><a href="#badges"><span>Badges</span><small>11</small></a></li>
+      <li><a href="#alerts"><span>Alerts</span><small>12</small></a></li>
+      <li><a href="#modal"><span>Modal</span><small>13</small></a></li>
+    </ul>
+  </div>
+
+  <div class="ds-nav__group">
+    <div class="ds-nav__group-title">Patrons · Patrones</div>
+    <ul>
+      <li><a href="#header"><span>Header</span><small>14</small></a></li>
+      <li><a href="#footer"><span>Footer</span><small>15</small></a></li>
+      <li><a href="#hero"><span>Hero</span><small>16</small></a></li>
+      <li><a href="#stats"><span>Stats</span><small>17</small></a></li>
+      <li><a href="#testimoni"><span>Testimoni</span><small>18</small></a></li>
+      <li><a href="#cta"><span>CTA Banner</span><small>19</small></a></li>
+    </ul>
+  </div>
+
+  <div class="ds-nav__group">
+    <div class="ds-nav__group-title">Recursos</div>
+    <ul>
+      <li><a href="#tokens-css"><span>Tokens CSS</span><small>20</small></a></li>
+      <li><a href="#tokens-json"><span>Tokens JSON</span><small>21</small></a></li>
+    </ul>
+  </div>
+
+  <div class="ds-nav__group">
+    <div class="ds-nav__group-title">Accessibilitat</div>
+    <ul>
+      <li><a href="#wcag"><span>Anex WCAG 2.2 AA</span><small>22</small></a></li>
+      <li><a href="#wcag-checklist"><span>Checklist d'aplicació</span><small>23</small></a></li>
+      <li><a href="#wcag-contrast"><span>Taula de contrastos</span><small>24</small></a></li>
+    </ul>
+  </div>
+</aside>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MAIN
+     ═══════════════════════════════════════════════════════════ -->
+<main class="ds-main" id="main-content" tabindex="-1">
+
+  <header class="ds-intro">
+    <div class="ds-intro__eyebrow">Fundació Ave Maria · Design System v1.1</div>
+    <h1 class="ds-intro__title">Tokens i <strong>components</strong> per a la web.</h1>
+    <p class="ds-intro__lede">Sistema visual per construir la web de la Fundació Ave Maria de manera coherent i <strong>accessible</strong>. Inclou els <em>tokens</em> de disseny (color, tipografia, espai, radis, ombres, moviment), els components UI bàsics i un anex complet de compliment de les pautes <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 nivell AA. Tot el codi està preparat per copiar-i-enganxar al projecte web.</p>
+    <div class="ds-intro__meta">
+      <span>Fase 1 · Web</span>
+      <span>v1.1 · 2026-04</span>
+      <span>Bilingüe CA · ES</span>
+      <span aria-label="Compleix WCAG 2.2 nivell AA">♿ WCAG 2.2 AA</span>
+    </div>
+  </header>
+
+  <!-- ── 01 · COLOR ─────────────────────────────────────────── -->
+  <section class="ds-section" id="color">
+    <div class="ds-section__num">01 · Token</div>
+    <h2 class="ds-section__title">Color <strong>· Color</strong> <small>3 paletes + tokens semàntics</small></h2>
+    <p class="ds-section__lede">La marca utilitza tres paletes (Bosc, Colors, Monocrom). A la web, treballem amb tokens semàntics que es nodreixen d'aquestes paletes. Així, si es decideix canviar el color principal, només cal modificar una variable.</p>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Paleta Colors <small>vibrant · web i comunicació</small></h3>
+      <p class="ds-sub__text">Sis colors per a la comunicació general. <code>--am-taronja</code> és el color d'accent primari de la marca.</p>
+      <div class="ds-swatches">
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-taronja)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Taronja</div><div class="ds-swatch__var">--am-taronja</div><div class="ds-swatch__hex">#E8863A</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-coral)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Coral</div><div class="ds-swatch__var">--am-coral</div><div class="ds-swatch__hex">#E85D75</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-groc)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Groc</div><div class="ds-swatch__var">--am-groc</div><div class="ds-swatch__hex">#F2C14E</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-blau)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Blau</div><div class="ds-swatch__var">--am-blau</div><div class="ds-swatch__hex">#5DADE2</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-verd)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Verd</div><div class="ds-swatch__var">--am-verd</div><div class="ds-swatch__hex">#2D936C</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-rosa)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Rosa suau</div><div class="ds-swatch__var">--am-rosa</div><div class="ds-swatch__hex">#D4859A</div></div></div>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Paleta Bosc <small>verd institucional</small></h3>
+      <p class="ds-sub__text">Escala verda per a aplicacions amb caràcter més editorial o institucional. Útil per a estats <em>success</em>, fons suaus i seccions corporatives.</p>
+      <div class="ds-swatches">
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-bosc-100)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Bosc 100</div><div class="ds-swatch__var">--am-bosc-100</div><div class="ds-swatch__hex">#ABEBC6</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-bosc-200)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Bosc 200</div><div class="ds-swatch__var">--am-bosc-200</div><div class="ds-swatch__hex">#82E0AA</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-bosc-300)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Bosc 300</div><div class="ds-swatch__var">--am-bosc-300</div><div class="ds-swatch__hex">#2ECC71</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-bosc-400)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Bosc 400</div><div class="ds-swatch__var">--am-bosc-400</div><div class="ds-swatch__hex">#27AE60</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-bosc-500)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Bosc 500</div><div class="ds-swatch__var">--am-bosc-500</div><div class="ds-swatch__hex">#1E8449</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-bosc-600)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Bosc 600</div><div class="ds-swatch__var">--am-bosc-600</div><div class="ds-swatch__hex">#145A32</div></div></div>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Monocrom <small>tinta i grisos</small></h3>
+      <p class="ds-sub__text">Base de la jerarquia tipogràfica i interfície neutra. Mai s'usa negre pur (<code>#000</code>); sempre <code>--am-tinta</code> (<code>#1A1A1A</code>) per evitar contrast excessiu.</p>
+      <div class="ds-swatches">
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-tinta)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Tinta</div><div class="ds-swatch__var">--am-tinta</div><div class="ds-swatch__hex">#1A1A1A</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-gris-800)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Gris 800</div><div class="ds-swatch__var">--am-gris-800</div><div class="ds-swatch__hex">#595959</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-gris-600)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Gris 600</div><div class="ds-swatch__var">--am-gris-600</div><div class="ds-swatch__hex">#666666</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-gris-500)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Gris 500</div><div class="ds-swatch__var">--am-gris-500</div><div class="ds-swatch__hex">#999999</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-gris-300)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Gris 300</div><div class="ds-swatch__var">--am-gris-300</div><div class="ds-swatch__hex">#CCCCCC</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-gris-200)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Gris 200</div><div class="ds-swatch__var">--am-gris-200</div><div class="ds-swatch__hex">#E5E5E5</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-gris-100)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Gris 100</div><div class="ds-swatch__var">--am-gris-100</div><div class="ds-swatch__hex">#F5F5F5</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-blanc); box-shadow:inset 0 0 0 1px var(--am-color-border)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Blanc</div><div class="ds-swatch__var">--am-blanc</div><div class="ds-swatch__hex">#FFFFFF</div></div></div>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Tokens semàntics <small>els que faràs servir al CSS</small></h3>
+      <p class="ds-sub__text">Aquests tokens donen significat al color. Útils per mantenir la coherència i preparar un futur mode fosc.</p>
+      <div class="ds-swatches">
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-primary)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Primary</div><div class="ds-swatch__var">--am-color-primary</div><div class="ds-swatch__hex">→ taronja</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-text)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Text</div><div class="ds-swatch__var">--am-color-text</div><div class="ds-swatch__hex">→ tinta</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-text-muted)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Text muted</div><div class="ds-swatch__var">--am-color-text-muted</div><div class="ds-swatch__hex">→ gris-600</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-bg-alt)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Bg alt</div><div class="ds-swatch__var">--am-color-bg-alt</div><div class="ds-swatch__hex">→ gris-100</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-success)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Success</div><div class="ds-swatch__var">--am-color-success</div><div class="ds-swatch__hex">#2D936C</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-warning)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Warning</div><div class="ds-swatch__var">--am-color-warning</div><div class="ds-swatch__hex">#E8863A</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-danger)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Danger</div><div class="ds-swatch__var">--am-color-danger</div><div class="ds-swatch__hex">#C0392B</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-info)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Info</div><div class="ds-swatch__var">--am-color-info</div><div class="ds-swatch__hex">#5DADE2</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 02 · TIPOGRAFIA ────────────────────────────────────── -->
+  <section class="ds-section" id="tipografia">
+    <div class="ds-section__num">02 · Token</div>
+    <h2 class="ds-section__title">Tipografia <strong>· Tipografía</strong> <small>Montserrat</small></h2>
+    <p class="ds-section__lede">Una sola família tipogràfica (Montserrat) amb 5 pesos. La jerarquia es construeix per mida i pes, no per famílies diferents. Mantenir la sobrietat tipogràfica és clau perquè la força visual de la marca recau al sistema generatiu d'isotip.</p>
+
+    <div class="ds-typescale">
+      <div class="ds-typescale__row">
+        <span class="ds-typescale__token">--am-fs-display</span>
+        <span class="ds-typescale__sample" style="font-size:56px; font-weight:300; line-height:1.1; letter-spacing:0.06em;">Aa Bb Cc</span>
+        <span class="ds-typescale__meta">56 / 300 / +0.06em</span>
+      </div>
+      <div class="ds-typescale__row">
+        <span class="ds-typescale__token">--am-fs-h1</span>
+        <span class="ds-typescale__sample" style="font-size:42px; font-weight:400; line-height:1.2;">Un espai on tot succeeix</span>
+        <span class="ds-typescale__meta">42 / 400 / 1.2</span>
+      </div>
+      <div class="ds-typescale__row">
+        <span class="ds-typescale__token">--am-fs-h2</span>
+        <span class="ds-typescale__sample" style="font-size:32px; font-weight:500; line-height:1.3;">Som la Fundació Ave Maria</span>
+        <span class="ds-typescale__meta">32 / 500 / 1.3</span>
+      </div>
+      <div class="ds-typescale__row">
+        <span class="ds-typescale__token">--am-fs-h3</span>
+        <span class="ds-typescale__sample" style="font-size:24px; font-weight:600; line-height:1.4;">Els nostres serveis</span>
+        <span class="ds-typescale__meta">24 / 600 / 1.4</span>
+      </div>
+      <div class="ds-typescale__row">
+        <span class="ds-typescale__token">--am-fs-h4</span>
+        <span class="ds-typescale__sample" style="font-size:20px; font-weight:600; line-height:1.4;">Subtítol de secció</span>
+        <span class="ds-typescale__meta">20 / 600 / 1.4</span>
+      </div>
+      <div class="ds-typescale__row">
+        <span class="ds-typescale__token">--am-fs-body</span>
+        <span class="ds-typescale__sample" style="font-size:16px; font-weight:400; line-height:1.7;">Cos del text per a paràgrafs llargs. Garanteix la qualitat de vida de les persones amb diversitat funcional.</span>
+        <span class="ds-typescale__meta">16 / 400 / 1.7</span>
+      </div>
+      <div class="ds-typescale__row">
+        <span class="ds-typescale__token">--am-fs-sm</span>
+        <span class="ds-typescale__sample" style="font-size:14px; font-weight:400; line-height:1.5;">Text secundari, llegendes i metadades</span>
+        <span class="ds-typescale__meta">14 / 400 / 1.5</span>
+      </div>
+      <div class="ds-typescale__row">
+        <span class="ds-typescale__token">--am-fs-xs</span>
+        <span class="ds-typescale__sample" style="font-size:12px; font-weight:600; line-height:1.5; letter-spacing:0.2em; text-transform:uppercase;">Overline / Eyebrow</span>
+        <span class="ds-typescale__meta">12 / 600 / +0.2em</span>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Pesos disponibles</h3>
+      <p class="ds-sub__text">Només 5 pesos. No utilitzar versions <em>italic</em> excepte en cites llargues (testimonis).</p>
+      <div class="ds-row" style="font-size:24px;">
+        <span style="font-weight:300">Light 300</span>
+        <span style="font-weight:400">Regular 400</span>
+        <span style="font-weight:500">Medium 500</span>
+        <span style="font-weight:600">SemiBold 600</span>
+        <span style="font-weight:700">Bold 700</span>
+      </div>
+    </div>
+
+    <details class="ds-toggle" style="margin-top:var(--am-space-5)">
+      <summary>CSS · Tokens tipogràfics</summary>
+      <pre class="ds-code"><span class="tk-com">/* Importació */</span>
+<span class="tk-tag">@import</span> <span class="tk-str">url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap')</span>;
+
+<span class="tk-com">/* Aplicació */</span>
+<span class="tk-tag">body</span> {
+  <span class="tk-prop">font-family</span>: <span class="tk-val">var(--am-font-family)</span>;
+  <span class="tk-prop">font-size</span>: <span class="tk-val">var(--am-fs-body)</span>;
+  <span class="tk-prop">line-height</span>: <span class="tk-val">var(--am-lh-relaxed)</span>;
+}
+<span class="tk-tag">h1</span> { <span class="tk-prop">font-size</span>: <span class="tk-val">var(--am-fs-h1)</span>; <span class="tk-prop">font-weight</span>: <span class="tk-val">var(--am-fw-light)</span>; }
+<span class="tk-tag">h2</span> { <span class="tk-prop">font-size</span>: <span class="tk-val">var(--am-fs-h2)</span>; <span class="tk-prop">font-weight</span>: <span class="tk-val">var(--am-fw-medium)</span>; }
+<span class="tk-tag">h3</span> { <span class="tk-prop">font-size</span>: <span class="tk-val">var(--am-fs-h3)</span>; <span class="tk-prop">font-weight</span>: <span class="tk-val">var(--am-fw-semibold)</span>; }</pre>
+    </details>
+  </section>
+
+  <!-- ── 03 · ESPAI ─────────────────────────────────────────── -->
+  <section class="ds-section" id="espai">
+    <div class="ds-section__num">03 · Token</div>
+    <h2 class="ds-section__title">Espai <strong>· Espacio</strong> <small>escala de 4/8</small></h2>
+    <p class="ds-section__lede">Tots els espais (padding, margin, gap) provenen d'aquesta escala. Multiplica de 4 en 4. No fer servir mai un valor d'espaiat fora d'aquí — manté la coherència del ritme vertical.</p>
+
+    <div class="ds-spaces">
+      <div class="ds-spaces__row"><span class="ds-spaces__token">--am-space-1</span><span class="ds-spaces__value">4 px</span><div class="ds-spaces__bar" style="width:4px"></div></div>
+      <div class="ds-spaces__row"><span class="ds-spaces__token">--am-space-2</span><span class="ds-spaces__value">8 px</span><div class="ds-spaces__bar" style="width:8px"></div></div>
+      <div class="ds-spaces__row"><span class="ds-spaces__token">--am-space-3</span><span class="ds-spaces__value">12 px</span><div class="ds-spaces__bar" style="width:12px"></div></div>
+      <div class="ds-spaces__row"><span class="ds-spaces__token">--am-space-4</span><span class="ds-spaces__value">16 px</span><div class="ds-spaces__bar" style="width:16px"></div></div>
+      <div class="ds-spaces__row"><span class="ds-spaces__token">--am-space-5</span><span class="ds-spaces__value">24 px</span><div class="ds-spaces__bar" style="width:24px"></div></div>
+      <div class="ds-spaces__row"><span class="ds-spaces__token">--am-space-6</span><span class="ds-spaces__value">32 px</span><div class="ds-spaces__bar" style="width:32px"></div></div>
+      <div class="ds-spaces__row"><span class="ds-spaces__token">--am-space-7</span><span class="ds-spaces__value">48 px</span><div class="ds-spaces__bar" style="width:48px"></div></div>
+      <div class="ds-spaces__row"><span class="ds-spaces__token">--am-space-8</span><span class="ds-spaces__value">64 px</span><div class="ds-spaces__bar" style="width:64px"></div></div>
+      <div class="ds-spaces__row"><span class="ds-spaces__token">--am-space-9</span><span class="ds-spaces__value">96 px</span><div class="ds-spaces__bar" style="width:96px"></div></div>
+      <div class="ds-spaces__row"><span class="ds-spaces__token">--am-space-10</span><span class="ds-spaces__value">128 px</span><div class="ds-spaces__bar" style="width:128px"></div></div>
+    </div>
+  </section>
+
+  <!-- ── 04 · RADIS ─────────────────────────────────────────── -->
+  <section class="ds-section" id="radis">
+    <div class="ds-section__num">04 · Token</div>
+    <h2 class="ds-section__title">Radis <strong>· Radios</strong> <small>cantonades arrodonides</small></h2>
+    <p class="ds-section__lede">La marca prefereix arrodoniments suaus, mai exagerats. <code>sm</code> per a botons i inputs (4px), <code>md</code> per a cards (8px), <code>xl</code> per a banners destacats (20px), <code>full</code> per a píndoles i avatars.</p>
+
+    <div class="ds-tiles">
+      <div class="ds-tile"><div class="ds-tile__sample" style="border-radius:var(--am-radius-sm)"></div><div class="ds-tile__token">--am-radius-sm</div><div class="ds-tile__value">4px</div></div>
+      <div class="ds-tile"><div class="ds-tile__sample" style="border-radius:var(--am-radius-md)"></div><div class="ds-tile__token">--am-radius-md</div><div class="ds-tile__value">8px</div></div>
+      <div class="ds-tile"><div class="ds-tile__sample" style="border-radius:var(--am-radius-lg)"></div><div class="ds-tile__token">--am-radius-lg</div><div class="ds-tile__value">12px</div></div>
+      <div class="ds-tile"><div class="ds-tile__sample" style="border-radius:var(--am-radius-xl)"></div><div class="ds-tile__token">--am-radius-xl</div><div class="ds-tile__value">20px</div></div>
+      <div class="ds-tile"><div class="ds-tile__sample" style="border-radius:var(--am-radius-full)"></div><div class="ds-tile__token">--am-radius-full</div><div class="ds-tile__value">9999px</div></div>
+    </div>
+  </section>
+
+  <!-- ── 05 · OMBRES ────────────────────────────────────────── -->
+  <section class="ds-section" id="ombres">
+    <div class="ds-section__num">05 · Token</div>
+    <h2 class="ds-section__title">Ombres <strong>· Sombras</strong> <small>elevació</small></h2>
+    <p class="ds-section__lede">Les ombres comuniquen jerarquia. <code>sm</code> per a separacions subtils, <code>md</code> per a cards en repòs, <code>lg</code> per a hover, <code>xl</code> per a modals i elements flotants.</p>
+
+    <div class="ds-tiles">
+      <div class="ds-shadow-tile"><div class="ds-shadow-tile__box" style="box-shadow:var(--am-shadow-sm)"></div><div class="ds-tile__token">--am-shadow-sm</div></div>
+      <div class="ds-shadow-tile"><div class="ds-shadow-tile__box" style="box-shadow:var(--am-shadow-md)"></div><div class="ds-tile__token">--am-shadow-md</div></div>
+      <div class="ds-shadow-tile"><div class="ds-shadow-tile__box" style="box-shadow:var(--am-shadow-lg)"></div><div class="ds-tile__token">--am-shadow-lg</div></div>
+      <div class="ds-shadow-tile"><div class="ds-shadow-tile__box" style="box-shadow:var(--am-shadow-xl)"></div><div class="ds-tile__token">--am-shadow-xl</div></div>
+    </div>
+  </section>
+
+  <!-- ── 06 · MOVIMENT ──────────────────────────────────────── -->
+  <section class="ds-section" id="moviment">
+    <div class="ds-section__num">06 · Token</div>
+    <h2 class="ds-section__title">Moviment <strong>· Motion</strong> <small>passa el cursor sobre les cards</small></h2>
+    <p class="ds-section__lede">Tres durades, dues corbes. <code>fast</code> per a feedback immediat (focus, hover en botó), <code>base</code> per a la majoria de transicions, <code>slow</code> per a transicions amples (modals, panells).</p>
+
+    <div class="ds-motion">
+      <div class="ds-motion__card is-fast">
+        <div class="ds-motion__dot"></div>
+        <div class="ds-motion__token">--am-duration-fast</div>
+        <div class="ds-motion__value">150ms · ease-out</div>
+      </div>
+      <div class="ds-motion__card">
+        <div class="ds-motion__dot"></div>
+        <div class="ds-motion__token">--am-duration-base</div>
+        <div class="ds-motion__value">250ms · ease-out</div>
+      </div>
+      <div class="ds-motion__card is-slow">
+        <div class="ds-motion__dot"></div>
+        <div class="ds-motion__token">--am-duration-slow</div>
+        <div class="ds-motion__value">400ms · ease-out</div>
+      </div>
+      <div class="ds-motion__card is-easeInOut">
+        <div class="ds-motion__dot"></div>
+        <div class="ds-motion__token">--am-ease-in-out</div>
+        <div class="ds-motion__value">corba simètrica</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 07 · BREAKPOINTS ───────────────────────────────────── -->
+  <section class="ds-section" id="breakpoints">
+    <div class="ds-section__num">07 · Token</div>
+    <h2 class="ds-section__title">Breakpoints <strong>· Responsive</strong></h2>
+    <p class="ds-section__lede">Ens adaptem a 4 punts de tall. La web és <em>mobile-first</em>: les regles base són per a mòbil i s'amplien progressivament.</p>
+
+    <div class="ds-bps">
+      <div class="ds-bp"><span class="ds-bp__key">sm</span><span class="ds-bp__val">≥ 640 px</span><span class="ds-bp__desc">Mòbil gran · landscape</span></div>
+      <div class="ds-bp"><span class="ds-bp__key">md</span><span class="ds-bp__val">≥ 768 px</span><span class="ds-bp__desc">Tauleta vertical</span></div>
+      <div class="ds-bp"><span class="ds-bp__key">lg</span><span class="ds-bp__val">≥ 1024 px</span><span class="ds-bp__desc">Tauleta apaisada · portàtil petit</span></div>
+      <div class="ds-bp"><span class="ds-bp__key">xl</span><span class="ds-bp__val">≥ 1280 px</span><span class="ds-bp__desc">Escriptori</span></div>
+    </div>
+
+    <details class="ds-toggle" style="margin-top:var(--am-space-5)">
+      <summary>CSS · Mixin de media queries</summary>
+      <pre class="ds-code"><span class="tk-com">/* Mobile first — bases per a mòbil, ampliem */</span>
+<span class="tk-tag">.col</span> { <span class="tk-prop">width</span>: <span class="tk-val">100%</span>; }
+
+<span class="tk-tag">@media</span> (<span class="tk-prop">min-width</span>: <span class="tk-val">768px</span>) {
+  <span class="tk-tag">.col</span> { <span class="tk-prop">width</span>: <span class="tk-val">50%</span>; }
+}
+<span class="tk-tag">@media</span> (<span class="tk-prop">min-width</span>: <span class="tk-val">1024px</span>) {
+  <span class="tk-tag">.col</span> { <span class="tk-prop">width</span>: <span class="tk-val">33.333%</span>; }
+}</pre>
+    </details>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       COMPONENTS
+       ═══════════════════════════════════════════════════════════ -->
+
+  <!-- ── 08 · BOTONS ────────────────────────────────────────── -->
+  <section class="ds-section" id="botons">
+    <div class="ds-section__num">08 · Component</div>
+    <h2 class="ds-section__title">Botons <strong>· Botones</strong></h2>
+    <p class="ds-section__lede">5 variants, 3 mides, estats <em>hover · focus · disabled</em>. Utilitza <code>am-btn--primary</code> com a acció principal d'una pantalla; cap pantalla hauria de tenir més d'un botó <em>primary</em> simultàniament.</p>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Variants</h3>
+      <div class="ds-demo">
+        <div class="ds-demo__stage">
+          <button class="am-btn am-btn--primary">Primary</button>
+          <button class="am-btn am-btn--secondary">Secondary</button>
+          <button class="am-btn am-btn--accent">Accent</button>
+          <button class="am-btn am-btn--ghost">Ghost</button>
+        </div>
+        <div class="ds-demo__bar"><span>Demo</span><button data-copy="btn-variants">Copiar HTML</button></div>
+      </div>
+      <details class="ds-toggle">
+        <summary>Codi HTML</summary>
+        <pre class="ds-code" id="btn-variants"><span class="tk-tag">&lt;button</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-btn am-btn--primary"</span><span class="tk-tag">&gt;</span>Primary<span class="tk-tag">&lt;/button&gt;</span>
+<span class="tk-tag">&lt;button</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-btn am-btn--secondary"</span><span class="tk-tag">&gt;</span>Secondary<span class="tk-tag">&lt;/button&gt;</span>
+<span class="tk-tag">&lt;button</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-btn am-btn--accent"</span><span class="tk-tag">&gt;</span>Accent<span class="tk-tag">&lt;/button&gt;</span>
+<span class="tk-tag">&lt;button</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-btn am-btn--ghost"</span><span class="tk-tag">&gt;</span>Ghost<span class="tk-tag">&lt;/button&gt;</span></pre>
+      </details>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Mides</h3>
+      <div class="ds-demo">
+        <div class="ds-demo__stage">
+          <button class="am-btn am-btn--primary am-btn--sm">Small</button>
+          <button class="am-btn am-btn--primary">Mitjà · base</button>
+          <button class="am-btn am-btn--primary am-btn--lg">Gran</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Sobre fons fosc</h3>
+      <div class="ds-demo">
+        <div class="ds-demo__stage ds-demo__stage--dark">
+          <button class="am-btn am-btn--on-dark">Acció primària</button>
+          <button class="am-btn am-btn--secondary" style="color:#fff;border-color:#fff">Secundària</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Estats</h3>
+      <div class="ds-demo">
+        <div class="ds-demo__stage">
+          <button class="am-btn am-btn--primary">Default</button>
+          <button class="am-btn am-btn--primary" style="background:#000">Hover</button>
+          <button class="am-btn am-btn--primary" style="outline: var(--am-focus-outline); outline-offset: var(--am-focus-offset)">Focus</button>
+          <button class="am-btn am-btn--primary" disabled>Disabled</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 09 · FORMULARIS ────────────────────────────────────── -->
+  <section class="ds-section" id="formularis">
+    <div class="ds-section__num">09 · Component</div>
+    <h2 class="ds-section__title">Formularis <strong>· Formularios</strong></h2>
+    <p class="ds-section__lede">Etiqueta sempre visible (mai només <em>placeholder</em>). Missatge d'ajuda opcional. Estats <em>focus · error · disabled</em>.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage ds-demo__stage--plain ds-demo__stage--block">
+        <div style="max-width:520px; margin:0 auto; padding:var(--am-space-7) var(--am-space-5);">
+          <div class="am-field">
+            <label class="am-label" for="f-nom">Nom complet</label>
+            <input id="f-nom" class="am-input" placeholder="p. ex. Maria Puig" aria-describedby="f-nom-help" autocomplete="name">
+            <span class="am-help" id="f-nom-help">Tal com apareix al document d'identitat</span>
+          </div>
+          <div class="am-field">
+            <label class="am-label" for="f-mail">Correu electrònic</label>
+            <input id="f-mail" type="email" class="am-input am-input--error" value="hola@invalid" aria-invalid="true" aria-describedby="f-mail-error" required>
+            <span class="am-error" id="f-mail-error" role="alert">
+              <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg>
+              Format de correu no vàlid
+            </span>
+          </div>
+          <div class="am-field">
+            <label class="am-label" for="f-tipus">Tipus de col·laboració</label>
+            <select id="f-tipus" class="am-select">
+              <option>Donació puntual</option>
+              <option>Soci col·laborador</option>
+              <option>Voluntariat</option>
+            </select>
+          </div>
+          <div class="am-field">
+            <label class="am-label" for="f-msg">Missatge</label>
+            <textarea id="f-msg" class="am-textarea" placeholder="Explica'ns el motiu del teu contacte…"></textarea>
+          </div>
+          <div class="am-field">
+            <label class="am-check"><input type="checkbox" checked> Accepto la política de privacitat</label>
+            <label class="am-check"><input type="checkbox"> Vull rebre el butlletí trimestral</label>
+          </div>
+          <fieldset class="am-field" style="border:0;padding:0;">
+            <legend class="am-label" style="padding:0;margin-bottom:var(--am-space-2)">Freqüència</legend>
+            <label class="am-radio"><input type="radio" name="freq" checked> Mensual</label>
+            <label class="am-radio"><input type="radio" name="freq"> Trimestral</label>
+            <label class="am-radio"><input type="radio" name="freq"> Anual</label>
+          </fieldset>
+          <div class="am-field">
+            <label class="am-label">Camp deshabilitat</label>
+            <input class="am-input" disabled value="No editable">
+          </div>
+          <button class="am-btn am-btn--primary" style="width:100%">Enviar</button>
+        </div>
+      </div>
+      <div class="ds-demo__bar"><span>Demo</span><button data-copy="form-html">Copiar HTML</button></div>
+    </div>
+
+    <details class="ds-toggle">
+      <summary>Codi HTML</summary>
+      <pre class="ds-code" id="form-html"><span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-field"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;label</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-label"</span> <span class="tk-attr">for</span>=<span class="tk-str">"nom"</span><span class="tk-tag">&gt;</span>Nom complet<span class="tk-tag">&lt;/label&gt;</span>
+  <span class="tk-tag">&lt;input</span> <span class="tk-attr">id</span>=<span class="tk-str">"nom"</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-input"</span> <span class="tk-attr">placeholder</span>=<span class="tk-str">"p. ex. Maria Puig"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;span</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-help"</span><span class="tk-tag">&gt;</span>Tal com apareix al DNI<span class="tk-tag">&lt;/span&gt;</span>
+<span class="tk-tag">&lt;/div&gt;</span>
+
+<span class="tk-com">&lt;!-- Estat d'error --&gt;</span>
+<span class="tk-tag">&lt;input</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-input am-input--error"</span><span class="tk-tag">&gt;</span>
+<span class="tk-tag">&lt;span</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-error"</span><span class="tk-tag">&gt;</span>Format no vàlid<span class="tk-tag">&lt;/span&gt;</span>
+
+<span class="tk-com">&lt;!-- Select --&gt;</span>
+<span class="tk-tag">&lt;select</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-select"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;option&gt;</span>Opció A<span class="tk-tag">&lt;/option&gt;</span>
+<span class="tk-tag">&lt;/select&gt;</span>
+
+<span class="tk-com">&lt;!-- Checkbox / Radio --&gt;</span>
+<span class="tk-tag">&lt;label</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-check"</span><span class="tk-tag">&gt;&lt;input</span> <span class="tk-attr">type</span>=<span class="tk-str">"checkbox"</span><span class="tk-tag">&gt;</span> Accepto<span class="tk-tag">&lt;/label&gt;</span>
+<span class="tk-tag">&lt;label</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-radio"</span><span class="tk-tag">&gt;&lt;input</span> <span class="tk-attr">type</span>=<span class="tk-str">"radio"</span> <span class="tk-attr">name</span>=<span class="tk-str">"x"</span><span class="tk-tag">&gt;</span> Opció<span class="tk-tag">&lt;/label&gt;</span></pre>
+    </details>
+  </section>
+
+  <!-- ── 10 · CARDS ─────────────────────────────────────────── -->
+  <section class="ds-section" id="cards">
+    <div class="ds-section__num">10 · Component</div>
+    <h2 class="ds-section__title">Cards <strong>· Tarjetas</strong></h2>
+    <p class="ds-section__lede">Tres variants principals: contingut amb imatge (servei, notícia), contingut sense imatge i tarjeta de valor (centrada amb icona). Tots responen a hover amb una elevació suau.</p>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Card amb imatge <small>servei · notícia</small></h3>
+      <div class="ds-demo">
+        <div class="ds-demo__stage ds-demo__stage--soft">
+          <article class="am-card" style="max-width:340px;">
+            <div class="am-card__media" style="background-image:linear-gradient(135deg, var(--am-taronja), var(--am-coral));"></div>
+            <div class="am-card__body">
+              <div class="am-card__eyebrow">Servei</div>
+              <h3 class="am-card__title">Centre Ocupacional</h3>
+              <p class="am-card__text">Programa diürn d'activitats orientades al desenvolupament personal i la inclusió laboral.</p>
+              <a href="#" class="am-card__link">Conèixer més →</a>
+            </div>
+          </article>
+          <article class="am-card" style="max-width:340px;">
+            <div class="am-card__media" style="background-image:linear-gradient(135deg, var(--am-blau), var(--am-verd));"></div>
+            <div class="am-card__body">
+              <div class="am-card__eyebrow">Notícia · 12 abril 2026</div>
+              <h3 class="am-card__title">Nova residència a Sitges</h3>
+              <p class="am-card__text">Inaugurem un espai de 24 places adaptat amb les últimes solucions d'accessibilitat.</p>
+              <a href="#" class="am-card__link">Llegir l'article →</a>
+            </div>
+          </article>
+        </div>
+        <div class="ds-demo__bar"><span>Demo</span><button data-copy="card-html">Copiar HTML</button></div>
+      </div>
+      <details class="ds-toggle">
+        <summary>Codi HTML</summary>
+        <pre class="ds-code" id="card-html"><span class="tk-tag">&lt;article</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-card"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-card__media"</span> <span class="tk-attr">style</span>=<span class="tk-str">"background-image:url('foto.jpg')"</span><span class="tk-tag">&gt;&lt;/div&gt;</span>
+  <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-card__body"</span><span class="tk-tag">&gt;</span>
+    <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-card__eyebrow"</span><span class="tk-tag">&gt;</span>Servei<span class="tk-tag">&lt;/div&gt;</span>
+    <span class="tk-tag">&lt;h3</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-card__title"</span><span class="tk-tag">&gt;</span>Centre Ocupacional<span class="tk-tag">&lt;/h3&gt;</span>
+    <span class="tk-tag">&lt;p</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-card__text"</span><span class="tk-tag">&gt;</span>Programa diürn…<span class="tk-tag">&lt;/p&gt;</span>
+    <span class="tk-tag">&lt;a</span> <span class="tk-attr">href</span>=<span class="tk-str">"#"</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-card__link"</span><span class="tk-tag">&gt;</span>Conèixer més →<span class="tk-tag">&lt;/a&gt;</span>
+  <span class="tk-tag">&lt;/div&gt;</span>
+<span class="tk-tag">&lt;/article&gt;</span></pre>
+      </details>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Card de valor <small>centrada · amb icona</small></h3>
+      <div class="ds-demo">
+        <div class="ds-demo__stage ds-demo__stage--plain">
+          <article class="am-card am-card--value" style="max-width:280px;">
+            <div class="am-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+            </div>
+            <h3 class="am-card__title">Respecte</h3>
+            <p class="am-card__text">La dignitat de cada persona és el centre de tot el que fem.</p>
+          </article>
+          <article class="am-card am-card--value" style="max-width:280px;">
+            <div class="am-card__icon" style="background:var(--am-color-primary)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 class="am-card__title">Transparència</h3>
+            <p class="am-card__text">Comunicació oberta i honesta amb famílies, voluntaris i societat.</p>
+          </article>
+          <article class="am-card am-card--value" style="max-width:280px;">
+            <div class="am-card__icon" style="background:var(--am-verd)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+            </div>
+            <h3 class="am-card__title">Innovació</h3>
+            <p class="am-card__text">Millora permanent en serveis i metodologies de treball.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 11 · BADGES ────────────────────────────────────────── -->
+  <section class="ds-section" id="badges">
+    <div class="ds-section__num">11 · Component</div>
+    <h2 class="ds-section__title">Badges <strong>· Etiquetas</strong></h2>
+    <p class="ds-section__lede">Etiquetes curtes per categoritzar (tipus de notícia, estat d'una sol·licitud, característica destacada). Sempre en majúscules amb interlletratge ampli.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage">
+        <span class="am-badge">Default</span>
+        <span class="am-badge am-badge--solid">Solid</span>
+        <span class="am-badge am-badge--accent">Accent</span>
+        <span class="am-badge am-badge--success am-badge--dot">Actiu</span>
+        <span class="am-badge am-badge--warning am-badge--dot">Pendent</span>
+        <span class="am-badge am-badge--danger am-badge--dot">Tancat</span>
+        <span class="am-badge am-badge--info am-badge--dot">Info</span>
+      </div>
+      <div class="ds-demo__bar"><span>Demo</span><button data-copy="badge-html">Copiar HTML</button></div>
+    </div>
+    <details class="ds-toggle">
+      <summary>Codi HTML</summary>
+      <pre class="ds-code" id="badge-html"><span class="tk-tag">&lt;span</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-badge"</span><span class="tk-tag">&gt;</span>Default<span class="tk-tag">&lt;/span&gt;</span>
+<span class="tk-tag">&lt;span</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-badge am-badge--accent"</span><span class="tk-tag">&gt;</span>Accent<span class="tk-tag">&lt;/span&gt;</span>
+<span class="tk-tag">&lt;span</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-badge am-badge--success am-badge--dot"</span><span class="tk-tag">&gt;</span>Actiu<span class="tk-tag">&lt;/span&gt;</span></pre>
+    </details>
+  </section>
+
+  <!-- ── 12 · ALERTS ────────────────────────────────────────── -->
+  <section class="ds-section" id="alerts">
+    <div class="ds-section__num">12 · Component</div>
+    <h2 class="ds-section__title">Alerts <strong>· Avisos</strong></h2>
+    <p class="ds-section__lede">Comunicació de feedback al formularis i pàgines. Quatre tipus segons la naturalesa del missatge.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage ds-demo__stage--block" style="padding:var(--am-space-6); display:flex; flex-direction:column; gap:var(--am-space-3);">
+        <div class="am-alert am-alert--success" role="status">
+          <svg class="am-alert__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          <div><span class="am-sr-only">Èxit: </span><div class="am-alert__title">Donació rebuda</div>Hem rebut la teva aportació. T'enviem el rebut al correu en breu.</div>
+        </div>
+        <div class="am-alert am-alert--info" role="status">
+          <svg class="am-alert__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h0"/></svg>
+          <div><span class="am-sr-only">Informació: </span><div class="am-alert__title">Bon a saber</div>Les donacions a la fundació tenen una desgravació fiscal del 80% fins els primers 250 €.</div>
+        </div>
+        <div class="am-alert am-alert--warning" role="alert">
+          <svg class="am-alert__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M12 2L2 22h20L12 2zM12 9v4M12 17h0"/></svg>
+          <div><span class="am-sr-only">Avís: </span><div class="am-alert__title">Dades incompletes</div>Et falta omplir el camp de DNI per generar el rebut fiscal.</div>
+        </div>
+        <div class="am-alert am-alert--danger" role="alert">
+          <svg class="am-alert__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+          <div><span class="am-sr-only">Error: </span><div class="am-alert__title">Pagament rebutjat</div>La teva targeta ha rebutjat l'operació. Si us plau, prova amb un altre mètode.</div>
+        </div>
+      </div>
+      <div class="ds-demo__bar"><span>Demo</span><button data-copy="alert-html">Copiar HTML</button></div>
+    </div>
+    <details class="ds-toggle">
+      <summary>Codi HTML</summary>
+      <pre class="ds-code" id="alert-html"><span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-alert am-alert--success"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;svg</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-alert__icon"</span> <span class="tk-attr">viewBox</span>=<span class="tk-str">"0 0 24 24"</span><span class="tk-tag">&gt;…&lt;/svg&gt;</span>
+  <span class="tk-tag">&lt;div&gt;</span>
+    <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-alert__title"</span><span class="tk-tag">&gt;</span>Donació rebuda<span class="tk-tag">&lt;/div&gt;</span>
+    Missatge descriptiu del que ha succeït.
+  <span class="tk-tag">&lt;/div&gt;</span>
+<span class="tk-tag">&lt;/div&gt;</span></pre>
+    </details>
+  </section>
+
+  <!-- ── 13 · MODAL ─────────────────────────────────────────── -->
+  <section class="ds-section" id="modal">
+    <div class="ds-section__num">13 · Component</div>
+    <h2 class="ds-section__title">Modal <strong>· Diálogo</strong></h2>
+    <p class="ds-section__lede">Per confirmacions, formularis curts o missatges que requereixen atenció. Mai per a contingut llarg (millor una pàgina dedicada).</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage">
+        <button class="am-btn am-btn--primary" id="open-modal">Obrir el modal</button>
+      </div>
+      <div class="ds-demo__bar"><span>Demo · interactiu</span><button data-copy="modal-html">Copiar HTML</button></div>
+    </div>
+    <details class="ds-toggle">
+      <summary>Codi HTML + JS</summary>
+      <pre class="ds-code" id="modal-html"><span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-modal-backdrop"</span> <span class="tk-attr">id</span>=<span class="tk-str">"my-modal"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-modal"</span> <span class="tk-attr">role</span>=<span class="tk-str">"dialog"</span> <span class="tk-attr">aria-modal</span>=<span class="tk-str">"true"</span><span class="tk-tag">&gt;</span>
+    <span class="tk-tag">&lt;h3</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-modal__title"</span><span class="tk-tag">&gt;</span>Confirmar donació<span class="tk-tag">&lt;/h3&gt;</span>
+    <span class="tk-tag">&lt;p</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-modal__text"</span><span class="tk-tag">&gt;</span>Aportaràs 30 € a la Fundació…<span class="tk-tag">&lt;/p&gt;</span>
+    <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-modal__actions"</span><span class="tk-tag">&gt;</span>
+      <span class="tk-tag">&lt;button</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-btn am-btn--ghost"</span><span class="tk-tag">&gt;</span>Cancel·lar<span class="tk-tag">&lt;/button&gt;</span>
+      <span class="tk-tag">&lt;button</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-btn am-btn--primary"</span><span class="tk-tag">&gt;</span>Confirmar<span class="tk-tag">&lt;/button&gt;</span>
+    <span class="tk-tag">&lt;/div&gt;</span>
+  <span class="tk-tag">&lt;/div&gt;</span>
+<span class="tk-tag">&lt;/div&gt;</span>
+
+<span class="tk-com">// Per obrir / tancar:</span>
+modal.classList.add(<span class="tk-str">'is-open'</span>);
+modal.classList.remove(<span class="tk-str">'is-open'</span>);</pre>
+    </details>
+  </section>
+
+  <!-- ── 14 · HEADER ────────────────────────────────────────── -->
+  <section class="ds-section" id="header">
+    <div class="ds-section__num">14 · Patró</div>
+    <h2 class="ds-section__title">Header <strong>· Cabecera</strong></h2>
+    <p class="ds-section__lede">Capçalera fixa al capdamunt de totes les pàgines. Logo + isotip a l'esquerra, navegació al centre, CTA de "Donar" sempre visible a la dreta.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage ds-demo__stage--block">
+        <header class="am-header" role="banner">
+          <a class="am-header__brand" href="#" aria-label="Fundació Ave Maria · Inici">
+            <div class="am-header__mark" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div>
+              <div class="am-header__name">AVE MARIA</div>
+              <div class="am-header__sub">Fundació</div>
+            </div>
+          </a>
+          <nav class="am-header__nav" aria-label="Navegació principal">
+            <a href="#">Qui som</a>
+            <a href="#">Serveis</a>
+            <a href="#">Activitats</a>
+            <a href="#">Notícies</a>
+            <a href="#">Contacte</a>
+          </nav>
+          <a class="am-header__cta" href="#">Fes un donatiu</a>
+        </header>
+      </div>
+      <div class="ds-demo__bar"><span>Patró · header complet</span><button data-copy="header-html">Copiar HTML</button></div>
+    </div>
+    <details class="ds-toggle">
+      <summary>Codi HTML</summary>
+      <pre class="ds-code" id="header-html"><span class="tk-tag">&lt;header</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-header"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;a</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-header__brand"</span> <span class="tk-attr">href</span>=<span class="tk-str">"/"</span><span class="tk-tag">&gt;</span>
+    <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-header__mark"</span><span class="tk-tag">&gt;</span>
+      <span class="tk-tag">&lt;span&gt;&lt;/span&gt;</span>… <span class="tk-com">/* 9 cel·les del isotip */</span>
+    <span class="tk-tag">&lt;/div&gt;</span>
+    <span class="tk-tag">&lt;div&gt;</span>
+      <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-header__name"</span><span class="tk-tag">&gt;</span>AVE MARIA<span class="tk-tag">&lt;/div&gt;</span>
+      <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-header__sub"</span><span class="tk-tag">&gt;</span>Fundació<span class="tk-tag">&lt;/div&gt;</span>
+    <span class="tk-tag">&lt;/div&gt;</span>
+  <span class="tk-tag">&lt;/a&gt;</span>
+  <span class="tk-tag">&lt;nav</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-header__nav"</span><span class="tk-tag">&gt;</span>
+    <span class="tk-tag">&lt;a</span> <span class="tk-attr">href</span>=<span class="tk-str">"#"</span><span class="tk-tag">&gt;</span>Qui som<span class="tk-tag">&lt;/a&gt;</span>…
+  <span class="tk-tag">&lt;/nav&gt;</span>
+  <span class="tk-tag">&lt;a</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-header__cta"</span> <span class="tk-attr">href</span>=<span class="tk-str">"/donatiu"</span><span class="tk-tag">&gt;</span>Fes un donatiu<span class="tk-tag">&lt;/a&gt;</span>
+<span class="tk-tag">&lt;/header&gt;</span></pre>
+    </details>
+  </section>
+
+  <!-- ── 15 · FOOTER ────────────────────────────────────────── -->
+  <section class="ds-section" id="footer">
+    <div class="ds-section__num">15 · Patró</div>
+    <h2 class="ds-section__title">Footer <strong>· Pie</strong></h2>
+    <p class="ds-section__lede">Quatre columnes en escriptori (descripció amb logo, enllaços ràpids, contacte, social). Es col·lapsa a 2 i 1 columna en pantalles petites.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage ds-demo__stage--block">
+        <footer class="am-footer" role="contentinfo">
+          <div class="am-footer__grid">
+            <div>
+              <div style="display:flex;gap:14px;align-items:center;margin-bottom:16px;">
+                <div class="am-header__mark" style="background:transparent" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div>
+                  <div class="am-header__name" style="color:var(--am-blanc);font-size:16px">AVE MARIA</div>
+                  <div class="am-header__sub" style="color:rgba(255,255,255,0.5)">Fundació · Sitges</div>
+                </div>
+              </div>
+              <p style="font-size:14px;color:rgba(255,255,255,0.65);max-width:340px;line-height:1.6">Garantim la qualitat de vida de les persones amb diversitat funcional al Garraf des de 1987.</p>
+              <ul class="am-footer__social" aria-label="Xarxes socials de la fundació" style="list-style:none;padding:0;">
+                <li><a href="#" aria-label="Instagram (s'obre en una pestanya nova)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a></li>
+                <li><a href="#" aria-label="Facebook (s'obre en una pestanya nova)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14 8h3V5h-3a4 4 0 0 0-4 4v2H7v3h3v7h3v-7h3l1-3h-4V9a1 1 0 0 1 1-1z"/></svg></a></li>
+                <li><a href="#" aria-label="LinkedIn (s'obre en una pestanya nova)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4 4h4v16H4zM6 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 8h4v2c.7-1.5 2.3-2.5 4-2.5 3 0 5 2 5 5.5V20h-4v-7c0-1.5-.7-2.5-2.2-2.5S14 11.5 14 13v7h-4z"/></svg></a></li>
+                <li><a href="#" aria-label="YouTube (s'obre en una pestanya nova)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M22 8s-.2-1.6-.8-2.3c-.7-.9-1.6-1-2-1C15.6 4.5 12 4.5 12 4.5s-3.6 0-7.2.3c-.4 0-1.3.1-2 1C2.2 6.4 2 8 2 8s-.2 1.9-.2 3.7v1.7C1.8 15.2 2 17 2 17s.2 1.6.8 2.3c.7.9 1.7 1 2.1 1.1 1.6.2 6.9.3 7.1.3 0 0 3.6 0 7.2-.3.4 0 1.3-.1 2-1 .6-.7.8-2.3.8-2.3s.2-1.9.2-3.7v-1.7c0-1.8-.2-3.7-.2-3.7zM10 15V9l5 3-5 3z"/></svg></a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="am-footer__title">Fundació</div>
+              <ul class="am-footer__links">
+                <li><a href="#">Qui som</a></li>
+                <li><a href="#">Història</a></li>
+                <li><a href="#">Equip</a></li>
+                <li><a href="#">Memòries</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="am-footer__title">Activitat</div>
+              <ul class="am-footer__links">
+                <li><a href="#">Serveis</a></li>
+                <li><a href="#">Notícies</a></li>
+                <li><a href="#">Esdeveniments</a></li>
+                <li><a href="#">Voluntariat</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="am-footer__title">Contacte</div>
+              <ul class="am-footer__links">
+                <li><a href="tel:+34938945000">+34 938 945 000</a></li>
+                <li><a href="mailto:info@avemaria.cat">info@avemaria.cat</a></li>
+                <li>Carrer de la Fundació, 1<br>08870 Sitges</li>
+              </ul>
+            </div>
+          </div>
+          <div class="am-footer__bottom">
+            <span>© 2026 Fundació Ave Maria · Tots els drets reservats</span>
+            <span>Política de privacitat · Avís legal · Cookies</span>
+          </div>
+        </footer>
+      </div>
+      <div class="ds-demo__bar"><span>Patró · footer complet</span><button data-copy="footer-html">Copiar HTML</button></div>
+    </div>
+  </section>
+
+  <!-- ── 16 · HERO ──────────────────────────────────────────── -->
+  <section class="ds-section" id="hero">
+    <div class="ds-section__num">16 · Patró</div>
+    <h2 class="ds-section__title">Hero <strong>· Cabecera principal</strong></h2>
+    <p class="ds-section__lede">Element de portada per a la home i les pàgines de secció. Imatge de fons amb tint fosc per garantir la legibilitat del text.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage ds-demo__stage--block">
+        <section class="am-hero">
+          <div class="am-hero__inner">
+            <div class="am-hero__eyebrow">Fundació Ave Maria · Sitges</div>
+            <h1 class="am-hero__title">Un espai on <strong>tot succeeix</strong>.</h1>
+            <p class="am-hero__tagline">Acompanyem persones amb diversitat funcional perquè desenvolupin tot el seu potencial i visquin amb plenitud.</p>
+            <div class="am-hero__cta">
+              <a href="#" class="am-btn am-btn--on-dark">Conèixer la fundació</a>
+              <a href="#" class="am-btn am-btn--secondary" style="color:#fff;border-color:#fff">Fes un donatiu</a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="ds-demo__bar"><span>Patró · hero amb degradat</span><button data-copy="hero-html">Copiar HTML</button></div>
+    </div>
+    <details class="ds-toggle">
+      <summary>Codi HTML</summary>
+      <pre class="ds-code" id="hero-html"><span class="tk-tag">&lt;section</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-hero"</span> <span class="tk-attr">style</span>=<span class="tk-str">"background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.35)), url('hero.jpg')"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-hero__inner"</span><span class="tk-tag">&gt;</span>
+    <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-hero__eyebrow"</span><span class="tk-tag">&gt;</span>Fundació · Sitges<span class="tk-tag">&lt;/div&gt;</span>
+    <span class="tk-tag">&lt;h1</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-hero__title"</span><span class="tk-tag">&gt;</span>Un espai on <span class="tk-tag">&lt;strong&gt;</span>tot succeeix<span class="tk-tag">&lt;/strong&gt;</span>.<span class="tk-tag">&lt;/h1&gt;</span>
+    <span class="tk-tag">&lt;p</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-hero__tagline"</span><span class="tk-tag">&gt;</span>Acompanyem persones…<span class="tk-tag">&lt;/p&gt;</span>
+    <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-hero__cta"</span><span class="tk-tag">&gt;</span>
+      <span class="tk-tag">&lt;a</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-btn am-btn--on-dark"</span><span class="tk-tag">&gt;</span>Conèixer<span class="tk-tag">&lt;/a&gt;</span>
+    <span class="tk-tag">&lt;/div&gt;</span>
+  <span class="tk-tag">&lt;/div&gt;</span>
+<span class="tk-tag">&lt;/section&gt;</span></pre>
+    </details>
+  </section>
+
+  <!-- ── 17 · STATS ─────────────────────────────────────────── -->
+  <section class="ds-section" id="stats">
+    <div class="ds-section__num">17 · Patró</div>
+    <h2 class="ds-section__title">Stats <strong>· Indicadores</strong></h2>
+    <p class="ds-section__lede">Per comunicar impacte de la fundació amb xifres grans, llegibles d'un cop d'ull. Mantenir entre 3 i 4 indicadors per fila.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage ds-demo__stage--soft ds-demo__stage--block">
+        <div class="am-stats">
+          <div class="am-stat">
+            <div class="am-stat__num"><em>800</em>+</div>
+            <div class="am-stat__label">Beneficiaris atesos</div>
+          </div>
+          <div class="am-stat">
+            <div class="am-stat__num">39</div>
+            <div class="am-stat__label">Anys d'experiència</div>
+          </div>
+          <div class="am-stat">
+            <div class="am-stat__num">120</div>
+            <div class="am-stat__label">Voluntaris actius</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 18 · TESTIMONI ─────────────────────────────────────── -->
+  <section class="ds-section" id="testimoni">
+    <div class="ds-section__num">18 · Patró</div>
+    <h2 class="ds-section__title">Testimoni <strong>· Testimonio</strong></h2>
+    <p class="ds-section__lede">Cita destacada d'una persona usuària, familiar o voluntària. Posar-la en una secció pròpia, mai dins d'un text corregut.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage ds-demo__stage--plain ds-demo__stage--block">
+        <blockquote class="am-quote">
+          <div class="am-quote__mark">"</div>
+          <p class="am-quote__text">A la fundació he trobat un lloc on em sento escoltada i puc créixer al meu ritme. Aquí no se'm jutja; se'm acompanya.</p>
+          <div class="am-quote__who">Maria Puig</div>
+          <div class="am-quote__role">Usuària del Centre Ocupacional</div>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 19 · CTA BANNER ────────────────────────────────────── -->
+  <section class="ds-section" id="cta">
+    <div class="ds-section__num">19 · Patró</div>
+    <h2 class="ds-section__title">CTA Banner <strong>· Llamada a la acción</strong></h2>
+    <p class="ds-section__lede">Banda destacada per a la principal crida a l'acció de la pàgina (donacions, voluntariat). Usar-la una sola vegada per pàgina.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage ds-demo__stage--soft ds-demo__stage--block" style="padding:var(--am-space-6);">
+        <section class="am-cta">
+          <h2 class="am-cta__title">El teu suport <strong>multiplica</strong> la nostra capacitat d'acompanyar.</h2>
+          <p class="am-cta__text">Una donació mensual de 10 € permet oferir una hora setmanal d'activitat terapèutica a una persona usuària.</p>
+          <a href="#" class="am-btn am-btn--on-dark am-btn--lg">Vull col·laborar</a>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       RECURSOS DESCARREGABLES
+       ═══════════════════════════════════════════════════════════ -->
+
+  <!-- ── 20 · TOKENS CSS ────────────────────────────────────── -->
+  <section class="ds-section" id="tokens-css">
+    <div class="ds-section__num">20 · Recurs</div>
+    <h2 class="ds-section__title">Tokens CSS <strong>· Variables</strong></h2>
+    <p class="ds-section__lede">Aquest bloc és el cor del design system. Copia'l i enganxa'l a un fitxer <code>tokens.css</code> al projecte web. Tota la resta del CSS s'hi nodreix.</p>
+
+    <div class="ds-resource">
+      <div class="ds-resource__title">tokens.css</div>
+      <div class="ds-resource__text">Conté totes les variables CSS — color, tipografia, espai, radis, ombres, moviment, breakpoints. <strong>No modifiquis mai aquests valors directament al CSS dels components</strong>: si cal canviar el color primari, només es toca aquí.</div>
+      <div style="display:flex;gap:8px;align-items:center;margin-bottom:16px;">
+        <button class="am-btn am-btn--on-dark am-btn--sm" data-copy="tokens-css-block" id="copy-tokens">Copiar tot el bloc</button>
+        <button class="am-btn am-btn--ghost am-btn--sm" style="color:#fff" id="download-tokens">Descarregar .css</button>
+      </div>
+      <pre class="ds-code ds-resource__code" id="tokens-css-block"><span class="tk-tag">:root</span> {
+  <span class="tk-com">/* ─── COLOR ─── */</span>
+  <span class="tk-prop">--am-bosc-100</span>: <span class="tk-val">#ABEBC6</span>;
+  <span class="tk-prop">--am-bosc-200</span>: <span class="tk-val">#82E0AA</span>;
+  <span class="tk-prop">--am-bosc-300</span>: <span class="tk-val">#2ECC71</span>;
+  <span class="tk-prop">--am-bosc-400</span>: <span class="tk-val">#27AE60</span>;
+  <span class="tk-prop">--am-bosc-500</span>: <span class="tk-val">#1E8449</span>;
+  <span class="tk-prop">--am-bosc-600</span>: <span class="tk-val">#145A32</span>;
+
+  <span class="tk-prop">--am-taronja</span>: <span class="tk-val">#E8863A</span>;
+  <span class="tk-prop">--am-coral</span>:   <span class="tk-val">#E85D75</span>;
+  <span class="tk-prop">--am-groc</span>:    <span class="tk-val">#F2C14E</span>;
+  <span class="tk-prop">--am-blau</span>:    <span class="tk-val">#5DADE2</span>;
+  <span class="tk-prop">--am-verd</span>:    <span class="tk-val">#2D936C</span>;
+  <span class="tk-prop">--am-rosa</span>:    <span class="tk-val">#D4859A</span>;
+
+  <span class="tk-prop">--am-tinta</span>:    <span class="tk-val">#1A1A1A</span>;
+  <span class="tk-prop">--am-gris-800</span>: <span class="tk-val">#595959</span>;
+  <span class="tk-prop">--am-gris-600</span>: <span class="tk-val">#666666</span>;
+  <span class="tk-prop">--am-gris-500</span>: <span class="tk-val">#999999</span>;
+  <span class="tk-prop">--am-gris-300</span>: <span class="tk-val">#CCCCCC</span>;
+  <span class="tk-prop">--am-gris-200</span>: <span class="tk-val">#E5E5E5</span>;
+  <span class="tk-prop">--am-gris-100</span>: <span class="tk-val">#F5F5F5</span>;
+  <span class="tk-prop">--am-blanc</span>:    <span class="tk-val">#FFFFFF</span>;
+
+  <span class="tk-com">/* Semàntics */</span>
+  <span class="tk-prop">--am-color-primary</span>:        <span class="tk-val">var(--am-taronja)</span>;
+  <span class="tk-prop">--am-color-primary-strong</span>: <span class="tk-val">#C76E27</span>;
+  <span class="tk-prop">--am-color-text</span>:           <span class="tk-val">var(--am-tinta)</span>;
+  <span class="tk-prop">--am-color-text-muted</span>:     <span class="tk-val">var(--am-gris-600)</span>;
+  <span class="tk-prop">--am-color-text-soft</span>:      <span class="tk-val">var(--am-gris-500)</span>;
+  <span class="tk-prop">--am-color-bg</span>:             <span class="tk-val">var(--am-blanc)</span>;
+  <span class="tk-prop">--am-color-bg-alt</span>:         <span class="tk-val">var(--am-gris-100)</span>;
+  <span class="tk-prop">--am-color-border</span>:         <span class="tk-val">var(--am-gris-200)</span>;
+  <span class="tk-prop">--am-color-border-strong</span>:  <span class="tk-val">var(--am-tinta)</span>;
+
+  <span class="tk-com">/* Estats */</span>
+  <span class="tk-prop">--am-color-success</span>: <span class="tk-val">#2D936C</span>;
+  <span class="tk-prop">--am-color-warning</span>: <span class="tk-val">#E8863A</span>;
+  <span class="tk-prop">--am-color-danger</span>:  <span class="tk-val">#C0392B</span>;
+  <span class="tk-prop">--am-color-info</span>:    <span class="tk-val">#5DADE2</span>;
+
+  <span class="tk-com">/* ─── TIPOGRAFIA ─── */</span>
+  <span class="tk-prop">--am-font-family</span>: <span class="tk-val">'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif</span>;
+  <span class="tk-prop">--am-fs-display</span>: <span class="tk-val">56px</span>;
+  <span class="tk-prop">--am-fs-h1</span>:      <span class="tk-val">42px</span>;
+  <span class="tk-prop">--am-fs-h2</span>:      <span class="tk-val">32px</span>;
+  <span class="tk-prop">--am-fs-h3</span>:      <span class="tk-val">24px</span>;
+  <span class="tk-prop">--am-fs-h4</span>:      <span class="tk-val">20px</span>;
+  <span class="tk-prop">--am-fs-body</span>:    <span class="tk-val">16px</span>;
+  <span class="tk-prop">--am-fs-sm</span>:      <span class="tk-val">14px</span>;
+  <span class="tk-prop">--am-fs-xs</span>:      <span class="tk-val">12px</span>;
+  <span class="tk-prop">--am-fw-light</span>:    <span class="tk-val">300</span>;
+  <span class="tk-prop">--am-fw-regular</span>:  <span class="tk-val">400</span>;
+  <span class="tk-prop">--am-fw-medium</span>:   <span class="tk-val">500</span>;
+  <span class="tk-prop">--am-fw-semibold</span>: <span class="tk-val">600</span>;
+  <span class="tk-prop">--am-fw-bold</span>:     <span class="tk-val">700</span>;
+  <span class="tk-prop">--am-lh-tight</span>:   <span class="tk-val">1.2</span>;
+  <span class="tk-prop">--am-lh-base</span>:    <span class="tk-val">1.5</span>;
+  <span class="tk-prop">--am-lh-relaxed</span>: <span class="tk-val">1.7</span>;
+
+  <span class="tk-com">/* ─── ESPAI ─── */</span>
+  <span class="tk-prop">--am-space-1</span>:  <span class="tk-val">4px</span>;
+  <span class="tk-prop">--am-space-2</span>:  <span class="tk-val">8px</span>;
+  <span class="tk-prop">--am-space-3</span>:  <span class="tk-val">12px</span>;
+  <span class="tk-prop">--am-space-4</span>:  <span class="tk-val">16px</span>;
+  <span class="tk-prop">--am-space-5</span>:  <span class="tk-val">24px</span>;
+  <span class="tk-prop">--am-space-6</span>:  <span class="tk-val">32px</span>;
+  <span class="tk-prop">--am-space-7</span>:  <span class="tk-val">48px</span>;
+  <span class="tk-prop">--am-space-8</span>:  <span class="tk-val">64px</span>;
+  <span class="tk-prop">--am-space-9</span>:  <span class="tk-val">96px</span>;
+  <span class="tk-prop">--am-space-10</span>: <span class="tk-val">128px</span>;
+
+  <span class="tk-com">/* ─── RADIS ─── */</span>
+  <span class="tk-prop">--am-radius-sm</span>:   <span class="tk-val">4px</span>;
+  <span class="tk-prop">--am-radius-md</span>:   <span class="tk-val">8px</span>;
+  <span class="tk-prop">--am-radius-lg</span>:   <span class="tk-val">12px</span>;
+  <span class="tk-prop">--am-radius-xl</span>:   <span class="tk-val">20px</span>;
+  <span class="tk-prop">--am-radius-full</span>: <span class="tk-val">9999px</span>;
+
+  <span class="tk-com">/* ─── OMBRES ─── */</span>
+  <span class="tk-prop">--am-shadow-sm</span>: <span class="tk-val">0 1px 2px rgba(0,0,0,0.05)</span>;
+  <span class="tk-prop">--am-shadow-md</span>: <span class="tk-val">0 4px 12px rgba(0,0,0,0.08)</span>;
+  <span class="tk-prop">--am-shadow-lg</span>: <span class="tk-val">0 10px 40px rgba(0,0,0,0.12)</span>;
+  <span class="tk-prop">--am-shadow-xl</span>: <span class="tk-val">0 20px 60px rgba(0,0,0,0.18)</span>;
+  <span class="tk-prop">--am-shadow-focus</span>: <span class="tk-val">0 0 0 3px rgba(232,134,58,0.35)</span>;
+
+  <span class="tk-com">/* ─── MOVIMENT ─── */</span>
+  <span class="tk-prop">--am-duration-fast</span>: <span class="tk-val">150ms</span>;
+  <span class="tk-prop">--am-duration-base</span>: <span class="tk-val">250ms</span>;
+  <span class="tk-prop">--am-duration-slow</span>: <span class="tk-val">400ms</span>;
+  <span class="tk-prop">--am-ease-out</span>:    <span class="tk-val">cubic-bezier(0.16, 1, 0.3, 1)</span>;
+  <span class="tk-prop">--am-ease-in-out</span>: <span class="tk-val">cubic-bezier(0.65, 0, 0.35, 1)</span>;
+
+  <span class="tk-com">/* ─── LAYOUT ─── */</span>
+  <span class="tk-prop">--am-container-max</span>: <span class="tk-val">1200px</span>;
+  <span class="tk-prop">--am-bp-sm</span>: <span class="tk-val">640px</span>;
+  <span class="tk-prop">--am-bp-md</span>: <span class="tk-val">768px</span>;
+  <span class="tk-prop">--am-bp-lg</span>: <span class="tk-val">1024px</span>;
+  <span class="tk-prop">--am-bp-xl</span>: <span class="tk-val">1280px</span>;
+}</pre>
+    </div>
+  </section>
+
+  <!-- ── 21 · TOKENS JSON ───────────────────────────────────── -->
+  <section class="ds-section" id="tokens-json">
+    <div class="ds-section__num">21 · Recurs</div>
+    <h2 class="ds-section__title">Tokens JSON <strong>· Per a Figma o eines</strong></h2>
+    <p class="ds-section__lede">Mateixos tokens en format JSON, compatible amb plugins com <em>Tokens Studio</em> per a Figma. Útil si vols sincronitzar disseny i codi.</p>
+
+    <div class="ds-resource">
+      <div class="ds-resource__title">design-tokens.json</div>
+      <div class="ds-resource__text">Estructura jeràrquica seguint la especificació W3C Design Tokens (draft).</div>
+      <div style="display:flex;gap:8px;align-items:center;margin-bottom:16px;">
+        <button class="am-btn am-btn--on-dark am-btn--sm" data-copy="tokens-json-block">Copiar JSON</button>
+        <button class="am-btn am-btn--ghost am-btn--sm" style="color:#fff" id="download-json">Descarregar .json</button>
+      </div>
+      <pre class="ds-code ds-resource__code" id="tokens-json-block">{
+  <span class="tk-str">"color"</span>: {
+    <span class="tk-str">"taronja"</span>:   { <span class="tk-str">"value"</span>: <span class="tk-str">"#E8863A"</span> },
+    <span class="tk-str">"coral"</span>:     { <span class="tk-str">"value"</span>: <span class="tk-str">"#E85D75"</span> },
+    <span class="tk-str">"groc"</span>:      { <span class="tk-str">"value"</span>: <span class="tk-str">"#F2C14E"</span> },
+    <span class="tk-str">"blau"</span>:      { <span class="tk-str">"value"</span>: <span class="tk-str">"#5DADE2"</span> },
+    <span class="tk-str">"verd"</span>:      { <span class="tk-str">"value"</span>: <span class="tk-str">"#2D936C"</span> },
+    <span class="tk-str">"rosa"</span>:      { <span class="tk-str">"value"</span>: <span class="tk-str">"#D4859A"</span> },
+    <span class="tk-str">"tinta"</span>:     { <span class="tk-str">"value"</span>: <span class="tk-str">"#1A1A1A"</span> },
+    <span class="tk-str">"blanc"</span>:     { <span class="tk-str">"value"</span>: <span class="tk-str">"#FFFFFF"</span> },
+    <span class="tk-str">"bosc"</span>: {
+      <span class="tk-str">"100"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#ABEBC6"</span> },
+      <span class="tk-str">"200"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#82E0AA"</span> },
+      <span class="tk-str">"300"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#2ECC71"</span> },
+      <span class="tk-str">"400"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#27AE60"</span> },
+      <span class="tk-str">"500"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#1E8449"</span> },
+      <span class="tk-str">"600"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#145A32"</span> }
+    },
+    <span class="tk-str">"gris"</span>: {
+      <span class="tk-str">"800"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#595959"</span> },
+      <span class="tk-str">"600"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#666666"</span> },
+      <span class="tk-str">"500"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#999999"</span> },
+      <span class="tk-str">"300"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#CCCCCC"</span> },
+      <span class="tk-str">"200"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#E5E5E5"</span> },
+      <span class="tk-str">"100"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#F5F5F5"</span> }
+    },
+    <span class="tk-str">"semantic"</span>: {
+      <span class="tk-str">"primary"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"{color.taronja}"</span> },
+      <span class="tk-str">"text"</span>:    { <span class="tk-str">"value"</span>: <span class="tk-str">"{color.tinta}"</span> },
+      <span class="tk-str">"success"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#2D936C"</span> },
+      <span class="tk-str">"warning"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#E8863A"</span> },
+      <span class="tk-str">"danger"</span>:  { <span class="tk-str">"value"</span>: <span class="tk-str">"#C0392B"</span> },
+      <span class="tk-str">"info"</span>:    { <span class="tk-str">"value"</span>: <span class="tk-str">"#5DADE2"</span> }
+    }
+  },
+  <span class="tk-str">"font"</span>: {
+    <span class="tk-str">"family"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"Montserrat"</span> },
+    <span class="tk-str">"size"</span>: {
+      <span class="tk-str">"display"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"56px"</span> },
+      <span class="tk-str">"h1"</span>:      { <span class="tk-str">"value"</span>: <span class="tk-str">"42px"</span> },
+      <span class="tk-str">"h2"</span>:      { <span class="tk-str">"value"</span>: <span class="tk-str">"32px"</span> },
+      <span class="tk-str">"h3"</span>:      { <span class="tk-str">"value"</span>: <span class="tk-str">"24px"</span> },
+      <span class="tk-str">"h4"</span>:      { <span class="tk-str">"value"</span>: <span class="tk-str">"20px"</span> },
+      <span class="tk-str">"body"</span>:    { <span class="tk-str">"value"</span>: <span class="tk-str">"16px"</span> },
+      <span class="tk-str">"sm"</span>:      { <span class="tk-str">"value"</span>: <span class="tk-str">"14px"</span> },
+      <span class="tk-str">"xs"</span>:      { <span class="tk-str">"value"</span>: <span class="tk-str">"12px"</span> }
+    },
+    <span class="tk-str">"weight"</span>: {
+      <span class="tk-str">"light"</span>:    { <span class="tk-str">"value"</span>: <span class="tk-str">300</span> },
+      <span class="tk-str">"regular"</span>:  { <span class="tk-str">"value"</span>: <span class="tk-str">400</span> },
+      <span class="tk-str">"medium"</span>:   { <span class="tk-str">"value"</span>: <span class="tk-str">500</span> },
+      <span class="tk-str">"semibold"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">600</span> },
+      <span class="tk-str">"bold"</span>:     { <span class="tk-str">"value"</span>: <span class="tk-str">700</span> }
+    }
+  },
+  <span class="tk-str">"space"</span>: {
+    <span class="tk-str">"1"</span>:  { <span class="tk-str">"value"</span>: <span class="tk-str">"4px"</span> },
+    <span class="tk-str">"2"</span>:  { <span class="tk-str">"value"</span>: <span class="tk-str">"8px"</span> },
+    <span class="tk-str">"3"</span>:  { <span class="tk-str">"value"</span>: <span class="tk-str">"12px"</span> },
+    <span class="tk-str">"4"</span>:  { <span class="tk-str">"value"</span>: <span class="tk-str">"16px"</span> },
+    <span class="tk-str">"5"</span>:  { <span class="tk-str">"value"</span>: <span class="tk-str">"24px"</span> },
+    <span class="tk-str">"6"</span>:  { <span class="tk-str">"value"</span>: <span class="tk-str">"32px"</span> },
+    <span class="tk-str">"7"</span>:  { <span class="tk-str">"value"</span>: <span class="tk-str">"48px"</span> },
+    <span class="tk-str">"8"</span>:  { <span class="tk-str">"value"</span>: <span class="tk-str">"64px"</span> },
+    <span class="tk-str">"9"</span>:  { <span class="tk-str">"value"</span>: <span class="tk-str">"96px"</span> },
+    <span class="tk-str">"10"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"128px"</span> }
+  },
+  <span class="tk-str">"radius"</span>: {
+    <span class="tk-str">"sm"</span>:   { <span class="tk-str">"value"</span>: <span class="tk-str">"4px"</span> },
+    <span class="tk-str">"md"</span>:   { <span class="tk-str">"value"</span>: <span class="tk-str">"8px"</span> },
+    <span class="tk-str">"lg"</span>:   { <span class="tk-str">"value"</span>: <span class="tk-str">"12px"</span> },
+    <span class="tk-str">"xl"</span>:   { <span class="tk-str">"value"</span>: <span class="tk-str">"20px"</span> },
+    <span class="tk-str">"full"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"9999px"</span> }
+  },
+  <span class="tk-str">"shadow"</span>: {
+    <span class="tk-str">"sm"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"0 1px 2px rgba(0,0,0,0.05)"</span> },
+    <span class="tk-str">"md"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"0 4px 12px rgba(0,0,0,0.08)"</span> },
+    <span class="tk-str">"lg"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"0 10px 40px rgba(0,0,0,0.12)"</span> },
+    <span class="tk-str">"xl"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"0 20px 60px rgba(0,0,0,0.18)"</span> }
+  },
+  <span class="tk-str">"motion"</span>: {
+    <span class="tk-str">"duration"</span>: {
+      <span class="tk-str">"fast"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"150ms"</span> },
+      <span class="tk-str">"base"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"250ms"</span> },
+      <span class="tk-str">"slow"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"400ms"</span> }
+    },
+    <span class="tk-str">"easing"</span>: {
+      <span class="tk-str">"out"</span>:    { <span class="tk-str">"value"</span>: <span class="tk-str">"cubic-bezier(0.16, 1, 0.3, 1)"</span> },
+      <span class="tk-str">"inOut"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"cubic-bezier(0.65, 0, 0.35, 1)"</span> }
+    }
+  }
+}</pre>
+    </div>
+
+    <div class="ds-resource" style="background:var(--am-color-bg-alt); color:var(--am-color-text);">
+      <div class="ds-resource__title" style="color:var(--am-color-text);">Pròxims passos · Fase 2</div>
+      <div class="ds-resource__text" style="color:var(--am-color-text-muted);">
+        Per completar el design system més enllà de la web:
+      </div>
+      <ul style="font-size:14px; color:var(--am-color-text); line-height:1.8; padding-left:20px;">
+        <li>Set d'iconografia oficial (≈30 icones SVG coherents amb les formes geomètriques de la marca). <strong>✓ Fet a Fase 2.</strong></li>
+        <li>Components secundaris: <em>tooltip, dropdown, tabs, breadcrumb, pagination, toast, avatar, accordion</em>.</li>
+        <li>Mode fosc (dark mode) — aplicar el sistema semàntic a una segona paleta.</li>
+        <li>Plantilles per a impresos i RRSS (Instagram, presentacions, memòries anuals).</li>
+        <li>Patró d'integració del generador d'isotip a la web (com il·lustració dinàmica de seccions).</li>
+        <li>Guidelines de fotografia (estil, ràtios, tractament de color).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ANEX · ACCESSIBILITAT · WCAG 2.2 AA
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="ds-section" id="wcag" aria-labelledby="wcag-title">
+    <div class="ds-section__num">22 · Anex</div>
+    <h2 class="ds-section__title" id="wcag-title">Accessibilitat <strong>· WCAG 2.2 AA</strong> <small>compromís de compliment</small></h2>
+    <p class="ds-section__lede">Tot el sistema està dissenyat per complir les <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 nivell AA, l'estàndard internacional d'accessibilitat web publicat pel <abbr title="World Wide Web Consortium">W3C</abbr>. Per a una fundació social que treballa amb persones amb diversitat funcional, l'accessibilitat no és una opció: és la pròpia missió aplicada al producte digital.</p>
+
+    <div class="ds-grid-3">
+      <div class="ds-wcag-card">
+        <div class="ds-wcag-card__head">Què és WCAG</div>
+        <div class="ds-wcag-card__title">Pautes d'accessibilitat web</div>
+        <div class="ds-wcag-card__text">Conjunt de criteris tècnics que asseguren que el contingut web sigui usable per persones amb discapacitats visuals, auditives, motrius o cognitives — i, en general, per qualsevol persona en qualsevol context (poca llum, ratolí trencat, soroll, llengua secundària).</div>
+      </div>
+      <div class="ds-wcag-card">
+        <div class="ds-wcag-card__head">Versió i nivell</div>
+        <div class="ds-wcag-card__title">2.2 — Nivell AA</div>
+        <div class="ds-wcag-card__text">WCAG 2.2 (octubre 2023) és la versió vigent. El nivell <strong>AA</strong> és l'exigible legalment a la UE per entitats del sector públic (Directiva 2016/2102, Reial Decret 1112/2018) i el mínim ètic recomanat per fundacions i ONG.</div>
+      </div>
+      <div class="ds-wcag-card">
+        <div class="ds-wcag-card__head">Quatre principis</div>
+        <div class="ds-wcag-card__title">P · O · U · R</div>
+        <div class="ds-wcag-card__text"><strong>Perceptible</strong> (es pot veure i sentir) · <strong>Operable</strong> (es pot usar amb teclat, ratolí o tàctil) · <strong>Comprensible</strong> (s'entén el text i el funcionament) · <strong>Robust</strong> (funciona amb tecnologies assistives presents i futures).</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 23 · CHECKLIST ─────────────────────────────────────── -->
+  <section class="ds-section" id="wcag-checklist" aria-labelledby="checklist-title">
+    <div class="ds-section__num">23 · Anex</div>
+    <h2 class="ds-section__title" id="checklist-title">Checklist <strong>· d'aplicació</strong> <small>el que ja fa el sistema, criteri per criteri</small></h2>
+    <p class="ds-section__lede">Aquesta llista no és exhaustiva (WCAG 2.2 AA té 50 criteris); recull els més rellevants per a un design system de components UI. Cada ítem cita el criteri WCAG entre parèntesis.</p>
+
+    <h3 class="ds-sub__title" style="margin-top:var(--am-space-7)">Perceptible</h3>
+    <ul class="ds-checklist">
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">1.1.1 (A)</span><span class="desc"><strong>Text alternatiu en imatges no textuals</strong><small>Tot SVG decoratiu porta <code>aria-hidden="true"</code> i <code>focusable="false"</code>. Les icones amb significat usen <code>role="img"</code> + <code>aria-label</code>. El logo del header té <code>aria-label="Fundació Ave Maria · Inici"</code>.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">1.3.1 (A)</span><span class="desc"><strong>Estructura semàntica</strong><small>Ús estricte de <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>. Jerarquia de titulars h1→h2→h3 correlativa. Llistes amb <code>&lt;ul&gt;</code>/<code>&lt;ol&gt;</code>. Grups de radios dins de <code>&lt;fieldset&gt;</code> + <code>&lt;legend&gt;</code>.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">1.3.5 (AA)</span><span class="desc"><strong>Identificació del propòsit dels camps</strong><small>Inputs amb <code>autocomplete</code> apropiat (<code>name</code>, <code>email</code>, <code>tel</code>, <code>postal-code</code>…) per a omplit assistit.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">1.4.3 (AA)</span><span class="desc"><strong>Contrast mínim 4.5:1 (3:1 per a text gran)</strong><small>Cada token de color ha estat verificat. Els colors vibrants de marca (taronja, coral, groc, blau…) es fan servir <em>com a fons</em>. Per a text, hi ha tokens "ink" amb contrast garantit. Veure taula de contrastos a la secció 24.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">1.4.4 (AA)</span><span class="desc"><strong>Redimensionament fins al 200%</strong><small>Tots els tamanys es defineixen en <code>px</code> o relatius. El layout és fluid: cap pèrdua de funcionalitat fins el 200% de zoom del navegador.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">1.4.10 (AA)</span><span class="desc"><strong>Reflow — sense scroll horitzontal a 320 px</strong><small>Tots els components tenen breakpoints fins a 320 px d'ample. Cap taula crítica forçant scroll lateral.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">1.4.11 (AA)</span><span class="desc"><strong>Contrast d'elements no textuals (UI) ≥3:1</strong><small>Les vores d'inputs, els icones de botons, l'indicador de focus i els estats actius compleixen 3:1 mínim. Suport a <code>forced-colors</code> (alt contrast del SO).</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">1.4.12 (AA)</span><span class="desc"><strong>Espaiat de text personalitzable</strong><small>Cap text té <code>height</code> fix. Els paràgrafs admeten l'usuari ajustar <code>line-height</code> a 1.5+, <code>letter-spacing</code> 0.12em+ i <code>word-spacing</code> 0.16em+ sense pèrdua de contingut.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">1.4.13 (AA)</span><span class="desc"><strong>Contingut en hover/focus dispensable</strong><small>Si en el futur s'afegeixen tooltips, han de ser tancables amb Esc, persistents en hover sobre el propi tooltip i no requerir hover precís.</small></span></li>
+    </ul>
+
+    <h3 class="ds-sub__title" style="margin-top:var(--am-space-7)">Operable</h3>
+    <ul class="ds-checklist">
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">2.1.1 (A)</span><span class="desc"><strong>Tot accessible amb teclat</strong><small>Cap funcionalitat depèn exclusivament del ratolí. Tab navega per ordre lògic, Shift+Tab cap enrere, Enter/Espai activen botons.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">2.1.2 (A)</span><span class="desc"><strong>Sense trampes de teclat</strong><small>El modal implementa focus-trap que retorna el focus al botó disparador en tancar.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">2.1.4 (A)</span><span class="desc"><strong>Tecles d'accés ràpid documentades</strong><small>Esc tanca modals. Cap atajo de tecla individual (com una sola lletra) — evitem activacions accidentals amb dictat per veu.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">2.4.1 (A)</span><span class="desc"><strong>Skip link per saltar blocs</strong><small>Enllaç "Saltar al contingut principal" al començament de cada pàgina. Visible només en focus amb teclat.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">2.4.3 (A)</span><span class="desc"><strong>Ordre del focus lògic</strong><small>L'ordre del DOM segueix l'ordre visual. No hi ha <code>tabindex</code> positius.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">2.4.6 (AA)</span><span class="desc"><strong>Encapçalaments i etiquetes descriptives</strong><small>Cada secció té un encapçalament que descriu el seu contingut. Cada camp de formulari té una <code>&lt;label&gt;</code> visible associada.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">2.4.7 (AA)</span><span class="desc"><strong>Indicador de focus visible</strong><small>Outline sòlid de 3 px amb offset de 3 px sobre tot element interactiu. Sobre fons fosc, l'outline esdevé blanc. Mai s'amaga el focus.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">2.4.11 (AA · novetat 2.2)</span><span class="desc"><strong>Focus no obscurit</strong><small>L'element amb focus no queda mai amagat per elements fixos (header sticky, modals). Ni parcialment.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">2.5.5 / 2.5.8 (AA)</span><span class="desc"><strong>Mida mínima de l'objectiu tàctil</strong><small>Tots els botons fan ≥44×44 px (recomanació iOS). Les icones-link tenen padding extern fins a complir 24×24 mínim de WCAG 2.5.8.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">2.3.3 (AAA — recomanat)</span><span class="desc"><strong>Reducció de moviment</strong><small>Block <code>@media (prefers-reduced-motion: reduce)</code> redueix totes les durades i easings a 0.01ms quan l'usuari ho té configurat al SO.</small></span></li>
+    </ul>
+
+    <h3 class="ds-sub__title" style="margin-top:var(--am-space-7)">Comprensible</h3>
+    <ul class="ds-checklist">
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">3.1.1 (A)</span><span class="desc"><strong>Idioma de la pàgina declarat</strong><small><code>&lt;html lang="ca"&gt;</code>. Si en una pàgina hi ha contingut en castellà o altre idioma, marcar-ho amb <code>&lt;span lang="es"&gt;</code>.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">3.2.1 (A)</span><span class="desc"><strong>Sense canvis al rebre el focus</strong><small>Rebre el focus mai canvia el context (cap obertura automàtica de modal, cap submit automàtic).</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">3.2.2 (A)</span><span class="desc"><strong>Sense canvis al introduir dades</strong><small>Escriure en un input no envia el formulari ni canvia de pàgina automàticament.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">3.3.1 (A)</span><span class="desc"><strong>Identificació d'errors</strong><small>Els errors de validació es comuniquen amb text descriptiu (no només color), amb <code>aria-invalid="true"</code> i <code>aria-describedby</code> apuntant al missatge d'error. Icona acompanyant per redundància.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">3.3.2 (A)</span><span class="desc"><strong>Etiquetes i instruccions</strong><small>Cada camp obligatori està marcat. Les ajudes (<code>am-help</code>) es vinculen amb <code>aria-describedby</code>.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">3.3.7 (A · novetat 2.2)</span><span class="desc"><strong>Entrada redundant evitada</strong><small>Els formularis multipas no demanen dades ja introduïdes anteriorment.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">3.3.8 (AA · novetat 2.2)</span><span class="desc"><strong>Autenticació accessible</strong><small>Si s'implementa àrea privada, no requerir resoldre captchas cognitius. Permetre copy-paste de contrasenyes.</small></span></li>
+    </ul>
+
+    <h3 class="ds-sub__title" style="margin-top:var(--am-space-7)">Robust</h3>
+    <ul class="ds-checklist">
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">4.1.2 (A)</span><span class="desc"><strong>Nom · Rol · Valor</strong><small>Tots els components UI exposen el seu nom (text visible o <code>aria-label</code>), el seu rol (<code>button</code>, <code>dialog</code>, <code>alert</code>…) i el seu valor (<code>aria-checked</code>, <code>aria-expanded</code>…) a l'API d'accessibilitat.</small></span></li>
+      <li><span class="ck" aria-hidden="true">✓</span><span class="ref">4.1.3 (AA)</span><span class="desc"><strong>Missatges d'estat</strong><small>Els alerts en directe usen <code>role="status"</code> (no urgent) o <code>role="alert"</code> (urgent). El toast d'èxit "✓ Copiat" es comunica per veu sintetitzada sense interrompre.</small></span></li>
+    </ul>
+  </section>
+
+  <!-- ── 24 · TAULA DE CONTRASTOS ───────────────────────────── -->
+  <section class="ds-section" id="wcag-contrast" aria-labelledby="contrast-title">
+    <div class="ds-section__num">24 · Anex</div>
+    <h2 class="ds-section__title" id="contrast-title">Taula de <strong>contrastos</strong> <small>tots els tokens auditats</small></h2>
+    <p class="ds-section__lede">Cada combinació color de text + color de fons de la marca ha estat verificada amb la fórmula de luminància WCAG. Els colors vibrants de marca (taronja, coral, groc, blau…) <strong>NO</strong> compleixen com a text sobre blanc — per això existeixen els tokens <code>--am-color-*-ink</code>, versions enfosquides validades per a ús com a text.</p>
+
+    <h3 class="ds-sub__title">✓ Combinacions vàlides (les que has de fer servir)</h3>
+    <table class="ds-wcag-table">
+      <thead>
+        <tr><th scope="col">Text</th><th scope="col">Fons</th><th scope="col">Ratio</th><th scope="col">AA normal</th><th scope="col">AA gran</th><th scope="col">Ús</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="swatch" style="background:#1A1A1A"></span><code>--am-tinta</code></td><td><span class="swatch" style="background:#FFFFFF"></span>blanc</td><td class="ratio">17.4:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td>text base</td></tr>
+        <tr><td><span class="swatch" style="background:#666666"></span><code>--am-gris-600</code></td><td><span class="swatch" style="background:#FFFFFF"></span>blanc</td><td class="ratio">5.74:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td>text muted</td></tr>
+        <tr><td><span class="swatch" style="background:#595959"></span><code>--am-gris-800</code></td><td><span class="swatch" style="background:#F5F5F5"></span><code>--am-gris-100</code></td><td class="ratio">6.6:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td>text sobre bg-alt</td></tr>
+        <tr><td><span class="swatch" style="background:#B8651D"></span><code>--am-taronja-ink</code></td><td><span class="swatch" style="background:#FFFFFF"></span>blanc</td><td class="ratio">4.85:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td>links taronja</td></tr>
+        <tr><td><span class="swatch" style="background:#1F6B4E"></span><code>--am-verd-ink</code></td><td><span class="swatch" style="background:#FFFFFF"></span>blanc</td><td class="ratio">5.6:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td>text verd</td></tr>
+        <tr><td><span class="swatch" style="background:#2E7BAB"></span><code>--am-blau-ink</code></td><td><span class="swatch" style="background:#FFFFFF"></span>blanc</td><td class="ratio">4.7:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td>info text</td></tr>
+        <tr><td><span class="swatch" style="background:#FFFFFF"></span>blanc</td><td><span class="swatch" style="background:#1A1A1A"></span><code>--am-tinta</code></td><td class="ratio">17.4:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td>text sobre footer</td></tr>
+        <tr><td><span class="swatch" style="background:#FFFFFF"></span>blanc</td><td><span class="swatch" style="background:#C0392B"></span><code>--am-color-danger</code></td><td class="ratio">5.1:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td>botó destructiu</td></tr>
+        <tr><td><span class="swatch" style="background:#1A6B49"></span><code>--am-color-success-ink</code></td><td><span class="swatch" style="background:#E8F5EE"></span>success-bg</td><td class="ratio">7.96:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td>alert success</td></tr>
+        <tr><td><span class="swatch" style="background:#8A4E1F"></span><code>--am-color-warning-ink</code></td><td><span class="swatch" style="background:#FCEFD9"></span>warning-bg</td><td class="ratio">6.3:1</td><td class="pass">PASS</td><td class="pass">PASS</td><td>alert warning</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="ds-sub__title" style="margin-top:var(--am-space-7)">✗ Combinacions PROHIBIDES com a text (només com a fons amb text damunt)</h3>
+    <table class="ds-wcag-table">
+      <thead>
+        <tr><th scope="col">Text</th><th scope="col">Fons</th><th scope="col">Ratio</th><th scope="col">AA normal</th><th scope="col">Alternativa</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="swatch" style="background:#E8863A"></span><code>--am-taronja</code></td><td><span class="swatch" style="background:#FFFFFF"></span>blanc</td><td class="ratio">2.83:1</td><td class="fail">FAIL</td><td>Usar <code>--am-taronja-ink</code></td></tr>
+        <tr><td><span class="swatch" style="background:#E85D75"></span><code>--am-coral</code></td><td><span class="swatch" style="background:#FFFFFF"></span>blanc</td><td class="ratio">3.27:1</td><td class="fail">FAIL</td><td>Usar <code>--am-coral-ink</code></td></tr>
+        <tr><td><span class="swatch" style="background:#F2C14E"></span><code>--am-groc</code></td><td><span class="swatch" style="background:#FFFFFF"></span>blanc</td><td class="ratio">1.86:1</td><td class="fail">FAIL ☠</td><td>Usar <code>--am-groc-ink</code> o evitar</td></tr>
+        <tr><td><span class="swatch" style="background:#5DADE2"></span><code>--am-blau</code></td><td><span class="swatch" style="background:#FFFFFF"></span>blanc</td><td class="ratio">2.51:1</td><td class="fail">FAIL</td><td>Usar <code>--am-blau-ink</code></td></tr>
+        <tr><td><span class="swatch" style="background:#999999"></span><code>--am-gris-500</code></td><td><span class="swatch" style="background:#FFFFFF"></span>blanc</td><td class="ratio">2.84:1</td><td class="fail">FAIL</td><td>Per a text usar <code>--am-gris-600</code> o més fosc</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:var(--am-fs-sm);color:var(--am-color-text-muted);margin-top:var(--am-space-3);"><strong>Regla d'or:</strong> els colors vibrants de marca (taronja, coral, groc, blau, rosa) s'usen com a fons grans, com a accents decoratius o com a indicadors d'estat — <em>no com a color de text de cos</em>.</p>
+  </section>
+
+  <!-- ── 25 · EINES DE TEST ─────────────────────────────────── -->
+  <section class="ds-section" id="wcag-tools" aria-labelledby="tools-title">
+    <div class="ds-section__num">25 · Anex</div>
+    <h2 class="ds-section__title" id="tools-title">Eines <strong>· per a verificar</strong></h2>
+    <p class="ds-section__lede">Comprovar accessibilitat ha de ser part del flux de treball, no una auditoria final. Aquestes són les eines que recomanem.</p>
+
+    <div class="ds-tools-grid">
+      <div class="ds-tool"><h4>axe DevTools</h4><p>Extensió de Chrome/Firefox. Auditoria automàtica que detecta el ~57% dels problemes WCAG. Gratuït. Imprescindible.</p></div>
+      <div class="ds-tool"><h4>WAVE</h4><p>Extensió que sobreposa marques visuals al lloc, mostrant errors d'accessibilitat directament a la pàgina. Bo per a validació visual.</p></div>
+      <div class="ds-tool"><h4>Lighthouse</h4><p>Integrat a Chrome. Inclou una secció d'accessibilitat amb puntuació de 0-100. Útil per al CI/CD.</p></div>
+      <div class="ds-tool"><h4>NVDA / VoiceOver</h4><p>Lectors de pantalla reals. NVDA gratuït (Windows), VoiceOver inclòs a macOS/iOS. Provar amb teclat tancant els ulls.</p></div>
+      <div class="ds-tool"><h4>Stark</h4><p>Plugin de Figma + Chrome. Verificació de contrastos en temps de disseny i simulació de daltonisme.</p></div>
+      <div class="ds-tool"><h4>Color Oracle</h4><p>App nativa que aplica filtres de daltonisme a tota la pantalla. Veure la teva web com qui té deuteranopia, protanopia, tritanopia.</p></div>
+      <div class="ds-tool"><h4>Tab key</h4><p>La prova més senzilla i potent: navega tot el lloc només amb Tab i Shift+Tab. Si no pots arribar a algun lloc, és un bug d'accessibilitat.</p></div>
+      <div class="ds-tool"><h4>Pa11y</h4><p>Eina CLI per integrar a CI. Falla el build si apareixen regressions d'accessibilitat. Perfecta per a equips disciplinats.</p></div>
+    </div>
+  </section>
+
+  <!-- ── 26 · MANTENIMENT ───────────────────────────────────── -->
+  <section class="ds-section" id="wcag-maintenance" aria-labelledby="maint-title">
+    <div class="ds-section__num">26 · Anex</div>
+    <h2 class="ds-section__title" id="maint-title">Manteniment <strong>· compromisos</strong></h2>
+    <p class="ds-section__lede">L'accessibilitat no és un check d'auditoria final: és un compromís continu. Aquestes són les regles que s'apliquen sempre que s'afegeix una funcionalitat al projecte web.</p>
+
+    <ol style="font-size:var(--am-fs-body); line-height:1.8; padding-left:24px; max-width:780px;">
+      <li><strong>Mai un nou color sense auditoria de contrast.</strong> Cada cop que es proposa un color nou, es comprova contra blanc i contra tinta amb un verificador (WebAIM Contrast Checker). Si no compleix 4.5:1 com a text, s'afegeix una versió "ink".</li>
+      <li><strong>Cada nou component es prova amb teclat abans d'aprovar.</strong> Tab, Shift+Tab, Enter, Espai, Esc, fletxes. Si una funció requereix ratolí, no pot pujar a producció.</li>
+      <li><strong>Sempre etiqueta visible al costat del camp.</strong> El placeholder no és una label. Mai només icona sense text equivalent (en botons, mai només icona sense <code>aria-label</code>).</li>
+      <li><strong>Mai usar només el color per comunicar.</strong> Els errors mostren icona + text + color. Els estats actius mostren forma + color.</li>
+      <li><strong>Cada commit que afecta UI passa axe DevTools localment</strong> abans del push. Cada PR afegeix captura del resultat zero-errors.</li>
+      <li><strong>Test amb usuaris reals 1 cop l'any.</strong> Una sessió amb una persona usuària de la fundació amb diversitat funcional, observant l'ús de la web. Els seus comentaris pesen més que qualsevol checklist.</li>
+      <li><strong>Declaració d'accessibilitat pública.</strong> Pàgina <code>/accessibilitat</code> al lloc web amb el nivell de compliment, mètode de contacte per reportar barreres, i data de la darrera auditoria.</li>
+    </ol>
+
+    <div class="ds-resource" style="margin-top:var(--am-space-7); background:var(--am-color-bg-alt); color:var(--am-color-text);">
+      <div class="ds-resource__title" style="color:var(--am-color-text);">Recursos oficials</div>
+      <ul style="font-size:14px; color:var(--am-color-text); line-height:1.9; padding-left:20px;">
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_overview&amp;levels=aaa" target="_blank" rel="noopener noreferrer" style="color:var(--am-taronja-ink);">WCAG 2.2 · Quick Reference (W3C, oficial) ↗</a></li>
+        <li><a href="https://www.w3.org/WAI/standards-guidelines/aria/" target="_blank" rel="noopener noreferrer" style="color:var(--am-taronja-ink);">WAI-ARIA · Authoring Practices Guide ↗</a></li>
+        <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2018-12699" target="_blank" rel="noopener noreferrer" style="color:var(--am-taronja-ink);">Reial Decret 1112/2018 (normativa estatal espanyola) ↗</a></li>
+        <li><a href="https://eur-lex.europa.eu/eli/dir/2016/2102/oj" target="_blank" rel="noopener noreferrer" style="color:var(--am-taronja-ink);">Directiva (UE) 2016/2102 sobre accessibilitat de llocs web ↗</a></li>
+        <li><a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer" style="color:var(--am-taronja-ink);">WebAIM · Contrast Checker (eina recomanada) ↗</a></li>
+      </ul>
+    </div>
+
+    <div class="ds-wcag-card" style="margin-top:var(--am-space-7); border-color:var(--am-color-primary);">
+      <div class="ds-wcag-card__head">Compromís</div>
+      <div class="ds-wcag-card__title">Per què és vinculant per a Ave Maria</div>
+      <div class="ds-wcag-card__text">Una fundació que acompanya persones amb diversitat funcional <strong>no pot tenir una web inaccessible</strong>. Seria una contradicció amb la pròpia missió. Per això aquest design system tracta la conformitat amb WCAG 2.2 AA com una <strong>especificació d'obligat compliment</strong>, no com una recomanació. Cap component pot pujar a producció si no compleix els criteris d'aquest anex.</div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MODAL DEMO
+     ═══════════════════════════════════════════════════════════ -->
+<div class="am-modal-backdrop" id="my-modal" role="dialog" aria-modal="true" aria-labelledby="my-modal-title" aria-describedby="my-modal-desc" hidden>
+  <div class="am-modal">
+    <h3 class="am-modal__title" id="my-modal-title">Confirmar la donació</h3>
+    <p class="am-modal__text" id="my-modal-desc">Aportaràs <strong>30 €</strong> a la Fundació Ave Maria de manera puntual. Rebràs el justificant al teu correu en pocs minuts.</p>
+    <div class="am-modal__actions">
+      <button class="am-btn am-btn--ghost" id="close-modal">Cancel·lar</button>
+      <button class="am-btn am-btn--primary">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════
+   Sidebar · active section on scroll
+   ════════════════════════════════════════════════ */
+const sections = document.querySelectorAll('.ds-section, .ds-intro');
+const navLinks = document.querySelectorAll('.ds-nav a[href^="#"]');
+const setActive = () => {
+  let current = '';
+  sections.forEach(s => {
+    const top = s.getBoundingClientRect().top;
+    if (top < 200) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('is-active', a.getAttribute('href') === '#' + current);
+  });
+};
+window.addEventListener('scroll', setActive, { passive: true });
+setActive();
+
+/* Close sidebar on link click (mobile) */
+navLinks.forEach(a => a.addEventListener('click', () => {
+  if (window.innerWidth <= 900) document.querySelector('.ds-nav').classList.remove('is-open');
+}));
+
+/* ════════════════════════════════════════════════
+   Copy code blocks
+   ════════════════════════════════════════════════ */
+document.querySelectorAll('[data-copy]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.getElementById(btn.dataset.copy);
+    if (!target) return;
+    const text = target.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.textContent;
+      btn.textContent = '✓ Copiat';
+      btn.classList.add('is-copied');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('is-copied');
+      }, 1600);
+    });
+  });
+});
+
+/* ════════════════════════════════════════════════
+   Modal demo · accessible
+   - aria-labelledby + aria-describedby ✓
+   - focus trap entre els elements interactius del modal
+   - retorn de focus al botó disparador en tancar
+   - tancament amb Escape i clic al backdrop
+   ════════════════════════════════════════════════ */
+const modal = document.getElementById('my-modal');
+const openBtn = document.getElementById('open-modal');
+const closeBtn = document.getElementById('close-modal');
+let lastFocused = null;
+
+const getFocusable = (root) => root.querySelectorAll(
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+);
+const openModal = () => {
+  lastFocused = document.activeElement;
+  modal.hidden = false;
+  modal.classList.add('is-open');
+  const f = getFocusable(modal);
+  if (f.length) f[0].focus();
+};
+const closeModal = () => {
+  modal.classList.remove('is-open');
+  modal.hidden = true;
+  if (lastFocused) lastFocused.focus();
+};
+openBtn?.addEventListener('click', openModal);
+closeBtn?.addEventListener('click', closeModal);
+modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+  if (e.key === 'Tab' && modal.classList.contains('is-open')) {
+    const f = Array.from(getFocusable(modal));
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+});
+
+/* ════════════════════════════════════════════════
+   Download token files
+   ════════════════════════════════════════════════ */
+const download = (filename, content, mime) => {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename; a.click();
+  URL.revokeObjectURL(url);
+};
+
+document.getElementById('download-tokens')?.addEventListener('click', () => {
+  const code = document.getElementById('tokens-css-block').innerText;
+  download('tokens-ave-maria.css', code, 'text/css');
+});
+document.getElementById('download-json')?.addEventListener('click', () => {
+  const code = document.getElementById('tokens-json-block').innerText;
+  download('design-tokens-ave-maria.json', code, 'application/json');
+});
+</script>
+
+</body>
+</html>

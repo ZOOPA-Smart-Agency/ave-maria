@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Book - Ave Maria Fundació</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <style>
+        :root {
+            --naranja: #E8863A;
+            --rosa: #E85D75;
+            --azul: #5DADE2;
+            --verde: #2D936C;
+            --amarillo: #F2C14E;
+            --rosa-suave: #D4859A;
+            --negro: #1a1a1a;
+            --gris: #666666;
+            --gris-claro: #f5f5f5;
+            --blanco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--blanco);
+            color: var(--negro);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--negro);
+            padding: 40px 30px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--blanco);
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        nav .subtitle {
+            font-size: 11px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-bottom: 8px;
+        }
+
+        nav ul li a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 8px 0;
+            border-left: 2px solid transparent;
+            padding-left: 15px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--blanco);
+            border-left-color: var(--naranja);
+        }
+
+        nav .nav-section {
+            font-size: 10px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        /* Main Content */
+        main {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+
+        section {
+            padding: 100px 80px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        /* Cover Section */
+        .cover {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background: linear-gradient(135deg, var(--gris-claro) 0%, var(--blanco) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: linear-gradient(45deg, var(--naranja) 0%, var(--rosa) 50%, var(--azul) 100%);
+            opacity: 0.05;
+            transform: rotate(-15deg);
+        }
+
+        .cover h1 {
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .cover .brand-name {
+            display: block;
+            font-weight: 300;
+            font-size: 48px;
+            color: var(--gris);
+        }
+
+        .cover p {
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--gris);
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        .cover .version {
+            font-size: 12px;
+            color: rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        /* Section Headers */
+        .section-number {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--naranja);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
+
+        h3:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 16px;
+            color: var(--gris);
+            max-width: 700px;
+            margin-bottom: 20px;
+        }
+
+        .lead {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--negro);
+            line-height: 1.7;
+        }
+
+        /* Grid layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        /* Value Cards */
+        .value-card {
+            background: var(--gris-claro);
+            padding: 40px;
+            border-radius: 16px;
+        }
+
+        .value-card .icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .value-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        /* Color Swatches */
+        .color-swatch {
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--blanco);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .color-swatch .color-preview {
+            height: 150px;
+        }
+
+        .color-swatch .color-info {
+            padding: 25px;
+        }
+
+        .color-swatch .color-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .color-swatch .color-values {
+            font-size: 12px;
+            color: var(--gris);
+            font-family: 'SF Mono', 'Monaco', monospace;
+        }
+
+        .color-swatch .color-values span {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Typography Specimens */
+        .type-specimen {
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .type-specimen:last-child {
+            border-bottom: none;
+        }
+
+        .type-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gris);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .type-sample-large {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: 8px;
+            line-height: 1.2;
+        }
+
+        .type-sample-medium {
+            font-size: 36px;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+
+        /* Concept boxes */
+        .concept-box {
+            background: var(--negro);
+            color: var(--blanco);
+            padding: 50px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .concept-box h4 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--naranja);
+            margin-bottom: 20px;
+        }
+
+        .concept-box p {
+            color: rgba(255,255,255,0.8);
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: none;
+        }
+
+        .concept-box .highlight {
+            color: var(--blanco);
+            font-weight: 600;
+        }
+
+        /* Quote */
+        blockquote {
+            font-size: 28px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--negro);
+            border-left: 4px solid var(--naranja);
+            padding-left: 30px;
+            margin: 50px 0;
+            max-width: 700px;
+        }
+
+        /* Isotipo Grid Demo */
+        .isotipo-demo {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .isotipo-container {
+            background: var(--blanco);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Shape Library */
+        .shape-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .shape-item {
+            aspect-ratio: 1;
+            background: var(--gris-claro);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .shape-item svg {
+            width: 60%;
+            height: 60%;
+        }
+
+        .shape-item .shape-label {
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 10px;
+            color: var(--gris);
+        }
+
+        /* Usage Guidelines */
+        .usage-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .usage-item {
+            background: var(--gris-claro);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .usage-item .preview {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--blanco);
+        }
+
+        .usage-item .description {
+            padding: 25px;
+        }
+
+        .usage-item .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .usage-item .status.correct {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .usage-item .status.incorrect {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .usage-item h5 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .usage-item p {
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+
+        /* Connection diagram */
+        .connection-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .connection-item {
+            text-align: center;
+        }
+
+        .connection-item .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--blanco);
+            margin-bottom: 15px;
+        }
+
+        .connection-item span {
+            font-size: 13px;
+            color: var(--gris);
+        }
+
+        .connection-arrow {
+            font-size: 24px;
+            color: var(--gris);
+        }
+
+        /* Interactive section */
+        .interactive-section {
+            background: var(--gris-claro);
+            border-radius: 20px;
+            padding: 50px;
+            margin-top: 50px;
+        }
+
+        .interactive-section h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .interactive-section > p {
+            margin-bottom: 30px;
+        }
+
+        #generator-container {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        #canvas-wrapper {
+            background: var(--blanco);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .generator-controls {
+            flex: 1;
+        }
+
+        .generator-controls button {
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Montserrat', sans-serif;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background: var(--negro);
+            color: var(--blanco);
+        }
+
+        .btn-primary:hover {
+            background: #333;
+        }
+
+        .btn-secondary {
+            background: var(--blanco);
+            color: var(--negro);
+            border: 1px solid #ddd;
+        }
+
+        .palette-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .palette-btn {
+            width: 50px;
+            height: 50px;
+            border: 3px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .palette-btn:hover, .palette-btn.active {
+            border-color: var(--negro);
+            transform: scale(1.1);
+        }
+
+        /* Meaning section */
+        .meaning-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .meaning-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--gris-claro);
+            border-radius: 16px;
+        }
+
+        .meaning-item .emoji {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .meaning-item h5 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .meaning-item p {
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 80px;
+            background: var(--negro);
+            color: var(--blanco);
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer .brand {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        footer .info {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            nav {
+                width: 240px;
+            }
+            main {
+                margin-left: 240px;
+            }
+            section {
+                padding: 80px 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            nav {
+                display: none;
+            }
+            main {
+                margin-left: 0;
+            }
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .cover h1 {
+                font-size: 48px;
+            }
+            h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            nav {
+                display: none;
+            }
+            main {
+                margin-left: 0;
+            }
+            section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">AVE MARIA</div>
+        <div class="subtitle">Brand Book</div>
+
+        <ul>
+            <li><a href="#cover" class="active">Portada</a></li>
+
+            <div class="nav-section">Fundamentos</div>
+            <li><a href="#about">Sobre la Fundacio</a></li>
+            <li><a href="#mission">Mision y Valores</a></li>
+            <li><a href="#concept">Concepto Creativo</a></li>
+
+            <div class="nav-section">Identidad Visual</div>
+            <li><a href="#isotipo">El Isotipo</a></li>
+            <li><a href="#construction">Construccion</a></li>
+            <li><a href="#colors">Paleta de Colores</a></li>
+            <li><a href="#typography">Tipografia</a></li>
+
+            <div class="nav-section">Aplicacion</div>
+            <li><a href="#usage">Usos Correctos</a></li>
+            <li><a href="#generator">Generador</a></li>
+            <li><a href="#applications">Aplicaciones</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Cover -->
+        <section id="cover" class="cover">
+            <span class="section-number">Manual de Identidad Visual</span>
+            <h1>
+                Brand Book
+                <span class="brand-name">Ave Maria Fundacio</span>
+            </h1>
+            <p>Una identidad viva para un espacio donde todo ocurre. Sistema de identidad visual generativo para la Fundacio Ave Maria de Sitges.</p>
+            <span class="version">Version 1.0 — Enero 2026</span>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <span class="section-number">01 — Sobre Nosotros</span>
+            <h2>La Fundacio Ave Maria de Sitges</h2>
+
+            <p class="lead">Desde 1987, la Fundacio Ave Maria es una institucion privada sin animo de lucro que ofrece atencion especializada a personas adultas con diversidad funcional, potenciando sus capacidades para garantizar su calidad de vida.</p>
+
+            <p>Actualmente beneficiamos a mas de 800 personas en Sitges, Garraf y comarcas vecinas, ofreciendo servicios de residencia especializada, centros de dia, viviendas con apoyo, formacion e inclusion laboral.</p>
+
+            <div class="grid-3">
+                <div class="value-card">
+                    <div class="icon" style="background: rgba(232,134,58,0.15); color: var(--naranja);">+35</div>
+                    <h4>Anos de experiencia</h4>
+                    <p>Desde 1987 trabajando por la inclusion y la calidad de vida de las personas con diversidad funcional.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon" style="background: rgba(93,173,226,0.15); color: var(--azul);">+800</div>
+                    <h4>Personas atendidas</h4>
+                    <p>Beneficiarios directos de nuestros programas y servicios en toda la comarca del Garraf.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon" style="background: rgba(45,147,108,0.15); color: var(--verde);">100%</div>
+                    <h4>Compromiso</h4>
+                    <p>Dedicacion total a potenciar las capacidades de cada persona y su proyecto de vida.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission">
+            <span class="section-number">02 — Mision y Valores</span>
+            <h2>Nuestro Proposito</h2>
+
+            <blockquote>
+                "Garantir la qualitat de vida de les persones amb diversitat funcional, potenciant les seves capacitats."
+            </blockquote>
+
+            <h3>Nuestra Vision</h3>
+            <p>Ser reconocidos como lideres en bienestar y servicios de calidad, mejorando continuamente mediante la innovacion, manteniendo un equipo profesional competente y fomentando la inclusion social.</p>
+
+            <h3>Valores Fundamentales</h3>
+            <div class="grid-4">
+                <div class="value-card">
+                    <h4>Responsabilidad</h4>
+                    <p>Coherencia y compromiso en cada accion que realizamos.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Eficacia</h4>
+                    <p>Eficiencia operativa para maximizar nuestro impacto social.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Innovacion</h4>
+                    <p>Mejora permanente en todos nuestros servicios y programas.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Trabajo en Equipo</h4>
+                    <p>Aprovechamiento del talento colectivo para lograr objetivos comunes.</p>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <h4>Respeto y Transparencia</h4>
+                <p>La comunicacion efectiva y el respeto mutuo son la base de todas nuestras relaciones. Creemos en la <span class="highlight">transparencia</span> como principio fundamental para generar confianza con las personas que atendemos, sus familias y toda la comunidad.</p>
+            </div>
+        </section>
+
+        <!-- Concept Section -->
+        <section id="concept">
+            <span class="section-number">03 — Concepto Creativo</span>
+            <h2>Un espacio donde todo ocurre</h2>
+
+            <p class="lead">La Fundacio es un lugar vivo. Un punto de encuentro donde convergen disciplinas, generaciones, culturas e ideas. No se define por una sola actividad, sino por la suma de todas ellas.</p>
+
+            <div class="grid-2">
+                <div>
+                    <h3>Deconstruir para Construir</h3>
+                    <p>Partimos del edificio como origen. No lo ilustramos. Lo <strong>deconstruimos</strong>.</p>
+                    <p>Simplificamos sus volumenes, curvas y proporciones esenciales hasta obtener formas geometricas puras. Estas piezas se reorganizan dentro de un contenedor comun: el cuadrado.</p>
+                    <p>El resultado no es una fachada, sino un <strong>sistema grafico</strong>. Una estructura donde las partes dialogan, se equilibran y generan nuevas composiciones.</p>
+                </div>
+                <div>
+                    <h3>El Cuadrado como Territorio</h3>
+                    <p>El cuadrado actua como marco y como metafora. Representa el espacio que la Fundacio ofrece a la comunidad: estable, acogedor y abierto.</p>
+                    <p>Dentro de el, cada forma simboliza iniciativas, personas o proyectos. Ninguna prevalece sobre otra. Todas conviven en armonia.</p>
+                    <p>El conjunto transmite <strong>apertura, inclusion y contemporaneidad</strong>.</p>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <h4>El Vacio como Invitacion</h4>
+                <p>En cada composicion dejamos un <span class="highlight">espacio en blanco</span>. No es un hueco. Es un gesto. Un lugar reservado para quien llega. Para nuevas voces. Para ideas que aun no existen. El blanco comunica que la Fundacio no esta completa sin las personas que la habitan.</p>
+            </div>
+
+            <h3>Conexion Valores - Identidad</h3>
+            <div class="connection-diagram">
+                <div class="connection-item">
+                    <div class="circle" style="background: var(--naranja);">Inclusion</div>
+                    <span>Formas que conviven</span>
+                </div>
+                <span class="connection-arrow">→</span>
+                <div class="connection-item">
+                    <div class="circle" style="background: var(--rosa);">Diversidad</div>
+                    <span>Colores variados</span>
+                </div>
+                <span class="connection-arrow">→</span>
+                <div class="connection-item">
+                    <div class="circle" style="background: var(--azul);">Apertura</div>
+                    <span>Espacio en blanco</span>
+                </div>
+                <span class="connection-arrow">→</span>
+                <div class="connection-item">
+                    <div class="circle" style="background: var(--verde);">Innovacion</div>
+                    <span>Sistema generativo</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Isotipo Section -->
+        <section id="isotipo">
+            <span class="section-number">04 — El Isotipo</span>
+            <h2>Una Identidad Viva</h2>
+
+            <p class="lead">La identidad deja de ser un simbolo cerrado para convertirse en un lenguaje visual generativo. Las formas pueden reorganizarse. Los colores pueden adaptarse. Las composiciones evolucionan segun contexto y aplicacion.</p>
+
+            <div class="meaning-grid">
+                <div class="meaning-item">
+                    <div class="emoji">◐</div>
+                    <h5>Moderna</h5>
+                    <p>Lenguaje visual contemporaneo</p>
+                </div>
+                <div class="meaning-item">
+                    <div class="emoji">◯</div>
+                    <h5>Inclusiva</h5>
+                    <p>Todas las formas tienen valor</p>
+                </div>
+                <div class="meaning-item">
+                    <div class="emoji">◉</div>
+                    <h5>Punto de encuentro</h5>
+                    <p>Convergencia de personas e ideas</p>
+                </div>
+                <div class="meaning-item">
+                    <div class="emoji">□</div>
+                    <h5>Espacio seguro</h5>
+                    <p>Marco estable y acogedor</p>
+                </div>
+                <div class="meaning-item">
+                    <div class="emoji">◌</div>
+                    <h5>Abierta al futuro</h5>
+                    <p>Siempre hay sitio para alguien mas</p>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 60px;">
+                <div class="isotipo-container" id="isotipo-preview">
+                    <!-- Se genera dinamicamente -->
+                </div>
+                <div>
+                    <h3>Estructura del Isotipo</h3>
+                    <p>El isotipo se compone de una <strong>cuadricula de 3x3</strong> celdas que contienen formas geometricas derivadas del edificio de la Fundacio.</p>
+                    <p>Una celda siempre permanece en <strong>blanco</strong>, simbolizando el espacio reservado para nuevas personas, ideas y proyectos.</p>
+                    <p>Las 8 celdas restantes se llenan con formas que pueden variar: circulos, semicirculos, cuartos de circulo y formas derivadas que dialogan entre si.</p>
+                    <p>Debajo del isotipo aparece el nombre <strong>"AVE MARIA"</strong> en Montserrat Bold y <strong>"FUNDACIO"</strong> en Montserrat Light, ambos justificados al ancho del isotipo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Construction Section -->
+        <section id="construction">
+            <span class="section-number">05 — Construccion</span>
+            <h2>Sistema de Formas</h2>
+
+            <p class="lead">El vocabulario visual se compone de formas geometricas puras, todas derivadas del circulo y el cuadrado. Estas formas pueden combinarse de multiples maneras, creando composiciones unicas pero coherentes.</p>
+
+            <h3>Biblioteca de Formas</h3>
+            <div class="shape-grid">
+                <div class="shape-item">
+                    <svg viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#E8863A"/>
+                    </svg>
+                    <span class="shape-label">Cuadrado</span>
+                </div>
+                <div class="shape-item">
+                    <svg viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#5DADE2"/>
+                        <circle cx="50" cy="50" r="50" fill="#E85D75"/>
+                    </svg>
+                    <span class="shape-label">Circulo</span>
+                </div>
+                <div class="shape-item">
+                    <svg viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#2D936C"/>
+                        <path d="M 0 0 L 100 0 A 100 100 0 0 1 0 100 Z" fill="#F2C14E"/>
+                    </svg>
+                    <span class="shape-label">Cuarto A</span>
+                </div>
+                <div class="shape-item">
+                    <svg viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#E85D75"/>
+                        <path d="M 100 0 L 100 100 A 100 100 0 0 1 0 0 Z" fill="#5DADE2"/>
+                    </svg>
+                    <span class="shape-label">Cuarto B</span>
+                </div>
+                <div class="shape-item">
+                    <svg viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#F2C14E"/>
+                        <path d="M 0 50 A 50 50 0 0 1 100 50 A 50 50 0 0 1 0 50" fill="#E8863A"/>
+                    </svg>
+                    <span class="shape-label">Hoja H</span>
+                </div>
+                <div class="shape-item">
+                    <svg viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#5DADE2"/>
+                        <path d="M 50 0 A 50 50 0 0 1 50 100 A 50 50 0 0 1 50 0" fill="#2D936C"/>
+                    </svg>
+                    <span class="shape-label">Hoja V</span>
+                </div>
+                <div class="shape-item">
+                    <svg viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#E8863A"/>
+                        <path d="M 0 100 A 50 50 0 0 1 100 100 Z" fill="#E85D75"/>
+                    </svg>
+                    <span class="shape-label">Semi Abajo</span>
+                </div>
+                <div class="shape-item">
+                    <svg viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#2D936C"/>
+                        <path d="M 0 0 A 50 50 0 0 0 100 0 Z" fill="#F2C14E"/>
+                    </svg>
+                    <span class="shape-label">Semi Arriba</span>
+                </div>
+                <div class="shape-item">
+                    <svg viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#E85D75"/>
+                        <path d="M 0 0 A 50 50 0 0 1 0 100 Z" fill="#5DADE2"/>
+                    </svg>
+                    <span class="shape-label">Semi Izq</span>
+                </div>
+                <div class="shape-item">
+                    <svg viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#F2C14E"/>
+                        <path d="M 100 0 A 50 50 0 0 0 100 100 Z" fill="#E8863A"/>
+                    </svg>
+                    <span class="shape-label">Semi Der</span>
+                </div>
+                <div class="shape-item">
+                    <svg viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="#5DADE2"/>
+                        <circle cx="50" cy="50" r="30" fill="#2D936C"/>
+                    </svg>
+                    <span class="shape-label">Circulo Int</span>
+                </div>
+                <div class="shape-item">
+                    <svg viewBox="0 0 100 100">
+                        <rect width="100" height="100" fill="white" stroke="#ddd"/>
+                    </svg>
+                    <span class="shape-label">Vacio</span>
+                </div>
+            </div>
+
+            <div class="concept-box">
+                <h4>Reglas de Composicion</h4>
+                <p>1. La cuadricula siempre es de <span class="highlight">3x3 celdas</span>.<br>
+                2. Una celda siempre debe permanecer en <span class="highlight">blanco</span> (el espacio de invitacion).<br>
+                3. Las formas deben usar colores de la <span class="highlight">paleta oficial</span>.<br>
+                4. Dos celdas adyacentes no deben tener el <span class="highlight">mismo color</span> de fondo.<br>
+                5. El texto siempre va debajo, <span class="highlight">justificado al ancho</span> del isotipo.</p>
+            </div>
+        </section>
+
+        <!-- Colors Section -->
+        <section id="colors">
+            <span class="section-number">06 — Paleta de Colores</span>
+            <h2>Colores Corporativos</h2>
+
+            <p class="lead">La paleta de colores refleja la vitalidad, calidez y diversidad de la Fundacio. Colores vibrantes que transmiten energia positiva, optimismo y acogida.</p>
+
+            <h3>Paleta Principal — Ave Maria</h3>
+            <div class="grid-3">
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #E8863A;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Naranja Ave Maria</div>
+                        <div class="color-values">
+                            <span>HEX: #E8863A</span>
+                            <span>RGB: 232, 134, 58</span>
+                            <span>CMYK: 0, 52, 82, 9</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #E85D75;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Rosa Coral</div>
+                        <div class="color-values">
+                            <span>HEX: #E85D75</span>
+                            <span>RGB: 232, 93, 117</span>
+                            <span>CMYK: 0, 72, 40, 9</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #5DADE2;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Azul Mediterraneo</div>
+                        <div class="color-values">
+                            <span>HEX: #5DADE2</span>
+                            <span>RGB: 93, 173, 226</span>
+                            <span>CMYK: 62, 18, 0, 11</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #2D936C;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Verde Esperanza</div>
+                        <div class="color-values">
+                            <span>HEX: #2D936C</span>
+                            <span>RGB: 45, 147, 108</span>
+                            <span>CMYK: 75, 15, 60, 5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #F2C14E;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Amarillo Luz</div>
+                        <div class="color-values">
+                            <span>HEX: #F2C14E</span>
+                            <span>RGB: 242, 193, 78</span>
+                            <span>CMYK: 3, 22, 75, 0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #D4859A;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Rosa Suave</div>
+                        <div class="color-values">
+                            <span>HEX: #D4859A</span>
+                            <span>RGB: 212, 133, 154</span>
+                            <span>CMYK: 12, 50, 20, 0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Paletas Alternativas</h3>
+            <p>Para diferentes contextos y aplicaciones, se pueden utilizar paletas alternativas que mantienen la coherencia visual pero adaptan el tono comunicativo.</p>
+
+            <div class="grid-4">
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: linear-gradient(90deg, #2D936C 33%, #F2C14E 33%, #F2C14E 66%, #E8863A 66%);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Natura</div>
+                        <div class="color-values">
+                            <span>Para temas de sostenibilidad y naturaleza</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: linear-gradient(90deg, #1A5276 33%, #5DADE2 33%, #5DADE2 66%, #85C1E9 66%);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Oceano</div>
+                        <div class="color-values">
+                            <span>Vinculacion con Sitges y el Mediterraneo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: linear-gradient(90deg, #E74C3C 33%, #F39C12 33%, #F39C12 66%, #F7DC6F 66%);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Atardecer</div>
+                        <div class="color-values">
+                            <span>Eventos especiales y celebraciones</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: linear-gradient(90deg, #1E8449 33%, #27AE60 33%, #27AE60 66%, #82E0AA 66%);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Bosque</div>
+                        <div class="color-values">
+                            <span>Proyectos de inclusion laboral</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Colores Neutros</h3>
+            <div class="grid-4">
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #1a1a1a;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Negro</div>
+                        <div class="color-values"><span>HEX: #1A1A1A</span></div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #666666;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gris</div>
+                        <div class="color-values"><span>HEX: #666666</span></div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #f5f5f5; border: 1px solid #ddd;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gris Claro</div>
+                        <div class="color-values"><span>HEX: #F5F5F5</span></div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-preview" style="background: #ffffff; border: 1px solid #ddd;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Blanco</div>
+                        <div class="color-values"><span>HEX: #FFFFFF</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography Section -->
+        <section id="typography">
+            <span class="section-number">07 — Tipografia</span>
+            <h2>Montserrat</h2>
+
+            <p class="lead">Montserrat es la tipografia corporativa de Ave Maria Fundacio. Una sans-serif geometrica, moderna y altamente legible que refleja los valores de claridad, accesibilidad y contemporaneidad.</p>
+
+            <div class="type-specimen">
+                <div class="type-label">Montserrat Bold — Titulares</div>
+                <div class="type-sample-large">AVE MARIA</div>
+            </div>
+
+            <div class="type-specimen">
+                <div class="type-label">Montserrat Light — Subtitulos</div>
+                <div class="type-sample-medium">FUNDACIO</div>
+            </div>
+
+            <div class="type-specimen">
+                <div class="type-label">Alfabeto Completo</div>
+                <p style="font-size: 24px; font-weight: 700; letter-spacing: 2px; max-width: none;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                <p style="font-size: 24px; font-weight: 300; letter-spacing: 2px; max-width: none;">abcdefghijklmnopqrstuvwxyz</p>
+                <p style="font-size: 24px; font-weight: 400; letter-spacing: 2px; max-width: none;">0123456789</p>
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <h3>Jerarquia Tipografica</h3>
+                    <div class="type-specimen">
+                        <div class="type-label">H1 — 42px Bold</div>
+                        <p style="font-size: 42px; font-weight: 700; margin-bottom: 0;">Titular Principal</p>
+                    </div>
+                    <div class="type-specimen">
+                        <div class="type-label">H2 — 32px Semibold</div>
+                        <p style="font-size: 32px; font-weight: 600; margin-bottom: 0;">Subtitular</p>
+                    </div>
+                    <div class="type-specimen">
+                        <div class="type-label">H3 — 24px Medium</div>
+                        <p style="font-size: 24px; font-weight: 500; margin-bottom: 0;">Seccion</p>
+                    </div>
+                    <div class="type-specimen">
+                        <div class="type-label">Body — 16px Regular</div>
+                        <p style="font-size: 16px; font-weight: 400; margin-bottom: 0;">Texto de parrafo para contenido general y descripciones.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3>Uso en el Isotipo</h3>
+                    <p>En el logotipo, la tipografia sigue reglas especificas:</p>
+                    <ul style="color: var(--gris); margin-left: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>AVE MARIA</strong>: Montserrat Bold, justificado al ancho del isotipo con tracking expandido.</li>
+                        <li style="margin-bottom: 10px;"><strong>Linea separadora</strong>: 1px de grosor, negro, ancho completo.</li>
+                        <li style="margin-bottom: 10px;"><strong>FUNDACIO</strong>: Montserrat Light, justificado al ancho con tracking expandido.</li>
+                    </ul>
+                    <p>Esta configuracion crea una jerarquia visual clara donde el nombre tiene mas peso que la denominacion institucional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Section -->
+        <section id="usage">
+            <span class="section-number">08 — Usos Correctos</span>
+            <h2>Aplicacion del Isotipo</h2>
+
+            <p class="lead">Para mantener la coherencia y el reconocimiento de marca, es importante seguir estas directrices al aplicar el isotipo en diferentes contextos.</p>
+
+            <h3>Area de Proteccion</h3>
+            <p>El isotipo debe tener siempre un espacio de respeto alrededor equivalente a una celda del grid (1/3 del ancho total).</p>
+
+            <h3>Tamano Minimo</h3>
+            <p>Para garantizar la legibilidad, el isotipo no debe reproducirse a menos de <strong>40mm de ancho</strong> en impresion o <strong>120px</strong> en digital.</p>
+
+            <div class="usage-grid">
+                <div class="usage-item">
+                    <div class="preview" style="background: #ffffff;">
+                        <svg width="120" height="160" viewBox="0 0 300 400">
+                            <rect width="300" height="300" fill="#E8863A"/>
+                            <rect x="100" y="0" width="100" height="100" fill="#5DADE2"/>
+                            <rect x="200" y="0" width="100" height="100" fill="#E85D75"/>
+                            <rect x="0" y="100" width="100" height="100" fill="#2D936C"/>
+                            <rect x="100" y="100" width="100" height="100" fill="white"/>
+                            <rect x="200" y="100" width="100" height="100" fill="#F2C14E"/>
+                            <circle cx="50" cy="250" r="50" fill="#E85D75"/>
+                            <rect x="0" y="200" width="100" height="100" fill="#5DADE2"/>
+                            <rect x="100" y="200" width="100" height="100" fill="#E8863A"/>
+                            <rect x="200" y="200" width="100" height="100" fill="#2D936C"/>
+                            <text x="0" y="350" font-family="Montserrat" font-weight="700" font-size="28" textLength="300" lengthAdjust="spacing">AVE MARIA</text>
+                            <line x1="0" y1="365" x2="300" y2="365" stroke="black" stroke-width="1"/>
+                            <text x="0" y="390" font-family="Montserrat" font-weight="300" font-size="18" textLength="300" lengthAdjust="spacing">FUNDACIO</text>
+                        </svg>
+                    </div>
+                    <div class="description">
+                        <span class="status correct">Correcto</span>
+                        <h5>Sobre fondo blanco</h5>
+                        <p>El uso preferente es sobre fondo blanco, que permite la maxima visibilidad de los colores.</p>
+                    </div>
+                </div>
+                <div class="usage-item">
+                    <div class="preview" style="background: #1a1a1a;">
+                        <svg width="120" height="160" viewBox="0 0 300 400">
+                            <rect width="300" height="300" fill="#E8863A"/>
+                            <rect x="100" y="0" width="100" height="100" fill="#5DADE2"/>
+                            <rect x="200" y="0" width="100" height="100" fill="#E85D75"/>
+                            <rect x="0" y="100" width="100" height="100" fill="#2D936C"/>
+                            <rect x="100" y="100" width="100" height="100" fill="white"/>
+                            <rect x="200" y="100" width="100" height="100" fill="#F2C14E"/>
+                            <rect x="0" y="200" width="100" height="100" fill="#5DADE2"/>
+                            <rect x="100" y="200" width="100" height="100" fill="#E8863A"/>
+                            <rect x="200" y="200" width="100" height="100" fill="#2D936C"/>
+                            <text x="0" y="350" font-family="Montserrat" font-weight="700" font-size="28" fill="white" textLength="300" lengthAdjust="spacing">AVE MARIA</text>
+                            <line x1="0" y1="365" x2="300" y2="365" stroke="white" stroke-width="1"/>
+                            <text x="0" y="390" font-family="Montserrat" font-weight="300" font-size="18" fill="white" textLength="300" lengthAdjust="spacing">FUNDACIO</text>
+                        </svg>
+                    </div>
+                    <div class="description">
+                        <span class="status correct">Correcto</span>
+                        <h5>Sobre fondo oscuro</h5>
+                        <p>En fondos oscuros, el texto cambia a blanco. El espacio vacio del isotipo mantiene su color blanco.</p>
+                    </div>
+                </div>
+                <div class="usage-item">
+                    <div class="preview" style="background: #f5f5f5;">
+                        <svg width="120" height="160" viewBox="0 0 300 400" style="opacity: 0.3;">
+                            <rect width="300" height="300" fill="#E8863A"/>
+                            <rect x="100" y="0" width="100" height="100" fill="#5DADE2"/>
+                            <text x="0" y="350" font-family="Montserrat" font-weight="700" font-size="28" textLength="300" lengthAdjust="spacing">AVE MARIA</text>
+                        </svg>
+                    </div>
+                    <div class="description">
+                        <span class="status incorrect">Incorrecto</span>
+                        <h5>Reducir opacidad</h5>
+                        <p>No reducir la opacidad del isotipo. Los colores deben mantener siempre su vivacidad.</p>
+                    </div>
+                </div>
+                <div class="usage-item">
+                    <div class="preview" style="background: #ffffff;">
+                        <svg width="120" height="160" viewBox="0 0 300 400" style="transform: skewX(-10deg);">
+                            <rect width="300" height="300" fill="#E8863A"/>
+                            <rect x="100" y="0" width="100" height="100" fill="#5DADE2"/>
+                            <text x="0" y="350" font-family="Montserrat" font-weight="700" font-size="28">AVE MARIA</text>
+                        </svg>
+                    </div>
+                    <div class="description">
+                        <span class="status incorrect">Incorrecto</span>
+                        <h5>Distorsionar</h5>
+                        <p>No deformar, inclinar o modificar las proporciones del isotipo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Variantes Permitidas</h3>
+            <div class="grid-3">
+                <div class="value-card">
+                    <h4>Isotipo completo</h4>
+                    <p>Grid 3x3 + tipografia. Uso principal para comunicaciones oficiales.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Solo isotipo</h4>
+                    <p>Grid 3x3 sin texto. Para avatares, iconos y espacios reducidos.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Horizontal</h4>
+                    <p>Isotipo a la izquierda, texto a la derecha. Para cabeceras y firmas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Generator Section -->
+        <section id="generator">
+            <span class="section-number">09 — Generador de Isotipo</span>
+            <h2>Sistema Generativo</h2>
+
+            <p class="lead">La identidad de Ave Maria Fundacio es un sistema vivo. Utiliza este generador para crear variaciones unicas del isotipo manteniendo la coherencia visual.</p>
+
+            <div class="interactive-section">
+                <h4>Generador Interactivo</h4>
+                <p>Explora diferentes composiciones y paletas de color. Cada variacion es unica pero fiel a la identidad.</p>
+
+                <div id="generator-container">
+                    <div id="canvas-wrapper">
+                        <div id="p5-canvas"></div>
+                    </div>
+                    <div class="generator-controls">
+                        <button class="btn-primary" onclick="generateNewIsotipo()">Nueva Composicion</button>
+                        <button class="btn-secondary" onclick="newColorVariation()">Variar Colores</button>
+                        <button class="btn-secondary" onclick="downloadGeneratedSVG()">Descargar SVG</button>
+
+                        <h4 style="margin-top: 30px; margin-bottom: 15px;">Paleta de Colores</h4>
+                        <div class="palette-buttons">
+                            <button class="palette-btn active" id="pal-avemaria" onclick="setGeneratorPalette('avemaria')" title="Ave Maria">
+                                <svg width="50" height="50" viewBox="0 0 60 60">
+                                    <rect width="20" height="60" fill="#E8863A"/>
+                                    <rect x="20" width="20" height="60" fill="#E85D75"/>
+                                    <rect x="40" width="20" height="60" fill="#5DADE2"/>
+                                </svg>
+                            </button>
+                            <button class="palette-btn" id="pal-natura" onclick="setGeneratorPalette('natura')" title="Natura">
+                                <svg width="50" height="50" viewBox="0 0 60 60">
+                                    <rect width="20" height="60" fill="#2D936C"/>
+                                    <rect x="20" width="20" height="60" fill="#F2C14E"/>
+                                    <rect x="40" width="20" height="60" fill="#E8863A"/>
+                                </svg>
+                            </button>
+                            <button class="palette-btn" id="pal-oceano" onclick="setGeneratorPalette('oceano')" title="Oceano">
+                                <svg width="50" height="50" viewBox="0 0 60 60">
+                                    <rect width="20" height="60" fill="#1A5276"/>
+                                    <rect x="20" width="20" height="60" fill="#5DADE2"/>
+                                    <rect x="40" width="20" height="60" fill="#85C1E9"/>
+                                </svg>
+                            </button>
+                            <button class="palette-btn" id="pal-atardecer" onclick="setGeneratorPalette('atardecer')" title="Atardecer">
+                                <svg width="50" height="50" viewBox="0 0 60 60">
+                                    <rect width="20" height="60" fill="#E74C3C"/>
+                                    <rect x="20" width="20" height="60" fill="#F39C12"/>
+                                    <rect x="40" width="20" height="60" fill="#F7DC6F"/>
+                                </svg>
+                            </button>
+                            <button class="palette-btn" id="pal-bosque" onclick="setGeneratorPalette('bosque')" title="Bosque">
+                                <svg width="50" height="50" viewBox="0 0 60 60">
+                                    <rect width="20" height="60" fill="#1E8449"/>
+                                    <rect x="20" width="20" height="60" fill="#27AE60"/>
+                                    <rect x="40" width="20" height="60" fill="#82E0AA"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <p style="margin-top: 30px; font-size: 13px;">El espacio en blanco siempre permanece, simbolizando el lugar reservado para nuevas personas e ideas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Section -->
+        <section id="applications">
+            <span class="section-number">10 — Aplicaciones</span>
+            <h2>Ejemplos de Uso</h2>
+
+            <p class="lead">La identidad generativa permite crear materiales unicos para cada ocasion, manteniendo siempre la coherencia de marca.</p>
+
+            <div class="grid-2">
+                <div class="value-card">
+                    <h4>Papeleria Corporativa</h4>
+                    <p>Tarjetas de visita, papel de carta, sobres y carpetas con variaciones unicas del isotipo.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Senaletica</h4>
+                    <p>Sistema de senalizacion interior y exterior usando las formas del isotipo como elementos de orientacion.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Digital</h4>
+                    <p>Web, redes sociales, newsletters y aplicaciones con isotipos adaptados a cada contexto.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Merchandising</h4>
+                    <p>Camisetas, bolsas, tazas y otros productos con composiciones exclusivas.</p>
+                </div>
+            </div>
+
+            <div class="concept-box" style="margin-top: 60px;">
+                <h4>Un Lugar para Todos</h4>
+                <p>Cada aplicacion de la identidad es una oportunidad de comunicar nuestros valores. El <span class="highlight">espacio en blanco</span> siempre presente nos recuerda que la Fundacio esta abierta a nuevas personas, nuevas ideas y nuevos proyectos. La identidad, como la propia organizacion, esta <span class="highlight">viva y en constante evolucion</span>.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="brand">AVE MARIA FUNDACIO</div>
+                <div class="info">Brand Book v1.0 — Enero 2026 — Sitges, Catalunya</div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- P5.js Generator Script -->
+    <script>
+        let genCanvas;
+        let genSeed;
+        let genColorSeed;
+        let genLockedShapes = [];
+        let genWhitePos = 4;
+        let genMontserratBold, genMontserratLight;
+
+        const genPalettes = {
+            avemaria: ['#E8863A', '#E85D75', '#5DADE2', '#2D936C', '#F2C14E', '#D4859A'],
+            natura: ['#2D936C', '#F2C14E', '#E8863A', '#85C1E9', '#1E8449', '#F5B041'],
+            oceano: ['#1A5276', '#5DADE2', '#85C1E9', '#AED6F1', '#21618C', '#3498DB'],
+            atardecer: ['#E74C3C', '#F39C12', '#F7DC6F', '#E85D75', '#D35400', '#FAD7A0'],
+            bosque: ['#1E8449', '#27AE60', '#82E0AA', '#F2C14E', '#145A32', '#ABEBC6']
+        };
+
+        let genCurrentPalette = 'avemaria';
+        const GRID = 3;
+        const CELL = 80;
+        const CANVAS_W = GRID * CELL;
+        const TEXT_H = 80;
+        const TOTAL_H = CANVAS_W + TEXT_H;
+
+        function preload() {
+            genMontserratBold = loadFont('https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-Y3tcoqK5.ttf');
+            genMontserratLight = loadFont('https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-Y3tcoqK5.ttf');
+        }
+
+        function setup() {
+            genCanvas = createCanvas(CANVAS_W, TOTAL_H);
+            genCanvas.parent('p5-canvas');
+            noLoop();
+            generateNewIsotipo();
+        }
+
+        function generateNewIsotipo() {
+            genSeed = Math.floor(Math.random() * 100000);
+            genColorSeed = Math.floor(Math.random() * 100000);
+            randomSeed(genSeed);
+            genWhitePos = floor(random(9));
+            genLockedShapes = [];
+            for (let i = 0; i < 9; i++) {
+                genLockedShapes.push(floor(random(17)));
+            }
+            drawGenIsotipo();
+        }
+
+        function newColorVariation() {
+            genColorSeed = Math.floor(Math.random() * 100000);
+            drawGenIsotipo();
+        }
+
+        function setGeneratorPalette(name) {
+            genCurrentPalette = name;
+            document.querySelectorAll('.palette-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('pal-' + name).classList.add('active');
+            drawGenIsotipo();
+        }
+
+        function getGenColors() {
+            return genPalettes[genCurrentPalette];
+        }
+
+        function drawGenIsotipo() {
+            background(255);
+            randomSeed(genColorSeed);
+
+            for (let row = 0; row < GRID; row++) {
+                for (let col = 0; col < GRID; col++) {
+                    let x = col * CELL;
+                    let y = row * CELL;
+                    let idx = row * GRID + col;
+
+                    if (idx === genWhitePos) {
+                        fill(255);
+                        noStroke();
+                        rect(x, y, CELL, CELL);
+                    } else {
+                        drawGenShape(x, y, genLockedShapes[idx], getGenColors());
+                    }
+                }
+            }
+
+            // Text
+            let textY = CANVAS_W + 20;
+            fill(0);
+            noStroke();
+
+            if (genMontserratBold) textFont(genMontserratBold);
+            textSize(22);
+            textAlign(LEFT, TOP);
+
+            let aveMaria = "AVE MARIA";
+            let spacing = (CANVAS_W - textWidth(aveMaria)) / (aveMaria.length - 1);
+            let xPos = 0;
+            for (let i = 0; i < aveMaria.length; i++) {
+                text(aveMaria[i], xPos, textY);
+                xPos += textWidth(aveMaria[i]) + spacing;
+            }
+
+            stroke(0);
+            strokeWeight(1);
+            let lineY = textY + 30;
+            line(0, lineY, CANVAS_W, lineY);
+
+            noStroke();
+            if (genMontserratLight) textFont(genMontserratLight);
+            textSize(14);
+
+            let fundacio = "FUNDACIO";
+            let fSpacing = (CANVAS_W - textWidth(fundacio)) / (fundacio.length - 1);
+            xPos = 0;
+            for (let i = 0; i < fundacio.length; i++) {
+                text(fundacio[i], xPos, lineY + 10);
+                xPos += textWidth(fundacio[i]) + fSpacing;
+            }
+        }
+
+        function drawGenShape(x, y, shapeType, colors) {
+            let col1 = colors[floor(random(colors.length))];
+            let col2 = colors[floor(random(colors.length))];
+            while (col2 === col1 && colors.length > 1) {
+                col2 = colors[floor(random(colors.length))];
+            }
+            noStroke();
+            let shape = shapeType % 17;
+
+            switch(shape) {
+                case 0:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    break;
+                case 1:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    ellipse(x + CELL/2, y + CELL/2, CELL, CELL);
+                    break;
+                case 2:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x + CELL, y, CELL * 2, CELL * 2, HALF_PI, PI);
+                    break;
+                case 3:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x, y, CELL * 2, CELL * 2, 0, HALF_PI);
+                    break;
+                case 4:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x, y + CELL, CELL * 2, CELL * 2, -HALF_PI, 0);
+                    break;
+                case 5:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x + CELL, y + CELL, CELL * 2, CELL * 2, PI, PI + HALF_PI);
+                    break;
+                case 6:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x, y + CELL/2, CELL, CELL, -HALF_PI, HALF_PI);
+                    arc(x + CELL, y + CELL/2, CELL, CELL, HALF_PI, PI + HALF_PI);
+                    break;
+                case 7:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x + CELL/2, y, CELL, CELL, 0, PI);
+                    arc(x + CELL/2, y + CELL, CELL, CELL, PI, TWO_PI);
+                    break;
+                case 8:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x + CELL/2, y + CELL, CELL, CELL, PI, TWO_PI);
+                    break;
+                case 9:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x + CELL/2, y, CELL, CELL, 0, PI);
+                    break;
+                case 10:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x, y + CELL/2, CELL, CELL, -HALF_PI, HALF_PI);
+                    break;
+                case 11:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x + CELL, y + CELL/2, CELL, CELL, HALF_PI, PI + HALF_PI);
+                    break;
+                case 12:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x + CELL/2, y, CELL, CELL, 0, PI);
+                    break;
+                case 13:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x + CELL/2, y + CELL, CELL, CELL, PI, TWO_PI);
+                    break;
+                case 14:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x, y + CELL/2, CELL, CELL, -HALF_PI, HALF_PI);
+                    break;
+                case 15:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    arc(x + CELL, y + CELL/2, CELL, CELL, HALF_PI, PI + HALF_PI);
+                    break;
+                case 16:
+                    fill(col1);
+                    rect(x, y, CELL, CELL);
+                    fill(col2);
+                    ellipse(x + CELL/2, y + CELL/2, CELL * 0.6, CELL * 0.6);
+                    break;
+            }
+        }
+
+        function downloadGeneratedSVG() {
+            let svgContent = generateGenSVG();
+            let blob = new Blob([svgContent], {type: 'image/svg+xml'});
+            let url = URL.createObjectURL(blob);
+            let a = document.createElement('a');
+            a.href = url;
+            a.download = 'ave-maria-isotipo-' + genColorSeed + '.svg';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function generateGenSVG() {
+            randomSeed(genColorSeed);
+            let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${CANVAS_W}" height="${TOTAL_H}" viewBox="0 0 ${CANVAS_W} ${TOTAL_H}">`;
+            svg += `<defs><style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&amp;display=swap');</style></defs>`;
+            svg += `<rect width="${CANVAS_W}" height="${TOTAL_H}" fill="white"/>`;
+
+            for (let row = 0; row < GRID; row++) {
+                for (let col = 0; col < GRID; col++) {
+                    let x = col * CELL;
+                    let y = row * CELL;
+                    let idx = row * GRID + col;
+
+                    if (idx === genWhitePos) {
+                        svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="white"/>`;
+                    } else {
+                        svg += generateGenShapeSVG(x, y, genLockedShapes[idx], getGenColors());
+                    }
+                }
+            }
+
+            let textY = CANVAS_W + 40;
+            svg += `<text x="0" y="${textY}" font-family="Montserrat, sans-serif" font-weight="700" font-size="22" fill="black" textLength="${CANVAS_W}" lengthAdjust="spacing">AVE MARIA</text>`;
+            let lineY = textY + 10;
+            svg += `<line x1="0" y1="${lineY}" x2="${CANVAS_W}" y2="${lineY}" stroke="black" stroke-width="1"/>`;
+            svg += `<text x="0" y="${lineY + 22}" font-family="Montserrat, sans-serif" font-weight="300" font-size="14" fill="black" textLength="${CANVAS_W}" lengthAdjust="spacing">FUNDACIO</text>`;
+            svg += `</svg>`;
+            return svg;
+        }
+
+        function generateGenShapeSVG(x, y, shapeType, colors) {
+            let col1 = colors[floor(random(colors.length))];
+            let col2 = colors[floor(random(colors.length))];
+            while (col2 === col1 && colors.length > 1) {
+                col2 = colors[floor(random(colors.length))];
+            }
+
+            let svg = '';
+            let cx = x + CELL/2;
+            let cy = y + CELL/2;
+            let r = CELL/2;
+            let shape = shapeType % 17;
+
+            switch(shape) {
+                case 0:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    break;
+                case 1:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${col2}"/>`;
+                    break;
+                case 2:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x + CELL} ${y} L ${x + CELL} ${y + CELL} A ${CELL} ${CELL} 0 0 1 ${x} ${y} Z" fill="${col2}"/>`;
+                    break;
+                case 3:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x} ${y} L ${x + CELL} ${y} A ${CELL} ${CELL} 0 0 1 ${x} ${y + CELL} Z" fill="${col2}"/>`;
+                    break;
+                case 4:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x} ${y + CELL} L ${x} ${y} A ${CELL} ${CELL} 0 0 1 ${x + CELL} ${y + CELL} Z" fill="${col2}"/>`;
+                    break;
+                case 5:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x + CELL} ${y + CELL} L ${x} ${y + CELL} A ${CELL} ${CELL} 0 0 1 ${x + CELL} ${y} Z" fill="${col2}"/>`;
+                    break;
+                case 6:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${cx} ${y} A ${r} ${r} 0 0 1 ${cx} ${y + CELL} A ${r} ${r} 0 0 1 ${cx} ${y}" fill="${col2}"/>`;
+                    break;
+                case 7:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x} ${cy} A ${r} ${r} 0 0 1 ${x + CELL} ${cy} A ${r} ${r} 0 0 1 ${x} ${cy}" fill="${col2}"/>`;
+                    break;
+                case 8:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x} ${y + CELL} A ${r} ${r} 0 0 1 ${x + CELL} ${y + CELL} Z" fill="${col2}"/>`;
+                    break;
+                case 9:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x} ${y} A ${r} ${r} 0 0 0 ${x + CELL} ${y} Z" fill="${col2}"/>`;
+                    break;
+                case 10:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x} ${y} A ${r} ${r} 0 0 1 ${x} ${y + CELL} Z" fill="${col2}"/>`;
+                    break;
+                case 11:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x + CELL} ${y} A ${r} ${r} 0 0 0 ${x + CELL} ${y + CELL} Z" fill="${col2}"/>`;
+                    break;
+                case 12:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x} ${y} A ${r} ${r} 0 0 0 ${x + CELL} ${y} Z" fill="${col2}"/>`;
+                    break;
+                case 13:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x} ${y + CELL} A ${r} ${r} 0 0 1 ${x + CELL} ${y + CELL} Z" fill="${col2}"/>`;
+                    break;
+                case 14:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x} ${y} A ${r} ${r} 0 0 1 ${x} ${y + CELL} Z" fill="${col2}"/>`;
+                    break;
+                case 15:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<path d="M ${x + CELL} ${y} A ${r} ${r} 0 0 0 ${x + CELL} ${y + CELL} Z" fill="${col2}"/>`;
+                    break;
+                case 16:
+                    svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" fill="${col1}"/>`;
+                    svg += `<circle cx="${cx}" cy="${cy}" r="${CELL * 0.3}" fill="${col2}"/>`;
+                    break;
+            }
+            return svg;
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+
+                document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

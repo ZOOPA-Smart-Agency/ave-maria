@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Isotipo - Ave Maria Fundació</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 28px;
+            position: sticky;
+            top: 40px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 80px);
+        }
+
+        #canvas-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-wrapper {
+            width: 100%;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        #canvas-container {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .controls button {
+            flex: 1 1 auto;
+            min-width: 120px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-primary {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1a1a1a;
+            border: 1px solid #ddd;
+        }
+
+        .btn-secondary:hover {
+            background: #f0f0f0;
+        }
+
+        .btn-success {
+            background: #2D936C;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #247a59;
+            transform: translateY(-2px);
+        }
+
+        .btn-warning {
+            background: #E8863A;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: #d4752e;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 5px 0 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 16px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .info {
+            font-size: 12px;
+            color: #999;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .status-exploring {
+            background: #FFF3CD;
+            color: #856404;
+        }
+
+        .status-locked {
+            background: #D4EDDA;
+            color: #155724;
+        }
+
+        .mode-info {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .palette-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .palette-btn {
+            width: 56px;
+            height: 56px;
+            border: 3px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .palette-btn:hover, .palette-btn.active {
+            border-color: #1a1a1a;
+            transform: scale(1.05);
+        }
+
+        .orientation-controls {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .orientation-btn {
+            flex: 1;
+        }
+
+        .sidebar-section {
+            margin-bottom: 8px;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: #eee;
+            margin: 8px 0 20px;
+        }
+
+        .orientation-btn {
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            background: white;
+            color: #666;
+            transition: all 0.2s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .orientation-btn:hover {
+            border-color: #999;
+        }
+
+        .orientation-btn.active {
+            border-color: #1a1a1a;
+            background: #1a1a1a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <h1>Generador de Isotipo<br>Ave Maria Fundació</h1>
+
+            <div class="section-title">Paleta</div>
+            <div class="palette-selector">
+                <button class="palette-btn active" id="palette-bosque" onclick="setPalette('bosque')" title="Bosque">
+                    <svg width="60" height="60" viewBox="0 0 60 60">
+                        <rect width="20" height="60" fill="#1E8449"/>
+                        <rect x="20" width="20" height="60" fill="#27AE60"/>
+                        <rect x="40" width="20" height="60" fill="#82E0AA"/>
+                    </svg>
+                </button>
+                <button class="palette-btn" id="palette-colores" onclick="setPalette('colores')" title="Colores">
+                    <svg width="60" height="60" viewBox="0 0 60 60">
+                        <rect width="10" height="60" fill="#E8863A"/>
+                        <rect x="10" width="10" height="60" fill="#E85D75"/>
+                        <rect x="20" width="10" height="60" fill="#F2C14E"/>
+                        <rect x="30" width="10" height="60" fill="#5DADE2"/>
+                        <rect x="40" width="10" height="60" fill="#2D936C"/>
+                        <rect x="50" width="10" height="60" fill="#D4859A"/>
+                    </svg>
+                </button>
+                <button class="palette-btn" id="palette-monocroma" onclick="setPalette('monocroma')" title="Monocroma (escala de grises)">
+                    <svg width="60" height="60" viewBox="0 0 60 60">
+                        <rect width="15" height="60" fill="#1a1a1a"/>
+                        <rect x="15" width="15" height="60" fill="#595959"/>
+                        <rect x="30" width="15" height="60" fill="#999999"/>
+                        <rect x="45" width="15" height="60" fill="#cccccc"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="section-title">Orientación</div>
+            <div class="orientation-controls">
+                <button class="orientation-btn active" id="btn-vertical" onclick="setOrientation('vertical')">Vertical</button>
+                <button class="orientation-btn" id="btn-horizontal" onclick="setOrientation('horizontal')">Horizontal</button>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="section-title">Composición</div>
+            <div class="controls" id="main-controls">
+                <button class="btn-primary" onclick="generateNew()" id="btn-generate">Nueva Composicion</button>
+                <button class="btn-success" onclick="lockComposition()" id="btn-lock">Fijar Esta Composicion</button>
+            </div>
+
+            <div class="controls" id="locked-controls" style="display: none;">
+                <button class="btn-primary" onclick="newColorVariation()">Nueva Variacion de Color</button>
+                <button class="btn-warning" onclick="unlockComposition()">Desbloquear Composicion</button>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="section-title">Exportar</div>
+            <div class="controls">
+                <button class="btn-secondary" onclick="saveToGallery()">Guardar en Galeria</button>
+                <button class="btn-secondary" onclick="downloadSVG()">Descargar SVG</button>
+                <button class="btn-secondary" onclick="downloadPNG()">Descargar PNG</button>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div id="canvas-container"></div>
+
+            <div class="gallery-wrapper">
+                <div class="section-title">Galeria de Variaciones</div>
+                <div class="gallery" id="gallery"></div>
+            </div>
+        </main>
+    </div>
+
+
+    <script>
+        let canvas;
+        let currentSeed;
+        let colorSeed;
+        let gallery = [];
+        let isLocked = false;
+        let lockedShapes = [];
+        let whiteSquarePosition = 4; // Posición del cuadrado blanco (0-8)
+        let isHorizontal = false;
+        let compositionCount = 0; // contador para forzar centro cada 4 composiciones
+        let namingHorizontalPaths = [], namingVerticalPaths = []; // arrays de strings 'd' de los <path>
+        // viewBox de los SVG originales
+        const NAMING_H_VB = { w: 491.98, h: 222.86 };
+        const NAMING_V_VB = { w: 491.98, h: 146.63 };
+        // Bounding box REAL del contenido (sin el padding del viewBox).
+        // Hardcodeados a partir del análisis manual de los paths de los SVG originales,
+        // así no dependemos de getBBox() (que en algunos navegadores no funciona fuera
+        // del DOM renderizado y puede devolver el viewBox entero por error).
+        const NAMING_H_BBOX = { x: 24.23, y: 9.72, w: 444.97, h: 192.23 };
+        const NAMING_V_BBOX = { x: 25.44, y: 7.91, w: 446.06, h: 122.09 };
+
+        // Contenido raw de los SVG de naming, embebido para evitar problemas de carga
+        // de archivos externos (CORS / file://). Fuente: web/BRANDBOOK_MARCA/NAMING_*.svg
+        const namingHorizontalSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 491.98 222.86"><defs><style>.st0 { fill: #010101; }</style></defs><g><path class="st0" d="M60.28,48.8h-17.98l-3.18,8.25h-16.23L43.58,9.72h15.68l20.69,47.32h-16.5l-3.18-8.25ZM55.89,37.3l-4.6-11.9-4.6,11.9h9.19Z"/><path class="st0" d="M133.3,9.72l-20.01,47.32h-15.68l-20.01-47.32h17.17l11.29,27.65,11.56-27.65h15.68Z"/><path class="st0" d="M177.11,45.01v12.03h-39.35V9.72h38.47v12.03h-22.78v5.54h20.01v11.49h-20.01v6.22h23.66Z"/></g><g><path class="st0" d="M27.68,157.74v20.21h25.22v3.11h-25.22v20.89h-3.45v-47.32h31.64v3.11h-28.19Z"/><path class="st0" d="M77.64,181.88v-27.24h3.45v27.11c0,11.83,5.68,17.37,15.55,17.37s15.48-5.54,15.48-17.37v-27.11h3.45v27.24c0,13.52-7.23,20.42-19,20.42s-18.93-6.9-18.93-20.42Z"/><path class="st0" d="M181.35,154.63v47.32h-2.84l-32.25-41.1v41.1h-3.45v-47.32h2.91l32.18,41.1v-41.1h3.45Z"/><path class="st0" d="M209.01,154.63h18.73c15.01,0,25.15,9.87,25.15,23.66s-10.14,23.66-25.15,23.66h-18.73v-47.32ZM227.46,198.84c13.39,0,21.97-8.52,21.97-20.55s-8.59-20.55-21.97-20.55h-15.01v41.1h15.01Z"/><path class="st0" d="M304.61,188.64h-27.45l-6.02,13.32h-3.72l21.77-47.32h3.45l21.77,47.32h-3.72l-6.08-13.32ZM303.32,185.73l-12.44-27.31-12.37,27.31h24.81Z"/><path class="st0" d="M328.95,178.29c0-13.79,10.48-24,24.54-24,6.69,0,12.71,2.16,16.83,6.56l-2.16,2.23c-4.06-3.99-8.99-5.61-14.54-5.61-12.1,0-21.23,8.92-21.23,20.82s9.13,20.82,21.23,20.82c5.54,0,10.48-1.69,14.54-5.68l2.16,2.23c-4.12,4.39-10.14,6.63-16.83,6.63-14.06,0-24.54-10.21-24.54-24Z"/><path class="st0" d="M393.04,154.63h3.45v47.32h-3.45v-47.32Z"/><path class="st0" d="M419.61,178.29c0-13.72,10.48-24,24.61-24s24.61,10.21,24.61,24-10.55,24-24.61,24-24.61-10.28-24.61-24ZM465.31,178.29c0-11.97-9.06-20.82-21.09-20.82s-21.16,8.86-21.16,20.82,9.06,20.82,21.16,20.82,21.09-8.86,21.09-20.82ZM449.77,142.8h4.87l-10.61,7.98h-3.65l9.4-7.98Z"/></g><g><path class="st0" d="M65.15,126.63l-.14-21.57-10.28,17.31h-7.03l-10.28-16.56v20.82h-14.54v-47.32h13.12l15.41,25.22,15.01-25.22h13.12l.14,47.32h-14.54Z"/><path class="st0" d="M122.55,118.38h-17.98l-3.18,8.25h-16.23l20.69-47.32h15.68l20.69,47.32h-16.5l-3.18-8.25ZM118.15,106.89l-4.6-11.9-4.6,11.9h9.19Z"/><path class="st0" d="M167.98,114.73h-4.33v11.9h-15.95v-47.32h22.78c13.18,0,21.57,6.9,21.57,17.85,0,6.83-3.25,11.97-8.92,14.87l9.94,14.6h-17.04l-8.04-11.9ZM169.47,91.61h-5.81v11.09h5.81c4.39,0,6.49-2.1,6.49-5.54s-2.1-5.54-6.49-5.54Z"/><path class="st0" d="M200.98,79.3h15.95v47.32h-15.95v-47.32Z"/><path class="st0" d="M259.8,118.38h-17.98l-3.18,8.25h-16.23l20.69-47.32h15.68l20.69,47.32h-16.5l-3.18-8.25ZM255.4,106.89l-4.6-11.9-4.6,11.9h9.19Z"/></g></svg>`;
+
+        const namingVerticalSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 491.98 146.63"><defs><style>.st0 { fill: #010101; }</style></defs><g><path class="st0" d="M64.03,47.12h-18.05l-3.19,8.28h-16.28L47.27,7.91h15.74l20.76,47.49h-16.56l-3.19-8.28ZM59.62,35.59l-4.61-11.94-4.61,11.94h9.23Z"/><path class="st0" d="M137.32,7.91l-20.08,47.49h-15.74L81.41,7.91h17.23l11.33,27.75,11.6-27.75h15.74Z"/><path class="st0" d="M181.29,43.32v12.08h-39.49V7.91h38.61v12.08h-22.87v5.56h20.08v11.53h-20.08v6.24h23.75Z"/><path class="st0" d="M256.06,55.4l-.14-21.64-10.31,17.37h-7.06l-10.31-16.62v20.9h-14.59V7.91h13.16l15.47,25.31,15.06-25.31h13.16l.14,47.49h-14.59Z"/><path class="st0" d="M313.67,47.12h-18.05l-3.19,8.28h-16.28l20.76-47.49h15.74l20.76,47.49h-16.56l-3.19-8.28ZM309.26,35.59l-4.61-11.94-4.61,11.94h9.23Z"/><path class="st0" d="M359.27,43.46h-4.34v11.94h-16.01V7.91h22.87c13.23,0,21.64,6.92,21.64,17.91,0,6.85-3.26,12.01-8.96,14.93l9.97,14.66h-17.1l-8.07-11.94ZM360.76,20.25h-5.83v11.13h5.83c4.41,0,6.51-2.1,6.51-5.56s-2.1-5.56-6.51-5.56Z"/><path class="st0" d="M392.38,7.91h16.01v47.49h-16.01V7.91Z"/><path class="st0" d="M451.42,47.12h-18.05l-3.19,8.28h-16.28l20.76-47.49h15.74l20.76,47.49h-16.56l-3.19-8.28ZM447,35.59l-4.61-11.94-4.61,11.94h9.23Z"/></g><g><path class="st0" d="M28.9,85.63v20.29h25.31v3.12h-25.31v20.97h-3.46v-47.49h31.75v3.12h-28.29Z"/><path class="st0" d="M79.04,109.86v-27.34h3.46v27.21c0,11.87,5.7,17.44,15.61,17.44s15.54-5.56,15.54-17.44v-27.21h3.46v27.34c0,13.57-7.26,20.49-19.07,20.49s-19-6.92-19-20.49Z"/><path class="st0" d="M183.13,82.51v47.49h-2.85l-32.36-41.25v41.25h-3.46v-47.49h2.92l32.3,41.25v-41.25h3.46Z"/><path class="st0" d="M210.88,82.51h18.79c15.06,0,25.24,9.91,25.24,23.75s-10.18,23.75-25.24,23.75h-18.79v-47.49ZM229.41,126.89c13.43,0,22.05-8.55,22.05-20.63s-8.62-20.63-22.05-20.63h-15.06v41.25h15.06Z"/><path class="st0" d="M306.83,116.64h-27.55l-6.04,13.37h-3.73l21.85-47.49h3.46l21.85,47.49h-3.73l-6.11-13.37ZM305.54,113.72l-12.48-27.41-12.42,27.41h24.9Z"/><path class="st0" d="M331.26,106.26c0-13.84,10.52-24.09,24.63-24.09,6.72,0,12.76,2.17,16.89,6.58l-2.17,2.24c-4.07-4-9.02-5.63-14.59-5.63-12.14,0-21.3,8.96-21.3,20.9s9.16,20.9,21.3,20.9c5.56,0,10.52-1.7,14.59-5.7l2.17,2.24c-4.14,4.41-10.18,6.65-16.89,6.65-14.11,0-24.63-10.25-24.63-24.09Z"/><path class="st0" d="M395.58,82.51h3.46v47.49h-3.46v-47.49Z"/><path class="st0" d="M422.25,106.26c0-13.77,10.52-24.09,24.7-24.09s24.7,10.25,24.7,24.09-10.58,24.09-24.7,24.09-24.7-10.31-24.7-24.09ZM468.12,106.26c0-12.01-9.09-20.9-21.17-20.9s-21.24,8.89-21.24,20.9,9.09,20.9,21.24,20.9,21.17-8.89,21.17-20.9ZM452.51,70.64h4.89l-10.65,8.01h-3.66l9.43-8.01Z"/></g></svg>`;
+
+        // Paletas de colores
+        const palettes = {
+            bosque: ['#1E8449', '#27AE60', '#82E0AA', '#145A32', '#ABEBC6', '#2ECC71'],
+            colores: ['#E8863A', '#E85D75', '#F2C14E', '#5DADE2', '#2D936C', '#D4859A'],
+            monocroma: ['#1a1a1a', '#595959', '#999999', '#cccccc']
+        };
+
+        // Pesos de aparición por paleta (proporción relativa de cada color).
+        // Si una paleta no aparece aquí, todos los colores tienen igual probabilidad.
+        const paletteWeights = {
+            colores: {
+                '#E8863A': 22, // naranja
+                '#E85D75': 24, // coral / rosa
+                '#F2C14E': 22, // amarillo
+                '#5DADE2': 18, // azul
+                '#2D936C': 6,  // verde - proporción muy baja
+                '#D4859A': 8   // rosa suave - proporción baja
+            }
+        };
+
+        // Selección aleatoria con pesos (usa random() de p5 para respetar el seed)
+        function weightedPick(items, paletteName) {
+            let weights = paletteWeights[paletteName];
+            if (!weights || items.length === 0) {
+                return items[floor(random(items.length))];
+            }
+            let total = 0;
+            for (let it of items) total += (weights[it] || 1);
+            let r = random(total);
+            let acc = 0;
+            for (let it of items) {
+                acc += (weights[it] || 1);
+                if (r < acc) return it;
+            }
+            return items[items.length - 1];
+        }
+
+        let currentPalette = 'bosque';
+
+        // Función para obtener colores actuales
+        function getBrandColors() {
+            return palettes[currentPalette];
+        }
+
+        const GRID_SIZE = 3;
+        const CELL_SIZE = 100;
+        const CANVAS_SIZE = GRID_SIZE * CELL_SIZE;
+        const HORIZONTAL_SCALE = 2/3; // Isotipo un tercio más pequeño en horizontal
+        // Brandbook: separación isotipo ↔ texto = 1/3 de celda del isotipo.
+        const V_NAMING_GAP = CELL_SIZE / 3;                      // 1/3 celda en vertical
+        const H_NAMING_GAP = (CELL_SIZE * HORIZONTAL_SCALE) / 3; // 1/3 celda en horizontal escalado
+        const V_NAMING_WIDTH = CANVAS_SIZE;                // ancho del bloque texto = ancho del isotipo
+        // Se calculan dinámicamente en updateCanvasSize() según el bbox real.
+        let TEXT_AREA_HEIGHT = 100;
+        let TEXT_AREA_WIDTH = 480;
+
+        function preload() {
+            // Extraer los atributos 'd' de cada <path> de los SVG embebidos.
+            // Los bboxes están hardcodeados arriba, así no dependemos de getBBox().
+            const extractDs = (svgStr) => {
+                const doc = new DOMParser().parseFromString(svgStr, 'image/svg+xml');
+                return Array.from(doc.querySelectorAll('path')).map(p => p.getAttribute('d'));
+            };
+            namingHorizontalPaths = extractDs(namingHorizontalSVG);
+            namingVerticalPaths = extractDs(namingVerticalSVG);
+        }
+
+        function setup() {
+            updateCanvasSize();
+            canvas.parent('canvas-container');
+            noLoop();
+            generateNew();
+        }
+
+        function updateCanvasSize() {
+            let w, h;
+            if (isHorizontal) {
+                // En horizontal: el bloque ocupa la altura del isotipo CON aire arriba/abajo
+                // proporcional al SVG natural. Usamos bbox tight para que el lateral pegue
+                // al gap (sin padding fantasma), pero el alto se reserva como si fuera el
+                // viewBox completo (deja el aire vertical natural).
+                const scaledSize = CANVAS_SIZE * HORIZONTAL_SCALE;
+                const bbox = NAMING_H_BBOX || { x: 24, y: 9.72, w: 447, h: 192.23 };
+                const textH = scaledSize * (bbox.h / NAMING_H_VB.h);
+                const textW = textH * (bbox.w / bbox.h);
+                TEXT_AREA_WIDTH = textW;
+                w = scaledSize + H_NAMING_GAP + textW;
+                h = scaledSize;
+            } else {
+                // En vertical usamos el BBOX REAL (sin padding interno) para pegar el texto
+                // al ancho del isotipo sin márgenes fantasma.
+                const bbox = NAMING_V_BBOX || { w: 448, h: 122.09 };
+                const textW = V_NAMING_WIDTH;
+                const textH = textW * (bbox.h / bbox.w);
+                TEXT_AREA_HEIGHT = V_NAMING_GAP + textH;
+                w = CANVAS_SIZE;
+                h = CANVAS_SIZE + TEXT_AREA_HEIGHT;
+            }
+            if (canvas) {
+                resizeCanvas(w, h);
+            } else {
+                canvas = createCanvas(w, h);
+            }
+        }
+
+        function setOrientation(orientation) {
+            isHorizontal = (orientation === 'horizontal');
+
+            // Actualizar UI de botones
+            document.getElementById('btn-vertical').classList.toggle('active', !isHorizontal);
+            document.getElementById('btn-horizontal').classList.toggle('active', isHorizontal);
+
+            updateCanvasSize();
+            drawIsotipo();
+        }
+
+        function generateNew() {
+            if (isLocked) return;
+
+            currentSeed = Math.floor(Math.random() * 100000);
+            colorSeed = Math.floor(Math.random() * 100000);
+
+            randomSeed(currentSeed);
+
+            compositionCount++;
+
+            // Cada 4ª composición, el cuadrado blanco va al centro (posición 4).
+            // El resto, posición aleatoria de las 8 restantes (excluyendo el centro).
+            if (compositionCount % 4 === 0) {
+                whiteSquarePosition = 4;
+            } else {
+                let nonCenter = [0, 1, 2, 3, 5, 6, 7, 8];
+                whiteSquarePosition = nonCenter[floor(random(nonCenter.length))];
+            }
+
+            // Generar formas únicas (sin repetir) — máxima variedad por composición
+            const TOTAL_SHAPES = 21; // 0-20 formas disponibles
+            const totalCells = GRID_SIZE * GRID_SIZE;
+            let pool = [];
+            for (let s = 0; s < TOTAL_SHAPES; s++) pool.push(s);
+            // Barajado Fisher-Yates usando random() de p5 para respetar el seed
+            for (let i = pool.length - 1; i > 0; i--) {
+                let j = floor(random(i + 1));
+                [pool[i], pool[j]] = [pool[j], pool[i]];
+            }
+            lockedShapes = [];
+            for (let i = 0; i < totalCells; i++) {
+                // Si hubiera más celdas que formas, se rellena reciclando el pool barajado
+                lockedShapes.push(pool[i % pool.length]);
+            }
+
+            drawIsotipo();
+        }
+
+        function newColorVariation() {
+            colorSeed = Math.floor(Math.random() * 100000);
+            drawIsotipo();
+        }
+
+        function lockComposition() {
+            isLocked = true;
+            updateUI();
+        }
+
+        function unlockComposition() {
+            isLocked = false;
+            updateUI();
+        }
+
+        function updateUI() {
+            const mainControls = document.getElementById('main-controls');
+            const lockedControls = document.getElementById('locked-controls');
+
+            if (isLocked) {
+                mainControls.style.display = 'none';
+                lockedControls.style.display = 'flex';
+            } else {
+                mainControls.style.display = 'flex';
+                lockedControls.style.display = 'none';
+            }
+        }
+
+        function generateColorGrid(colors) {
+            let grid = [];
+            for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
+                let row = Math.floor(i / GRID_SIZE);
+                let col = i % GRID_SIZE;
+
+                // Recoger col1 y col2 de vecinos adyacentes
+                let neighborColors = [];
+                if (col > 0 && grid[i - 1]) {
+                    neighborColors.push(grid[i - 1].col1);
+                    neighborColors.push(grid[i - 1].col2);
+                }
+                if (row > 0 && grid[i - GRID_SIZE]) {
+                    neighborColors.push(grid[i - GRID_SIZE].col1);
+                    neighborColors.push(grid[i - GRID_SIZE].col2);
+                }
+
+                // col1 no puede coincidir con ningún color de vecinos
+                let available = colors.filter(c => !neighborColors.includes(c));
+                if (available.length === 0) available = colors;
+
+                let col1 = weightedPick(available, currentPalette);
+
+                // col2 no puede ser col1 ni coincidir con colores de vecinos
+                let col2Forbidden = [col1, ...neighborColors];
+                let col2Options = colors.filter(c => !col2Forbidden.includes(c));
+                if (col2Options.length === 0) col2Options = colors.filter(c => c !== col1);
+                if (col2Options.length === 0) col2Options = colors;
+                let col2 = weightedPick(col2Options, currentPalette);
+
+                grid.push({ col1, col2 });
+            }
+            return grid;
+        }
+
+        function drawIsotipo() {
+            background(255);
+
+            randomSeed(colorSeed);
+
+            let cellSize = isHorizontal ? CELL_SIZE * HORIZONTAL_SCALE : CELL_SIZE;
+            let colorGrid = generateColorGrid(getBrandColors());
+
+            // Dibujar grid de formas
+            for (let row = 0; row < GRID_SIZE; row++) {
+                for (let col = 0; col < GRID_SIZE; col++) {
+                    let x = col * cellSize;
+                    let y = row * cellSize;
+                    let index = row * GRID_SIZE + col;
+
+                    if (index === whiteSquarePosition) {
+                        drawWhiteSquare(x, y, cellSize);
+                    } else {
+                        let shapeType = lockedShapes[index];
+                        let { col1, col2 } = colorGrid[index];
+                        drawShape(x, y, shapeType, col1, col2, cellSize);
+                    }
+                }
+            }
+
+            // Dibujar texto
+            drawText();
+        }
+
+        function drawText() {
+            if (isHorizontal) {
+                drawTextHorizontal();
+            } else {
+                drawTextVertical();
+            }
+        }
+
+        // Rect del bbox VISIBLE (donde aparecerá el contenido sin padding del viewBox).
+        // En vertical: ancho del isotipo, gap fijo bajo el isotipo.
+        function getVerticalNamingRect() {
+            const bbox = NAMING_V_BBOX || { w: 448, h: 122.09 };
+            const w = V_NAMING_WIDTH;
+            const h = w * (bbox.h / bbox.w);
+            return { x: 0, y: CANVAS_SIZE + V_NAMING_GAP, w, h };
+        }
+
+        // En horizontal: el bbox visible empieza pegado al gap (sin padding lateral),
+        // pero la posición Y y el alto reservan el aire vertical natural del SVG.
+        function getHorizontalNamingRect() {
+            const scaledSize = CANVAS_SIZE * HORIZONTAL_SCALE;
+            const bbox = NAMING_H_BBOX || { x: 24, y: 9.72, w: 447, h: 192.23 };
+            const h = scaledSize * (bbox.h / NAMING_H_VB.h);     // alto bbox tight escalado
+            const w = h * (bbox.w / bbox.h);                     // ancho proporcional uniforme
+            const y = scaledSize * (bbox.y / NAMING_H_VB.h);     // aire arriba proporcional al SVG natural
+            return { x: scaledSize + H_NAMING_GAP, y, w, h };
+        }
+
+        // Dibuja paths SVG como vectores puros aplicando un transform que coloca el bbox
+        // visible exactamente en `rect` (sin el padding interno del viewBox).
+        function drawNamingVector(paths, bbox, rect) {
+            if (!paths || paths.length === 0 || !bbox) return;
+            const sx = rect.w / bbox.w;
+            const sy = rect.h / bbox.h;
+            const ctx = drawingContext;
+            ctx.save();
+            ctx.translate(rect.x - bbox.x * sx, rect.y - bbox.y * sy);
+            ctx.scale(sx, sy);
+            ctx.fillStyle = '#010101';
+            for (const d of paths) {
+                ctx.fill(new Path2D(d));
+            }
+            ctx.restore();
+        }
+
+        function drawTextVertical() {
+            drawNamingVector(namingVerticalPaths, NAMING_V_BBOX, getVerticalNamingRect());
+        }
+
+        function drawTextHorizontal() {
+            drawNamingVector(namingHorizontalPaths, NAMING_H_BBOX, getHorizontalNamingRect());
+        }
+
+        function drawWhiteSquare(x, y, cellSize = CELL_SIZE) {
+            fill(255);
+            noStroke();
+            rect(x, y, cellSize, cellSize);
+        }
+
+        function drawShape(x, y, shapeType, col1, col2, cellSize = CELL_SIZE) {
+            noStroke();
+
+            let shape = shapeType;
+
+            {
+                switch(shape) {
+                    case 0: // Cuadrado sólido
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        break;
+
+                    case 1: // Círculo completo
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        ellipse(x + cellSize/2, y + cellSize/2, cellSize, cellSize);
+                        break;
+
+                    case 2: // Cuarto de círculo - esquina superior derecha
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        arc(x + cellSize, y, cellSize * 2, cellSize * 2, HALF_PI, PI);
+                        break;
+
+                    case 3: // Cuarto de círculo - esquina superior izquierda
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        arc(x, y, cellSize * 2, cellSize * 2, 0, HALF_PI);
+                        break;
+
+                    case 4: // Cuarto de círculo - esquina inferior izquierda
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        arc(x, y + cellSize, cellSize * 2, cellSize * 2, -HALF_PI, 0);
+                        break;
+
+                    case 5: // Cuarto de círculo - esquina inferior derecha
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        arc(x + cellSize, y + cellSize, cellSize * 2, cellSize * 2, PI, PI + HALF_PI);
+                        break;
+
+                    case 6: // Hoja/ojo vertical
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        arc(x, y + cellSize/2, cellSize, cellSize, -HALF_PI, HALF_PI);
+                        arc(x + cellSize, y + cellSize/2, cellSize, cellSize, HALF_PI, PI + HALF_PI);
+                        break;
+
+                    case 7: // Hoja/ojo horizontal
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        arc(x + cellSize/2, y, cellSize, cellSize, 0, PI);
+                        arc(x + cellSize/2, y + cellSize, cellSize, cellSize, PI, TWO_PI);
+                        break;
+
+                    case 8: // Semicírculo - abajo
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        arc(x + cellSize/2, y + cellSize, cellSize, cellSize, PI, TWO_PI);
+                        break;
+
+                    case 9: // Semicírculo - arriba
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        arc(x + cellSize/2, y, cellSize, cellSize, 0, PI);
+                        break;
+
+                    case 10: // Semicírculo - derecha
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        arc(x, y + cellSize/2, cellSize, cellSize, -HALF_PI, HALF_PI);
+                        break;
+
+                    case 11: // Semicírculo - izquierda
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        arc(x + cellSize, y + cellSize/2, cellSize, cellSize, HALF_PI, PI + HALF_PI);
+                        break;
+
+                    case 12: // Triángulo - esquina superior izquierda
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        triangle(x, y, x + cellSize, y, x, y + cellSize);
+                        break;
+
+                    case 13: // Triángulo - esquina superior derecha
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        triangle(x, y, x + cellSize, y, x + cellSize, y + cellSize);
+                        break;
+
+                    case 14: // Triángulo - esquina inferior izquierda
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        triangle(x, y, x, y + cellSize, x + cellSize, y + cellSize);
+                        break;
+
+                    case 15: // Triángulo - esquina inferior derecha
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        triangle(x + cellSize, y, x + cellSize, y + cellSize, x, y + cellSize);
+                        break;
+
+                    case 16: // Círculo pequeño centrado
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        ellipse(x + cellSize/2, y + cellSize/2, cellSize * 0.6, cellSize * 0.6);
+                        break;
+
+                    case 17: { // Hoja vertical centrada en 1 celda
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        let leafW = cellSize * 0.5;
+                        let leafH = cellSize * 0.9;
+                        let leafCx = x + cellSize/2;
+                        let leafCy = y + cellSize/2;
+                        beginShape();
+                        vertex(leafCx, leafCy - leafH/2);
+                        bezierVertex(leafCx + leafW/2, leafCy - leafH/4, leafCx + leafW/2, leafCy + leafH/4, leafCx, leafCy + leafH/2);
+                        bezierVertex(leafCx - leafW/2, leafCy + leafH/4, leafCx - leafW/2, leafCy - leafH/4, leafCx, leafCy - leafH/2);
+                        endShape(CLOSE);
+                        break;
+                    }
+
+                    case 18: { // Rectángulo vertical centrado en 1 celda
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        let rectW = cellSize * 0.5;
+                        let rectH = cellSize;
+                        rect(x + (cellSize - rectW)/2, y, rectW, rectH);
+                        break;
+                    }
+
+                    case 19: // Escalón
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        rect(x, y + cellSize * 0.4, cellSize, cellSize * 0.6);
+                        rect(x + cellSize * 0.5, y, cellSize * 0.5, cellSize * 0.5);
+                        break;
+
+                    case 20: // Escalón invertido
+                        fill(col1);
+                        rect(x, y, cellSize, cellSize);
+                        fill(col2);
+                        rect(x, y + cellSize * 0.4, cellSize, cellSize * 0.6);
+                        rect(x, y, cellSize * 0.5, cellSize * 0.5);
+                        break;
+                }
+            }
+        }
+
+        function saveToGallery() {
+            let imgData = canvas.canvas.toDataURL('image/png');
+            gallery.push({
+                shapes: [...lockedShapes],
+                colorSeed: colorSeed,
+                whitePos: whiteSquarePosition,
+                palette: currentPalette,
+                image: imgData,
+                isLocked: isLocked,
+                isHorizontal: isHorizontal
+            });
+            updateGalleryDisplay();
+        }
+
+        function updateGalleryDisplay() {
+            let galleryEl = document.getElementById('gallery');
+            galleryEl.innerHTML = '';
+
+            gallery.forEach((item, index) => {
+                let div = document.createElement('div');
+                div.className = 'gallery-item';
+                div.innerHTML = `<img src="${item.image}" alt="Variacion ${index + 1}">`;
+                div.onclick = () => loadFromGallery(index);
+                galleryEl.appendChild(div);
+            });
+        }
+
+        function loadFromGallery(index) {
+            let item = gallery[index];
+            lockedShapes = [...item.shapes];
+            colorSeed = item.colorSeed;
+            whiteSquarePosition = item.whitePos;
+            isLocked = item.isLocked;
+            if (item.palette) {
+                currentPalette = item.palette;
+                updatePaletteUI();
+            }
+            if (item.isHorizontal !== undefined) {
+                isHorizontal = item.isHorizontal;
+                document.getElementById('btn-vertical').classList.toggle('active', !isHorizontal);
+                document.getElementById('btn-horizontal').classList.toggle('active', isHorizontal);
+                updateCanvasSize();
+            }
+
+            updateUI();
+            drawIsotipo();
+        }
+
+        function setPalette(name) {
+            currentPalette = name;
+            updatePaletteUI();
+            drawIsotipo();
+        }
+
+        function updatePaletteUI() {
+            document.querySelectorAll('.palette-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('palette-' + currentPalette).classList.add('active');
+        }
+
+        function downloadPNG() {
+            saveCanvas(canvas, 'ave-maria-fundacio-' + colorSeed, 'png');
+        }
+
+        function downloadSVG() {
+            let svgContent = generateSVG();
+            let blob = new Blob([svgContent], {type: 'image/svg+xml'});
+            let url = URL.createObjectURL(blob);
+            let a = document.createElement('a');
+            a.href = url;
+            a.download = 'ave-maria-fundacio-' + colorSeed + '.svg';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function generateSVG() {
+            randomSeed(colorSeed);
+
+            let svgWidth, svgHeight;
+            let cellSize = isHorizontal ? CELL_SIZE * HORIZONTAL_SCALE : CELL_SIZE;
+            let scaledSize = CANVAS_SIZE * HORIZONTAL_SCALE;
+
+            if (isHorizontal) {
+                svgWidth = scaledSize + HORIZONTAL_GAP + TEXT_AREA_WIDTH;
+                svgHeight = scaledSize;
+            } else {
+                svgWidth = CANVAS_SIZE;
+                svgHeight = CANVAS_SIZE + TEXT_AREA_HEIGHT;
+            }
+
+            let svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${svgWidth}" height="${svgHeight}" viewBox="0 0 ${svgWidth} ${svgHeight}" color-interpolation="sRGB" color-interpolation-filters="sRGB" shape-rendering="geometricPrecision">`;
+
+            // Metadata para que Illustrator detecte sRGB y no reconvierta los colores
+            svg += `<metadata>
+                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                    <rdf:Description rdf:about="" dc:format="image/svg+xml">
+                        <dc:title>Ave Maria Fundació - Isotipo</dc:title>
+                    </rdf:Description>
+                </rdf:RDF>
+            </metadata>`;
+
+            // Declarar perfil sRGB para Illustrator/Adobe
+            svg += `<defs>
+                <style>
+                    svg { color-interpolation: sRGB; }
+                </style>
+            </defs>`;
+
+            svg += `<rect width="${svgWidth}" height="${svgHeight}" fill="white"/>`;
+
+            let colorGrid = generateColorGrid(getBrandColors());
+
+            for (let row = 0; row < GRID_SIZE; row++) {
+                for (let col = 0; col < GRID_SIZE; col++) {
+                    let x = col * cellSize;
+                    let y = row * cellSize;
+                    let index = row * GRID_SIZE + col;
+
+                    if (index === whiteSquarePosition) {
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="white"/>`;
+                    } else {
+                        let shapeType = lockedShapes[index];
+                        let { col1, col2 } = colorGrid[index];
+                        svg += generateShapeSVG(x, y, shapeType, col1, col2, cellSize);
+                    }
+                }
+            }
+
+            // Insertar el naming desde el SVG original (paths vectoriales, sin texto).
+            // Ambos casos usan bbox real para que el lateral pegue al gap exactamente.
+            // El aire vertical en horizontal lo da el rect (no el bbox).
+            if (isHorizontal) {
+                svg += embedNamingSVG(namingHorizontalSVG, NAMING_H_BBOX, getHorizontalNamingRect());
+            } else {
+                svg += embedNamingSVG(namingVerticalSVG, NAMING_V_BBOX, getVerticalNamingRect());
+            }
+
+            svg += `</svg>`;
+            return svg;
+        }
+
+        // Embebe el contenido interno de un SVG de naming alineado al bbox real
+        // (sin el padding interno del viewBox), encajado en `rect`.
+        function embedNamingSVG(rawSVG, bbox, rect) {
+            if (!rawSVG || !bbox) return '';
+            const inner = rawSVG.replace(/^[\s\S]*?<svg[^>]*>/i, '').replace(/<\/svg>\s*$/i, '');
+            const sx = rect.w / bbox.w;
+            const sy = rect.h / bbox.h;
+            const tx = rect.x - bbox.x * sx;
+            const ty = rect.y - bbox.y * sy;
+            return `<g transform="translate(${tx} ${ty}) scale(${sx} ${sy})">${inner}</g>`;
+        }
+
+        function generateShapeSVG(x, y, shapeType, col1, col2, cellSize = CELL_SIZE) {
+            let svg = '';
+            let cx = x + cellSize/2;
+            let cy = y + cellSize/2;
+            let r = cellSize/2;
+            let shape = shapeType;
+
+            {
+                switch(shape) {
+                    case 0:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        break;
+                    case 1:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${col2}"/>`;
+                        break;
+                    case 2:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x + cellSize} ${y} L ${x + cellSize} ${y + cellSize} A ${cellSize} ${cellSize} 0 0 1 ${x} ${y} Z" fill="${col2}"/>`;
+                        break;
+                    case 3:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x} ${y} L ${x + cellSize} ${y} A ${cellSize} ${cellSize} 0 0 1 ${x} ${y + cellSize} Z" fill="${col2}"/>`;
+                        break;
+                    case 4:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x} ${y + cellSize} L ${x} ${y} A ${cellSize} ${cellSize} 0 0 1 ${x + cellSize} ${y + cellSize} Z" fill="${col2}"/>`;
+                        break;
+                    case 5:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x + cellSize} ${y + cellSize} L ${x} ${y + cellSize} A ${cellSize} ${cellSize} 0 0 1 ${x + cellSize} ${y} Z" fill="${col2}"/>`;
+                        break;
+                    case 6:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${cx} ${y} A ${r} ${r} 0 0 1 ${cx} ${y + cellSize} A ${r} ${r} 0 0 1 ${cx} ${y}" fill="${col2}"/>`;
+                        break;
+                    case 7:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x} ${cy} A ${r} ${r} 0 0 1 ${x + cellSize} ${cy} A ${r} ${r} 0 0 1 ${x} ${cy}" fill="${col2}"/>`;
+                        break;
+                    case 8:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x} ${y + cellSize} A ${r} ${r} 0 0 1 ${x + cellSize} ${y + cellSize} Z" fill="${col2}"/>`;
+                        break;
+                    case 9:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x} ${y} A ${r} ${r} 0 0 0 ${x + cellSize} ${y} Z" fill="${col2}"/>`;
+                        break;
+                    case 10:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x} ${y} A ${r} ${r} 0 0 1 ${x} ${y + cellSize} Z" fill="${col2}"/>`;
+                        break;
+                    case 11:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x + cellSize} ${y} A ${r} ${r} 0 0 0 ${x + cellSize} ${y + cellSize} Z" fill="${col2}"/>`;
+                        break;
+                    case 12: // Triángulo - esquina superior izquierda
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x} ${y} L ${x + cellSize} ${y} L ${x} ${y + cellSize} Z" fill="${col2}"/>`;
+                        break;
+                    case 13: // Triángulo - esquina superior derecha
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x} ${y} L ${x + cellSize} ${y} L ${x + cellSize} ${y + cellSize} Z" fill="${col2}"/>`;
+                        break;
+                    case 14: // Triángulo - esquina inferior izquierda
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x} ${y} L ${x} ${y + cellSize} L ${x + cellSize} ${y + cellSize} Z" fill="${col2}"/>`;
+                        break;
+                    case 15: // Triángulo - esquina inferior derecha
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${x + cellSize} ${y} L ${x + cellSize} ${y + cellSize} L ${x} ${y + cellSize} Z" fill="${col2}"/>`;
+                        break;
+                    case 16:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<circle cx="${cx}" cy="${cy}" r="${cellSize * 0.3}" fill="${col2}"/>`;
+                        break;
+                    case 17: {
+                        let leafW = cellSize * 0.5;
+                        let leafH = cellSize * 0.9;
+                        let leafCx = x + cellSize/2;
+                        let leafCy = y + cellSize/2;
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<path d="M ${leafCx} ${leafCy - leafH/2} C ${leafCx + leafW/2} ${leafCy - leafH/4}, ${leafCx + leafW/2} ${leafCy + leafH/4}, ${leafCx} ${leafCy + leafH/2} C ${leafCx - leafW/2} ${leafCy + leafH/4}, ${leafCx - leafW/2} ${leafCy - leafH/4}, ${leafCx} ${leafCy - leafH/2}" fill="${col2}"/>`;
+                        break;
+                    }
+                    case 18: {
+                        let rectW = cellSize * 0.5;
+                        let rectH = cellSize;
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<rect x="${x + (cellSize - rectW)/2}" y="${y}" width="${rectW}" height="${rectH}" fill="${col2}"/>`;
+                        break;
+                    }
+                    case 19:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<rect x="${x}" y="${y + cellSize * 0.4}" width="${cellSize}" height="${cellSize * 0.6}" fill="${col2}"/>`;
+                        svg += `<rect x="${x + cellSize * 0.5}" y="${y}" width="${cellSize * 0.5}" height="${cellSize * 0.5}" fill="${col2}"/>`;
+                        break;
+                    case 20:
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+                        svg += `<rect x="${x}" y="${y + cellSize * 0.4}" width="${cellSize}" height="${cellSize * 0.6}" fill="${col2}"/>`;
+                        svg += `<rect x="${x}" y="${y}" width="${cellSize * 0.5}" height="${cellSize * 0.5}" fill="${col2}"/>`;
+                        break;
+                }
+            }
+
+            return svg;
+        }
+    </script>
+</body>
+</html>
