@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design System · Fundació Ave Maria</title>
+<title>Design System v2.0 · Fundació Ave Maria · Document mestre</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    DESIGN SYSTEM — FUNDACIÓ AVE MARIA · v1 (Fase 1)
@@ -41,8 +41,9 @@
   --am-blanc:    #FFFFFF;
 
   /* ─── SEMÀNTICS / SEMÁNTICOS ─── */
-  --am-color-primary:        var(--am-taronja);
-  --am-color-primary-strong: #C76E27;
+  /* Color de marca real = verd #2D936C (paleta Colors). El taronja queda com a un color més de la paleta. */
+  --am-color-primary:        var(--am-verd);
+  --am-color-primary-strong: #1F6B4E;  /* verd-ink: 5.6:1 sobre blanc, AA garantit */
   --am-color-text:           var(--am-tinta);
   --am-color-text-muted:     var(--am-gris-600);
   --am-color-text-soft:      var(--am-gris-500);
@@ -134,6 +135,7 @@
   --am-focus-ring-accent: 0 0 0 3px var(--am-blanc), 0 0 0 6px var(--am-color-primary-strong);
   --am-focus-outline:     3px solid var(--am-tinta);
   --am-focus-offset:      3px;
+  --am-shadow-focus:      0 0 0 3px rgba(45, 147, 108, 0.4); /* verd amb opacitat — AA per a contrast 3:1 */
 
   /* ─── MOVIMENT / MOVIMIENTO ─── */
   --am-duration-fast: 150ms;
@@ -433,7 +435,7 @@
   min-height: 480px;
   display: flex; align-items: center;
   padding: var(--am-space-9) var(--am-space-5);
-  background: linear-gradient(120deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35)), linear-gradient(135deg, var(--am-taronja), var(--am-coral));
+  background: linear-gradient(120deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35)), linear-gradient(135deg, var(--am-verd), var(--am-blau));
   color: var(--am-blanc);
   overflow: hidden;
 }
@@ -488,6 +490,90 @@
 .am-modal__title { font-size: var(--am-fs-h3); font-weight: var(--am-fw-semibold); margin-bottom: var(--am-space-3); }
 .am-modal__text  { font-size: var(--am-fs-body); color: var(--am-color-text-muted); line-height: var(--am-lh-base); margin-bottom: var(--am-space-5); }
 .am-modal__actions { display: flex; gap: var(--am-space-3); justify-content: flex-end; }
+
+/* ── ICON SYSTEM (am-icon) ───────────────────────────────── */
+.am-icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; display: inline-block; vertical-align: middle; flex-shrink: 0; }
+.am-icon--xs { width: 16px; height: 16px; stroke-width: 2; }
+.am-icon--sm { width: 20px; height: 20px; stroke-width: 1.85; }
+.am-icon--md { width: 24px; height: 24px; stroke-width: 1.75; }
+.am-icon--lg { width: 32px; height: 32px; stroke-width: 1.5; }
+.am-icon--xl { width: 48px; height: 48px; stroke-width: 1.4; }
+
+/* ── AVATAR ──────────────────────────────────────────────── */
+.am-avatar { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--am-radius-full); background: var(--am-gris-200); color: var(--am-color-text); font-family: var(--am-font-family); font-size: var(--am-fs-sm); font-weight: var(--am-fw-semibold); overflow: hidden; flex-shrink: 0; }
+.am-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.am-avatar--xs { width: 24px; height: 24px; font-size: 10px; }
+.am-avatar--sm { width: 32px; height: 32px; font-size: 12px; }
+.am-avatar--lg { width: 56px; height: 56px; font-size: var(--am-fs-h4); }
+.am-avatar--xl { width: 80px; height: 80px; font-size: var(--am-fs-h3); }
+.am-avatar--accent  { background: var(--am-color-primary); color: var(--am-blanc); }
+.am-avatar--coral   { background: var(--am-coral); color: var(--am-blanc); }
+.am-avatar--verd    { background: var(--am-verd); color: var(--am-blanc); }
+.am-avatar--blau    { background: var(--am-blau); color: var(--am-blanc); }
+.am-avatar-group    { display: inline-flex; }
+.am-avatar-group .am-avatar { border: 2px solid var(--am-blanc); margin-left: -10px; }
+.am-avatar-group .am-avatar:first-child { margin-left: 0; }
+
+/* ── BREADCRUMB ──────────────────────────────────────────── */
+.am-breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: var(--am-space-2); list-style: none; padding: 0; margin: 0; font-size: var(--am-fs-sm); }
+.am-breadcrumb li { display: inline-flex; align-items: center; gap: var(--am-space-2); }
+.am-breadcrumb a { color: var(--am-color-text-muted); text-decoration: none; padding: 4px 6px; border-radius: var(--am-radius-sm); transition: color var(--am-duration-fast), background var(--am-duration-fast); }
+.am-breadcrumb a:hover { color: var(--am-color-text); background: var(--am-color-bg-alt); }
+.am-breadcrumb [aria-current="page"] { color: var(--am-color-text); font-weight: var(--am-fw-semibold); }
+.am-breadcrumb__sep { color: var(--am-color-text-soft); user-select: none; }
+
+/* ── PAGINATION ──────────────────────────────────────────── */
+.am-pagination { display: inline-flex; align-items: center; gap: var(--am-space-2); list-style: none; padding: 0; margin: 0; }
+.am-pagination li a, .am-pagination li button { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; padding: 0 var(--am-space-3); font-family: var(--am-font-family); font-size: var(--am-fs-sm); font-weight: var(--am-fw-medium); color: var(--am-color-text); background: var(--am-blanc); border: 1px solid var(--am-color-border); border-radius: var(--am-radius-sm); text-decoration: none; cursor: pointer; transition: background var(--am-duration-fast), border-color var(--am-duration-fast), color var(--am-duration-fast); }
+.am-pagination li a:hover, .am-pagination li button:hover { background: var(--am-color-bg-alt); border-color: var(--am-color-text-muted); }
+.am-pagination li[aria-current="page"] a, .am-pagination li[aria-current="page"] button { background: var(--am-tinta); color: var(--am-blanc); border-color: var(--am-tinta); cursor: default; }
+.am-pagination li[aria-disabled="true"] a, .am-pagination li[aria-disabled="true"] button { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+.am-pagination__ellipsis { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; color: var(--am-color-text-soft); }
+
+/* ── TABS ─────────────────────────────────────────────────── */
+.am-tabs { width: 100%; }
+.am-tabs__list { display: flex; gap: var(--am-space-2); list-style: none; padding: 0; margin: 0; border-bottom: 1px solid var(--am-color-border); overflow-x: auto; }
+.am-tabs__tab { padding: var(--am-space-3) var(--am-space-4); border: 0; background: transparent; font-family: var(--am-font-family); font-size: var(--am-fs-sm); font-weight: var(--am-fw-semibold); color: var(--am-color-text-muted); cursor: pointer; position: relative; white-space: nowrap; transition: color var(--am-duration-fast); border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.am-tabs__tab:hover { color: var(--am-color-text); }
+.am-tabs__tab[aria-selected="true"] { color: var(--am-color-text); border-bottom-color: var(--am-color-primary); }
+.am-tabs__panel { padding: var(--am-space-5) 0; }
+.am-tabs__panel[hidden] { display: none; }
+
+/* ── ACCORDION ───────────────────────────────────────────── */
+.am-accordion { border-top: 1px solid var(--am-color-border); }
+.am-accordion__item { border-bottom: 1px solid var(--am-color-border); }
+.am-accordion__trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--am-space-3); padding: var(--am-space-4) 0; background: transparent; border: 0; font-family: var(--am-font-family); font-size: var(--am-fs-h4); font-weight: var(--am-fw-semibold); color: var(--am-color-text); text-align: left; cursor: pointer; }
+.am-accordion__trigger:hover { color: var(--am-color-primary); }
+.am-accordion__trigger svg { transition: transform var(--am-duration-base) var(--am-ease-out); flex-shrink: 0; }
+.am-accordion__trigger[aria-expanded="true"] svg { transform: rotate(45deg); }
+.am-accordion__panel { padding: 0 0 var(--am-space-5) 0; font-size: var(--am-fs-body); color: var(--am-color-text-muted); line-height: var(--am-lh-relaxed); max-width: 720px; }
+.am-accordion__panel[hidden] { display: none; }
+
+/* ── DROPDOWN MENU ───────────────────────────────────────── */
+.am-dropdown { position: relative; display: inline-block; }
+.am-dropdown__menu { position: absolute; top: calc(100% + 6px); left: 0; min-width: 220px; background: var(--am-blanc); border: 1px solid var(--am-color-border); border-radius: var(--am-radius-md); box-shadow: var(--am-shadow-lg); padding: var(--am-space-2); list-style: none; margin: 0; z-index: var(--am-z-dropdown); opacity: 0; transform: translateY(-4px); pointer-events: none; transition: opacity var(--am-duration-fast), transform var(--am-duration-fast); }
+.am-dropdown__menu.is-open { opacity: 1; transform: none; pointer-events: auto; }
+.am-dropdown__menu li { margin: 0; }
+.am-dropdown__menu a, .am-dropdown__menu button { display: flex; align-items: center; gap: var(--am-space-3); width: 100%; padding: var(--am-space-2) var(--am-space-3); font-family: var(--am-font-family); font-size: var(--am-fs-sm); color: var(--am-color-text); background: transparent; border: 0; border-radius: var(--am-radius-sm); text-decoration: none; cursor: pointer; text-align: left; }
+.am-dropdown__menu a:hover, .am-dropdown__menu button:hover { background: var(--am-color-bg-alt); }
+.am-dropdown__divider { height: 1px; background: var(--am-color-border); margin: var(--am-space-2) 0; border: 0; }
+
+/* ── TOOLTIP ─────────────────────────────────────────────── */
+.am-tooltip-wrap { position: relative; display: inline-block; }
+.am-tooltip { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(4px); background: var(--am-tinta); color: var(--am-blanc); padding: 6px 10px; border-radius: var(--am-radius-sm); font-size: var(--am-fs-xs); font-weight: var(--am-fw-medium); white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity var(--am-duration-fast), transform var(--am-duration-fast); z-index: var(--am-z-tooltip); }
+.am-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--am-tinta); }
+.am-tooltip-wrap:hover .am-tooltip,
+.am-tooltip-wrap:focus-within .am-tooltip { opacity: 1; transform: translateX(-50%); }
+
+/* ── TOAST ───────────────────────────────────────────────── */
+.am-toast-region { position: fixed; bottom: var(--am-space-5); right: var(--am-space-5); display: flex; flex-direction: column; gap: var(--am-space-2); z-index: var(--am-z-modal); pointer-events: none; }
+.am-toast { display: flex; align-items: flex-start; gap: var(--am-space-3); min-width: 280px; max-width: 380px; padding: var(--am-space-3) var(--am-space-4); background: var(--am-tinta); color: var(--am-blanc); border-radius: var(--am-radius-md); box-shadow: var(--am-shadow-lg); font-size: var(--am-fs-sm); pointer-events: auto; animation: amToastIn var(--am-duration-base) var(--am-ease-out); }
+.am-toast--success { background: var(--am-color-success); }
+.am-toast--danger  { background: var(--am-color-danger); }
+.am-toast__icon { flex-shrink: 0; }
+.am-toast__close { background: transparent; border: 0; color: inherit; cursor: pointer; padding: 0 0 0 var(--am-space-2); opacity: 0.7; }
+.am-toast__close:hover { opacity: 1; }
+@keyframes amToastIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
 /* ── RESPONSIVE  ─────────────────────────────────────────── */
 @media (max-width: 1024px) {
@@ -714,6 +800,39 @@ details.ds-toggle .ds-code { border-radius: 0; }
 }
 @media (max-width: 900px) { .ds-mobile-toggle { display: block; } }
 
+/* Iconography gallery & docs */
+.ds-iconcat { display: flex; align-items: baseline; gap: var(--am-space-3); margin-bottom: var(--am-space-4); padding-top: var(--am-space-5); }
+.ds-iconcat__name { font-size: var(--am-fs-h4); font-weight: var(--am-fw-semibold); }
+.ds-iconcat__count { font-size: var(--am-fs-xs); color: var(--am-color-text-soft); font-family: var(--am-font-mono); }
+.ds-icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: var(--am-space-3); margin-bottom: var(--am-space-5); }
+.ds-icon-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--am-space-3); padding: var(--am-space-5) var(--am-space-3); background: var(--am-blanc); border: 1px solid var(--am-color-border); border-radius: var(--am-radius-md); cursor: pointer; transition: all var(--am-duration-base) var(--am-ease-out); position: relative; font-family: inherit; min-height: 110px; }
+.ds-icon-tile:hover { border-color: var(--am-tinta); box-shadow: var(--am-shadow-md); transform: translateY(-2px); }
+.ds-icon-tile:focus-visible { outline: var(--am-focus-outline); outline-offset: var(--am-focus-offset); }
+.ds-icon-tile.is-copied { border-color: var(--am-color-success); background: rgba(45,147,108,0.06); }
+.ds-icon-tile.is-copied::after { content: '✓ Copiat'; position: absolute; top: 8px; right: 8px; font-size: 10px; font-weight: var(--am-fw-semibold); color: var(--am-color-success-ink); text-transform: uppercase; letter-spacing: 1px; }
+.ds-icon-tile__icon { color: var(--am-tinta); }
+.ds-icon-tile__icon svg { width: 32px; height: 32px; }
+.ds-icon-tile__name { font-size: 11px; color: var(--am-color-text-muted); font-family: var(--am-font-mono); }
+.ds-specs { display: grid; grid-template-columns: 320px 1fr; gap: var(--am-space-7); align-items: center; background: var(--am-color-bg-alt); padding: var(--am-space-7); border-radius: var(--am-radius-lg); margin-bottom: var(--am-space-7); }
+@media (max-width: 900px) { .ds-specs { grid-template-columns: 1fr; } }
+.ds-specs__demo { background: var(--am-blanc); padding: var(--am-space-6); border-radius: var(--am-radius-md); display: flex; align-items: center; justify-content: center; position: relative; min-height: 220px; }
+.ds-specs__demo svg { width: 160px; height: 160px; color: var(--am-tinta); }
+.ds-specs__grid { position: absolute; inset: 32px; background-image: linear-gradient(to right, rgba(232,134,58,0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(232,134,58,0.15) 1px, transparent 1px); background-size: calc(100% / 24) calc(100% / 24); pointer-events: none; }
+.ds-specs__list { font-size: var(--am-fs-sm); }
+.ds-specs__row { display: grid; grid-template-columns: 140px 1fr; padding: var(--am-space-3) 0; border-bottom: 1px dashed var(--am-color-border); }
+.ds-specs__row:last-child { border-bottom: 0; }
+.ds-specs__key { color: var(--am-color-text-muted); font-weight: var(--am-fw-medium); }
+.ds-specs__val { font-family: var(--am-font-mono); font-size: var(--am-fs-xs); color: var(--am-color-text); }
+.ds-sizes { display: flex; align-items: flex-end; gap: var(--am-space-7); padding: var(--am-space-7); background: var(--am-color-bg-alt); border-radius: var(--am-radius-lg); margin-bottom: var(--am-space-7); flex-wrap: wrap; }
+.ds-size { display: flex; flex-direction: column; align-items: center; gap: var(--am-space-3); }
+.ds-size__icon { color: var(--am-tinta); }
+.ds-size__label { font-family: var(--am-font-mono); font-size: var(--am-fs-xs); color: var(--am-color-text-muted); text-align: center; }
+.ds-size__label strong { display: block; color: var(--am-color-text); font-size: var(--am-fs-sm); margin-bottom: 2px; }
+
+/* Toast region for design system page (live demos) */
+.ds-toast-feedback { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--am-tinta); color: var(--am-blanc); padding: 14px 22px; border-radius: 8px; font-size: 14px; font-weight: 500; box-shadow: var(--am-shadow-lg); display: flex; align-items: center; gap: 10px; opacity: 0; pointer-events: none; transition: all var(--am-duration-base) var(--am-ease-out); z-index: 1060; }
+.ds-toast-feedback.is-show { opacity: 1; transform: translateX(-50%); }
+
 /* WCAG annex blocks */
 .ds-wcag-card { background: var(--am-color-bg-alt); border-left: 4px solid var(--am-tinta); border-radius: 0 var(--am-radius-md) var(--am-radius-md) 0; padding: var(--am-space-5) var(--am-space-6); margin-bottom: var(--am-space-4); }
 .ds-wcag-card__head { font-size: 11px; font-weight: var(--am-fw-semibold); text-transform: uppercase; letter-spacing: var(--am-tracking-overline); color: var(--am-color-text-muted); margin-bottom: 4px; }
@@ -774,6 +893,15 @@ details.ds-toggle .ds-code { border-radius: 0; }
   <div class="ds-nav__subtitle">Design System</div>
 
   <div class="ds-nav__group">
+    <div class="ds-nav__group-title">Principis · Marca</div>
+    <ul>
+      <li><a href="#principis"><span>Missió · Valors · Veu</span><small>00.A</small></a></li>
+      <li><a href="#logotip"><span>Logotip · Protecció</span><small>00.B</small></a></li>
+      <li><a href="#origen"><span>Origen · Villa Havemann</span><small>00.C</small></a></li>
+    </ul>
+  </div>
+
+  <div class="ds-nav__group">
     <div class="ds-nav__group-title">Tokens</div>
     <ul>
       <li><a href="#color"><span>Color</span><small>01</small></a></li>
@@ -787,7 +915,7 @@ details.ds-toggle .ds-code { border-radius: 0; }
   </div>
 
   <div class="ds-nav__group">
-    <div class="ds-nav__group-title">Components</div>
+    <div class="ds-nav__group-title">Components primaris</div>
     <ul>
       <li><a href="#botons"><span>Botons · Botones</span><small>08</small></a></li>
       <li><a href="#formularis"><span>Formularis</span><small>09</small></a></li>
@@ -795,6 +923,20 @@ details.ds-toggle .ds-code { border-radius: 0; }
       <li><a href="#badges"><span>Badges</span><small>11</small></a></li>
       <li><a href="#alerts"><span>Alerts</span><small>12</small></a></li>
       <li><a href="#modal"><span>Modal</span><small>13</small></a></li>
+    </ul>
+  </div>
+
+  <div class="ds-nav__group">
+    <div class="ds-nav__group-title">Components secundaris</div>
+    <ul>
+      <li><a href="#avatar"><span>Avatar</span><small>13.1</small></a></li>
+      <li><a href="#tooltip"><span>Tooltip</span><small>13.2</small></a></li>
+      <li><a href="#dropdown"><span>Dropdown</span><small>13.3</small></a></li>
+      <li><a href="#tabs"><span>Tabs</span><small>13.4</small></a></li>
+      <li><a href="#accordion"><span>Accordion</span><small>13.5</small></a></li>
+      <li><a href="#breadcrumb"><span>Breadcrumb</span><small>13.6</small></a></li>
+      <li><a href="#pagination"><span>Pagination</span><small>13.7</small></a></li>
+      <li><a href="#toast"><span>Toast</span><small>13.8</small></a></li>
     </ul>
   </div>
 
@@ -811,19 +953,28 @@ details.ds-toggle .ds-code { border-radius: 0; }
   </div>
 
   <div class="ds-nav__group">
+    <div class="ds-nav__group-title">Sistema gràfic</div>
+    <ul>
+      <li><a href="#iconografia"><span>Iconografia · 30 icones</span><small>20</small></a></li>
+    </ul>
+  </div>
+
+  <div class="ds-nav__group">
     <div class="ds-nav__group-title">Recursos</div>
     <ul>
-      <li><a href="#tokens-css"><span>Tokens CSS</span><small>20</small></a></li>
-      <li><a href="#tokens-json"><span>Tokens JSON</span><small>21</small></a></li>
+      <li><a href="#tokens-css"><span>Tokens CSS</span><small>21</small></a></li>
+      <li><a href="#tokens-json"><span>Tokens JSON</span><small>22</small></a></li>
     </ul>
   </div>
 
   <div class="ds-nav__group">
     <div class="ds-nav__group-title">Accessibilitat</div>
     <ul>
-      <li><a href="#wcag"><span>Anex WCAG 2.2 AA</span><small>22</small></a></li>
-      <li><a href="#wcag-checklist"><span>Checklist d'aplicació</span><small>23</small></a></li>
-      <li><a href="#wcag-contrast"><span>Taula de contrastos</span><small>24</small></a></li>
+      <li><a href="#wcag"><span>Anex WCAG 2.2 AA</span><small>23</small></a></li>
+      <li><a href="#wcag-checklist"><span>Checklist d'aplicació</span><small>24</small></a></li>
+      <li><a href="#wcag-contrast"><span>Taula de contrastos</span><small>25</small></a></li>
+      <li><a href="#wcag-tools"><span>Eines de verificació</span><small>26</small></a></li>
+      <li><a href="#wcag-maintenance"><span>Manteniment</span><small>27</small></a></li>
     </ul>
   </div>
 </aside>
@@ -834,16 +985,207 @@ details.ds-toggle .ds-code { border-radius: 0; }
 <main class="ds-main" id="main-content" tabindex="-1">
 
   <header class="ds-intro">
-    <div class="ds-intro__eyebrow">Fundació Ave Maria · Design System v1.1</div>
-    <h1 class="ds-intro__title">Tokens i <strong>components</strong> per a la web.</h1>
-    <p class="ds-intro__lede">Sistema visual per construir la web de la Fundació Ave Maria de manera coherent i <strong>accessible</strong>. Inclou els <em>tokens</em> de disseny (color, tipografia, espai, radis, ombres, moviment), els components UI bàsics i un anex complet de compliment de les pautes <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 nivell AA. Tot el codi està preparat per copiar-i-enganxar al projecte web.</p>
+    <div class="ds-intro__eyebrow">Fundació Ave Maria · Design System v2.1 · Document mestre</div>
+    <h1 class="ds-intro__title">Principis, tokens i <strong>components</strong>. Tot alineat amb el manual.</h1>
+    <p class="ds-intro__lede">Sistema visual complet per construir la web, els productes digitals i la comunicació de la Fundació Ave Maria de manera coherent i <strong>accessible</strong>. Inclou els <strong>principis de marca</strong> (missió · valors · veu), regles de protecció del logotip, l'origen narratiu del sistema (Villa Havemann + 21 formes), tokens de disseny amb la regla de proporció 60/30/10, 14 components UI primaris i secundaris, 6 patrons de pàgina, 30 icones fets a mida, recursos descarregables (CSS · JSON) i un anex complet de compliment <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 nivell AA. Coherent al 100% amb <code>brand-guidelines-ave-maria.html v2.0</code>.</p>
     <div class="ds-intro__meta">
-      <span>Fase 1 · Web</span>
-      <span>v1.1 · 2026-04</span>
+      <span>Document mestre</span>
+      <span>v2.1 · 2026-04</span>
       <span>Bilingüe CA · ES</span>
       <span aria-label="Compleix WCAG 2.2 nivell AA">♿ WCAG 2.2 AA</span>
+      <span>14 components · 30 icones</span>
+      <span>Brand-aligned ✓</span>
     </div>
   </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PRINCIPIS · de marca (font: brand-guidelines-ave-maria.html v2.0)
+       ═══════════════════════════════════════════════════════════ -->
+
+  <!-- ── 00.A · PRINCIPIS DE MARCA ──────────────────────────── -->
+  <section class="ds-section" id="principis" aria-labelledby="principis-title">
+    <div class="ds-section__num">00.A · Principis</div>
+    <h2 class="ds-section__title" id="principis-title">Principis <strong>· de marca</strong> <small>missió, valors, veu</small></h2>
+    <p class="ds-section__lede">Aquesta secció recull el cor narratiu de la marca extret directament del manual d'identitat (<code>brand-guidelines-ave-maria.html</code>). El sistema visual només té sentit si es construeix sobre aquests principis.</p>
+
+    <div class="ds-grid-3">
+      <div class="ds-wcag-card" style="border-color: var(--am-verd);">
+        <div class="ds-wcag-card__head">Missió</div>
+        <div class="ds-wcag-card__title">Acompanyar persones</div>
+        <div class="ds-wcag-card__text">Garantir la qualitat de vida de les persones amb diversitat funcional, potenciant les seves capacitats al llarg del seu projecte vital. Des de Sitges, al Garraf, des de 1987.</div>
+      </div>
+      <div class="ds-wcag-card" style="border-color: var(--am-coral);">
+        <div class="ds-wcag-card__head">Visió</div>
+        <div class="ds-wcag-card__title">Lideratge en benestar</div>
+        <div class="ds-wcag-card__text">Ser reconeguts com a referent en serveis de qualitat per a persones amb diversitat funcional al territori, amb un model d'acompanyament integral i innovador.</div>
+      </div>
+      <div class="ds-wcag-card" style="border-color: var(--am-blau);">
+        <div class="ds-wcag-card__head">Personalitat</div>
+        <div class="ds-wcag-card__title">Acollidora · Viva · Diversa</div>
+        <div class="ds-wcag-card__text">Propera, oberta al futur. Una marca que combina solidesa institucional amb calidesa humana, sense distància corporativa.</div>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Valors <small>brand-guidelines-ave-maria.html:721</small></h3>
+      <div class="ds-grid-3" style="gap: var(--am-space-3);">
+        <div class="ds-wcag-card" style="border-color: var(--am-tinta); background: var(--am-blanc);"><div class="ds-wcag-card__head">Valor</div><div class="ds-wcag-card__title">Responsabilitat</div><div class="ds-wcag-card__text">Coherència i compromís en cada acció, en cada decisió, en cada relació.</div></div>
+        <div class="ds-wcag-card" style="border-color: var(--am-tinta); background: var(--am-blanc);"><div class="ds-wcag-card__head">Valor</div><div class="ds-wcag-card__title">Respecte</div><div class="ds-wcag-card__text">La dignitat de cada persona és el centre del que fem.</div></div>
+        <div class="ds-wcag-card" style="border-color: var(--am-tinta); background: var(--am-blanc);"><div class="ds-wcag-card__head">Valor</div><div class="ds-wcag-card__title">Transparència</div><div class="ds-wcag-card__text">Comunicació oberta i honesta amb famílies, voluntaris i societat.</div></div>
+        <div class="ds-wcag-card" style="border-color: var(--am-tinta); background: var(--am-blanc);"><div class="ds-wcag-card__head">Valor</div><div class="ds-wcag-card__title">Innovació</div><div class="ds-wcag-card__text">Millora permanent en serveis i metodologies de treball.</div></div>
+        <div class="ds-wcag-card" style="border-color: var(--am-tinta); background: var(--am-blanc);"><div class="ds-wcag-card__head">Valor</div><div class="ds-wcag-card__title">Eficàcia</div><div class="ds-wcag-card__text">Eficiència operativa per maximitzar l'impacte social.</div></div>
+        <div class="ds-wcag-card" style="border-color: var(--am-tinta); background: var(--am-blanc);"><div class="ds-wcag-card__head">Valor</div><div class="ds-wcag-card__title">Treball en equip</div><div class="ds-wcag-card__text">Aprofitament del talent col·lectiu, suma de mirades.</div></div>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Veu de marca <small>brand-guidelines-ave-maria.html:751</small></h3>
+      <p class="ds-sub__text">Quatre atributs que han d'estar presents a tot text de la fundació — des d'un titular de la web fins a un correu personal a una família.</p>
+      <ul class="ds-checklist">
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Atribut 1</span><span class="desc"><strong>Propera i humana</strong><small>Calidesa sense distància institucional. Parlem com persones, no com una entitat. Tractem de tu, no de vostè.</small></span></li>
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Atribut 2</span><span class="desc"><strong>Clara i accessible</strong><small>Llenguatge senzill, frases curtes, evitar jargó. Si una persona usuària de la fundació no entén un text, el text està malament escrit.</small></span></li>
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Atribut 3</span><span class="desc"><strong>Optimista i activa</strong><small>Focus en capacitats, no en limitacions. Verbs en present, mai en condicional. "Acompanyem" mai "intentem acompanyar".</small></span></li>
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Atribut 4</span><span class="desc"><strong>Respectuosa</strong><small>Mai parlem en nom dels usuaris sense haver-los consultat. Evitar paternalisme. Termes inclusius i actualitzats segons cada moment.</small></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── 00.B · LOGOTIP ─────────────────────────────────────── -->
+  <section class="ds-section" id="logotip" aria-labelledby="logotip-title">
+    <div class="ds-section__num">00.B · Identitat</div>
+    <h2 class="ds-section__title" id="logotip-title">Logotip <strong>· i isotip</strong> <small>regles de protecció extretes del manual</small></h2>
+    <p class="ds-section__lede">Resum operatiu de les regles del logotip per implementar correctament a producte digital. Per a tots els detalls i variants (versions monocromes, aplicació sobre fotografia, co-branding…) consultar el manual oficial.</p>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Construcció <small>brand-guidelines-ave-maria.html:1874</small></h3>
+      <p class="ds-sub__text">El logotip combina dues parts inseparables: <strong>l'isotip</strong> (graella 3×3 generativa) i <strong>el naming</strong> (text corporatiu). Mai un sense l'altre, excepte en mides molt reduïdes (favicon, avatar) on només l'isotip és admissible.</p>
+
+      <div style="background: var(--am-blanc); border: 1px solid var(--am-color-border); border-radius: var(--am-radius-lg); padding: var(--am-space-7); display: flex; gap: var(--am-space-7); align-items: center; flex-wrap: wrap; margin-bottom: var(--am-space-5);">
+        <!-- Isotip miniatura -->
+        <div style="display:grid; grid-template-columns: repeat(3, 30px); grid-template-rows: repeat(3, 30px); gap: 1px; background: transparent;" role="img" aria-label="Isotip 3×3 d'Ave Maria">
+          <span style="background: var(--am-taronja); border-radius: 1px;"></span>
+          <span style="background: var(--am-blanc); border-radius: 1px;"></span>
+          <span style="background: var(--am-coral); border-radius: 1px;"></span>
+          <span style="background: var(--am-groc); border-radius: 1px;"></span>
+          <span style="background: transparent; border: 1px dashed var(--am-gris-300); border-radius: 1px;" aria-label="cel·la blanca obligatòria"></span>
+          <span style="background: var(--am-rosa); border-radius: 1px;"></span>
+          <span style="background: var(--am-blau); border-radius: 1px;"></span>
+          <span style="background: var(--am-tinta); border-radius: 1px;"></span>
+          <span style="background: var(--am-verd); border-radius: 1px;"></span>
+        </div>
+        <!-- Naming -->
+        <div>
+          <div style="font-family: var(--am-font-family); font-weight: 700; font-size: 22px; letter-spacing: 0.06em; color: var(--am-tinta);">AVE MARIA</div>
+          <div style="height: 1px; background: var(--am-tinta); margin: 4px 0; width: 110px;"></div>
+          <div style="font-family: var(--am-font-family); font-weight: 300; font-size: 13px; letter-spacing: 0.2em; color: var(--am-tinta);">FUNDACIÓ</div>
+        </div>
+      </div>
+
+      <ul class="ds-checklist">
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">AVE MARIA</span><span class="desc"><strong>Montserrat Bold (700) majúscules</strong><small>Letter-spacing ≈ 0.06em. És la part dominant del naming, sempre superior en pes.</small></span></li>
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Línia</span><span class="desc"><strong>Línia divisòria 1px tinta</strong><small>Separa AVE MARIA de FUNDACIÓ. Mida proporcional a l'amplada del text superior.</small></span></li>
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">FUNDACIÓ</span><span class="desc"><strong>Montserrat Light (300) majúscules</strong><small>Letter-spacing ≈ 0.2em (més obert que AVE MARIA). Sempre inferior en mida.</small></span></li>
+      </ul>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Àrea de protecció <small>brand-guidelines-ave-maria.html:1265</small></h3>
+      <p class="ds-sub__text">L'espai de respecte mínim al voltant del logotip equival a <strong>1 cel·la de la graella</strong> de l'isotip — equivalent a 1/3 de l'amplada de l'isotip. Cap altre element gràfic, text o imatge pot envair aquest espai.</p>
+      <div style="background: var(--am-color-bg-alt); border-radius: var(--am-radius-md); padding: var(--am-space-7); display: flex; align-items: center; justify-content: center;">
+        <div style="position: relative; padding: 30px; border: 1px dashed var(--am-color-primary); background: var(--am-blanc); border-radius: var(--am-radius-sm);">
+          <div style="position: absolute; top: 4px; left: 50%; transform: translateX(-50%); font-size: 9px; color: var(--am-verd-ink); font-weight: 600; letter-spacing: 2px;">X = 1 CEL·LA</div>
+          <div style="display:grid; grid-template-columns: repeat(3, 24px); grid-template-rows: repeat(3, 24px); gap: 1px;">
+            <span style="background: var(--am-taronja);"></span><span style="background: var(--am-blanc);"></span><span style="background: var(--am-coral);"></span>
+            <span style="background: var(--am-groc);"></span><span style="background: var(--am-blanc);"></span><span style="background: var(--am-rosa);"></span>
+            <span style="background: var(--am-blau);"></span><span style="background: var(--am-tinta);"></span><span style="background: var(--am-verd);"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Mida mínima <small>brand-guidelines-ave-maria.html:1306</small></h3>
+      <ul class="ds-checklist">
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Imprès</span><span class="desc"><strong>40 mm d'amplada</strong> per a la versió completa (isotip + naming). <small>Per sota d'aquest llindar, el detall de la línia divisòria es perd.</small></span></li>
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Digital</span><span class="desc"><strong>120 px d'amplada</strong> per a la versió completa.<small>Per sota: usar només l'isotip (mínim 32 px per a favicon, 64 px per a header).</small></span></li>
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Signatura</span><span class="desc"><strong>16 px d'alçada mínima</strong> al peu de correus i documents.<small>Si no es pot complir, no aplicar el logo. Mai usar-lo per sota de la mida mínima.</small></span></li>
+      </ul>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Manipulacions prohibides <small>brand-guidelines-ave-maria.html:1408</small></h3>
+      <p class="ds-sub__text">El logotip <strong>no s'ha de</strong>:</p>
+      <ul class="ds-checklist">
+        <li><span class="ck" aria-hidden="true" style="color: var(--am-color-danger-ink);">✕</span><span class="ref">Efectes</span><span class="desc"><strong>Afegir ombres, brillantors o contorns</strong><small>El logotip és pla i geomètric, sense efectes visuals afegits.</small></span></li>
+        <li><span class="ck" aria-hidden="true" style="color: var(--am-color-danger-ink);">✕</span><span class="ref">Deformació</span><span class="desc"><strong>Estirar, comprimir o inclinar</strong><small>Mantenir sempre la proporció original. Escalar amb Shift.</small></span></li>
+        <li><span class="ck" aria-hidden="true" style="color: var(--am-color-danger-ink);">✕</span><span class="ref">Color</span><span class="desc"><strong>Canviar els colors de les cel·les</strong><small>Només els colors oficials de les paletes Colors / Bosc / Monocrom.</small></span></li>
+        <li><span class="ck" aria-hidden="true" style="color: var(--am-color-danger-ink);">✕</span><span class="ref">Estructura</span><span class="desc"><strong>Modificar la graella 3×3</strong><small>Sempre 3×3, mai 2×2 ni 4×4. Una cel·la és sempre blanca (l'espai d'invitació).</small></span></li>
+        <li><span class="ck" aria-hidden="true" style="color: var(--am-color-danger-ink);">✕</span><span class="ref">Elements</span><span class="desc"><strong>Afegir elements aliens</strong><small>Cap orla, badge, segell o text addicional al voltant del logo dins de l'àrea de protecció.</small></span></li>
+        <li><span class="ck" aria-hidden="true" style="color: var(--am-color-danger-ink);">✕</span><span class="ref">Fons</span><span class="desc"><strong>Aplicar sobre fons d'imatge sense màscara</strong><small>Si el fons és complex, fer servir una caixa de protecció blanca o tinta.</small></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── 00.C · ORIGEN DEL SISTEMA GRÀFIC ───────────────────── -->
+  <section class="ds-section" id="origen" aria-labelledby="origen-title">
+    <div class="ds-section__num">00.C · Concepte</div>
+    <h2 class="ds-section__title" id="origen-title">Origen <strong>· del sistema</strong> <small>la Villa Havemann i les 21 formes</small></h2>
+    <p class="ds-section__lede">El sistema visual de la Fundació Ave Maria neix d'una idea concreta: <strong>deconstruir</strong> l'edifici fundacional —la Villa Havemann a Sitges— i transformar-ne els elements arquitectònics en un vocabulari geomètric reutilitzable.</p>
+
+    <div class="ds-wcag-card" style="border-color: var(--am-color-primary); padding: var(--am-space-7);">
+      <div class="ds-wcag-card__head">Concepte fundador</div>
+      <div class="ds-wcag-card__title" style="font-size: var(--am-fs-h3); margin-bottom: var(--am-space-3);">Deconstruir per construir.</div>
+      <div class="ds-wcag-card__text" style="font-size: var(--am-fs-body); line-height: var(--am-lh-relaxed); max-width: 720px;">
+        <em>"Cada forma del vocabulari visual neix de la deconstrucció de la Villa Havemann: els arcs de les finestres es transformen en semicercles, els volums del sostre en quarts de cercle, els pilars en rectangles. Simplifiquem els seus volums, corbes i proporcions essencials fins obtenir formes geomètriques pures."</em>
+        <br><br>
+        <span style="font-size: var(--am-fs-xs); color: var(--am-color-text-soft);">Cita extreta de <code>brand-guidelines-ave-maria.html:820</code> i <code>:1140</code>.</span>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Les 21 formes <small>vocabulari complet</small></h3>
+      <p class="ds-sub__text">El sistema generatiu treballa amb una biblioteca tancada de 21 formes geomètriques pures + la cel·la blanca obligatòria. Aquestes formes es combinen aleatòriament dins d'una graella 3×3 seguint regles cromàtiques estrictes.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: var(--am-space-2); padding: var(--am-space-5); background: var(--am-color-bg-alt); border-radius: var(--am-radius-md);">
+        <!-- 21 cel·les amb formes simbòliques -->
+        <div style="aspect-ratio:1; background: var(--am-tinta); border-radius: 2px;" title="Quadrat sòlid"></div>
+        <div style="aspect-ratio:1; background: var(--am-blanc); border-radius: 50%;" title="Cercle"></div>
+        <div style="aspect-ratio:1; background: linear-gradient(135deg, var(--am-tinta) 50%, transparent 50%);" title="Quart sup-esq"></div>
+        <div style="aspect-ratio:1; background: linear-gradient(225deg, var(--am-tinta) 50%, transparent 50%);" title="Quart sup-dret"></div>
+        <div style="aspect-ratio:1; background: linear-gradient(45deg, var(--am-tinta) 50%, transparent 50%);" title="Quart inf-esq"></div>
+        <div style="aspect-ratio:1; background: linear-gradient(315deg, var(--am-tinta) 50%, transparent 50%);" title="Quart inf-dret"></div>
+        <div style="aspect-ratio:1; background: var(--am-blanc); border-radius: 50% 50% 0 0;" title="Semicercle sup"></div>
+        <div style="aspect-ratio:1; background: var(--am-tinta); border-radius: 0 0 50% 50%;" title="Semicercle inf"></div>
+        <div style="aspect-ratio:1; background: var(--am-tinta); border-radius: 50% 0 0 50%;" title="Semicercle esq"></div>
+        <div style="aspect-ratio:1; background: var(--am-tinta); border-radius: 0 50% 50% 0;" title="Semicercle dret"></div>
+        <div style="aspect-ratio:1; background: var(--am-tinta); clip-path: polygon(0 0, 100% 0, 0 100%);" title="Triangle 1"></div>
+        <div style="aspect-ratio:1; background: var(--am-tinta); clip-path: polygon(0 0, 100% 0, 100% 100%);" title="Triangle 2"></div>
+        <div style="aspect-ratio:1; background: var(--am-tinta); clip-path: polygon(0 0, 0 100%, 100% 100%);" title="Triangle 3"></div>
+        <div style="aspect-ratio:1; background: var(--am-tinta); clip-path: polygon(100% 0, 100% 100%, 0 100%);" title="Triangle 4"></div>
+        <div style="aspect-ratio:1; background: var(--am-blanc); display:flex; align-items:center; justify-content:center;"><div style="width: 25%; height: 25%; background: var(--am-tinta); border-radius: 50%;"></div></div>
+        <div style="aspect-ratio:1; background: var(--am-blanc); display:flex; align-items:center; justify-content:center;"><div style="width: 30%; height: 60%; background: var(--am-tinta);"></div></div>
+        <div style="aspect-ratio:1; background: var(--am-blanc); display:flex; align-items:center; justify-content:center;"><div style="width: 60%; height: 30%; background: var(--am-tinta); border-radius: 50%;"></div></div>
+        <div style="aspect-ratio:1; background: linear-gradient(to right, var(--am-tinta) 33%, transparent 33%, transparent 66%, var(--am-tinta) 66%);" title="Bandes vertical"></div>
+        <div style="aspect-ratio:1; background: linear-gradient(to bottom, var(--am-tinta) 33%, transparent 33%, transparent 66%, var(--am-tinta) 66%);" title="Bandes horitzontal"></div>
+        <div style="aspect-ratio:1; background: conic-gradient(var(--am-tinta) 0 25%, transparent 25% 100%);" title="Sector"></div>
+        <div style="aspect-ratio:1; background: var(--am-blanc); display:flex; align-items:center; justify-content:center;"><div style="width: 60%; height: 60%; background: var(--am-tinta); border-radius: 50%; border: 2px solid var(--am-blanc); box-shadow: 0 0 0 2px var(--am-tinta);"></div></div>
+        <div style="aspect-ratio:1; background: var(--am-blanc); border: 2px dashed var(--am-color-primary); display:flex; align-items:center; justify-content:center; font-size: 10px; color: var(--am-color-text-soft); font-weight: 600;">BLANC</div>
+      </div>
+      <p class="ds-sub__text" style="margin-top: var(--am-space-4); font-size: var(--am-fs-xs);"><strong>Nota:</strong> les formes mostrades són una representació simbòlica per a aquesta documentació. Les formes oficials estan definides al fitxer <code>generador-isotipo.html:532</code> i s'apliquen amb els colors de marca, no amb tinta com aquí.</p>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Regles de composició <small>el contracte del sistema</small></h3>
+      <ul class="ds-checklist">
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Graella</span><span class="desc"><strong>Sempre 3×3 cel·les</strong><small>Mai 2×2, 4×4 ni cap altra mida. La graella 3×3 és el contracte fundamental del sistema.</small></span></li>
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Cel·la blanca</span><span class="desc"><strong>Una cel·la sempre buida (color blanc)</strong><small>L'espai d'invitació. Representa l'obertura, la diversitat, l'oportunitat. No es pot eliminar mai.</small></span></li>
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Adjacència</span><span class="desc"><strong>Mai dues cel·les adjacents amb el mateix color</strong><small>Restricció cromàtica que garanteix variació visual i evita "blocs" del mateix to.</small></span></li>
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Paleta</span><span class="desc"><strong>Només colors oficials</strong><small>Cada composició usa una sola paleta (Colors, Bosc o Monocrom). No es barregen entre paletes.</small></span></li>
+        <li><span class="ck" aria-hidden="true">▸</span><span class="ref">Pes equivalent</span><span class="desc"><strong>Dins de l'isotip, els colors tenen pes igual</strong><small>L'única peça on no s'aplica la regla 60/30/10 — l'isotip és, per definició, multicolor equilibrat.</small></span></li>
+      </ul>
+    </div>
+
+    <p class="ds-sub__text" style="margin-top: var(--am-space-7); font-size: var(--am-fs-sm);">Per generar isotips noves, utilitzar el <a href="generador-isotipo.html" style="color: var(--am-verd-ink); font-weight: 600;">generador interactiu</a> que respecta totes aquestes regles. <strong>Mai dissenyar un isotip a mà</strong> — sempre passar pel generador per garantir compliment del sistema.</p>
+  </section>
 
   <!-- ── 01 · COLOR ─────────────────────────────────────────── -->
   <section class="ds-section" id="color">
@@ -853,7 +1195,7 @@ details.ds-toggle .ds-code { border-radius: 0; }
 
     <div class="ds-sub">
       <h3 class="ds-sub__title">Paleta Colors <small>vibrant · web i comunicació</small></h3>
-      <p class="ds-sub__text">Sis colors per a la comunicació general. <code>--am-taronja</code> és el color d'accent primari de la marca.</p>
+      <p class="ds-sub__text">Sis colors per a la comunicació general. <strong><code>--am-verd</code> (#2D936C) és el color principal de la marca</strong> — l'accent oficial que apareix als titulars, botons primaris, focus i elements destacats. Els altres cinc (taronja, coral, groc, blau, rosa) són colors secundaris per a categoritzacions, badges, gradients i acents puntuals.</p>
       <div class="ds-swatches">
         <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-taronja)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Taronja</div><div class="ds-swatch__var">--am-taronja</div><div class="ds-swatch__hex">#E8863A</div></div></div>
         <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-coral)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Coral</div><div class="ds-swatch__var">--am-coral</div><div class="ds-swatch__hex">#E85D75</div></div></div>
@@ -896,7 +1238,7 @@ details.ds-toggle .ds-code { border-radius: 0; }
       <h3 class="ds-sub__title">Tokens semàntics <small>els que faràs servir al CSS</small></h3>
       <p class="ds-sub__text">Aquests tokens donen significat al color. Útils per mantenir la coherència i preparar un futur mode fosc.</p>
       <div class="ds-swatches">
-        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-primary)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Primary</div><div class="ds-swatch__var">--am-color-primary</div><div class="ds-swatch__hex">→ taronja</div></div></div>
+        <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-primary)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Primary</div><div class="ds-swatch__var">--am-color-primary</div><div class="ds-swatch__hex">→ verd</div></div></div>
         <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-text)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Text</div><div class="ds-swatch__var">--am-color-text</div><div class="ds-swatch__hex">→ tinta</div></div></div>
         <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-text-muted)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Text muted</div><div class="ds-swatch__var">--am-color-text-muted</div><div class="ds-swatch__hex">→ gris-600</div></div></div>
         <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-bg-alt)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Bg alt</div><div class="ds-swatch__var">--am-color-bg-alt</div><div class="ds-swatch__hex">→ gris-100</div></div></div>
@@ -905,6 +1247,22 @@ details.ds-toggle .ds-code { border-radius: 0; }
         <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-danger)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Danger</div><div class="ds-swatch__var">--am-color-danger</div><div class="ds-swatch__hex">#C0392B</div></div></div>
         <div class="ds-swatch"><div class="ds-swatch__chip" style="background:var(--am-color-info)"></div><div class="ds-swatch__info"><div class="ds-swatch__name">Info</div><div class="ds-swatch__var">--am-color-info</div><div class="ds-swatch__hex">#5DADE2</div></div></div>
       </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Proporció d'ús <small>regla 60 · 30 · 10</small></h3>
+      <p class="ds-sub__text">Especificació del manual d'identitat (<code>brand-guidelines-ave-maria.html:1751</code>). Aquesta regla manté l'equilibri visual de la marca i evita que els colors vibrants saturen la composició. <strong>S'aplica a totes les peces gràfiques</strong>: web, impresos, RRSS, presentacions.</p>
+      <div style="display:grid; grid-template-columns: 60fr 30fr 10fr; gap: 4px; height: 80px; border-radius: var(--am-radius-md); overflow: hidden; margin-bottom: var(--am-space-5);" role="img" aria-label="Distribució 60% neutres, 30% color principal, 10% accents">
+        <div style="background: var(--am-gris-100); display:flex; align-items:center; justify-content:center; font-size: 11px; font-weight: 600; color: var(--am-tinta); letter-spacing: 2px;">60%  ·  NEUTRES</div>
+        <div style="background: var(--am-verd); display:flex; align-items:center; justify-content:center; font-size: 11px; font-weight: 600; color: var(--am-blanc); letter-spacing: 2px;">30%  ·  PRINCIPAL</div>
+        <div style="background: var(--am-taronja); display:flex; align-items:center; justify-content:center; font-size: 11px; font-weight: 600; color: var(--am-blanc); letter-spacing: 1.5px;">10%</div>
+      </div>
+      <ul style="list-style: none; padding: 0; font-size: var(--am-fs-sm); color: var(--am-color-text-muted); line-height: 1.8;">
+        <li><strong style="color: var(--am-color-text);">60% Neutres</strong> — blanc, gris-100, gris-600 com a fons i text base. La majoria de la superfície d'una peça.</li>
+        <li><strong style="color: var(--am-color-text);">30% Color principal</strong> — el verd <code>#2D936C</code> com a color de marca per a elements destacats. Excepcionalment es pot substituir per blau o taronja en aplicacions secundàries on el verd no encaixi (esdeveniments, RRSS temàtiques).</li>
+        <li><strong style="color: var(--am-color-text);">10% Accents</strong> — colors complementaris (taronja, coral, rosa, groc, blau) per a detalls puntuals com puntuacions, badges, dots de llistes.</li>
+      </ul>
+      <p class="ds-sub__text" style="margin-top: var(--am-space-4);"><strong>Excepció documentada:</strong> dins del propi isotip, els colors tenen pes equivalent (és l'única peça on no s'aplica el 60/30/10).</p>
     </div>
   </section>
 
@@ -927,8 +1285,8 @@ details.ds-toggle .ds-code { border-radius: 0; }
       </div>
       <div class="ds-typescale__row">
         <span class="ds-typescale__token">--am-fs-h2</span>
-        <span class="ds-typescale__sample" style="font-size:32px; font-weight:500; line-height:1.3;">Som la Fundació Ave Maria</span>
-        <span class="ds-typescale__meta">32 / 500 / 1.3</span>
+        <span class="ds-typescale__sample" style="font-size:32px; font-weight:700; line-height:1.3; letter-spacing:-0.02em;">Som la Fundació Ave Maria</span>
+        <span class="ds-typescale__meta">32 / 700 / 1.3 · −0.02em</span>
       </div>
       <div class="ds-typescale__row">
         <span class="ds-typescale__token">--am-fs-h3</span>
@@ -959,7 +1317,7 @@ details.ds-toggle .ds-code { border-radius: 0; }
 
     <div class="ds-sub">
       <h3 class="ds-sub__title">Pesos disponibles</h3>
-      <p class="ds-sub__text">Només 5 pesos. No utilitzar versions <em>italic</em> excepte en cites llargues (testimonis).</p>
+      <p class="ds-sub__text">Cinc pesos upright + dos italics (300 i 400) per a cites i testimonis. La importació de Google Fonts inclou totes aquestes variants.</p>
       <div class="ds-row" style="font-size:24px;">
         <span style="font-weight:300">Light 300</span>
         <span style="font-weight:400">Regular 400</span>
@@ -967,12 +1325,44 @@ details.ds-toggle .ds-code { border-radius: 0; }
         <span style="font-weight:600">SemiBold 600</span>
         <span style="font-weight:700">Bold 700</span>
       </div>
+      <div class="ds-row" style="font-size:24px; margin-top: var(--am-space-3);">
+        <span style="font-weight:300; font-style:italic;">Light Italic 300</span>
+        <span style="font-weight:400; font-style:italic;">Regular Italic 400</span>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Cas especial: el logotip <small>brand-guidelines-ave-maria.html:1874</small></h3>
+      <p class="ds-sub__text">El naming del logotip té una assignació tipogràfica fixa que <strong>no es pot modificar</strong>:</p>
+      <table class="ds-wcag-table">
+        <thead><tr><th scope="col">Element</th><th scope="col">Pes</th><th scope="col">Letter-spacing</th><th scope="col">Cas</th></tr></thead>
+        <tbody>
+          <tr><td><code>AVE MARIA</code></td><td><strong>Bold (700)</strong></td><td>≈ 0.06em</td><td>Majúscules</td></tr>
+          <tr><td>Línia divisòria</td><td>—</td><td>—</td><td>1px tinta</td></tr>
+          <tr><td><code>FUNDACIÓ</code></td><td><strong>Light (300)</strong></td><td>≈ 0.20em</td><td>Majúscules</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Tracking · letter-spacing</h3>
+      <p class="ds-sub__text">El manual original especifica el letter-spacing en píxels (2px, 2.5px, 3px). Aquest design system els converteix a unitats relatives <code>em</code> per garantir l'escalat proporcional en qualsevol mida tipogràfica. La conversió aplicada és:</p>
+      <table class="ds-wcag-table">
+        <thead><tr><th scope="col">Token</th><th scope="col">Valor</th><th scope="col">Equivalència aprox. a 16px</th><th scope="col">Ús</th></tr></thead>
+        <tbody>
+          <tr><td><code>--am-tracking-tight</code></td><td>−0.01em</td><td>−0.16px</td><td>Display gran (h1, hero)</td></tr>
+          <tr><td><code>--am-tracking-normal</code></td><td>0</td><td>0</td><td>Body, cos de text</td></tr>
+          <tr><td><code>--am-tracking-display</code></td><td>0.06em</td><td>≈ 1px (manual: 2px)</td><td>Wordmark "AVE MARIA"</td></tr>
+          <tr><td><code>--am-tracking-overline</code></td><td>0.20em</td><td>≈ 3.2px (manual: 3px)</td><td>Eyebrows, etiquetes UPPERCASE, "FUNDACIÓ"</td></tr>
+        </tbody>
+      </table>
+      <p class="ds-sub__text" style="margin-top: var(--am-space-3); font-size: var(--am-fs-xs);"><strong>Nota:</strong> les conversions píxel↔em són aproximades a 16px de mida base. Per al logotip imprès cal mantenir els valors píxels originals del manual.</p>
     </div>
 
     <details class="ds-toggle" style="margin-top:var(--am-space-5)">
       <summary>CSS · Tokens tipogràfics</summary>
       <pre class="ds-code"><span class="tk-com">/* Importació */</span>
-<span class="tk-tag">@import</span> <span class="tk-str">url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap')</span>;
+<span class="tk-tag">@import</span> <span class="tk-str">url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&amp;display=swap')</span>;
 
 <span class="tk-com">/* Aplicació */</span>
 <span class="tk-tag">body</span> {
@@ -981,7 +1371,7 @@ details.ds-toggle .ds-code { border-radius: 0; }
   <span class="tk-prop">line-height</span>: <span class="tk-val">var(--am-lh-relaxed)</span>;
 }
 <span class="tk-tag">h1</span> { <span class="tk-prop">font-size</span>: <span class="tk-val">var(--am-fs-h1)</span>; <span class="tk-prop">font-weight</span>: <span class="tk-val">var(--am-fw-light)</span>; }
-<span class="tk-tag">h2</span> { <span class="tk-prop">font-size</span>: <span class="tk-val">var(--am-fs-h2)</span>; <span class="tk-prop">font-weight</span>: <span class="tk-val">var(--am-fw-medium)</span>; }
+<span class="tk-tag">h2</span> { <span class="tk-prop">font-size</span>: <span class="tk-val">var(--am-fs-h2)</span>; <span class="tk-prop">font-weight</span>: <span class="tk-val">var(--am-fw-bold)</span>; <span class="tk-prop">letter-spacing</span>: <span class="tk-val">-0.02em</span>; }
 <span class="tk-tag">h3</span> { <span class="tk-prop">font-size</span>: <span class="tk-val">var(--am-fs-h3)</span>; <span class="tk-prop">font-weight</span>: <span class="tk-val">var(--am-fw-semibold)</span>; }</pre>
     </details>
   </section>
@@ -1244,7 +1634,7 @@ details.ds-toggle .ds-code { border-radius: 0; }
       <div class="ds-demo">
         <div class="ds-demo__stage ds-demo__stage--soft">
           <article class="am-card" style="max-width:340px;">
-            <div class="am-card__media" style="background-image:linear-gradient(135deg, var(--am-taronja), var(--am-coral));"></div>
+            <div class="am-card__media" style="background-image:linear-gradient(135deg, var(--am-verd), var(--am-blau));"></div>
             <div class="am-card__body">
               <div class="am-card__eyebrow">Servei</div>
               <h3 class="am-card__title">Centre Ocupacional</h3>
@@ -1402,6 +1792,357 @@ details.ds-toggle .ds-code { border-radius: 0; }
 modal.classList.add(<span class="tk-str">'is-open'</span>);
 modal.classList.remove(<span class="tk-str">'is-open'</span>);</pre>
     </details>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       COMPONENTS SECUNDARIS · 13.1 → 13.8
+       ═══════════════════════════════════════════════════════════ -->
+
+  <!-- ── 13.1 · AVATAR ──────────────────────────────────────── -->
+  <section class="ds-section" id="avatar">
+    <div class="ds-section__num">13.1 · Component</div>
+    <h2 class="ds-section__title">Avatar <strong>· Avatar</strong></h2>
+    <p class="ds-section__lede">Representació visual d'una persona o entitat. Cinc mides (xs → xl). Quan no hi ha foto, mostrem inicials sobre un dels colors de marca.</p>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Mides</h3>
+      <div class="ds-demo">
+        <div class="ds-demo__stage">
+          <span class="am-avatar am-avatar--xs am-avatar--accent">MR</span>
+          <span class="am-avatar am-avatar--sm am-avatar--coral">MR</span>
+          <span class="am-avatar am-avatar--accent">MR</span>
+          <span class="am-avatar am-avatar--lg am-avatar--verd">MR</span>
+          <span class="am-avatar am-avatar--xl am-avatar--blau">MR</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Grup d'avatars <small>contributors / equip</small></h3>
+      <div class="ds-demo">
+        <div class="ds-demo__stage">
+          <div class="am-avatar-group" aria-label="Equip de 4 persones">
+            <span class="am-avatar am-avatar--accent" title="Marta Riera">MR</span>
+            <span class="am-avatar am-avatar--coral"  title="Jordi Valls">JV</span>
+            <span class="am-avatar am-avatar--verd"   title="Clara Noguera">CN</span>
+            <span class="am-avatar am-avatar--blau"   title="Albert Sala">AS</span>
+            <span class="am-avatar" aria-label="i 12 més">+12</span>
+          </div>
+        </div>
+        <div class="ds-demo__bar"><span>Demo · grup amb solapament</span><button data-copy="avatar-html">Copiar HTML</button></div>
+      </div>
+      <details class="ds-toggle">
+        <summary>Codi HTML</summary>
+        <pre class="ds-code" id="avatar-html"><span class="tk-tag">&lt;span</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-avatar am-avatar--accent"</span><span class="tk-tag">&gt;</span>MR<span class="tk-tag">&lt;/span&gt;</span>
+
+<span class="tk-com">&lt;!-- Amb foto --&gt;</span>
+<span class="tk-tag">&lt;span</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-avatar am-avatar--lg"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;img</span> <span class="tk-attr">src</span>=<span class="tk-str">"foto.jpg"</span> <span class="tk-attr">alt</span>=<span class="tk-str">"Marta Riera"</span><span class="tk-tag">&gt;</span>
+<span class="tk-tag">&lt;/span&gt;</span>
+
+<span class="tk-com">&lt;!-- Grup --&gt;</span>
+<span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-avatar-group"</span> <span class="tk-attr">aria-label</span>=<span class="tk-str">"Equip de 4"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;span</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-avatar am-avatar--accent"</span> <span class="tk-attr">title</span>=<span class="tk-str">"Marta Riera"</span><span class="tk-tag">&gt;</span>MR<span class="tk-tag">&lt;/span&gt;</span>
+<span class="tk-tag">&lt;/div&gt;</span></pre>
+      </details>
+    </div>
+
+    <p class="ds-sub__text" style="margin-top: var(--am-space-5);"><strong>Accessibilitat:</strong> sempre <code>alt</code> al <code>&lt;img&gt;</code>. Si l'avatar és només decoratiu (al costat del nom), <code>alt=""</code>. Si és l'únic identificador, <code>alt="Nom Cognom"</code>. Per a iniciales sense significat per a screen readers, embolicar en un <code>&lt;span aria-hidden="true"&gt;</code> i posar el nom complet a un text adjacent.</p>
+  </section>
+
+  <!-- ── 13.2 · TOOLTIP ─────────────────────────────────────── -->
+  <section class="ds-section" id="tooltip">
+    <div class="ds-section__num">13.2 · Component</div>
+    <h2 class="ds-section__title">Tooltip <strong>· Información contextual</strong></h2>
+    <p class="ds-section__lede">Pista breu que apareix en hover/focus. Per a contextos curts d'ajuda. <strong>Mai per a informació crítica</strong> — un usuari amb teclat sense ratolí no pot veure-la fàcilment, i en mòbil no hi ha hover real.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage">
+        <span class="am-tooltip-wrap">
+          <button class="am-btn am-btn--secondary" aria-describedby="tt-1">Passa el cursor</button>
+          <span class="am-tooltip" role="tooltip" id="tt-1">Compleix WCAG 2.4.7</span>
+        </span>
+        <span class="am-tooltip-wrap">
+          <button class="am-btn am-btn--ghost" aria-describedby="tt-2">o fes focus amb Tab</button>
+          <span class="am-tooltip" role="tooltip" id="tt-2">També apareix en focus</span>
+        </span>
+      </div>
+      <div class="ds-demo__bar"><span>Demo · hover i focus</span><button data-copy="tooltip-html">Copiar HTML</button></div>
+    </div>
+    <details class="ds-toggle">
+      <summary>Codi HTML</summary>
+      <pre class="ds-code" id="tooltip-html"><span class="tk-tag">&lt;span</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-tooltip-wrap"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;button</span> <span class="tk-attr">aria-describedby</span>=<span class="tk-str">"tt-info"</span><span class="tk-tag">&gt;</span>Acció<span class="tk-tag">&lt;/button&gt;</span>
+  <span class="tk-tag">&lt;span</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-tooltip"</span> <span class="tk-attr">role</span>=<span class="tk-str">"tooltip"</span> <span class="tk-attr">id</span>=<span class="tk-str">"tt-info"</span><span class="tk-tag">&gt;</span>
+    Pista contextual breu
+  <span class="tk-tag">&lt;/span&gt;</span>
+<span class="tk-tag">&lt;/span&gt;</span></pre>
+    </details>
+
+    <p class="ds-sub__text" style="margin-top: var(--am-space-5);"><strong>Accessibilitat (WCAG 1.4.13 AA):</strong> el tooltip ha de ser persistent (no desapareix al moure el cursor a sobre seu), tancable amb Esc i no requerir hover precís. <code>aria-describedby</code> al disparador apunta a l'<code>id</code> del tooltip perquè els lectors el llegeixin com a descripció.</p>
+  </section>
+
+  <!-- ── 13.3 · DROPDOWN ────────────────────────────────────── -->
+  <section class="ds-section" id="dropdown">
+    <div class="ds-section__num">13.3 · Component</div>
+    <h2 class="ds-section__title">Dropdown <strong>· Menu</strong></h2>
+    <p class="ds-section__lede">Menú desplegable d'accions o navegació secundària. Es tanca amb Esc, clic fora o seleccionar una opció.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage" style="min-height: 240px; align-items: flex-start; padding-top: var(--am-space-5);">
+        <div class="am-dropdown" id="demo-dd">
+          <button class="am-btn am-btn--secondary" id="demo-dd-trigger" aria-haspopup="menu" aria-expanded="false">
+            Accions
+            <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul class="am-dropdown__menu" id="demo-dd-menu" role="menu" aria-labelledby="demo-dd-trigger">
+            <li role="none"><a href="#" role="menuitem">Veure perfil</a></li>
+            <li role="none"><a href="#" role="menuitem">Editar dades</a></li>
+            <li role="none"><a href="#" role="menuitem">Descarregar PDF</a></li>
+            <li role="none"><hr class="am-dropdown__divider"></li>
+            <li role="none"><a href="#" role="menuitem" style="color: var(--am-color-danger);">Eliminar</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ds-demo__bar"><span>Demo · clic per obrir</span><button data-copy="dd-html">Copiar HTML</button></div>
+    </div>
+    <details class="ds-toggle">
+      <summary>Codi HTML + JS</summary>
+      <pre class="ds-code" id="dd-html"><span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-dropdown"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;button</span> <span class="tk-attr">aria-haspopup</span>=<span class="tk-str">"menu"</span> <span class="tk-attr">aria-expanded</span>=<span class="tk-str">"false"</span><span class="tk-tag">&gt;</span>Accions<span class="tk-tag">&lt;/button&gt;</span>
+  <span class="tk-tag">&lt;ul</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-dropdown__menu"</span> <span class="tk-attr">role</span>=<span class="tk-str">"menu"</span><span class="tk-tag">&gt;</span>
+    <span class="tk-tag">&lt;li</span> <span class="tk-attr">role</span>=<span class="tk-str">"none"</span><span class="tk-tag">&gt;&lt;a</span> <span class="tk-attr">role</span>=<span class="tk-str">"menuitem"</span> <span class="tk-attr">href</span>=<span class="tk-str">"#"</span><span class="tk-tag">&gt;</span>Opció<span class="tk-tag">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="tk-tag">&lt;/ul&gt;</span>
+<span class="tk-tag">&lt;/div&gt;</span>
+
+<span class="tk-com">// Toggle obert/tancat</span>
+trigger.onclick = () =&gt; {
+  menu.classList.toggle(<span class="tk-str">'is-open'</span>);
+  trigger.setAttribute(<span class="tk-str">'aria-expanded'</span>, menu.classList.contains(<span class="tk-str">'is-open'</span>));
+};</pre>
+    </details>
+
+    <p class="ds-sub__text" style="margin-top: var(--am-space-5);"><strong>Accessibilitat (WAI-ARIA):</strong> <code>aria-haspopup="menu"</code>, <code>aria-expanded</code> al disparador, <code>role="menu"</code> al contenidor i <code>role="menuitem"</code> als ítems. Navegació amb fletxes ↑↓, tancament amb Esc i <em>focus return</em> al disparador.</p>
+  </section>
+
+  <!-- ── 13.4 · TABS ────────────────────────────────────────── -->
+  <section class="ds-section" id="tabs">
+    <div class="ds-section__num">13.4 · Component</div>
+    <h2 class="ds-section__title">Tabs <strong>· Pestañas</strong></h2>
+    <p class="ds-section__lede">Per separar contingut relacionat en panells alternatius dins una mateixa pàgina. <strong>Usar amb mesura</strong> — si el contingut és independent, és millor pàgines separades.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage ds-demo__stage--plain ds-demo__stage--block" style="padding: var(--am-space-6);">
+        <div class="am-tabs" id="demo-tabs">
+          <ul class="am-tabs__list" role="tablist" aria-label="Informació del servei">
+            <li role="presentation"><button class="am-tabs__tab" role="tab" aria-selected="true" aria-controls="t1" id="tab1" tabindex="0">Què oferim</button></li>
+            <li role="presentation"><button class="am-tabs__tab" role="tab" aria-selected="false" aria-controls="t2" id="tab2" tabindex="-1">Horaris</button></li>
+            <li role="presentation"><button class="am-tabs__tab" role="tab" aria-selected="false" aria-controls="t3" id="tab3" tabindex="-1">Com inscriure's</button></li>
+          </ul>
+          <div class="am-tabs__panel" role="tabpanel" id="t1" aria-labelledby="tab1">
+            <p>Activitats terapèutiques diàries: pintura, ceràmica, jardineria, manualitats. Cada usuari té un programa personalitzat segons les seves capacitats i interessos.</p>
+          </div>
+          <div class="am-tabs__panel" role="tabpanel" id="t2" aria-labelledby="tab2" hidden>
+            <p>De dilluns a divendres, de 9 a 17h. Servei d'acolliment matinal a partir de les 8h. Activitats lectives fins a les 16h, hora de la berena.</p>
+          </div>
+          <div class="am-tabs__panel" role="tabpanel" id="t3" aria-labelledby="tab3" hidden>
+            <p>Contacta amb la nostra treballadora social. Reunió inicial gratuïta, valoració individualitzada i pla d'incorporació de 4 setmanes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="ds-demo__bar"><span>Demo · clic o ←/→ per navegar</span><button data-copy="tabs-html">Copiar HTML</button></div>
+    </div>
+    <details class="ds-toggle">
+      <summary>Codi HTML + JS</summary>
+      <pre class="ds-code" id="tabs-html"><span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-tabs"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;ul</span> <span class="tk-attr">role</span>=<span class="tk-str">"tablist"</span><span class="tk-tag">&gt;</span>
+    <span class="tk-tag">&lt;li</span> <span class="tk-attr">role</span>=<span class="tk-str">"presentation"</span><span class="tk-tag">&gt;</span>
+      <span class="tk-tag">&lt;button</span> <span class="tk-attr">role</span>=<span class="tk-str">"tab"</span> <span class="tk-attr">aria-selected</span>=<span class="tk-str">"true"</span> <span class="tk-attr">aria-controls</span>=<span class="tk-str">"p1"</span> <span class="tk-attr">id</span>=<span class="tk-str">"t1"</span><span class="tk-tag">&gt;</span>A<span class="tk-tag">&lt;/button&gt;</span>
+    <span class="tk-tag">&lt;/li&gt;</span>
+  <span class="tk-tag">&lt;/ul&gt;</span>
+  <span class="tk-tag">&lt;div</span> <span class="tk-attr">role</span>=<span class="tk-str">"tabpanel"</span> <span class="tk-attr">id</span>=<span class="tk-str">"p1"</span> <span class="tk-attr">aria-labelledby</span>=<span class="tk-str">"t1"</span><span class="tk-tag">&gt;</span>…<span class="tk-tag">&lt;/div&gt;</span>
+<span class="tk-tag">&lt;/div&gt;</span></pre>
+    </details>
+
+    <p class="ds-sub__text" style="margin-top: var(--am-space-5);"><strong>Patró WAI-ARIA:</strong> <code>role="tablist"</code>, <code>tab</code>, <code>tabpanel</code>, navegació amb fletxes ←/→, <code>tabindex</code> roving (només la pestanya activa té <code>tabindex="0"</code>, les altres <code>-1</code>).</p>
+  </section>
+
+  <!-- ── 13.5 · ACCORDION ───────────────────────────────────── -->
+  <section class="ds-section" id="accordion">
+    <div class="ds-section__num">13.5 · Component</div>
+    <h2 class="ds-section__title">Accordion <strong>· Acordeón</strong></h2>
+    <p class="ds-section__lede">Per organitzar contingut llarg en seccions plegables. Útil per FAQ, documentació, formularis llargs.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage ds-demo__stage--plain ds-demo__stage--block" style="padding: var(--am-space-6);">
+        <div class="am-accordion" id="demo-acc">
+          <div class="am-accordion__item">
+            <h3 style="margin: 0;">
+              <button class="am-accordion__trigger" aria-expanded="true" aria-controls="acc-p1" id="acc-t1">
+                Com puc fer un donatiu puntual?
+                <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+              </button>
+            </h3>
+            <div class="am-accordion__panel" id="acc-p1" aria-labelledby="acc-t1">
+              <p>Pots fer-ho directament des de la nostra web amb targeta o bizum, o per transferència bancària. Si fas la donació de més de 50 € et generem automàticament el certificat fiscal.</p>
+            </div>
+          </div>
+          <div class="am-accordion__item">
+            <h3 style="margin: 0;">
+              <button class="am-accordion__trigger" aria-expanded="false" aria-controls="acc-p2" id="acc-t2">
+                Quines desgravacions fiscals tinc?
+                <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+              </button>
+            </h3>
+            <div class="am-accordion__panel" id="acc-p2" aria-labelledby="acc-t2" hidden>
+              <p>El 80% sobre els primers 250 € i el 40% sobre la resta. Si has fet donacions a la fundació en els 3 anys anteriors, el segon tram puja al 45%.</p>
+            </div>
+          </div>
+          <div class="am-accordion__item">
+            <h3 style="margin: 0;">
+              <button class="am-accordion__trigger" aria-expanded="false" aria-controls="acc-p3" id="acc-t3">
+                Puc col·laborar com a voluntari/ària?
+                <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+              </button>
+            </h3>
+            <div class="am-accordion__panel" id="acc-p3" aria-labelledby="acc-t3" hidden>
+              <p>Sí. Tenim un programa de voluntariat amb formació inicial i acompanyament continuat. Demana entrevista a través del formulari de contacte.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ds-demo__bar"><span>Demo · clic per expandir</span><button data-copy="acc-html">Copiar HTML</button></div>
+    </div>
+    <details class="ds-toggle">
+      <summary>Codi HTML</summary>
+      <pre class="ds-code" id="acc-html"><span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-accordion"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-accordion__item"</span><span class="tk-tag">&gt;</span>
+    <span class="tk-tag">&lt;h3&gt;</span>
+      <span class="tk-tag">&lt;button</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-accordion__trigger"</span>
+              <span class="tk-attr">aria-expanded</span>=<span class="tk-str">"false"</span> <span class="tk-attr">aria-controls</span>=<span class="tk-str">"p1"</span><span class="tk-tag">&gt;</span>
+        Pregunta
+      <span class="tk-tag">&lt;/button&gt;</span>
+    <span class="tk-tag">&lt;/h3&gt;</span>
+    <span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-accordion__panel"</span> <span class="tk-attr">id</span>=<span class="tk-str">"p1"</span> <span class="tk-attr">hidden</span><span class="tk-tag">&gt;</span>
+      Resposta…
+    <span class="tk-tag">&lt;/div&gt;</span>
+  <span class="tk-tag">&lt;/div&gt;</span>
+<span class="tk-tag">&lt;/div&gt;</span></pre>
+    </details>
+
+    <p class="ds-sub__text" style="margin-top: var(--am-space-5);"><strong>Patró WAI-ARIA Disclosure:</strong> el botó disparador té <code>aria-expanded</code> i <code>aria-controls</code>. El panell té <code>hidden</code> quan està plegat (no <code>display:none</code> via classe — així screen readers ho saben). Les preguntes embolicades en <code>&lt;h3&gt;</code> mantenen la jerarquia del document.</p>
+  </section>
+
+  <!-- ── 13.6 · BREADCRUMB ──────────────────────────────────── -->
+  <section class="ds-section" id="breadcrumb">
+    <div class="ds-section__num">13.6 · Component</div>
+    <h2 class="ds-section__title">Breadcrumb <strong>· Migas de pan</strong></h2>
+    <p class="ds-section__lede">Mostra la posició actual dins de la jerarquia del lloc i permet tornar als nivells superiors. Útil en seccions amb 3+ nivells de profunditat.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage ds-demo__stage--plain">
+        <nav aria-label="Breadcrumb">
+          <ol class="am-breadcrumb">
+            <li><a href="#">Inici</a></li>
+            <li><span class="am-breadcrumb__sep" aria-hidden="true">/</span></li>
+            <li><a href="#">Serveis</a></li>
+            <li><span class="am-breadcrumb__sep" aria-hidden="true">/</span></li>
+            <li><a href="#">Centre Ocupacional</a></li>
+            <li><span class="am-breadcrumb__sep" aria-hidden="true">/</span></li>
+            <li><a href="#" aria-current="page">Activitats</a></li>
+          </ol>
+        </nav>
+      </div>
+      <div class="ds-demo__bar"><span>Demo</span><button data-copy="bc-html">Copiar HTML</button></div>
+    </div>
+    <details class="ds-toggle">
+      <summary>Codi HTML</summary>
+      <pre class="ds-code" id="bc-html"><span class="tk-tag">&lt;nav</span> <span class="tk-attr">aria-label</span>=<span class="tk-str">"Breadcrumb"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;ol</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-breadcrumb"</span><span class="tk-tag">&gt;</span>
+    <span class="tk-tag">&lt;li&gt;&lt;a</span> <span class="tk-attr">href</span>=<span class="tk-str">"/"</span><span class="tk-tag">&gt;</span>Inici<span class="tk-tag">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="tk-tag">&lt;li&gt;&lt;span</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-breadcrumb__sep"</span> <span class="tk-attr">aria-hidden</span>=<span class="tk-str">"true"</span><span class="tk-tag">&gt;</span>/<span class="tk-tag">&lt;/span&gt;&lt;/li&gt;</span>
+    <span class="tk-tag">&lt;li&gt;&lt;a</span> <span class="tk-attr">aria-current</span>=<span class="tk-str">"page"</span><span class="tk-tag">&gt;</span>Pàgina actual<span class="tk-tag">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="tk-tag">&lt;/ol&gt;</span>
+<span class="tk-tag">&lt;/nav&gt;</span></pre>
+    </details>
+
+    <p class="ds-sub__text" style="margin-top: var(--am-space-5);"><strong>Accessibilitat:</strong> <code>&lt;nav aria-label="Breadcrumb"&gt;</code> identifica la regió. <code>aria-current="page"</code> a l'enllaç actual. Els separadors (<code>/</code>) van en <code>&lt;span aria-hidden="true"&gt;</code> perquè els screen readers no els llegeixin.</p>
+  </section>
+
+  <!-- ── 13.7 · PAGINATION ──────────────────────────────────── -->
+  <section class="ds-section" id="pagination">
+    <div class="ds-section__num">13.7 · Component</div>
+    <h2 class="ds-section__title">Pagination <strong>· Paginación</strong></h2>
+    <p class="ds-section__lede">Per a llistats llargs (notícies, activitats, memòries). Mostra anterior/següent + números de pàgina amb el·lipsis quan hi ha més de 7 pàgines.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage ds-demo__stage--plain">
+        <nav aria-label="Paginació de notícies">
+          <ul class="am-pagination">
+            <li><a href="#" aria-label="Pàgina anterior" rel="prev">
+              <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+            </a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li aria-current="page"><a href="#" aria-label="Pàgina 3, actual">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><span class="am-pagination__ellipsis" aria-hidden="true">…</span></li>
+            <li><a href="#">12</a></li>
+            <li><a href="#" aria-label="Pàgina següent" rel="next">
+              <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="ds-demo__bar"><span>Demo</span><button data-copy="pag-html">Copiar HTML</button></div>
+    </div>
+    <details class="ds-toggle">
+      <summary>Codi HTML</summary>
+      <pre class="ds-code" id="pag-html"><span class="tk-tag">&lt;nav</span> <span class="tk-attr">aria-label</span>=<span class="tk-str">"Paginació"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;ul</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-pagination"</span><span class="tk-tag">&gt;</span>
+    <span class="tk-tag">&lt;li&gt;&lt;a</span> <span class="tk-attr">aria-label</span>=<span class="tk-str">"Anterior"</span> <span class="tk-attr">rel</span>=<span class="tk-str">"prev"</span><span class="tk-tag">&gt;</span>‹<span class="tk-tag">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="tk-tag">&lt;li&gt;&lt;a</span><span class="tk-tag">&gt;</span>1<span class="tk-tag">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="tk-tag">&lt;li</span> <span class="tk-attr">aria-current</span>=<span class="tk-str">"page"</span><span class="tk-tag">&gt;&lt;a</span> <span class="tk-attr">aria-label</span>=<span class="tk-str">"Pàgina 2, actual"</span><span class="tk-tag">&gt;</span>2<span class="tk-tag">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="tk-tag">&lt;li&gt;&lt;span</span> <span class="tk-attr">aria-hidden</span>=<span class="tk-str">"true"</span><span class="tk-tag">&gt;</span>…<span class="tk-tag">&lt;/span&gt;&lt;/li&gt;</span>
+  <span class="tk-tag">&lt;/ul&gt;</span>
+<span class="tk-tag">&lt;/nav&gt;</span></pre>
+    </details>
+
+    <p class="ds-sub__text" style="margin-top: var(--am-space-5);"><strong>Accessibilitat:</strong> <code>&lt;nav aria-label="Paginació"&gt;</code> identifica la regió. <code>aria-current="page"</code> a la pàgina actual. <code>rel="prev"</code> i <code>rel="next"</code> ajuden a tecnologies assistives i a SEO. Cada element ≥40×40 px (WCAG 2.5.8).</p>
+  </section>
+
+  <!-- ── 13.8 · TOAST ───────────────────────────────────────── -->
+  <section class="ds-section" id="toast">
+    <div class="ds-section__num">13.8 · Component</div>
+    <h2 class="ds-section__title">Toast <strong>· Notificació</strong></h2>
+    <p class="ds-section__lede">Missatge breu que apareix temporalment per confirmar una acció o avisar d'un canvi. <strong>Mai per a errors crítics</strong> — aquests requereixen un alert amb persistència.</p>
+
+    <div class="ds-demo">
+      <div class="ds-demo__stage">
+        <button class="am-btn am-btn--primary" id="toast-success-btn">Provar toast d'èxit</button>
+        <button class="am-btn am-btn--secondary" id="toast-info-btn">Toast informatiu</button>
+        <button class="am-btn am-btn--secondary" id="toast-danger-btn" style="border-color: var(--am-color-danger); color: var(--am-color-danger);">Toast d'error</button>
+      </div>
+      <div class="ds-demo__bar"><span>Demo · clic per disparar</span><button data-copy="toast-html">Copiar HTML</button></div>
+    </div>
+    <details class="ds-toggle">
+      <summary>Codi HTML + JS</summary>
+      <pre class="ds-code" id="toast-html"><span class="tk-com">&lt;!-- Regió fixa al cantó inferior dret (una sola vegada al document) --&gt;</span>
+<span class="tk-tag">&lt;div</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-toast-region"</span> <span class="tk-attr">role</span>=<span class="tk-str">"region"</span> <span class="tk-attr">aria-live</span>=<span class="tk-str">"polite"</span> <span class="tk-attr">aria-label</span>=<span class="tk-str">"Notificacions"</span><span class="tk-tag">&gt;&lt;/div&gt;</span>
+
+<span class="tk-com">// Crear un toast</span>
+<span class="tk-tag">function</span> showToast(message, type = <span class="tk-str">'success'</span>) {
+  <span class="tk-tag">const</span> toast = document.createElement(<span class="tk-str">'div'</span>);
+  toast.className = <span class="tk-str">`am-toast am-toast--${type}`</span>;
+  toast.setAttribute(<span class="tk-str">'role'</span>, type === <span class="tk-str">'danger'</span> ? <span class="tk-str">'alert'</span> : <span class="tk-str">'status'</span>);
+  toast.innerHTML = <span class="tk-str">`&lt;span&gt;${message}&lt;/span&gt;
+    &lt;button class="am-toast__close" aria-label="Tancar"&gt;✕&lt;/button&gt;`</span>;
+  document.querySelector(<span class="tk-str">'.am-toast-region'</span>).appendChild(toast);
+  setTimeout(() =&gt; toast.remove(), <span class="tk-num">5000</span>);
+}</pre>
+    </details>
+
+    <p class="ds-sub__text" style="margin-top: var(--am-space-5);"><strong>Accessibilitat (WCAG 4.1.3 AA):</strong> el contenidor té <code>aria-live="polite"</code> per a missatges no urgents (success, info) i el toast individual té <code>role="alert"</code> per a errors urgents. Sempre amb botó de tancar — <strong>mai només temporitzat</strong>: usuaris amb lectura lenta o cognició diversa necessiten poder retenir el missatge.</p>
   </section>
 
   <!-- ── 14 · HEADER ────────────────────────────────────────── -->
@@ -1618,12 +2359,173 @@ modal.classList.remove(<span class="tk-str">'is-open'</span>);</pre>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
+       ICONOGRAFIA · 30 icones fets a mida + ús accessible
+       ═══════════════════════════════════════════════════════════ -->
+
+  <!-- ── 20 · ICONOGRAFIA ───────────────────────────────────── -->
+  <section class="ds-section" id="iconografia" aria-labelledby="iconografia-title">
+    <div class="ds-section__num">20 · Sistema gràfic</div>
+    <h2 class="ds-section__title" id="iconografia-title">Iconografia <strong>· Iconografía</strong> <small>30 icones SVG fets a mida</small></h2>
+    <p class="ds-section__lede">Set d'icones dissenyat des del llenguatge geomètric d'Ave Maria — coherent amb les 21 formes del sistema generatiu del isotip. Traçat fi (1.75 px), cantonades arrodonides, geometria pura. Fes clic en qualsevol icona per copiar el seu SVG al porta-retalls.</p>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Especificacions</h3>
+      <div class="ds-specs">
+        <div class="ds-specs__demo">
+          <div class="ds-specs__grid"></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>
+          </svg>
+        </div>
+        <div class="ds-specs__list">
+          <div class="ds-specs__row"><span class="ds-specs__key">ViewBox</span><span class="ds-specs__val">0 0 24 24</span></div>
+          <div class="ds-specs__row"><span class="ds-specs__key">Stroke width</span><span class="ds-specs__val">1.75 px</span></div>
+          <div class="ds-specs__row"><span class="ds-specs__key">Stroke caps</span><span class="ds-specs__val">round</span></div>
+          <div class="ds-specs__row"><span class="ds-specs__key">Fill</span><span class="ds-specs__val">none (excepte logos)</span></div>
+          <div class="ds-specs__row"><span class="ds-specs__key">Color</span><span class="ds-specs__val">currentColor (hereta)</span></div>
+          <div class="ds-specs__row"><span class="ds-specs__key">Padding intern</span><span class="ds-specs__val">2 px de marge</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Mides <small>5 escales amb gruix de traç ajustat</small></h3>
+      <div class="ds-sizes">
+        <div class="ds-size">
+          <svg class="am-icon am-icon--xs ds-size__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
+          <div class="ds-size__label"><strong>16 px</strong>am-icon--xs</div>
+        </div>
+        <div class="ds-size">
+          <svg class="am-icon am-icon--sm ds-size__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
+          <div class="ds-size__label"><strong>20 px</strong>am-icon--sm</div>
+        </div>
+        <div class="ds-size">
+          <svg class="am-icon am-icon--md ds-size__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
+          <div class="ds-size__label"><strong>24 px</strong>am-icon--md · base</div>
+        </div>
+        <div class="ds-size">
+          <svg class="am-icon am-icon--lg ds-size__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
+          <div class="ds-size__label"><strong>32 px</strong>am-icon--lg</div>
+        </div>
+        <div class="ds-size">
+          <svg class="am-icon am-icon--xl ds-size__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
+          <div class="ds-size__label"><strong>48 px</strong>am-icon--xl</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Set complet · 30 icones</h3>
+
+      <div class="ds-iconcat"><span class="ds-iconcat__name">Fundació · Identitat</span><span class="ds-iconcat__count">8 icones</span></div>
+      <div class="ds-icon-grid">
+        <button type="button" class="ds-icon-tile" data-name="heart"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div><div class="ds-icon-tile__name">heart</div></button>
+        <button type="button" class="ds-icon-tile" data-name="hands"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 12V8a2 2 0 0 1 4 0v4"/><path d="M12 12V6a2 2 0 0 1 4 0v6"/><path d="M16 10a2 2 0 0 1 4 0v4a6 6 0 0 1-12 0v-2a2 2 0 0 1 4 0"/></svg></div><div class="ds-icon-tile__name">hands</div></button>
+        <button type="button" class="ds-icon-tile" data-name="person"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c0-3.5 3-6.5 7-6.5s7 3 7 6.5"/></svg></div><div class="ds-icon-tile__name">person</div></button>
+        <button type="button" class="ds-icon-tile" data-name="group"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 19c0-3 2.5-5 6-5s6 2 6 5"/><path d="M14 19c0-2 2-3 4-3s3 1 3 3"/></svg></div><div class="ds-icon-tile__name">group</div></button>
+        <button type="button" class="ds-icon-tile" data-name="home"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div><div class="ds-icon-tile__name">home</div></button>
+        <button type="button" class="ds-icon-tile" data-name="accessibility"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="1.5"/><path d="M12 7v4h4l-1 4"/><circle cx="13" cy="17" r="4"/></svg></div><div class="ds-icon-tile__name">accessibility</div></button>
+        <button type="button" class="ds-icon-tile" data-name="diversity"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg></div><div class="ds-icon-tile__name">diversity</div></button>
+        <button type="button" class="ds-icon-tile" data-name="leaf"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 20a7 7 0 0 1-7-7c0-5 6-9 16-9-1 9-5 16-9 16z"/><path d="M5 19l9-9"/></svg></div><div class="ds-icon-tile__name">leaf</div></button>
+      </div>
+
+      <div class="ds-iconcat"><span class="ds-iconcat__name">Acció</span><span class="ds-iconcat__count">6 icones</span></div>
+      <div class="ds-icon-grid">
+        <button type="button" class="ds-icon-tile" data-name="donate"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 14h4l3 3 3-3h4a2 2 0 0 0 2-2V9"/><path d="M12 10s-4-2.5-4-5.5A2.5 2.5 0 0 1 10.5 2 2.5 2.5 0 0 1 12 3a2.5 2.5 0 0 1 1.5-1A2.5 2.5 0 0 1 16 4.5c0 3-4 5.5-4 5.5z"/></svg></div><div class="ds-icon-tile__name">donate</div></button>
+        <button type="button" class="ds-icon-tile" data-name="volunteer"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3 2.5-5.5 6-5.5s6 2.5 6 5.5"/><path d="M18 9v6"/><path d="M15 12h6"/></svg></div><div class="ds-icon-tile__name">volunteer</div></button>
+        <button type="button" class="ds-icon-tile" data-name="mail"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div class="ds-icon-tile__name">mail</div></button>
+        <button type="button" class="ds-icon-tile" data-name="download"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg></div><div class="ds-icon-tile__name">download</div></button>
+        <button type="button" class="ds-icon-tile" data-name="share"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 11l7.6-4"/><path d="M8.2 13l7.6 4"/></svg></div><div class="ds-icon-tile__name">share</div></button>
+        <button type="button" class="ds-icon-tile" data-name="phone"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div class="ds-icon-tile__name">phone</div></button>
+      </div>
+
+      <div class="ds-iconcat"><span class="ds-iconcat__name">UI · Navegació</span><span class="ds-iconcat__count">8 icones</span></div>
+      <div class="ds-icon-grid">
+        <button type="button" class="ds-icon-tile" data-name="chevron-down"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></div><div class="ds-icon-tile__name">chevron-down</div></button>
+        <button type="button" class="ds-icon-tile" data-name="chevron-right"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></div><div class="ds-icon-tile__name">chevron-right</div></button>
+        <button type="button" class="ds-icon-tile" data-name="chevron-left"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 6l-6 6 6 6"/></svg></div><div class="ds-icon-tile__name">chevron-left</div></button>
+        <button type="button" class="ds-icon-tile" data-name="chevron-up"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 15l6-6 6 6"/></svg></div><div class="ds-icon-tile__name">chevron-up</div></button>
+        <button type="button" class="ds-icon-tile" data-name="menu"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg></div><div class="ds-icon-tile__name">menu</div></button>
+        <button type="button" class="ds-icon-tile" data-name="close"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg></div><div class="ds-icon-tile__name">close</div></button>
+        <button type="button" class="ds-icon-tile" data-name="search"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/></svg></div><div class="ds-icon-tile__name">search</div></button>
+        <button type="button" class="ds-icon-tile" data-name="plus"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14"/><path d="M5 12h14"/></svg></div><div class="ds-icon-tile__name">plus</div></button>
+      </div>
+
+      <div class="ds-iconcat"><span class="ds-iconcat__name">Estats · Feedback</span><span class="ds-iconcat__count">4 icones</span></div>
+      <div class="ds-icon-grid">
+        <button type="button" class="ds-icon-tile" data-name="check-circle" style="color: var(--am-color-success-ink)"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div><div class="ds-icon-tile__name">check-circle</div></button>
+        <button type="button" class="ds-icon-tile" data-name="alert-triangle" style="color: var(--am-color-warning-ink)"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l10 18H2L12 3z"/><path d="M12 10v5"/><path d="M12 18h.01"/></svg></div><div class="ds-icon-tile__name">alert-triangle</div></button>
+        <button type="button" class="ds-icon-tile" data-name="info-circle" style="color: var(--am-color-info-ink)"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg></div><div class="ds-icon-tile__name">info-circle</div></button>
+        <button type="button" class="ds-icon-tile" data-name="x-circle" style="color: var(--am-color-danger-ink)"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></div><div class="ds-icon-tile__name">x-circle</div></button>
+      </div>
+
+      <div class="ds-iconcat"><span class="ds-iconcat__name">Social</span><span class="ds-iconcat__count">4 icones · filled</span></div>
+      <div class="ds-icon-grid">
+        <button type="button" class="ds-icon-tile" data-name="instagram"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg></div><div class="ds-icon-tile__name">instagram</div></button>
+        <button type="button" class="ds-icon-tile" data-name="facebook"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14 8h3V5h-3a4 4 0 0 0-4 4v2H7v3h3v7h3v-7h3l1-3h-4V9a1 1 0 0 1 1-1z"/></svg></div><div class="ds-icon-tile__name">facebook</div></button>
+        <button type="button" class="ds-icon-tile" data-name="linkedin"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4 4h4v16H4zM6 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 8h4v2c.7-1.5 2.3-2.5 4-2.5 3 0 5 2 5 5.5V20h-4v-7c0-1.5-.7-2.5-2.2-2.5S14 11.5 14 13v7h-4z"/></svg></div><div class="ds-icon-tile__name">linkedin</div></button>
+        <button type="button" class="ds-icon-tile" data-name="youtube"><div class="ds-icon-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg></div><div class="ds-icon-tile__name">youtube</div></button>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Ús accessible <small>3 escenaris, 3 patrons</small></h3>
+      <p class="ds-sub__text">Una icona pot ser <em>decorativa</em> (acompanya text), <em>significativa</em> (l'únic indicador de significat) o <em>amb funció</em> (botó/enllaç sense text). Cada cas té un patró de marcat propi.</p>
+
+      <div class="ds-grid-3">
+        <div class="ds-wcag-card" style="border-color: var(--am-color-success);">
+          <div class="ds-wcag-card__head">Escenari 1</div>
+          <div class="ds-wcag-card__title">Decorativa</div>
+          <div class="ds-wcag-card__text">Acompanya text que ja explica l'acció. Cal amagar-la al lector de pantalla.</div>
+          <pre class="ds-code" style="margin-top:12px;font-size:11px;"><span class="tk-tag">&lt;svg</span> <span class="tk-attr">aria-hidden</span>=<span class="tk-str">"true"</span>
+     <span class="tk-attr">focusable</span>=<span class="tk-str">"false"</span><span class="tk-tag">&gt;</span>…<span class="tk-tag">&lt;/svg&gt;</span></pre>
+        </div>
+        <div class="ds-wcag-card" style="border-color: var(--am-color-warning);">
+          <div class="ds-wcag-card__head">Escenari 2</div>
+          <div class="ds-wcag-card__title">Significativa</div>
+          <div class="ds-wcag-card__text">És l'únic indicador d'un significat. Donar-li nom amb <code>role="img"</code>.</div>
+          <pre class="ds-code" style="margin-top:12px;font-size:11px;"><span class="tk-tag">&lt;svg</span> <span class="tk-attr">role</span>=<span class="tk-str">"img"</span>
+     <span class="tk-attr">aria-label</span>=<span class="tk-str">"Aprovat"</span><span class="tk-tag">&gt;</span>…<span class="tk-tag">&lt;/svg&gt;</span></pre>
+        </div>
+        <div class="ds-wcag-card" style="border-color: var(--am-color-info);">
+          <div class="ds-wcag-card__head">Escenari 3</div>
+          <div class="ds-wcag-card__title">Botó només icona</div>
+          <div class="ds-wcag-card__text">El nom va al <code>aria-label</code> del botó/enllaç. SVG decoratiu dins.</div>
+          <pre class="ds-code" style="margin-top:12px;font-size:11px;"><span class="tk-tag">&lt;a</span> <span class="tk-attr">aria-label</span>=<span class="tk-str">"Tancar"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;svg</span> <span class="tk-attr">aria-hidden</span>=<span class="tk-str">"true"</span><span class="tk-tag">&gt;</span>…<span class="tk-tag">&lt;/svg&gt;</span>
+<span class="tk-tag">&lt;/a&gt;</span></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-sub">
+      <h3 class="ds-sub__title">Sprite SVG <small>format optimitzat per a producció</small></h3>
+      <p class="ds-sub__text">Per a la web es recomana inserir totes les icones com a <code>&lt;symbol&gt;</code> dins d'un sol SVG ocult, i invocar-les amb <code>&lt;use&gt;</code>. Una sola descàrrega, cau optimitzat.</p>
+      <details class="ds-toggle">
+        <summary>Codi · com utilitzar el sprite</summary>
+        <pre class="ds-code"><span class="tk-com">&lt;!-- 1. Sprite ocult al començament del &lt;body&gt; --&gt;</span>
+<span class="tk-tag">&lt;svg</span> <span class="tk-attr">style</span>=<span class="tk-str">"display:none"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;symbol</span> <span class="tk-attr">id</span>=<span class="tk-str">"i-heart"</span> <span class="tk-attr">viewBox</span>=<span class="tk-str">"0 0 24 24"</span><span class="tk-tag">&gt;</span>
+    <span class="tk-tag">&lt;path</span> <span class="tk-attr">d</span>=<span class="tk-str">"M12 20s…"</span><span class="tk-tag">/&gt;</span>
+  <span class="tk-tag">&lt;/symbol&gt;</span>
+  <span class="tk-com">&lt;!-- la resta de símbols --&gt;</span>
+<span class="tk-tag">&lt;/svg&gt;</span>
+
+<span class="tk-com">&lt;!-- 2. Ús --&gt;</span>
+<span class="tk-tag">&lt;svg</span> <span class="tk-attr">class</span>=<span class="tk-str">"am-icon am-icon--md"</span> <span class="tk-attr">aria-hidden</span>=<span class="tk-str">"true"</span><span class="tk-tag">&gt;</span>
+  <span class="tk-tag">&lt;use</span> <span class="tk-attr">href</span>=<span class="tk-str">"#i-heart"</span><span class="tk-tag">/&gt;</span>
+<span class="tk-tag">&lt;/svg&gt;</span></pre>
+      </details>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
        RECURSOS DESCARREGABLES
        ═══════════════════════════════════════════════════════════ -->
 
-  <!-- ── 20 · TOKENS CSS ────────────────────────────────────── -->
+  <!-- ── 21 · TOKENS CSS ────────────────────────────────────── -->
   <section class="ds-section" id="tokens-css">
-    <div class="ds-section__num">20 · Recurs</div>
+    <div class="ds-section__num">21 · Recurs</div>
     <h2 class="ds-section__title">Tokens CSS <strong>· Variables</strong></h2>
     <p class="ds-section__lede">Aquest bloc és el cor del design system. Copia'l i enganxa'l a un fitxer <code>tokens.css</code> al projecte web. Tota la resta del CSS s'hi nodreix.</p>
 
@@ -1660,8 +2562,8 @@ modal.classList.remove(<span class="tk-str">'is-open'</span>);</pre>
   <span class="tk-prop">--am-blanc</span>:    <span class="tk-val">#FFFFFF</span>;
 
   <span class="tk-com">/* Semàntics */</span>
-  <span class="tk-prop">--am-color-primary</span>:        <span class="tk-val">var(--am-taronja)</span>;
-  <span class="tk-prop">--am-color-primary-strong</span>: <span class="tk-val">#C76E27</span>;
+  <span class="tk-prop">--am-color-primary</span>:        <span class="tk-val">var(--am-verd)</span>;        <span class="tk-com">/* color de marca */</span>
+  <span class="tk-prop">--am-color-primary-strong</span>: <span class="tk-val">#1F6B4E</span>;               <span class="tk-com">/* verd-ink, AA */</span>
   <span class="tk-prop">--am-color-text</span>:           <span class="tk-val">var(--am-tinta)</span>;
   <span class="tk-prop">--am-color-text-muted</span>:     <span class="tk-val">var(--am-gris-600)</span>;
   <span class="tk-prop">--am-color-text-soft</span>:      <span class="tk-val">var(--am-gris-500)</span>;
@@ -1738,9 +2640,9 @@ modal.classList.remove(<span class="tk-str">'is-open'</span>);</pre>
     </div>
   </section>
 
-  <!-- ── 21 · TOKENS JSON ───────────────────────────────────── -->
+  <!-- ── 22 · TOKENS JSON ───────────────────────────────────── -->
   <section class="ds-section" id="tokens-json">
-    <div class="ds-section__num">21 · Recurs</div>
+    <div class="ds-section__num">22 · Recurs</div>
     <h2 class="ds-section__title">Tokens JSON <strong>· Per a Figma o eines</strong></h2>
     <p class="ds-section__lede">Mateixos tokens en format JSON, compatible amb plugins com <em>Tokens Studio</em> per a Figma. Útil si vols sincronitzar disseny i codi.</p>
 
@@ -1778,7 +2680,7 @@ modal.classList.remove(<span class="tk-str">'is-open'</span>);</pre>
       <span class="tk-str">"100"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#F5F5F5"</span> }
     },
     <span class="tk-str">"semantic"</span>: {
-      <span class="tk-str">"primary"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"{color.taronja}"</span> },
+      <span class="tk-str">"primary"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"{color.verd}"</span> },
       <span class="tk-str">"text"</span>:    { <span class="tk-str">"value"</span>: <span class="tk-str">"{color.tinta}"</span> },
       <span class="tk-str">"success"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#2D936C"</span> },
       <span class="tk-str">"warning"</span>: { <span class="tk-str">"value"</span>: <span class="tk-str">"#E8863A"</span> },
@@ -1865,7 +2767,7 @@ modal.classList.remove(<span class="tk-str">'is-open'</span>);</pre>
        ANEX · ACCESSIBILITAT · WCAG 2.2 AA
        ═══════════════════════════════════════════════════════════ -->
   <section class="ds-section" id="wcag" aria-labelledby="wcag-title">
-    <div class="ds-section__num">22 · Anex</div>
+    <div class="ds-section__num">23 · Anex</div>
     <h2 class="ds-section__title" id="wcag-title">Accessibilitat <strong>· WCAG 2.2 AA</strong> <small>compromís de compliment</small></h2>
     <p class="ds-section__lede">Tot el sistema està dissenyat per complir les <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2 nivell AA, l'estàndard internacional d'accessibilitat web publicat pel <abbr title="World Wide Web Consortium">W3C</abbr>. Per a una fundació social que treballa amb persones amb diversitat funcional, l'accessibilitat no és una opció: és la pròpia missió aplicada al producte digital.</p>
 
@@ -1890,7 +2792,7 @@ modal.classList.remove(<span class="tk-str">'is-open'</span>);</pre>
 
   <!-- ── 23 · CHECKLIST ─────────────────────────────────────── -->
   <section class="ds-section" id="wcag-checklist" aria-labelledby="checklist-title">
-    <div class="ds-section__num">23 · Anex</div>
+    <div class="ds-section__num">24 · Anex</div>
     <h2 class="ds-section__title" id="checklist-title">Checklist <strong>· d'aplicació</strong> <small>el que ja fa el sistema, criteri per criteri</small></h2>
     <p class="ds-section__lede">Aquesta llista no és exhaustiva (WCAG 2.2 AA té 50 criteris); recull els més rellevants per a un design system de components UI. Cada ítem cita el criteri WCAG entre parèntesis.</p>
 
@@ -1941,7 +2843,7 @@ modal.classList.remove(<span class="tk-str">'is-open'</span>);</pre>
 
   <!-- ── 24 · TAULA DE CONTRASTOS ───────────────────────────── -->
   <section class="ds-section" id="wcag-contrast" aria-labelledby="contrast-title">
-    <div class="ds-section__num">24 · Anex</div>
+    <div class="ds-section__num">25 · Anex</div>
     <h2 class="ds-section__title" id="contrast-title">Taula de <strong>contrastos</strong> <small>tots els tokens auditats</small></h2>
     <p class="ds-section__lede">Cada combinació color de text + color de fons de la marca ha estat verificada amb la fórmula de luminància WCAG. Els colors vibrants de marca (taronja, coral, groc, blau…) <strong>NO</strong> compleixen com a text sobre blanc — per això existeixen els tokens <code>--am-color-*-ink</code>, versions enfosquides validades per a ús com a text.</p>
 
@@ -1982,7 +2884,7 @@ modal.classList.remove(<span class="tk-str">'is-open'</span>);</pre>
 
   <!-- ── 25 · EINES DE TEST ─────────────────────────────────── -->
   <section class="ds-section" id="wcag-tools" aria-labelledby="tools-title">
-    <div class="ds-section__num">25 · Anex</div>
+    <div class="ds-section__num">26 · Anex</div>
     <h2 class="ds-section__title" id="tools-title">Eines <strong>· per a verificar</strong></h2>
     <p class="ds-section__lede">Comprovar accessibilitat ha de ser part del flux de treball, no una auditoria final. Aquestes són les eines que recomanem.</p>
 
@@ -2000,7 +2902,7 @@ modal.classList.remove(<span class="tk-str">'is-open'</span>);</pre>
 
   <!-- ── 26 · MANTENIMENT ───────────────────────────────────── -->
   <section class="ds-section" id="wcag-maintenance" aria-labelledby="maint-title">
-    <div class="ds-section__num">26 · Anex</div>
+    <div class="ds-section__num">27 · Anex</div>
     <h2 class="ds-section__title" id="maint-title">Manteniment <strong>· compromisos</strong></h2>
     <p class="ds-section__lede">L'accessibilitat no és un check d'auditoria final: és un compromís continu. Aquestes són les regles que s'apliquen sempre que s'afegeix una funcionalitat al projecte web.</p>
 
@@ -2017,11 +2919,11 @@ modal.classList.remove(<span class="tk-str">'is-open'</span>);</pre>
     <div class="ds-resource" style="margin-top:var(--am-space-7); background:var(--am-color-bg-alt); color:var(--am-color-text);">
       <div class="ds-resource__title" style="color:var(--am-color-text);">Recursos oficials</div>
       <ul style="font-size:14px; color:var(--am-color-text); line-height:1.9; padding-left:20px;">
-        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_overview&amp;levels=aaa" target="_blank" rel="noopener noreferrer" style="color:var(--am-taronja-ink);">WCAG 2.2 · Quick Reference (W3C, oficial) ↗</a></li>
-        <li><a href="https://www.w3.org/WAI/standards-guidelines/aria/" target="_blank" rel="noopener noreferrer" style="color:var(--am-taronja-ink);">WAI-ARIA · Authoring Practices Guide ↗</a></li>
-        <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2018-12699" target="_blank" rel="noopener noreferrer" style="color:var(--am-taronja-ink);">Reial Decret 1112/2018 (normativa estatal espanyola) ↗</a></li>
-        <li><a href="https://eur-lex.europa.eu/eli/dir/2016/2102/oj" target="_blank" rel="noopener noreferrer" style="color:var(--am-taronja-ink);">Directiva (UE) 2016/2102 sobre accessibilitat de llocs web ↗</a></li>
-        <li><a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer" style="color:var(--am-taronja-ink);">WebAIM · Contrast Checker (eina recomanada) ↗</a></li>
+        <li><a href="https://www.w3.org/WAI/WCAG22/quickref/?currentsidebar=%23col_overview&amp;levels=aaa" target="_blank" rel="noopener noreferrer" style="color:var(--am-verd-ink);">WCAG 2.2 · Quick Reference (W3C, oficial) ↗</a></li>
+        <li><a href="https://www.w3.org/WAI/standards-guidelines/aria/" target="_blank" rel="noopener noreferrer" style="color:var(--am-verd-ink);">WAI-ARIA · Authoring Practices Guide ↗</a></li>
+        <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2018-12699" target="_blank" rel="noopener noreferrer" style="color:var(--am-verd-ink);">Reial Decret 1112/2018 (normativa estatal espanyola) ↗</a></li>
+        <li><a href="https://eur-lex.europa.eu/eli/dir/2016/2102/oj" target="_blank" rel="noopener noreferrer" style="color:var(--am-verd-ink);">Directiva (UE) 2016/2102 sobre accessibilitat de llocs web ↗</a></li>
+        <li><a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer" style="color:var(--am-verd-ink);">WebAIM · Contrast Checker (eina recomanada) ↗</a></li>
       </ul>
     </div>
 
@@ -2152,6 +3054,125 @@ document.getElementById('download-json')?.addEventListener('click', () => {
   const code = document.getElementById('tokens-json-block').innerText;
   download('design-tokens-ave-maria.json', code, 'application/json');
 });
+
+/* ════════════════════════════════════════════════
+   Toast feedback global per als demos del sistema
+   ════════════════════════════════════════════════ */
+let dsToastEl = document.querySelector('.ds-toast-feedback');
+if (!dsToastEl) {
+  dsToastEl = document.createElement('div');
+  dsToastEl.className = 'ds-toast-feedback';
+  dsToastEl.setAttribute('role', 'status');
+  dsToastEl.setAttribute('aria-live', 'polite');
+  document.body.appendChild(dsToastEl);
+}
+let dsToastT;
+const dsShowToast = (msg) => {
+  dsToastEl.textContent = msg;
+  dsToastEl.classList.add('is-show');
+  clearTimeout(dsToastT);
+  dsToastT = setTimeout(() => dsToastEl.classList.remove('is-show'), 1800);
+};
+
+/* ════════════════════════════════════════════════
+   Iconografia · clic per copiar SVG
+   ════════════════════════════════════════════════ */
+document.querySelectorAll('.ds-icon-tile').forEach(tile => {
+  const name = tile.dataset.name;
+  if (name) tile.setAttribute('aria-label', `Copiar el SVG de la icona "${name}"`);
+  tile.addEventListener('click', () => {
+    const svg = tile.querySelector('svg').outerHTML;
+    navigator.clipboard.writeText(svg).then(() => {
+      tile.classList.add('is-copied');
+      dsShowToast(`SVG "${name}" copiat al porta-retalls`);
+      setTimeout(() => tile.classList.remove('is-copied'), 1600);
+    });
+  });
+});
+
+/* ════════════════════════════════════════════════
+   Dropdown demo · accessible
+   ════════════════════════════════════════════════ */
+const ddTrigger = document.getElementById('demo-dd-trigger');
+const ddMenu = document.getElementById('demo-dd-menu');
+if (ddTrigger && ddMenu) {
+  const closeDD = () => { ddMenu.classList.remove('is-open'); ddTrigger.setAttribute('aria-expanded', 'false'); };
+  const openDD  = () => { ddMenu.classList.add('is-open');    ddTrigger.setAttribute('aria-expanded', 'true');  };
+  ddTrigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    ddMenu.classList.contains('is-open') ? closeDD() : openDD();
+  });
+  document.addEventListener('click', (e) => { if (!ddMenu.contains(e.target) && e.target !== ddTrigger) closeDD(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && ddMenu.classList.contains('is-open')) { closeDD(); ddTrigger.focus(); } });
+}
+
+/* ════════════════════════════════════════════════
+   Tabs demo · WAI-ARIA pattern amb fletxes
+   ════════════════════════════════════════════════ */
+const tabsRoot = document.getElementById('demo-tabs');
+if (tabsRoot) {
+  const tabs = Array.from(tabsRoot.querySelectorAll('[role="tab"]'));
+  const panels = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
+  const activate = (idx) => {
+    tabs.forEach((t, i) => {
+      const sel = i === idx;
+      t.setAttribute('aria-selected', sel);
+      t.setAttribute('tabindex', sel ? '0' : '-1');
+      panels[i].hidden = !sel;
+    });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => activate(i));
+    t.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); const n = (i + 1) % tabs.length; activate(n); tabs[n].focus(); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); const n = (i - 1 + tabs.length) % tabs.length; activate(n); tabs[n].focus(); }
+      if (e.key === 'Home')       { e.preventDefault(); activate(0); tabs[0].focus(); }
+      if (e.key === 'End')        { e.preventDefault(); activate(tabs.length - 1); tabs[tabs.length - 1].focus(); }
+    });
+  });
+}
+
+/* ════════════════════════════════════════════════
+   Accordion demo · WAI-ARIA Disclosure
+   ════════════════════════════════════════════════ */
+document.querySelectorAll('.am-accordion__trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const expanded = trigger.getAttribute('aria-expanded') === 'true';
+    const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+    trigger.setAttribute('aria-expanded', !expanded);
+    if (panel) panel.hidden = expanded;
+  });
+});
+
+/* ════════════════════════════════════════════════
+   Toast demo · spawn a la regió aria-live
+   ════════════════════════════════════════════════ */
+let toastRegion = document.querySelector('.am-toast-region');
+if (!toastRegion) {
+  toastRegion = document.createElement('div');
+  toastRegion.className = 'am-toast-region';
+  toastRegion.setAttribute('role', 'region');
+  toastRegion.setAttribute('aria-live', 'polite');
+  toastRegion.setAttribute('aria-label', 'Notificacions');
+  document.body.appendChild(toastRegion);
+}
+const spawnToast = (msg, type = 'success') => {
+  const t = document.createElement('div');
+  t.className = `am-toast am-toast--${type}`;
+  t.setAttribute('role', type === 'danger' ? 'alert' : 'status');
+  t.innerHTML = `
+    <svg class="am-toast__icon am-icon am-icon--sm" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+    <span style="flex:1">${msg}</span>
+    <button class="am-toast__close" aria-label="Tancar notificació">✕</button>
+  `;
+  toastRegion.appendChild(t);
+  const close = () => t.remove();
+  t.querySelector('.am-toast__close').addEventListener('click', close);
+  setTimeout(close, 5000);
+};
+document.getElementById('toast-success-btn')?.addEventListener('click', () => spawnToast('Donació rebuda correctament', 'success'));
+document.getElementById('toast-info-btn')?.addEventListener('click', () => spawnToast('S\'ha guardat l\'esborrany', 'success'));
+document.getElementById('toast-danger-btn')?.addEventListener('click', () => spawnToast('Error al processar el pagament', 'danger'));
 </script>
 
 </body>

@@ -442,6 +442,89 @@
         const CELL_SIZE = 100;
         const CANVAS_SIZE = GRID_SIZE * CELL_SIZE;
         const HORIZONTAL_SCALE = 2/3; // Isotipo un tercio más pequeño en horizontal
+
+        // 8 siluetas del configurador (carpeta configurador/SVG/Recurso *.svg).
+        // Coordenadas en el viewBox original (cuadrícula de 99.21 unidades).
+        const SILHOUETTES = [
+            { type: 'rect',    vbW: 99.21, vbH: 99.21, x: 0, y: 0, w: 99.21, h: 99.21 },                          // R1: cuadrado
+            { type: 'polygon', vbW: 99.21, vbH: 99.21, points: '79.75 38.93 79.75 0 19.46 0 19.46 38.93 0 38.93 0 99.21 19.46 99.21 79.75 99.21 99.21 99.21 99.21 38.93 79.75 38.93' }, // R2: cruz/plus
+            { type: 'circle',  vbW: 99.21, vbH: 99.21, cx: 49.61, cy: 49.61, r: 49.61 },                           // R3: círculo
+            { type: 'path',    vbW: 99.21, vbH: 99.21, d: 'M99.02,99.21H0C0,44.42,44.42,0,99.21,0' },              // R4: cuarto de círculo
+            { type: 'rect',    vbW: 48.19, vbH: 99.21, x: 0, y: 0, w: 48.19, h: 99.21 },                           // R5: rectángulo vertical (½ celda)
+            { type: 'path',    vbW: 48.19, vbH: 99.21, d: 'M0,49.61c0,19.15,9.14,36.57,24.09,49.61,14.95-13.04,24.1-30.46,24.1-49.61S39.04,13.04,24.09,0C9.14,13.04,0,30.46,0,49.61' }, // R6: hoja
+            { type: 'path',    vbW: 99.21, vbH: 49.61, d: 'M0,49.61C0,22.21,22.21,0,49.61,0s49.61,22.21,49.61,49.61H0Z' }, // R7: semicírculo
+            { type: 'path',    vbW: 99.21, vbH: 99.21, d: 'M99.21,99.21V0h0c-.05,27.36-22.24,49.52-49.6,49.52S.05,27.36,0,0h0v99.21h99.21Z' } // R8: cuadrado mordido
+        ];
+        const TOTAL_SILHOUETTES = SILHOUETTES.length;
+
+        // Calcula el rect "natural" donde se renderiza la silueta dentro de una celda
+        // cuadrada, preservando proporción y centrándola.
+        function silhouetteFitRect(s, cellSize) {
+            const ratio = s.vbW / s.vbH;
+            let w, h;
+            if (ratio >= 1) {
+                w = cellSize;
+                h = cellSize / ratio;
+            } else {
+                h = cellSize;
+                w = cellSize * ratio;
+            }
+            return { w, h, offX: (cellSize - w) / 2, offY: (cellSize - h) / 2 };
+        }
+
+        // Dibuja una silueta dentro de la celda en col2, sobre el fondo col1.
+        // Aplica rotación (en grados, múltiplos de 90) alrededor del centro de la celda.
+        function drawSilhouette(silIdx, x, y, cellSize, rot, col) {
+            const s = SILHOUETTES[silIdx];
+            const fit = silhouetteFitRect(s, cellSize);
+            const ctx = drawingContext;
+            ctx.save();
+            ctx.translate(x + cellSize / 2, y + cellSize / 2);
+            ctx.rotate(rot * Math.PI / 180);
+            ctx.translate(-fit.w / 2, -fit.h / 2);
+            ctx.scale(fit.w / s.vbW, fit.h / s.vbH);
+            ctx.fillStyle = col;
+            if (s.type === 'rect') {
+                ctx.fillRect(s.x, s.y, s.w, s.h);
+            } else if (s.type === 'circle') {
+                ctx.beginPath();
+                ctx.arc(s.cx, s.cy, s.r, 0, 2 * Math.PI);
+                ctx.fill();
+            } else if (s.type === 'path') {
+                ctx.fill(new Path2D(s.d));
+            } else if (s.type === 'polygon') {
+                const pts = s.points.trim().split(/[\s,]+/).map(parseFloat);
+                ctx.beginPath();
+                for (let i = 0; i < pts.length; i += 2) {
+                    if (i === 0) ctx.moveTo(pts[i], pts[i + 1]);
+                    else ctx.lineTo(pts[i], pts[i + 1]);
+                }
+                ctx.closePath();
+                ctx.fill();
+            }
+            ctx.restore();
+        }
+
+        // Devuelve el SVG markup de una silueta para el export, con su transform aplicado.
+        function silhouetteSVG(silIdx, x, y, cellSize, rot, col) {
+            const s = SILHOUETTES[silIdx];
+            const fit = silhouetteFitRect(s, cellSize);
+            const cx = x + cellSize / 2;
+            const cy = y + cellSize / 2;
+            let inner = '';
+            if (s.type === 'rect') {
+                inner = `<rect x="${s.x}" y="${s.y}" width="${s.w}" height="${s.h}" fill="${col}"/>`;
+            } else if (s.type === 'circle') {
+                inner = `<circle cx="${s.cx}" cy="${s.cy}" r="${s.r}" fill="${col}"/>`;
+            } else if (s.type === 'path') {
+                inner = `<path d="${s.d}" fill="${col}"/>`;
+            } else if (s.type === 'polygon') {
+                inner = `<polygon points="${s.points}" fill="${col}"/>`;
+            }
+            const sx = fit.w / s.vbW;
+            const sy = fit.h / s.vbH;
+            return `<g transform="translate(${cx} ${cy}) rotate(${rot}) translate(${-fit.w / 2} ${-fit.h / 2}) scale(${sx} ${sy})">${inner}</g>`;
+        }
         // Brandbook: separación isotipo ↔ texto = 1/3 de celda del isotipo.
         const V_NAMING_GAP = CELL_SIZE / 3;                      // 1/3 celda en vertical
         const H_NAMING_GAP = (CELL_SIZE * HORIZONTAL_SCALE) / 3; // 1/3 celda en horizontal escalado
@@ -529,11 +612,11 @@
                 whiteSquarePosition = nonCenter[floor(random(nonCenter.length))];
             }
 
-            // Generar formas únicas (sin repetir) — máxima variedad por composición
-            const TOTAL_SHAPES = 21; // 0-20 formas disponibles
+            // Generar formas únicas: 8 siluetas barajadas + rotación aleatoria por celda.
+            // Cada lockedShape es { sil: 0..7, rot: 0/90/180/270 }.
             const totalCells = GRID_SIZE * GRID_SIZE;
             let pool = [];
-            for (let s = 0; s < TOTAL_SHAPES; s++) pool.push(s);
+            for (let s = 0; s < TOTAL_SILHOUETTES; s++) pool.push(s);
             // Barajado Fisher-Yates usando random() de p5 para respetar el seed
             for (let i = pool.length - 1; i > 0; i--) {
                 let j = floor(random(i + 1));
@@ -541,8 +624,10 @@
             }
             lockedShapes = [];
             for (let i = 0; i < totalCells; i++) {
-                // Si hubiera más celdas que formas, se rellena reciclando el pool barajado
-                lockedShapes.push(pool[i % pool.length]);
+                lockedShapes.push({
+                    sil: pool[i % pool.length],
+                    rot: floor(random(4)) * 90
+                });
             }
 
             drawIsotipo();
@@ -699,175 +784,13 @@
             rect(x, y, cellSize, cellSize);
         }
 
-        function drawShape(x, y, shapeType, col1, col2, cellSize = CELL_SIZE) {
+        function drawShape(x, y, shapeData, col1, col2, cellSize = CELL_SIZE) {
             noStroke();
-
-            let shape = shapeType;
-
-            {
-                switch(shape) {
-                    case 0: // Cuadrado sólido
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        break;
-
-                    case 1: // Círculo completo
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        ellipse(x + cellSize/2, y + cellSize/2, cellSize, cellSize);
-                        break;
-
-                    case 2: // Cuarto de círculo - esquina superior derecha
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        arc(x + cellSize, y, cellSize * 2, cellSize * 2, HALF_PI, PI);
-                        break;
-
-                    case 3: // Cuarto de círculo - esquina superior izquierda
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        arc(x, y, cellSize * 2, cellSize * 2, 0, HALF_PI);
-                        break;
-
-                    case 4: // Cuarto de círculo - esquina inferior izquierda
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        arc(x, y + cellSize, cellSize * 2, cellSize * 2, -HALF_PI, 0);
-                        break;
-
-                    case 5: // Cuarto de círculo - esquina inferior derecha
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        arc(x + cellSize, y + cellSize, cellSize * 2, cellSize * 2, PI, PI + HALF_PI);
-                        break;
-
-                    case 6: // Hoja/ojo vertical
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        arc(x, y + cellSize/2, cellSize, cellSize, -HALF_PI, HALF_PI);
-                        arc(x + cellSize, y + cellSize/2, cellSize, cellSize, HALF_PI, PI + HALF_PI);
-                        break;
-
-                    case 7: // Hoja/ojo horizontal
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        arc(x + cellSize/2, y, cellSize, cellSize, 0, PI);
-                        arc(x + cellSize/2, y + cellSize, cellSize, cellSize, PI, TWO_PI);
-                        break;
-
-                    case 8: // Semicírculo - abajo
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        arc(x + cellSize/2, y + cellSize, cellSize, cellSize, PI, TWO_PI);
-                        break;
-
-                    case 9: // Semicírculo - arriba
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        arc(x + cellSize/2, y, cellSize, cellSize, 0, PI);
-                        break;
-
-                    case 10: // Semicírculo - derecha
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        arc(x, y + cellSize/2, cellSize, cellSize, -HALF_PI, HALF_PI);
-                        break;
-
-                    case 11: // Semicírculo - izquierda
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        arc(x + cellSize, y + cellSize/2, cellSize, cellSize, HALF_PI, PI + HALF_PI);
-                        break;
-
-                    case 12: // Triángulo - esquina superior izquierda
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        triangle(x, y, x + cellSize, y, x, y + cellSize);
-                        break;
-
-                    case 13: // Triángulo - esquina superior derecha
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        triangle(x, y, x + cellSize, y, x + cellSize, y + cellSize);
-                        break;
-
-                    case 14: // Triángulo - esquina inferior izquierda
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        triangle(x, y, x, y + cellSize, x + cellSize, y + cellSize);
-                        break;
-
-                    case 15: // Triángulo - esquina inferior derecha
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        triangle(x + cellSize, y, x + cellSize, y + cellSize, x, y + cellSize);
-                        break;
-
-                    case 16: // Círculo pequeño centrado
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        ellipse(x + cellSize/2, y + cellSize/2, cellSize * 0.6, cellSize * 0.6);
-                        break;
-
-                    case 17: { // Hoja vertical centrada en 1 celda
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        let leafW = cellSize * 0.5;
-                        let leafH = cellSize * 0.9;
-                        let leafCx = x + cellSize/2;
-                        let leafCy = y + cellSize/2;
-                        beginShape();
-                        vertex(leafCx, leafCy - leafH/2);
-                        bezierVertex(leafCx + leafW/2, leafCy - leafH/4, leafCx + leafW/2, leafCy + leafH/4, leafCx, leafCy + leafH/2);
-                        bezierVertex(leafCx - leafW/2, leafCy + leafH/4, leafCx - leafW/2, leafCy - leafH/4, leafCx, leafCy - leafH/2);
-                        endShape(CLOSE);
-                        break;
-                    }
-
-                    case 18: { // Rectángulo vertical centrado en 1 celda
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        let rectW = cellSize * 0.5;
-                        let rectH = cellSize;
-                        rect(x + (cellSize - rectW)/2, y, rectW, rectH);
-                        break;
-                    }
-
-                    case 19: // Escalón
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        rect(x, y + cellSize * 0.4, cellSize, cellSize * 0.6);
-                        rect(x + cellSize * 0.5, y, cellSize * 0.5, cellSize * 0.5);
-                        break;
-
-                    case 20: // Escalón invertido
-                        fill(col1);
-                        rect(x, y, cellSize, cellSize);
-                        fill(col2);
-                        rect(x, y + cellSize * 0.4, cellSize, cellSize * 0.6);
-                        rect(x, y, cellSize * 0.5, cellSize * 0.5);
-                        break;
-                }
-            }
+            // Fondo de la celda en col1
+            fill(col1);
+            rect(x, y, cellSize, cellSize);
+            // Silueta encima en col2 con la rotación elegida
+            drawSilhouette(shapeData.sil, x, y, cellSize, shapeData.rot, col2);
         }
 
         function saveToGallery() {
@@ -1024,113 +947,13 @@
             return `<g transform="translate(${tx} ${ty}) scale(${sx} ${sy})">${inner}</g>`;
         }
 
-        function generateShapeSVG(x, y, shapeType, col1, col2, cellSize = CELL_SIZE) {
-            let svg = '';
-            let cx = x + cellSize/2;
-            let cy = y + cellSize/2;
-            let r = cellSize/2;
-            let shape = shapeType;
-
-            {
-                switch(shape) {
-                    case 0:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        break;
-                    case 1:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${col2}"/>`;
-                        break;
-                    case 2:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x + cellSize} ${y} L ${x + cellSize} ${y + cellSize} A ${cellSize} ${cellSize} 0 0 1 ${x} ${y} Z" fill="${col2}"/>`;
-                        break;
-                    case 3:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x} ${y} L ${x + cellSize} ${y} A ${cellSize} ${cellSize} 0 0 1 ${x} ${y + cellSize} Z" fill="${col2}"/>`;
-                        break;
-                    case 4:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x} ${y + cellSize} L ${x} ${y} A ${cellSize} ${cellSize} 0 0 1 ${x + cellSize} ${y + cellSize} Z" fill="${col2}"/>`;
-                        break;
-                    case 5:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x + cellSize} ${y + cellSize} L ${x} ${y + cellSize} A ${cellSize} ${cellSize} 0 0 1 ${x + cellSize} ${y} Z" fill="${col2}"/>`;
-                        break;
-                    case 6:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${cx} ${y} A ${r} ${r} 0 0 1 ${cx} ${y + cellSize} A ${r} ${r} 0 0 1 ${cx} ${y}" fill="${col2}"/>`;
-                        break;
-                    case 7:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x} ${cy} A ${r} ${r} 0 0 1 ${x + cellSize} ${cy} A ${r} ${r} 0 0 1 ${x} ${cy}" fill="${col2}"/>`;
-                        break;
-                    case 8:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x} ${y + cellSize} A ${r} ${r} 0 0 1 ${x + cellSize} ${y + cellSize} Z" fill="${col2}"/>`;
-                        break;
-                    case 9:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x} ${y} A ${r} ${r} 0 0 0 ${x + cellSize} ${y} Z" fill="${col2}"/>`;
-                        break;
-                    case 10:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x} ${y} A ${r} ${r} 0 0 1 ${x} ${y + cellSize} Z" fill="${col2}"/>`;
-                        break;
-                    case 11:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x + cellSize} ${y} A ${r} ${r} 0 0 0 ${x + cellSize} ${y + cellSize} Z" fill="${col2}"/>`;
-                        break;
-                    case 12: // Triángulo - esquina superior izquierda
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x} ${y} L ${x + cellSize} ${y} L ${x} ${y + cellSize} Z" fill="${col2}"/>`;
-                        break;
-                    case 13: // Triángulo - esquina superior derecha
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x} ${y} L ${x + cellSize} ${y} L ${x + cellSize} ${y + cellSize} Z" fill="${col2}"/>`;
-                        break;
-                    case 14: // Triángulo - esquina inferior izquierda
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x} ${y} L ${x} ${y + cellSize} L ${x + cellSize} ${y + cellSize} Z" fill="${col2}"/>`;
-                        break;
-                    case 15: // Triángulo - esquina inferior derecha
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${x + cellSize} ${y} L ${x + cellSize} ${y + cellSize} L ${x} ${y + cellSize} Z" fill="${col2}"/>`;
-                        break;
-                    case 16:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<circle cx="${cx}" cy="${cy}" r="${cellSize * 0.3}" fill="${col2}"/>`;
-                        break;
-                    case 17: {
-                        let leafW = cellSize * 0.5;
-                        let leafH = cellSize * 0.9;
-                        let leafCx = x + cellSize/2;
-                        let leafCy = y + cellSize/2;
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<path d="M ${leafCx} ${leafCy - leafH/2} C ${leafCx + leafW/2} ${leafCy - leafH/4}, ${leafCx + leafW/2} ${leafCy + leafH/4}, ${leafCx} ${leafCy + leafH/2} C ${leafCx - leafW/2} ${leafCy + leafH/4}, ${leafCx - leafW/2} ${leafCy - leafH/4}, ${leafCx} ${leafCy - leafH/2}" fill="${col2}"/>`;
-                        break;
-                    }
-                    case 18: {
-                        let rectW = cellSize * 0.5;
-                        let rectH = cellSize;
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<rect x="${x + (cellSize - rectW)/2}" y="${y}" width="${rectW}" height="${rectH}" fill="${col2}"/>`;
-                        break;
-                    }
-                    case 19:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<rect x="${x}" y="${y + cellSize * 0.4}" width="${cellSize}" height="${cellSize * 0.6}" fill="${col2}"/>`;
-                        svg += `<rect x="${x + cellSize * 0.5}" y="${y}" width="${cellSize * 0.5}" height="${cellSize * 0.5}" fill="${col2}"/>`;
-                        break;
-                    case 20:
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
-                        svg += `<rect x="${x}" y="${y + cellSize * 0.4}" width="${cellSize}" height="${cellSize * 0.6}" fill="${col2}"/>`;
-                        svg += `<rect x="${x}" y="${y}" width="${cellSize * 0.5}" height="${cellSize * 0.5}" fill="${col2}"/>`;
-                        break;
-                }
-            }
-
+        function generateShapeSVG(x, y, shapeData, col1, col2, cellSize = CELL_SIZE) {
+            // Fondo de la celda + silueta rotada en col2
+            let svg = `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${col1}"/>`;
+            svg += silhouetteSVG(shapeData.sil, x, y, cellSize, shapeData.rot, col2);
             return svg;
         }
+
     </script>
 </body>
 </html>
