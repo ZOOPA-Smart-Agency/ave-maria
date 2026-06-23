@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ave Maria Fundació — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+    --white: #FFFFFF;
+    --black: #1a1a1a;
+    --gris: #777777;
+    --gris-clar: #cccccc;
+    --line: #e5e5e5;
+
+    --taronja: #E8863A;
+    --coral: #E85D75;
+    --groc: #F2C14E;
+    --blau: #5DADE2;
+    --verd: #2D936C;
+    --rosa: #D4859A;
+    --bosc: #1E8449;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    background: #2a2a2a;
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.deck { display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 16px 80px; }
+.deck-info { color: #888; text-align: center; font-size: 13px; padding: 16px; }
+
+/* SLIDE BASE 16:9 */
+.slide {
+    width: 100%; max-width: 1920px; aspect-ratio: 16 / 9;
+    background: var(--white); color: var(--black);
+    position: relative; overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    container-type: inline-size;
+    display: flex; flex-direction: column;
+}
+.slide > .split,
+.slide > .full > *,
+.slide.full,
+.slide.split,
+.slide.logo-display,
+.slide.palette,
+.slide.divider,
+.slide.statement,
+.slide.cover { flex: 1; min-height: 0; }
+.slide.dark { background: var(--black); color: var(--white); }
+
+.slide-num {
+    position: absolute; bottom: 3.3%; left: 3.1%;
+    font-size: 0.85cqw; font-weight: 400; opacity: 0.4;
+    letter-spacing: 0.06em;
+}
+.slide-tag {
+    position: absolute; top: 4.6%; right: 3.1%;
+    font-size: 0.8cqw; font-weight: 500; opacity: 0.4;
+    letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+.brand-mark {
+    position: absolute; top: 4.6%; left: 3.1%;
+    display: flex; align-items: center; gap: 0.7cqw;
+}
+.brand-mark .iso { width: 2.2cqw; height: 2.2cqw; display: block; object-fit: contain; }
+.brand-mark .label { font-size: 0.85cqw; font-weight: 700; line-height: 1.15; }
+
+/* Donts preview — adapt img to behave like svg */
+.dont-cell .preview img { width: 50%; height: auto; display: block; }
+
+/* ════════ COVER ════════ */
+.cover { background: var(--white); color: var(--black); }
+.cover .stripes {
+    position: absolute; top: 0; right: 0; bottom: 0; width: 28%;
+    display: grid; grid-template-columns: repeat(6, 1fr);
+}
+.cover .stripes > div:nth-child(1) { background: var(--taronja); }
+.cover .stripes > div:nth-child(2) { background: var(--coral); }
+.cover .stripes > div:nth-child(3) { background: var(--groc); }
+.cover .stripes > div:nth-child(4) { background: var(--blau); }
+.cover .stripes > div:nth-child(5) { background: var(--verd); }
+.cover .stripes > div:nth-child(6) { background: var(--rosa); }
+.cover .title {
+    position: absolute; bottom: 5%; left: 3.1%;
+    font-size: 12cqw; font-weight: 800; line-height: 0.85; letter-spacing: -0.04em;
+}
+.cover .subtitle {
+    position: absolute; top: 12%; left: 3.1%; max-width: 30%;
+    font-size: 1.05cqw; line-height: 1.5;
+}
+.cover .meta {
+    position: absolute; top: 5%; right: 31%;
+    font-size: 0.85cqw; font-weight: 500; letter-spacing: 0.08em;
+    text-align: right; line-height: 1.6;
+}
+
+/* ════════ STATEMENT ════════ */
+.slide.statement .headline {
+    position: absolute; top: 30%; right: 3.1%;
+    font-size: 5.2cqw; font-weight: 700; line-height: 0.95;
+    letter-spacing: -0.02em; max-width: 60%; text-align: right;
+}
+.slide.statement .body {
+    position: absolute; bottom: 14%; right: 3.1%; width: 30%;
+    font-size: 1.05cqw; line-height: 1.55;
+}
+
+/* ════════ DIVIDER ════════ */
+.slide.divider .big {
+    position: absolute; top: 6%; left: 3.1%; right: 3.1%;
+    font-size: 13cqw; font-weight: 800; line-height: 0.85; letter-spacing: -0.04em;
+}
+.slide.divider .label {
+    position: absolute; bottom: 5%; left: 3.1%;
+    font-size: 1.4cqw; font-weight: 700;
+}
+.slide.divider.bosc { background: var(--bosc); color: var(--white); }
+.slide.divider.taronja { background: var(--taronja); color: var(--black); }
+.slide.divider.coral { background: var(--coral); color: var(--black); }
+.slide.divider.blau { background: var(--blau); color: var(--black); }
+.slide.divider.verd { background: var(--verd); color: var(--white); }
+.slide.divider.groc { background: var(--groc); color: var(--black); }
+.slide.divider.rosa { background: var(--rosa); color: var(--black); }
+
+/* ════════ SPLIT ════════ */
+.split { display: grid; grid-template-columns: 31% 1fr; grid-template-rows: 1fr; align-items: stretch; }
+.split .left { padding: 6% 3.1% 5% 3.1%; display: flex; flex-direction: column; gap: 1.2cqw; }
+.split .left h2 { font-size: 4.2cqw; font-weight: 800; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 0.7cqw; overflow-wrap: break-word; hyphens: auto; }
+.split .left h2 small { display: block; font-size: 1.1cqw; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.45; margin-bottom: 0.9cqw; }
+.split .left p { font-size: 0.95cqw; line-height: 1.55; }
+.split .left .lead { font-size: 1.25cqw; line-height: 1.4; font-weight: 500; }
+.split .left h3 { font-size: 1.3cqw; font-weight: 700; margin-top: 0.6cqw; }
+
+.split .right { display: flex; align-items: center; justify-content: center; padding: 6% 3.1% 5% 4%; position: relative; }
+.split.two-pane { grid-template-columns: 44.8% 1fr; }
+.split.two-pane .right { display: grid; grid-template-columns: 1fr 1fr; padding: 0; }
+.split.two-pane .right > div { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6%; gap: 1.5cqw; width: 100%; height: 100%; }
+.split.two-pane .right .light { background: #efefef; color: var(--black); }
+.split.two-pane .right .dark { background: var(--black); color: var(--white); }
+
+/* slide-tag legible sobre fons fosc als logos two-pane */
+.slide.split.two-pane > .slide-tag { color: var(--white); opacity: 0.55; }
+
+/* ════════ LOGO DISPLAY · 50/50 a sang amb info superposada ════════ */
+.slide.logo-display { display: grid; grid-template-columns: 1fr 1fr; padding: 0; }
+.slide.logo-display .pane {
+    display: flex; align-items: center; justify-content: center;
+    position: relative; padding: 8% 5%;
+}
+.slide.logo-display .pane.light { background: var(--white); color: var(--black); }
+.slide.logo-display .pane.dark { background: var(--black); color: var(--white); }
+.slide.logo-display .logo { max-width: 70%; max-height: 50%; display: block; }
+.slide.logo-display .info {
+    position: absolute; top: 6%; left: 3.1%; right: 3.1%;
+}
+.slide.logo-display .info .kicker {
+    display: block; font-size: 0.8cqw; opacity: 0.5;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 0.5cqw; font-weight: 500;
+}
+.slide.logo-display .info h2 {
+    font-size: 2.2cqw; font-weight: 700; line-height: 1.05;
+    margin-bottom: 0.7cqw; letter-spacing: -0.01em;
+}
+.slide.logo-display .info p {
+    font-size: 0.85cqw; line-height: 1.55;
+}
+.slide.logo-display .pane-tag {
+    position: absolute; bottom: 5%; left: 3.1%;
+    font-size: 0.75cqw; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    opacity: 0.55;
+}
+.slide.logo-display .slide-num { color: inherit; }
+
+/* ════════ FULL ════════ */
+.slide.full { padding: 6% 3.1% 5%; }
+.slide.full h2 {
+    font-size: 6.5cqw; font-weight: 800; line-height: 0.9;
+    letter-spacing: -0.03em; margin-bottom: 2cqw;
+}
+.slide.full h2 small {
+    display: block; font-size: 1.4cqw; font-weight: 400;
+    letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.45;
+    margin-bottom: 1.2cqw;
+}
+.slide.full .lead {
+    font-size: 1.35cqw; font-weight: 400; line-height: 1.45;
+    margin-bottom: 2.5cqw;
+}
+.slide.full .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5cqw; }
+.slide.full .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5cqw; }
+.slide.full .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4cqw; }
+
+/* ════════ SWATCH (colors slides) ════════ */
+.swatch {
+    background: var(--white); border: 1px solid var(--line); border-radius: 0;
+    overflow: hidden; display: flex; flex-direction: column;
+}
+.swatch .color { aspect-ratio: 1.6 / 1; }
+.swatch .info { padding: 1cqw 1.1cqw 1.1cqw; }
+.swatch .name { font-size: 1.05cqw; font-weight: 700; }
+.swatch .codes {
+    display: flex; flex-direction: column; gap: 0.05cqw;
+    font-size: 0.62cqw; color: var(--gris); margin-top: 0.4cqw;
+}
+
+/* ════════ PALETTE BLOCK (estil OAN) ════════ */
+.slide.palette { padding: 0; }
+.palette-header {
+    position: absolute; top: 4.6%; left: 3.1%; right: 3.1%;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    z-index: 10; pointer-events: none;
+}
+.palette-header h2 {
+    font-size: 2.2cqw; font-weight: 700; line-height: 1.1;
+    color: var(--white); padding: 0.4cqw 0.8cqw 0.4cqw 0;
+}
+.palette-header h2 small {
+    display: block; font-size: 0.95cqw; font-weight: 400;
+    letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.5;
+    margin-bottom: 0.3cqw;
+}
+.palette-header .tag-r {
+    font-size: 0.85cqw; font-weight: 500; opacity: 0.5;
+    letter-spacing: 0.08em; text-transform: uppercase;
+}
+.palette-block {
+    width: 100%; height: 100%;
+    display: grid; grid-template-rows: 1fr 1fr;
+}
+.palette-block .top { display: grid; grid-template-columns: 1fr 1fr; }
+.palette-block .bottom { display: grid; }
+.palette-block .bottom.cols-6 { grid-template-columns: repeat(6, 1fr); }
+.palette-block .bottom.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.palette-cell {
+    padding: 2.2cqw 1.8cqw 2.2cqw;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    position: relative;
+}
+.palette-cell .nm { font-size: 1.25cqw; font-weight: 700; margin-bottom: 0.6cqw; line-height: 1; }
+.palette-cell .cd {
+    font-size: 0.62cqw; line-height: 1.7; font-weight: 400;
+    font-feature-settings: 'tnum';
+}
+.palette-cell.dark { color: var(--white); }
+.palette-cell.dark .cd { opacity: 0.85; }
+.palette-cell.light { color: var(--black); }
+.palette-cell.light .cd { opacity: 0.7; }
+.palette-cell.light.bordered { border: 1px solid var(--line); }
+.slide.palette .palette-num {
+    position: absolute; bottom: 1.5%; left: 1.5%; z-index: 10;
+    font-size: 0.75cqw; font-weight: 400; opacity: 0.45;
+    color: var(--white);
+}
+
+/* ════════ CARDS minimalistes ════════ */
+.card {
+    background: var(--white); border: 1px solid var(--line); border-radius: 0;
+    padding: 1.4cqw 1.5cqw;
+}
+.card.outline { background: transparent; border: 1px solid var(--black); }
+.card h4 { font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.4cqw; }
+.card h5 { font-size: 0.9cqw; font-weight: 700; margin-bottom: 0.3cqw; }
+.card p { font-size: 0.78cqw; line-height: 1.55; }
+.card .num {
+    font-size: 0.7cqw; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gris); margin-bottom: 0.6cqw;
+}
+.card .big-num {
+    font-size: 2.2cqw; font-weight: 200; line-height: 1; margin-bottom: 0.6cqw;
+}
+.card .stat {
+    font-size: 2.6cqw; font-weight: 800; line-height: 1; margin-bottom: 0.5cqw;
+    letter-spacing: -0.02em;
+}
+
+/* tag minimalista */
+.tag {
+    display: inline-block; padding: 0.2cqw 0.6cqw; border: 1px solid var(--black);
+    font-size: 0.55cqw; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 0.5cqw;
+}
+
+/* shape grid B/N */
+.shape-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.8cqw; }
+.shape-cell {
+    background: var(--white); border: 1px solid var(--line);
+    aspect-ratio: 1; display: flex; flex-direction: column;
+}
+.shape-cell svg { width: 100%; height: 70%; display: block; }
+.shape-cell .nm {
+    font-size: 0.55cqw; font-weight: 600; text-align: center;
+    padding: 0.2cqw 0.3cqw; opacity: 0.65;
+}
+
+/* don't grid */
+.dont-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2cqw; }
+.dont-cell { background: var(--white); border: 1px solid var(--line); overflow: hidden; }
+.dont-cell .preview { aspect-ratio: 1.4 / 1; display: flex; align-items: center; justify-content: center; background: var(--white); border-bottom: 1px solid var(--line); }
+.dont-cell .preview svg { width: 50%; height: auto; }
+.dont-cell .desc { padding: 0.9cqw 1.1cqw 1.1cqw; }
+.dont-cell h5 { font-size: 0.8cqw; font-weight: 700; margin-bottom: 0.25cqw; }
+.dont-cell p { font-size: 0.65cqw; line-height: 1.4; color: var(--gris); }
+
+/* type specimen */
+.specimen {
+    background: var(--white); padding: 1.6cqw 1.8cqw; border: 1px solid var(--line);
+    margin-bottom: 1cqw;
+}
+.specimen .lbl {
+    font-size: 0.65cqw; color: var(--gris); margin-bottom: 0.6cqw;
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+}
+
+/* avis box */
+.avis {
+    margin-top: 1.5cqw; padding: 1.1cqw 1.3cqw;
+    background: transparent; border: 1px solid var(--black);
+    font-size: 0.75cqw; line-height: 1.5;
+}
+
+/* dark callout */
+.dark-box {
+    background: var(--black); color: var(--white);
+    padding: 1.6cqw 2cqw;
+    margin-top: 1.5cqw;
+}
+.dark-box h4 { font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.6cqw; }
+.dark-box p { font-size: 0.85cqw; line-height: 1.55; }
+.dark-box .hl { font-weight: 700; }
+
+/* connection flow — colors de marca */
+.flow { display: flex; align-items: center; justify-content: space-between; gap: 0.8cqw; margin-top: 1.5cqw; }
+.flow .node { display: flex; flex-direction: column; align-items: center; gap: 0.7cqw; flex: 1; }
+.flow .node .circle {
+    width: 8cqw; height: 8cqw; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1.05cqw; text-align: center;
+    padding: 0.5cqw;
+}
+.flow .node .circle.c1 { background: var(--taronja); color: var(--black); }
+.flow .node .circle.c2 { background: var(--coral); color: var(--black); }
+.flow .node .circle.c3 { background: var(--blau); color: var(--black); }
+.flow .node .circle.c4 { background: var(--verd); color: var(--white); }
+.flow .node .circle.c5 { background: var(--groc); color: var(--black); }
+.flow .node .lbl { font-size: 0.8cqw; color: var(--gris); text-align: center; }
+.flow .arrow { font-size: 1.6cqw; color: var(--black); opacity: 0.3; }
+
+@media (max-width: 800px) { .slide { box-shadow: 0 8px 24px rgba(0,0,0,0.3); } }
+
+/* ════════ TOOLBAR (LANGUAGE + PRESENT) ════════ */
+.toolbar {
+    position: fixed; top: 24px; right: 24px; z-index: 1000;
+    display: flex; gap: 8px; font-family: 'Montserrat', sans-serif;
+}
+.lang-toggle {
+    display: flex; gap: 0; background: var(--white);
+    border: 1px solid var(--black); border-radius: 999px;
+    overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.lang-toggle button {
+    padding: 8px 18px; font-size: 12px; font-weight: 700;
+    background: transparent; color: var(--black); border: 0;
+    cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase;
+    transition: all 0.2s;
+}
+.lang-toggle button.active { background: var(--black); color: var(--white); }
+.lang-toggle button:hover:not(.active) { background: #f0f0f0; }
+
+.btn-present {
+    padding: 8px 16px; font-size: 12px; font-weight: 700;
+    background: var(--black); color: var(--white); border: 1px solid var(--black);
+    border-radius: 999px; cursor: pointer;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    font-family: 'Montserrat', sans-serif;
+    display: flex; align-items: center; gap: 6px;
+}
+.btn-present:hover { background: #333; }
+
+/* ════════ PRESENT MODE — només oculta les altres slides ════════ */
+body.presenting .deck-info,
+body.presenting .toolbar { display: none; }
+body.presenting .deck > .slide:not(.is-current) { display: none !important; }
+
+.present-controls {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    z-index: 1001; display: none;
+    gap: 14px; align-items: center;
+    background: rgba(0,0,0,0.75); color: white;
+    padding: 10px 20px; border-radius: 999px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px; font-weight: 600;
+    backdrop-filter: blur(8px);
+    opacity: 0; transition: opacity 0.3s;
+    pointer-events: none;
+}
+body.presenting .present-controls { display: flex; }
+body.presenting .present-controls.show { opacity: 1; pointer-events: auto; }
+.present-controls button {
+    background: transparent; color: white; border: 0; cursor: pointer;
+    font-family: inherit; font-size: 16px; padding: 4px 10px;
+    line-height: 1; opacity: 0.7; transition: opacity 0.2s;
+}
+.present-controls button:hover { opacity: 1; }
+.present-controls .counter { letter-spacing: 0.08em; min-width: 60px; text-align: center; }
+.present-controls .exit { font-size: 10px; opacity: 0.5; padding-left: 8px; border-left: 1px solid rgba(255,255,255,0.2); }
+
+/* ════════ PRINT / PRESENTAR ════════
+   Forcem cada slide a omplir una pagina 16:9 exacta,
+   sense marges del navegador, sense capçaleres, sense reescalat. */
+@page {
+    size: 1920px 1080px;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 1920px;
+        height: auto;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    .toolbar, .present-controls, .deck-info { display: none !important; }
+
+    .deck {
+        display: block !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .slide {
+        width: 1920px !important;
+        height: 1080px !important;
+        max-width: none !important;
+        aspect-ratio: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        page-break-after: always;
+        page-break-inside: avoid;
+        break-after: page;
+        break-inside: avoid;
+        overflow: hidden;
+    }
+
+    .slide:last-child {
+        page-break-after: auto;
+        break-after: auto;
+    }
+
+    .slide, .slide * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+    <div class="lang-toggle">
+        <button data-lang="ca" class="active" onclick="setLang('ca')">CAT</button>
+        <button data-lang="es" onclick="setLang('es')">CAST</button>
+    </div>
+    <button class="btn-present" onclick="startPresent()">▶ Presentar</button>
+</div>
+
+<!-- PRESENT CONTROLS (només visibles en mode presentació) -->
+<div class="present-controls">
+    <button onclick="prevSlide()" title="Anterior (←)">‹</button>
+    <span class="counter"><span id="curSlide">1</span> / <span id="totalSlides">44</span></span>
+    <button onclick="nextSlide()" title="Següent (→)">›</button>
+    <span class="exit" onclick="exitPresent()" style="cursor:pointer;">ESC</span>
+</div>
+
+<div class="deck">
+
+<!-- ═══════════════════════ 01 · COVER ═══════════════════════ -->
+<div class="slide cover">
+    <div class="stripes"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <p class="subtitle">Una identitat viva per a un espai on tot passa. Sistema d'identitat visual generatiu per a la Fundació Ave Maria de Sitges.</p>
+    <h1 class="title">Brand<br>Guidelines</h1>
+    <div class="meta">Versió 2.0<br>Marc 2026<br>Sitges, Catalunya</div>
+</div>
+
+<!-- ═══════════════════════ 02 · STATEMENT ═══════════════════════ -->
+<div class="slide statement">
+    <h2 class="headline">Manual<br>d'Identitat<br>Visual.</h2>
+    <p class="body">Una identitat viva per a un espai on tot passa. Sistema d'identitat visual generatiu per a la Fundació Ave Maria de Sitges.</p>
+    <div class="slide-num">02</div>
+</div>
+
+<!-- ═══════════════════════ 03 · DIVIDER 01 ═══════════════════════ -->
+<div class="slide divider dark">
+    <h2 class="big">La<br>Fundació</h2>
+    <div class="label">Section 01</div>
+    <div class="slide-num">03</div>
+</div>
+
+<!-- ═══════════════════════ 04 · LA FUNDACIO ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">01 — La Fundació</span>
+    <h2><small>Section 01</small>Fundació Ave Maria<br>de Sitges</h2>
+    <p class="lead">Des de 1987, la Fundació Ave Maria es una institucio privada sense anim de lucre que ofereix atenció especialitzada a persones adultes amb diversitat funcional, potenciant les seves capacitats per garantir la seva qualitat de vida.</p>
+    <p style="font-size: 0.95cqw; line-height: 1.5; margin-bottom: 2cqw;">Actualment beneficiem més de 800 persones a Sitges, Garraf i comarques veines, oferint serveis de residencia especialitzada, centres de dia, habitatges amb suport, formacio i inclusió laboral.</p>
+    <div class="grid-3" style="margin-bottom: 1.5cqw;">
+        <div class="card"><div class="stat">+35</div><h4>Anys d'experiència</h4><p>Des de 1987 treballant per la inclusió i la qualitat de vida de les persones amb diversitat funcional.</p></div>
+        <div class="card"><div class="stat">+800</div><h4>Persones ateses</h4><p>Beneficiaris directes dels nostres programes i serveis a tota la comarca del Garraf.</p></div>
+        <div class="card"><div class="stat">100%</div><h4>Compromís</h4><p>Dedicacio total a potenciar les capacitats de cada persona i el seu projecte de vida.</p></div>
+    </div>
+    <div class="dark-box">
+        <h4>Villa Havemann</h4>
+        <p>La casa que va veure neixer el projecte: la Villa Havemann, espai fundacional i simbol d'<span class="hl">acollida, cura i pertinença</span>. Un edifici reconeixible i carregat d'història que ara es transforma en el punt de partida d'una nova identitat.</p>
+    </div>
+    <div class="slide-num">04</div>
+</div>
+
+<!-- ═══════════════════════ 05 · DIVIDER 02 ═══════════════════════ -->
+<div class="slide divider taronja">
+    <h2 class="big">Missió<br>i Valors</h2>
+    <div class="label">Section 02</div>
+    <div class="slide-num">05</div>
+</div>
+
+<!-- ═══════════════════════ 06 · MISSIÓ I VISIÓ ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">02 — Missió i Valors</span>
+    <h2 style="font-size: 5cqw; margin-bottom: 0.6cqw;"><small>Section 02</small>El Nostre Propòsit</h2>
+    <div style="margin: 0.5cqw 0 1.3cqw; padding: 1.6cqw 2.2cqw; background: var(--black); color: var(--white);">
+        <p style="font-size: 1.9cqw; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em;">"Cada persona té un projecte de vida. Som aquí per caminar al seu costat."</p>
+    </div>
+    <div class="grid-2" style="gap: 2.2cqw; margin-top: 0.4cqw;">
+        <div>
+            <div class="num" style="color: var(--gris); margin-bottom: 0.3cqw;">01</div>
+            <h3 style="font-size: 1.6cqw; font-weight: 700; margin-bottom: 0.7cqw;">Missió</h3>
+            <p style="font-size: 0.88cqw; line-height: 1.55; margin-bottom: 0.7cqw;">Millorar la qualitat de vida de les persones amb diversitat funcional, potenciant les seves capacitats a través d'una <strong>atenció integral i personalitzada, innovadora i compromesa amb la comunitat</strong>.</p>
+            <p style="font-size: 0.75cqw; line-height: 1.55; color: var(--gris); font-style: italic; padding-left: 0.8cqw; border-left: 2px solid var(--line);">Dit d'una altra manera: no "atenem casos". Caminem al costat de cadascú, al seu ritme, amb el seu projecte. Cada persona dalt amb la seva veu i la seva manera. La nostra feina és fer-li lloc.</p>
+        </div>
+        <div>
+            <div class="num" style="color: var(--gris); margin-bottom: 0.3cqw;">02</div>
+            <h3 style="font-size: 1.6cqw; font-weight: 700; margin-bottom: 0.7cqw;">Visió</h3>
+            <p style="font-size: 0.88cqw; line-height: 1.55; margin-bottom: 0.7cqw;">Ser reconeguts com a <strong>líders en benestar i qualitat de serveis</strong> per a les persones amb diversitat funcional, destacant per la nostra capacitat d'innovació i excel·lència, tant per part dels usuaris com de col·laboradors, voluntaris, famílies i altres grups d'interès.</p>
+            <p style="font-size: 0.75cqw; line-height: 1.55; color: var(--gris); font-style: italic; padding-left: 0.8cqw; border-left: 2px solid var(--line);">Dit d'una altra manera: volem ser una casa oberta. Un lloc on cada persona —tingui el cos, la ment o la història que tingui— se senti escoltada, respectada i útil.</p>
+        </div>
+    </div>
+    <div class="slide-num">06</div>
+</div>
+
+<!-- ═══════════════════════ 07 · VALORS ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">02 — Missió i Valors</span>
+    <h2 style="font-size: 4.5cqw; margin-bottom: 1.5cqw;">Valors Fonamentals</h2>
+    <div class="grid-3" style="grid-auto-rows: 1fr;">
+        <div class="card"><div class="num">01</div><h4>Responsabilitat</h4><p>Estem aquí. Cada dia. Per a la gent que ens confia hores, anys i, de vegades, vides senceres.</p></div>
+        <div class="card"><div class="num">02</div><h4>Respecte</h4><p>Cada persona dalt amb la seva veu, el seu ritme i la seva manera. La nostra feina es fer-li lloc, no encaixar-la a la nostra.</p></div>
+        <div class="card"><div class="num">03</div><h4>Transparència</h4><p>Parlem clar. Amb les families, amb les persones que acompanyem, amb la comunitat. També quan es incomode.</p></div>
+        <div class="card"><div class="num">04</div><h4>Innovació</h4><p>No ens conformem amb "sempre s'ha fet aixi". Quan trobem una manera millor de cuidar, l'apliquem.</p></div>
+        <div class="card"><div class="num">05</div><h4>Eficàcia</h4><p>Cada hora, cada euro, cada gest te impacte real en algu. No malbaratem res del que la societat ens confia.</p></div>
+        <div class="card"><div class="num">06</div><h4>Treball en Equip</h4><p>Sols no arribem enlloc. Junts —equip, families, voluntaris i les persones que acompanyem— construim la Fundació cada dia.</p></div>
+    </div>
+    <div class="slide-num">07</div>
+</div>
+
+<!-- ═══════════════════════ 08 · DIVIDER 03 ═══════════════════════ -->
+<div class="slide divider coral">
+    <h2 class="big">Veu<br>de Marca</h2>
+    <div class="label">Section 03</div>
+    <div class="slide-num">08</div>
+</div>
+
+<!-- ═══════════════════════ 09 · COM PARLEM ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">03 — Veu de Marca</span>
+    <h2><small>Section 03</small>Com Parlem</h2>
+    <p class="lead"><strong>"Parlem amb les persones, no sobre les persones."</strong> No és un eslògan, és un compromís. La nostra veu reflecteix la nostra feina: directa, calida i centrada en cada persona real. Sense distància institucional, sense paraules que amaguen.</p>
+    <div class="grid-3">
+        <div class="card"><div class="big-num">01</div><h4>Propera i humana</h4><p>No som "una entitat". Som persones que cuidem persones. Cada missatge ha de sonar com si una companya teva l'estigues escrivint.</p></div>
+        <div class="card"><div class="big-num">02</div><h4>Clara i accessible</h4><p>Si una avia, una nena de 12 anys o un adult amb dificultats de comprensio no ens entenen, és culpa nostra, no seva. Senzillesa = respecte.</p></div>
+        <div class="card"><div class="big-num">03</div><h4>Optimista i activa</h4><p>Mirem que sap fer una persona, no que li falta. Parlem des de la possibilitat, no des de la mancanca. Sempre mirem endavant.</p></div>
+    </div>
+    <div class="slide-num">09</div>
+</div>
+
+<!-- ═══════════════════════ 10 · AIXI SI / NO ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">03 — Veu de Marca</span>
+    <h2 style="font-size: 4.5cqw; margin-bottom: 1.2cqw;">Aixi si · Aixi no</h2>
+    <div class="grid-2">
+        <div>
+            <h3 style="font-size: 1.4cqw; margin-bottom: 0.8cqw;">Aixi si <span style="opacity: 0.4; font-weight: 400;">— recomanat</span></h3>
+            <div class="card" style="margin-bottom: 0.5cqw;">
+                <p style="font-style: italic; font-size: 0.85cqw; margin-bottom: 0.4cqw;">"Acompanyem cada persona en el seu projecte de vida."</p>
+                <p style="color: var(--gris); font-size: 0.7cqw;">Directe, positiu, centrat en la persona.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.5cqw;">
+                <p style="font-style: italic; font-size: 0.85cqw; margin-bottom: 0.4cqw;">"A la Fundació sempre hi ha un lloc per a tu."</p>
+                <p style="color: var(--gris); font-size: 0.7cqw;">Inclusiu, acollidor, coherent amb l'espai en blanc de la identitat.</p>
+            </div>
+            <div class="card" style="margin-bottom: 0.5cqw;">
+                <p style="font-style: italic; font-size: 0.85cqw; margin-bottom: 0.4cqw;">"Avui en Marc ha pintat un quadre. Dema sera una altra cosa. Sempre passa alguna cosa."</p>
+                <p style="color: var(--gris); font-size: 0.7cqw;">Concret, viu, amb noms propis. Mostra la diversitat del dia a dia.</p>
+            </div>
+            <div class="card">
+                <p style="font-style: italic; font-size: 0.85cqw; margin-bottom: 0.4cqw;">"Aquí cadascu aporta el que pot. Tots aportem alguna cosa."</p>
+                <p style="color: var(--gris); font-size: 0.7cqw;">Reciprocitat, no assistencialisme. Tothom dona i tothom rep.</p>
+            </div>
+        </div>
+        <div>
+            <h3 style="font-size: 1.4cqw; margin-bottom: 0.8cqw;">Aixi no <span style="opacity: 0.4; font-weight: 400;">— evitar</span></h3>
+            <div class="card outline" style="margin-bottom: 0.5cqw;">
+                <p style="font-style: italic; font-size: 0.85cqw; margin-bottom: 0.4cqw; text-decoration: line-through; opacity: 0.7;">"Atenem discapacitats amb problemes d'adaptació social."</p>
+                <p style="color: var(--gris); font-size: 0.7cqw;">Estigmatitzant, distant, llenguatge obsolet. "Discapacitat" no defineix una persona.</p>
+            </div>
+            <div class="card outline" style="margin-bottom: 0.5cqw;">
+                <p style="font-style: italic; font-size: 0.85cqw; margin-bottom: 0.4cqw; text-decoration: line-through; opacity: 0.7;">"La nostra entitat es lider en el sector de l'atenció a la dependencia."</p>
+                <p style="color: var(--gris); font-size: 0.7cqw;">Corporatiu, fred, centrat en l'organitzacio. La Fundació no es protagonista.</p>
+            </div>
+            <div class="card outline" style="margin-bottom: 0.5cqw;">
+                <p style="font-style: italic; font-size: 0.85cqw; margin-bottom: 0.4cqw; text-decoration: line-through; opacity: 0.7;">"Oferim serveis assistencials per als nostres beneficiaris."</p>
+                <p style="color: var(--gris); font-size: 0.7cqw;">"Beneficiari" anonimitza i posa la persona en una posició passiva.</p>
+            </div>
+            <div class="card outline">
+                <p style="font-style: italic; font-size: 0.85cqw; margin-bottom: 0.4cqw; text-decoration: line-through; opacity: 0.7;">"Treballem per la inserció dels nostres usuaris."</p>
+                <p style="color: var(--gris); font-size: 0.7cqw;">"Usuaris" cosifica. "Inserir" insinua que la persona ha d'encaixar a un motlle.</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num">10</div>
+</div>
+
+<!-- ═══════════════════════ 11 · CLAIMS ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">03 — Veu de Marca</span>
+    <h2><small>Section 03 · Claims i Frases</small>Com sona la marca</h2>
+    <p class="lead" style="margin-bottom: 1.2cqw;">Frases curtes, directes, memorables. Capturen el to en una linia. Es poden fer servir en cartells, xarxes, samarretes, banners o capçaleres web.</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 0.7cqw; flex: 1;">
+        <div style="background: var(--black); color: var(--white); padding: 1.6cqw 1.5cqw; display: flex; align-items: flex-end; min-height: 11cqw;">
+            <p style="font-size: 2.4cqw; font-weight: 800; line-height: 0.95; letter-spacing: -0.025em;">Aquí<br>cabes tu.</p>
+        </div>
+        <div style="background: var(--taronja); color: var(--black); padding: 1.6cqw 1.5cqw; display: flex; align-items: flex-end; min-height: 11cqw;">
+            <p style="font-size: 1.85cqw; font-weight: 800; line-height: 1; letter-spacing: -0.02em;">Una casa<br>per a totes<br>les vides.</p>
+        </div>
+        <div style="background: var(--white); color: var(--black); padding: 1.6cqw 1.5cqw; display: flex; align-items: flex-end; min-height: 11cqw; border: 1px solid var(--line);">
+            <p style="font-size: 1.7cqw; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em;">No atenem casos.<br>Acompanyem<br>persones.</p>
+        </div>
+        <div style="background: var(--coral); color: var(--black); padding: 1.6cqw 1.5cqw; display: flex; align-items: flex-end; min-height: 11cqw;">
+            <p style="font-size: 1.55cqw; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em;">Cuidem com ens agradaria que ens cuidessin.</p>
+        </div>
+        <div style="background: var(--black); color: var(--white); padding: 1.6cqw 1.5cqw; display: flex; align-items: flex-end; min-height: 11cqw;">
+            <p style="font-size: 1.55cqw; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em;">Cada persona, un projecte.<br>Cada projecte, un futur.</p>
+        </div>
+        <div style="background: var(--blau); color: var(--black); padding: 1.6cqw 1.5cqw; display: flex; align-items: flex-end; min-height: 11cqw;">
+            <p style="font-size: 2.2cqw; font-weight: 800; line-height: 0.95; letter-spacing: -0.025em;">Ningu<br>es queda<br>fora.</p>
+        </div>
+    </div>
+    <div class="slide-num">11</div>
+</div>
+
+<!-- ═══════════════════════ 12 · APLICACIONS DEL TO ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">03 — Veu de Marca</span>
+    <h2><small>Section 03 · Aplicacions del to</small>La veu en context</h2>
+    <p class="lead">Com sona la veu de la Fundació en situacions reals: un email a una familia, un post a xarxes, la introducció d'una memòria anual, un missatge despres d'un avenc.</p>
+    <div class="grid-2" style="margin-top: 0.7cqw;">
+        <div class="card">
+            <div class="num">Email · Benvinguda a una familia</div>
+            <p style="font-size: 0.85cqw; line-height: 1.6; font-style: italic;">"Hola Anna, benvinguda a la Fundació. T'ho repetim, encara que ja ho sapigues: aquí ja ets a casa. Si necessites qualsevol cosa —sigui el que sigui— truca al Joan al 938 94 XX XX. Hi és tots els dies entre les 9 i les 17h."</p>
+        </div>
+        <div class="card">
+            <div class="num">Xarxes socials · Un dijous qualsevol</div>
+            <p style="font-size: 0.85cqw; line-height: 1.6; font-style: italic;">"Avui hem omplert el pati de musica. La Nuria ha cantat. El Marc ha ballat. La Maria ha rigut més que mai. Així són els nostres dijous."</p>
+        </div>
+        <div class="card">
+            <div class="num">Memòria anual · Introducció</div>
+            <p style="font-size: 0.85cqw; line-height: 1.6; font-style: italic;">"Aquesta memòria parla de la Sandra. Del Pere. De l'Aleix. Dels seus avencos, les seves cançons, els seus matins. Les xifres també hi són. Però venen al final."</p>
+        </div>
+        <div class="card">
+            <div class="num">Missatge a una familia · Avenc</div>
+            <p style="font-size: 0.85cqw; line-height: 1.6; font-style: italic;">"Avui el teu fill ha apres a fer-se el cafè sol. Es una cosa petita. Es una cosa enorme."</p>
+        </div>
+    </div>
+    <div class="dark-box" style="margin-top: 1.2cqw;">
+        <h4>Personalitat de Marca</h4>
+        <p><span class="hl">Acollidora</span> — Com una casa que sempre te un lloc per a un més. <span class="hl">Viva</span> — Cada dia passen coses que ningu havia previst. Aixo ens agrada. <span class="hl">Diversa</span> — Com les formes del nostre isotip: cada una es diferent, totes hi cabem. <span class="hl">Propera</span> — Et truquem pel teu nom. Et mirem als ulls.</p>
+    </div>
+    <div class="slide-num">12</div>
+</div>
+
+<!-- ═══════════════════════ 13 · TRES MOMENTS / STAGES ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">03 — Veu de Marca</span>
+    <h2 style="font-size: 4.2cqw; margin-bottom: 0.7cqw;"><small>Section 03 · Stages</small>Tres moments, tres tons</h2>
+    <p class="lead" style="margin-bottom: 1.4cqw;">El nostre to de veu i les pautes visuals s'adapten al recorregut de cada persona amb la Fundació. Identifiquem <strong>tres moments amb intencions i estats d'ànim diferents:</strong></p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5cqw; align-items: stretch;">
+
+        <!-- 01 ACOLLIDA -->
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: flex-start; gap: 0.7cqw; margin-bottom: 0.6cqw;">
+                <div style="font-size: 3cqw; font-weight: 800; line-height: 0.9; color: var(--coral);">01</div>
+                <p style="font-size: 0.78cqw; line-height: 1.35; padding-top: 0.3cqw;">Quan ens troben fora dels nostres canals: xarxes, anuncis, materials de difusió.</p>
+            </div>
+            <div style="border: 2px solid var(--coral); padding: 1.4cqw 1.5cqw; flex: 1; border-radius: 0.4cqw;">
+                <h3 style="color: var(--coral); font-size: 1.7cqw; font-weight: 800; margin-bottom: 0.7cqw; letter-spacing: -0.01em;">Acollida</h3>
+                <p style="font-size: 0.78cqw; line-height: 1.55; margin-bottom: 0.7cqw;">Expressem la personalitat al volum més alt. Cridem l'atenció amb història, calidesa i color. Aquí podem ser:</p>
+                <p style="font-size: 0.78cqw; line-height: 1.7;">Càlids<br>Inspiradors<br>Centrats en històries<br>Diversos i viscuts</p>
+                <p style="font-size: 0.65cqw; font-weight: 700; color: var(--coral); margin-top: 0.9cqw; letter-spacing: 0.08em; text-transform: uppercase;">Atributs principals</p>
+                <p style="font-size: 0.78cqw; line-height: 1.7;">Acollidora<br>Viva<br>Inspiradora</p>
+            </div>
+        </div>
+
+        <!-- 02 ACOMPANYAMENT -->
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: flex-start; gap: 0.7cqw; margin-bottom: 0.6cqw;">
+                <div style="font-size: 3cqw; font-weight: 800; line-height: 0.9; color: var(--taronja);">02</div>
+                <p style="font-size: 0.78cqw; line-height: 1.35; padding-top: 0.3cqw;">Quan ens reconeixen i s'apropen: web, primeres trucades, entrevistes, visites.</p>
+            </div>
+            <div style="border: 2px solid var(--taronja); padding: 1.4cqw 1.5cqw; flex: 1; border-radius: 0.4cqw;">
+                <h3 style="color: var(--taronja); font-size: 1.7cqw; font-weight: 800; margin-bottom: 0.7cqw; letter-spacing: -0.01em;">Acompanyament</h3>
+                <p style="font-size: 0.78cqw; line-height: 1.55; margin-bottom: 0.7cqw;">Expressem la nostra identitat però també hem d'informar amb claredat. Combinem la calidesa amb la pràctica. Som:</p>
+                <p style="font-size: 0.78cqw; line-height: 1.7;">Propers<br>Clars i informatius<br>Pacients<br>Concrets</p>
+                <p style="font-size: 0.65cqw; font-weight: 700; color: var(--taronja); margin-top: 0.9cqw; letter-spacing: 0.08em; text-transform: uppercase;">Atributs principals</p>
+                <p style="font-size: 0.78cqw; line-height: 1.7;">Propera<br>Honesta<br>Pràctica<br>Inspiradora</p>
+            </div>
+        </div>
+
+        <!-- 03 COMUNITAT -->
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: flex-start; gap: 0.7cqw; margin-bottom: 0.6cqw;">
+                <div style="font-size: 3cqw; font-weight: 800; line-height: 0.9; color: var(--verd);">03</div>
+                <p style="font-size: 0.78cqw; line-height: 1.35; padding-top: 0.3cqw;">Quan ja en formen part: famílies, residents, equip, voluntaris i col·laboradors.</p>
+            </div>
+            <div style="border: 2px solid var(--verd); padding: 1.4cqw 1.5cqw; flex: 1; border-radius: 0.4cqw;">
+                <h3 style="color: var(--verd); font-size: 1.7cqw; font-weight: 800; margin-bottom: 0.7cqw; letter-spacing: -0.01em;">Comunitat</h3>
+                <p style="font-size: 0.78cqw; line-height: 1.55; margin-bottom: 0.7cqw;">El protagonista és la persona, no el missatge. La nostra veu baixa de volum i prioritza la informació clara i la cura quotidiana. Som:</p>
+                <p style="font-size: 0.78cqw; line-height: 1.7;">Discrets<br>Constants<br>Amb noms propis<br>Propers cada dia</p>
+                <p style="font-size: 0.65cqw; font-weight: 700; color: var(--verd); margin-top: 0.9cqw; letter-spacing: 0.08em; text-transform: uppercase;">Atributs principals</p>
+                <p style="font-size: 0.78cqw; line-height: 1.7;">Honesta<br>Quotidiana<br>Acollidora</p>
+            </div>
+        </div>
+
+    </div>
+
+    <p style="font-size: 0.78cqw; color: var(--gris); text-align: center; margin-top: 1cqw;">Híbrid d'<span style="color: var(--coral); font-weight: 700;">acollida</span> i <span style="color: var(--verd); font-weight: 700;">comunitat</span></p>
+
+    <div class="slide-num">13</div>
+</div>
+
+<!-- ═══════════════════════ 14 · CUSTOMER JOURNEY · MISSATGE A 3 VEUS ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">03 — Veu de Marca</span>
+    <h2 style="font-size: 4.2cqw; margin-bottom: 0.7cqw;"><small>Section 03 · Recorregut</small>El recorregut de la marca</h2>
+    <p class="lead" style="margin-bottom: 1.4cqw;">El mateix missatge té paraules diferents segons on som al recorregut amb la persona. <strong>Tres moments. Tres veus. Una sola identitat.</strong></p>
+
+    <!-- HEADER ROW -->
+    <div style="display: grid; grid-template-columns: 14% 1fr 1fr 1fr; gap: 1.4cqw; padding-bottom: 0.7cqw; border-bottom: 1px solid var(--line); margin-bottom: 1.4cqw;">
+        <div style="font-size: 0.72cqw; font-weight: 700; color: var(--gris); letter-spacing: 0.08em; text-transform: uppercase;">Què comuniquem</div>
+        <div style="font-size: 0.85cqw; font-weight: 700; color: var(--black);">Voluntariat<br><span style="font-weight: 400; color: var(--gris); font-size: 0.78cqw;">"Cerquem persones que vulguin venir."</span></div>
+        <div style="font-size: 0.85cqw; font-weight: 700; color: var(--black);">Taller de pintura<br><span style="font-weight: 400; color: var(--gris); font-size: 0.78cqw;">"Comencem una activitat nova."</span></div>
+        <div style="font-size: 0.85cqw; font-weight: 700; color: var(--black);">Portes obertes<br><span style="font-weight: 400; color: var(--gris); font-size: 0.78cqw;">"Vine a conèixer la casa."</span></div>
+    </div>
+
+    <!-- ACOLLIDA -->
+    <div style="display: grid; grid-template-columns: 14% 1fr 1fr 1fr; gap: 1.4cqw; align-items: start; padding-bottom: 1.4cqw;">
+        <div>
+            <div style="display: flex; align-items: center; gap: 0.4cqw; margin-bottom: 0.6cqw;">
+                <div style="width: 0.8cqw; height: 0.8cqw; border-radius: 50%; border: 2px solid var(--coral);"></div>
+                <div style="height: 1.5px; background: var(--coral); flex: 1;"></div>
+            </div>
+            <h4 style="color: var(--coral); font-size: 1.5cqw; font-weight: 800; margin-bottom: 0.3cqw;">Acollida</h4>
+            <p style="font-size: 0.72cqw; line-height: 1.55; color: var(--gris);">Acollidora<br>Viva<br>Inspiradora</p>
+        </div>
+        <p style="font-size: 0.88cqw; line-height: 1.5; color: var(--coral); font-weight: 600;">"Aquí cap tothom.<br>També tu. Vine."</p>
+        <p style="font-size: 0.88cqw; line-height: 1.5; color: var(--coral); font-weight: 600;">"Cada quadre és un món.<br>Aquí pintem dimecres."</p>
+        <p style="font-size: 0.88cqw; line-height: 1.5; color: var(--coral); font-weight: 600;">"Aquesta és la nostra casa. La pots venir a veure."</p>
+    </div>
+
+    <!-- ACOMPANYAMENT -->
+    <div style="display: grid; grid-template-columns: 14% 1fr 1fr 1fr; gap: 1.4cqw; align-items: start; padding-bottom: 1.4cqw;">
+        <div>
+            <div style="display: flex; align-items: center; gap: 0.4cqw; margin-bottom: 0.6cqw;">
+                <div style="width: 0.8cqw; height: 0.8cqw; border-radius: 50%; border: 2px solid var(--taronja);"></div>
+                <div style="height: 1.5px; background: var(--taronja); flex: 1;"></div>
+            </div>
+            <h4 style="color: var(--taronja); font-size: 1.5cqw; font-weight: 800; margin-bottom: 0.3cqw;">Acompanyament</h4>
+            <p style="font-size: 0.72cqw; line-height: 1.55; color: var(--gris);">Propera<br>Honesta<br>Pràctica</p>
+        </div>
+        <p style="font-size: 0.88cqw; line-height: 1.5; color: var(--taronja); font-weight: 600;">"Cerquem voluntaris per als tallers. Dos vespres al mes. T'expliquem com."</p>
+        <p style="font-size: 0.88cqw; line-height: 1.5; color: var(--taronja); font-weight: 600;">"Comencem un taller de pintura amb l'artista Maria Camps. Inscripcions obertes."</p>
+        <p style="font-size: 0.88cqw; line-height: 1.5; color: var(--taronja); font-weight: 600;">"Dissabte 12 d'abril, jornada de portes obertes de 10h a 14h. Reserva visita."</p>
+    </div>
+
+    <!-- COMUNITAT -->
+    <div style="display: grid; grid-template-columns: 14% 1fr 1fr 1fr; gap: 1.4cqw; align-items: start;">
+        <div>
+            <div style="display: flex; align-items: center; gap: 0.4cqw; margin-bottom: 0.6cqw;">
+                <div style="width: 0.8cqw; height: 0.8cqw; border-radius: 50%; border: 2px solid var(--verd);"></div>
+                <div style="height: 1.5px; background: var(--verd); flex: 1;"></div>
+            </div>
+            <h4 style="color: var(--verd); font-size: 1.5cqw; font-weight: 800; margin-bottom: 0.3cqw;">Comunitat</h4>
+            <p style="font-size: 0.72cqw; line-height: 1.55; color: var(--gris);">Honesta<br>Quotidiana<br>Acollidora</p>
+        </div>
+        <p style="font-size: 0.88cqw; line-height: 1.5; color: var(--verd); font-weight: 600;">"Si pots venir el dimecres, fem manualitats al pati. T'esperem amb un cafè."</p>
+        <p style="font-size: 0.88cqw; line-height: 1.5; color: var(--verd); font-weight: 600;">"Demà comencem el taller. La Maria portarà els pinzells."</p>
+        <p style="font-size: 0.88cqw; line-height: 1.5; color: var(--verd); font-weight: 600;">"Dissabte tindrem visites. Si vols ajudar a guiar, t'esperem a recepció a les 10h."</p>
+    </div>
+
+    <div class="slide-num">14</div>
+</div>
+
+<!-- ═══════════════════════ 11 · DIVIDER 04 ═══════════════════════ -->
+<div class="slide divider blau">
+    <h2 class="big">Concepte<br>Creatiu</h2>
+    <div class="label">Section 04</div>
+    <div class="slide-num">15</div>
+</div>
+
+<!-- ═══════════════════════ 12 · CONCEPTE ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">04 — Concepte Creatiu</span>
+    <h2><small>Section 04</small>Un espai on tot passa</h2>
+    <p class="lead">La Fundació es un lloc viu. Un punt de trobada on convergeixen disciplines, generacions, cultures i idees. No es defineix per una sola activitat, sinó per la suma de totes elles.</p>
+    <div class="grid-2" style="margin-top: 1cqw;">
+        <div>
+            <h3 style="font-size: 1.6cqw; margin-bottom: 0.7cqw;">Deconstruir per Construir</h3>
+            <p style="font-size: 0.9cqw; line-height: 1.55; margin-bottom: 0.6cqw;">Partim de l'edifici com a origen. No l'il·lustrem. El <strong>deconstruim</strong>.</p>
+            <p style="font-size: 0.9cqw; line-height: 1.55; margin-bottom: 0.6cqw;">Simplifiquem els seus volums, corbes i proporcions essencials fins obtenir formes geomètriques pures. Aquestes peces es reorganitzen dins un contenidor comu: el quadrat.</p>
+            <p style="font-size: 0.9cqw; line-height: 1.55;">El resultat no és una facana, sinó un <strong>sistema grafic</strong>. Una estructura on les parts dialoguen, s'equilibren i generen noves composicions.</p>
+        </div>
+        <div>
+            <h3 style="font-size: 1.6cqw; margin-bottom: 0.7cqw;">El Quadrat com a Territori</h3>
+            <p style="font-size: 0.9cqw; line-height: 1.55; margin-bottom: 0.6cqw;">El quadrat actua com a marc i com a metafora. Representa l'espai que la Fundació ofereix a la comunitat: <strong>estable, acollidor i obert</strong>.</p>
+            <p style="font-size: 0.9cqw; line-height: 1.55; margin-bottom: 0.6cqw;">Dins d'ell, cada forma simbolitza iniciatives, persones o projectes. Cap prevaleix sobre una altra. Totes conviuen en harmonia.</p>
+            <p style="font-size: 0.9cqw; line-height: 1.55;">El conjunt transmet <strong>obertura, inclusió i contemporaneitat</strong>.</p>
+        </div>
+    </div>
+    <div class="dark-box">
+        <h4>El Buit com a Invitacio</h4>
+        <p>En cada composició deixem un <span class="hl">espai en blanc</span>. No es un buit. Es un gest. Un lloc reservat per a qui dalt. Per a noves veus. Per a idees que encara no existeixen. El blanc comunica que la Fundació no està completa sense les persones que l'habiten.</p>
+    </div>
+    <div class="slide-num">16</div>
+</div>
+
+<!-- ═══════════════════════ 13 · DE VALORS A IDENTITAT ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">04 — Concepte Creatiu</span>
+    <h2 style="font-size: 4.5cqw;">De Valors a Identitat</h2>
+    <p class="lead">Cada decisió visual del sistema es la traduccio d'un valor de la Fundació. La identitat no decora: significa.</p>
+    <div class="flow">
+        <div class="node"><div class="circle c1">Inclusió</div><span class="lbl">Formes que conviuen</span></div>
+        <span class="arrow">→</span>
+        <div class="node"><div class="circle c2">Diversitat</div><span class="lbl">Colors variats</span></div>
+        <span class="arrow">→</span>
+        <div class="node"><div class="circle c3">Obertura</div><span class="lbl">Espai en blanc</span></div>
+        <span class="arrow">→</span>
+        <div class="node"><div class="circle c4">Innovació</div><span class="lbl">Sistema generatiu</span></div>
+        <span class="arrow">→</span>
+        <div class="node"><div class="circle c5">Pertinença</div><span class="lbl">El quadrat-llar</span></div>
+    </div>
+    <div class="slide-num">16</div>
+</div>
+
+<!-- ═══════════════════════ 14 · EVOLUCIÓ DEL LOGOTIP ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">04 — Concepte Creatiu</span>
+    <h2 style="font-size: 5cqw; margin-bottom: 0.6cqw;"><small>Section 04 · Evolució</small>De l'Edifici al Sistema</h2>
+    <p class="lead" style="margin-bottom: 1.4cqw;">El logotip històric d'Ave Maria representava la <strong>Villa Havemann</strong> amb tots els seus detalls: palmeres, finestres, torre, campanar. Al rebranding vam decidir <strong>no il·lustrar l'edifici, sinó deconstruir-lo</strong> fins als seus volums essencials. Les formes geomètriques pures que en resulten —cercles, semicercles, quarts, triangles, rectangles— són les peces que avui composen el sistema visual generatiu de la Fundació.</p>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1cqw;">
+        <!-- FASE 1 -->
+        <div style="display: flex; flex-direction: column; gap: 0.6cqw;">
+            <div style="background: #f5f5f5; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--line);">
+                <img src="web/BRANDBOOK_MARCA/concepte/logo-historic.svg" alt="Logotip històric · Villa Havemann" style="max-width: 78%; max-height: 78%;">
+            </div>
+            <div>
+                <div class="num" style="color: var(--gris);">01 — Origen</div>
+                <h4>Logotip històric</h4>
+                <p>Villa Havemann amb palmeres, torre i campanar. Un símbol detallat però tancat, lligat a una imatge concreta de l'edifici.</p>
+            </div>
+        </div>
+        <!-- FASE 2 -->
+        <div style="display: flex; flex-direction: column; gap: 0.6cqw;">
+            <div style="background: #f5f5f5; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--line);">
+                <img src="web/BRANDBOOK_MARCA/logos/SVG/SVG/casa_simplificada.svg" alt="Volums simplificats" style="max-width: 78%; max-height: 78%;">
+            </div>
+            <div>
+                <div class="num" style="color: var(--gris);">02 — Simplificació</div>
+                <h4>Volum, no detall</h4>
+                <p>Reduïm els elements arquitectònics als seus volums essencials. Les proporcions guanyen pes; els detalls desapareixen.</p>
+            </div>
+        </div>
+        <!-- FASE 3 -->
+        <div style="display: flex; flex-direction: column; gap: 0.6cqw;">
+            <div style="background: #f5f5f5; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--line);">
+                <img src="web/BRANDBOOK_MARCA/logos/SVG/SVG/casa%20desconstruida.svg" alt="Elements primaris" style="max-width: 78%; max-height: 78%;">
+            </div>
+            <div>
+                <div class="num" style="color: var(--gris);">03 — Elements primaris</div>
+                <h4>Forma, no figura</h4>
+                <p>L'edifici desapareix com a representació; les seves formes es converteixen en peces autònomes: cercles, quarts, semicercles, triangles, rectangles.</p>
+            </div>
+        </div>
+        <!-- FASE 4 -->
+        <div style="display: flex; flex-direction: column; gap: 0.6cqw;">
+            <div style="background: #f5f5f5; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--line);">
+                <img src="web/BRANDBOOK_MARCA/logos/SVG/SVG/despiece_2.svg" alt="Sistema generatiu · Despiece" style="max-width: 78%; max-height: 78%;">
+            </div>
+            <div>
+                <div class="num" style="color: var(--gris);">04 — Sistema generatiu</div>
+                <h4>Estructura, no símbol</h4>
+                <p>Les 21 formes es combinen dins una graella 3×3 per generar infinites composicions úniques. <strong>El passat no desapareix: es converteix en estructura.</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num">17</div>
+</div>
+
+<!-- ═══════════════════════ 15 · DIVIDER 05 ═══════════════════════ -->
+<div class="slide divider dark">
+    <h2 class="big">El<br>Logotip</h2>
+    <div class="label">Section 05</div>
+    <div class="slide-num">18</div>
+</div>
+
+<!-- ═══════════════════════ 15 · LOGO VERTICAL ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">05 — El Logotip</span>
+    <h2 style="font-size: 4.2cqw; margin-bottom: 0.7cqw;"><small>Section 05 · Versió Vertical</small>Anatomia del Logotip</h2>
+    <p class="lead" style="margin-bottom: 1.5cqw;">L'isotip a sobre, el naming "AVE MARIA / FUNDACIO" a sota. Una unitat inseparable. Aquesta és la versió d'us <strong>preferent</strong> en aplicacions amb espai vertical suficient. S'utilitza tant en <strong>positiu</strong> sobre fons clar com en <strong>negatiu</strong> sobre fons fosc.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5cqw; height: 32cqw;">
+        <div style="background: #efefef; display: flex; align-items: center; justify-content: center;">
+            <img style="max-width: 45%; max-height: 80%;" src="web/BRANDBOOK_MARCA/logos/SVG/Recurso%201.svg" alt="Logo vertical positiu">
+        </div>
+        <div style="background: var(--black); display: flex; align-items: center; justify-content: center;">
+            <img style="max-width: 45%; max-height: 80%;" src="web/BRANDBOOK_MARCA/logos/SVG/LOGO_PARA%20FONDO_NEGRO.svg" alt="Logo vertical negatiu">
+        </div>
+    </div>
+    <div class="slide-num">19</div>
+</div>
+
+<!-- ═══════════════════════ 16 · LOGO HORITZONTAL ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">05 — El Logotip</span>
+    <h2 style="font-size: 4.2cqw; margin-bottom: 0.7cqw;"><small>Section 05 · Versió Horitzontal</small>Us Secundari</h2>
+    <p class="lead" style="margin-bottom: 1.5cqw;">S'utilitza quan l'espai disponible es més ample que alt: capçaleres, banners, signatures de correu i situacions de format apaisat. L'isotip va a l'esquerra i el naming a la dreta. Disponible en <strong>positiu</strong> sobre fons clar i <strong>negatiu</strong> sobre fons fosc.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5cqw; height: 28cqw;">
+        <div style="background: #efefef; display: flex; align-items: center; justify-content: center;">
+            <img style="max-width: 75%; max-height: 55%;" src="web/BRANDBOOK_MARCA/logos/SVG/logo_horizontal.svg" alt="Logo horitzontal positiu">
+        </div>
+        <div style="background: var(--black); display: flex; align-items: center; justify-content: center;">
+            <img style="max-width: 75%; max-height: 55%;" src="web/BRANDBOOK_MARCA/logos/SVG/logo_horizontal_negativo.svg" alt="Logo horitzontal negatiu">
+        </div>
+    </div>
+    <div class="slide-num">20</div>
+</div>
+
+<!-- ═══════════════════════ 17 · LOGO ISOTIP ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">05 — El Logotip</span>
+    <h2 style="font-size: 4.2cqw; margin-bottom: 0.7cqw;"><small>Section 05 · Només Isotip</small>Ús Terciari</h2>
+    <p class="lead" style="margin-bottom: 1.5cqw;">L'isotip aïllat es pot fer servir en aplicacions on el text "AVE MARIA / FUNDACIÓ" no és necessari o no es llegible: <strong>avatars de xarxes, favicons, icones d'app, segells, patrons</strong>. Disponible en <strong>positiu</strong> sobre fons clar i <strong>negatiu</strong> sobre fons fosc.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5cqw; height: 30cqw;">
+        <div style="background: #efefef; display: flex; align-items: center; justify-content: center;">
+            <img style="max-width: 35%; max-height: 75%;" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Isotip positiu">
+        </div>
+        <div style="background: var(--black); display: flex; align-items: center; justify-content: center;">
+            <img style="max-width: 35%; max-height: 75%;" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Isotip negatiu">
+        </div>
+    </div>
+    <p style="font-size: 0.85cqw; color: var(--gris); margin-top: 0.7cqw; text-align: center;">Mides de referència: 120px · 64px · 32px</p>
+    <div class="slide-num">21</div>
+</div>
+
+<!-- ═══════════════════════ 18 · LOGO MONOCROMA ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">05 — El Logotip</span>
+    <h2 style="font-size: 4.2cqw; margin-bottom: 0.7cqw;"><small>Section 05 · Versió Monocroma</small>Una sola tinta</h2>
+    <p class="lead" style="margin-bottom: 1.5cqw;">Per a aplicacions sobries amb matisos: editorial, documents, informes i senyalètica. Utilitza els <strong>4 tons de gris</strong> de la paleta Monocroma per mantenir la diversitat visual sense color. Disponible en <strong>positiu</strong> i <strong>negatiu</strong>.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5cqw; height: 32cqw;">
+        <div style="background: #efefef; display: flex; align-items: center; justify-content: center;">
+            <img style="max-width: 45%; max-height: 80%;" src="web/BRANDBOOK_MARCA/logos/SVG/GRISES.svg" alt="Logo monocroma positiu">
+        </div>
+        <div style="background: var(--black); display: flex; align-items: center; justify-content: center;">
+            <img style="max-width: 45%; max-height: 80%; filter: invert(1);" src="web/BRANDBOOK_MARCA/logos/SVG/GRISES.svg" alt="Logo monocroma negatiu">
+        </div>
+    </div>
+    <div class="slide-num">22</div>
+</div>
+
+<!-- ═══════════════════════ 19 · DIVIDER 06 ═══════════════════════ -->
+<div class="slide divider verd">
+    <h2 class="big">Vocabulari<br>Visual</h2>
+    <div class="label">Section 06</div>
+    <div class="slide-num">23</div>
+</div>
+
+<!-- ═══════════════════════ 20 · BIBLIOTECA DE FORMES (B/N) ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">06 — Biblioteca de Formes</span>
+    <h2 style="font-size: 4cqw; margin-bottom: 0.7cqw;"><small>Section 06</small>El Vocabulari Visual</h2>
+    <p class="lead" style="margin-bottom: 1.5cqw;">El sistema d'identitat utilitza 21 formes geomètriques pures, derivades del cercle, el quadrat i el triangle. Representen la deconstrucció de la Villa Havemann en els seus volums essencials.</p>
+    <div style="display: flex; align-items: center; justify-content: center; margin: 0.5cqw 0 1cqw;">
+        <img src="web/BRANDBOOK_MARCA/logos/SVG/SVG/despiece.svg" alt="Despiece de les 21 formes del vocabulari visual" style="max-width: 92%; max-height: 38cqw; display: block;">
+    </div>
+    <div class="dark-box" style="margin-top: 1.5cqw;">
+        <h4>Origen de les Formes</h4>
+        <p>Cada forma del vocabulari visual neix de la <span class="hl">deconstrucció de la Villa Havemann</span>: els arcs de les finestres es transformen en semicercles, els volums del sostre en quarts de cercle, les proporcions dels murs en rectangles. El passat no desapareix: es converteix en estructura.</p>
+    </div>
+    <div class="slide-num">24</div>
+</div>
+
+<!-- ═══════════════════════ 21 · DIVIDER 07 ═══════════════════════ -->
+<div class="slide divider rosa">
+    <h2 class="big">Sistema<br>Generatiu</h2>
+    <div class="label">Section 07</div>
+    <div class="slide-num">25</div>
+</div>
+
+<!-- ═══════════════════════ 22 · REGLES + VARIACIONS ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">07 — Sistema Generatiu</span>
+    <h2><small>Section 07</small>Regles de Composició</h2>
+    <p class="lead">La identitat es planteja com un sistema generatiu perquè la realitat de la fundació també ho es: diversa, canviant i en constant transformacio.</p>
+    <div class="grid-2" style="margin-top: 0.7cqw;">
+        <div>
+            <h3 style="font-size: 1.4cqw; margin-bottom: 0.8cqw;">Principis</h3>
+            <div class="card" style="margin-bottom: 0.5cqw;"><h5><span style="opacity: 0.4;">01</span> &nbsp; Graella 3x3</h5><p>L'isotip sempre es compon de 9 cel·les disposades en una graella quadrada de 3x3.</p></div>
+            <div class="card" style="margin-bottom: 0.5cqw;"><h5><span style="opacity: 0.4;">02</span> &nbsp; Un espai en blanc</h5><p>Una cel·la sempre roman en blanc. Es l'espai d'invitacio, el lloc reservat per a qui dalt.</p></div>
+            <div class="card" style="margin-bottom: 0.5cqw;"><h5><span style="opacity: 0.4;">03</span> &nbsp; Paleta oficial</h5><p>Les formes nomes utilitzen colors de la paleta corporativa. No s'admeten colors externs.</p></div>
+            <div class="card" style="margin-bottom: 0.5cqw;"><h5><span style="opacity: 0.4;">04</span> &nbsp; Contrast cromatic</h5><p>Dues cel·les adjacents no han de compartir el mateix color de fons.</p></div>
+            <div class="card"><h5><span style="opacity: 0.4;">05</span> &nbsp; Text justificat</h5><p>El text sempre va sota (o al costat en versió horitzontal), justificat a l'amplada de l'isotip.</p></div>
+        </div>
+        <div>
+            <h3 style="font-size: 1.4cqw; margin-bottom: 0.8cqw;">Variacions</h3>
+            <p style="font-size: 0.85cqw; margin-bottom: 0.8cqw;">Cada composició es única però reconeixible. Aquí es mostren 6 variacions del sistema:</p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7cqw;">
+                <svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#E8863A"/><rect x="100" y="0" width="100" height="100" fill="#2D936C"/><circle cx="150" cy="50" r="50" fill="#F2C14E"/><rect x="200" y="0" width="100" height="100" fill="#5DADE2"/><rect x="0" y="100" width="100" height="100" fill="#FFFFFF"/><rect x="100" y="100" width="100" height="100" fill="#E85D75"/><rect x="200" y="100" width="100" height="100" fill="#F2C14E"/><path d="M200 200 A50 50 0 0 1 300 200Z" fill="#2D936C"/><rect x="0" y="200" width="100" height="100" fill="#D4859A"/><path d="M0 200 L100 200 A100 100 0 0 1 0 300Z" fill="#E8863A"/><rect x="100" y="200" width="100" height="100" fill="#5DADE2"/><path d="M150 200 A50 50 0 0 1 150 300 A50 50 0 0 1 150 200" fill="#E85D75"/><rect x="200" y="200" width="100" height="100" fill="#E8863A"/></svg>
+                <svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#5DADE2"/><path d="M0 0 A50 50 0 0 0 100 0Z" fill="#2D936C"/><rect x="100" y="0" width="100" height="100" fill="#E85D75"/><rect x="200" y="0" width="100" height="100" fill="#F2C14E"/><circle cx="250" cy="50" r="30" fill="#E8863A"/><rect x="0" y="100" width="100" height="100" fill="#E8863A"/><path d="M0 100 A50 50 0 0 1 0 200Z" fill="#F2C14E"/><rect x="100" y="100" width="100" height="100" fill="#2D936C"/><rect x="200" y="100" width="100" height="100" fill="#FFFFFF"/><rect x="0" y="200" width="100" height="100" fill="#F2C14E"/><rect x="100" y="200" width="100" height="100" fill="#D4859A"/><path d="M100 300 A50 50 0 0 1 200 300Z" fill="#5DADE2"/><rect x="200" y="200" width="100" height="100" fill="#E85D75"/><path d="M200 200 L300 200 A100 100 0 0 0 200 300Z" fill="#E8863A"/></svg>
+                <svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#2D936C"/><rect x="100" y="0" width="100" height="100" fill="#F2C14E"/><path d="M100 0 A50 50 0 0 1 100 100Z" fill="#E85D75"/><rect x="200" y="0" width="100" height="100" fill="#E8863A"/><path d="M200 0 L300 0 A100 100 0 0 1 200 100Z" fill="#D4859A"/><rect x="0" y="100" width="100" height="100" fill="#E85D75"/><circle cx="50" cy="150" r="50" fill="#5DADE2"/><rect x="100" y="100" width="100" height="100" fill="#E8863A"/><rect x="200" y="100" width="100" height="100" fill="#F2C14E"/><rect x="0" y="200" width="100" height="100" fill="#FFFFFF"/><rect x="100" y="200" width="100" height="100" fill="#2D936C"/><rect x="125" y="200" width="50" height="100" fill="#E8863A"/><rect x="200" y="200" width="100" height="100" fill="#5DADE2"/><path d="M200 300 A50 50 0 0 1 300 300Z" fill="#F2C14E"/></svg>
+                <svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#F2C14E"/><path d="M0 100 A50 50 0 0 1 100 100Z" fill="#E85D75"/><rect x="100" y="0" width="100" height="100" fill="#FFFFFF"/><rect x="200" y="0" width="100" height="100" fill="#2D936C"/><circle cx="250" cy="50" r="50" fill="#E8863A"/><rect x="0" y="100" width="100" height="100" fill="#E8863A"/><rect x="100" y="100" width="100" height="100" fill="#D4859A"/><path d="M100 100 L200 100 A100 100 0 0 1 100 200Z" fill="#5DADE2"/><rect x="200" y="100" width="100" height="100" fill="#F2C14E"/><rect x="0" y="200" width="100" height="100" fill="#5DADE2"/><path d="M0 200 A50 50 0 0 0 100 200Z" fill="#2D936C"/><rect x="100" y="200" width="100" height="100" fill="#E8863A"/><path d="M150 200 A50 50 0 0 1 150 300 A50 50 0 0 1 150 200" fill="#F2C14E"/><rect x="200" y="200" width="100" height="100" fill="#E85D75"/></svg>
+                <svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#E85D75"/><rect x="100" y="0" width="100" height="100" fill="#E8863A"/><path d="M100 0 L200 0 A100 100 0 0 0 100 100Z" fill="#F2C14E"/><rect x="200" y="0" width="100" height="100" fill="#5DADE2"/><rect x="0" y="100" width="100" height="100" fill="#2D936C"/><path d="M0 100 A50 50 0 0 1 0 200Z" fill="#D4859A"/><rect x="100" y="100" width="100" height="100" fill="#5DADE2"/><circle cx="150" cy="150" r="30" fill="#E85D75"/><rect x="200" y="100" width="100" height="100" fill="#E8863A"/><rect x="0" y="200" width="100" height="100" fill="#F2C14E"/><rect x="100" y="200" width="100" height="100" fill="#E85D75"/><rect x="200" y="200" width="100" height="100" fill="#FFFFFF"/></svg>
+                <svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#D4859A"/><ellipse cx="50" cy="50" rx="22" ry="42" fill="#E85D75"/><rect x="100" y="0" width="100" height="100" fill="#E8863A"/><rect x="200" y="0" width="100" height="100" fill="#FFFFFF"/><rect x="0" y="100" width="100" height="100" fill="#F2C14E"/><rect x="100" y="100" width="100" height="100" fill="#5DADE2"/><path d="M200 100 A50 50 0 0 0 200 200Z" fill="#E8863A"/><rect x="200" y="100" width="100" height="100" fill="#2D936C"/><circle cx="250" cy="150" r="50" fill="#F2C14E"/><rect x="0" y="200" width="100" height="100" fill="#E85D75"/><path d="M0 300 L0 200 A100 100 0 0 1 100 300Z" fill="#5DADE2"/><rect x="100" y="200" width="100" height="100" fill="#2D936C"/><rect x="200" y="200" width="100" height="100" fill="#E8863A"/><path d="M200 300 A50 50 0 0 1 300 300Z" fill="#D4859A"/></svg>
+            </div>
+            <p style="font-size: 0.65cqw; color: var(--gris); margin-top: 0.6cqw;">Cada composició es única, però totes comparteixen el mateix ADN visual.</p>
+        </div>
+    </div>
+    <div class="slide-num">26</div>
+</div>
+
+<!-- ═══════════════════════ 23 · DIVIDER 08 ═══════════════════════ -->
+<div class="slide divider dark">
+    <h2 class="big">Espai i<br>Mida</h2>
+    <div class="label">Section 08</div>
+    <div class="slide-num">27</div>
+</div>
+
+<!-- ═══════════════════════ 24 · CLEARSPACE VERTICAL ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">08 — Espai i Mida</span>
+    <h2 style="font-size: 4.2cqw; margin-bottom: 0.7cqw;"><small>Section 08 · Versió Vertical</small>Clearspace</h2>
+    <p class="lead" style="margin-bottom: 1.5cqw;">Per garantir la correcta lectura i impacte del logotip, cal respectar sempre un espai de protecció al seu voltant.</p>
+    <div class="grid-2" style="align-items: center; height: 32cqw;">
+        <div>
+            <h3 style="font-size: 1.5cqw; margin-bottom: 0.5cqw;">Area de Protecció</h3>
+            <p style="font-size: 0.95cqw; line-height: 1.55; margin-bottom: 1.2cqw;">L'espai de respecte mínim al voltant del logotip vertical equival a <strong>1 cel·la de la graella</strong> de l'isotip per cada banda. Cap altre element grafic, text o imatge ha d'envair aquesta zona.</p>
+            <h3 style="font-size: 1.5cqw; margin-bottom: 0.5cqw;">Mida Mínima</h3>
+            <p style="font-size: 0.95cqw; line-height: 1.55;"><strong>25mm</strong> d'amplada en impressió · <strong>100px</strong> en digital. Per sota d'aquestes mides el text "AVE MARIA / FUNDACIO" perd llegibilitat.</p>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+            <img style="max-width: 41.25%; max-height: 52.25%;" src="web/BRANDBOOK_MARCA/logos/SVG/Clearspace_vertical.svg" alt="Clearspace logo vertical">
+        </div>
+    </div>
+    <div class="slide-num">28</div>
+</div>
+
+<!-- ═══════════════════════ 25 · CLEARSPACE HORITZONTAL ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">08 — Espai i Mida</span>
+    <h2 style="font-size: 4.2cqw; margin-bottom: 0.7cqw;"><small>Section 08 · Versió Horitzontal</small>Clearspace</h2>
+    <p class="lead" style="margin-bottom: 1.5cqw;">L'espai de protecció garanteix que el logotip respiri en qualsevol composició i que la seva forca visual no quedi diluida per altres elements.</p>
+    <div class="grid-2" style="align-items: center; height: 32cqw;">
+        <div>
+            <h3 style="font-size: 1.5cqw; margin-bottom: 0.5cqw;">Area de Protecció</h3>
+            <p style="font-size: 0.95cqw; line-height: 1.55; margin-bottom: 1.2cqw;">En la versió horitzontal, la regla es la mateixa: <strong>1 cel·la de la graella</strong> de respecte al voltant del bloc complet (isotip + paraules). El logo manté la seva integritat com a unitat.</p>
+            <h3 style="font-size: 1.5cqw; margin-bottom: 0.5cqw;">Mida Mínima</h3>
+            <p style="font-size: 0.95cqw; line-height: 1.55;"><strong>40mm</strong> d'amplada en impressió · <strong>160px</strong> en digital. La versió horitzontal demana més amplada per mantenir la legibilitat del text.</p>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+            <img style="max-width: 85%; max-height: 70%;" src="web/BRANDBOOK_MARCA/logos/SVG/Clearspace_horizontal.svg" alt="Clearspace logo horitzontal">
+        </div>
+    </div>
+    <div class="slide-num">29</div>
+</div>
+
+<!-- ═══════════════════════ 26 · CLEARSPACE IMAGOTIP ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">08 — Espai i Mida</span>
+    <h2 style="font-size: 4.2cqw; margin-bottom: 0.7cqw;"><small>Section 08 · Imagotip Sol</small>Clearspace</h2>
+    <p class="lead" style="margin-bottom: 1.5cqw;">Quan l'isotip s'utilitza aillat —avatars, favicons, segells, icones d'app— també necessita el seu espai propi.</p>
+    <div class="grid-2" style="align-items: center; height: 32cqw;">
+        <div>
+            <h3 style="font-size: 1.4cqw; margin-bottom: 0.4cqw;">Area de Protecció</h3>
+            <p style="font-size: 0.9cqw; line-height: 1.5; margin-bottom: 0.9cqw;">Al voltant de l'isotip aillat, deixar un mínim equivalent a <strong>1/3 de la seva amplada</strong>. Aquest espai protegeix la lectura de la graella 3x3 i evita que les formes es confonguin amb altres elements visuals.</p>
+            <h3 style="font-size: 1.4cqw; margin-bottom: 0.4cqw;">Mida Mínima</h3>
+            <p style="font-size: 0.9cqw; line-height: 1.5; margin-bottom: 0.9cqw;"><strong>8mm</strong> en impressió · <strong>24px</strong> en digital. A mides molt petites, els detalls de les formes interiors es perden.</p>
+            <h3 style="font-size: 1.4cqw; margin-bottom: 0.4cqw;">Co-branding</h3>
+            <p style="font-size: 0.9cqw; line-height: 1.5;">Junt amb el logotip d'una altra entitat: <strong>2x</strong> de separacio. El logotip associat no ha de superar l'alcada de l'isotip.</p>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+            <img style="max-width: 38.5%; max-height: 52.25%;" src="web/BRANDBOOK_MARCA/logos/SVG/Clearspace_imagotipo%20.svg" alt="Clearspace imagotip">
+        </div>
+    </div>
+    <div class="slide-num">30</div>
+</div>
+
+<!-- ═══════════════════════ 25 · DIVIDER 09 ═══════════════════════ -->
+<div class="slide divider coral">
+    <h2 class="big">Usos<br>Incorrectes</h2>
+    <div class="label">Section 09</div>
+    <div class="slide-num">31</div>
+</div>
+
+<!-- ═══════════════════════ 26 · DONTS ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">09 — Usos Incorrectes</span>
+    <h2 style="font-size: 4cqw; margin-bottom: 0.7cqw;"><small>Section 09</small>El que Mai s'ha de Fer</h2>
+    <p class="lead" style="margin-bottom: 1.5cqw;">Per protegir la integritat de la marca, es fonamental evitar les seguents manipulacions del logotip.</p>
+    <div class="dont-grid">
+        <div class="dont-cell"><div class="preview"><img style="opacity: 0.3;" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundació"></div><div class="desc"><span class="tag">Incorrecte</span><h5>Reduir l'opacitat</h5><p>Els colors han de mantenir sempre la seva vivacitat. No aplicar transparencies.</p></div></div>
+        <div class="dont-cell"><div class="preview"><img style="transform: skewX(-12deg);" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundació"></div><div class="desc"><span class="tag">Incorrecte</span><h5>Deformar o inclinar</h5><p>No modificar les proporcions, rotar, estirar o inclinar l'isotip.</p></div></div>
+        <div class="dont-cell"><div class="preview"><svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#ff0000"/><rect x="100" y="0" width="100" height="100" fill="#00ff00"/><rect x="200" y="0" width="100" height="100" fill="#0000ff"/><rect x="0" y="100" width="100" height="100" fill="#ffff00"/><rect x="100" y="100" width="100" height="100" fill="#FFFFFF"/><rect x="200" y="100" width="100" height="100" fill="#ff00ff"/><rect x="0" y="200" width="100" height="100" fill="#00ffff"/><rect x="100" y="200" width="100" height="100" fill="#ff8800"/><rect x="200" y="200" width="100" height="100" fill="#8800ff"/></svg></div><div class="desc"><span class="tag">Incorrecte</span><h5>Colors fora de paleta</h5><p>Nomes s'han d'utilitzar els colors de les paletes oficials. Mai colors arbitraris.</p></div></div>
+        <div class="dont-cell"><div class="preview"><img style="filter: drop-shadow(8px 8px 12px rgba(0,0,0,0.4));" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundació"></div><div class="desc"><span class="tag">Incorrecte</span><h5>Afegir ombres o efectes</h5><p>No afegir ombres, brillantors, contorns o qualsevol efecte visual al logotip.</p></div></div>
+        <div class="dont-cell"><div class="preview"><svg viewBox="0 0 200 200"><rect x="0" y="0" width="100" height="100" fill="#E8863A"/><rect x="100" y="0" width="100" height="100" fill="#5DADE2"/><rect x="0" y="100" width="100" height="100" fill="#F2C14E"/><rect x="100" y="100" width="100" height="100" fill="#2D936C"/></svg></div><div class="desc"><span class="tag">Incorrecte</span><h5>Canviar la graella</h5><p>La graella sempre es de 3x3. No reduir a 2x2 ni ampliar a 4x4 o altres formats.</p></div></div>
+        <div class="dont-cell"><div class="preview"><svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#E8863A"/><rect x="100" y="0" width="100" height="100" fill="#5DADE2"/><rect x="200" y="0" width="100" height="100" fill="#2D936C"/><rect x="0" y="100" width="100" height="100" fill="#F2C14E"/><rect x="100" y="100" width="100" height="100" fill="#E85D75"/><rect x="200" y="100" width="100" height="100" fill="#D4859A"/><rect x="0" y="200" width="100" height="100" fill="#5DADE2"/><rect x="100" y="200" width="100" height="100" fill="#E8863A"/><rect x="200" y="200" width="100" height="100" fill="#F2C14E"/></svg></div><div class="desc"><span class="tag">Incorrecte</span><h5>Eliminar l'espai en blanc</h5><p>Sempre ha d'haver una cel·la buida. Es un element conceptual irrenunciable de la identitat.</p></div></div>
+        <div class="dont-cell"><div class="preview"><img style="transform: rotate(45deg) scale(0.7);" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundació"></div><div class="desc"><span class="tag">Incorrecte</span><h5>Rotar l'isotip</h5><p>L'isotip sempre s'ha de mostrar en la seva orientació original, sense cap rotacio.</p></div></div>
+        <div class="dont-cell"><div class="preview"><svg viewBox="0 0 300 300"><defs><linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#E8863A"/><stop offset="50%" style="stop-color:#E85D75"/><stop offset="100%" style="stop-color:#5DADE2"/></linearGradient></defs><rect width="300" height="300" fill="url(#bg1)"/><rect x="100" y="100" width="100" height="100" fill="#FFFFFF"/></svg></div><div class="desc"><span class="tag">Incorrecte</span><h5>Degradats a les cel·les</h5><p>Les cel·les han de ser de color pla. No aplicar degradats ni textures dins les formes.</p></div></div>
+    </div>
+    <div class="slide-num">32</div>
+</div>
+
+<!-- ═══════════════════════ 27 · DIVIDER 10 ═══════════════════════ -->
+<div class="slide divider bosc">
+    <h2 class="big">Paleta<br>de Colors</h2>
+    <div class="label">Section 10</div>
+    <div class="slide-num">33</div>
+</div>
+
+<!-- ═══════════════════════ 28 · BOSC ═══════════════════════ -->
+<div class="slide palette">
+    <div class="palette-header">
+        <h2><small>10 · Paleta Principal</small>Bosc</h2>
+        <span class="tag-r">Section 10</span>
+    </div>
+    <div class="palette-block">
+        <div class="top">
+            <div class="palette-cell dark" style="background: #1a1a1a;">
+                <div class="nm">Charcoal</div>
+                <div class="cd">HEX #1A1A1A<br>RGB 26 / 26 / 26<br>CMYK 0 / 0 / 0 / 95</div>
+            </div>
+            <div class="palette-cell light bordered" style="background: #FFFFFF;">
+                <div class="nm">Blanc</div>
+                <div class="cd">HEX #FFFFFF<br>RGB 255 / 255 / 255<br>CMYK 0 / 0 / 0 / 0</div>
+            </div>
+        </div>
+        <div class="bottom cols-6">
+            <div class="palette-cell dark" style="background: #145A32;">
+                <div class="nm">Verd Profund</div>
+                <div class="cd">HEX #145A32<br>RGB 20 / 90 / 50<br>PANTONE 357 C</div>
+            </div>
+            <div class="palette-cell dark" style="background: #1E8449;">
+                <div class="nm">Verd Fosc</div>
+                <div class="cd">HEX #1E8449<br>RGB 30 / 132 / 73<br>PANTONE 356 C</div>
+            </div>
+            <div class="palette-cell dark" style="background: #27AE60;">
+                <div class="nm">Verd Mig</div>
+                <div class="cd">HEX #27AE60<br>RGB 39 / 174 / 96<br>PANTONE 7481 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #2ECC71;">
+                <div class="nm">Verd Viu</div>
+                <div class="cd">HEX #2ECC71<br>RGB 46 / 204 / 113<br>PANTONE 354 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #82E0AA;">
+                <div class="nm">Verd Clar</div>
+                <div class="cd">HEX #82E0AA<br>RGB 130 / 224 / 170<br>PANTONE 352 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #ABEBC6;">
+                <div class="nm">Verd Pastel</div>
+                <div class="cd">HEX #ABEBC6<br>RGB 171 / 235 / 198<br>PANTONE 351 C</div>
+            </div>
+        </div>
+    </div>
+    <div class="palette-num">34</div>
+</div>
+
+<!-- ═══════════════════════ 29 · COLORS ═══════════════════════ -->
+<div class="slide palette">
+    <div class="palette-header">
+        <h2><small>10 · Paleta Alternativa</small>Colors</h2>
+        <span class="tag-r">Section 10</span>
+    </div>
+    <div class="palette-block" style="grid-template-rows: 1fr 1fr 0.22fr;">
+        <div class="top">
+            <div class="palette-cell dark" style="background: #1a1a1a;">
+                <div class="nm">Charcoal</div>
+                <div class="cd">HEX #1A1A1A<br>RGB 26 / 26 / 26<br>CMYK 0 / 0 / 0 / 95</div>
+            </div>
+            <div class="palette-cell light bordered" style="background: #FFFFFF;">
+                <div class="nm">Blanc</div>
+                <div class="cd">HEX #FFFFFF<br>RGB 255 / 255 / 255<br>CMYK 0 / 0 / 0 / 0</div>
+            </div>
+        </div>
+        <div class="bottom cols-6">
+            <div class="palette-cell light" style="background: #E8863A;">
+                <div class="nm">Taronja</div>
+                <div class="cd">HEX #E8863A<br>RGB 232 / 134 / 58<br>PANTONE 716 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #E85D75;">
+                <div class="nm">Coral</div>
+                <div class="cd">HEX #E85D75<br>RGB 232 / 93 / 117<br>PANTONE 1925 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #F2C14E;">
+                <div class="nm">Groc</div>
+                <div class="cd">HEX #F2C14E<br>RGB 242 / 193 / 78<br>PANTONE 142 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #5DADE2;">
+                <div class="nm">Blau</div>
+                <div class="cd">HEX #5DADE2<br>RGB 93 / 173 / 226<br>PANTONE 2925 C</div>
+            </div>
+            <div class="palette-cell dark" style="background: #2D936C;">
+                <div class="nm">Verd</div>
+                <div class="cd">HEX #2D936C<br>RGB 45 / 147 / 108<br>PANTONE 7724 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #D4859A;">
+                <div class="nm">Rosa Suau</div>
+                <div class="cd">HEX #D4859A<br>RGB 212 / 133 / 154<br>PANTONE 700 C</div>
+            </div>
+        </div>
+        <div style="background: #f7f7f7; padding: 1.2cqw 2cqw; display: flex; align-items: center; gap: 1.4cqw; border-top: 1px solid var(--line);">
+            <span style="display: block; width: 3cqw; height: 3cqw; background: #2c2c2c; flex-shrink: 0;" aria-hidden="true"></span>
+            <div style="flex: 1;">
+                <div style="font-size: 0.7cqw; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2c2c2c; margin-bottom: 0.35cqw;">Nota &middot; Color del Naming &middot; #2C2C2C</div>
+                <p style="font-size: 0.78cqw; line-height: 1.55; color: #2c2c2c; max-width: 70cqw;">El text del logotip ("AVE MARIA / FUNDACIÓ") s'imprimeix sempre en <strong>#2C2C2C</strong>, no en negre pur ni en el Charcoal de la paleta. Aquest gris molt fosc suavitza el contrast i transmet proximitat, coherent amb els valors <strong>acollidor</strong> i <strong>proper</strong> de la marca.</p>
+            </div>
+        </div>
+    </div>
+    <div class="palette-num">35</div>
+</div>
+
+<!-- ═══════════════════════ 30 · MONOCROMA ═══════════════════════ -->
+<div class="slide palette">
+    <div class="palette-header">
+        <h2><small>10 · Paleta Alternativa</small>Monocroma</h2>
+        <span class="tag-r">Section 10</span>
+    </div>
+    <div class="palette-block">
+        <div class="top">
+            <div class="palette-cell dark" style="background: #1a1a1a;">
+                <div class="nm">Charcoal</div>
+                <div class="cd">HEX #1A1A1A<br>RGB 26 / 26 / 26<br>CMYK 0 / 0 / 0 / 95</div>
+            </div>
+            <div class="palette-cell light bordered" style="background: #FFFFFF;">
+                <div class="nm">Blanc</div>
+                <div class="cd">HEX #FFFFFF<br>RGB 255 / 255 / 255<br>CMYK 0 / 0 / 0 / 0</div>
+            </div>
+        </div>
+        <div class="bottom cols-4">
+            <div class="palette-cell dark" style="background: #1a1a1a;">
+                <div class="nm">Tinta</div>
+                <div class="cd">HEX #1A1A1A<br>RGB 26 / 26 / 26<br>PANTONE Black 6 C</div>
+            </div>
+            <div class="palette-cell dark" style="background: #595959;">
+                <div class="nm">Gris Fosc</div>
+                <div class="cd">HEX #595959<br>RGB 89 / 89 / 89<br>PANTONE Cool Gray 11 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #999999;">
+                <div class="nm">Gris Mig</div>
+                <div class="cd">HEX #999999<br>RGB 153 / 153 / 153<br>PANTONE Cool Gray 7 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #cccccc;">
+                <div class="nm">Gris Clar</div>
+                <div class="cd">HEX #CCCCCC<br>RGB 204 / 204 / 204<br>PANTONE Cool Gray 4 C</div>
+            </div>
+        </div>
+    </div>
+    <div class="palette-num">36</div>
+</div>
+
+<!-- ═══════════════════════ 31 · PROPORCIO CROMATICA + AVIS ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">10 — Paleta de Colors</span>
+    <h2><small>Section 10</small>Proporció Cromatica</h2>
+    <p class="lead">Com es distribueixen els colors en una aplicació, més enlla del propi isotip.</p>
+    <div style="display: grid; grid-template-columns: 60fr 30fr 10fr; height: 18cqw; margin-top: 1cqw; border: 1px solid var(--black);">
+        <div style="background: #FFFFFF; padding: 1.5cqw; display: flex; flex-direction: column; justify-content: flex-end; border-right: 1px solid var(--black);">
+            <div style="font-size: 3.5cqw; font-weight: 800; line-height: 1; margin-bottom: 0.4cqw;">60%</div>
+            <div style="font-size: 0.95cqw; font-weight: 700;">Neutres</div>
+            <div style="font-size: 0.75cqw; color: var(--gris); margin-top: 0.2cqw;">Blanc, gris clar &middot; fons</div>
+        </div>
+        <div style="background: #1a1a1a; color: var(--white); padding: 1.5cqw; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-size: 3.5cqw; font-weight: 800; line-height: 1; margin-bottom: 0.4cqw;">30%</div>
+            <div style="font-size: 0.95cqw; font-weight: 700;">Color principal</div>
+            <div style="font-size: 0.75cqw; opacity: 0.6; margin-top: 0.2cqw;">Taronja, blau o verd &middot; elements destacats</div>
+        </div>
+        <div style="background: #2D936C; color: var(--white); padding: 1.5cqw; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-size: 3.5cqw; font-weight: 800; line-height: 1; margin-bottom: 0.4cqw;">10%</div>
+            <div style="font-size: 0.95cqw; font-weight: 700;">Accent</div>
+            <div style="font-size: 0.7cqw; opacity: 0.75; margin-top: 0.2cqw;">Coral, groc, rosa &middot; detalls</div>
+        </div>
+    </div>
+    <p style="font-size: 0.85cqw; color: var(--gris); margin-top: 1cqw;">Dins l'isotip, en canvi, tots els colors de la paleta seleccionada tenen el mateix pes — el sistema generatiu garanteix l'equilibri.</p>
+    <div class="avis" style="margin-top: 2cqw;"><strong>⚠ Avis sobre els codis PANTONE</strong> — Els codis PANTONE indicats són <strong>equivalencies aproximades</strong> calculades a partir dels valors HEX i RGB. Les pantalles digitals (RGB) no reprodueixen fidelment els colors PANTONE, que son tintes fisiques. Per a impressió professional critica (offset, serigrafia, packaging), es recomana <strong>contrastar sempre els colors amb una guia PANTONE Color Bridge fisica</strong> abans de validar la produccio final.</div>
+    <div class="slide-num">37</div>
+</div>
+
+<!-- ═══════════════════════ 32 · DIVIDER 11 ═══════════════════════ -->
+<div class="slide divider groc">
+    <h2 class="big">Tipografia</h2>
+    <div class="label">Section 11</div>
+    <div class="slide-num">38</div>
+</div>
+
+<!-- ═══════════════════════ 33 · MONTSERRAT ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">11 — Tipografia</span>
+    <h2><small>Section 11</small>Montserrat</h2>
+    <p class="lead" style="margin-bottom: 1.4cqw;">Montserrat és la tipografia corporativa de la Fundació Ave Maria. Una sans-serif geomètrica, moderna i altament llegible que reflecteix els valors de claredat, accessibilitat i contemporaneïtat.</p>
+
+    <!-- Specimen 76pt · Titulars -->
+    <div style="display: flex; align-items: flex-start; gap: 1.6cqw; padding: 0.8cqw 0; border-top: 1px solid var(--line);">
+        <div style="width: 7%; padding-top: 0.8cqw; flex-shrink: 0;">
+            <p style="font-size: 0.75cqw; font-weight: 700; line-height: 1.4;">76/80pt</p>
+        </div>
+        <div style="flex: 1;">
+            <p style="font-size: 4.2cqw; font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0;">Els titulars sempre en <strong>Montserrat Medium</strong>. Subtítols en Regular.</p>
+        </div>
+    </div>
+
+    <!-- Specimen 44pt · Destacats -->
+    <div style="display: flex; align-items: flex-start; gap: 1.6cqw; padding: 0.8cqw 0; border-top: 1px solid var(--line);">
+        <div style="width: 7%; padding-top: 0.6cqw; flex-shrink: 0;">
+            <p style="font-size: 0.75cqw; font-weight: 700; line-height: 1.4;">44/48pt</p>
+        </div>
+        <div style="flex: 1;">
+            <p style="font-size: 2.4cqw; font-weight: 400; line-height: 1.1; letter-spacing: -0.01em; margin: 0;">Per a informació destacada, Regular amb <strong>Medium per als èmfasis</strong>.</p>
+        </div>
+    </div>
+
+    <!-- Specimen 22pt · Cos de text -->
+    <div style="display: flex; align-items: flex-start; gap: 1.6cqw; padding: 0.8cqw 0; border-top: 1px solid var(--line);">
+        <div style="width: 7%; padding-top: 0.4cqw; flex-shrink: 0;">
+            <p style="font-size: 0.75cqw; font-weight: 700; line-height: 1.4;">22/24pt</p>
+        </div>
+        <div style="flex: 1;">
+            <p style="font-size: 1.45cqw; font-weight: 400; line-height: 1.35; margin: 0;">El cos de text sempre va en Montserrat Regular per a una lectura clara fins i tot a mides petites.</p>
+        </div>
+    </div>
+
+    <!-- Specimen 14pt · Footnotes -->
+    <div style="display: flex; align-items: flex-start; gap: 1.6cqw; padding: 0.8cqw 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+        <div style="width: 7%; padding-top: 0.2cqw; flex-shrink: 0;">
+            <p style="font-size: 0.75cqw; font-weight: 700; line-height: 1.4;">14/16pt</p>
+        </div>
+        <div style="flex: 1;">
+            <p style="font-size: 0.95cqw; font-weight: 400; line-height: 1.4; margin: 0; color: var(--gris);">Montserrat Regular també per a les notes al peu i metadades.</p>
+        </div>
+    </div>
+
+    <div class="slide-num">39</div>
+</div>
+
+<!-- ═══════════════════════ 34 · DIVIDER 12 ═══════════════════════ -->
+<div class="slide divider rosa">
+    <h2 class="big">Aplicacions</h2>
+    <div class="label">Section 12</div>
+    <div class="slide-num">40</div>
+</div>
+
+<!-- ═══════════════════════ 35 · TARGETA + CARTA ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">12 — Aplicacions</span>
+    <h2 style="font-size: 4cqw; margin-bottom: 0.8cqw;"><small>Section 12</small>Exemples d'Us</h2>
+    <p class="lead">La identitat generativa permet crear materials unics per a cada ocasio, mantenint sempre la coherència de marca.</p>
+    <h3 style="font-size: 1.4cqw; font-weight: 700; margin: 1cqw 0 0.6cqw;">Targeta de Visita · Paper de Carta</h3>
+    <div style="display: flex; gap: 2cqw; align-items: center; justify-content: center; margin-bottom: 1cqw;">
+        <svg viewBox="0 0 400 240" style="width: 24%; filter: drop-shadow(0 0.4cqw 1cqw rgba(0,0,0,0.12));">
+            <rect width="400" height="240" fill="white"/>
+            <image x="32" y="32" width="220" height="67" href="web/BRANDBOOK_MARCA/logos/SVG/logo_horizontal.svg"/>
+            <text x="32" y="160" font-family="Montserrat" font-weight="600" font-size="11" fill="#1a1a1a">Maria Garcia Lopez</text>
+            <text x="32" y="176" font-family="Montserrat" font-weight="400" font-size="9" fill="#666">Directora de Comunicació</text>
+            <text x="32" y="200" font-family="Montserrat" font-weight="400" font-size="8" fill="#999">m.garcia@avemaria.cat</text>
+            <text x="32" y="214" font-family="Montserrat" font-weight="400" font-size="8" fill="#999">+34 938 94 XX XX</text>
+        </svg>
+        <svg viewBox="0 0 400 240" style="width: 24%; filter: drop-shadow(0 0.4cqw 1cqw rgba(0,0,0,0.12));">
+            <rect width="400" height="240" fill="#1a1a1a"/>
+            <image x="125" y="40" width="150" height="160" href="web/BRANDBOOK_MARCA/logos/SVG/LOGO_PARA%20FONDO_NEGRO.svg"/>
+        </svg>
+        <svg viewBox="0 0 210 297" style="width: 13%; filter: drop-shadow(0 0.4cqw 1cqw rgba(0,0,0,0.12));">
+            <rect width="210" height="297" fill="white"/>
+            <image x="20" y="20" width="120" height="36" href="web/BRANDBOOK_MARCA/logos/SVG/logo_horizontal.svg"/>
+            <rect x="20" y="70" width="120" height="2" fill="#eee"/><rect x="20" y="78" width="170" height="2" fill="#eee"/><rect x="20" y="86" width="150" height="2" fill="#eee"/><rect x="20" y="94" width="160" height="2" fill="#eee"/><rect x="20" y="102" width="80" height="2" fill="#eee"/>
+            <rect x="20" y="118" width="170" height="2" fill="#eee"/><rect x="20" y="126" width="165" height="2" fill="#eee"/><rect x="20" y="134" width="140" height="2" fill="#eee"/><rect x="20" y="142" width="170" height="2" fill="#eee"/><rect x="20" y="150" width="100" height="2" fill="#eee"/>
+            <line x1="20" y1="270" x2="190" y2="270" stroke="#eee" stroke-width="0.5"/>
+            <text x="20" y="278" font-family="Montserrat" font-size="3" fill="#999">Fundació Ave Maria de Sitges &middot; Carrer de les Parellades, 52 &middot; 08870 Sitges</text>
+        </svg>
+    </div>
+    <p style="font-size: 0.75cqw; color: var(--gris); text-align: center;">Targeta de visita (anvers · revers) · Paper de carta A4</p>
+    <div class="slide-num">41</div>
+</div>
+
+<!-- ═══════════════════════ 36 · APLICACIONS REALS ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">12 — Aplicacions</span>
+    <h2 style="font-size: 3.5cqw; margin-bottom: 0.7cqw;">Aplicacions Reals</h2>
+    <p class="lead" style="margin-bottom: 1cqw;">La identitat passa de la pantalla al món físic. Tres exemples reals: un vehicle corporatiu, el vestuari de l'equip i un pin de marca.</p>
+    <div class="grid-2" style="grid-auto-rows: 1fr; gap: 1.3cqw; margin-top: 0.5cqw;">
+        <div style="display: flex; flex-direction: column;">
+            <div style="background: #f5f5f5; border: 1px solid var(--line); aspect-ratio: 1/1; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                <img src="web/BRANDBOOK_MARCA/aplicacions/vehicle.png" alt="Vehicle corporatiu" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#999;font-size:0.9cqw;padding:2cqw;&quot;>Falta la imatge<br><code style=&quot;font-size:0.7cqw;&quot;>web/BRANDBOOK_MARCA/aplicacions/vehicle.png</code></div>';">
+            </div>
+            <div style="padding: 0.8cqw 0 0;">
+                <h4 style="font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.3cqw;">Vehicle Corporatiu</h4>
+                <p style="font-size: 0.72cqw; line-height: 1.5; color: var(--gris);">Les formes del vocabulari visual s'amplien a gran escala creant un patró envoltant. El logotip horitzontal en negre s'integra dins una zona neutra per garantir la legibilitat.</p>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+            <div style="background: #f5f5f5; border: 1px solid var(--line); aspect-ratio: 1/1; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                <img src="web/BRANDBOOK_MARCA/aplicacions/polo.png" alt="Vestuari · Polo amb logotip brodat" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#999;font-size:0.9cqw;padding:2cqw;&quot;>Falta la imatge<br><code style=&quot;font-size:0.7cqw;&quot;>web/BRANDBOOK_MARCA/aplicacions/polo.png</code></div>';">
+            </div>
+            <div style="padding: 0.8cqw 0 0;">
+                <h4 style="font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.3cqw;">Vestuari · Polo Equip</h4>
+                <p style="font-size: 0.72cqw; line-height: 1.5; color: var(--gris);">Logotip vertical brodat al pit esquerre del polo blanc, en mida petita per a una presència discreta i elegant. L'isotip a color manté l'energia de la marca.</p>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+            <div style="background: #f5f5f5; border: 1px solid var(--line); aspect-ratio: 1/1; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                <img src="web/BRANDBOOK_MARCA/aplicacions/pin.png" alt="Pin / insígnia de marca" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#999;font-size:0.9cqw;padding:2cqw;&quot;>Falta la imatge<br><code style=&quot;font-size:0.7cqw;&quot;>web/BRANDBOOK_MARCA/aplicacions/pin.png</code></div>';">
+            </div>
+            <div style="padding: 0.8cqw 0 0;">
+                <h4 style="font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.3cqw;">Pin · Insígnia</h4>
+                <p style="font-size: 0.72cqw; line-height: 1.5; color: var(--gris);">El sistema generatiu condensat en una peça quadrada de merchandising. Una variació única de l'isotip esmaltat, amb la cel·la blanca que recorda l'invitació a qui arriba.</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num">42</div>
+</div>
+
+<!-- ═══════════════════════ 37 · CLOSING ═══════════════════════ -->
+<div class="slide statement dark">
+    <h2 class="headline">Un lloc per<br>a tothom.</h2>
+    <p class="body">Cada aplicació de la identitat és una oportunitat de comunicar els nostres valors. L'espai en blanc sempre present ens recorda que la Fundació està oberta a noves persones, noves idees i nous projectes. La identitat, com la propia organitzacio, està viva i en constant evolució.</p>
+    <div style="position: absolute; bottom: 4%; left: 3.1%; font-size: 0.75cqw; opacity: 0.6; letter-spacing: 0.06em;">AVE MARIA FUNDACIO · Manual d'Identitat Visual · v2.0 · Marc 2026 · Sitges, Catalunya</div>
+    <div class="slide-num">43</div>
+</div>
+
+</div>
+
+<div class="deck-info">37 slides · 1920×1080 · Ave Maria Fundació Brand Guidelines v2.0</div>
+
+<script>
+// CAT → ES dictionary (complet, ~429 entrades)
+const ca2es = {
+  "Ave Maria Fundació — Brand Guidelines": "Ave María Fundación — Brand Guidelines",
+  "CAT": "CAT",
+  "CAST": "CAST",
+  "Una identitat viva per a un espai on tot passa. Sistema d'identitat visual generatiu per a la Fundació Ave Maria de Sitges.": "Una identidad viva para un espacio donde todo ocurre. Sistema de identidad visual generativo para la Fundación Ave María de Sitges.",
+  "Brand": "Brand",
+  "Guidelines": "Guidelines",
+  "Versió 2.0": "Versión 2.0",
+  "Marc 2026": "Marzo 2026",
+  "Sitges, Catalunya": "Sitges, Cataluña",
+  "Manual": "Manual",
+  "d'Identitat": "de Identidad",
+  "Visual.": "Visual.",
+  "Fundació": "Fundación",
+  "Missió": "Misión",
+  "i Valors": "y Valores",
+  "Veu": "Voz",
+  "de Marca": "de Marca",
+  "Concepte": "Concepto",
+  "Creatiu": "Creativo",
+  "Logotip": "Logotipo",
+  "Vocabulari": "Vocabulario",
+  "Visual": "Visual",
+  "Sistema": "Sistema",
+  "Generatiu": "Generativo",
+  "Espai i": "Espacio y",
+  "Mida": "Tamaño",
+  "Usos": "Usos",
+  "Incorrectes": "Incorrectos",
+  "Paleta": "Paleta",
+  "de Colors": "de Colores",
+  "Tipografia": "Tipografía",
+  "Aplicacions": "Aplicaciones",
+  "Section 01": "Sección 01",
+  "Section 02": "Sección 02",
+  "Section 03": "Sección 03",
+  "Section 04": "Sección 04",
+  "Section 05": "Sección 05",
+  "Section 06": "Sección 06",
+  "Section 07": "Sección 07",
+  "Section 08": "Sección 08",
+  "Section 09": "Sección 09",
+  "Section 10": "Sección 10",
+  "Section 11": "Sección 11",
+  "Section 12": "Sección 12",
+  "Section 03 · Stages": "Sección 03 · Stages",
+  "Section 03 · Recorregut": "Sección 03 · Recorrido",
+  "Section 03 · Aplicacions del to": "Sección 03 · Aplicaciones del tono",
+  "Section 03 · Claims i Frases": "Sección 03 · Claims y Frases",
+  "Section 04 · Evolució": "Sección 04 · Evolución",
+  "01 — La Fundació": "01 — La Fundación",
+  "02 — Missió i Valors": "02 — Misión y Valores",
+  "03 — Veu de Marca": "03 — Voz de Marca",
+  "04 — Concepte Creatiu": "04 — Concepto Creativo",
+  "05 — El Logotip": "05 — El Logotipo",
+  "06 — Biblioteca de Formes": "06 — Biblioteca de Formas",
+  "07 — Sistema Generatiu": "07 — Sistema Generativo",
+  "08 — Espai de Proteccio i Mida Minima": "08 — Espacio de Protección y Tamaño Mínimo",
+  "09 — Usos Incorrectes": "09 — Usos Incorrectos",
+  "10 — Paleta de Colors": "10 — Paleta de Colores",
+  "11 — Tipografia": "11 — Tipografía",
+  "12 — Aplicacions": "12 — Aplicaciones",
+  "Fundació Ave Maria": "Fundación Ave María",
+  "de Sitges": "de Sitges",
+  "Des de 1987, la Fundació Ave Maria es una institucio privada sense anim de lucre que ofereix atenció especialitzada a persones adultes amb diversitat funcional, potenciant les seves capacitats per garantir la seva qualitat de vida.": "Desde 1987, la Fundación Ave María es una institución privada sin ánimo de lucro que ofrece atención especializada a personas adultas con diversidad funcional, potenciando sus capacidades para garantizar su calidad de vida.",
+  "Actualment beneficiem més de 800 persones a Sitges, Garraf i comarques veines, oferint serveis de residencia especialitzada, centres de dia, habitatges amb suport, formacio i inclusió laboral.": "Actualmente beneficiamos a más de 800 personas en Sitges, Garraf y comarcas vecinas, ofreciendo servicios de residencia especializada, centros de día, viviendas con apoyo, formación e inclusión laboral.",
+  "Anys d'experiència": "Años de experiencia",
+  "Des de 1987 treballant per la inclusió i la qualitat de vida de les persones amb diversitat funcional.": "Desde 1987 trabajando por la inclusión y la calidad de vida de las personas con diversidad funcional.",
+  "Persones ateses": "Personas atendidas",
+  "Beneficiaris directes dels nostres programes i serveis a tota la comarca del Garraf.": "Beneficiarios directos de nuestros programas y servicios en toda la comarca del Garraf.",
+  "Compromís": "Compromiso",
+  "Dedicacio total a potenciar les capacitats de cada persona i el seu projecte de vida.": "Dedicación total a potenciar las capacidades de cada persona y su proyecto de vida.",
+  "Villa Havemann": "Villa Havemann",
+  "La casa que va veure neixer el projecte: la Villa Havemann, espai fundacional i simbol d'": "La casa que vio nacer el proyecto: la Villa Havemann, espacio fundacional y símbolo de ",
+  "acollida, cura i pertinença": "acogida, cuidado y pertenencia",
+  ". Un edifici reconeixible i carregat d'història que ara es transforma en el punt de partida d'una nova identitat.": ". Un edificio reconocible y cargado de historia que ahora se transforma en el punto de partida de una nueva identidad.",
+  "El Nostre Propòsit": "Nuestro Propósito",
+  "\"Cada persona té un projecte de vida. Som aquí per caminar al seu costat.\"": "\"Cada persona tiene un proyecto de vida. Estamos aquí para caminar a su lado.\"",
+  "Millorar la qualitat de vida de les persones amb diversitat funcional, potenciant les seves capacitats a través d'una": "Mejorar la calidad de vida de las personas con diversidad funcional, potenciando sus capacidades a través de una",
+  "atenció integral i personalitzada, innovadora i compromesa amb la comunitat": "atención integral y personalizada, innovadora y comprometida con la comunidad",
+  "Dit d'una altra manera: no \"atenem casos\". Caminem al costat de cadascú, al seu ritme, amb el seu projecte. Cada persona dalt amb la seva veu i la seva manera. La nostra feina és fer-li lloc.": "Dicho de otra manera: no \"atendemos casos\". Caminamos al lado de cada uno, a su ritmo, con su proyecto. Cada persona llega con su voz y su manera. Nuestro trabajo es hacerle sitio.",
+  "Visió": "Visión",
+  "Ser reconeguts com a": "Ser reconocidos como",
+  "líders en benestar i qualitat de serveis": "líderes en bienestar y calidad de servicios",
+  "per a les persones amb diversitat funcional, destacant per la nostra capacitat d'innovació i excel·lència, tant per part dels usuaris com de col·laboradors, voluntaris, famílies i altres grups d'interès.": "para las personas con diversidad funcional, destacando por nuestra capacidad de innovación y excelencia, tanto por parte de los usuarios como de colaboradores, voluntarios, familias y otros grupos de interés.",
+  "Dit d'una altra manera: volem ser una casa oberta. Un lloc on cada persona —tingui el cos, la ment o la història que tingui— se senti escoltada, respectada i útil.": "Dicho de otra manera: queremos ser una casa abierta. Un lugar donde cada persona —tenga el cuerpo, la mente o la historia que tenga— se sienta escuchada, respetada y útil.",
+  "Valors Fonamentals": "Valores Fundamentales",
+  "Responsabilitat": "Responsabilidad",
+  "Estem aquí. Cada dia. Per a la gent que ens confia hores, anys i, de vegades, vides senceres.": "Estamos aquí. Cada día. Para la gente que nos confía horas, años y, a veces, vidas enteras.",
+  "Respecte": "Respeto",
+  "Cada persona dalt amb la seva veu, el seu ritme i la seva manera. La nostra feina es fer-li lloc, no encaixar-la a la nostra.": "Cada persona llega con su voz, su ritmo y su manera. Nuestro trabajo es hacerle sitio, no encajarla en la nuestra.",
+  "Transparència": "Transparencia",
+  "Parlem clar. Amb les families, amb les persones que acompanyem, amb la comunitat. També quan es incomode.": "Hablamos claro. Con las familias, con las personas que acompañamos, con la comunidad. También cuando es incómodo.",
+  "Innovació": "Innovación",
+  "No ens conformem amb \"sempre s'ha fet aixi\". Quan trobem una manera millor de cuidar, l'apliquem.": "No nos conformamos con \"siempre se ha hecho así\". Cuando encontramos una manera mejor de cuidar, la aplicamos.",
+  "Eficàcia": "Eficacia",
+  "Cada hora, cada euro, cada gest te impacte real en algu. No malbaratem res del que la societat ens confia.": "Cada hora, cada euro, cada gesto tiene impacto real en alguien. No malgastamos nada de lo que la sociedad nos confía.",
+  "Treball en Equip": "Trabajo en Equipo",
+  "Sols no arribem enlloc. Junts —equip, families, voluntaris i les persones que acompanyem— construim la Fundació cada dia.": "Solos no llegamos a ningún lado. Juntos —equipo, familias, voluntarios y las personas que acompañamos— construimos la Fundación cada día.",
+  "Com Parlem": "Cómo Hablamos",
+  "\"Parlem amb les persones, no sobre les persones.\"": "\"Hablamos con las personas, no sobre las personas.\"",
+  "No és un eslògan, és un compromís. La nostra veu reflecteix la nostra feina: directa, calida i centrada en cada persona real. Sense distància institucional, sense paraules que amaguen.": "No es un eslogan, es un compromiso. Nuestra voz refleja nuestro trabajo: directa, cálida y centrada en cada persona real. Sin distancia institucional, sin palabras que esconden.",
+  "Propera i humana": "Cercana y humana",
+  "No som \"una entitat\". Som persones que cuidem persones. Cada missatge ha de sonar com si una companya teva l'estigues escrivint.": "No somos \"una entidad\". Somos personas que cuidamos personas. Cada mensaje debe sonar como si una compañera tuya lo estuviera escribiendo.",
+  "Clara i accessible": "Clara y accesible",
+  "Si una avia, una nena de 12 anys o un adult amb dificultats de comprensio no ens entenen, és culpa nostra, no seva. Senzillesa = respecte.": "Si una abuela, una niña de 12 años o un adulto con dificultades de comprensión no nos entienden, es culpa nuestra, no suya. Sencillez = respeto.",
+  "Optimista i activa": "Optimista y activa",
+  "Mirem que sap fer una persona, no que li falta. Parlem des de la possibilitat, no des de la mancanca. Sempre mirem endavant.": "Miramos qué sabe hacer una persona, no lo que le falta. Hablamos desde la posibilidad, no desde la carencia. Siempre miramos adelante.",
+  "Aixi si · Aixi no": "Así sí · Así no",
+  "Aixi si": "Así sí",
+  "— recomanat": "— recomendado",
+  "\"Acompanyem cada persona en el seu projecte de vida.\"": "\"Acompañamos a cada persona en su proyecto de vida.\"",
+  "Directe, positiu, centrat en la persona.": "Directo, positivo, centrado en la persona.",
+  "\"A la Fundació sempre hi ha un lloc per a tu.\"": "\"En la Fundación siempre hay un lugar para ti.\"",
+  "Inclusiu, acollidor, coherent amb l'espai en blanc de la identitat.": "Inclusivo, acogedor, coherente con el espacio en blanco de la identidad.",
+  "\"Avui en Marc ha pintat un quadre. Dema sera una altra cosa. Sempre passa alguna cosa.\"": "\"Hoy Marc ha pintado un cuadro. Mañana será otra cosa. Siempre pasa algo.\"",
+  "Concret, viu, amb noms propis. Mostra la diversitat del dia a dia.": "Concreto, vivo, con nombres propios. Muestra la diversidad del día a día.",
+  "\"Aquí cadascu aporta el que pot. Tots aportem alguna cosa.\"": "\"Aquí cada uno aporta lo que puede. Todos aportamos algo.\"",
+  "Reciprocitat, no assistencialisme. Tothom dona i tothom rep.": "Reciprocidad, no asistencialismo. Todos damos y todos recibimos.",
+  "Aixi no": "Así no",
+  "— evitar": "— evitar",
+  "\"Atenem discapacitats amb problemes d'adaptació social.\"": "\"Atendemos discapacitados con problemas de adaptación social.\"",
+  "Estigmatitzant, distant, llenguatge obsolet. \"Discapacitat\" no defineix una persona.": "Estigmatizante, distante, lenguaje obsoleto. \"Discapacidad\" no define a una persona.",
+  "\"La nostra entitat es lider en el sector de l'atenció a la dependencia.\"": "\"Nuestra entidad es líder en el sector de la atención a la dependencia.\"",
+  "Corporatiu, fred, centrat en l'organitzacio. La Fundació no es protagonista.": "Corporativo, frío, centrado en la organización. La Fundación no es protagonista.",
+  "\"Oferim serveis assistencials per als nostres beneficiaris.\"": "\"Ofrecemos servicios asistenciales para nuestros beneficiarios.\"",
+  "\"Beneficiari\" anonimitza i posa la persona en una posició passiva.": "\"Beneficiario\" anonimiza y pone a la persona en una posición pasiva.",
+  "\"Treballem per la inserció dels nostres usuaris.\"": "\"Trabajamos por la inserción de nuestros usuarios.\"",
+  "\"Usuaris\" cosifica. \"Inserir\" insinua que la persona ha d'encaixar a un motlle.": "\"Usuarios\" cosifica. \"Insertar\" insinúa que la persona debe encajar en un molde.",
+  "Com sona la marca": "Cómo suena la marca",
+  "Frases curtes, directes, memorables. Capturen el to en una linia. Es poden fer servir en cartells, xarxes, samarretes, banners o capçaleres web.": "Frases cortas, directas, memorables. Capturan el tono en una línea. Se pueden usar en carteles, redes, camisetas, banners o cabeceras web.",
+  "Aquí": "Aquí",
+  "cabes tu.": "cabes tú.",
+  "Una casa": "Una casa",
+  "per a totes": "para todas",
+  "les vides.": "las vidas.",
+  "No atenem casos.": "No atendemos casos.",
+  "Acompanyem": "Acompañamos",
+  "persones.": "personas.",
+  "Cuidem com ens agradaria que ens cuidessin.": "Cuidamos como nos gustaría que nos cuidaran.",
+  "Cada persona, un projecte.": "Cada persona, un proyecto.",
+  "Cada projecte, un futur.": "Cada proyecto, un futuro.",
+  "Ningu": "Nadie",
+  "es queda": "se queda",
+  "fora.": "fuera.",
+  "La veu en context": "La voz en contexto",
+  "Com sona la veu de la Fundació en situacions reals: un email a una familia, un post a xarxes, la introducció d'una memòria anual, un missatge despres d'un avenc.": "Cómo suena la voz de la Fundación en situaciones reales: un email a una familia, un post en redes, la introducción de una memoria anual, un mensaje después de un avance.",
+  "Email · Benvinguda a una familia": "Email · Bienvenida a una familia",
+  "\"Hola Anna, benvinguda a la Fundació. T'ho repetim, encara que ja ho sapigues: aquí ja ets a casa. Si necessites qualsevol cosa —sigui el que sigui— truca al Joan al 938 94 XX XX. Hi és tots els dies entre les 9 i les 17h.\"": "\"Hola Anna, bienvenida a la Fundación. Te lo repetimos, aunque ya lo sepas: aquí ya estás en casa. Si necesitas cualquier cosa —sea lo que sea— llama a Joan al 938 94 XX XX. Está todos los días entre las 9 y las 17h.\"",
+  "Xarxes socials · Un dijous qualsevol": "Redes sociales · Un jueves cualquiera",
+  "\"Avui hem omplert el pati de musica. La Nuria ha cantat. El Marc ha ballat. La Maria ha rigut més que mai. Així són els nostres dijous.\"": "\"Hoy hemos llenado el patio de música. Núria ha cantado. Marc ha bailado. María ha reído más que nunca. Así son nuestros jueves.\"",
+  "Memòria anual · Introducció": "Memoria anual · Introducción",
+  "\"Aquesta memòria parla de la Sandra. Del Pere. De l'Aleix. Dels seus avencos, les seves cançons, els seus matins. Les xifres també hi són. Però venen al final.\"": "\"Esta memoria habla de Sandra. De Pere. De Aleix. De sus avances, sus canciones, sus mañanas. Las cifras también están. Pero vienen al final.\"",
+  "Missatge a una familia · Avenc": "Mensaje a una familia · Avance",
+  "\"Avui el teu fill ha apres a fer-se el cafè sol. Es una cosa petita. Es una cosa enorme.\"": "\"Hoy tu hijo ha aprendido a hacerse el café solo. Es algo pequeño. Es algo enorme.\"",
+  "Personalitat de Marca": "Personalidad de Marca",
+  "Acollidora": "Acogedora",
+  "— Com una casa que sempre te un lloc per a un més.": "— Como una casa que siempre tiene un sitio para uno más.",
+  "Viva": "Viva",
+  "— Cada dia passen coses que ningu havia previst. Aixo ens agrada.": "— Cada día pasan cosas que nadie había previsto. Eso nos gusta.",
+  "Diversa": "Diversa",
+  "— Com les formes del nostre isotip: cada una es diferent, totes hi cabem.": "— Como las formas de nuestro isotipo: cada una es diferente, todas cabemos.",
+  "Propera": "Cercana",
+  "— Et truquem pel teu nom. Et mirem als ulls.": "— Te llamamos por tu nombre. Te miramos a los ojos.",
+  "Tres moments, tres tons": "Tres momentos, tres tonos",
+  "El nostre to de veu i les pautes visuals s'adapten al recorregut de cada persona amb la Fundació. Identifiquem": "Nuestro tono de voz y las pautas visuales se adaptan al recorrido de cada persona con la Fundación. Identificamos",
+  "tres moments amb intencions i estats d'ànim diferents:": "tres momentos con intenciones y estados de ánimo diferentes:",
+  "Quan ens troben fora dels nostres canals: xarxes, anuncis, materials de difusió.": "Cuando nos encuentran fuera de nuestros canales: redes, anuncios, materiales de difusión.",
+  "Acollida": "Acogida",
+  "Expressem la personalitat al volum més alt. Cridem l'atenció amb història, calidesa i color. Aquí podem ser:": "Expresamos la personalidad al volumen más alto. Llamamos la atención con historia, calidez y color. Aquí podemos ser:",
+  "Càlids": "Cálidos",
+  "Inspiradors": "Inspiradores",
+  "Centrats en històries": "Centrados en historias",
+  "Diversos i viscuts": "Diversos y vividos",
+  "Atributs principals": "Atributos principales",
+  "Inspiradora": "Inspiradora",
+  "Quan ens reconeixen i s'apropen: web, primeres trucades, entrevistes, visites.": "Cuando nos reconocen y se acercan: web, primeras llamadas, entrevistas, visitas.",
+  "Acompanyament": "Acompañamiento",
+  "Expressem la nostra identitat però també hem d'informar amb claredat. Combinem la calidesa amb la pràctica. Som:": "Expresamos nuestra identidad pero también debemos informar con claridad. Combinamos la calidez con la práctica. Somos:",
+  "Propers": "Cercanos",
+  "Clars i informatius": "Claros e informativos",
+  "Pacients": "Pacientes",
+  "Concrets": "Concretos",
+  "Honesta": "Honesta",
+  "Pràctica": "Práctica",
+  "Quan ja en formen part: famílies, residents, equip, voluntaris i col·laboradors.": "Cuando ya forman parte: familias, residentes, equipo, voluntarios y colaboradores.",
+  "Comunitat": "Comunidad",
+  "El protagonista és la persona, no el missatge. La nostra veu baixa de volum i prioritza la informació clara i la cura quotidiana. Som:": "El protagonista es la persona, no el mensaje. Nuestra voz baja de volumen y prioriza la información clara y el cuidado cotidiano. Somos:",
+  "Discrets": "Discretos",
+  "Constants": "Constantes",
+  "Amb noms propis": "Con nombres propios",
+  "Propers cada dia": "Cercanos cada día",
+  "Quotidiana": "Cotidiana",
+  "Híbrid d'": "Híbrido de ",
+  "acollida": "acogida",
+  "comunitat": "comunidad",
+  "El recorregut de la marca": "El recorrido de la marca",
+  "El mateix missatge té paraules diferents segons on som al recorregut amb la persona.": "El mismo mensaje tiene palabras diferentes según dónde estemos en el recorrido con la persona.",
+  "Tres moments. Tres veus. Una sola identitat.": "Tres momentos. Tres voces. Una sola identidad.",
+  "Què comuniquem": "Qué comunicamos",
+  "Voluntariat": "Voluntariado",
+  "\"Cerquem persones que vulguin venir.\"": "\"Buscamos personas que quieran venir.\"",
+  "Taller de pintura": "Taller de pintura",
+  "\"Comencem una activitat nova.\"": "\"Empezamos una actividad nueva.\"",
+  "Portes obertes": "Puertas abiertas",
+  "\"Vine a conèixer la casa.\"": "\"Ven a conocer la casa.\"",
+  "\"Aquí cap tothom.": "\"Aquí cabe todo el mundo.",
+  "També tu. Vine.\"": "También tú. Ven.\"",
+  "\"Cada quadre és un món.": "\"Cada cuadro es un mundo.",
+  "Aquí pintem dimecres.\"": "Aquí pintamos los miércoles.\"",
+  "\"Aquesta és la nostra casa. La pots venir a veure.\"": "\"Esta es nuestra casa. La puedes venir a ver.\"",
+  "\"Cerquem voluntaris per als tallers. Dos vespres al mes. T'expliquem com.\"": "\"Buscamos voluntarios para los talleres. Dos tardes al mes. Te explicamos cómo.\"",
+  "\"Comencem un taller de pintura amb l'artista Maria Camps. Inscripcions obertes.\"": "\"Empezamos un taller de pintura con la artista Maria Camps. Inscripciones abiertas.\"",
+  "\"Dissabte 12 d'abril, jornada de portes obertes de 10h a 14h. Reserva visita.\"": "\"Sábado 12 de abril, jornada de puertas abiertas de 10h a 14h. Reserva visita.\"",
+  "\"Si pots venir el dimecres, fem manualitats al pati. T'esperem amb un cafè.\"": "\"Si puedes venir el miércoles, hacemos manualidades en el patio. Te esperamos con un café.\"",
+  "\"Demà comencem el taller. La Maria portarà els pinzells.\"": "\"Mañana empezamos el taller. María traerá los pinceles.\"",
+  "\"Dissabte tindrem visites. Si vols ajudar a guiar, t'esperem a recepció a les 10h.\"": "\"Sábado tendremos visitas. Si quieres ayudar a guiar, te esperamos en recepción a las 10h.\"",
+  "Un espai on tot passa": "Un espacio donde todo ocurre",
+  "La Fundació es un lloc viu. Un punt de trobada on convergeixen disciplines, generacions, cultures i idees. No es defineix per una sola activitat, sinó per la suma de totes elles.": "La Fundación es un lugar vivo. Un punto de encuentro donde convergen disciplinas, generaciones, culturas e ideas. No se define por una sola actividad, sino por la suma de todas ellas.",
+  "Deconstruir per Construir": "Deconstruir para Construir",
+  "Partim de l'edifici com a origen. No l'il·lustrem. El": "Partimos del edificio como origen. No lo ilustramos. Lo",
+  "deconstruim": "deconstruimos",
+  "Simplifiquem els seus volums, corbes i proporcions essencials fins obtenir formes geomètriques pures. Aquestes peces es reorganitzen dins un contenidor comu: el quadrat.": "Simplificamos sus volúmenes, curvas y proporciones esenciales hasta obtener formas geométricas puras. Estas piezas se reorganizan dentro de un contenedor común: el cuadrado.",
+  "El resultat no és una facana, sinó un": "El resultado no es una fachada, sino un",
+  "sistema grafic": "sistema gráfico",
+  ". Una estructura on les parts dialoguen, s'equilibren i generen noves composicions.": ". Una estructura donde las partes dialogan, se equilibran y generan nuevas composiciones.",
+  "El Quadrat com a Territori": "El Cuadrado como Territorio",
+  "El quadrat actua com a marc i com a metafora. Representa l'espai que la Fundació ofereix a la comunitat:": "El cuadrado actúa como marco y como metáfora. Representa el espacio que la Fundación ofrece a la comunidad:",
+  "estable, acollidor i obert": "estable, acogedor y abierto",
+  "Dins d'ell, cada forma simbolitza iniciatives, persones o projectes. Cap prevaleix sobre una altra. Totes conviuen en harmonia.": "Dentro de él, cada forma simboliza iniciativas, personas o proyectos. Ninguna prevalece sobre otra. Todas conviven en armonía.",
+  "El conjunt transmet": "El conjunto transmite",
+  "obertura, inclusió i contemporaneitat": "apertura, inclusión y contemporaneidad",
+  "El Buit com a Invitacio": "El Vacío como Invitación",
+  "En cada composició deixem un": "En cada composición dejamos un",
+  "espai en blanc": "espacio en blanco",
+  ". No es un buit. Es un gest. Un lloc reservat per a qui dalt. Per a noves veus. Per a idees que encara no existeixen. El blanc comunica que la Fundació no està completa sense les persones que l'habiten.": ". No es un vacío. Es un gesto. Un lugar reservado para quien llega. Para nuevas voces. Para ideas que todavía no existen. El blanco comunica que la Fundación no está completa sin las personas que la habitan.",
+  "De Valors a Identitat": "De Valores a Identidad",
+  "Cada decisió visual del sistema es la traduccio d'un valor de la Fundació. La identitat no decora: significa.": "Cada decisión visual del sistema es la traducción de un valor de la Fundación. La identidad no decora: significa.",
+  "Inclusió": "Inclusión",
+  "Formes que conviuen": "Formas que conviven",
+  "Diversitat": "Diversidad",
+  "Colors variats": "Colores variados",
+  "Obertura": "Apertura",
+  "Espai en blanc": "Espacio en blanco",
+  "Sistema generatiu": "Sistema generativo",
+  "Pertinença": "Pertenencia",
+  "El quadrat-llar": "El cuadrado-hogar",
+  "De l'Edifici al Sistema": "Del Edificio al Sistema",
+  "El logotip històric d'Ave Maria representava la": "El logotipo histórico de Ave María representaba la",
+  "amb tots els seus detalls: palmeres, finestres, torre, campanar. Al rebranding vam decidir": "con todos sus detalles: palmeras, ventanas, torre, campanario. En el rebranding decidimos",
+  "no il·lustrar l'edifici, sinó deconstruir-lo": "no ilustrar el edificio, sino deconstruirlo",
+  "fins als seus volums essencials. Les formes geomètriques pures que en resulten —cercles, semicercles, quarts, triangles, rectangles— són les peces que avui composen el sistema visual generatiu de la Fundació.": "hasta sus volúmenes esenciales. Las formas geométricas puras que resultan —círculos, semicírculos, cuartos, triángulos, rectángulos— son las piezas que hoy componen el sistema visual generativo de la Fundación.",
+  "01 — Origen": "01 — Origen",
+  "Logotip històric": "Logotipo histórico",
+  "Villa Havemann amb palmeres, torre i campanar. Un símbol detallat però tancat, lligat a una imatge concreta de l'edifici.": "Villa Havemann con palmeras, torre y campanario. Un símbolo detallado pero cerrado, ligado a una imagen concreta del edificio.",
+  "02 — Simplificació": "02 — Simplificación",
+  "Volum, no detall": "Volumen, no detalle",
+  "Reduïm els elements arquitectònics als seus volums essencials. Les proporcions guanyen pes; els detalls desapareixen.": "Reducimos los elementos arquitectónicos a sus volúmenes esenciales. Las proporciones ganan peso; los detalles desaparecen.",
+  "03 — Elements primaris": "03 — Elementos primarios",
+  "Forma, no figura": "Forma, no figura",
+  "L'edifici desapareix com a representació; les seves formes es converteixen en peces autònomes: cercles, quarts, semicercles, triangles, rectangles.": "El edificio desaparece como representación; sus formas se convierten en piezas autónomas: círculos, cuartos, semicírculos, triángulos, rectángulos.",
+  "04 — Sistema generatiu": "04 — Sistema generativo",
+  "Estructura, no símbol": "Estructura, no símbolo",
+  "Les 21 formes es combinen dins una graella 3×3 per generar infinites composicions úniques.": "Las 21 formas se combinan dentro de una rejilla 3×3 para generar infinitas composiciones únicas.",
+  "El passat no desapareix: es converteix en estructura.": "El pasado no desaparece: se convierte en estructura.",
+  "Versió Vertical": "Versión Vertical",
+  "Anatomia del Logotip": "Anatomía del Logotipo",
+  "L'isotip a sobre, el naming \"AVE MARIA / FUNDACIO\" a sota. Una unitat inseparable. Aquesta és la versió d'us": "El isotipo arriba, el naming \"AVE MARIA / FUNDACIO\" abajo. Una unidad inseparable. Esta es la versión de uso",
+  "preferent": "preferente",
+  "en aplicacions amb espai vertical suficient.": "en aplicaciones con espacio vertical suficiente.",
+  "S'utilitza tant en": "Se utiliza tanto en",
+  "positiu": "positivo",
+  "sobre fons clar com en": "sobre fondo claro como en",
+  "negatiu": "negativo",
+  "sobre fons fosc.": "sobre fondo oscuro.",
+  "Versió Horitzontal": "Versión Horizontal",
+  "Us Secundari": "Uso Secundario",
+  "S'utilitza quan l'espai disponible es més ample que alt: capçaleres, banners, signatures de correu i situacions de format apaisat.": "Se utiliza cuando el espacio disponible es más ancho que alto: cabeceras, banners, firmas de correo y situaciones de formato apaisado.",
+  "L'isotip va a a l'esquerra i el naming a la dreta. Disponible en": "El isotipo va a la izquierda y el naming a la derecha. Disponible en",
+  "sobre fons clar i": "sobre fondo claro y",
+  "Només Isotip": "Solo Isotipo",
+  "Ús Terciari": "Uso Terciario",
+  "L'isotip aïllat es pot fer servir en aplicacions on el text \"AVE MARIA / FUNDACIÓ\" no és necessari o no es llegible:": "El isotipo aislado se puede usar en aplicaciones donde el texto \"AVE MARIA / FUNDACIÓ\" no es necesario o no es legible:",
+  "avatars de xarxes, favicons, icones d'app, segells, patrons": "avatares de redes, favicons, iconos de app, sellos, patrones",
+  "Disponible en": "Disponible en",
+  "Mides de referència: 120px · 64px · 32px": "Medidas de referencia: 120px · 64px · 32px",
+  "Versió Monocroma": "Versión Monocroma",
+  "Una sola tinta": "Una sola tinta",
+  "Per a aplicacions sobries amb matisos: editorial, documents, informes i senyalètica.": "Para aplicaciones sobrias con matices: editorial, documentos, informes y señalética.",
+  "Utilitza els": "Utiliza los",
+  "4 tons de gris": "4 tonos de gris",
+  "de la paleta Monocroma per mantenir la diversitat visual sense color. Disponible en": "de la paleta Monocroma para mantener la diversidad visual sin color. Disponible en",
+  "El Vocabulari Visual": "El Vocabulario Visual",
+  "El sistema d'identitat utilitza 21 formes geomètriques pures, derivades del cercle, el quadrat i el triangle. Representen la deconstrucció de la Villa Havemann en els seus volums essencials.": "El sistema de identidad utiliza 21 formas geométricas puras, derivadas del círculo, el cuadrado y el triángulo. Representan la deconstrucción de la Villa Havemann en sus volúmenes esenciales.",
+  "Origen de les Formes": "Origen de las Formas",
+  "Cada forma del vocabulari visual neix de la": "Cada forma del vocabulario visual nace de la",
+  "deconstrucció de la Villa Havemann": "deconstrucción de la Villa Havemann",
+  ": els arcs de les finestres es transformen en semicercles, els volums del sostre en quarts de cercle, les proporcions dels murs en rectangles. El passat no desapareix: es converteix en estructura.": ": los arcos de las ventanas se transforman en semicírculos, los volúmenes del techo en cuartos de círculo, las proporciones de los muros en rectángulos. El pasado no desaparece: se convierte en estructura.",
+  "Regles de Composició": "Reglas de Composición",
+  "La identitat es planteja com un sistema generatiu perquè la realitat de la fundació també ho es: diversa, canviant i en constant transformacio.": "La identidad se plantea como un sistema generativo porque la realidad de la fundación también lo es: diversa, cambiante y en constante transformación.",
+  "Principis": "Principios",
+  "Graella 3x3": "Rejilla 3x3",
+  "L'isotip sempre es compon de 9 cel·les disposades en una graella quadrada de 3x3.": "El isotipo siempre se compone de 9 celdas dispuestas en una rejilla cuadrada de 3x3.",
+  "Un espai en blanc": "Un espacio en blanco",
+  "Una cel·la sempre roman en blanc. Es l'espai d'invitacio, el lloc reservat per a qui dalt.": "Una celda siempre permanece en blanco. Es el espacio de invitación, el lugar reservado para quien llega.",
+  "Paleta oficial": "Paleta oficial",
+  "Les formes nomes utilitzen colors de la paleta corporativa. No s'admeten colors externs.": "Las formas solo utilizan colores de la paleta corporativa. No se admiten colores externos.",
+  "Contrast cromatic": "Contraste cromático",
+  "Dues cel·les adjacents no han de compartir el mateix color de fons.": "Dos celdas adyacentes no deben compartir el mismo color de fondo.",
+  "Text justificat": "Texto justificado",
+  "El text sempre va sota (o al costat en versió horitzontal), justificat a l'amplada de l'isotip.": "El texto siempre va debajo (o al lado en versión horizontal), justificado al ancho del isotipo.",
+  "Variacions": "Variaciones",
+  "Cada composició es única però reconeixible. Aquí es mostren 6 variacions del sistema:": "Cada composición es única pero reconocible. Aquí se muestran 6 variaciones del sistema:",
+  "Cada composició es única, però totes comparteixen el mateix ADN visual.": "Cada composición es única, pero todas comparten el mismo ADN visual.",
+  "Clearspace": "Clearspace",
+  "Per garantir la correcta lectura i impacte del logotip, cal respectar sempre un espai de protecció al seu voltant.": "Para garantizar la correcta lectura e impacto del logotipo, hay que respetar siempre un espacio de protección a su alrededor.",
+  "Area de Protecció": "Área de Protección",
+  "L'espai de respecte mínim al voltant del logotip vertical equival a": "El espacio de respeto mínimo alrededor del logotipo vertical equivale a",
+  "1 cel·la de la graella": "1 celda de la rejilla",
+  "de l'isotip per cada banda. Cap altre element grafic, text o imatge ha d'envair aquesta zona.": "del isotipo por cada lado. Ningún otro elemento gráfico, texto o imagen debe invadir esta zona.",
+  "Mida Mínima": "Tamaño Mínimo",
+  "25mm": "25mm",
+  "d'amplada en impressió ·": "de ancho en impresión ·",
+  "100px": "100px",
+  "en digital. Per sota d'aquestes mides el text \"AVE MARIA / FUNDACIO\" perd llegibilitat.": "en digital. Por debajo de estos tamaños el texto \"AVE MARIA / FUNDACIO\" pierde legibilidad.",
+  "L'espai de protecció garanteix que el logotip respiri en qualsevol composició i que la seva forca visual no quedi diluida per altres elements.": "El espacio de protección garantiza que el logotipo respire en cualquier composición y que su fuerza visual no quede diluida por otros elementos.",
+  "En la versió horitzontal, la regla es la mateixa:": "En la versión horizontal, la regla es la misma:",
+  "de respecte al voltant del bloc complet (isotip + paraules). El logo manté la seva integritat com a unitat.": "de respeto alrededor del bloque completo (isotipo + palabras). El logo mantiene su integridad como unidad.",
+  "40mm": "40mm",
+  "160px": "160px",
+  "en digital. La versió horitzontal demana més amplada per mantenir la legibilitat del text.": "en digital. La versión horizontal pide más ancho para mantener la legibilidad del texto.",
+  "Imagotip / Isotip sol": "Imagotipo / Isotipo solo",
+  "Quan l'isotip s'utilitza aillat —avatars, favicons, segells, icones d'app— també necessita el seu espai propi.": "Cuando el isotipo se utiliza aislado —avatares, favicons, sellos, iconos de app— también necesita su espacio propio.",
+  "Al voltant de l'isotip aillat, deixar un mínim equivalent a": "Alrededor del isotipo aislado, dejar un mínimo equivalente a",
+  "1/3 de la seva amplada": "1/3 de su ancho",
+  ". Aquest espai protegeix la lectura de la graella 3x3 i evita que les formes es confonguin amb altres elements visuals.": ". Este espacio protege la lectura de la rejilla 3x3 y evita que las formas se confundan con otros elementos visuales.",
+  "8mm": "8mm",
+  "en impressió ·": "en impresión ·",
+  "24px": "24px",
+  "en digital. A mides molt petites, els detalls de les formes interiors es perden.": "en digital. A tamaños muy pequeños, los detalles de las formas interiores se pierden.",
+  "Co-branding": "Co-branding",
+  "Junt amb el logotip d'una altra entitat:": "Junto con el logotipo de otra entidad:",
+  "de separacio. El logotip associat no ha de superar l'alcada de l'isotip.": "de separación. El logotipo asociado no debe superar la altura del isotipo.",
+  "El que Mai s'ha de Fer": "Lo que Nunca se debe Hacer",
+  "Per protegir la integritat de la marca, es fonamental evitar les seguents manipulacions del logotip.": "Para proteger la integridad de la marca, es fundamental evitar las siguientes manipulaciones del logotipo.",
+  "Incorrecte": "Incorrecto",
+  "Reduir l'opacitat": "Reducir la opacidad",
+  "Els colors han de mantenir sempre la seva vivacitat. No aplicar transparencies.": "Los colores deben mantener siempre su vivacidad. No aplicar transparencias.",
+  "Deformar o inclinar": "Deformar o inclinar",
+  "No modificar les proporcions, rotar, estirar o inclinar l'isotip.": "No modificar las proporciones, rotar, estirar o inclinar el isotipo.",
+  "Colors fora de paleta": "Colores fuera de paleta",
+  "Nomes s'han d'utilitzar els colors de les paletes oficials. Mai colors arbitraris.": "Solo se deben utilizar los colores de las paletas oficiales. Nunca colores arbitrarios.",
+  "Afegir ombres o efectes": "Añadir sombras o efectos",
+  "No afegir ombres, brillantors, contorns o qualsevol efecte visual al logotip.": "No añadir sombras, brillos, contornos o cualquier efecto visual al logotipo.",
+  "Canviar la graella": "Cambiar la rejilla",
+  "La graella sempre es de 3x3. No reduir a 2x2 ni ampliar a 4x4 o altres formats.": "La rejilla siempre es de 3x3. No reducir a 2x2 ni ampliar a 4x4 u otros formatos.",
+  "Eliminar l'espai en blanc": "Eliminar el espacio en blanco",
+  "Sempre ha d'haver una cel·la buida. Es un element conceptual irrenunciable de la identitat.": "Siempre debe haber una celda vacía. Es un elemento conceptual irrenunciable de la identidad.",
+  "Rotar l'isotip": "Rotar el isotipo",
+  "L'isotip sempre s'ha de mostrar en la seva orientació original, sense cap rotacio.": "El isotipo siempre se debe mostrar en su orientación original, sin ninguna rotación.",
+  "Degradats a les cel·les": "Degradados en las celdas",
+  "Les cel·les han de ser de color pla. No aplicar degradats ni textures dins les formes.": "Las celdas deben ser de color plano. No aplicar degradados ni texturas dentro de las formas.",
+  "10 · Paleta Principal": "10 · Paleta Principal",
+  "Bosc": "Bosque",
+  "Charcoal": "Charcoal",
+  "Blanc": "Blanco",
+  "Verd Profund": "Verde Profundo",
+  "Verd Fosc": "Verde Oscuro",
+  "Verd Mig": "Verde Medio",
+  "Verd Viu": "Verde Vivo",
+  "Verd Clar": "Verde Claro",
+  "Verd Pastel": "Verde Pastel",
+  "10 · Paleta Alternativa": "10 · Paleta Alternativa",
+  "Colors": "Colores",
+  "Taronja": "Naranja",
+  "Coral": "Coral",
+  "Groc": "Amarillo",
+  "Blau": "Azul",
+  "Verd": "Verde",
+  "Rosa Suau": "Rosa Suave",
+  "Monocroma": "Monocroma",
+  "Tinta": "Tinta",
+  "Gris Fosc": "Gris Oscuro",
+  "Gris Mig": "Gris Medio",
+  "Gris Clar": "Gris Claro",
+  "Proporció Cromatica": "Proporción Cromática",
+  "Com es distribueixen els colors en una aplicació, més enlla del propi isotip.": "Cómo se distribuyen los colores en una aplicación, más allá del propio isotipo.",
+  "Neutres": "Neutros",
+  "Blanc, gris clar · fons": "Blanco, gris claro · fondo",
+  "Color principal": "Color principal",
+  "Taronja, blau o verd · elements destacats": "Naranja, azul o verde · elementos destacados",
+  "Accent": "Acento",
+  "Coral, groc, rosa · detalls": "Coral, amarillo, rosa · detalles",
+  "Dins l'isotip, en canvi, tots els colors de la paleta seleccionada tenen el mateix pes — el sistema generatiu garanteix l'equilibri.": "Dentro del isotipo, en cambio, todos los colores de la paleta seleccionada tienen el mismo peso — el sistema generativo garantiza el equilibrio.",
+  "⚠ Avis sobre els codis PANTONE": "⚠ Aviso sobre los códigos PANTONE",
+  "— Els codis PANTONE indicats són": "— Los códigos PANTONE indicados son",
+  "equivalencies aproximades": "equivalencias aproximadas",
+  "calculades a partir dels valors HEX i RGB. Les pantalles digitals (RGB) no reprodueixen fidelment els colors PANTONE, que son tintes fisiques. Per a impressió professional critica (offset, serigrafia, packaging), es recomana": "calculadas a partir de los valores HEX y RGB. Las pantallas digitales (RGB) no reproducen fielmente los colores PANTONE, que son tintas físicas. Para impresión profesional crítica (offset, serigrafía, packaging), se recomienda",
+  "contrastar sempre els colors amb una guia PANTONE Color Bridge fisica": "contrastar siempre los colores con una guía PANTONE Color Bridge física",
+  "abans de validar la produccio final.": "antes de validar la producción final.",
+  "Montserrat": "Montserrat",
+  "Montserrat és la tipografia corporativa de la Fundació Ave Maria. Una sans-serif geomètrica, moderna i altament llegible que reflecteix els valors de claredat, accessibilitat i contemporaneïtat.": "Montserrat es la tipografía corporativa de la Fundación Ave María. Una sans-serif geométrica, moderna y altamente legible que refleja los valores de claridad, accesibilidad y contemporaneidad.",
+  "Els titulars sempre en": "Los titulares siempre en",
+  "Montserrat Medium": "Montserrat Medium",
+  ". Subtítols en Regular.": ". Subtítulos en Regular.",
+  "Per a informació destacada, Regular amb": "Para información destacada, Regular con",
+  "Medium per als èmfasis": "Medium para los énfasis",
+  "El cos de text sempre va en Montserrat Regular per a una lectura clara fins i tot a mides petites.": "El cuerpo de texto siempre va en Montserrat Regular para una lectura clara incluso a tamaños pequeños.",
+  "Montserrat Regular també per a les notes al peu i metadades.": "Montserrat Regular también para las notas al pie y metadatos.",
+  "Exemples d'Us": "Ejemplos de Uso",
+  "La identitat generativa permet crear materials unics per a cada ocasio, mantenint sempre la coherència de marca.": "La identidad generativa permite crear materiales únicos para cada ocasión, manteniendo siempre la coherencia de marca.",
+  "Targeta de Visita · Paper de Carta": "Tarjeta de Visita · Papel de Carta",
+  "Maria Garcia Lopez": "María García López",
+  "Directora de Comunicació": "Directora de Comunicación",
+  "Fundació Ave Maria de Sitges · Carrer de les Parellades, 52 · 08870 Sitges": "Fundación Ave María de Sitges · Carrer de les Parellades, 52 · 08870 Sitges",
+  "Targeta de visita (anvers · revers) · Paper de carta A4": "Tarjeta de visita (anverso · reverso) · Papel de carta A4",
+  "Aplicacions Reals": "Aplicaciones Reales",
+  "La identitat passa de la pantalla al món físic. Tres exemples reals: un vehicle corporatiu, el vestuari de l'equip i un pin de marca.": "La identidad pasa de la pantalla al mundo físico. Tres ejemplos reales: un vehículo corporativo, el vestuario del equipo y un pin de marca.",
+  "Falta la imatge": "Falta la imagen",
+  "Vehicle Corporatiu": "Vehículo Corporativo",
+  "Les formes del vocabulari visual s'amplien a gran escala creant un patró envoltant. El logotip horitzontal en negre s'integra dins una zona neutra per garantir la legibilitat.": "Las formas del vocabulario visual se amplían a gran escala creando un patrón envolvente. El logotipo horizontal en negro se integra dentro de una zona neutra para garantizar la legibilidad.",
+  "Vestuari · Polo Equip": "Vestuario · Polo Equipo",
+  "Logotip vertical brodat al pit esquerre del polo blanc, en mida petita per a una presència discreta i elegant. L'isotip a color manté l'energia de la marca.": "Logotipo vertical bordado en el pecho izquierdo del polo blanco, en tamaño pequeño para una presencia discreta y elegante. El isotipo a color mantiene la energía de la marca.",
+  "Pin · Insígnia": "Pin · Insignia",
+  "El sistema generatiu condensat en una peça quadrada de merchandising. Una variació única de l'isotip esmaltat, amb la cel·la blanca que recorda l'invitació a qui arriba.": "El sistema generativo condensado en una pieza cuadrada de merchandising. Una variación única del isotipo esmaltado, con la celda blanca que recuerda la invitación a quien llega.",
+  "Un lloc per": "Un lugar para",
+  "a tothom.": "todos.",
+  "Cada aplicació de la identitat és una oportunitat de comunicar els nostres valors. L'espai en blanc sempre present ens recorda que la Fundació està oberta a noves persones, noves idees i nous projectes. La identitat, com la propia organitzacio, està viva i en constant evolució.": "Cada aplicación de la identidad es una oportunidad de comunicar nuestros valores. El espacio en blanco siempre presente nos recuerda que la Fundación está abierta a nuevas personas, nuevas ideas y nuevos proyectos. La identidad, como la propia organización, está viva y en constante evolución.",
+  "AVE MARIA FUNDACIO · Manual d'Identitat Visual · v2.0 · Marc 2026 · Sitges, Catalunya": "AVE MARIA FUNDACIÓN · Manual de Identidad Visual · v2.0 · Marzo 2026 · Sitges, Cataluña",
+  "37 slides · 1920×1080 · Ave Maria Fundació Brand Guidelines v2.0": "37 slides · 1920×1080 · Ave María Fundación Brand Guidelines v2.0"
+};
+
+
+// Inverse map ES → CA
+const es2ca = {};
+for (const [k, v] of Object.entries(ca2es)) { es2ca[v] = k; }
+
+let currentLang = 'ca';
+
+function setLang(lang) {
+    if (lang === currentLang) return;
+    const map = lang === 'es' ? ca2es : es2ca;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+        const t = node.textContent.trim();
+        if (map[t]) {
+            node.textContent = node.textContent.replace(t, map[t]);
+        }
+    });
+    currentLang = lang;
+    document.querySelectorAll('.lang-toggle button').forEach(b => {
+        b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    document.documentElement.lang = lang === 'es' ? 'es' : 'ca';
+}
+
+// ════════ PRESENT MODE ════════
+let currentSlide = 0;
+let slides = [];
+let controlsTimer = null;
+
+function getSlides() {
+    return Array.from(document.querySelectorAll('.deck > .slide'));
+}
+
+function showSlide(idx) {
+    slides.forEach((s, i) => s.classList.toggle('is-current', i === idx));
+    currentSlide = idx;
+    const cur = document.getElementById('curSlide');
+    const tot = document.getElementById('totalSlides');
+    if (cur) cur.textContent = idx + 1;
+    if (tot) tot.textContent = slides.length;
+}
+
+function startPresent() {
+    slides = getSlides();
+    document.body.classList.add('presenting');
+    document.getElementById('totalSlides').textContent = slides.length;
+    showSlide(0);
+    showControls();
+    window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function exitPresent() {
+    document.body.classList.remove('presenting');
+    slides.forEach(s => s.classList.remove('is-current'));
+}
+
+function nextSlide() {
+    if (currentSlide < slides.length - 1) showSlide(currentSlide + 1);
+    showControls();
+}
+function prevSlide() {
+    if (currentSlide > 0) showSlide(currentSlide - 1);
+    showControls();
+}
+
+function showControls() {
+    const c = document.querySelector('.present-controls');
+    if (!c) return;
+    c.classList.add('show');
+    clearTimeout(controlsTimer);
+    controlsTimer = setTimeout(() => c.classList.remove('show'), 2500);
+}
+
+document.addEventListener('keydown', e => {
+    if (!document.body.classList.contains('presenting')) return;
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); nextSlide(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prevSlide(); }
+    else if (e.key === 'Escape') { exitPresent(); }
+    else if (e.key === 'Home') { showSlide(0); }
+    else if (e.key === 'End') { showSlide(slides.length - 1); }
+});
+
+// Click a una slide en mode presentació → següent
+document.addEventListener('click', e => {
+    if (!document.body.classList.contains('presenting')) return;
+    if (e.target.closest('.present-controls') || e.target.closest('.toolbar')) return;
+    nextSlide();
+});
+
+// Mostrar controls al moure el ratolí
+document.addEventListener('mousemove', () => {
+    if (document.body.classList.contains('presenting')) showControls();
+});
+
+// Detectar sortida de fullscreen → tornar a mode normal
+document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement && document.body.classList.contains('presenting')) {
+        document.body.classList.remove('presenting');
+        slides.forEach(s => s.classList.remove('is-current'));
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ave Maria Fundacio — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+    --white: #FFFFFF;
+    --black: #1a1a1a;
+    --gris: #777777;
+    --gris-clar: #cccccc;
+    --line: #e5e5e5;
+
+    --taronja: #E8863A;
+    --coral: #E85D75;
+    --groc: #F2C14E;
+    --blau: #5DADE2;
+    --verd: #2D936C;
+    --rosa: #D4859A;
+    --bosc: #1E8449;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    background: #2a2a2a;
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.deck { display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 16px 80px; }
+.deck-info { color: #888; text-align: center; font-size: 13px; padding: 16px; }
+
+/* SLIDE BASE 16:9 */
+.slide {
+    width: 100%; max-width: 1920px; aspect-ratio: 16 / 9;
+    background: var(--white); color: var(--black);
+    position: relative; overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    container-type: inline-size;
+}
+.slide.dark { background: var(--black); color: var(--white); }
+
+.slide-num {
+    position: absolute; bottom: 3.3%; left: 3.1%;
+    font-size: 0.85cqw; font-weight: 400; opacity: 0.4;
+    letter-spacing: 0.06em;
+}
+.slide-tag {
+    position: absolute; top: 4.6%; right: 3.1%;
+    font-size: 0.8cqw; font-weight: 500; opacity: 0.4;
+    letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+.brand-mark {
+    position: absolute; top: 4.6%; left: 3.1%;
+    display: flex; align-items: center; gap: 0.7cqw;
+}
+.brand-mark .iso { width: 2.2cqw; height: 2.2cqw; display: block; object-fit: contain; }
+.brand-mark .label { font-size: 0.85cqw; font-weight: 700; line-height: 1.15; }
+
+/* Donts preview — adapt img to behave like svg */
+.dont-cell .preview img { width: 50%; height: auto; display: block; }
+
+/* ════════ COVER ════════ */
+.cover { background: var(--white); color: var(--black); }
+.cover .stripes {
+    position: absolute; top: 0; right: 0; bottom: 0; width: 28%;
+    display: grid; grid-template-columns: repeat(6, 1fr);
+}
+.cover .stripes > div:nth-child(1) { background: var(--taronja); }
+.cover .stripes > div:nth-child(2) { background: var(--coral); }
+.cover .stripes > div:nth-child(3) { background: var(--groc); }
+.cover .stripes > div:nth-child(4) { background: var(--blau); }
+.cover .stripes > div:nth-child(5) { background: var(--verd); }
+.cover .stripes > div:nth-child(6) { background: var(--rosa); }
+.cover .title {
+    position: absolute; bottom: 7%; left: 3.1%;
+    font-size: 12cqw; font-weight: 800; line-height: 0.85; letter-spacing: -0.04em;
+}
+.cover .subtitle {
+    position: absolute; top: 12%; left: 3.1%; max-width: 30%;
+    font-size: 1.05cqw; line-height: 1.5;
+}
+.cover .meta {
+    position: absolute; bottom: 8%; right: 31%;
+    font-size: 0.85cqw; font-weight: 500; letter-spacing: 0.08em;
+    text-align: right; line-height: 1.6;
+}
+
+/* ════════ STATEMENT ════════ */
+.slide.statement .headline {
+    position: absolute; top: 30%; right: 9%;
+    font-size: 5.2cqw; font-weight: 700; line-height: 0.95;
+    letter-spacing: -0.02em; max-width: 60%; text-align: right;
+}
+.slide.statement .body {
+    position: absolute; bottom: 14%; right: 9%; width: 30%;
+    font-size: 1.05cqw; line-height: 1.55;
+}
+
+/* ════════ DIVIDER ════════ */
+.slide.divider .big {
+    position: absolute; top: 5%; left: 3.1%; right: 3.1%;
+    font-size: 13cqw; font-weight: 800; line-height: 0.85; letter-spacing: -0.04em;
+}
+.slide.divider .label {
+    position: absolute; bottom: 7%; left: 3.1%;
+    font-size: 1.4cqw; font-weight: 700;
+}
+.slide.divider.bosc { background: var(--bosc); color: var(--white); }
+.slide.divider.taronja { background: var(--taronja); color: var(--black); }
+.slide.divider.coral { background: var(--coral); color: var(--black); }
+.slide.divider.blau { background: var(--blau); color: var(--black); }
+.slide.divider.verd { background: var(--verd); color: var(--white); }
+.slide.divider.groc { background: var(--groc); color: var(--black); }
+.slide.divider.rosa { background: var(--rosa); color: var(--black); }
+
+/* ════════ SPLIT ════════ */
+.split { display: grid; grid-template-columns: 31% 1fr; }
+.split .left { padding: 6.5% 4% 6% 3.1%; display: flex; flex-direction: column; gap: 1.2cqw; }
+.split .left h2 { font-size: 2.2cqw; font-weight: 700; line-height: 1.1; margin-bottom: 0.4cqw; }
+.split .left h2 small { display: block; font-size: 1.6cqw; font-weight: 400; margin-top: 0.2cqw; opacity: 0.55; }
+.split .left p { font-size: 0.95cqw; line-height: 1.55; }
+.split .left .lead { font-size: 1.25cqw; line-height: 1.4; font-weight: 500; }
+.split .left h3 { font-size: 1.3cqw; font-weight: 700; margin-top: 0.6cqw; }
+
+.split .right { display: flex; align-items: center; justify-content: center; padding: 4%; position: relative; }
+.split.two-pane .right { display: grid; grid-template-columns: 1fr 1fr; padding: 0; }
+.split.two-pane .right > div { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6%; gap: 1.5cqw; }
+.split.two-pane .right .light { background: var(--white); color: var(--black); }
+.split.two-pane .right .dark { background: var(--black); color: var(--white); }
+
+/* ════════ FULL ════════ */
+.slide.full { padding: 6% 3.1% 5%; }
+.slide.full h2 {
+    font-size: 6.5cqw; font-weight: 800; line-height: 0.9;
+    letter-spacing: -0.03em; margin-bottom: 2cqw;
+}
+.slide.full h2 small {
+    display: block; font-size: 1.4cqw; font-weight: 400;
+    letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.45;
+    margin-bottom: 1.2cqw;
+}
+.slide.full .lead {
+    font-size: 1.35cqw; font-weight: 400; line-height: 1.45;
+    max-width: 60%; margin-bottom: 2.5cqw;
+}
+.slide.full .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5cqw; }
+.slide.full .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5cqw; }
+.slide.full .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4cqw; }
+
+/* ════════ SWATCH (colors slides) ════════ */
+.swatch {
+    background: var(--white); border: 1px solid var(--line); border-radius: 0;
+    overflow: hidden; display: flex; flex-direction: column;
+}
+.swatch .color { aspect-ratio: 1.6 / 1; }
+.swatch .info { padding: 1cqw 1.1cqw 1.1cqw; }
+.swatch .name { font-size: 1.05cqw; font-weight: 700; }
+.swatch .codes {
+    display: flex; flex-direction: column; gap: 0.05cqw;
+    font-size: 0.62cqw; color: var(--gris); margin-top: 0.4cqw;
+}
+
+/* ════════ PALETTE BLOCK (estil OAN) ════════ */
+.slide.palette { padding: 0; }
+.palette-header {
+    position: absolute; top: 4.6%; left: 3.1%; right: 3.1%;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    z-index: 10; pointer-events: none;
+}
+.palette-header h2 {
+    font-size: 2.2cqw; font-weight: 700; line-height: 1.1;
+    color: var(--black); background: var(--white); padding: 0.4cqw 0.8cqw 0.4cqw 0;
+}
+.palette-header h2 small {
+    display: block; font-size: 0.95cqw; font-weight: 400;
+    letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.5;
+    margin-bottom: 0.3cqw;
+}
+.palette-header .tag-r {
+    font-size: 0.85cqw; font-weight: 500; opacity: 0.5;
+    letter-spacing: 0.08em; text-transform: uppercase;
+}
+.palette-block {
+    width: 100%; height: 100%;
+    display: grid; grid-template-rows: 1fr 1fr;
+}
+.palette-block .top { display: grid; grid-template-columns: 1fr 1fr; }
+.palette-block .bottom { display: grid; }
+.palette-block .bottom.cols-6 { grid-template-columns: repeat(6, 1fr); }
+.palette-block .bottom.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.palette-cell {
+    padding: 2.2cqw 1.8cqw 2.2cqw;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    position: relative;
+}
+.palette-cell .nm { font-size: 1.25cqw; font-weight: 700; margin-bottom: 0.6cqw; line-height: 1; }
+.palette-cell .cd {
+    font-size: 0.62cqw; line-height: 1.7; font-weight: 400;
+    font-feature-settings: 'tnum';
+}
+.palette-cell.dark { color: var(--white); }
+.palette-cell.dark .cd { opacity: 0.85; }
+.palette-cell.light { color: var(--black); }
+.palette-cell.light .cd { opacity: 0.7; }
+.palette-cell.light.bordered { border: 1px solid var(--line); }
+.slide.palette .palette-num {
+    position: absolute; bottom: 1.5%; left: 1.5%; z-index: 10;
+    font-size: 0.75cqw; font-weight: 400; opacity: 0.45;
+    color: var(--white);
+}
+
+/* ════════ CARDS minimalistes ════════ */
+.card {
+    background: var(--white); border: 1px solid var(--line); border-radius: 0;
+    padding: 1.4cqw 1.5cqw;
+}
+.card.outline { background: transparent; border: 1px solid var(--black); }
+.card h4 { font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.4cqw; }
+.card h5 { font-size: 0.9cqw; font-weight: 700; margin-bottom: 0.3cqw; }
+.card p { font-size: 0.78cqw; line-height: 1.55; }
+.card .num {
+    font-size: 0.7cqw; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gris); margin-bottom: 0.6cqw;
+}
+.card .big-num {
+    font-size: 2.2cqw; font-weight: 200; line-height: 1; margin-bottom: 0.6cqw;
+}
+.card .stat {
+    font-size: 2.6cqw; font-weight: 800; line-height: 1; margin-bottom: 0.5cqw;
+    letter-spacing: -0.02em;
+}
+
+/* tag minimalista */
+.tag {
+    display: inline-block; padding: 0.2cqw 0.6cqw; border: 1px solid var(--black);
+    font-size: 0.55cqw; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 0.5cqw;
+}
+
+/* shape grid B/N */
+.shape-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.8cqw; }
+.shape-cell {
+    background: var(--white); border: 1px solid var(--line);
+    aspect-ratio: 1; display: flex; flex-direction: column;
+}
+.shape-cell svg { width: 100%; height: 70%; display: block; }
+.shape-cell .nm {
+    font-size: 0.55cqw; font-weight: 600; text-align: center;
+    padding: 0.2cqw 0.3cqw; opacity: 0.65;
+}
+
+/* don't grid */
+.dont-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2cqw; }
+.dont-cell { background: var(--white); border: 1px solid var(--line); overflow: hidden; }
+.dont-cell .preview { aspect-ratio: 1.4 / 1; display: flex; align-items: center; justify-content: center; background: var(--white); border-bottom: 1px solid var(--line); }
+.dont-cell .preview svg { width: 50%; height: auto; }
+.dont-cell .desc { padding: 0.9cqw 1.1cqw 1.1cqw; }
+.dont-cell h5 { font-size: 0.8cqw; font-weight: 700; margin-bottom: 0.25cqw; }
+.dont-cell p { font-size: 0.65cqw; line-height: 1.4; color: var(--gris); }
+
+/* type specimen */
+.specimen {
+    background: var(--white); padding: 1.6cqw 1.8cqw; border: 1px solid var(--line);
+    margin-bottom: 1cqw;
+}
+.specimen .lbl {
+    font-size: 0.65cqw; color: var(--gris); margin-bottom: 0.6cqw;
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+}
+
+/* avis box */
+.avis {
+    margin-top: 1.5cqw; padding: 1.1cqw 1.3cqw;
+    background: transparent; border: 1px solid var(--black);
+    font-size: 0.75cqw; line-height: 1.5;
+}
+
+/* dark callout */
+.dark-box {
+    background: var(--black); color: var(--white);
+    padding: 1.6cqw 2cqw;
+    margin-top: 1.5cqw;
+}
+.dark-box h4 { font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.6cqw; }
+.dark-box p { font-size: 0.85cqw; line-height: 1.55; }
+.dark-box .hl { font-weight: 700; }
+
+/* connection flow B/N */
+.flow { display: flex; align-items: center; justify-content: space-between; gap: 0.8cqw; margin-top: 1.5cqw; }
+.flow .node { display: flex; flex-direction: column; align-items: center; gap: 0.5cqw; flex: 1; }
+.flow .node .circle {
+    width: 4.5cqw; height: 4.5cqw; border-radius: 50%;
+    border: 1.5px solid var(--black); background: transparent;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--black); font-weight: 700; font-size: 0.85cqw; text-align: center;
+}
+.flow .node .lbl { font-size: 0.7cqw; color: var(--gris); }
+.flow .arrow { font-size: 1.6cqw; color: var(--black); opacity: 0.3; }
+
+@media (max-width: 800px) { .slide { box-shadow: 0 8px 24px rgba(0,0,0,0.3); } }
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+<!-- ═══════════════════════ 01 · COVER ═══════════════════════ -->
+<div class="slide cover">
+    <div class="brand-mark">
+        <img class="iso" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundacio">
+        <div class="label">Ave Maria<br>Fundacio</div>
+    </div>
+    <div class="stripes"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <p class="subtitle">Una identitat viva per a un espai on tot passa. Sistema d'identitat visual generatiu per a la Fundacio Ave Maria de Sitges.</p>
+    <h1 class="title">Brand<br>Guidelines</h1>
+    <div class="meta">Versio 2.0<br>Marc 2026<br>Sitges, Catalunya</div>
+</div>
+
+<!-- ═══════════════════════ 02 · STATEMENT ═══════════════════════ -->
+<div class="slide statement">
+    <h2 class="headline">Manual<br>d'Identitat<br>Visual.</h2>
+    <p class="body">Una identitat viva per a un espai on tot passa. Sistema d'identitat visual generatiu per a la Fundacio Ave Maria de Sitges.</p>
+    <div class="slide-num">02</div>
+</div>
+
+<!-- ═══════════════════════ 03 · DIVIDER 01 ═══════════════════════ -->
+<div class="slide divider dark">
+    <h2 class="big">La<br>Fundacio</h2>
+    <div class="label">Section 01</div>
+    <div class="slide-num">03</div>
+</div>
+
+<!-- ═══════════════════════ 04 · LA FUNDACIO ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">01 — La Fundacio</span>
+    <h2><small>Section 01</small>Fundacio Ave Maria<br>de Sitges</h2>
+    <p class="lead">Des de 1987, la Fundacio Ave Maria es una institucio privada sense anim de lucre que ofereix atencio especialitzada a persones adultes amb diversitat funcional, potenciant les seves capacitats per garantir la seva qualitat de vida.</p>
+    <p style="font-size: 0.95cqw; line-height: 1.5; max-width: 60%; margin-bottom: 2cqw;">Actualment beneficiem mes de 800 persones a Sitges, Garraf i comarques veines, oferint serveis de residencia especialitzada, centres de dia, habitatges amb suport, formacio i inclusio laboral.</p>
+    <div class="grid-3" style="margin-bottom: 1.5cqw;">
+        <div class="card"><div class="stat">+35</div><h4>Anys d'experiencia</h4><p>Des de 1987 treballant per la inclusio i la qualitat de vida de les persones amb diversitat funcional.</p></div>
+        <div class="card"><div class="stat">+800</div><h4>Persones ateses</h4><p>Beneficiaris directes dels nostres programes i serveis a tota la comarca del Garraf.</p></div>
+        <div class="card"><div class="stat">100%</div><h4>Compromis</h4><p>Dedicacio total a potenciar les capacitats de cada persona i el seu projecte de vida.</p></div>
+    </div>
+    <div class="dark-box">
+        <h4>Villa Havemann</h4>
+        <p>La casa que va veure neixer el projecte: la Villa Havemann, espai fundacional i simbol d'<span class="hl">acollida, cura i pertinenca</span>. Un edifici reconeixible i carregat d'historia que ara es transforma en el punt de partida d'una nova identitat.</p>
+    </div>
+    <div class="slide-num">04</div>
+</div>
+
+<!-- ═══════════════════════ 05 · DIVIDER 02 ═══════════════════════ -->
+<div class="slide divider taronja">
+    <h2 class="big">Missio<br>i Valors</h2>
+    <div class="label">Section 02</div>
+    <div class="slide-num">05</div>
+</div>
+
+<!-- ═══════════════════════ 06 · MISSIO ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">02 — Missio i Valors</span>
+    <h2><small>Section 02</small>El Nostre Proposit</h2>
+    <div style="margin: 2cqw 0 2.5cqw; padding: 2cqw 3cqw; background: var(--black); color: var(--white); max-width: 80%;">
+        <p style="font-size: 1.8cqw; font-weight: 600; line-height: 1.3; font-style: italic;">"Garantir la qualitat de vida de les persones amb diversitat funcional, potenciant les seves capacitats."</p>
+    </div>
+    <h3 style="font-size: 1.8cqw; font-weight: 700; margin-bottom: 0.6cqw;">Visio</h3>
+    <p style="font-size: 1.05cqw; line-height: 1.5; max-width: 70%;">Ser reconeguts com a liders en benestar i serveis de qualitat, millorant continuament mitjancant la innovacio, mantenint un equip professional competent i fomentant la inclusio social.</p>
+    <div class="slide-num">06</div>
+</div>
+
+<!-- ═══════════════════════ 07 · VALORS ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">02 — Missio i Valors</span>
+    <h2 style="font-size: 4.5cqw; margin-bottom: 1.5cqw;">Valors Fonamentals</h2>
+    <div class="grid-3" style="grid-auto-rows: 1fr;">
+        <div class="card"><div class="num">01</div><h4>Responsabilitat</h4><p>Coherencia i compromis en cada accio que realitzem.</p></div>
+        <div class="card"><div class="num">02</div><h4>Respecte</h4><p>La dignitat de cada persona es el centre de totes les nostres decisions.</p></div>
+        <div class="card"><div class="num">03</div><h4>Transparencia</h4><p>Comunicacio oberta i honesta amb les persones que atenem, les seves families i la comunitat.</p></div>
+        <div class="card"><div class="num">04</div><h4>Innovacio</h4><p>Millora permanent en tots els nostres serveis i programes.</p></div>
+        <div class="card"><div class="num">05</div><h4>Eficacia</h4><p>Eficiencia operativa per maximitzar el nostre impacte social.</p></div>
+        <div class="card"><div class="num">06</div><h4>Treball en Equip</h4><p>Aprofitament del talent col·lectiu per aconseguir objectius comuns.</p></div>
+    </div>
+    <div class="slide-num">07</div>
+</div>
+
+<!-- ═══════════════════════ 08 · DIVIDER 03 ═══════════════════════ -->
+<div class="slide divider coral">
+    <h2 class="big">Veu<br>de Marca</h2>
+    <div class="label">Section 03</div>
+    <div class="slide-num">08</div>
+</div>
+
+<!-- ═══════════════════════ 09 · COM PARLEM ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">03 — Veu de Marca</span>
+    <h2><small>Section 03</small>Com Parlem</h2>
+    <p class="lead">La veu de la Fundacio Ave Maria es propera, clara i respectuosa. Parlem amb les persones, no sobre les persones. La nostra comunicacio reflecteix els mateixos valors que guien la nostra feina diaria.</p>
+    <div class="grid-3">
+        <div class="card"><div class="big-num">01</div><h4>Propera i humana</h4><p>Parlem amb calidesa, sense distancia institucional. Cada missatge ha de transmetre que darrere hi ha persones reals que es preocupen.</p></div>
+        <div class="card"><div class="big-num">02</div><h4>Clara i accessible</h4><p>Evitem el llenguatge tecnic innecessari. Comuniquem amb senzillesa perque tothom pugui entendre'ns. La claredat es respecte.</p></div>
+        <div class="card"><div class="big-num">03</div><h4>Optimista i activa</h4><p>Posem el focus en les capacitats, no en les limitacions. Parlem des de la possibilitat, no des de la mancanca. El nostre to mira endavant.</p></div>
+    </div>
+    <div class="slide-num">09</div>
+</div>
+
+<!-- ═══════════════════════ 10 · AIXI SI / NO ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">03 — Veu de Marca</span>
+    <h2 style="font-size: 4.5cqw; margin-bottom: 1.5cqw;">Aixi si · Aixi no</h2>
+    <div class="grid-2">
+        <div>
+            <h3 style="font-size: 1.5cqw; margin-bottom: 1cqw;">Aixi si <span style="opacity: 0.4; font-weight: 400;">— recomanat</span></h3>
+            <div class="card" style="margin-bottom: 0.8cqw;">
+                <p style="font-style: italic; font-size: 0.9cqw; margin-bottom: 0.6cqw;">"Acompanyem cada persona en el seu projecte de vida, potenciant les seves capacitats i garantint el seu benestar."</p>
+                <p style="color: var(--gris);">Directe, positiu, centrat en la persona.</p>
+            </div>
+            <div class="card">
+                <p style="font-style: italic; font-size: 0.9cqw; margin-bottom: 0.6cqw;">"A la Fundacio sempre hi ha un lloc per a tu."</p>
+                <p style="color: var(--gris);">Inclusiu, acollidor, coherent amb l'espai en blanc de la identitat.</p>
+            </div>
+        </div>
+        <div>
+            <h3 style="font-size: 1.5cqw; margin-bottom: 1cqw;">Aixi no <span style="opacity: 0.4; font-weight: 400;">— evitar</span></h3>
+            <div class="card outline" style="margin-bottom: 0.8cqw;">
+                <p style="font-style: italic; font-size: 0.9cqw; margin-bottom: 0.6cqw; text-decoration: line-through; opacity: 0.7;">"Atenem discapacitats amb problemes d'adaptacio social des de fa mes de tres decades."</p>
+                <p style="color: var(--gris);">Estigmatitzant, distant, llenguatge obsolet.</p>
+            </div>
+            <div class="card outline">
+                <p style="font-style: italic; font-size: 0.9cqw; margin-bottom: 0.6cqw; text-decoration: line-through; opacity: 0.7;">"La nostra entitat es lider en el sector de l'atencio a la dependencia."</p>
+                <p style="color: var(--gris);">Corporatiu, fred, centrat en l'organitzacio i no en les persones.</p>
+            </div>
+        </div>
+    </div>
+    <div class="dark-box" style="margin-top: 1.5cqw;">
+        <h4>Personalitat de Marca</h4>
+        <p><span class="hl">Acollidora</span> — Com la casa que ens va veure neixer, obrim les portes a tothom. <span class="hl">Viva</span> — Com la nostra identitat generativa, estem en constant evolucio. <span class="hl">Diversa</span> — Com les formes del nostre isotip, celebrem la diferencia. <span class="hl">Propera</span> — Com l'espai en blanc, sempre hi ha lloc per a tu.</p>
+    </div>
+    <div class="slide-num">10</div>
+</div>
+
+<!-- ═══════════════════════ 11 · DIVIDER 04 ═══════════════════════ -->
+<div class="slide divider blau">
+    <h2 class="big">Concepte<br>Creatiu</h2>
+    <div class="label">Section 04</div>
+    <div class="slide-num">11</div>
+</div>
+
+<!-- ═══════════════════════ 12 · CONCEPTE ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">04 — Concepte Creatiu</span>
+    <h2><small>Section 04</small>Un espai on tot passa</h2>
+    <p class="lead">La Fundacio es un lloc viu. Un punt de trobada on convergeixen disciplines, generacions, cultures i idees. No es defineix per una sola activitat, sino per la suma de totes elles.</p>
+    <div class="grid-2" style="margin-top: 1cqw;">
+        <div>
+            <h3 style="font-size: 1.6cqw; margin-bottom: 0.7cqw;">Deconstruir per Construir</h3>
+            <p style="font-size: 0.9cqw; line-height: 1.55; margin-bottom: 0.6cqw;">Partim de l'edifici com a origen. No l'il·lustrem. El <strong>deconstruim</strong>.</p>
+            <p style="font-size: 0.9cqw; line-height: 1.55; margin-bottom: 0.6cqw;">Simplifiquem els seus volums, corbes i proporcions essencials fins obtenir formes geometriques pures. Aquestes peces es reorganitzen dins un contenidor comu: el quadrat.</p>
+            <p style="font-size: 0.9cqw; line-height: 1.55;">El resultat no es una facana, sino un <strong>sistema grafic</strong>. Una estructura on les parts dialoguen, s'equilibren i generen noves composicions.</p>
+        </div>
+        <div>
+            <h3 style="font-size: 1.6cqw; margin-bottom: 0.7cqw;">El Quadrat com a Territori</h3>
+            <p style="font-size: 0.9cqw; line-height: 1.55; margin-bottom: 0.6cqw;">El quadrat actua com a marc i com a metafora. Representa l'espai que la Fundacio ofereix a la comunitat: <strong>estable, acollidor i obert</strong>.</p>
+            <p style="font-size: 0.9cqw; line-height: 1.55; margin-bottom: 0.6cqw;">Dins d'ell, cada forma simbolitza iniciatives, persones o projectes. Cap prevaleix sobre una altra. Totes conviuen en harmonia.</p>
+            <p style="font-size: 0.9cqw; line-height: 1.55;">El conjunt transmet <strong>obertura, inclusio i contemporaneitat</strong>.</p>
+        </div>
+    </div>
+    <div class="dark-box">
+        <h4>El Buit com a Invitacio</h4>
+        <p>En cada composicio deixem un <span class="hl">espai en blanc</span>. No es un buit. Es un gest. Un lloc reservat per a qui arriba. Per a noves veus. Per a idees que encara no existeixen. El blanc comunica que la Fundacio no esta completa sense les persones que l'habiten.</p>
+    </div>
+    <div class="slide-num">12</div>
+</div>
+
+<!-- ═══════════════════════ 13 · DE VALORS A IDENTITAT ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">04 — Concepte Creatiu</span>
+    <h2 style="font-size: 4.5cqw;">De Valors a Identitat</h2>
+    <p class="lead">Cada decisio visual del sistema es la traduccio d'un valor de la Fundacio. La identitat no decora: significa.</p>
+    <div class="flow">
+        <div class="node"><div class="circle">Inclusio</div><span class="lbl">Formes que conviuen</span></div>
+        <span class="arrow">→</span>
+        <div class="node"><div class="circle">Diversitat</div><span class="lbl">Colors variats</span></div>
+        <span class="arrow">→</span>
+        <div class="node"><div class="circle">Obertura</div><span class="lbl">Espai en blanc</span></div>
+        <span class="arrow">→</span>
+        <div class="node"><div class="circle">Innovacio</div><span class="lbl">Sistema generatiu</span></div>
+        <span class="arrow">→</span>
+        <div class="node"><div class="circle">Pertinenca</div><span class="lbl">El quadrat-llar</span></div>
+    </div>
+    <div class="slide-num">13</div>
+</div>
+
+<!-- ═══════════════════════ 14 · DIVIDER 05 ═══════════════════════ -->
+<div class="slide divider dark">
+    <h2 class="big">El<br>Logotip</h2>
+    <div class="label">Section 05</div>
+    <div class="slide-num">14</div>
+</div>
+
+<!-- ═══════════════════════ 15 · LOGO VERTICAL ═══════════════════════ -->
+<div class="slide split two-pane">
+    <div class="left">
+        <h2><small>Versio Vertical</small>Anatomia del Logotip</h2>
+        <p>El logotip es compon de dos elements: l'isotip (la graella 3x3) i el logotip (les paraules "AVE MARIA / FUNDACIO" amb tipografia personalitzada). Junts formen una unitat inseparable.</p>
+        <p>La <strong>versio vertical</strong> es la d'us preferent en totes les aplicacions on hi hagi espai suficient.</p>
+        <div class="card" style="margin-top: 1.2cqw; display: flex; gap: 1.1cqw; align-items: center;">
+            <span style="display: block; width: 3cqw; height: 3cqw; background: #2c2c2c; flex-shrink: 0;" aria-hidden="true"></span>
+            <div>
+                <div class="num">Color del text · #2C2C2C</div>
+                <p>El text del logotip s'imprimeix sempre en <strong>#2C2C2C</strong>, un gris molt fosc en lloc de negre pur. Suavitza el contrast i transmet proximitat, coherent amb els valors <span class="hl">acollidor</span> i <span class="hl">proper</span> de la marca.</p>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="light">
+            <img style="height: 75%; max-width: 60%;" src="web/BRANDBOOK_MARCA/logos/SVG/Recurso%201.svg" alt="Ave Maria Fundacio">
+        </div>
+        <div class="dark">
+            <img style="height: 75%; max-width: 60%;" src="web/BRANDBOOK_MARCA/logos/SVG/LOGO_PARA%20FONDO_NEGRO.svg" alt="Ave Maria Fundacio">
+        </div>
+    </div>
+    <div class="slide-num">15</div>
+</div>
+
+<!-- ═══════════════════════ 16 · LOGO HORITZONTAL ═══════════════════════ -->
+<div class="slide split">
+    <div class="left">
+        <h2><small>Versio Horitzontal</small>Us Secundari</h2>
+        <p>S'utilitza quan l'espai disponible es mes ample que alt: capcaleres, banners, signatures de correu i situacions de format apaisat.</p>
+        <p>L'isotip va a l'esquerra i el logotip a la dreta.</p>
+    </div>
+    <div class="right" style="background: var(--white);">
+        <img style="width: 75%;" src="web/BRANDBOOK_MARCA/logos/SVG/logo_horizontal.svg" alt="Ave Maria Fundacio">
+    </div>
+    <div class="slide-num">16</div>
+</div>
+
+<!-- ═══════════════════════ 17 · LOGO ISOTIP ═══════════════════════ -->
+<div class="slide split">
+    <div class="left">
+        <h2><small>Nomes Isotip</small>Us Terciari</h2>
+        <p>Per a avatars, icones d'aplicacio, favicon i espais reduits on el text no seria llegible.</p>
+        <p style="font-size: 0.85cqw; color: var(--gris);">Mides de referencia: 120px · 64px · 32px</p>
+    </div>
+    <div class="right" style="background: var(--white); gap: 3cqw; align-items: center;">
+        <img style="width: 18%;" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundacio">
+        <img style="width: 10%;" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundacio">
+        <img style="width: 5%;" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundacio">
+    </div>
+    <div class="slide-num">17</div>
+</div>
+
+<!-- ═══════════════════════ 18 · LOGO MONOCROMA ═══════════════════════ -->
+<div class="slide split two-pane">
+    <div class="left">
+        <h2><small>Versio Monocroma</small>Una sola tinta</h2>
+        <p>Per a aplicacions sobries amb matisos: editorial, documents, informes i senyaletica.</p>
+        <p>Utilitza els 4 tons de gris de la paleta Monocroma per mantenir la diversitat visual sense color.</p>
+    </div>
+    <div class="right">
+        <div class="light">
+            <img style="height: 75%; max-width: 60%;" src="web/BRANDBOOK_MARCA/logos/SVG/GRISES.svg" alt="Logo Monocroma Ave Maria Fundacio">
+        </div>
+        <div class="dark">
+            <img style="height: 75%; max-width: 60%; filter: invert(1);" src="web/BRANDBOOK_MARCA/logos/SVG/GRISES.svg" alt="Logo Monocroma Ave Maria Fundacio (negatiu)">
+        </div>
+    </div>
+    <div class="slide-num">18</div>
+</div>
+
+<!-- ═══════════════════════ 19 · DIVIDER 06 ═══════════════════════ -->
+<div class="slide divider verd">
+    <h2 class="big">Vocabulari<br>Visual</h2>
+    <div class="label">Section 06</div>
+    <div class="slide-num">19</div>
+</div>
+
+<!-- ═══════════════════════ 20 · BIBLIOTECA DE FORMES (B/N) ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">06 — Biblioteca de Formes</span>
+    <h2 style="font-size: 4cqw; margin-bottom: 0.7cqw;"><small>Section 06</small>El Vocabulari Visual</h2>
+    <p class="lead" style="margin-bottom: 1.5cqw;">El sistema d'identitat utilitza 21 formes geometriques pures, derivades del cercle, el quadrat i el triangle. Representen la deconstruccio de la Villa Havemann en els seus volums essencials.</p>
+    <div class="shape-grid">
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/></svg><span class="nm">Quadrat</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><circle cx="50" cy="50" r="50" fill="#FFFFFF"/></svg><span class="nm">Cercle</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M100 0 A100 100 0 0 0 0 100L0 0Z" fill="#FFFFFF"/></svg><span class="nm">Quart A</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M0 0 L100 0 A100 100 0 0 1 0 100Z" fill="#FFFFFF"/></svg><span class="nm">Quart B</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M0 100 L0 0 A100 100 0 0 1 100 100Z" fill="#FFFFFF"/></svg><span class="nm">Quart C</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M100 100 L100 0 A100 100 0 0 0 0 100Z" fill="#FFFFFF"/></svg><span class="nm">Quart D</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M0 50 A50 50 0 0 1 100 50 A50 50 0 0 1 0 50" fill="#FFFFFF"/></svg><span class="nm">Fulla V</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M50 0 A50 50 0 0 1 50 100 A50 50 0 0 1 50 0" fill="#FFFFFF"/></svg><span class="nm">Fulla H</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M0 100 A50 50 0 0 1 100 100Z" fill="#FFFFFF"/></svg><span class="nm">Semi Baix</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M0 0 A50 50 0 0 0 100 0Z" fill="#FFFFFF"/></svg><span class="nm">Semi Dalt</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M100 0 A50 50 0 0 0 100 100Z" fill="#FFFFFF"/></svg><span class="nm">Semi Dreta</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M0 0 A50 50 0 0 1 0 100Z" fill="#FFFFFF"/></svg><span class="nm">Semi Esq</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M0 0 L100 0 L0 100 Z" fill="#FFFFFF"/></svg><span class="nm">Triangle SE</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M0 0 L100 0 L100 100 Z" fill="#FFFFFF"/></svg><span class="nm">Triangle SD</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M0 0 L0 100 L100 100 Z" fill="#FFFFFF"/></svg><span class="nm">Triangle IE</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><path d="M100 0 L100 100 L0 100 Z" fill="#FFFFFF"/></svg><span class="nm">Triangle ID</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><circle cx="50" cy="50" r="30" fill="#FFFFFF"/></svg><span class="nm">Cercle Int</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><ellipse cx="50" cy="50" rx="22" ry="42" fill="#FFFFFF"/></svg><span class="nm">Fulla C</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><rect x="25" y="0" width="50" height="100" fill="#FFFFFF"/></svg><span class="nm">Rect V</span></div>
+        <div class="shape-cell"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a1a1a"/><rect x="0" y="0" width="50" height="40" fill="#FFFFFF"/></svg><span class="nm">Escalo</span></div>
+        <div class="shape-cell" style="border: 1px dashed #999;"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#FFFFFF"/></svg><span class="nm">Buit</span></div>
+    </div>
+    <div class="dark-box" style="margin-top: 1.5cqw;">
+        <h4>Origen de les Formes</h4>
+        <p>Cada forma del vocabulari visual neix de la <span class="hl">deconstruccio de la Villa Havemann</span>: els arcs de les finestres es transformen en semicercles, els volums del sostre en quarts de cercle, les proporcions dels murs en rectangles. El passat no desapareix: es converteix en estructura.</p>
+    </div>
+    <div class="slide-num">20</div>
+</div>
+
+<!-- ═══════════════════════ 21 · DIVIDER 07 ═══════════════════════ -->
+<div class="slide divider rosa">
+    <h2 class="big">Sistema<br>Generatiu</h2>
+    <div class="label">Section 07</div>
+    <div class="slide-num">21</div>
+</div>
+
+<!-- ═══════════════════════ 22 · REGLES + VARIACIONS ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">07 — Sistema Generatiu</span>
+    <h2><small>Section 07</small>Regles de Composicio</h2>
+    <p class="lead">La identitat es planteja com un sistema generatiu perque la realitat de la fundacio tambe ho es: diversa, canviant i en constant transformacio.</p>
+    <div class="grid-2" style="margin-top: 0.7cqw;">
+        <div>
+            <h3 style="font-size: 1.4cqw; margin-bottom: 0.8cqw;">Principis</h3>
+            <div class="card" style="margin-bottom: 0.5cqw;"><h5><span style="opacity: 0.4;">01</span> &nbsp; Graella 3x3</h5><p>L'isotip sempre es compon de 9 cel·les disposades en una graella quadrada de 3x3.</p></div>
+            <div class="card" style="margin-bottom: 0.5cqw;"><h5><span style="opacity: 0.4;">02</span> &nbsp; Un espai en blanc</h5><p>Una cel·la sempre roman en blanc. Es l'espai d'invitacio, el lloc reservat per a qui arriba.</p></div>
+            <div class="card" style="margin-bottom: 0.5cqw;"><h5><span style="opacity: 0.4;">03</span> &nbsp; Paleta oficial</h5><p>Les formes nomes utilitzen colors de la paleta corporativa. No s'admeten colors externs.</p></div>
+            <div class="card" style="margin-bottom: 0.5cqw;"><h5><span style="opacity: 0.4;">04</span> &nbsp; Contrast cromatic</h5><p>Dues cel·les adjacents no han de compartir el mateix color de fons.</p></div>
+            <div class="card"><h5><span style="opacity: 0.4;">05</span> &nbsp; Text justificat</h5><p>El text sempre va sota (o al costat en versio horitzontal), justificat a l'amplada de l'isotip.</p></div>
+        </div>
+        <div>
+            <h3 style="font-size: 1.4cqw; margin-bottom: 0.8cqw;">Variacions</h3>
+            <p style="font-size: 0.85cqw; margin-bottom: 0.8cqw;">Cada composicio es unica pero reconeixible. Aqui es mostren 6 variacions del sistema:</p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7cqw;">
+                <svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#E8863A"/><rect x="100" y="0" width="100" height="100" fill="#2D936C"/><circle cx="150" cy="50" r="50" fill="#F2C14E"/><rect x="200" y="0" width="100" height="100" fill="#5DADE2"/><rect x="0" y="100" width="100" height="100" fill="#FFFFFF"/><rect x="100" y="100" width="100" height="100" fill="#E85D75"/><rect x="200" y="100" width="100" height="100" fill="#F2C14E"/><path d="M200 200 A50 50 0 0 1 300 200Z" fill="#2D936C"/><rect x="0" y="200" width="100" height="100" fill="#D4859A"/><path d="M0 200 L100 200 A100 100 0 0 1 0 300Z" fill="#E8863A"/><rect x="100" y="200" width="100" height="100" fill="#5DADE2"/><path d="M150 200 A50 50 0 0 1 150 300 A50 50 0 0 1 150 200" fill="#E85D75"/><rect x="200" y="200" width="100" height="100" fill="#E8863A"/></svg>
+                <svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#5DADE2"/><path d="M0 0 A50 50 0 0 0 100 0Z" fill="#2D936C"/><rect x="100" y="0" width="100" height="100" fill="#E85D75"/><rect x="200" y="0" width="100" height="100" fill="#F2C14E"/><circle cx="250" cy="50" r="30" fill="#E8863A"/><rect x="0" y="100" width="100" height="100" fill="#E8863A"/><path d="M0 100 A50 50 0 0 1 0 200Z" fill="#F2C14E"/><rect x="100" y="100" width="100" height="100" fill="#2D936C"/><rect x="200" y="100" width="100" height="100" fill="#FFFFFF"/><rect x="0" y="200" width="100" height="100" fill="#F2C14E"/><rect x="100" y="200" width="100" height="100" fill="#D4859A"/><path d="M100 300 A50 50 0 0 1 200 300Z" fill="#5DADE2"/><rect x="200" y="200" width="100" height="100" fill="#E85D75"/><path d="M200 200 L300 200 A100 100 0 0 0 200 300Z" fill="#E8863A"/></svg>
+                <svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#2D936C"/><rect x="100" y="0" width="100" height="100" fill="#F2C14E"/><path d="M100 0 A50 50 0 0 1 100 100Z" fill="#E85D75"/><rect x="200" y="0" width="100" height="100" fill="#E8863A"/><path d="M200 0 L300 0 A100 100 0 0 1 200 100Z" fill="#D4859A"/><rect x="0" y="100" width="100" height="100" fill="#E85D75"/><circle cx="50" cy="150" r="50" fill="#5DADE2"/><rect x="100" y="100" width="100" height="100" fill="#E8863A"/><rect x="200" y="100" width="100" height="100" fill="#F2C14E"/><rect x="0" y="200" width="100" height="100" fill="#FFFFFF"/><rect x="100" y="200" width="100" height="100" fill="#2D936C"/><rect x="125" y="200" width="50" height="100" fill="#E8863A"/><rect x="200" y="200" width="100" height="100" fill="#5DADE2"/><path d="M200 300 A50 50 0 0 1 300 300Z" fill="#F2C14E"/></svg>
+                <svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#F2C14E"/><path d="M0 100 A50 50 0 0 1 100 100Z" fill="#E85D75"/><rect x="100" y="0" width="100" height="100" fill="#FFFFFF"/><rect x="200" y="0" width="100" height="100" fill="#2D936C"/><circle cx="250" cy="50" r="50" fill="#E8863A"/><rect x="0" y="100" width="100" height="100" fill="#E8863A"/><rect x="100" y="100" width="100" height="100" fill="#D4859A"/><path d="M100 100 L200 100 A100 100 0 0 1 100 200Z" fill="#5DADE2"/><rect x="200" y="100" width="100" height="100" fill="#F2C14E"/><rect x="0" y="200" width="100" height="100" fill="#5DADE2"/><path d="M0 200 A50 50 0 0 0 100 200Z" fill="#2D936C"/><rect x="100" y="200" width="100" height="100" fill="#E8863A"/><path d="M150 200 A50 50 0 0 1 150 300 A50 50 0 0 1 150 200" fill="#F2C14E"/><rect x="200" y="200" width="100" height="100" fill="#E85D75"/></svg>
+                <svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#E85D75"/><rect x="100" y="0" width="100" height="100" fill="#E8863A"/><path d="M100 0 L200 0 A100 100 0 0 0 100 100Z" fill="#F2C14E"/><rect x="200" y="0" width="100" height="100" fill="#5DADE2"/><rect x="0" y="100" width="100" height="100" fill="#2D936C"/><path d="M0 100 A50 50 0 0 1 0 200Z" fill="#D4859A"/><rect x="100" y="100" width="100" height="100" fill="#5DADE2"/><circle cx="150" cy="150" r="30" fill="#E85D75"/><rect x="200" y="100" width="100" height="100" fill="#E8863A"/><rect x="0" y="200" width="100" height="100" fill="#F2C14E"/><rect x="100" y="200" width="100" height="100" fill="#E85D75"/><rect x="200" y="200" width="100" height="100" fill="#FFFFFF"/></svg>
+                <svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#D4859A"/><ellipse cx="50" cy="50" rx="22" ry="42" fill="#E85D75"/><rect x="100" y="0" width="100" height="100" fill="#E8863A"/><rect x="200" y="0" width="100" height="100" fill="#FFFFFF"/><rect x="0" y="100" width="100" height="100" fill="#F2C14E"/><rect x="100" y="100" width="100" height="100" fill="#5DADE2"/><path d="M200 100 A50 50 0 0 0 200 200Z" fill="#E8863A"/><rect x="200" y="100" width="100" height="100" fill="#2D936C"/><circle cx="250" cy="150" r="50" fill="#F2C14E"/><rect x="0" y="200" width="100" height="100" fill="#E85D75"/><path d="M0 300 L0 200 A100 100 0 0 1 100 300Z" fill="#5DADE2"/><rect x="100" y="200" width="100" height="100" fill="#2D936C"/><rect x="200" y="200" width="100" height="100" fill="#E8863A"/><path d="M200 300 A50 50 0 0 1 300 300Z" fill="#D4859A"/></svg>
+            </div>
+            <p style="font-size: 0.65cqw; color: var(--gris); margin-top: 0.6cqw;">Cada composicio es unica, pero totes comparteixen el mateix ADN visual.</p>
+        </div>
+    </div>
+    <div class="slide-num">22</div>
+</div>
+
+<!-- ═══════════════════════ 23 · DIVIDER 08 ═══════════════════════ -->
+<div class="slide divider dark">
+    <h2 class="big">Espai i<br>Mida</h2>
+    <div class="label">Section 08</div>
+    <div class="slide-num">23</div>
+</div>
+
+<!-- ═══════════════════════ 24 · CLEARSPACE ═══════════════════════ -->
+<div class="slide split">
+    <div class="left">
+        <h2><small>Section 08</small>Clearspace</h2>
+        <p class="lead">Per garantir la correcta lectura i impacte del logotip, cal respectar sempre un espai de proteccio al seu voltant.</p>
+        <h3>Area de Proteccio</h3>
+        <p>L'espai de respecte minim al voltant del logotip equival a <strong>1 cel·la de la graella</strong> (1/3 de l'amplada de l'isotip).</p>
+        <h3>Mida Minima</h3>
+        <p><strong>40mm</strong> en impressio · <strong>120px</strong> en digital. Per sota d'aquestes mides la llegibilitat i el contrast no es poden garantir.</p>
+        <h3>Co-branding</h3>
+        <p>Quan apareix junt amb el logotip d'una altra entitat, mantenir <strong>2x</strong> (dues cel·les) de separacio. El logotip associat no ha de superar l'alcada de l'isotip.</p>
+    </div>
+    <div class="right" style="background: var(--white);">
+        <svg viewBox="0 0 420 500" style="width: 60%;">
+            <rect x="0" y="0" width="420" height="500" fill="none" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="6,4"/>
+            <text x="210" y="35" font-family="Montserrat" font-size="10" fill="#1a1a1a" text-anchor="middle" font-weight="500">1x</text>
+            <text x="210" y="490" font-family="Montserrat" font-size="10" fill="#1a1a1a" text-anchor="middle" font-weight="500">1x</text>
+            <text x="25" y="230" font-family="Montserrat" font-size="10" fill="#1a1a1a" text-anchor="middle" font-weight="500">1x</text>
+            <text x="395" y="230" font-family="Montserrat" font-size="10" fill="#1a1a1a" text-anchor="middle" font-weight="500">1x</text>
+            <image x="80" y="50" width="260" height="373" href="web/BRANDBOOK_MARCA/logos/SVG/Recurso%201.svg"/>
+        </svg>
+    </div>
+    <div class="slide-num">24</div>
+</div>
+
+<!-- ═══════════════════════ 25 · DIVIDER 09 ═══════════════════════ -->
+<div class="slide divider coral">
+    <h2 class="big">Usos<br>Incorrectes</h2>
+    <div class="label">Section 09</div>
+    <div class="slide-num">25</div>
+</div>
+
+<!-- ═══════════════════════ 26 · DONTS ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">09 — Usos Incorrectes</span>
+    <h2 style="font-size: 4cqw; margin-bottom: 0.7cqw;"><small>Section 09</small>El que Mai s'ha de Fer</h2>
+    <p class="lead" style="margin-bottom: 1.5cqw;">Per protegir la integritat de la marca, es fonamental evitar les seguents manipulacions del logotip.</p>
+    <div class="dont-grid">
+        <div class="dont-cell"><div class="preview"><img style="opacity: 0.3;" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundacio"></div><div class="desc"><span class="tag">Incorrecte</span><h5>Reduir l'opacitat</h5><p>Els colors han de mantenir sempre la seva vivacitat. No aplicar transparencies.</p></div></div>
+        <div class="dont-cell"><div class="preview"><img style="transform: skewX(-12deg);" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundacio"></div><div class="desc"><span class="tag">Incorrecte</span><h5>Deformar o inclinar</h5><p>No modificar les proporcions, rotar, estirar o inclinar l'isotip.</p></div></div>
+        <div class="dont-cell"><div class="preview"><svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#ff0000"/><rect x="100" y="0" width="100" height="100" fill="#00ff00"/><rect x="200" y="0" width="100" height="100" fill="#0000ff"/><rect x="0" y="100" width="100" height="100" fill="#ffff00"/><rect x="100" y="100" width="100" height="100" fill="#FFFFFF"/><rect x="200" y="100" width="100" height="100" fill="#ff00ff"/><rect x="0" y="200" width="100" height="100" fill="#00ffff"/><rect x="100" y="200" width="100" height="100" fill="#ff8800"/><rect x="200" y="200" width="100" height="100" fill="#8800ff"/></svg></div><div class="desc"><span class="tag">Incorrecte</span><h5>Colors fora de paleta</h5><p>Nomes s'han d'utilitzar els colors de les paletes oficials. Mai colors arbitraris.</p></div></div>
+        <div class="dont-cell"><div class="preview"><img style="filter: drop-shadow(8px 8px 12px rgba(0,0,0,0.4));" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundacio"></div><div class="desc"><span class="tag">Incorrecte</span><h5>Afegir ombres o efectes</h5><p>No afegir ombres, brillantors, contorns o qualsevol efecte visual al logotip.</p></div></div>
+        <div class="dont-cell"><div class="preview"><svg viewBox="0 0 200 200"><rect x="0" y="0" width="100" height="100" fill="#E8863A"/><rect x="100" y="0" width="100" height="100" fill="#5DADE2"/><rect x="0" y="100" width="100" height="100" fill="#F2C14E"/><rect x="100" y="100" width="100" height="100" fill="#2D936C"/></svg></div><div class="desc"><span class="tag">Incorrecte</span><h5>Canviar la graella</h5><p>La graella sempre es de 3x3. No reduir a 2x2 ni ampliar a 4x4 o altres formats.</p></div></div>
+        <div class="dont-cell"><div class="preview"><svg viewBox="0 0 300 300"><rect x="0" y="0" width="100" height="100" fill="#E8863A"/><rect x="100" y="0" width="100" height="100" fill="#5DADE2"/><rect x="200" y="0" width="100" height="100" fill="#2D936C"/><rect x="0" y="100" width="100" height="100" fill="#F2C14E"/><rect x="100" y="100" width="100" height="100" fill="#E85D75"/><rect x="200" y="100" width="100" height="100" fill="#D4859A"/><rect x="0" y="200" width="100" height="100" fill="#5DADE2"/><rect x="100" y="200" width="100" height="100" fill="#E8863A"/><rect x="200" y="200" width="100" height="100" fill="#F2C14E"/></svg></div><div class="desc"><span class="tag">Incorrecte</span><h5>Eliminar l'espai en blanc</h5><p>Sempre ha d'haver una cel·la buida. Es un element conceptual irrenunciable de la identitat.</p></div></div>
+        <div class="dont-cell"><div class="preview"><img style="transform: rotate(45deg) scale(0.7);" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundacio"></div><div class="desc"><span class="tag">Incorrecte</span><h5>Rotar l'isotip</h5><p>L'isotip sempre s'ha de mostrar en la seva orientacio original, sense cap rotacio.</p></div></div>
+        <div class="dont-cell"><div class="preview"><svg viewBox="0 0 300 300"><defs><linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#E8863A"/><stop offset="50%" style="stop-color:#E85D75"/><stop offset="100%" style="stop-color:#5DADE2"/></linearGradient></defs><rect width="300" height="300" fill="url(#bg1)"/><rect x="100" y="100" width="100" height="100" fill="#FFFFFF"/></svg></div><div class="desc"><span class="tag">Incorrecte</span><h5>Degradats a les cel·les</h5><p>Les cel·les han de ser de color pla. No aplicar degradats ni textures dins les formes.</p></div></div>
+    </div>
+    <div class="slide-num">26</div>
+</div>
+
+<!-- ═══════════════════════ 27 · DIVIDER 10 ═══════════════════════ -->
+<div class="slide divider bosc">
+    <h2 class="big">Paleta<br>de Colors</h2>
+    <div class="label">Section 10</div>
+    <div class="slide-num">27</div>
+</div>
+
+<!-- ═══════════════════════ 28 · BOSC ═══════════════════════ -->
+<div class="slide palette">
+    <div class="palette-header">
+        <h2><small>10 · Paleta Principal</small>Bosc</h2>
+        <span class="tag-r">Section 10</span>
+    </div>
+    <div class="palette-block">
+        <div class="top">
+            <div class="palette-cell dark" style="background: #1a1a1a;">
+                <div class="nm">Charcoal</div>
+                <div class="cd">HEX #1A1A1A<br>RGB 26 / 26 / 26<br>CMYK 0 / 0 / 0 / 95</div>
+            </div>
+            <div class="palette-cell light bordered" style="background: #FFFFFF;">
+                <div class="nm">Blanc</div>
+                <div class="cd">HEX #FFFFFF<br>RGB 255 / 255 / 255<br>CMYK 0 / 0 / 0 / 0</div>
+            </div>
+        </div>
+        <div class="bottom cols-6">
+            <div class="palette-cell dark" style="background: #145A32;">
+                <div class="nm">Verd Profund</div>
+                <div class="cd">HEX #145A32<br>RGB 20 / 90 / 50<br>PANTONE 357 C</div>
+            </div>
+            <div class="palette-cell dark" style="background: #1E8449;">
+                <div class="nm">Verd Fosc</div>
+                <div class="cd">HEX #1E8449<br>RGB 30 / 132 / 73<br>PANTONE 356 C</div>
+            </div>
+            <div class="palette-cell dark" style="background: #27AE60;">
+                <div class="nm">Verd Mig</div>
+                <div class="cd">HEX #27AE60<br>RGB 39 / 174 / 96<br>PANTONE 7481 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #2ECC71;">
+                <div class="nm">Verd Viu</div>
+                <div class="cd">HEX #2ECC71<br>RGB 46 / 204 / 113<br>PANTONE 354 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #82E0AA;">
+                <div class="nm">Verd Clar</div>
+                <div class="cd">HEX #82E0AA<br>RGB 130 / 224 / 170<br>PANTONE 352 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #ABEBC6;">
+                <div class="nm">Verd Pastel</div>
+                <div class="cd">HEX #ABEBC6<br>RGB 171 / 235 / 198<br>PANTONE 351 C</div>
+            </div>
+        </div>
+    </div>
+    <div class="palette-num">28</div>
+</div>
+
+<!-- ═══════════════════════ 29 · COLORS ═══════════════════════ -->
+<div class="slide palette">
+    <div class="palette-header">
+        <h2><small>10 · Paleta Alternativa</small>Colors</h2>
+        <span class="tag-r">Section 10</span>
+    </div>
+    <div class="palette-block">
+        <div class="top">
+            <div class="palette-cell dark" style="background: #1a1a1a;">
+                <div class="nm">Charcoal</div>
+                <div class="cd">HEX #1A1A1A<br>RGB 26 / 26 / 26<br>CMYK 0 / 0 / 0 / 95</div>
+            </div>
+            <div class="palette-cell light bordered" style="background: #FFFFFF;">
+                <div class="nm">Blanc</div>
+                <div class="cd">HEX #FFFFFF<br>RGB 255 / 255 / 255<br>CMYK 0 / 0 / 0 / 0</div>
+            </div>
+        </div>
+        <div class="bottom cols-6">
+            <div class="palette-cell light" style="background: #E8863A;">
+                <div class="nm">Taronja</div>
+                <div class="cd">HEX #E8863A<br>RGB 232 / 134 / 58<br>PANTONE 716 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #E85D75;">
+                <div class="nm">Coral</div>
+                <div class="cd">HEX #E85D75<br>RGB 232 / 93 / 117<br>PANTONE 1925 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #F2C14E;">
+                <div class="nm">Groc</div>
+                <div class="cd">HEX #F2C14E<br>RGB 242 / 193 / 78<br>PANTONE 142 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #5DADE2;">
+                <div class="nm">Blau</div>
+                <div class="cd">HEX #5DADE2<br>RGB 93 / 173 / 226<br>PANTONE 2925 C</div>
+            </div>
+            <div class="palette-cell dark" style="background: #2D936C;">
+                <div class="nm">Verd</div>
+                <div class="cd">HEX #2D936C<br>RGB 45 / 147 / 108<br>PANTONE 7724 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #D4859A;">
+                <div class="nm">Rosa Suau</div>
+                <div class="cd">HEX #D4859A<br>RGB 212 / 133 / 154<br>PANTONE 700 C</div>
+            </div>
+        </div>
+    </div>
+    <div class="palette-num">29</div>
+</div>
+
+<!-- ═══════════════════════ 30 · MONOCROMA ═══════════════════════ -->
+<div class="slide palette">
+    <div class="palette-header">
+        <h2><small>10 · Paleta Alternativa</small>Monocroma</h2>
+        <span class="tag-r">Section 10</span>
+    </div>
+    <div class="palette-block">
+        <div class="top">
+            <div class="palette-cell dark" style="background: #1a1a1a;">
+                <div class="nm">Charcoal</div>
+                <div class="cd">HEX #1A1A1A<br>RGB 26 / 26 / 26<br>CMYK 0 / 0 / 0 / 95</div>
+            </div>
+            <div class="palette-cell light bordered" style="background: #FFFFFF;">
+                <div class="nm">Blanc</div>
+                <div class="cd">HEX #FFFFFF<br>RGB 255 / 255 / 255<br>CMYK 0 / 0 / 0 / 0</div>
+            </div>
+        </div>
+        <div class="bottom cols-4">
+            <div class="palette-cell dark" style="background: #1a1a1a;">
+                <div class="nm">Tinta</div>
+                <div class="cd">HEX #1A1A1A<br>RGB 26 / 26 / 26<br>PANTONE Black 6 C</div>
+            </div>
+            <div class="palette-cell dark" style="background: #595959;">
+                <div class="nm">Gris Fosc</div>
+                <div class="cd">HEX #595959<br>RGB 89 / 89 / 89<br>PANTONE Cool Gray 11 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #999999;">
+                <div class="nm">Gris Mig</div>
+                <div class="cd">HEX #999999<br>RGB 153 / 153 / 153<br>PANTONE Cool Gray 7 C</div>
+            </div>
+            <div class="palette-cell light" style="background: #cccccc;">
+                <div class="nm">Gris Clar</div>
+                <div class="cd">HEX #CCCCCC<br>RGB 204 / 204 / 204<br>PANTONE Cool Gray 4 C</div>
+            </div>
+        </div>
+    </div>
+    <div class="palette-num">30</div>
+</div>
+
+<!-- ═══════════════════════ 31 · PROPORCIO CROMATICA + AVIS ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">10 — Paleta de Colors</span>
+    <h2><small>Section 10</small>Proporcio Cromatica</h2>
+    <p class="lead">Com es distribueixen els colors en una aplicacio, mes enlla del propi isotip.</p>
+    <div style="display: grid; grid-template-columns: 60fr 30fr 10fr; height: 18cqw; margin-top: 1cqw; border: 1px solid var(--black);">
+        <div style="background: #FFFFFF; padding: 1.5cqw; display: flex; flex-direction: column; justify-content: flex-end; border-right: 1px solid var(--black);">
+            <div style="font-size: 3.5cqw; font-weight: 800; line-height: 1; margin-bottom: 0.4cqw;">60%</div>
+            <div style="font-size: 0.95cqw; font-weight: 700;">Neutres</div>
+            <div style="font-size: 0.75cqw; color: var(--gris); margin-top: 0.2cqw;">Blanc, gris clar &middot; fons</div>
+        </div>
+        <div style="background: #1a1a1a; color: var(--white); padding: 1.5cqw; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-size: 3.5cqw; font-weight: 800; line-height: 1; margin-bottom: 0.4cqw;">30%</div>
+            <div style="font-size: 0.95cqw; font-weight: 700;">Color principal</div>
+            <div style="font-size: 0.75cqw; opacity: 0.6; margin-top: 0.2cqw;">Taronja, blau o verd &middot; elements destacats</div>
+        </div>
+        <div style="background: #E8863A; padding: 1.5cqw; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-size: 3.5cqw; font-weight: 800; line-height: 1; margin-bottom: 0.4cqw;">10%</div>
+            <div style="font-size: 0.95cqw; font-weight: 700;">Accent</div>
+            <div style="font-size: 0.7cqw; opacity: 0.7; margin-top: 0.2cqw;">Coral, groc, rosa &middot; detalls</div>
+        </div>
+    </div>
+    <p style="font-size: 0.85cqw; color: var(--gris); margin-top: 1cqw; max-width: 70%;">Dins l'isotip, en canvi, tots els colors de la paleta seleccionada tenen el mateix pes — el sistema generatiu garanteix l'equilibri.</p>
+    <div class="avis" style="margin-top: 2cqw;"><strong>⚠ Avis sobre els codis PANTONE</strong> — Els codis PANTONE indicats son <strong>equivalencies aproximades</strong> calculades a partir dels valors HEX i RGB. Les pantalles digitals (RGB) no reprodueixen fidelment els colors PANTONE, que son tintes fisiques. Per a impressio professional critica (offset, serigrafia, packaging), es recomana <strong>contrastar sempre els colors amb una guia PANTONE Color Bridge fisica</strong> abans de validar la produccio final.</div>
+    <div class="slide-num">31</div>
+</div>
+
+<!-- ═══════════════════════ 32 · DIVIDER 11 ═══════════════════════ -->
+<div class="slide divider groc">
+    <h2 class="big">Tipografia</h2>
+    <div class="label">Section 11</div>
+    <div class="slide-num">32</div>
+</div>
+
+<!-- ═══════════════════════ 33 · MONTSERRAT ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">11 — Tipografia</span>
+    <h2><small>Section 11</small>Montserrat</h2>
+    <p class="lead">Montserrat es la tipografia corporativa de la Fundacio Ave Maria. Una sans-serif geometrica, moderna i altament llegible que reflecteix els valors de claredat, accessibilitat i contemporaneitat.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2cqw; margin-top: 1cqw;">
+        <div>
+            <div class="specimen"><div class="lbl">Bold 700 — Titulars</div><p style="font-size: 2.6cqw; font-weight: 700; letter-spacing: 0.15em;">AVE MARIA</p></div>
+            <div class="specimen"><div class="lbl">SemiBold 600 — Subtitols</div><p style="font-size: 1.6cqw; font-weight: 600; letter-spacing: 0.04em;">Fundacio Ave Maria</p></div>
+            <div class="specimen"><div class="lbl">Medium 500 — Seccions</div><p style="font-size: 1.2cqw; font-weight: 500;">Un espai on tot passa</p></div>
+        </div>
+        <div>
+            <div class="specimen"><div class="lbl">Regular 400 — Cos de text</div><p style="font-size: 0.85cqw; font-weight: 400; line-height: 1.5; color: var(--gris);">La Fundacio es un lloc viu. Un punt de trobada on convergeixen disciplines, generacions, cultures i idees. No es defineix per una sola activitat, sino per la suma de totes elles.</p></div>
+            <div class="specimen"><div class="lbl">Light 300 — Citacions</div><p style="font-size: 1.4cqw; font-weight: 300; letter-spacing: 0.3em;">FUNDACIO</p></div>
+            <div class="specimen"><div class="lbl">Alfabet Complet</div>
+                <p style="font-size: 1cqw; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 0.2cqw;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                <p style="font-size: 1cqw; font-weight: 400; letter-spacing: 0.08em; margin-bottom: 0.2cqw;">abcdefghijklmnopqrstuvwxyz</p>
+                <p style="font-size: 1cqw; font-weight: 400; letter-spacing: 0.08em;">0123456789 &amp; . , : ; ! ? ( )</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num">33</div>
+</div>
+
+<!-- ═══════════════════════ 34 · DIVIDER 12 ═══════════════════════ -->
+<div class="slide divider rosa">
+    <h2 class="big">Aplicacions</h2>
+    <div class="label">Section 12</div>
+    <div class="slide-num">34</div>
+</div>
+
+<!-- ═══════════════════════ 35 · TARGETA + CARTA ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">12 — Aplicacions</span>
+    <h2 style="font-size: 4cqw; margin-bottom: 0.8cqw;"><small>Section 12</small>Exemples d'Us</h2>
+    <p class="lead">La identitat generativa permet crear materials unics per a cada ocasio, mantenint sempre la coherencia de marca.</p>
+    <h3 style="font-size: 1.4cqw; font-weight: 700; margin: 1cqw 0 0.6cqw;">Targeta de Visita · Paper de Carta</h3>
+    <div style="display: flex; gap: 2cqw; align-items: center; justify-content: center; margin-bottom: 1cqw;">
+        <svg viewBox="0 0 400 240" style="width: 24%; filter: drop-shadow(0 0.4cqw 1cqw rgba(0,0,0,0.12));">
+            <rect width="400" height="240" fill="white"/>
+            <image x="32" y="32" width="84" height="84" href="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg"/>
+            <image x="136" y="36" width="180" height="55" href="web/BRANDBOOK_MARCA/logos/SVG/logo_horizontal.svg"/>
+            <text x="32" y="160" font-family="Montserrat" font-weight="600" font-size="11" fill="#1a1a1a">Maria Garcia Lopez</text>
+            <text x="32" y="176" font-family="Montserrat" font-weight="400" font-size="9" fill="#666">Directora de Comunicacio</text>
+            <text x="32" y="200" font-family="Montserrat" font-weight="400" font-size="8" fill="#999">m.garcia@avemaria.cat</text>
+            <text x="32" y="214" font-family="Montserrat" font-weight="400" font-size="8" fill="#999">+34 938 94 XX XX</text>
+        </svg>
+        <svg viewBox="0 0 400 240" style="width: 24%; filter: drop-shadow(0 0.4cqw 1cqw rgba(0,0,0,0.12));">
+            <rect width="400" height="240" fill="#1a1a1a"/>
+            <image x="125" y="40" width="150" height="160" href="web/BRANDBOOK_MARCA/logos/SVG/LOGO_PARA%20FONDO_NEGRO.svg"/>
+        </svg>
+        <svg viewBox="0 0 210 297" style="width: 13%; filter: drop-shadow(0 0.4cqw 1cqw rgba(0,0,0,0.12));">
+            <rect width="210" height="297" fill="white"/>
+            <image x="20" y="20" width="36" height="36" href="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg"/>
+            <image x="62" y="22" width="80" height="32" href="web/BRANDBOOK_MARCA/logos/SVG/logo_horizontal.svg"/>
+            <rect x="20" y="70" width="120" height="2" fill="#eee"/><rect x="20" y="78" width="170" height="2" fill="#eee"/><rect x="20" y="86" width="150" height="2" fill="#eee"/><rect x="20" y="94" width="160" height="2" fill="#eee"/><rect x="20" y="102" width="80" height="2" fill="#eee"/>
+            <rect x="20" y="118" width="170" height="2" fill="#eee"/><rect x="20" y="126" width="165" height="2" fill="#eee"/><rect x="20" y="134" width="140" height="2" fill="#eee"/><rect x="20" y="142" width="170" height="2" fill="#eee"/><rect x="20" y="150" width="100" height="2" fill="#eee"/>
+            <line x1="20" y1="270" x2="190" y2="270" stroke="#eee" stroke-width="0.5"/>
+            <text x="20" y="278" font-family="Montserrat" font-size="3" fill="#999">Fundacio Ave Maria de Sitges &middot; Carrer de les Parellades, 52 &middot; 08870 Sitges</text>
+        </svg>
+    </div>
+    <p style="font-size: 0.75cqw; color: var(--gris); text-align: center;">Targeta de visita (anvers · revers) · Paper de carta A4</p>
+    <div class="slide-num">35</div>
+</div>
+
+<!-- ═══════════════════════ 36 · XARXES + SENYALETICA ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">12 — Aplicacions</span>
+    <h2 style="font-size: 3.5cqw; margin-bottom: 0.7cqw;">Xarxes Socials</h2>
+    <div class="grid-3" style="margin-top: 1cqw;">
+        <div class="card" style="text-align: center; padding: 1.5cqw;">
+            <p style="font-size: 0.65cqw; font-weight: 700; color: var(--gris); margin-bottom: 0.6cqw; letter-spacing: 0.1em;">AVATAR / PERFIL</p>
+            <img style="width: 38%; border-radius: 50%; display: block; margin: 0 auto;" src="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" alt="Ave Maria Fundacio">
+            <p style="font-size: 0.7cqw; margin-top: 0.7cqw;">Nomes isotip, sense text</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 1.5cqw;">
+            <p style="font-size: 0.65cqw; font-weight: 700; color: var(--gris); margin-bottom: 0.6cqw; letter-spacing: 0.1em;">PUBLICACIO</p>
+            <svg viewBox="0 0 400 400" style="width: 60%; display: block; margin: 0 auto;">
+                <rect width="400" height="400" fill="#E8863A"/>
+                <text x="200" y="180" font-family="Montserrat" font-weight="700" font-size="36" fill="#FFFFFF" text-anchor="middle">Jornada</text>
+                <text x="200" y="220" font-family="Montserrat" font-weight="700" font-size="36" fill="#FFFFFF" text-anchor="middle">Portes</text>
+                <text x="200" y="260" font-family="Montserrat" font-weight="700" font-size="36" fill="#FFFFFF" text-anchor="middle">Obertes</text>
+            </svg>
+            <p style="font-size: 0.7cqw; margin-top: 0.7cqw;">Color principal + tipografia</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 1.5cqw;">
+            <p style="font-size: 0.65cqw; font-weight: 700; color: var(--gris); margin-bottom: 0.6cqw; letter-spacing: 0.1em;">PORTADA</p>
+            <svg viewBox="0 0 820 312" style="width: 90%; display: block; margin: 0 auto;">
+                <rect width="820" height="312" fill="#1a1a1a"/>
+                <image x="20" y="56" width="200" height="200" href="web/BRANDBOOK_MARCA/logos/SVG/isotipo.svg" opacity="0.18"/>
+                <image x="320" y="80" width="200" height="120" href="web/BRANDBOOK_MARCA/logos/SVG/logo_horizontal_negativo.svg"/>
+            </svg>
+            <p style="font-size: 0.7cqw; margin-top: 0.7cqw;">Portada Facebook / LinkedIn</p>
+        </div>
+    </div>
+    <h2 style="font-size: 3cqw; margin: 1.5cqw 0 0.7cqw;">Senyaletica i Merchandising</h2>
+    <div class="grid-4">
+        <div class="card"><h4>Senyalitzacio Interior</h4><p>Les formes de l'isotip s'utilitzen com a elements d'orientacio i identificacio d'espais. Cada area pot tenir associada una forma i un color.</p></div>
+        <div class="card"><h4>Senyalitzacio Exterior</h4><p>L'isotip complet amb text s'utilitza a l'entrada principal. Per a indicacions secundaries, nomes l'isotip o les formes individuals.</p></div>
+        <div class="card"><h4>Samarretes &amp; Bosses</h4><p>Isotip centrat al pit o a l'esquena amb composicions exclusives. Tote bags amb l'isotip a gran escala o les formes com a motiu.</p></div>
+        <div class="card"><h4>Tasses &amp; Banners</h4><p>Composicio envoltant amb les formes de la biblioteca. Roll-ups i banners per a esdeveniments amb variacions uniques.</p></div>
+    </div>
+    <div class="slide-num">36</div>
+</div>
+
+<!-- ═══════════════════════ 37 · CLOSING ═══════════════════════ -->
+<div class="slide statement dark">
+    <h2 class="headline">Un lloc per<br>a tothom.</h2>
+    <p class="body">Cada aplicacio de la identitat es una oportunitat de comunicar els nostres valors. L'espai en blanc sempre present ens recorda que la Fundacio esta oberta a noves persones, noves idees i nous projectes. La identitat, com la propia organitzacio, esta viva i en constant evolucio.</p>
+    <div style="position: absolute; bottom: 4%; left: 3.1%; font-size: 0.75cqw; opacity: 0.6; letter-spacing: 0.06em;">AVE MARIA FUNDACIO · Manual d'Identitat Visual · v2.0 · Marc 2026 · Sitges, Catalunya</div>
+    <div class="slide-num">37</div>
+</div>
+
+</div>
+
+<div class="deck-info">37 slides · 1920×1080 · Ave Maria Fundacio Brand Guidelines v2.0</div>
+
+</body>
+</html>

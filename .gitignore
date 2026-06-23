@@ -18,3 +18,23 @@ brandbooks/
 
 # Logs
 *.log
+
+# Captures temporals creades durant el desenvolupament
+halston-hero.jpeg
+halston-stats.jpeg
+halston-table.jpeg
+header-on-dark.jpeg
+header-on-image.jpeg
+missio-fixed.jpeg
+missio-gap-check.jpeg
+neue-weights.jpeg
+origen-and-quote.jpeg
+origen-fixed.jpeg
+quote-fixed.jpeg
+ref-sol-1500.jpeg
+ref-sol-3000.jpeg
+ref-sol-5000.jpeg
+scroller-arrows.jpeg
+spacing-after.jpeg
+stats-colors.jpeg
+web/maqueta-avemaria.html.bak
