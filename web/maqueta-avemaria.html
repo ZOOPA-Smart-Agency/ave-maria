@@ -230,7 +230,8 @@ body.menu-open .mobile-menu{transform:translateY(0)}
 .servei-img::before,.noticia-img::before,.galeria-item::before,.ph::before,
 .servei-img::after,.noticia-img::after,.galeria-item::after,.ph::after{display:none}
 .servei-img,.noticia-img,.galeria-item,.ph{background-size:cover;background-position:center;background-repeat:no-repeat;filter:grayscale(1);transition:filter .5s var(--ease)}
-.servei-card:hover .servei-img,.noticia-card:hover .noticia-img,.galeria-item:hover,.ph:hover{filter:grayscale(.7)}
+.servei-card:hover .servei-img,.noticia-card:hover .noticia-img,.galeria-item:hover,.ph:hover,.sr-img:hover{filter:grayscale(0)}
+.servei-row:hover .sr-img{filter:grayscale(0)}
 .servei-img .ph-label{display:none}
 /* small camera glyph behind the label */
 .ph .ph-label{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;color:var(--muted);
@@ -537,6 +538,37 @@ p.breadcrumb,.breadcrumb,.page-header h1,.page-header .subtitle{display:none!imp
 .doc-card:hover .doc-arrow{transform:translateY(3px);color:var(--card-acc,var(--coral))}
 @media (max-width:760px){
   .docs-grid{grid-template-columns:1fr}
+}
+
+/* ===================== ARTICLE (Detall de notícia) ===================== */
+.article-hero{width:100vw;margin-left:calc(50% - 50vw);height:clamp(320px,50vh,560px);background:#e4e4e4 center center/cover no-repeat;filter:grayscale(1);transition:filter .5s var(--ease);position:relative}
+.article-hero:hover{filter:grayscale(0)}
+.article-back-bar{position:relative;width:100%;padding:clamp(28px,3vw,44px) var(--pad) 0}
+.article-back-bar a{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);transition:color .3s,gap .3s var(--ease)}
+.article-back-bar a:hover{color:var(--acc,var(--verd));gap:14px}
+.article-container{max-width:760px;margin:0 auto;padding:clamp(30px,4vw,60px) var(--pad)}
+.article-meta{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:22px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--acc,var(--verd))}
+.article-meta .dot{width:4px;height:4px;border-radius:50%;background:var(--muted);opacity:.5}
+.article-meta .a-cat{color:var(--muted)}
+.article-title{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.08;margin:0 0 30px;color:var(--ink)}
+.article-title::after{content:"";display:block;width:64px;height:5px;background:var(--acc,var(--verd));margin-top:26px;border-radius:3px;opacity:.9}
+.article-lede{font-size:clamp(1.1rem,1.6vw,1.4rem);font-weight:300;line-height:1.5;color:var(--ink);margin:0 0 40px}
+.article-body p{font-size:1.05rem;line-height:1.75;color:var(--ink-soft);margin:0 0 22px}
+.article-body p strong{color:var(--ink);font-weight:600}
+.article-body h3{font-size:clamp(1.3rem,2vw,1.7rem);font-weight:600;letter-spacing:-.01em;line-height:1.25;margin:44px 0 20px;color:var(--ink);position:relative;padding-left:18px}
+.article-body h3::before{content:"";position:absolute;left:0;top:.28em;width:4px;height:calc(100% - .5em);background:var(--acc,var(--verd));border-radius:2px}
+.article-quote{margin:40px 0;padding:26px 34px;border-left:4px solid var(--acc,var(--verd));background:var(--paper-2);font-size:clamp(1.15rem,1.7vw,1.4rem);font-weight:300;line-height:1.45;color:var(--ink);font-style:normal;border-radius:0 6px 6px 0;position:relative}
+.article-quote::before{content:"\201C";position:absolute;left:14px;top:26px;font-size:2.6rem;line-height:0;color:var(--acc,var(--verd));opacity:.4;font-family:Georgia,serif}
+.article-quote p{margin:0}
+.article-quote cite{display:block;margin-top:16px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--muted);font-style:normal}
+.article-body ul{margin:0 0 22px;padding-left:22px;color:var(--ink-soft);line-height:1.7}
+.article-body ul li{margin-bottom:8px}
+/* Bloc de notícies relacionades */
+.article-related{background:var(--paper-2);padding:clamp(50px,6vw,80px) var(--pad);width:100vw;margin-left:calc(50% - 50vw)}
+.article-related-inner{max-width:1180px;margin:0 auto}
+.article-related-inner .noticies-grid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){
+  .article-related-inner .noticies-grid{grid-template-columns:1fr}
 }
 
 /* ===================== EQUIP ===================== */
@@ -895,6 +927,7 @@ h2.vals-title,.vals-title{font-size:clamp(.78rem,1vw,.95rem)!important;font-weig
 .sr-tab[data-target="sr-3"]{top:calc(var(--sr-hdr-off) + var(--sr-tab-h) * 2)}
 .sr-tab[data-target="sr-4"]{top:calc(var(--sr-hdr-off) + var(--sr-tab-h) * 3)}
 .sr-tab[data-target="sr-5"]{top:calc(var(--sr-hdr-off) + var(--sr-tab-h) * 4)}
+.sr-tab[data-target="sr-6"]{top:calc(var(--sr-hdr-off) + var(--sr-tab-h) * 5)}
 @media (max-width:760px){
   :root{--sr-tab-h:42px}
   .sr-tab .srt-t{font-size:.7rem;letter-spacing:.12em}
@@ -1026,8 +1059,9 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
         <a href="#campus" onclick="showPage('campus')">Campus Residencial</a>
         <a href="#llars" onclick="showPage('llars')"><span data-lang-ca>Llars amb Suport</span><span data-lang-es>Hogares con Apoyo</span></a>
         <a href="#sad" onclick="showPage('sad')"><span data-lang-ca>Atenció Domiciliària</span><span data-lang-es>Atención Domiciliaria</span></a>
-        <a href="#families" onclick="showPage('families')"><span data-lang-ca>Suport a Famílies</span><span data-lang-es>Apoyo a Familias</span></a>
-        <a href="#laboral" onclick="showPage('laboral')"><span data-lang-ca>Inclusió Laboral</span><span data-lang-es>Inclusión Laboral</span></a>
+        <a href="#centresdia" onclick="showPage('centresdia')"><span data-lang-ca>Centres de Dia</span><span data-lang-es>Centros de Día</span></a>
+        <a href="#families" onclick="showPage('families')"><span data-lang-ca>Suport a Famílies i Inclusió Laboral</span><span data-lang-es>Apoyo a Familias e Inclusión Laboral</span></a>
+        <a href="#recerca" onclick="showPage('recerca')"><span data-lang-ca>Recerca i Innovació</span><span data-lang-es>Investigación e Innovación</span></a>
       </div></div>
     </div>
     <div class="nav-item has-sub">
@@ -1064,8 +1098,9 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
     <a href="#campus" onclick="showPage('campus')">Campus Residencial</a>
     <a href="#llars" onclick="showPage('llars')"><span data-lang-ca>Llars amb Suport</span><span data-lang-es>Hogares con Apoyo</span></a>
     <a href="#sad" onclick="showPage('sad')"><span data-lang-ca>Atenció Domiciliària</span><span data-lang-es>Atención Domiciliaria</span></a>
-    <a href="#families" onclick="showPage('families')"><span data-lang-ca>Suport a Famílies</span><span data-lang-es>Apoyo a Familias</span></a>
-    <a href="#laboral" onclick="showPage('laboral')"><span data-lang-ca>Inclusió Laboral</span><span data-lang-es>Inclusión Laboral</span></a>
+    <a href="#centresdia" onclick="showPage('centresdia')"><span data-lang-ca>Centres de Dia</span><span data-lang-es>Centros de Día</span></a>
+    <a href="#families" onclick="showPage('families')"><span data-lang-ca>Suport a Famílies i Inclusió Laboral</span><span data-lang-es>Apoyo a Familias e Inclusión Laboral</span></a>
+    <a href="#recerca" onclick="showPage('recerca')"><span data-lang-ca>Recerca i Innovació</span><span data-lang-es>Investigación e Innovación</span></a>
   </div>
   <a href="#collabora" onclick="showPage('collabora')"><span data-lang-ca>Col·labora</span><span data-lang-es>Colabora</span></a>
   <div class="mm-sub" style="--acc:var(--taronja)">
@@ -1177,7 +1212,7 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
               <span class="servei-num">02</span>
               <h3><span data-lang-ca>Llars amb Suport</span><span data-lang-es>Hogares con Apoyo</span></h3>
               <p><span data-lang-ca>Xarxa d'habitatges integrats a la comunitat dirigits a persones adultes amb malaltia mental intel·lectual que requereixen suports intermitents per a la seva vida autònoma.</span><span data-lang-es>Red de viviendas integradas en la comunidad dirigidas a personas adultas con enfermedad mental intelectual que requieren apoyos intermitentes para su vida autónoma.</span></p>
-              <a href="#serveis" onclick="showPage('serveis')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
+              <a href="#llars" onclick="showPage('llars')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
             </div>
           </div>
           <div class="servei-card" data-reveal data-reveal-d="2">
@@ -1186,7 +1221,7 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
               <span class="servei-num">03</span>
               <h3><span data-lang-ca>Atenció Domiciliària</span><span data-lang-es>Atención Domiciliaria</span></h3>
               <p><span data-lang-ca>Servei de suport a la llar dirigit a persones grans i en situació de dependència, que inclou assistència en les activitats de la vida diària i acompanyament personal, prestat tant de forma privada com en col·laboració amb les administracions públiques locals.</span><span data-lang-es>Servicio de apoyo en el hogar dirigido a personas mayores y en situación de dependencia, que incluye asistencia en las actividades de la vida diaria y acompañamiento personal, prestado tanto de forma privada como en colaboración con las administraciones públicas locales.</span></p>
-              <a href="#serveis" onclick="showPage('serveis')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
+              <a href="#sad" onclick="showPage('sad')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
             </div>
           </div>
           <div class="servei-card" data-reveal>
@@ -1195,7 +1230,7 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
               <span class="servei-num">04</span>
               <h3><span data-lang-ca>Centres de Dia</span><span data-lang-es>Centros de Día</span></h3>
               <p><span data-lang-ca>Serveis dirigits a persones amb discapacitat intel·lectual lleu i persones grans, orientats a promoure l'autonomia personal i la participació social, gestionats de forma directa o en col·laboració amb administracions públiques locals.</span><span data-lang-es>Servicios dirigidos a personas con discapacidad intelectual leve y personas mayores, orientados a promover la autonomía personal y la participación social, gestionados de forma directa o en colaboración con administraciones públicas locales.</span></p>
-              <a href="#serveis" onclick="showPage('serveis')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
+              <a href="#centresdia" onclick="showPage('centresdia')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
             </div>
           </div>
           <div class="servei-card" data-reveal data-reveal-d="1">
@@ -1204,7 +1239,7 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
               <span class="servei-num">05</span>
               <h3><span data-lang-ca>Suport a Famílies i Inclusió Laboral</span><span data-lang-es>Apoyo a Familias e Inclusión Laboral</span></h3>
               <p><span data-lang-ca>Programes d'orientació, acompanyament i suport a famílies, així com iniciatives de capacitació i inserció laboral dirigides a afavorir l'autonomia personal i l'accés a l'ocupació en entorns ordinaris.</span><span data-lang-es>Programas de orientación, acompañamiento y apoyo a familias, así como iniciativas de capacitación e inserción laboral dirigidas a favorecer la autonomía personal y el acceso al empleo en entornos ordinarios.</span></p>
-              <a href="#serveis" onclick="showPage('serveis')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
+              <a href="#families" onclick="showPage('families')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
             </div>
           </div>
           <div class="servei-card" data-reveal data-reveal-d="2">
@@ -1213,7 +1248,7 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
               <span class="servei-num">06</span>
               <h3><span data-lang-ca>Recerca i Innovació</span><span data-lang-es>Investigación e Innovación</span></h3>
               <p><span data-lang-ca>Desenvolupament de projectes de recerca aplicada i solucions tecnològiques orientades a millorar la qualitat de vida i l'atenció a persones en situació de dependència.</span><span data-lang-es>Desarrollo de proyectos de investigación aplicada y soluciones tecnológicas orientadas a mejorar la calidad de vida y la atención a personas en situación de dependencia.</span></p>
-              <a href="#serveis" onclick="showPage('serveis')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
+              <a href="#recerca" onclick="showPage('recerca')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
             </div>
           </div>
         </div>
@@ -1330,21 +1365,21 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
             <div class="noticia-img" style="background-image:url('imatges/institucional/inst-3.jpg')"></div>
             <div class="noticia-content">
               <p class="noticia-date"><span data-lang-ca>20 gener 2026</span><span data-lang-es>20 enero 2026</span></p>
-              <h3><a href="#"><span data-lang-ca>La Fundació posa en marxa el nou Servei d'Atenció Domiciliària</span><span data-lang-es>La Fundación pone en marcha el nuevo Servicio de Atención Domiciliaria</span></a></h3>
+              <h3><a href="#noticia-1" onclick="showPage('noticia-1')"><span data-lang-ca>La Fundació posa en marxa el nou Servei d'Atenció Domiciliària</span><span data-lang-es>La Fundación pone en marcha el nuevo Servicio de Atención Domiciliaria</span></a></h3>
             </div>
           </div>
           <div class="noticia-card" data-reveal data-reveal-d="1">
             <div class="noticia-img" style="background-image:url('imatges/fachada/fachada-5.jpg')"></div>
             <div class="noticia-content">
               <p class="noticia-date"><span data-lang-ca>18 desembre 2025</span><span data-lang-es>18 diciembre 2025</span></p>
-              <h3><a href="#"><span data-lang-ca>Dues obres dels germans Grangel s'incorporen al Fons d'Art</span><span data-lang-es>Dos obras de los hermanos Grangel se incorporan al Fondo de Arte</span></a></h3>
+              <h3><a href="#noticia-2" onclick="showPage('noticia-2')"><span data-lang-ca>Dues obres dels germans Grangel s'incorporen al Fons d'Art</span><span data-lang-es>Dos obras de los hermanos Grangel se incorporan al Fondo de Arte</span></a></h3>
             </div>
           </div>
           <div class="noticia-card" data-reveal data-reveal-d="2">
             <div class="noticia-img" style="background-image:url('imatges/terapies/terapia-9.jpg')"></div>
             <div class="noticia-content">
               <p class="noticia-date"><span data-lang-ca>9 desembre 2025</span><span data-lang-es>9 diciembre 2025</span></p>
-              <h3><a href="#"><span data-lang-ca>L'Ajuntament de Vilanova impulsa el projecte Benviure</span><span data-lang-es>El Ayuntamiento de Vilanova impulsa el proyecto Benviure</span></a></h3>
+              <h3><a href="#noticia-3" onclick="showPage('noticia-3')"><span data-lang-ca>L'Ajuntament de Vilanova impulsa el projecte Benviure</span><span data-lang-es>El Ayuntamiento de Vilanova impulsa el proyecto Benviure</span></a></h3>
             </div>
           </div>
         </div>
@@ -1931,28 +1966,40 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
         <div class="sr-img" aria-label="Atenció Domiciliària" style="background-image:url('imatges/institucional/inst-2.jpg')"></div>
       </div>
 
-      <!-- 04 · Suport a Famílies — imatge a l'ESQUERRA -->
-      <div class="sr-tab" style="--acc:var(--coral)" data-target="sr-4"><span class="srt-n">04</span><span class="srt-t"><span data-lang-ca>Suport a Famílies</span><span data-lang-es>Apoyo a Familias</span></span></div>
+      <!-- 04 · Centres de Dia — imatge a l'ESQUERRA -->
+      <div class="sr-tab" style="--acc:var(--coral)" data-target="sr-4"><span class="srt-n">04</span><span class="srt-t"><span data-lang-ca>Centres de Dia</span><span data-lang-es>Centros de Día</span></span></div>
       <div class="servei-row flip" id="sr-4" data-reveal>
         <div class="sr-text">
-          <span class="sr-num" style="--acc:var(--coral)">04 — Acompanyament familiar</span>
-          <h2 class="sr-title"><span data-lang-ca>Suport a Famílies</span><span data-lang-es>Apoyo a Familias</span></h2>
-          <p class="sr-desc"><span data-lang-ca>Informació, orientació, formació i grups de suport per a famílies de persones amb discapacitat.</span><span data-lang-es>Información, orientación, formación y grupos de apoyo para familias de personas con discapacidad.</span></p>
-          <a href="#families" class="btn btn-ghost sr-cta" style="--acc:var(--coral)" onclick="showPage('families')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
+          <span class="sr-num" style="--acc:var(--coral)">04 — Autonomia i participació</span>
+          <h2 class="sr-title"><span data-lang-ca>Centres de Dia</span><span data-lang-es>Centros de Día</span></h2>
+          <p class="sr-desc"><span data-lang-ca>Serveis dirigits a persones amb discapacitat intel·lectual lleu i persones grans, orientats a promoure l'autonomia personal i la participació social.</span><span data-lang-es>Servicios dirigidos a personas con discapacidad intelectual leve y personas mayores, orientados a promover la autonomía personal y la participación social.</span></p>
+          <a href="#centresdia" class="btn btn-ghost sr-cta" style="--acc:var(--coral)" onclick="showPage('centresdia')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
         </div>
-        <div class="sr-img" aria-label="Suport a Famílies" style="background-image:url('imatges/institucional/inst-3.jpg')"></div>
+        <div class="sr-img" aria-label="Centres de Dia" style="background-image:url('imatges/terapies/terapia-7.jpg')"></div>
       </div>
 
-      <!-- 05 · Inclusió Laboral — imatge a la DRETA -->
-      <div class="sr-tab" style="--acc:var(--groc)" data-target="sr-5"><span class="srt-n">05</span><span class="srt-t"><span data-lang-ca>Inclusió Laboral</span><span data-lang-es>Inclusión Laboral</span></span></div>
+      <!-- 05 · Suport a Famílies i Inclusió Laboral — imatge a la DRETA -->
+      <div class="sr-tab" style="--acc:var(--groc)" data-target="sr-5"><span class="srt-n">05</span><span class="srt-t"><span data-lang-ca>Suport a Famílies i Inclusió Laboral</span><span data-lang-es>Apoyo a Familias e Inclusión Laboral</span></span></div>
       <div class="servei-row" id="sr-5" data-reveal>
         <div class="sr-text">
-          <span class="sr-num" style="--acc:var(--groc)">05 — Treball amb propòsit</span>
-          <h2 class="sr-title"><span data-lang-ca>Inclusió Laboral</span><span data-lang-es>Inclusión Laboral</span></h2>
-          <p class="sr-desc"><span data-lang-ca>Programes de treball intern i treball amb suport en empreses de l'entorn.</span><span data-lang-es>Programas de trabajo interno y trabajo con apoyo en empresas del entorno.</span></p>
-          <a href="#laboral" class="btn btn-ghost sr-cta" style="--acc:var(--groc)" onclick="showPage('laboral')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
+          <span class="sr-num" style="--acc:var(--groc)">05 — Acompanyament i treball</span>
+          <h2 class="sr-title"><span data-lang-ca>Suport a Famílies i Inclusió Laboral</span><span data-lang-es>Apoyo a Familias e Inclusión Laboral</span></h2>
+          <p class="sr-desc"><span data-lang-ca>Programes d'orientació, acompanyament i suport a famílies, així com iniciatives de capacitació i inserció laboral dirigides a afavorir l'autonomia i l'accés a l'ocupació en entorns ordinaris.</span><span data-lang-es>Programas de orientación, acompañamiento y apoyo a familias, así como iniciativas de capacitación e inserción laboral dirigidas a favorecer la autonomía y el acceso al empleo en entornos ordinarios.</span></p>
+          <a href="#families" class="btn btn-ghost sr-cta" style="--acc:var(--groc)" onclick="showPage('families')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
         </div>
-        <div class="sr-img" aria-label="Inclusió Laboral" style="background-image:url('imatges/terapies/terapia-6.jpg')"></div>
+        <div class="sr-img" aria-label="Suport a Famílies i Inclusió Laboral" style="background-image:url('imatges/institucional/inst-3.jpg')"></div>
+      </div>
+
+      <!-- 06 · Recerca i Innovació — imatge a l'ESQUERRA -->
+      <div class="sr-tab" style="--acc:var(--rosa)" data-target="sr-6"><span class="srt-n">06</span><span class="srt-t"><span data-lang-ca>Recerca i Innovació</span><span data-lang-es>Investigación e Innovación</span></span></div>
+      <div class="servei-row flip" id="sr-6" data-reveal>
+        <div class="sr-text">
+          <span class="sr-num" style="--acc:var(--rosa)">06 — Innovació aplicada</span>
+          <h2 class="sr-title"><span data-lang-ca>Recerca i Innovació</span><span data-lang-es>Investigación e Innovación</span></h2>
+          <p class="sr-desc"><span data-lang-ca>Desenvolupament de projectes de recerca aplicada i solucions tecnològiques orientades a millorar la qualitat de vida i l'atenció a persones en situació de dependència.</span><span data-lang-es>Desarrollo de proyectos de investigación aplicada y soluciones tecnológicas orientadas a mejorar la calidad de vida y la atención a personas en situación de dependencia.</span></p>
+          <a href="#recerca" class="btn btn-ghost sr-cta" style="--acc:var(--rosa)" onclick="showPage('recerca')"><span data-lang-ca>Més informació</span><span data-lang-es>Más información</span> <span class="arr">→</span></a>
+        </div>
+        <div class="sr-img" aria-label="Recerca i Innovació" style="background-image:url('imatges/terapies/terapia-8.jpg')"></div>
       </div>
     </section>
   </div>
@@ -2312,26 +2359,28 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
   </div>
 
   <!-- ==================== FAMÍLIES ==================== -->
-  <div id="families" class="page" style="--acc:var(--rosa)">
+  <div id="families" class="page" style="--acc:var(--groc)">
     <div class="page-header">
       <div class="container">
-        <p class="breadcrumb"><a href="#home" onclick="showPage('home')">Inici</a> / <a href="#serveis" onclick="showPage('serveis')">Serveis</a> / Suport a Famílies</p>
-        <h1>Suport a Famílies</h1>
-        <p class="subtitle">No esteu sols</p>
+        <p class="breadcrumb"><a href="#home" onclick="showPage('home')">Inici</a> / <a href="#serveis" onclick="showPage('serveis')">Serveis</a> / Suport a Famílies i Inclusió Laboral</p>
+        <h1>Suport a Famílies i Inclusió Laboral</h1>
+        <p class="subtitle">Acompanyament i treball amb propòsit</p>
       </div>
     </div>
+
     <!-- 1) Intro -->
-    <section class="content-section qs-intro" style="--acc:var(--rosa)">
+    <section class="content-section qs-intro" style="--acc:var(--groc)">
       <div class="container">
         <div class="qs-intro-text" data-reveal>
-          <span class="eyebrow" style="--acc:var(--rosa)">El servei</span>
-          <h2>No esteu sols</h2>
-          <p class="qs-lede">Sabem que tenir cura d'una persona amb discapacitat intel·lectual és un camí que es fa millor acompanyat. Per això oferim serveis específics per a famílies.</p>
+          <span class="eyebrow" style="--acc:var(--groc)">El servei</span>
+          <h2>Acompanyament i treball amb propòsit</h2>
+          <p class="qs-lede">Un servei doble que combina el suport a les famílies de persones amb discapacitat intel·lectual amb programes d'inclusió laboral, perquè cada persona pugui viure amb autonomia i el seu entorn s'hi senti acompanyat.</p>
+          <p>Sabem que tenir cura d'una persona amb discapacitat és un camí que es fa millor acompanyat, i que les persones amb discapacitat tenen molt a aportar al món del treball. Aquest servei posa les dues realitats al centre.</p>
         </div>
       </div>
     </section>
 
-    <!-- 2) Cita destacada -->
+    <!-- 2) Cita destacada Famílies -->
     <div class="feature-quote" data-reveal>
       <p>
         <span class="fq-mk">"</span>Les famílies són part fonamental del nostre model d'atenció. Quan una família es sent recolzada, l'usuari també ho nota.<span class="fq-mk">"</span>
@@ -2342,7 +2391,7 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
     <section class="content-section" style="--acc:var(--rosa);background:var(--paper-2)">
       <div class="container">
         <div class="section-header" data-reveal>
-          <span class="eyebrow center" style="--acc:var(--rosa)">Prestacions</span>
+          <span class="eyebrow center" style="--acc:var(--rosa)">Suport a famílies</span>
           <h2>Serveis per a famílies</h2>
         </div>
         <div class="mvv-grid" style="grid-template-columns:repeat(2,1fr);max-width:1080px;margin:0 auto">
@@ -2368,43 +2417,21 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
           <article class="mvv-card" data-reveal data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>Sortides</h3><p>Excursions familiars al llarg de l'any.</p></article>
           <article class="mvv-card" data-reveal data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">04</span><h3>Assemblees</h3><p>Reunions informatives i de seguiment.</p></article>
         </div>
-        <div style="text-align:center;margin-top:48px"><a href="#contacte" class="btn btn-primary" onclick="showPage('contacte')">Contacta amb nosaltres <span class="arr">→</span></a></div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ==================== INCLUSIÓ LABORAL ==================== -->
-  <div id="laboral" class="page" style="--acc:var(--taronja)">
-    <div class="page-header">
-      <div class="container">
-        <p class="breadcrumb"><a href="#home" onclick="showPage('home')">Inici</a> / <a href="#serveis" onclick="showPage('serveis')">Serveis</a> / Inclusió Laboral</p>
-        <h1>Inclusió Laboral</h1>
-        <p class="subtitle">Treballar amb propòsit</p>
-      </div>
-    </div>
-    <!-- 1) Intro -->
-    <section class="content-section qs-intro" style="--acc:var(--taronja)">
-      <div class="container">
-        <div class="qs-intro-text" data-reveal>
-          <span class="eyebrow" style="--acc:var(--taronja)">El programa</span>
-          <h2>Treballar amb propòsit</h2>
-          <p class="qs-lede">Les persones amb discapacitat intel·lectual tenen molt a aportar en el món laboral. A través del nostre programa d'Inclusió Laboral, els acompanyem en el procés d'entrar a llocs de feina, oferint el suport necessari tant a la persona com a l'empresa perquè tot funcioni i se sentin part de l'equip.</p>
-        </div>
       </div>
     </section>
 
-    <!-- 2) Cita destacada -->
+    <!-- 5) Cita destacada Inclusió Laboral -->
     <div class="feature-quote" data-reveal>
       <p>
         <span class="fq-mk">"</span>Creiem que tothom té talents i capacitats. El nostre objectiu és descobrir-los, potenciar-los i trobar l'entorn laboral adequat per a cada persona.<span class="fq-mk">"</span>
       </p>
     </div>
 
-    <!-- 3) Modalitats — 2 cards grans -->
+    <!-- 6) Modalitats laborals — 2 cards grans -->
     <section class="content-section" style="--acc:var(--taronja);background:var(--paper-2)">
       <div class="container">
         <div class="section-header" data-reveal>
-          <span class="eyebrow center" style="--acc:var(--taronja)">Modalitats</span>
+          <span class="eyebrow center" style="--acc:var(--taronja)">Inclusió laboral</span>
           <h2>Com treballem</h2>
         </div>
         <div class="mvv-grid" style="grid-template-columns:repeat(2,1fr);max-width:1080px;margin:0 auto">
@@ -2422,7 +2449,7 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
       </div>
     </section>
 
-    <!-- 4) Per a empreses — 5 cards -->
+    <!-- 7) Per a empreses — 5 cards -->
     <section class="content-section" style="--acc:var(--blau)">
       <div class="container">
         <div class="section-header" data-reveal>
@@ -2437,7 +2464,162 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
           <article class="mvv-card" data-reveal data-reveal-d="3" style="--card-acc:var(--groc)"><span class="mvv-num">04</span><p><strong>Seguiment</strong> continuat.</p></article>
           <article class="mvv-card" data-reveal data-reveal-d="4" style="--card-acc:var(--coral)"><span class="mvv-num">05</span><p><strong>Informació</strong> sobre bonificacions i avantatges fiscals.</p></article>
         </div>
-        <div style="text-align:center;margin-top:48px"><a href="#empreses" class="btn btn-primary" onclick="showPage('empreses')">Vols apostar per la inclusió? <span class="arr">→</span></a></div>
+        <div style="text-align:center;margin-top:48px"><a href="#contacte" class="btn btn-primary" onclick="showPage('contacte')">Contacta amb nosaltres <span class="arr">→</span></a></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== INCLUSIÓ LABORAL (redirigeix a families) ==================== -->
+  <div id="laboral" class="page" style="--acc:var(--groc)">
+    <script>if(location.hash==='#laboral'){location.replace('#families');}</script>
+  </div>
+
+  <!-- ==================== CENTRES DE DIA ==================== -->
+  <div id="centresdia" class="page" style="--acc:var(--coral)">
+    <!-- 1) Intro -->
+    <section class="content-section qs-intro" style="--acc:var(--coral)">
+      <div class="container">
+        <div class="qs-intro-text" data-reveal>
+          <span class="eyebrow" style="--acc:var(--coral)">El servei</span>
+          <h2>Autonomia i participació</h2>
+          <p class="qs-lede">Els Centres de Dia són serveis diürns dirigits a persones amb discapacitat intel·lectual lleu i persones grans, orientats a promoure l'autonomia personal i la participació social.</p>
+          <p>Gestionats de forma directa o en col·laboració amb administracions públiques locals, ofereixen un entorn segur i estimulant on cada persona pot desenvolupar les seves capacitats i mantenir vincles amb la comunitat.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) Cita destacada -->
+    <div class="feature-quote" data-reveal>
+      <p>
+        <span class="fq-mk">"</span>Un espai diürn on cada persona troba el seu ritme, les seves activitats i les seves relacions per continuar creixent en autonomia.<span class="fq-mk">"</span>
+      </p>
+    </div>
+
+    <!-- 3) Què oferim — 6 cards numerades -->
+    <section class="content-section" style="--acc:var(--coral);background:var(--paper-2)">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="eyebrow center" style="--acc:var(--coral)">Prestacions</span>
+          <h2>Què oferim?</h2>
+        </div>
+        <div class="mvv-grid" style="grid-template-columns:repeat(3,1fr)">
+          <article class="mvv-card" data-reveal style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>Estimulació cognitiva</h3><p>Tallers i activitats per mantenir i potenciar les capacitats mentals de cada persona.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>Activitats creatives</h3><p>Art, música, artesania i expressió corporal per fomentar el benestar emocional.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>Rehabilitació física</h3><p>Sessions adaptades de fisioteràpia i mobilitat per mantenir la salut corporal.</p></article>
+          <article class="mvv-card" data-reveal style="--card-acc:var(--groc)"><span class="mvv-num">04</span><h3>Habilitats socials</h3><p>Grups i dinàmiques per treballar la comunicació i les relacions interpersonals.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="1" style="--card-acc:var(--rosa)"><span class="mvv-num">05</span><h3>Sortides i excursions</h3><p>Activitats fora del centre per conèixer l'entorn i participar en la vida comunitària.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="2" style="--card-acc:var(--coral)"><span class="mvv-num">06</span><h3>Àpats i descans</h3><p>Espai de restaurant adaptat i zones de descans per garantir el benestar diari.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) Per a qui -->
+    <section class="content-section" style="--acc:var(--blau)">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="eyebrow center" style="--acc:var(--blau)">Perfil</span>
+          <h2>Per a qui és aquest servei?</h2>
+        </div>
+        <div class="mvv-grid" style="grid-template-columns:repeat(4,1fr);max-width:1180px;margin:0 auto">
+          <article class="mvv-card" data-reveal style="--card-acc:var(--taronja)"><span class="mvv-num">A</span><p>Persones adultes amb discapacitat intel·lectual lleu o moderada.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">B</span><p>Persones grans que necessiten un espai diürn adaptat.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">C</span><p>Persones amb autonomia parcial que viuen a casa.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">D</span><p>Famílies que necessiten conciliar cura i vida laboral.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) Dades clau stats -->
+    <section class="impacte qs-dades" style="--acc:var(--coral)">
+      <div class="container">
+        <div class="sec-head" data-reveal>
+          <div class="sh-l">
+            <span class="eyebrow" style="--acc:var(--coral)">Dades del servei</span>
+            <h2>El servei en xifres</h2>
+          </div>
+          <span class="idx">CD</span>
+        </div>
+        <div class="stats-grid qs-stats-grid" style="grid-template-columns:repeat(3,1fr)">
+          <div class="stat-item" data-reveal><div class="stat-number">8h</div><div class="stat-label">De dilluns a divendres</div></div>
+          <div class="stat-item" data-reveal data-reveal-d="1"><div class="stat-number">Sitges</div><div class="stat-label">Centres al territori</div></div>
+          <div class="stat-item" data-reveal data-reveal-d="2"><div class="stat-number">ICASS</div><div class="stat-label">Servei concertat amb la Generalitat</div></div>
+        </div>
+        <div style="text-align:center;margin-top:48px"><a href="#contacte" class="btn btn-primary" onclick="showPage('contacte')">Sol·licitar informació <span class="arr">→</span></a></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== RECERCA I INNOVACIÓ ==================== -->
+  <div id="recerca" class="page" style="--acc:var(--rosa)">
+    <!-- 1) Intro -->
+    <section class="content-section qs-intro" style="--acc:var(--rosa)">
+      <div class="container">
+        <div class="qs-intro-text" data-reveal>
+          <span class="eyebrow" style="--acc:var(--rosa)">El programa</span>
+          <h2>Innovació aplicada</h2>
+          <p class="qs-lede">Desenvolupament de projectes de recerca aplicada i solucions tecnològiques orientades a millorar la qualitat de vida i l'atenció a persones en situació de dependència.</p>
+          <p>A la Fundació Ave Maria apostem per la innovació com a motor de millora contínua. Impulsem projectes que traslladen la recerca acadèmica a la pràctica assistencial i incorporem tecnologia amb sentit humà.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) Cita destacada -->
+    <div class="feature-quote" data-reveal>
+      <p>
+        <span class="fq-mk">"</span>La innovació no és una moda: és la nostra manera de continuar oferint la millor atenció possible a cada persona.<span class="fq-mk">"</span>
+      </p>
+    </div>
+
+    <!-- 3) Línies de treball -->
+    <section class="content-section" style="--acc:var(--rosa);background:var(--paper-2)">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="eyebrow center" style="--acc:var(--rosa)">Línies de treball</span>
+          <h2>Àmbits de recerca</h2>
+        </div>
+        <div class="mvv-grid" style="grid-template-columns:repeat(3,1fr)">
+          <article class="mvv-card" data-reveal style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>Robòtica assistencial</h3><p>Pioners a Catalunya en la incorporació de robòtica social com a suport terapèutic.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>Salut digital</h3><p>Eines i aplicacions per al seguiment sanitari, la medicació i l'atenció personalitzada.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>Estimulació cognitiva</h3><p>Plataformes interactives i realitat virtual per a la rehabilitació neurològica.</p></article>
+          <article class="mvv-card" data-reveal style="--card-acc:var(--groc)"><span class="mvv-num">04</span><h3>Accessibilitat</h3><p>Solucions tecnològiques per a l'autonomia diària: veu, gestos, control ambiental.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="1" style="--card-acc:var(--rosa)"><span class="mvv-num">05</span><h3>Anàlisi de dades</h3><p>Sistemes d'informació que ajuden a prendre millors decisions clíniques i de gestió.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="2" style="--card-acc:var(--coral)"><span class="mvv-num">06</span><h3>Formació i divulgació</h3><p>Compartim el coneixement generat amb la resta d'entitats i el sector.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) Xarxa d'aliances -->
+    <section class="content-section" style="--acc:var(--blau)">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="eyebrow center" style="--acc:var(--blau)">Aliances</span>
+          <h2>Amb qui treballem</h2>
+        </div>
+        <div class="mvv-grid" style="grid-template-columns:repeat(4,1fr);max-width:1180px;margin:0 auto">
+          <article class="mvv-card" data-reveal style="--card-acc:var(--taronja)"><span class="mvv-num">A</span><p>Universitats i centres de recerca catalans.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">B</span><p>Empreses tecnològiques i startups del sector salut.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">C</span><p>Fundacions i entitats socials de l'àmbit de la discapacitat.</p></article>
+          <article class="mvv-card" data-reveal data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">D</span><p>Administracions públiques i programes europeus.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) Dades clau stats -->
+    <section class="impacte qs-dades" style="--acc:var(--rosa)">
+      <div class="container">
+        <div class="sec-head" data-reveal>
+          <div class="sh-l">
+            <span class="eyebrow" style="--acc:var(--rosa)">Dades del programa</span>
+            <h2>El programa en xifres</h2>
+          </div>
+          <span class="idx">RI</span>
+        </div>
+        <div class="stats-grid qs-stats-grid" style="grid-template-columns:repeat(3,1fr)">
+          <div class="stat-item" data-reveal><div class="stat-number">R+D</div><div class="stat-label">Aplicat al dia a dia</div></div>
+          <div class="stat-item" data-reveal data-reveal-d="1"><div class="stat-number">Sitges</div><div class="stat-label">Laboratori d'innovació social</div></div>
+          <div class="stat-item" data-reveal data-reveal-d="2"><div class="stat-number">Xarxa</div><div class="stat-label">Universitats i empreses</div></div>
+        </div>
+        <div style="text-align:center;margin-top:48px"><a href="#contacte" class="btn btn-primary" onclick="showPage('contacte')">Contacta amb el programa <span class="arr">→</span></a></div>
       </div>
     </section>
   </div>
@@ -2750,12 +2932,258 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
     <section class="content-section">
       <div class="container">
         <div class="noticies-grid">
-          <div class="noticia-card" data-reveal><div class="noticia-img" style="background-image:url('imatges/institucional/inst-1.jpg')"></div><div class="noticia-content"><p class="noticia-date">20 gener 2026</p><h3><a href="#">La Fundació Ave Maria posa en marxa el nou Servei d'Atenció Domiciliària (SAD)</a></h3><p>Ampliem els serveis a la comarca del Garraf per oferir suport integral a les persones al seu propi domicili.</p></div></div>
-          <div class="noticia-card" data-reveal data-reveal-d="1"><div class="noticia-img" style="background-image:url('imatges/fachada/fachada-5.jpg')"></div><div class="noticia-content"><p class="noticia-date">18 desembre 2025</p><h3><a href="#">Art, cultura i compromís social: dues obres dels germans Grangel s'incorporen al Fons d'Art</a></h3><p>La Fundació acull dues obres originals dels germans Grangel, "Pinocchio" i "Spirit".</p></div></div>
-          <div class="noticia-card" data-reveal data-reveal-d="2"><div class="noticia-img" style="background-image:url('imatges/terapies/terapia-9.jpg')"></div><div class="noticia-content"><p class="noticia-date">9 desembre 2025</p><h3><a href="#">L'Ajuntament de Vilanova i la Geltrú impulsa el projecte Benviure</a></h3><p>Nova proposta d'habitatge inclusiu al territori per oferir suport i autonomia.</p></div></div>
-          <div class="noticia-card" data-reveal><div class="noticia-img" style="background-image:url('imatges/fachada/fachada-2.jpg')"></div><div class="noticia-content"><p class="noticia-date">18 novembre 2025</p><h3><a href="#">Rècord de participació al 20è Torneig Benèfic de Pitch & Putt</a></h3><p>182 jugadors i 3.500€ recaptats en la jornada solidària.</p></div></div>
-          <div class="noticia-card" data-reveal data-reveal-d="1"><div class="noticia-img" style="background-image:url('imatges/institucional/inst-3.jpg')"></div><div class="noticia-content"><p class="noticia-date">3 novembre 2025</p><h3><a href="#">Un concert de pel·lícula omple l'Auditori Meliá i recapta més d'11.000€</a></h3><p>La Penedès Film Orquestra i el Cor Xamusia van emocionar el públic.</p></div></div>
-          <div class="noticia-card" data-reveal data-reveal-d="2"><div class="noticia-img" style="background-image:url('imatges/salas/sala-2.jpg')"></div><div class="noticia-content"><p class="noticia-date">20 octubre 2025</p><h3><a href="#">Maria Pilar Igual: un llegat d'art i generositat</a></h3><p>L'artista cedeix la totalitat de la seva obra al fons d'art de la Fundació.</p></div></div>
+          <div class="noticia-card" data-reveal><div class="noticia-img" style="background-image:url('imatges/institucional/inst-1.jpg')"></div><div class="noticia-content"><p class="noticia-date">20 gener 2026</p><h3><a href="#noticia-1" onclick="showPage('noticia-1')">La Fundació Ave Maria posa en marxa el nou Servei d'Atenció Domiciliària (SAD)</a></h3><p>Ampliem els serveis a la comarca del Garraf per oferir suport integral a les persones al seu propi domicili.</p></div></div>
+          <div class="noticia-card" data-reveal data-reveal-d="1"><div class="noticia-img" style="background-image:url('imatges/fachada/fachada-5.jpg')"></div><div class="noticia-content"><p class="noticia-date">18 desembre 2025</p><h3><a href="#noticia-2" onclick="showPage('noticia-2')">Art, cultura i compromís social: dues obres dels germans Grangel s'incorporen al Fons d'Art</a></h3><p>La Fundació acull dues obres originals dels germans Grangel, "Pinocchio" i "Spirit".</p></div></div>
+          <div class="noticia-card" data-reveal data-reveal-d="2"><div class="noticia-img" style="background-image:url('imatges/terapies/terapia-9.jpg')"></div><div class="noticia-content"><p class="noticia-date">9 desembre 2025</p><h3><a href="#noticia-3" onclick="showPage('noticia-3')">L'Ajuntament de Vilanova i la Geltrú impulsa el projecte Benviure</a></h3><p>Nova proposta d'habitatge inclusiu al territori per oferir suport i autonomia.</p></div></div>
+          <div class="noticia-card" data-reveal><div class="noticia-img" style="background-image:url('imatges/fachada/fachada-2.jpg')"></div><div class="noticia-content"><p class="noticia-date">18 novembre 2025</p><h3><a href="#noticia-4" onclick="showPage('noticia-4')">Rècord de participació al 20è Torneig Benèfic de Pitch & Putt</a></h3><p>182 jugadors i 3.500€ recaptats en la jornada solidària.</p></div></div>
+          <div class="noticia-card" data-reveal data-reveal-d="1"><div class="noticia-img" style="background-image:url('imatges/institucional/inst-3.jpg')"></div><div class="noticia-content"><p class="noticia-date">3 novembre 2025</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">Un concert de pel·lícula omple l'Auditori Meliá i recapta més d'11.000€</a></h3><p>La Penedès Film Orquestra i el Cor Xamusia van emocionar el públic.</p></div></div>
+          <div class="noticia-card" data-reveal data-reveal-d="2"><div class="noticia-img" style="background-image:url('imatges/salas/sala-2.jpg')"></div><div class="noticia-content"><p class="noticia-date">20 octubre 2025</p><h3><a href="#noticia-6" onclick="showPage('noticia-6')">Maria Pilar Igual: un llegat d'art i generositat</a></h3><p>L'artista cedeix la totalitat de la seva obra al fons d'art de la Fundació.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== NOTÍCIA 1 — SAD ==================== -->
+  <div id="noticia-1" class="page" style="--acc:var(--verd)">
+    <div class="article-hero" style="background-image:url('imatges/institucional/inst-1.jpg')"></div>
+    <div class="article-back-bar container">
+      <a href="#actualitat" onclick="showPage('actualitat')">← Torna a Notícies</a>
+    </div>
+    <article class="article-container">
+      <div class="article-meta">
+        <span>20 gener 2026</span>
+        <span class="dot"></span>
+        <span class="a-cat">Serveis</span>
+        <span class="dot"></span>
+        <span class="a-cat">Lectura 4 min</span>
+      </div>
+      <h1 class="article-title">La Fundació Ave Maria posa en marxa el nou Servei d'Atenció Domiciliària (SAD)</h1>
+      <p class="article-lede">Ampliem els serveis a la comarca del Garraf per oferir suport integral a les persones al seu propi domicili. Un nou pas endavant en el nostre compromís d'acompanyar persones amb dependència en el seu entorn de sempre.</p>
+      <div class="article-body">
+        <p>El passat mes de gener, la Fundació Ave Maria va inaugurar oficialment el <strong>Servei d'Atenció Domiciliària (SAD)</strong>, una iniciativa pionera pensada per acompanyar les persones amb dependència sense que hagin de deixar la seva llar. Aquest nou servei s'ofereix a tots els municipis de la comarca del Garraf: Sitges, Vilanova i la Geltrú, Sant Pere de Ribes, Cubelles, Canyelles i Olivella.</p>
+        <p>El SAD respon a una necessitat creixent detectada durant els últims anys: cada cop més famílies busquen alternatives per mantenir els seus éssers estimats a casa, envoltats del que els és familiar. "Volem que ningú es vegi obligat a abandonar la seva llar quan encara pot viure-hi amb els suports adequats", explica la direcció tècnica de la Fundació.</p>
+        <div class="article-quote">
+          <p>Format per un equip de professionals que acompanya cada persona perquè pugui continuar vivint al seu entorn de sempre, amb la cura, el suport i l'atenció que necessita.</p>
+          <cite>— Equip SAD, Fundació Ave Maria</cite>
+        </div>
+        <h3>Un model d'atenció integral</h3>
+        <p>El servei inclou ajuda a les activitats de la vida diària (higiene, alimentació, mobilitat), suport a la llar, acompanyament a visites mèdiques, suport emocional i coordinació amb els serveis sanitaris i socials del territori. També ofereix respir familiar per als cuidadors principals, un aspecte sovint oblidat i essencial per a la sostenibilitat de la cura.</p>
+        <h3>Com sol·licitar-lo</h3>
+        <p>Les persones interessades poden posar-se en contacte amb l'equip del SAD trucant al 938 94 86 46 o escrivint a sad@avemariafundacio.org. Es concerta una visita a domicili per valorar les necessitats i dissenyar un pla d'atenció personalitzat.</p>
+      </div>
+    </article>
+    <section class="article-related">
+      <div class="article-related-inner">
+        <div class="section-header"><span class="eyebrow center">Continua llegint</span><h2>Notícies relacionades</h2></div>
+        <div class="noticies-grid">
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/terapies/terapia-9.jpg')"></div><div class="noticia-content"><p class="noticia-date">9 desembre 2025</p><h3><a href="#noticia-3" onclick="showPage('noticia-3')">L'Ajuntament de Vilanova impulsa el projecte Benviure</a></h3></div></div>
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/fachada/fachada-2.jpg')"></div><div class="noticia-content"><p class="noticia-date">18 novembre 2025</p><h3><a href="#noticia-4" onclick="showPage('noticia-4')">Rècord de participació al 20è Torneig Benèfic</a></h3></div></div>
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/institucional/inst-3.jpg')"></div><div class="noticia-content"><p class="noticia-date">3 novembre 2025</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">Un concert de pel·lícula omple l'Auditori Meliá</a></h3></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== NOTÍCIA 2 — GRANGEL ==================== -->
+  <div id="noticia-2" class="page" style="--acc:var(--rosa)">
+    <div class="article-hero" style="background-image:url('imatges/fachada/fachada-5.jpg')"></div>
+    <div class="article-back-bar container">
+      <a href="#actualitat" onclick="showPage('actualitat')">← Torna a Notícies</a>
+    </div>
+    <article class="article-container">
+      <div class="article-meta">
+        <span>18 desembre 2025</span>
+        <span class="dot"></span>
+        <span class="a-cat">Fons d'Art</span>
+        <span class="dot"></span>
+        <span class="a-cat">Lectura 3 min</span>
+      </div>
+      <h1 class="article-title">Art, cultura i compromís social: dues obres dels germans Grangel s'incorporen al Fons d'Art</h1>
+      <p class="article-lede">La Fundació acull dues obres originals dels germans Grangel — "Pinocchio" i "Spirit" — cedides amb voluntat de contribuir a la comunitat i reforçar el patrimoni artístic que dona identitat als nostres espais.</p>
+      <div class="article-body">
+        <p>Els <strong>germans Grangel</strong>, il·lustradors reconeguts internacionalment per la seva col·laboració amb estudis com Aardman, Dreamworks i Blue Sky, han cedit a la Fundació Ave Maria dues obres originals que passen a formar part del <strong>Fons d'Art</strong> del centre. Les obres — "Pinocchio" i "Spirit" — es podran contemplar de manera permanent als espais comuns del Campus Residencial.</p>
+        <p>Aquesta cessió no és només un gest artístic: és un compromís explícit amb el projecte social de la Fundació i amb la comunitat que la sustenta. "Volíem que aquestes obres visquessin en un lloc on tinguessin sentit, on formessin part del dia a dia de les persones", han explicat els artistes.</p>
+        <div class="article-quote">
+          <p>L'art té la capacitat de crear vincles i memòria. Quan una obra viu en un espai habitat, es converteix en part de la història de qui l'observa cada dia.</p>
+          <cite>— Direcció artística del Fons d'Art</cite>
+        </div>
+        <h3>Un fons que creix amb generositat</h3>
+        <p>El Fons d'Art de la Fundació Ave Maria s'ha anat construint gràcies a la generositat d'artistes, col·leccionistes i particulars que han volgut deixar una petjada en el projecte. Cada obra té una història i un context propi, i totes comparteixen la voluntat d'enriquir la vida quotidiana dels usuaris.</p>
+        <h3>Visita i accés</h3>
+        <p>Les obres es poden visitar els dies de portes obertes que organitzem periòdicament, així com concertant una visita guiada prèvia. Consulta els propers dies oberts a la nostra pàgina de contacte.</p>
+      </div>
+    </article>
+    <section class="article-related">
+      <div class="article-related-inner">
+        <div class="section-header"><span class="eyebrow center">Continua llegint</span><h2>Notícies relacionades</h2></div>
+        <div class="noticies-grid">
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/salas/sala-2.jpg')"></div><div class="noticia-content"><p class="noticia-date">20 octubre 2025</p><h3><a href="#noticia-6" onclick="showPage('noticia-6')">Maria Pilar Igual: un llegat d'art i generositat</a></h3></div></div>
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/institucional/inst-3.jpg')"></div><div class="noticia-content"><p class="noticia-date">3 novembre 2025</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">Un concert de pel·lícula omple l'Auditori Meliá</a></h3></div></div>
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/institucional/inst-1.jpg')"></div><div class="noticia-content"><p class="noticia-date">20 gener 2026</p><h3><a href="#noticia-1" onclick="showPage('noticia-1')">La Fundació posa en marxa el nou SAD</a></h3></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== NOTÍCIA 3 — BENVIURE ==================== -->
+  <div id="noticia-3" class="page" style="--acc:var(--blau)">
+    <div class="article-hero" style="background-image:url('imatges/terapies/terapia-9.jpg')"></div>
+    <div class="article-back-bar container">
+      <a href="#actualitat" onclick="showPage('actualitat')">← Torna a Notícies</a>
+    </div>
+    <article class="article-container">
+      <div class="article-meta">
+        <span>9 desembre 2025</span>
+        <span class="dot"></span>
+        <span class="a-cat">Aliances</span>
+        <span class="dot"></span>
+        <span class="a-cat">Lectura 3 min</span>
+      </div>
+      <h1 class="article-title">L'Ajuntament de Vilanova i la Geltrú impulsa el projecte Benviure</h1>
+      <p class="article-lede">Nova proposta d'habitatge inclusiu al territori per oferir suport i autonomia a persones amb discapacitat intel·lectual, amb la Fundació Ave Maria com a entitat gestora tècnica.</p>
+      <div class="article-body">
+        <p>L'Ajuntament de Vilanova i la Geltrú, en col·laboració amb la Fundació Ave Maria, ha presentat aquesta setmana el <strong>projecte Benviure</strong>, una iniciativa d'habitatge inclusiu adreçada a persones adultes amb discapacitat intel·lectual que volen viure amb la màxima autonomia possible.</p>
+        <p>El projecte s'inspira en el model <strong>Housing First</strong> que la Fundació ja aplica des de fa anys al programa de Llars amb Suport, i posa a disposició pisos convencionals amb l'acompanyament d'un equip professional que dona suport intermitent adaptat a les necessitats de cada persona.</p>
+        <div class="article-quote">
+          <p>Cada persona té dret a decidir on i com vol viure. Benviure és una manera pràctica de fer real aquest dret, amb tot el suport necessari.</p>
+          <cite>— Regidoria de Serveis Socials, Vilanova i la Geltrú</cite>
+        </div>
+        <h3>Un projecte compartit amb el territori</h3>
+        <p>Benviure és el resultat de mesos de treball entre l'Ajuntament, la Fundació i les entitats socials del territori. La coordinació amb els serveis municipals de salut i benestar ha estat clau per dissenyar un model que respongui a les necessitats reals de les persones i les seves famílies.</p>
+        <h3>Properes fases</h3>
+        <p>La primera fase del projecte començarà amb un pilot de tres habitatges a Vilanova durant el primer semestre de 2026. Les persones interessades poden posar-se en contacte amb els Serveis Socials municipals o directament amb la Fundació Ave Maria.</p>
+      </div>
+    </article>
+    <section class="article-related">
+      <div class="article-related-inner">
+        <div class="section-header"><span class="eyebrow center">Continua llegint</span><h2>Notícies relacionades</h2></div>
+        <div class="noticies-grid">
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/institucional/inst-1.jpg')"></div><div class="noticia-content"><p class="noticia-date">20 gener 2026</p><h3><a href="#noticia-1" onclick="showPage('noticia-1')">La Fundació posa en marxa el nou SAD</a></h3></div></div>
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/fachada/fachada-2.jpg')"></div><div class="noticia-content"><p class="noticia-date">18 novembre 2025</p><h3><a href="#noticia-4" onclick="showPage('noticia-4')">Rècord de participació al 20è Torneig Benèfic</a></h3></div></div>
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/institucional/inst-3.jpg')"></div><div class="noticia-content"><p class="noticia-date">3 novembre 2025</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">Un concert de pel·lícula omple l'Auditori Meliá</a></h3></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== NOTÍCIA 4 — TORNEIG ==================== -->
+  <div id="noticia-4" class="page" style="--acc:var(--groc)">
+    <div class="article-hero" style="background-image:url('imatges/fachada/fachada-2.jpg')"></div>
+    <div class="article-back-bar container">
+      <a href="#actualitat" onclick="showPage('actualitat')">← Torna a Notícies</a>
+    </div>
+    <article class="article-container">
+      <div class="article-meta">
+        <span>18 novembre 2025</span>
+        <span class="dot"></span>
+        <span class="a-cat">Esdeveniments</span>
+        <span class="dot"></span>
+        <span class="a-cat">Lectura 2 min</span>
+      </div>
+      <h1 class="article-title">Rècord de participació al 20è Torneig Benèfic de Pitch &amp; Putt</h1>
+      <p class="article-lede">182 jugadors i 3.500 € recaptats en la jornada solidària. La vintena edició del torneig ha superat totes les expectatives i consolida una cita imprescindible al calendari benèfic de Sitges.</p>
+      <div class="article-body">
+        <p>El passat cap de setmana es va celebrar la <strong>20a edició del Torneig Benèfic de Pitch &amp; Putt</strong> a favor de la Fundació Ave Maria. Una jornada esportiva i festiva que, edició rere edició, es consolida com una cita imprescindible del calendari solidari del Garraf.</p>
+        <p>Amb <strong>182 jugadors inscrits</strong> — nou rècord de participació — i una recaptació final de <strong>3.500 euros</strong>, aquesta vintena edició ha superat totes les expectatives i confirma el compromís d'esportistes i patrocinadors amb el projecte de la Fundació.</p>
+        <div class="article-quote">
+          <p>Vint anys jugant per una mateixa causa. Això és fer comunitat, jugada a jugada.</p>
+          <cite>— Comitè organitzador del torneig</cite>
+        </div>
+        <h3>Vint anys de complicitat</h3>
+        <p>Des de la seva primera edició, el torneig ha reunit persones vinculades al món del golf i el pitch &amp; putt amb la voluntat comuna de donar suport a projectes socials. Els fons recaptats durant aquestes dues dècades han contribuït a finançar activitats, teràpies i millores a les instal·lacions del Campus Residencial.</p>
+        <h3>Agraïments</h3>
+        <p>Volem donar les gràcies a totes les persones i empreses patrocinadores que fan possible aquesta jornada any rere any. Sense el seu suport i la seva generositat, aquest torneig no seria el que és.</p>
+      </div>
+    </article>
+    <section class="article-related">
+      <div class="article-related-inner">
+        <div class="section-header"><span class="eyebrow center">Continua llegint</span><h2>Notícies relacionades</h2></div>
+        <div class="noticies-grid">
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/institucional/inst-3.jpg')"></div><div class="noticia-content"><p class="noticia-date">3 novembre 2025</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">Un concert de pel·lícula omple l'Auditori Meliá</a></h3></div></div>
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/salas/sala-2.jpg')"></div><div class="noticia-content"><p class="noticia-date">20 octubre 2025</p><h3><a href="#noticia-6" onclick="showPage('noticia-6')">Maria Pilar Igual: un llegat d'art i generositat</a></h3></div></div>
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/fachada/fachada-5.jpg')"></div><div class="noticia-content"><p class="noticia-date">18 desembre 2025</p><h3><a href="#noticia-2" onclick="showPage('noticia-2')">Dues obres dels germans Grangel s'incorporen al Fons d'Art</a></h3></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== NOTÍCIA 5 — CONCERT ==================== -->
+  <div id="noticia-5" class="page" style="--acc:var(--coral)">
+    <div class="article-hero" style="background-image:url('imatges/institucional/inst-3.jpg')"></div>
+    <div class="article-back-bar container">
+      <a href="#actualitat" onclick="showPage('actualitat')">← Torna a Notícies</a>
+    </div>
+    <article class="article-container">
+      <div class="article-meta">
+        <span>3 novembre 2025</span>
+        <span class="dot"></span>
+        <span class="a-cat">Cultura</span>
+        <span class="dot"></span>
+        <span class="a-cat">Lectura 3 min</span>
+      </div>
+      <h1 class="article-title">Un concert de pel·lícula omple l'Auditori Meliá i recapta més d'11.000 €</h1>
+      <p class="article-lede">La Penedès Film Orquestra i el Cor Xamusia van emocionar el públic amb un repertori que va viatjar per les grans bandes sonores del cinema. Una nit inoblidable pel projecte de la Fundació.</p>
+      <div class="article-body">
+        <p>L'Auditori Meliá va acollir el passat 3 de novembre un concert benèfic a favor de la Fundació Ave Maria que va aconseguir omplir la sala fins a l'últim seient. La <strong>Penedès Film Orquestra</strong>, acompanyada del <strong>Cor Xamusia</strong>, van oferir un repertori d'antologia amb les millors bandes sonores del cinema clàssic i contemporani.</p>
+        <p>La jornada va aconseguir recaptar més de <strong>11.000 euros</strong> que es destinaran íntegrament als programes de teràpies i activitats creatives dels usuaris del Campus Residencial. Una gala emotiva que va posar de manifest la força de la comunitat de Sitges i el Garraf al voltant del projecte de la Fundació.</p>
+        <div class="article-quote">
+          <p>Quan la música es posa al servei d'una causa, els sentiments es multipliquen. Aquesta nit ho hem viscut a l'auditori.</p>
+          <cite>— Direcció musical, Penedès Film Orquestra</cite>
+        </div>
+        <h3>Un repertori per emocionar</h3>
+        <p>El programa va incloure temes emblemàtics de compositors com John Williams, Ennio Morricone, Hans Zimmer i Alan Silvestri. Especialment ovacionats van ser els fragments de "El Padrino", "Cinema Paradiso" i "Interstellar", interpretats amb una intensitat que va deixar el públic sense paraules.</p>
+        <h3>Agraïments especials</h3>
+        <p>Volem agrair a totes les persones intèrprets, tècniques i voluntàries que van fer possible aquesta gala, així com a l'Auditori Meliá per cedir gratuïtament l'espai per a la causa.</p>
+      </div>
+    </article>
+    <section class="article-related">
+      <div class="article-related-inner">
+        <div class="section-header"><span class="eyebrow center">Continua llegint</span><h2>Notícies relacionades</h2></div>
+        <div class="noticies-grid">
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/fachada/fachada-2.jpg')"></div><div class="noticia-content"><p class="noticia-date">18 novembre 2025</p><h3><a href="#noticia-4" onclick="showPage('noticia-4')">Rècord de participació al 20è Torneig Benèfic</a></h3></div></div>
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/salas/sala-2.jpg')"></div><div class="noticia-content"><p class="noticia-date">20 octubre 2025</p><h3><a href="#noticia-6" onclick="showPage('noticia-6')">Maria Pilar Igual: un llegat d'art i generositat</a></h3></div></div>
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/fachada/fachada-5.jpg')"></div><div class="noticia-content"><p class="noticia-date">18 desembre 2025</p><h3><a href="#noticia-2" onclick="showPage('noticia-2')">Dues obres dels germans Grangel s'incorporen al Fons d'Art</a></h3></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== NOTÍCIA 6 — MARIA PILAR ==================== -->
+  <div id="noticia-6" class="page" style="--acc:var(--taronja)">
+    <div class="article-hero" style="background-image:url('imatges/salas/sala-2.jpg')"></div>
+    <div class="article-back-bar container">
+      <a href="#actualitat" onclick="showPage('actualitat')">← Torna a Notícies</a>
+    </div>
+    <article class="article-container">
+      <div class="article-meta">
+        <span>20 octubre 2025</span>
+        <span class="dot"></span>
+        <span class="a-cat">Fons d'Art</span>
+        <span class="dot"></span>
+        <span class="a-cat">Lectura 3 min</span>
+      </div>
+      <h1 class="article-title">Maria Pilar Igual: un llegat d'art i generositat</h1>
+      <p class="article-lede">L'artista cedeix la totalitat de la seva obra al Fons d'Art de la Fundació. Un gest de gran calat que reforça el vincle històric entre l'art contemporani sitgetà i el projecte social de l'Ave Maria.</p>
+      <div class="article-body">
+        <p>L'artista sitgetana <strong>Maria Pilar Igual</strong> ha decidit cedir la totalitat de la seva obra al Fons d'Art de la Fundació Ave Maria. Es tracta d'una donació de dimensions excepcionals que inclou obra pictòrica, treballs sobre paper i esbossos preparatoris de tota una trajectòria artística que abasta més de quatre dècades.</p>
+        <p>Amb aquest gest, la Fundació passa a ser dipositària d'un patrimoni artístic que reflecteix una part important de la <strong>cultura visual del Sitges contemporani</strong>. Les obres es catalogaran, restauraran quan calgui i s'exposaran de manera rotatòria als espais comuns del Campus i en exposicions temporals obertes al públic.</p>
+        <div class="article-quote">
+          <p>Vull que la meva obra visqui allà on serveixi per a alguna cosa. La Fundació m'ha donat aquesta possibilitat.</p>
+          <cite>— Maria Pilar Igual, artista</cite>
+        </div>
+        <h3>Un vincle amb el territori</h3>
+        <p>Maria Pilar Igual manté una relació personal amb la Fundació des de fa dècades, tant per la seva activitat artística com per la seva implicació en projectes solidaris del municipi. La seva decisió és un exemple més de com Sitges i la Fundació caminen juntes des de fa gairebé quaranta anys.</p>
+        <h3>Propers passos</h3>
+        <p>Durant els propers mesos es procedirà a la catalogació completa del fons rebut i s'anunciaran les primeres exposicions temporals amb selecció d'obra. Estigues atent a les nostres notícies per no perdre-te-les.</p>
+      </div>
+    </article>
+    <section class="article-related">
+      <div class="article-related-inner">
+        <div class="section-header"><span class="eyebrow center">Continua llegint</span><h2>Notícies relacionades</h2></div>
+        <div class="noticies-grid">
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/fachada/fachada-5.jpg')"></div><div class="noticia-content"><p class="noticia-date">18 desembre 2025</p><h3><a href="#noticia-2" onclick="showPage('noticia-2')">Dues obres dels germans Grangel s'incorporen al Fons d'Art</a></h3></div></div>
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/institucional/inst-3.jpg')"></div><div class="noticia-content"><p class="noticia-date">3 novembre 2025</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">Un concert de pel·lícula omple l'Auditori Meliá</a></h3></div></div>
+          <div class="noticia-card"><div class="noticia-img" style="background-image:url('imatges/institucional/inst-1.jpg')"></div><div class="noticia-content"><p class="noticia-date">20 gener 2026</p><h3><a href="#noticia-1" onclick="showPage('noticia-1')">La Fundació posa en marxa el nou SAD</a></h3></div></div>
         </div>
       </div>
     </section>
@@ -2858,8 +3286,9 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
         <li><a href="#campus" onclick="showPage('campus')">Campus Residencial</a></li>
         <li><a href="#llars" onclick="showPage('llars')"><span data-lang-ca>Llars amb Suport</span><span data-lang-es>Hogares con Apoyo</span></a></li>
         <li><a href="#sad" onclick="showPage('sad')"><span data-lang-ca>Atenció Domiciliària</span><span data-lang-es>Atención Domiciliaria</span></a></li>
-        <li><a href="#families" onclick="showPage('families')"><span data-lang-ca>Suport a Famílies</span><span data-lang-es>Apoyo a Familias</span></a></li>
-        <li><a href="#laboral" onclick="showPage('laboral')"><span data-lang-ca>Inclusió Laboral</span><span data-lang-es>Inclusión Laboral</span></a></li>
+        <li><a href="#centresdia" onclick="showPage('centresdia')"><span data-lang-ca>Centres de Dia</span><span data-lang-es>Centros de Día</span></a></li>
+        <li><a href="#families" onclick="showPage('families')"><span data-lang-ca>Suport a Famílies i Inclusió Laboral</span><span data-lang-es>Apoyo a Familias e Inclusión Laboral</span></a></li>
+        <li><a href="#recerca" onclick="showPage('recerca')"><span data-lang-ca>Recerca i Innovació</span><span data-lang-es>Investigación e Innovación</span></a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -3223,12 +3652,34 @@ if(window.matchMedia('(hover:hover)').matches){
   const prevBtn=arrows&&arrows.querySelector('.is-prev');
   const nextBtn=arrows&&arrows.querySelector('.is-next');
 
-  // Drag
+  // Drag — la classe .drag NOMÉS s'aplica quan hi ha moviment real (>10px),
+  // així un click simple sempre passa al link
   let down=false,sx=0,sl=0,moved=false;
-  el.addEventListener('pointerdown',e=>{down=true;moved=false;sx=e.clientX;sl=el.scrollLeft;el.classList.add('drag');});
-  window.addEventListener('pointermove',e=>{if(!down)return;const d=e.clientX-sx;if(Math.abs(d)>4)moved=true;el.scrollLeft=sl-d;});
-  window.addEventListener('pointerup',()=>{if(!down)return;down=false;el.classList.remove('drag');});
-  el.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();}},true);
+  el.addEventListener('pointerdown',e=>{
+    down=true;moved=false;sx=e.clientX;sl=el.scrollLeft;
+  });
+  window.addEventListener('pointermove',e=>{
+    if(!down)return;
+    const d=e.clientX-sx;
+    if(!moved&&Math.abs(d)>10){moved=true;el.classList.add('drag');}
+    if(moved){el.scrollLeft=sl-d;}
+  });
+  const endDrag=()=>{if(!down)return;down=false;el.classList.remove('drag');};
+  window.addEventListener('pointerup',endDrag);
+  window.addEventListener('pointercancel',endDrag);
+  el.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();moved=false;}},true);
+  // Tota la card és clickable — navega al servei del <a> interior si no hi ha hagut drag
+  el.querySelectorAll('.servei-card').forEach(card=>{
+    card.style.cursor='pointer';
+    card.addEventListener('click',e=>{
+      if(moved)return;
+      if(e.target.closest('a'))return; // el <a> intern ja navega sol
+      const link=card.querySelector('.servei-content a[href^="#"]');
+      if(!link)return;
+      const href=link.getAttribute('href').slice(1);
+      if(typeof showPage==='function')showPage(href);
+    });
+  });
 
   // Nota: NO capturem el wheel vertical. El scroll vertical de la pàgina sempre funciona.
   // El carrusel es navega amb drag, fletxes o trackpad horitzontal natiu.
