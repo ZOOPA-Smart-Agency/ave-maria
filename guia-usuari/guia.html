@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<title>Guia d'usuari — Fundació Ave Maria</title>
+<style>
+@page { size: A4; margin: 18mm 16mm; }
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  color: #202020;
+  line-height: 1.5;
+  margin: 0;
+}
+h1, h2, h3, h4 { font-weight: 700; letter-spacing: -.01em; }
+h1 { font-size: 32px; color: #202020; margin: 0 0 6px; }
+h2 { font-size: 24px; color: #202020; margin: 40px 0 12px; padding-bottom: 8px; border-bottom: 3px solid #E8863A; page-break-after: avoid; }
+h3 { font-size: 17px; color: #444; margin: 24px 0 8px; page-break-after: avoid; }
+p { margin: 0 0 12px; font-size: 12px; }
+.cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; page-break-after: always; padding: 40px; background: linear-gradient(180deg, #F9F9F9 0%, #F1F1EF 100%); }
+.cover-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+.cover-logo-mark { display: grid; grid-template-columns: repeat(2,20px); grid-template-rows: repeat(2,20px); gap:2px; }
+.cover-logo-mark span:nth-child(1){background:#E8863A} .cover-logo-mark span:nth-child(2){background:#2D936C}
+.cover-logo-mark span:nth-child(3){background:#5DADE2} .cover-logo-mark span:nth-child(4){background:#F2C14E}
+.cover-logo-text { text-align: left; font-size: 14px; font-weight: 700; letter-spacing: .06em; line-height: 1.05; }
+.cover-title { font-size: 44px; font-weight: 900; letter-spacing: -.03em; margin: 20px 0 12px; line-height: 1; }
+.cover-sub { font-size: 18px; color: #646464; font-weight: 300; max-width: 500px; }
+.cover-badge { margin-top: 40px; padding: 10px 20px; background: #202020; color: #fff; font-size: 12px; text-transform: uppercase; letter-spacing: .2em; font-weight: 600; border-radius: 30px; }
+.cover-foot { position: absolute; bottom: 40px; font-size: 11px; color: #999; letter-spacing: .1em; text-transform: uppercase; }
+
+.eyebrow { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; color: #E8863A; display: inline-block; margin-bottom: 8px; }
+.lead { font-size: 14px; color: #444; line-height: 1.55; margin-bottom: 20px; }
+
+.callout {
+  background: #FEF4E8;
+  border-left: 4px solid #E8863A;
+  padding: 14px 18px;
+  border-radius: 4px;
+  margin: 18px 0;
+  font-size: 12px;
+}
+.callout.info { background: #E9F4FA; border-left-color: #5DADE2; }
+.callout.warn { background: #FDECEE; border-left-color: #E85D75; }
+.callout.tip  { background: #EAF6F0; border-left-color: #2D936C; }
+.callout strong { display: block; margin-bottom: 4px; }
+
+.step { margin: 20px 0; page-break-inside: avoid; }
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+  background: #E8863A; color: #fff;
+  border-radius: 50%;
+  font-weight: 700; font-size: 13px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.step-title {
+  font-weight: 700; font-size: 15px;
+  display: inline-block; vertical-align: middle;
+  margin-bottom: 6px;
+}
+
+figure {
+  margin: 14px 0 20px;
+  page-break-inside: avoid;
+}
+figure img {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: block;
+}
+figcaption {
+  font-size: 10px;
+  color: #666;
+  text-align: center;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.credencials {
+  background: #202020;
+  color: #fff;
+  padding: 20px 24px;
+  border-radius: 8px;
+  font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+  font-size: 13px;
+  margin: 20px 0;
+}
+.credencials div { margin: 4px 0; }
+.credencials .label { color: #999; font-weight: 400; }
+.credencials .val { color: #E8863A; font-weight: 700; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+.card {
+  background: #F9F9F9;
+  padding: 14px 16px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  font-size: 12px;
+}
+.card strong { display: block; margin-bottom: 4px; color: #202020; font-size: 13px; }
+
+table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 12px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+th { background: #F1F1EF; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #666; }
+
+.section-break { page-break-before: always; }
+.footer-page {
+  position: fixed; bottom: -14mm; left: 0; right: 0; text-align: center;
+  font-size: 9px; color: #999;
+}
+ul { padding-left: 20px; }
+li { margin: 4px 0; font-size: 12px; }
+code { background: #f1f1ef; padding: 2px 6px; border-radius: 3px; font-family: "SFMono-Regular", Menlo, monospace; font-size: 11px; }
+
+.chip { display: inline-block; background: #F1F1EF; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; margin-right: 4px; }
+.chip.orange { background: #FEF4E8; color: #E8863A; }
+.chip.blue { background: #E9F4FA; color: #2271b1; }
+.chip.green { background: #EAF6F0; color: #2D936C; }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="cover">
+  <div class="cover-logo">
+    <div class="cover-logo-mark"><span></span><span></span><span></span><span></span></div>
+    <div class="cover-logo-text">AVE MARIA<br>FUNDACIÓ</div>
+  </div>
+  <span class="eyebrow">Manual d'usuari</span>
+  <h1 class="cover-title">Guia<br>d'edició de la web</h1>
+  <p class="cover-sub">Aprèn a canviar textos, imatges i bloc de contingut al web de la Fundació. Sense saber programar.</p>
+  <div class="cover-badge">Versió 1.0 · Panell Editor Visual</div>
+  <div class="cover-foot">Preparat per Zoopa · 2026</div>
+</section>
+
+<!-- ÍNDEX -->
+<h2>Índex</h2>
+<table>
+  <tr><td width="30" style="color:#E8863A;font-weight:700">1</td><td>Introducció</td><td style="text-align:right">3</td></tr>
+  <tr><td style="color:#E8863A;font-weight:700">2</td><td>Com entrar al panell</td><td style="text-align:right">4</td></tr>
+  <tr><td style="color:#E8863A;font-weight:700">3</td><td>Editor Visual — Vista general</td><td style="text-align:right">5</td></tr>
+  <tr><td style="color:#E8863A;font-weight:700">4</td><td>Canviar un text (pas a pas)</td><td style="text-align:right">6</td></tr>
+  <tr><td style="color:#E8863A;font-weight:700">5</td><td>Canviar una imatge</td><td style="text-align:right">8</td></tr>
+  <tr><td style="color:#E8863A;font-weight:700">6</td><td>Canviar de pàgina i d'idioma</td><td style="text-align:right">9</td></tr>
+  <tr><td style="color:#E8863A;font-weight:700">7</td><td>Afegir / eliminar bloc de contingut</td><td style="text-align:right">10</td></tr>
+  <tr><td style="color:#E8863A;font-weight:700">8</td><td>Editar en llista (opció avançada)</td><td style="text-align:right">11</td></tr>
+  <tr><td style="color:#E8863A;font-weight:700">9</td><td>Restaurar el web original</td><td style="text-align:right">12</td></tr>
+  <tr><td style="color:#E8863A;font-weight:700">10</td><td>Preguntes freqüents</td><td style="text-align:right">13</td></tr>
+</table>
+
+<!-- 1. Introducció -->
+<h2 class="section-break">1. Introducció</h2>
+<p class="lead">Aquesta guia t'ensenya a modificar el web de la Fundació Ave Maria de manera senzilla. La web es gestiona amb <strong>WordPress</strong> i tenim un panell especial anomenat <strong>Editor Visual</strong> pensat perquè puguis canviar textos i imatges directament sobre la vista real del web, sense entendre codi.</p>
+
+<h3>Què podràs fer amb aquesta guia</h3>
+<ul>
+  <li>Modificar qualsevol text (en <strong>català</strong> i <strong>castellà</strong>).</li>
+  <li>Substituir qualsevol imatge del web.</li>
+  <li>Afegir, eliminar o reordenar serveis, notícies i testimonis.</li>
+  <li>Restaurar la web a l'original si t'has equivocat.</li>
+</ul>
+
+<div class="callout info">
+  <strong>💡 Regla d'or</strong>
+  Els canvis es guarden <strong>automàticament</strong> al fer clic fora del text o al prémer <em>Enter</em>. Veuràs una notificació verda a baix a la dreta quan es guardi correctament.
+</div>
+
+<!-- 2. Com entrar -->
+<h2 class="section-break">2. Com entrar al panell</h2>
+<p>Obre el navegador (Chrome, Safari, Firefox) i escriu l'adreça del panell d'administració. Introdueix el teu usuari i contrasenya.</p>
+
+<div class="credencials">
+  <div><span class="label">URL del panell:</span> <span class="val">www.avemariafundacio.org/wp-admin</span></div>
+  <div><span class="label">Usuari:</span> <span class="val">(el que t'hagin donat)</span></div>
+  <div><span class="label">Contrasenya:</span> <span class="val">(la que t'hagin donat)</span></div>
+</div>
+
+<figure>
+  <img src="capturas/guia-01-login.jpeg" alt="Pantalla de login de WordPress">
+  <figcaption>Fig. 1 — Pantalla d'accés al panell d'administració</figcaption>
+</figure>
+
+<div class="callout warn">
+  <strong>⚠️ Molt important</strong>
+  Si algú comparteix el teu usuari i contrasenya podrà entrar i modificar la web. Guarda les credencials en un lloc segur i canvia-les de tant en tant.
+</div>
+
+<!-- 3. Vista general -->
+<h2 class="section-break">3. Editor Visual — Vista general</h2>
+<p class="lead">Un cop a dins, al menú lateral esquerre veuràs <strong>"Editor Ave Maria"</strong>. És on trobaràs totes les eines per editar el web. La primera opció, <strong>"👁️ Editor Visual"</strong>, és la que faràs servir el 90% del temps.</p>
+
+<figure>
+  <img src="capturas/guia-03-editor-visual.jpeg" alt="Vista general de l'Editor Visual">
+  <figcaption>Fig. 2 — Editor Visual: sidebar amb pàgines a l'esquerra i vista del web a la dreta</figcaption>
+</figure>
+
+<h3>Zones de l'Editor Visual</h3>
+
+<div class="grid-2">
+  <div class="card">
+    <strong>A. Selector d'idioma</strong>
+    Botons <span class="chip orange">🏴 CA</span> <span class="chip">🇪🇸 ES</span>. Canvia el que veus a la vista de la dreta. Si tries CA, editar un text guardarà la versió catalana.
+  </div>
+  <div class="card">
+    <strong>B. Llista de pàgines</strong>
+    Totes les pàgines del web (Inici, Qui Som, Història, Serveis, els 6 serveis individuals, Actualitat, notícies, Contacte…). Fes clic a qualsevol per veure-la.
+  </div>
+  <div class="card">
+    <strong>C. Vista del web</strong>
+    Es veu <strong>exactament</strong> igual que ho veurà un visitant. Aquí és on faràs clic sobre els textos o imatges per editar-los.
+  </div>
+  <div class="card">
+    <strong>D. Notificació de guardat</strong>
+    Quan modifiques alguna cosa, apareix un rètol verd "✅ Guardat" a baix a la dreta durant un moment.
+  </div>
+</div>
+
+<!-- 4. Canviar un text -->
+<h2 class="section-break">4. Canviar un text (pas a pas)</h2>
+<p class="lead">L'operació més habitual. En 3 passos.</p>
+
+<div class="step">
+  <span class="step-num">1</span>
+  <span class="step-title">Passa el ratolí per sobre del text</span>
+  <p>Quan et col·loquis sobre qualsevol text editable, apareixerà un <strong>marc taronja discontinu</strong>. Això indica que el text es pot modificar.</p>
+</div>
+
+<figure>
+  <img src="capturas/guia-04-hover-text.jpeg" alt="Text amb ressaltat taronja al passar el ratolí">
+  <figcaption>Fig. 3 — Passa el ratolí per sobre. El text es ressalta amb un marc taronja discontinu.</figcaption>
+</figure>
+
+<div class="step">
+  <span class="step-num">2</span>
+  <span class="step-title">Fes clic per començar a editar</span>
+  <p>El text es converteix en editable: <strong>fons groc clar amb marc blau</strong>. Ja pots escriure o esborrar amb el teclat.</p>
+</div>
+
+<figure>
+  <img src="capturas/guia-05-editando-texto.jpeg" alt="Text en mode edició">
+  <figcaption>Fig. 4 — Text en mode edició: fons groc clar + marc blau. Ja pots escriure.</figcaption>
+</figure>
+
+<div class="step">
+  <span class="step-num">3</span>
+  <span class="step-title">Guarda els canvis</span>
+  <p>Prem <strong>Enter</strong> o fes clic <strong>fora del text</strong>. El text es guarda automàticament i apareix la notificació verda <em>"✅ Guardat"</em> a baix a la dreta.</p>
+</div>
+
+<div class="callout tip">
+  <strong>💡 Truc útil</strong>
+  Si vols cancel·lar un canvi que estaves fent, prem <strong>Escape (Esc)</strong> al teclat i el text tornarà al valor original.
+</div>
+
+<div class="callout info">
+  <strong>ℹ️ Sobre els idiomes</strong>
+  Els textos del web tenen dues versions: <strong>català</strong> i <strong>castellà</strong>. Quan edites amb el selector d'idioma en CA, guardes la versió catalana. Canvia a ES i edita el mateix text per canviar la castellana. Els visitants veuran cadascuna segons l'idioma triat al header del web.
+</div>
+
+<!-- 5. Canviar imatge -->
+<h2 class="section-break">5. Canviar una imatge</h2>
+<p class="lead">Substitueix qualsevol imatge del web per una altra que pugis o que ja tinguis a la biblioteca.</p>
+
+<div class="step">
+  <span class="step-num">1</span>
+  <span class="step-title">Passa el ratolí sobre la imatge</span>
+  <p>Apareixerà un <strong>marc taronja discontinu</strong> al voltant i un rètol amb el text <em>"📷 Clic per canviar imatge"</em> a la cantonada superior esquerra.</p>
+</div>
+
+<figure>
+  <img src="capturas/guia-06-hover-imagen.jpeg" alt="Imatge amb overlay 'Clic per canviar imatge'">
+  <figcaption>Fig. 5 — Passa el ratolí sobre una imatge per veure el rètol taronja.</figcaption>
+</figure>
+
+<div class="step">
+  <span class="step-num">2</span>
+  <span class="step-title">Fes clic i tria la nova imatge</span>
+  <p>S'obrirà la <strong>Biblioteca de mèdia</strong> de WordPress. Pots:</p>
+  <ul>
+    <li><strong>Pujar una imatge nova</strong> del teu ordinador (arrossega-la o fes clic a "Selecciona fitxers").</li>
+    <li><strong>Triar-ne una ja existent</strong> a la biblioteca.</li>
+  </ul>
+  <p>Un cop tries la imatge, fes clic al botó blau <strong>"Selecciona"</strong> a baix a la dreta.</p>
+</div>
+
+<div class="step">
+  <span class="step-num">3</span>
+  <span class="step-title">La imatge canvia automàticament</span>
+  <p>La vista es recarrega i veuràs la imatge nova al seu lloc. Apareix la notificació verda <em>"✅ Imatge canviada"</em>.</p>
+</div>
+
+<div class="callout warn">
+  <strong>⚠️ Recomanacions per a les imatges</strong>
+  <ul style="margin:0;padding-left:16px">
+    <li>Format: <strong>JPG</strong> per a fotos, <strong>PNG</strong> per a gràfics amb transparència.</li>
+    <li>Mida mínima recomanada: <strong>1200 píxels d'ample</strong>.</li>
+    <li>Pes: intenta que no passi de <strong>500 KB</strong> per imatge (fes servir un compressor com <em>tinypng.com</em>).</li>
+    <li>Respecta la proporció original de la imatge que substitueixes.</li>
+  </ul>
+</div>
+
+<!-- 6. Canviar pàgina i idioma -->
+<h2 class="section-break">6. Canviar de pàgina i d'idioma</h2>
+<p class="lead">Per navegar entre les diferents pàgines del web des de l'editor, fes servir el sidebar de l'esquerra.</p>
+
+<h3>Canviar de pàgina</h3>
+<p>Fes clic a qualsevol nom de pàgina del llistat esquerre. La vista de la dreta carrega aquella pàgina i pots començar a editar-la. Les pàgines estan agrupades:</p>
+<ul>
+  <li><strong>Pàgines principals:</strong> Inici, Qui Som, Història, Missió i Valors, Equip, Transparència.</li>
+  <li><strong>Serveis:</strong> Índex + Campus Residencial, Llars amb Suport, Atenció Domiciliària, Centres de Dia, Suport Famílies + Inclusió, Recerca i Innovació.</li>
+  <li><strong>Col·labora:</strong> Fer un donatiu, Fons d'Art, Botiga.</li>
+  <li><strong>Notícies:</strong> Actualitat + 6 notícies individuals.</li>
+  <li><strong>Contacte.</strong></li>
+</ul>
+
+<h3>Canviar d'idioma</h3>
+<p>Els botons <span class="chip orange">🏴 CA</span> i <span class="chip">🇪🇸 ES</span> a la part alta del sidebar canvien l'idioma que estàs veient. Recorda:</p>
+<div class="callout tip">
+  <strong>💡 Regla clau</strong>
+  Si vols editar el text <strong>en català</strong>, primer activa <strong>🏴 CA</strong>, després fes clic al text i escriu.<br>
+  Si vols editar la versió <strong>castellana</strong>, activa primer <strong>🇪🇸 ES</strong> i fes el mateix.
+</div>
+
+<!-- 7. Bloqs dinàmics -->
+<h2 class="section-break">7. Afegir / eliminar bloc de contingut</h2>
+<p class="lead">Al menú <strong>"📦 Blocs dinàmics"</strong> pots gestionar la <strong>estructura</strong>: afegir un nou servei, eliminar una notícia antiga o reordenar els testimonis.</p>
+
+<figure>
+  <img src="capturas/guia-07-blocs-dinamics.jpeg" alt="Panell de Blocs dinàmics">
+  <figcaption>Fig. 6 — Panell de Blocs dinàmics amb els tres tipus de contingut editable.</figcaption>
+</figure>
+
+<h3>Tres tipus de blocs</h3>
+<table>
+  <tr><th>Bloc</th><th>Què gestiona</th><th>Camps</th></tr>
+  <tr>
+    <td><strong>📋 Serveis</strong></td>
+    <td>Les targetes de serveis del carrusel de la portada</td>
+    <td>Número, títol, descripció, imatge, pàgina destí</td>
+  </tr>
+  <tr>
+    <td><strong>📰 Notícies</strong></td>
+    <td>Les 3 notícies destacades a la portada</td>
+    <td>Data, titular, imatge, pàgina destí</td>
+  </tr>
+  <tr>
+    <td><strong>💬 Testimonis</strong></td>
+    <td>Els testimonis del carrusel "Veus"</td>
+    <td>Text, autor, rol, color de marca</td>
+  </tr>
+</table>
+
+<h3>Accions disponibles a cada bloc</h3>
+<ul>
+  <li><strong>↑ ↓</strong> — Reordenar el bloc amunt o avall.</li>
+  <li><strong>🗑️ Eliminar</strong> — Esborrar aquest bloc (demana confirmació).</li>
+  <li><strong>+ Afegir</strong> — Botó taronja al final de cada llista per crear un nou bloc en blanc.</li>
+</ul>
+
+<div class="callout warn">
+  <strong>⚠️ No oblidis Guardar</strong>
+  A diferència de l'Editor Visual, aquí els canvis <strong>no</strong> es guarden automàticament. Un cop hagis fet totes les modificacions, prem el botó blau <strong>"💾 Guardar"</strong> a baix de la pàgina.
+</div>
+
+<!-- 8. Edició avançada -->
+<h2 class="section-break">8. Editar en llista (opció avançada)</h2>
+<p class="lead">Si prefereixes editar textos en llista (sense la vista visual), tens tres opcions al menú lateral:</p>
+
+<table>
+  <tr><th>Opció del menú</th><th>Per a què serveix</th></tr>
+  <tr>
+    <td><strong>📝 Textos bilingües</strong></td>
+    <td>Els <strong>265 textos</strong> que ja tenen versió catalana i castellana (menús, botons, títols traduïts). Cada un amb 2 caselles CA i ES juntes.</td>
+  </tr>
+  <tr>
+    <td><strong>🌍 Traduccions ES</strong></td>
+    <td>Els <strong>747 textos</strong> que originàriament només tenien versió catalana. Aquí pots afegir la traducció castellana si en falta alguna.</td>
+  </tr>
+  <tr>
+    <td><strong>🖼️ Imatges</strong></td>
+    <td>Vista de graella amb totes les <strong>81 imatges</strong> del web i botó "Canviar" a cadascuna.</td>
+  </tr>
+</table>
+
+<figure>
+  <img src="capturas/guia-08-imatges.jpeg" alt="Panell d'imatges en llista">
+  <figcaption>Fig. 7 — Panell d'edició d'imatges en llista. Cada imatge té botó "Canviar".</figcaption>
+</figure>
+
+<div class="callout info">
+  <strong>Quan utilitzar cada mode?</strong>
+  <ul style="margin:0;padding-left:16px">
+    <li><strong>Editor Visual:</strong> per a canvis puntuals veient com queda al web.</li>
+    <li><strong>Textos bilingües / Traduccions ES:</strong> per a canvis massius (per exemple, revisar totes les traduccions d'una vegada).</li>
+    <li><strong>Imatges (llista):</strong> per veure totes les fotos de cop i canviar-ne diverses.</li>
+  </ul>
+</div>
+
+<!-- 9. Restaurar -->
+<h2 class="section-break">9. Restaurar el web original</h2>
+<p class="lead">Si t'has equivocat i vols tornar al disseny original, tens un botó especial.</p>
+
+<div class="callout warn">
+  <strong>⚠️ Precaució màxima</strong>
+  Aquesta acció esborra <strong>TOTS els canvis</strong> que has fet des del panell (textos, traduccions i imatges) i restaura l'estat original de la maqueta. <strong>No es pot desfer.</strong>
+</div>
+
+<h3>Com fer-ho</h3>
+<ol>
+  <li>Ves a <strong>Editor Ave Maria → ↩️ Restaurar tot</strong> al menú lateral.</li>
+  <li>Llegeix el missatge d'avís.</li>
+  <li>Fes clic al botó vermell <strong>"🗑️ Restaurar tot al valor original"</strong>.</li>
+  <li>Confirma el diàleg de confirmació.</li>
+</ol>
+
+<p>El web tornarà a l'estat inicial. Els blocs dinàmics (serveis, notícies, testimonis) es conserven — només s'esborren els canvis de textos i imatges.</p>
+
+<!-- 10. FAQ -->
+<h2 class="section-break">10. Preguntes freqüents</h2>
+
+<h3>He canviat un text i no el veig al web públic</h3>
+<p>Comprova que:</p>
+<ul>
+  <li>Hagis vist la notificació verda <em>"Guardat"</em> després del canvi.</li>
+  <li>Hagis refrescat la pàgina del web públic amb <strong>Cmd+Shift+R</strong> (Mac) o <strong>Ctrl+F5</strong> (Windows). El navegador pot tenir cache.</li>
+  <li>Si has editat en CA però estàs veient la versió ES, canvia l'idioma al selector CA/ES del web.</li>
+</ul>
+
+<h3>He esborrat un servei / notícia i vull recuperar-lo</h3>
+<p>De moment no hi ha "paperera". L'única forma és tornar a crear-lo manualment amb el botó <strong>"+ Afegir"</strong>. Per això sempre és millor pujar/baixar els blocs abans d'eliminar-los, per si de cas.</p>
+
+<h3>La imatge que he pujat es veu deformada o retallada</h3>
+<p>És perquè la proporció (relació ample-alt) no coincideix amb la que espera aquell lloc. Prepara la imatge amb la mateixa proporció que la que substitueixes. Per exemple, si la imatge original és quadrada (1:1), puja també una quadrada.</p>
+
+<h3>Puc afegir un idioma més (per exemple, anglès)?</h3>
+<p>De moment el web només té CA i ES. Si en algun moment cal afegir-ne més, cal ampliar el plugin de Polylang. Contacta amb Zoopa per estudiar-ho.</p>
+
+<h3>Com puc previsualitzar sense publicar?</h3>
+<p>Ara mateix qualsevol canvi es publica immediatament. Si necessites treballar en "mode esborrany" sense que els visitants ho vegin, contacta amb Zoopa per configurar un entorn de staging (versió de proves).</p>
+
+<h3>Se m'ha oblidat la contrasenya</h3>
+<p>A la pantalla de login (<em>Fig. 1</em>) hi ha un enllaç <strong>"Ha oblidat la contrasenya?"</strong>. Introdueix el teu email i rebràs un enllaç per restablir-la. Si tampoc funciona, contacta amb Zoopa.</p>
+
+<h3>Puc donar accés a altres persones de l'equip?</h3>
+<p>Sí. Ves a <strong>Usuaris → Afegir nou</strong> al menú lateral de WordPress. Crea un usuari amb rol <strong>"Editor"</strong> (pot editar contingut però no gestionar plugins). Per rols més tècnics, escull <strong>"Administrador"</strong>.</p>
+
+<hr style="margin:60px 0 20px;border:0;border-top:1px solid #ddd">
+<p style="text-align:center;color:#999;font-size:11px">
+  Aquesta guia forma part del paquet d'entrega del web de la Fundació Ave Maria.<br>
+  Per qualsevol dubte o incidència, contacta amb <strong>Zoopa Smart Agency</strong> — <em>zoopa.es</em>
+</p>
+
+</body>
+</html>

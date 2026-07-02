@@ -38,6 +38,7 @@ scroller-arrows.jpeg
 spacing-after.jpeg
 stats-colors.jpeg
 web/maqueta-avemaria.html.bak
+wp-*.jpeg
 
 # WordPress Docker volumes (no subir)
 web/wordpress/wp-content/uploads/
