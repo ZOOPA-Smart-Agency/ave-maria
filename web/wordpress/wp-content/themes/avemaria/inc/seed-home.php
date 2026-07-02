@@ -1,0 +1,58 @@
+<?php
+$defaults = [
+    'home_hero_label' => 'Personalización textil industrial',
+    'home_hero_title_green' => 'Customización',
+    'home_hero_title_line2' => 'profesional a',
+    'home_hero_title_bold' => 'escala industrial',
+    'home_hero_subtitle' => 'Más de 20 años transformando ideas en productos personalizados para las marcas más exigentes del mercado.',
+    'home_hero_cta1_text' => 'Solicitar presupuesto',
+    'home_hero_cta2_text' => 'Descubrir servicios',
+    'home_about_label' => 'Quiénes somos',
+    'home_about_title' => 'Soluciones integrales de<br><span class="text-green">personalización textil</span>',
+    'home_about_text1' => 'Somos un equipo multidisciplinar especializado en customización textil a gran escala. Desde nuestro taller en Barcelona, ofrecemos un servicio completo que abarca desde el diseño y la producción hasta el control de calidad y la logística.',
+    'home_about_text2' => 'Trabajamos con las principales marcas deportivas, clubs, instituciones y empresas que necesitan un partner fiable para sus proyectos de personalización.',
+    'home_about_button' => 'Conócenos',
+    'home_values_label' => 'Nuestros diferenciales',
+    'home_values_title' => '¿Por qué <span class="text-green">Fundació Ave Maria</span>?',
+    'home_value1_title' => '+20 años de experiencia',
+    'home_value1_text' => 'Más de dos décadas trabajando con marcas líderes en personalización textil industrial de alto volumen.',
+    'home_value2_title' => 'Capacidad industrial',
+    'home_value2_text' => 'Infraestructura para procesar más de 5.000 prendas diarias con la máxima calidad y precisión.',
+    'home_value3_title' => 'Tecnología avanzada',
+    'home_value3_text' => 'DTF, sublimación, impresión UV, transfer, bordado y más. Siempre con la tecnología más puntera del sector.',
+    'home_value4_title' => 'Fiabilidad total',
+    'home_value4_text' => 'Control de calidad exhaustivo y entregas puntuales. Tu proyecto en las mejores manos, siempre a tiempo.',
+    'home_services_label' => 'Lo que hacemos',
+    'home_services_desc' => 'Ofrecemos un servicio integral de customización textil: desde la aplicación de técnicas de impresión hasta la gestión logística completa de tu proyecto.',
+    'home_services_title_green' => 'SERVICIOS',
+    'home_services_title_italic' => 'de aplicación',
+    'home_service1_title' => 'Impresión',
+    'home_service1_sub' => 'DTF · UV · Sublimación · Vinilo',
+    'home_service2_title' => 'Transfer y Parches',
+    'home_service2_sub' => 'Serigráficos · Bordado · 3D UV/TPU',
+    'home_service3_title' => 'Marcado en Prenda',
+    'home_service3_sub' => 'Planchado · Etiquetado · Control QC',
+    'home_logistics_label' => 'Servicios logísticos',
+    'home_logistics_title1' => 'SERVICIOS',
+    'home_logistics_title2' => 'LOGÍSTICOS',
+    'home_logistics_text' => 'Gestionamos todo el proceso logístico de tu proyecto: almacenaje, picking, embalaje y distribución. Escalabilidad total para adaptarnos a cualquier volumen.',
+    'home_logistics_button' => 'Más información',
+    'home_process_label' => 'Nuestra metodología',
+    'home_process_title' => 'Proceso de trabajo<br><span class="text-green">en 7 pasos</span>',
+    'home_step1_title' => 'Análisis',   'home_step1_text' => 'Evaluación de necesidades y planificación del proyecto.',
+    'home_step2_title' => 'Diseño',     'home_step2_text' => 'Propuestas visuales alineadas con tu identidad de marca.',
+    'home_step3_title' => 'Solución',   'home_step3_text' => 'Definición de la técnica de personalización óptima.',
+    'home_step4_title' => 'Materiales', 'home_step4_text' => 'Preparación y ajustes de formatos, colores y soportes.',
+    'home_step5_title' => 'Producción', 'home_step5_text' => 'Ejecución industrial con procesos controlados.',
+    'home_step6_title' => 'Control QC', 'home_step6_text' => 'Revisión sistemática antes de cada entrega.',
+    'home_step7_title' => 'Logística',  'home_step7_text' => 'Almacenaje, picking y distribución completa.',
+    'home_clients_label' => 'Confianza de grandes marcas',
+    'home_clients_title' => 'MARCAS QUE <span class="text-green-gradient">CONFÍAN</span> EN NOSOTROS',
+];
+$pid = 4;
+$count = 0;
+foreach ($defaults as $key => $val) {
+    update_field($key, $val, $pid);
+    $count++;
+}
+echo "Home (ID {$pid}): {$count} campos rellenados" . PHP_EOL;

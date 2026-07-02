@@ -801,25 +801,25 @@ h2.vals-title,.vals-title{font-size:clamp(.78rem,1vw,.95rem)!important;font-weig
 
 /* ===================== COL·LABORA — Look & Feel coherent ===================== */
 /* Sidebar-box: petit toc de color del page */
-#collabora .sidebar-box,#donar .sidebar-box,#voluntariat .sidebar-box,#empreses .sidebar-box,#llegats .sidebar-box,#art .sidebar-box,#botiga .sidebar-box{position:relative;border-radius:6px;overflow:hidden}
-#collabora .sidebar-box::before,#donar .sidebar-box::before,#voluntariat .sidebar-box::before,#empreses .sidebar-box::before,#llegats .sidebar-box::before,#art .sidebar-box::before,#botiga .sidebar-box::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--acc,var(--taronja));opacity:.7}
-#collabora .sidebar-box.is-dark::before,#voluntariat .sidebar-box[style*="background:var(--ink)"]::before{opacity:1}
-#collabora .sidebar-icon,#donar .sidebar-icon,#voluntariat .sidebar-icon,#empreses .sidebar-icon,#llegats .sidebar-icon,#art .sidebar-icon,#botiga .sidebar-icon{color:var(--acc,var(--taronja))}
+#collabora .sidebar-box,#donar .sidebar-box,#art .sidebar-box,#botiga .sidebar-box{position:relative;border-radius:6px;overflow:hidden}
+#collabora .sidebar-box::before,#donar .sidebar-box::before,#art .sidebar-box::before,#botiga .sidebar-box::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--acc,var(--taronja));opacity:.7}
+#collabora .sidebar-box.is-dark::before{opacity:1}
+#collabora .sidebar-icon,#donar .sidebar-icon,#art .sidebar-icon,#botiga .sidebar-icon{color:var(--acc,var(--taronja))}
 /* Botons primary i dark dins de col·labora hereden el color de pàgina */
-#collabora .btn-primary,#donar .btn-primary,#voluntariat .btn-primary,#empreses .btn-primary,#llegats .btn-primary,#art .btn-primary,#botiga .btn-primary{--acc:inherit}
-#collabora .btn-dark,#donar .btn-dark,#voluntariat .btn-dark,#empreses .btn-dark,#llegats .btn-dark,#art .btn-dark,#botiga .btn-dark{background:var(--acc,var(--ink));border-color:var(--acc,var(--ink))}
-#collabora .btn-dark:hover,#donar .btn-dark:hover,#voluntariat .btn-dark:hover,#empreses .btn-dark:hover,#llegats .btn-dark:hover,#art .btn-dark:hover,#botiga .btn-dark:hover{filter:brightness(.92)}
+#collabora .btn-primary,#donar .btn-primary,#art .btn-primary,#botiga .btn-primary{--acc:inherit}
+#collabora .btn-dark,#donar .btn-dark,#art .btn-dark,#botiga .btn-dark{background:var(--acc,var(--ink));border-color:var(--acc,var(--ink))}
+#collabora .btn-dark:hover,#donar .btn-dark:hover,#art .btn-dark:hover,#botiga .btn-dark:hover{filter:brightness(.92)}
 /* h3 amb ratlla decorativa dins .content-main de Col·labora */
-#collabora .content-main h3,#donar .content-main h3,#voluntariat .content-main h3,#empreses .content-main h3,#llegats .content-main h3,#art .content-main h3,#botiga .content-main h3{position:relative;padding-top:8px;margin-top:42px}
-#collabora .content-main h3::before,#donar .content-main h3::before,#voluntariat .content-main h3::before,#empreses .content-main h3::before,#llegats .content-main h3::before,#art .content-main h3::before,#botiga .content-main h3::before{content:"";display:block;width:42px;height:3px;background:var(--acc,var(--taronja));margin-bottom:14px;border-radius:2px;opacity:.85}
+#collabora .content-main h3,#donar .content-main h3,#art .content-main h3,#botiga .content-main h3{position:relative;padding-top:8px;margin-top:42px}
+#collabora .content-main h3::before,#donar .content-main h3::before,#art .content-main h3::before,#botiga .content-main h3::before{content:"";display:block;width:42px;height:3px;background:var(--acc,var(--taronja));margin-bottom:14px;border-radius:2px;opacity:.85}
 /* Section-header de col·labora amb la mateixa ratlla horitzontal sota h2 */
-#collabora .section-header h2::after,#empreses .section-header h2::after{background:var(--acc,var(--taronja))}
+#collabora .section-header h2::after{background:var(--acc,var(--taronja))}
 /* Donació: type-option i amount-option actives amb color */
 #donar .type-option.active,#donar .amount-option.active{border-color:var(--acc,var(--verd));color:var(--acc,var(--verd))}
 #donar .amount-option.active .amount{color:var(--acc,var(--verd))}
 /* Quote-box pren el color de la pàgina */
-#collabora .quote-box,#donar .quote-box,#voluntariat .quote-box,#empreses .quote-box,#llegats .quote-box,#art .quote-box,#botiga .quote-box{border-left-color:var(--acc,var(--verd))}
-#collabora .quote-box::before,#donar .quote-box::before,#voluntariat .quote-box::before,#empreses .quote-box::before,#llegats .quote-box::before,#art .quote-box::before,#botiga .quote-box::before{color:var(--acc,var(--verd))}
+#collabora .quote-box,#donar .quote-box,#art .quote-box,#botiga .quote-box{border-left-color:var(--acc,var(--verd))}
+#collabora .quote-box::before,#donar .quote-box::before,#art .quote-box::before,#botiga .quote-box::before{color:var(--acc,var(--verd))}
 .desgravacio-table{width:100%;margin:20px 0}
 .desgravacio-table td{padding:14px 0;border-bottom:1px solid var(--line)}
 .desgravacio-table td:last-child{text-align:right;font-weight:600;font-size:1.2em;color:var(--verd)}
@@ -1068,9 +1068,6 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
       <a class="navlink" href="#collabora" onclick="showPage('collabora')"><span data-lang-ca>Col·labora</span><span data-lang-es>Colabora</span><span class="caret"></span></a>
       <div class="subnav"><div class="subnav-panel" style="--acc:var(--taronja)">
         <a href="#donar" onclick="showPage('donar')"><span data-lang-ca>Fes un donatiu</span><span data-lang-es>Haz un donativo</span></a>
-        <a href="#voluntariat" onclick="showPage('voluntariat')"><span data-lang-ca>Voluntariat</span><span data-lang-es>Voluntariado</span></a>
-        <a href="#empreses" onclick="showPage('empreses')"><span data-lang-ca>Empreses i RSC</span><span data-lang-es>Empresas y RSC</span></a>
-        <a href="#llegats" onclick="showPage('llegats')"><span data-lang-ca>Llegats</span><span data-lang-es>Legados</span></a>
         <a href="#botiga" onclick="showPage('botiga')"><span data-lang-ca>Botiga solidària</span><span data-lang-es>Tienda solidaria</span></a>
       </div></div>
     </div>
@@ -1105,9 +1102,6 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
   <a href="#collabora" onclick="showPage('collabora')"><span data-lang-ca>Col·labora</span><span data-lang-es>Colabora</span></a>
   <div class="mm-sub" style="--acc:var(--taronja)">
     <a href="#donar" onclick="showPage('donar')"><span data-lang-ca>Fes un donatiu</span><span data-lang-es>Haz un donativo</span></a>
-    <a href="#voluntariat" onclick="showPage('voluntariat')"><span data-lang-ca>Voluntariat</span><span data-lang-es>Voluntariado</span></a>
-    <a href="#empreses" onclick="showPage('empreses')"><span data-lang-ca>Empreses i RSC</span><span data-lang-es>Empresas y RSC</span></a>
-    <a href="#llegats" onclick="showPage('llegats')"><span data-lang-ca>Llegats</span><span data-lang-es>Legados</span></a>
     <a href="#botiga" onclick="showPage('botiga')"><span data-lang-ca>Botiga solidària</span><span data-lang-es>Tienda solidaria</span></a>
   </div>
   <a href="#actualitat" onclick="showPage('actualitat')"><span data-lang-ca>Actualitat</span><span data-lang-es>Actualidad</span></a>
@@ -2634,9 +2628,6 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
         </div>
         <div class="collabora-grid">
           <div class="collabora-card" data-reveal><div class="collabora-icon">€</div><h3><span data-lang-ca>Donatiu</span><span data-lang-es>Donativo</span></h3><p><span data-lang-ca>Fes una aportació puntual o periòdica. Desgrava fins al 80% a la renda!</span><span data-lang-es>Haz una aportación puntual o periódica. ¡Desgrava hasta el 80% en la renta!</span></p><a href="#donar" class="btn btn-dark" onclick="showPage('donar')"><span data-lang-ca>Donar</span><span data-lang-es>Donar</span></a></div>
-          <div class="collabora-card" data-reveal data-reveal-d="1"><div class="collabora-icon">○</div><h3>Voluntariat</h3><p>Comparteix el teu temps lliure amb els nostres usuaris realitzant activitats de lleure.</p><a href="#voluntariat" class="btn btn-dark" onclick="showPage('voluntariat')">Més info</a></div>
-          <div class="collabora-card" data-reveal data-reveal-d="2"><div class="collabora-icon">▢</div><h3>Empreses</h3><p>Patrocini, RSC, màrqueting amb causa, voluntariat corporatiu.</p><a href="#empreses" class="btn btn-dark" onclick="showPage('empreses')">Més info</a></div>
-          <div class="collabora-card" data-reveal><div class="collabora-icon">▦</div><h3>Llegats</h3><p>Inclou'ns al teu testament. El teu suport, per sempre.</p><a href="#llegats" class="btn btn-dark" onclick="showPage('llegats')">Més info</a></div>
           <div class="collabora-card" data-reveal data-reveal-d="1"><div class="collabora-icon">◇</div><h3>Celebracions</h3><p>Converteix aniversaris, bodes o festes en actes solidaris.</p><a href="#contacte" class="btn btn-dark" onclick="showPage('contacte')">Més info</a></div>
           <div class="collabora-card" data-reveal data-reveal-d="2"><div class="collabora-icon">▥</div><h3>Botiga</h3><p>Compra els nostres productes solidaris: cava, art, complements.</p><a href="#botiga" class="btn btn-dark" onclick="showPage('botiga')">Veure botiga</a></div>
         </div>
@@ -2703,149 +2694,6 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
             <div class="form-group" style="margin-bottom:25px"><label><span data-lang-ca>DNI (per al certificat fiscal)</span><span data-lang-es>DNI (para el certificado fiscal)</span></label><input type="text"></div>
             <button class="btn btn-dark" style="width:100%;justify-content:center;padding:18px"><span data-lang-ca>Donar ara</span><span data-lang-es>Donar ahora</span> <span class="arr">→</span></button>
             <p style="text-align:center;margin-top:15px;font-size:.84rem;color:var(--muted)"><span data-lang-ca>Pagament 100% segur</span><span data-lang-es>Pago 100% seguro</span></p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ==================== VOLUNTARIAT ==================== -->
-  <div id="voluntariat" class="page" style="--acc:var(--coral)">
-    <div class="page-header">
-      <div class="container">
-        <p class="breadcrumb"><a href="#home" onclick="showPage('home')">Inici</a> / <a href="#collabora" onclick="showPage('collabora')">Col·labora</a> / Voluntariat</p>
-        <h1>Voluntariat</h1>
-        <p class="subtitle">Comparteix el teu temps, canvia vides</p>
-      </div>
-    </div>
-    <section class="content-section">
-      <div class="content-grid">
-        <div class="content-main" data-reveal>
-          <div class="ph" style="aspect-ratio:16/9;margin-bottom:40px;background-image:url('imatges/terapies/terapia-8.jpg')"></div>
-          <p style="font-size:var(--fs-lede);font-weight:300;color:var(--ink)">Com a voluntari/ària de la Fundació Ave Maria compartiràs el teu temps lliure amb persones amb discapacitat intel·lectual realitzant activitats de lleure, acompanyament i suport.</p>
-          <div class="quote-box">“Com a voluntària, he rebut molt més del que he donat. Les persones de l'Ave Maria t'ensenyen a veure la vida d'una altra manera. Són autèntics mestres de l'alegria.”<div class="quote-author">— Laia, voluntària des de 2019</div></div>
-          <h3>Què pots fer com a voluntari?</h3>
-          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:30px 0">
-            <div style="padding:24px;background:var(--white);border:1px solid var(--line)"><h4 style="margin-bottom:10px">Acompanyament en sortides</h4><p style="margin:0;color:var(--muted);font-size:.9rem">Participar en excursions, visites culturals, passejos i activitats d'oci fora del centre.</p></div>
-            <div style="padding:24px;background:var(--white);border:1px solid var(--line)"><h4 style="margin-bottom:10px">Suport en activitats</h4><p style="margin:0;color:var(--muted);font-size:.9rem">Col·laborar en tallers, activitats esportives, festes i celebracions al centre.</p></div>
-            <div style="padding:24px;background:var(--white);border:1px solid var(--line)"><h4 style="margin-bottom:10px">Amistat</h4><p style="margin:0;color:var(--muted);font-size:.9rem">Passar temps amb els usuaris: conversar, passejar, jugar a cartes, veure una pel·lícula junts.</p></div>
-            <div style="padding:24px;background:var(--white);border:1px solid var(--line)"><h4 style="margin-bottom:10px">Compartir habilitats</h4><p style="margin:0;color:var(--muted);font-size:.9rem">Si tens coneixements de música, art, esport, jardineria, pots compartir-los en tallers.</p></div>
-          </div>
-          <h3>Requisits</h3>
-          <ul>
-            <li>Ser major de 18 anys</li>
-            <li>Compromís mínim de 2 hores/setmana durant 6 mesos</li>
-            <li>Assistir a la formació inicial (1 sessió de 3 hores)</li>
-            <li>Certificat de delictes sexuals (nosaltres gestionem la sol·licitud)</li>
-            <li>Ganes d'aprendre, empatia i respecte</li>
-          </ul>
-          <p><em>No cal experiència prèvia. Nosaltres et formem i t'acompanyem.</em></p>
-          <h3>Què t'oferim?</h3>
-          <ul>
-            <li>Formació inicial i contínua</li>
-            <li>Assegurança de voluntariat</li>
-            <li>Certificat de participació</li>
-            <li>Seguiment i suport de l'equip</li>
-            <li>Una experiència que et canviarà</li>
-          </ul>
-        </div>
-        <div class="sidebar" data-reveal data-reveal-d="1">
-          <div class="sidebar-box" style="background:var(--ink);color:#fff;border-color:var(--ink)">
-            <h4 style="color:rgba(255,255,255,.55)">Vols ser voluntari?</h4>
-            <p style="margin-bottom:20px;color:rgba(255,255,255,.85)">Omple el formulari de sol·licitud i et contactarem</p>
-            <a href="#contacte" class="btn btn-primary" style="width:100%;justify-content:center;background:#fff;color:var(--ink)" onclick="showPage('contacte')">Sol·licitar</a>
-          </div>
-          <div class="sidebar-box">
-            <h4>Contacte</h4>
-            <div class="sidebar-item"><span class="sidebar-icon">✉</span><div class="sidebar-text">voluntariat@avemariafundacio.org</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ==================== EMPRESES ==================== -->
-  <div id="empreses" class="page" style="--acc:var(--blau)">
-    <div class="page-header">
-      <div class="container">
-        <p class="breadcrumb"><a href="#home" onclick="showPage('home')">Inici</a> / <a href="#collabora" onclick="showPage('collabora')">Col·labora</a> / Empreses</p>
-        <h1>Empreses i RSC</h1>
-        <p class="subtitle">La responsabilitat social que marca la diferència</p>
-      </div>
-    </div>
-    <section class="content-section">
-      <div class="container">
-        <p style="max-width:840px;margin:0 auto 50px;text-align:center;font-size:var(--fs-lede);color:var(--ink-soft);font-weight:300" data-reveal>Les empreses que col·laboren amb la Fundació Ave Maria no només impulsen una causa social de gran valor, sinó que projecten amb força el seu compromís, enforteixen la seva identitat corporativa i estableixen una connexió autèntica i significativa amb la comunitat.</p>
-        <h3 style="text-align:center;margin-bottom:40px" data-reveal>Formes de col·laboració</h3>
-        <div class="collabora-grid">
-          <div class="collabora-card" data-reveal><div class="collabora-icon">★</div><h3>Patrocini</h3><p>Associa la teva marca a la nostra causa amb el patrocini d'activitats, esdeveniments o programes específics.</p></div>
-          <div class="collabora-card" data-reveal data-reveal-d="1"><div class="collabora-icon">€</div><h3>Donació corporativa</h3><p>Aporta avui i marca la diferència. Les empreses desgraven fins al 40% en l'Impost de Societats.</p></div>
-          <div class="collabora-card" data-reveal data-reveal-d="2"><div class="collabora-icon">○</div><h3>Voluntariat corporatiu</h3><p>Organitza jornades de voluntariat amb els teus treballadors. Una experiència única de team building que inspira i deixa empremta.</p></div>
-          <div class="collabora-card" data-reveal><div class="collabora-icon">▥</div><h3>Màrqueting amb causa</h3><p>Vincula les teves vendes a una donació. Una manera de diferenciar-te i connectar amb clients conscients.</p></div>
-          <div class="collabora-card" data-reveal data-reveal-d="1"><div class="collabora-icon">◇</div><h3>Cessió de productes</h3><p>Descomptes, productes o serveis que necessitem: alimentació, transport, materials, serveis professionals.</p></div>
-          <div class="collabora-card" data-reveal data-reveal-d="2"><div class="collabora-icon">▢</div><h3>Inserció laboral</h3><p>Contracta persones amb discapacitat. T'assessorem, formem el treballador i fem seguiment. Compleix la LISMI.</p></div>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--line);padding:40px;margin-top:60px" data-reveal>
-          <h3 style="margin-bottom:20px">Empreses que ja col·laboren</h3>
-          <div class="logos-grid" style="justify-content:flex-start;margin-top:0">
-            <div class="logo-item">Empresa 1</div><div class="logo-item">Empresa 2</div><div class="logo-item">Empresa 3</div><div class="logo-item">Empresa 4</div>
-          </div>
-        </div>
-        <div style="text-align:center;margin-top:50px" data-reveal>
-          <h3>Contacte empreses</h3>
-          <p style="color:var(--muted)">empreses@avemariafundacio.org · 938 94 86 46</p>
-          <a href="#contacte" class="btn btn-dark" style="margin-top:20px" onclick="showPage('contacte')">Contactar</a>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ==================== LLEGATS ==================== -->
-  <div id="llegats" class="page" style="--acc:var(--groc)">
-    <div class="page-header">
-      <div class="container">
-        <p class="breadcrumb"><a href="#home" onclick="showPage('home')">Inici</a> / <a href="#collabora" onclick="showPage('collabora')">Col·labora</a> / Llegats</p>
-        <h1>Llegats i herències</h1>
-        <p class="subtitle">El teu suport, per sempre</p>
-      </div>
-    </div>
-    <section class="content-section">
-      <div class="content-grid">
-        <div class="content-main" data-reveal>
-          <p style="font-size:var(--fs-lede);font-weight:300;color:var(--ink)">Incloure la Fundació Ave Maria al teu testament és una manera de garantir que el teu suport perduri en el temps i continuï ajudant persones amb discapacitat intel·lectual quan tu ja no hi siguis.</p>
-          <p>El llegat solidari és un acte d'amor que no afecta els drets dels teus hereus legals i et permet destinar una part del teu patrimoni a una causa en la qual creus.</p>
-          <div class="quote-box">“Tot va començar així: amb el llegat de Rosalía Dalmau. Gràcies a la seva generositat, fa gairebé 40 anys que canviem vides. El teu llegat pot continuar aquest somni.”</div>
-          <h3>Modalitats</h3>
-          <h4>Llegat</h4>
-          <p>Deixar un bé concret a la Fundació: una quantitat de diners, un immoble, accions, obres d'art, joies... El que tu decideixis.</p>
-          <h4>Herència</h4>
-          <p>Designar la Fundació com a hereva d'un percentatge del teu patrimoni. Pot ser una part o la totalitat, si no tens hereus forçosos.</p>
-          <h4>Beneficiari d'assegurança</h4>
-          <p>Designar la Fundació com a beneficiària d'una assegurança de vida o pla de pensions.</p>
-          <div class="desgravacio-box">
-            <h3>Confidencialitat total</h3>
-            <p>El teu llegat és un assumpte privat. Només ho sabrem nosaltres i les persones que tu decideixis informar. Sense compromisos, sense pressions.</p>
-            <p>Pots modificar o revocar el teu testament en qualsevol moment.</p>
-          </div>
-          <h3>Com fer-ho?</h3>
-          <ol>
-            <li>Reflexiona sobre què vols deixar i en quina proporció</li>
-            <li>Consulta amb el teu advocat o notari de confiança</li>
-            <li>Inclou a la Fundació al teu testament amb les dades de la dreta</li>
-          </ol>
-        </div>
-        <div class="sidebar" data-reveal data-reveal-d="1">
-          <div class="sidebar-box">
-            <h4>Dades per al testament</h4>
-            <p style="font-size:.9rem;margin-bottom:10px"><strong>Denominació:</strong><br>Fundació Privada del Ave María de Sitges</p>
-            <p style="font-size:.9rem;margin-bottom:10px"><strong>CIF:</strong><br>G58511981</p>
-            <p style="font-size:.9rem;margin-bottom:0"><strong>Adreça:</strong><br>Av. Artur Carbonell, 11<br>08870 Sitges (Barcelona)</p>
-          </div>
-          <div class="sidebar-box">
-            <h4>Més informació</h4>
-            <p style="font-size:.9rem;color:var(--muted);margin-bottom:15px">Totes les consultes són confidencials i sense cap compromís.</p>
-            <div class="sidebar-item"><span class="sidebar-icon">✉</span><div class="sidebar-text">llegats@avemariafundacio.org</div></div>
-            <div class="sidebar-item"><span class="sidebar-icon">☏</span><div class="sidebar-text">938 94 86 46</div></div>
           </div>
         </div>
       </div>
@@ -3229,7 +3077,6 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
             <h3 style="margin-top:30px"><span data-lang-ca>Accessos ràpids</span><span data-lang-es>Accesos rápidos</span></h3>
             <div style="display:flex;flex-direction:column;gap:10px;margin-top:15px">
               <a href="#contacte" onclick="showPage('contacte')" style="display:flex;align-items:center;gap:12px;color:var(--ink);padding:13px 16px;background:var(--white);border:1px solid var(--line)"><span data-lang-ca>Vull treballar amb vosaltres</span><span data-lang-es>Quiero trabajar con vosotros</span></a>
-              <a href="#voluntariat" onclick="showPage('voluntariat')" style="display:flex;align-items:center;gap:12px;color:var(--ink);padding:13px 16px;background:var(--white);border:1px solid var(--line)"><span data-lang-ca>Vull ser voluntari</span><span data-lang-es>Quiero ser voluntario</span></a>
               <a href="#donar" onclick="showPage('donar')" style="display:flex;align-items:center;gap:12px;color:var(--ink);padding:13px 16px;background:var(--white);border:1px solid var(--line)"><span data-lang-ca>Vull fer un donatiu</span><span data-lang-es>Quiero hacer un donativo</span></a>
             </div>
             <div class="mapa-placeholder"><div class="ph-label"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.4"/></svg><span>Google Maps</span></div></div>
@@ -3295,9 +3142,6 @@ body.lang-es span[data-lang-es],body.lang-es a[data-lang-es]{display:inline}
       <h4><span data-lang-ca>Col·labora</span><span data-lang-es>Colabora</span></h4>
       <ul>
         <li><a href="#donar" onclick="showPage('donar')"><span data-lang-ca>Fes un donatiu</span><span data-lang-es>Haz un donativo</span></a></li>
-        <li><a href="#voluntariat" onclick="showPage('voluntariat')"><span data-lang-ca>Voluntariat</span><span data-lang-es>Voluntariado</span></a></li>
-        <li><a href="#empreses" onclick="showPage('empreses')"><span data-lang-ca>Empreses i RSC</span><span data-lang-es>Empresas y RSC</span></a></li>
-        <li><a href="#llegats" onclick="showPage('llegats')"><span data-lang-ca>Llegats</span><span data-lang-es>Legados</span></a></li>
         <li><a href="#botiga" onclick="showPage('botiga')"><span data-lang-ca>Botiga solidària</span><span data-lang-es>Tienda solidaria</span></a></li>
       </ul>
     </div>

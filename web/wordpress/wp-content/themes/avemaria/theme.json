@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+    "version": 3,
+    "settings": {
+        "color": {
+            "palette": [
+                { "slug": "green", "color": "#00c92c", "name": "Ave Maria Green" },
+                { "slug": "green-light", "color": "#00e032", "name": "Ave Maria Green Light" },
+                { "slug": "dark", "color": "#0B1829", "name": "Dark" },
+                { "slug": "dark-deep", "color": "#000000", "name": "Dark Deep" },
+                { "slug": "navy", "color": "#0D1F3C", "name": "Navy" },
+                { "slug": "gray-dark", "color": "#2D2D2D", "name": "Gray Dark" },
+                { "slug": "gray-mid", "color": "#4a4a4a", "name": "Gray Mid" },
+                { "slug": "gray-light", "color": "#e8e8e8", "name": "Gray Light" },
+                { "slug": "white", "color": "#ffffff", "name": "White" }
+            ]
+        },
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "'Myriad Pro', 'Source Sans 3', system-ui, sans-serif",
+                    "slug": "primary",
+                    "name": "Primary"
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "1400px",
+            "wideSize": "1400px"
+        },
+        "spacing": {
+            "units": ["px", "em", "rem", "%", "vw"]
+        },
+        "appearanceTools": true,
+        "useRootPaddingAwareAlignments": true
+    },
+    "styles": {
+        "color": {
+            "background": "#000000",
+            "text": "#ffffff"
+        },
+        "typography": {
+            "fontFamily": "'Myriad Pro', 'Source Sans 3', system-ui, sans-serif"
+        }
+    }
+}

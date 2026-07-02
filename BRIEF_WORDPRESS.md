@@ -21,7 +21,7 @@ Migrar la maqueta HTML actual a **WordPress con backoffice completo**, donde el 
 - Todo sin tocar código y sin conocimientos técnicos.
 
 ### Alcance
-- **28 páginas SPA** ya diseñadas (ver listado en §4.1).
+- **25 páginas SPA** ya diseñadas (ver listado en §4.1).
 - **Bilingüe CA/ES completo** — cada texto debe existir en los dos idiomas.
 - **~26 imágenes actuales** + posibilidad de subir muchas más.
 - **7 Custom Post Types** para contenido gestionable como listas.
@@ -166,14 +166,11 @@ Como **ACF Free no incluye Repeaters ni Options Pages**, se usa esta estrategia:
 | 13 | `recerca` | Recerca i Innovació | Investigación e Innovación | CPT `servei` |
 | 14 | `collabora` | Col·labora | Colabora | Página |
 | 15 | `donar` | Donar | Donar | Página |
-| 16 | `voluntariat` | Voluntariat | Voluntariado | Página |
-| 17 | `empreses` | Empreses i RSC | Empresas y RSC | Página |
-| 18 | `llegats` | Llegats i herències | Legados y herencias | Página |
-| 19 | `art` | Fons d'Art | Fondo de Arte | Página |
-| 20 | `botiga` | Botiga Solidària | Tienda Solidaria | Página |
-| 21 | `actualitat` | Actualitat | Actualidad | Página (índice de posts) |
-| 22-27 | `noticia-1` a `noticia-6` | (títulos variados) | (títulos variados) | Post nativo |
-| 28 | `contacte` | Contacte | Contacto | Página |
+| 16 | `art` | Fons d'Art | Fondo de Arte | Página |
+| 17 | `botiga` | Botiga Solidària | Tienda Solidaria | Página |
+| 18 | `actualitat` | Actualitat | Actualidad | Página (índice de posts) |
+| 19-24 | `noticia-1` a `noticia-6` | (títulos variados) | (títulos variados) | Post nativo |
+| 25 | `contacte` | Contacte | Contacto | Página |
 
 ### 4.2 Estructura por página (secciones a reproducir)
 
@@ -242,9 +239,6 @@ Estructura común:
 #### Donar
 - Columna izquierda: título + testimonio + descripción + qué se consigue con cada cantidad + "Otras formas"
 - Columna derecha: formulario de donación (tipo, cantidad, datos, botón)
-
-#### Voluntariat, Empreses, Llegats
-Estructura similar: intro + cita + grid de opciones + sidebar con contacto/CTA
 
 #### Actualitat (índice)
 - Grid de noticias (imagen + fecha + título) — 3 por fila, todas las publicadas
