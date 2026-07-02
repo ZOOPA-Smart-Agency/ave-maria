@@ -1,28 +1,34 @@
 # 📦 Paquete de deployment — Fundació Ave Maria (WordPress)
 
-Este es el paquete listo para desplegar la web en cualquier servidor WordPress compatible.
+Todo lo necesario para desplegar la web y su panel de edición.
 
 ## Contenido
 
 | Archivo | Descripción |
 |---|---|
-| **DEPLOY-GUIDE.md** | 👉 **EMPIEZA AQUÍ.** Guía paso a paso para el deploy. |
-| **avemaria-theme.zip** | Theme WordPress custom (65 MB). Subir vía **Aparença → Temes → Penja**. |
-| **avemaria-database.sql** | Dump SQL con la configuración del entorno de desarrollo (opcional). |
-| **README.md** | Este archivo. |
+| **DEPLOY-GUIDE.md** | 👉 **EMPIEZA AQUÍ.** Guía paso a paso. |
+| **avemaria-theme.zip** | Theme WordPress con Editor Visual, Blocs dinàmics y editores de textos e imágenes (65 MB). |
+| **avemaria-database.sql** | Dump SQL del entorno de dev (opcional). |
+| **avemaria-DEPLOY-PACKAGE.zip** | Todo lo anterior en un solo archivo. |
 
-## Deploy rápido (Opción A — recomendada)
+## Deploy rápido (5 pasos)
 
-1. Instalar WordPress limpio en el hosting.
-2. Subir `avemaria-theme.zip` desde **Aparença → Temes**.
-3. Activar.
-4. Instalar plugins: **Polylang** y **Advanced Custom Fields**.
-5. Configurar el wizard de Polylang (Català principal, Español secundario).
-6. Listo.
+1. Instalar WordPress limpio.
+2. **Aparença → Temes → Penja** → subir `avemaria-theme.zip` → **Activar**.
+3. Instalar plugins **Polylang** y **Advanced Custom Fields**.
+4. Configurar wizard Polylang (Català + Español).
+5. Enseñar a la Fundació el menú **Editor Ave Maria** con sus 6 submenús.
 
-Detalles completos en `DEPLOY-GUIDE.md`.
+Detalles en `DEPLOY-GUIDE.md`.
+
+## Novedades vs. versión anterior
+
+- ✨ **👁️ Editor Visual**: clic directo sobre textos e imágenes en la vista de cada página.
+- ✨ **📦 Blocs dinàmics**: añadir, eliminar y reordenar serveis, notícies y testimonis.
+- ✨ Menú `Editor Ave Maria` reordenado con Editor Visual como opción principal.
+- ✨ 2.036 textos editables + 81 imágenes + 12 bloques por defecto.
 
 ## Contacto
 
-- **Zoopa Smart Agency** — https://zoopa.es
-- **Fundació Ave Maria** — Sitges — 938 94 86 46
+**Zoopa Smart Agency** — https://zoopa.es
+**Fundació Ave Maria** — Sitges — 938 94 86 46

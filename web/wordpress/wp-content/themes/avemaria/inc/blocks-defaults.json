@@ -1,0 +1,98 @@
+{
+  "serveis_home": [
+    {
+      "id": "servei_1",
+      "num": "01",
+      "title_html": "{{mono_016}}",
+      "desc_html": "<span data-lang-ca=\"\">{{txt_049_ca}}</span><span data-lang-es=\"\">{{txt_049_es}}</span>",
+      "img": "{{img_001}}",
+      "link_page": "campus"
+    },
+    {
+      "id": "servei_2",
+      "num": "02",
+      "title_html": "<span data-lang-ca=\"\">{{txt_051_ca}}</span><span data-lang-es=\"\">{{txt_051_es}}</span>",
+      "desc_html": "<span data-lang-ca=\"\">{{txt_052_ca}}</span><span data-lang-es=\"\">{{txt_052_es}}</span>",
+      "img": "{{img_002}}",
+      "link_page": "llars"
+    },
+    {
+      "id": "servei_3",
+      "num": "03",
+      "title_html": "<span data-lang-ca=\"\">{{txt_054_ca}}</span><span data-lang-es=\"\">{{txt_054_es}}</span>",
+      "desc_html": "<span data-lang-ca=\"\">{{txt_055_ca}}</span><span data-lang-es=\"\">{{txt_055_es}}</span>",
+      "img": "{{img_003}}",
+      "link_page": "sad"
+    },
+    {
+      "id": "servei_4",
+      "num": "04",
+      "title_html": "<span data-lang-ca=\"\">{{txt_057_ca}}</span><span data-lang-es=\"\">{{txt_057_es}}</span>",
+      "desc_html": "<span data-lang-ca=\"\">{{txt_058_ca}}</span><span data-lang-es=\"\">{{txt_058_es}}</span>",
+      "img": "{{img_004}}",
+      "link_page": "centresdia"
+    },
+    {
+      "id": "servei_5",
+      "num": "05",
+      "title_html": "<span data-lang-ca=\"\">{{txt_060_ca}}</span><span data-lang-es=\"\">{{txt_060_es}}</span>",
+      "desc_html": "<span data-lang-ca=\"\">{{txt_061_ca}}</span><span data-lang-es=\"\">{{txt_061_es}}</span>",
+      "img": "{{img_005}}",
+      "link_page": "families"
+    },
+    {
+      "id": "servei_6",
+      "num": "06",
+      "title_html": "<span data-lang-ca=\"\">{{txt_063_ca}}</span><span data-lang-es=\"\">{{txt_063_es}}</span>",
+      "desc_html": "<span data-lang-ca=\"\">{{txt_064_ca}}</span><span data-lang-es=\"\">{{txt_064_es}}</span>",
+      "img": "{{img_006}}",
+      "link_page": "recerca"
+    }
+  ],
+  "noticies_home": [
+    {
+      "id": "noticia_1",
+      "date_html": "<span data-lang-ca=\"\">{{txt_090_ca}}</span><span data-lang-es=\"\">{{txt_090_es}}</span>",
+      "title_html": "<a href=\"#noticia-1\" onclick=\"showPage('noticia-1')\"><span data-lang-ca=\"\">{{txt_091_ca}}</span><span data-lang-es=\"\">{{txt_091_es}}</span></a>",
+      "img": "{{img_007}}",
+      "link_page": "noticia-1"
+    },
+    {
+      "id": "noticia_2",
+      "date_html": "<span data-lang-ca=\"\">{{txt_092_ca}}</span><span data-lang-es=\"\">{{txt_092_es}}</span>",
+      "title_html": "<a href=\"#noticia-2\" onclick=\"showPage('noticia-2')\"><span data-lang-ca=\"\">{{txt_093_ca}}</span><span data-lang-es=\"\">{{txt_093_es}}</span></a>",
+      "img": "{{img_008}}",
+      "link_page": "noticia-2"
+    },
+    {
+      "id": "noticia_3",
+      "date_html": "<span data-lang-ca=\"\">{{txt_094_ca}}</span><span data-lang-es=\"\">{{txt_094_es}}</span>",
+      "title_html": "<a href=\"#noticia-3\" onclick=\"showPage('noticia-3')\"><span data-lang-ca=\"\">{{txt_095_ca}}</span><span data-lang-es=\"\">{{txt_095_es}}</span></a>",
+      "img": "{{img_009}}",
+      "link_page": "noticia-3"
+    }
+  ],
+  "testimonis": [
+    {
+      "id": "testimoni_1",
+      "text_html": "<span data-lang-ca=\"\">{{txt_082_ca}}</span><span data-lang-es=\"\">{{txt_082_es}}</span>",
+      "author_html": "{{mono_021}}",
+      "role_html": "<span data-lang-ca=\"\">{{txt_083_ca}}</span><span data-lang-es=\"\">{{txt_083_es}}</span>",
+      "color": "coral"
+    },
+    {
+      "id": "testimoni_2",
+      "text_html": "<span data-lang-ca=\"\">{{txt_084_ca}}</span><span data-lang-es=\"\">{{txt_084_es}}</span>",
+      "author_html": "{{mono_022}}",
+      "role_html": "<span data-lang-ca=\"\">{{txt_085_ca}}</span><span data-lang-es=\"\">{{txt_085_es}}</span>",
+      "color": "blau"
+    },
+    {
+      "id": "testimoni_3",
+      "text_html": "<span data-lang-ca=\"\">{{txt_086_ca}}</span><span data-lang-es=\"\">{{txt_086_es}}</span>",
+      "author_html": "{{mono_023}}",
+      "role_html": "<span data-lang-ca=\"\">{{txt_087_ca}}</span><span data-lang-es=\"\">{{txt_087_es}}</span>",
+      "color": "verd"
+    }
+  ]
+}

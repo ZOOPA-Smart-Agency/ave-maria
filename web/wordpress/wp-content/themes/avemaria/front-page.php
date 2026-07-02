@@ -1,17 +1,20 @@
 <?php
-/**
- * Front page — Ave Maria
- *
- * Sirve la maqueta SPA completa. Todo el HTML del body está en inc/mockup-body.html
- * (HTML puro, sin PHP embedido) y se sirve con readfile.
- */
 get_header();
 echo '<div id="avemaria-app">';
 $mockup = get_template_directory() . '/inc/mockup-body.html';
 if ( file_exists( $mockup ) ) {
-    readfile( $mockup );
-} else {
-    echo '<p style="padding:40px">Fitxer de maqueta no trobat.</p>';
+    $html = file_get_contents( $mockup );
+    // Aplicar bloques dinámicos ANTES de textos/imágenes para que sus placeholders también se procesen
+    if ( function_exists( 'avemaria_apply_blocks_to_html' ) ) $html = avemaria_apply_blocks_to_html( $html );
+    $edit = function_exists( 'avemaria_is_edit_mode' ) && avemaria_is_edit_mode();
+    if ( $edit ) {
+        $html = avemaria_apply_texts_editmode( $html );
+        $html = avemaria_apply_images_editmode( $html );
+    } else {
+        if ( function_exists( 'avemaria_apply_texts_to_html' ) ) $html = avemaria_apply_texts_to_html( $html );
+        if ( function_exists( 'avemaria_apply_images_to_html' ) ) $html = avemaria_apply_images_to_html( $html );
+    }
+    echo $html;
 }
 echo '</div>';
 get_footer();

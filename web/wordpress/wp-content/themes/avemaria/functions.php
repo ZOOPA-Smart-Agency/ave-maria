@@ -21,3 +21,7 @@ require_once AVEMARIA_DIR . '/inc/nav-walkers.php';
 require_once AVEMARIA_DIR . '/inc/helpers.php';
 require_once AVEMARIA_DIR . '/inc/polylang.php';
 require_once AVEMARIA_DIR . '/inc/import-content.php';
+require_once AVEMARIA_DIR . '/inc/text-editor.php';
+require_once AVEMARIA_DIR . '/inc/image-editor.php';
+require_once AVEMARIA_DIR . '/inc/visual-editor.php';
+require_once AVEMARIA_DIR . '/inc/blocks-editor.php';

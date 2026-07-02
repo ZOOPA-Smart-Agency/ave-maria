@@ -1,0 +1,3737 @@
+{
+  "mono_001": {
+    "text": "Campus Residencial",
+    "section": "HEADER",
+    "parent_tag": "a"
+  },
+  "mono_002": {
+    "text": "CA",
+    "section": "HEADER",
+    "parent_tag": "button"
+  },
+  "mono_003": {
+    "text": "ES",
+    "section": "HEADER",
+    "parent_tag": "button"
+  },
+  "mono_004": {
+    "text": "Dona",
+    "section": "HEADER",
+    "parent_tag": "a"
+  },
+  "mono_005": {
+    "text": "Campus Residencial",
+    "section": "HEADER",
+    "parent_tag": "a"
+  },
+  "mono_006": {
+    "text": "Dona",
+    "section": "HEADER",
+    "parent_tag": "a"
+  },
+  "mono_007": {
+    "text": "Ave Maria",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_008": {
+    "text": "Sitges, Barcelona",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_009": {
+    "text": "Av. Artur Carbonell, 11",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_010": {
+    "text": "08870 Sitges (Barcelona)",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_011": {
+    "text": "Un somni de dignitat i esperança que seguim construint cada dia va ser el llegat de Rosalía Dalmau",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_012": {
+    "text": "Un somni de dignitat i esperança que seguim construint cada dia va ser el llegat de Rosalía Dalmau",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_013": {
+    "text": "01 — Impacte",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_014": {
+    "text": "ISO",
+    "section": "HOME",
+    "parent_tag": "div"
+  },
+  "mono_015": {
+    "text": "02 — Serveis",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_016": {
+    "text": "Campus Residencial",
+    "section": "HOME",
+    "parent_tag": "h3"
+  },
+  "mono_017": {
+    "text": "03 — Trajectòria",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_018": {
+    "text": "Jaume Cladellas",
+    "section": "HOME",
+    "parent_tag": "p"
+  },
+  "mono_019": {
+    "text": "Col·labora",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_020": {
+    "text": "04 — Veus",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_021": {
+    "text": "Maria López",
+    "section": "HOME",
+    "parent_tag": "p"
+  },
+  "mono_022": {
+    "text": "Pere",
+    "section": "HOME",
+    "parent_tag": "p"
+  },
+  "mono_023": {
+    "text": "Laia Martínez",
+    "section": "HOME",
+    "parent_tag": "p"
+  },
+  "mono_024": {
+    "text": "05 — Actualitat",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_025": {
+    "text": "06 — Aliances",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_026": {
+    "text": "Generalitat",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_027": {
+    "text": "UE FEDER",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_028": {
+    "text": "Ajuntament",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_029": {
+    "text": "Empresa 1",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_030": {
+    "text": "Empresa 2",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_031": {
+    "text": "Generalitat",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_032": {
+    "text": "UE FEDER",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_033": {
+    "text": "Ajuntament",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_034": {
+    "text": "Empresa 1",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_035": {
+    "text": "Empresa 2",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_036": {
+    "text": "Empresa 3",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_037": {
+    "text": "Diputació",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_038": {
+    "text": "Obra Social",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_039": {
+    "text": "Empresa 4",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_040": {
+    "text": "Empresa 5",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_041": {
+    "text": "Empresa 3",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_042": {
+    "text": "Diputació",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_043": {
+    "text": "Obra Social",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_044": {
+    "text": "Empresa 4",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_045": {
+    "text": "Empresa 5",
+    "section": "HOME",
+    "parent_tag": "span"
+  },
+  "mono_046": {
+    "text": "QS",
+    "section": "QUI SOM",
+    "parent_tag": "span"
+  },
+  "mono_047": {
+    "text": "Sitges",
+    "section": "QUI SOM",
+    "parent_tag": "div"
+  },
+  "mono_048": {
+    "text": "ISO",
+    "section": "QUI SOM",
+    "parent_tag": "div"
+  },
+  "mono_049": {
+    "text": "PDF",
+    "section": "QUI SOM",
+    "parent_tag": "span"
+  },
+  "mono_050": {
+    "text": "PDF",
+    "section": "QUI SOM",
+    "parent_tag": "span"
+  },
+  "mono_051": {
+    "text": "PDF",
+    "section": "QUI SOM",
+    "parent_tag": "span"
+  },
+  "mono_052": {
+    "text": "Inici",
+    "section": "HISTÒRIA",
+    "parent_tag": "a"
+  },
+  "mono_053": {
+    "text": "Qui Som",
+    "section": "HISTÒRIA",
+    "parent_tag": "a"
+  },
+  "mono_054": {
+    "text": "/ Història",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_055": {
+    "text": "La nostra història",
+    "section": "HISTÒRIA",
+    "parent_tag": "h1"
+  },
+  "mono_056": {
+    "text": "Un llegat de generositat que perdura",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_057": {
+    "text": "Origen",
+    "section": "HISTÒRIA",
+    "parent_tag": "h2"
+  },
+  "mono_058": {
+    "text": "01 — La fundadora",
+    "section": "HISTÒRIA",
+    "parent_tag": "span"
+  },
+  "mono_059": {
+    "text": "Tot va començar gràcies a la generositat de",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_060": {
+    "text": "Rosalía Dalmau",
+    "section": "HISTÒRIA",
+    "parent_tag": "strong"
+  },
+  "mono_061": {
+    "text": ", una sitgetana que va decidir destinar el seu patrimoni a crear un espai d'atenció per a persones amb discapacitat intel·lectual.",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_062": {
+    "text": "02 — El llegat",
+    "section": "HISTÒRIA",
+    "parent_tag": "span"
+  },
+  "mono_063": {
+    "text": "L'any",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_064": {
+    "text": ", el seu llegat es va fer realitat amb la inauguració de la Fundació Ave Maria, ubicada a la Villa Havemann, un edifici modernista emblemàtic al centre de Sitges.",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_065": {
+    "text": "03 — L'evolució",
+    "section": "HISTÒRIA",
+    "parent_tag": "span"
+  },
+  "mono_066": {
+    "text": "Des d'aleshores, la Fundació ha crescut i evolucionat per adaptar-se a les necessitats de les persones que atenem, sense perdre mai l'essència del somni de la nostra fundadora:",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_067": {
+    "text": "oferir una llar i una vida digna a qui més ho necessita",
+    "section": "HISTÒRIA",
+    "parent_tag": "strong"
+  },
+  "mono_068": {
+    "text": "El llegat de Rosalía Dalmau no va ser només un edifici o uns diners. Va ser un somni de dignitat i esperança que seguim construint cada dia.",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_069": {
+    "text": "Línia temporal",
+    "section": "HISTÒRIA",
+    "parent_tag": "h3"
+  },
+  "mono_070": {
+    "text": "Fundació de l'Ave Maria amb el llegat de Rosalía Dalmau. Inauguració de la seu a la Villa Havemann.",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_071": {
+    "text": "Primera ampliació de places residencials per respondre a la demanda creixent.",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_072": {
+    "text": "Inauguració de les noves instal·lacions del campus amb més de 3.000 m².",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_073": {
+    "text": "Inici del programa de Llars amb Suport: un nou model d'habitatge autònom.",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_074": {
+    "text": "Llançament del programa d'Inclusió Laboral en col·laboració amb empreses de l'entorn.",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_075": {
+    "text": "Incorporació de la robòtica assistencial com a eina terapèutica innovadora.",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_076": {
+    "text": "Superació de la pandèmia COVID-19 amb zero baixes gràcies a protocols rigorosos.",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_077": {
+    "text": "L'Ajuntament de Vilanova i la Geltrú cedeix un terreny per al Projecte Benviure.",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_078": {
+    "text": "Posada en marxa del nou Servei d'Atenció Domiciliària (SAD) al Garraf.",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_079": {
+    "text": "← Arrossega per recórrer la història →",
+    "section": "HISTÒRIA",
+    "parent_tag": "p"
+  },
+  "mono_080": {
+    "text": "Inici",
+    "section": "MISSIÓ",
+    "parent_tag": "a"
+  },
+  "mono_081": {
+    "text": "Qui Som",
+    "section": "MISSIÓ",
+    "parent_tag": "a"
+  },
+  "mono_082": {
+    "text": "/ Missió i Valors",
+    "section": "MISSIÓ",
+    "parent_tag": "p"
+  },
+  "mono_083": {
+    "text": "Missió, visió i valors",
+    "section": "MISSIÓ",
+    "parent_tag": "h1"
+  },
+  "mono_084": {
+    "text": "El que ens mou cada dia",
+    "section": "MISSIÓ",
+    "parent_tag": "p"
+  },
+  "mono_085": {
+    "text": "El que ens mou cada dia",
+    "section": "MISSIÓ",
+    "parent_tag": "h2"
+  },
+  "mono_086": {
+    "text": "Missió",
+    "section": "MISSIÓ",
+    "parent_tag": "div"
+  },
+  "mono_087": {
+    "text": "Oferir atenció integral i de qualitat a persones adultes amb discapacitat intel·lectual, promovent el seu desenvolupament personal, la seva autonomia i la seva integració social, en un entorn de respecte, dignitat i afecte.",
+    "section": "MISSIÓ",
+    "parent_tag": "p"
+  },
+  "mono_088": {
+    "text": "Visió",
+    "section": "MISSIÓ",
+    "parent_tag": "div"
+  },
+  "mono_089": {
+    "text": "Ser una entitat de referència a Catalunya en l'atenció a persones amb diversitat funcional, reconeguda per la innovació, la qualitat dels seus serveis i l'impacte positiu en la vida dels usuaris i les seves famílies.",
+    "section": "MISSIÓ",
+    "parent_tag": "p"
+  },
+  "mono_090": {
+    "text": "Els nostres valors",
+    "section": "MISSIÓ",
+    "parent_tag": "h2"
+  },
+  "mono_091": {
+    "text": "Qualitat",
+    "section": "MISSIÓ",
+    "parent_tag": "span"
+  },
+  "mono_092": {
+    "text": "Qualitat",
+    "section": "MISSIÓ",
+    "parent_tag": "h3"
+  },
+  "mono_093": {
+    "text": "Busquem l'excel·lència en tot el que fem. Disposem de protocols rigorosos, certificacions de qualitat i formació contínua del nostre equip.",
+    "section": "MISSIÓ",
+    "parent_tag": "p"
+  },
+  "mono_094": {
+    "text": "Innovació",
+    "section": "MISSIÓ",
+    "parent_tag": "span"
+  },
+  "mono_095": {
+    "text": "Innovació",
+    "section": "MISSIÓ",
+    "parent_tag": "h3"
+  },
+  "mono_096": {
+    "text": "Apostem per la recerca i les noves tecnologies. Hem estat pioners a Catalunya en incorporar la robòtica assistencial.",
+    "section": "MISSIÓ",
+    "parent_tag": "p"
+  },
+  "mono_097": {
+    "text": "Compromís",
+    "section": "MISSIÓ",
+    "parent_tag": "span"
+  },
+  "mono_098": {
+    "text": "Compromís",
+    "section": "MISSIÓ",
+    "parent_tag": "h3"
+  },
+  "mono_099": {
+    "text": "Cada persona del nostre equip està compromesa amb el benestar dels usuaris i les seves famílies. No és només una feina: és una vocació.",
+    "section": "MISSIÓ",
+    "parent_tag": "p"
+  },
+  "mono_100": {
+    "text": "Proximitat",
+    "section": "MISSIÓ",
+    "parent_tag": "span"
+  },
+  "mono_101": {
+    "text": "Proximitat",
+    "section": "MISSIÓ",
+    "parent_tag": "h3"
+  },
+  "mono_102": {
+    "text": "Tractem cada usuari com una persona única, amb un pla d'atenció individualitzat que respecta les seves preferències i capacitats.",
+    "section": "MISSIÓ",
+    "parent_tag": "p"
+  },
+  "mono_103": {
+    "text": "Transparència",
+    "section": "MISSIÓ",
+    "parent_tag": "span"
+  },
+  "mono_104": {
+    "text": "Transparència",
+    "section": "MISSIÓ",
+    "parent_tag": "h3"
+  },
+  "mono_105": {
+    "text": "Rendim comptes a la societat. Les nostres memòries, auditories i informació rellevant estan disponibles per a qui vulgui consultar-les.",
+    "section": "MISSIÓ",
+    "parent_tag": "p"
+  },
+  "mono_106": {
+    "text": "Inici",
+    "section": "EQUIP",
+    "parent_tag": "a"
+  },
+  "mono_107": {
+    "text": "Qui Som",
+    "section": "EQUIP",
+    "parent_tag": "a"
+  },
+  "mono_108": {
+    "text": "/ Equip",
+    "section": "EQUIP",
+    "parent_tag": "p"
+  },
+  "mono_109": {
+    "text": "El nostre equip",
+    "section": "EQUIP",
+    "parent_tag": "h1"
+  },
+  "mono_110": {
+    "text": "Les persones que ho fan possible",
+    "section": "EQUIP",
+    "parent_tag": "p"
+  },
+  "mono_111": {
+    "text": "Equip professional",
+    "section": "EQUIP",
+    "parent_tag": "span"
+  },
+  "mono_112": {
+    "text": "Darrere de la Fundació Ave Maria hi ha un equip de més de 65 professionals compromesos amb l'atenció i el benestar de les persones amb discapacitat intel·lectual.",
+    "section": "EQUIP",
+    "parent_tag": "p"
+  },
+  "mono_113": {
+    "text": "Òrgan de govern",
+    "section": "EQUIP",
+    "parent_tag": "span"
+  },
+  "mono_114": {
+    "text": "Patronat",
+    "section": "EQUIP",
+    "parent_tag": "h2"
+  },
+  "mono_115": {
+    "text": "El Patronat és l'òrgan de govern de la Fundació, format per persones vinculades a Sitges i compromeses amb la nostra missió.",
+    "section": "EQUIP",
+    "parent_tag": "p"
+  },
+  "mono_116": {
+    "text": "Pendent de foto",
+    "section": "EQUIP",
+    "parent_tag": "span"
+  },
+  "mono_117": {
+    "text": "Jaume Cladellas",
+    "section": "EQUIP",
+    "parent_tag": "h4"
+  },
+  "mono_118": {
+    "text": "President",
+    "section": "EQUIP",
+    "parent_tag": "p"
+  },
+  "mono_119": {
+    "text": "Pendent de foto",
+    "section": "EQUIP",
+    "parent_tag": "span"
+  },
+  "mono_120": {
+    "text": "Vicepresident",
+    "section": "EQUIP",
+    "parent_tag": "h4"
+  },
+  "mono_121": {
+    "text": "Vicepresident",
+    "section": "EQUIP",
+    "parent_tag": "p"
+  },
+  "mono_122": {
+    "text": "Pendent de foto",
+    "section": "EQUIP",
+    "parent_tag": "span"
+  },
+  "mono_123": {
+    "text": "Secretari/ària",
+    "section": "EQUIP",
+    "parent_tag": "h4"
+  },
+  "mono_124": {
+    "text": "Secretari/ària",
+    "section": "EQUIP",
+    "parent_tag": "p"
+  },
+  "mono_125": {
+    "text": "Pendent de foto",
+    "section": "EQUIP",
+    "parent_tag": "span"
+  },
+  "mono_126": {
+    "text": "Tresorer/a",
+    "section": "EQUIP",
+    "parent_tag": "h4"
+  },
+  "mono_127": {
+    "text": "Tresorer/a",
+    "section": "EQUIP",
+    "parent_tag": "p"
+  },
+  "mono_128": {
+    "text": "Estructura",
+    "section": "EQUIP",
+    "parent_tag": "span"
+  },
+  "mono_129": {
+    "text": "Equip professional",
+    "section": "EQUIP",
+    "parent_tag": "h2"
+  },
+  "mono_130": {
+    "text": "Un equip multidisciplinar organitzat en quatre àrees per garantir una atenció integral i personalitzada.",
+    "section": "EQUIP",
+    "parent_tag": "p"
+  },
+  "mono_131": {
+    "text": "Direcció",
+    "section": "EQUIP",
+    "parent_tag": "h3"
+  },
+  "mono_132": {
+    "text": "Director/a general",
+    "section": "EQUIP",
+    "parent_tag": "li"
+  },
+  "mono_133": {
+    "text": "Director/a tècnic/a",
+    "section": "EQUIP",
+    "parent_tag": "li"
+  },
+  "mono_134": {
+    "text": "Coordinador/a de serveis",
+    "section": "EQUIP",
+    "parent_tag": "li"
+  },
+  "mono_135": {
+    "text": "Atenció directa",
+    "section": "EQUIP",
+    "parent_tag": "h3"
+  },
+  "mono_136": {
+    "text": "Psicòleg/a",
+    "section": "EQUIP",
+    "parent_tag": "li"
+  },
+  "mono_137": {
+    "text": "Pedagog/a, Psicopedagog/a",
+    "section": "EQUIP",
+    "parent_tag": "li"
+  },
+  "mono_138": {
+    "text": "Treballador/a social",
+    "section": "EQUIP",
+    "parent_tag": "li"
+  },
+  "mono_139": {
+    "text": "Fisioterapeuta",
+    "section": "EQUIP",
+    "parent_tag": "li"
+  },
+  "mono_140": {
+    "text": "Terapeuta ocupacional",
+    "section": "EQUIP",
+    "parent_tag": "li"
+  },
+  "mono_141": {
+    "text": "Serveis mèdics",
+    "section": "EQUIP",
+    "parent_tag": "h3"
+  },
+  "mono_142": {
+    "text": "Infermers/es",
+    "section": "EQUIP",
+    "parent_tag": "li"
+  },
+  "mono_143": {
+    "text": "Metge/essa de família",
+    "section": "EQUIP",
+    "parent_tag": "li"
+  },
+  "mono_144": {
+    "text": "Psiquiatre",
+    "section": "EQUIP",
+    "parent_tag": "li"
+  },
+  "mono_145": {
+    "text": "Cuidadors i educadors",
+    "section": "EQUIP",
+    "parent_tag": "h3"
+  },
+  "mono_146": {
+    "text": "Més de 30 educadors/es i cuidadors/es que ofereixen atenció directa i personalitzada als nostres usuaris les 24 hores del dia.",
+    "section": "EQUIP",
+    "parent_tag": "p"
+  },
+  "mono_147": {
+    "text": "Inici",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "a"
+  },
+  "mono_148": {
+    "text": "Qui Som",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "a"
+  },
+  "mono_149": {
+    "text": "/ Transparència",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "p"
+  },
+  "mono_150": {
+    "text": "Transparència",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "h1"
+  },
+  "mono_151": {
+    "text": "Compromís amb la rendició de comptes",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "p"
+  },
+  "mono_152": {
+    "text": "A la Fundació Ave Maria creiem en la transparència com un compromís real amb les persones i la societat. Per això, compartim obertament tota la informació sobre la nostra activitat, les finances i el nostre model de govern, perquè la confiança es construeix amb fets i claredat.",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "p"
+  },
+  "mono_153": {
+    "text": "Dades legals",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "h3"
+  },
+  "mono_154": {
+    "text": "Denominació",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "td"
+  },
+  "mono_155": {
+    "text": "Fundació Privada del Ave María de Sitges",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "td"
+  },
+  "mono_156": {
+    "text": "CIF",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "td"
+  },
+  "mono_157": {
+    "text": "G58511981",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "td"
+  },
+  "mono_158": {
+    "text": "Any de constitució",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "td"
+  },
+  "mono_159": {
+    "text": "Utilitat pública",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "td"
+  },
+  "mono_160": {
+    "text": "Sí",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "td"
+  },
+  "mono_161": {
+    "text": "Adreça",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "td"
+  },
+  "mono_162": {
+    "text": "Av. Artur Carbonell, 11 — 08870 Sitges",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "td"
+  },
+  "mono_163": {
+    "text": "Acreditacions",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "h3"
+  },
+  "mono_164": {
+    "text": "Servei concertat amb l'Institut Català d'Assistència i Serveis Socials (ICASS)",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "li"
+  },
+  "mono_165": {
+    "text": "Registre de Fundacions de la Generalitat de Catalunya",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "li"
+  },
+  "mono_166": {
+    "text": "Auditoria externa anual",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "li"
+  },
+  "mono_167": {
+    "text": "Documents",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "h4"
+  },
+  "mono_168": {
+    "text": "Memòria 2025 (PDF)",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "a"
+  },
+  "mono_169": {
+    "text": "Memòria 2024 (PDF)",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "a"
+  },
+  "mono_170": {
+    "text": "Comptes auditats 2025",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "a"
+  },
+  "mono_171": {
+    "text": "Estatuts (PDF)",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "a"
+  },
+  "mono_172": {
+    "text": "Pla estratègic 2024-2027",
+    "section": "TRANSPARÈNCIA",
+    "parent_tag": "a"
+  },
+  "mono_173": {
+    "text": "Campus Residencial",
+    "section": "SERVEIS",
+    "parent_tag": "span"
+  },
+  "mono_174": {
+    "text": "01 — Servei residencial",
+    "section": "SERVEIS",
+    "parent_tag": "span"
+  },
+  "mono_175": {
+    "text": "Campus Residencial",
+    "section": "SERVEIS",
+    "parent_tag": "h2"
+  },
+  "mono_176": {
+    "text": "02 — Habitatge amb suport",
+    "section": "SERVEIS",
+    "parent_tag": "span"
+  },
+  "mono_177": {
+    "text": "03 — Atenció a domicili",
+    "section": "SERVEIS",
+    "parent_tag": "span"
+  },
+  "mono_178": {
+    "text": "04 — Autonomia i participació",
+    "section": "SERVEIS",
+    "parent_tag": "span"
+  },
+  "mono_179": {
+    "text": "05 — Acompanyament i treball",
+    "section": "SERVEIS",
+    "parent_tag": "span"
+  },
+  "mono_180": {
+    "text": "06 — Innovació aplicada",
+    "section": "SERVEIS",
+    "parent_tag": "span"
+  },
+  "mono_181": {
+    "text": "Campus Residencial",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "h1"
+  },
+  "mono_182": {
+    "text": "Una llar al cor de Sitges per a 60 persones adultes amb discapacitat intel·lectual, oberta les 24 hores els 365 dies de l'any.",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "p"
+  },
+  "mono_183": {
+    "text": "About",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_184": {
+    "text": "Campus Residencial",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_185": {
+    "text": "Ubicació",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_186": {
+    "text": "Sitges, Barcelona",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_187": {
+    "text": "Places",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_188": {
+    "text": "60 places residencials",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_189": {
+    "text": "Superfície",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_190": {
+    "text": "+3.000 m²",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_191": {
+    "text": "Horari",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_192": {
+    "text": "24 hores / 365 dies l'any",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_193": {
+    "text": "Equip",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_194": {
+    "text": "+45 professionals multidisciplinaris",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_195": {
+    "text": "Serveis inclosos",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "p"
+  },
+  "mono_196": {
+    "text": "Resposta immediata davant qualsevol incidència sanitària, amb infermeria interna i coordinació mèdica",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_197": {
+    "text": "Atenció mèdica 24 hores",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_198": {
+    "text": "Sessions diàries adaptades al perfil de cada usuari per mantenir i potenciar les capacitats",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_199": {
+    "text": "Estimulació cognitiva",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_200": {
+    "text": "Tallers d'art, música i artesania que promouen l'expressió i el benestar emocional",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_201": {
+    "text": "Activitats creatives",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_202": {
+    "text": "Espai propi d'hidroteràpia i relaxació per a teràpies aquàtiques i recuperació motora",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_203": {
+    "text": "Spa amb hidroteràpia",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_204": {
+    "text": "Pioners a Catalunya en la incorporació de robòtica social com a suport terapèutic",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_205": {
+    "text": "Robòtica assistencial",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_206": {
+    "text": "Equip professional · El Campus compta amb un equip multidisciplinar format per",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "p"
+  },
+  "mono_207": {
+    "text": "Responsable de la coordinació del servei i de la qualitat assistencial del centre",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_208": {
+    "text": "Director/a tècnic/a",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_209": {
+    "text": "Equip especialitzat en suport psicològic, pedagògic i psicopedagògic dels usuaris",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_210": {
+    "text": "Psicòleg/a, pedagog/a, psicopedagog/a",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_211": {
+    "text": "Atenció a la rehabilitació motora i a les activitats de la vida diària de cada persona",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_212": {
+    "text": "Fisioterapeuta i terapeuta ocupacional",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_213": {
+    "text": "Atenció sanitària interna les 24 hores i seguiment psiquiàtric especialitzat",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_214": {
+    "text": "Infermers/es (2), metge i psiquiatre",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_215": {
+    "text": "Acompanyament directe i continuat per garantir el benestar diari dels usuaris",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_216": {
+    "text": "Educadors/es i cuidadors/es (+30)",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_217": {
+    "text": "El servei",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_218": {
+    "text": "El Campus Residencial és el cor de la Fundació Ave Maria. Situat en un edifici modernista al centre de Sitges, és la llar de",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "p"
+  },
+  "mono_219": {
+    "text": "60 persones adultes amb discapacitat intel·lectual",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "strong"
+  },
+  "mono_220": {
+    "text": "que necessiten suport continuat en el seu dia a dia.",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "p"
+  },
+  "mono_221": {
+    "text": "És un espai ampli i cuidat, de més de",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "p"
+  },
+  "mono_222": {
+    "text": "3.000 m²",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "strong"
+  },
+  "mono_223": {
+    "text": ", pensat perquè les persones se'l facin seu: habitacions individuals i dobles, sales d'activitats, gimnàs, spa amb hidroteràpia, jardins i espais comuns on viure, compartir i sentir-se com a casa.",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "p"
+  },
+  "mono_224": {
+    "text": "El centre està obert i actiu les",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "p"
+  },
+  "mono_225": {
+    "text": "24 hores del dia, els 365 dies de l'any",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "strong"
+  },
+  "mono_226": {
+    "text": ". Un equip multidisciplinar acompanya a cada persona de manera propera i personalitzada, adaptant-se al que necessita en cada moment.",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "p"
+  },
+  "mono_227": {
+    "text": "Preguntes freqüents",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "h3"
+  },
+  "mono_228": {
+    "text": "Quin és el perfil d'usuari del Campus?",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_229": {
+    "text": "Atenem persones adultes (majors de 18 anys) amb discapacitat intel·lectual i grau de dependència reconegut. Cada sol·licitud es valora individualment.",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_230": {
+    "text": "Com puc sol·licitar una plaça?",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_231": {
+    "text": "Contacta amb nosaltres per telèfon (938 94 86 46) o a través del formulari web. Concertarem una visita al centre i us informarem del procés d'admissió.",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_232": {
+    "text": "Quin és el cost del servei?",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_233": {
+    "text": "El Campus Residencial està concertat amb la Generalitat de Catalunya (ICASS). El cost per a les famílies depèn del grau de dependència i la situació econòmica de l'usuari.",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_234": {
+    "text": "Puc visitar el meu familiar quan vulgui?",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_235": {
+    "text": "Sí. Tenim un horari de visites ampli i flexible. A més, organitzem activitats familiars periòdiques i celebracions on les famílies són benvingudes.",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "div"
+  },
+  "mono_236": {
+    "text": "Sol·licitar informació",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "a"
+  },
+  "mono_237": {
+    "text": "Vols més informació?",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "h3"
+  },
+  "mono_238": {
+    "text": "Omple el formulari i ens posarem en contacte amb tu",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "p"
+  },
+  "mono_239": {
+    "text": "Nom",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "label"
+  },
+  "mono_240": {
+    "text": "Email",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "label"
+  },
+  "mono_241": {
+    "text": "Telèfon",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "label"
+  },
+  "mono_242": {
+    "text": "Missatge",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "label"
+  },
+  "mono_243": {
+    "text": "Enviar sol·licitud",
+    "section": "CAMPUS RESIDENCIAL",
+    "parent_tag": "button"
+  },
+  "mono_244": {
+    "text": "Inici",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "a"
+  },
+  "mono_245": {
+    "text": "Serveis",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "a"
+  },
+  "mono_246": {
+    "text": "/ Llars amb Suport",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_247": {
+    "text": "Llars amb Suport",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "h1"
+  },
+  "mono_248": {
+    "text": "Viure de manera autònoma és possible",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_249": {
+    "text": "El servei",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "span"
+  },
+  "mono_250": {
+    "text": "Viure de manera autònoma és possible",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "h2"
+  },
+  "mono_251": {
+    "text": "Les Llars amb Suport són pisos a Sitges on persones amb discapacitat intel·lectual viuen de manera semi-autònoma, amb el suport de l'equip quan ho necessiten.",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_252": {
+    "text": "Treballem amb el model",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_253": {
+    "text": "Housing First",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "strong"
+  },
+  "mono_254": {
+    "text": ", perquè cada persona pugui tenir el seu propi espai i viure amb la màxima autonomia possible, amb acompanyament adaptat al seu dia a dia: des de visites puntuals fins a suport més freqüent en les tasques quotidianes.",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_255": {
+    "text": "L'objectiu: que cada persona visqui de la manera més independent possible, prenent les seves pròpies decisions i portant una vida normalitzada integrada a la comunitat.",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_256": {
+    "text": "Acompanyament",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "span"
+  },
+  "mono_257": {
+    "text": "Com funciona?",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "h2"
+  },
+  "mono_258": {
+    "text": "Els usuaris de les Llars amb Suport viuen en pisos convencionals de lloguer a Sitges. El nostre equip els ofereix:",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_259": {
+    "text": "Gestió de la llar",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "h3"
+  },
+  "mono_260": {
+    "text": "Suport en la gestió de la llar (neteja, cuina, compres).",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_261": {
+    "text": "Tràmits i gestions",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "h3"
+  },
+  "mono_262": {
+    "text": "Acompanyament en tràmits i gestions.",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_263": {
+    "text": "Salut i medicació",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "h3"
+  },
+  "mono_264": {
+    "text": "Seguiment de la salut i medicació.",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_265": {
+    "text": "Suport emocional",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "h3"
+  },
+  "mono_266": {
+    "text": "Suport emocional i resolució de conflictes.",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_267": {
+    "text": "Oci comunitari",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "h3"
+  },
+  "mono_268": {
+    "text": "Activitats d'oci i lleure comunitàries.",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_269": {
+    "text": "Connexió amb el Campus",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "h3"
+  },
+  "mono_270": {
+    "text": "Connexió amb el Campus Residencial per a activitats grupals.",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_271": {
+    "text": "Perfil",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "span"
+  },
+  "mono_272": {
+    "text": "Per a qui és aquest servei?",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "h2"
+  },
+  "mono_273": {
+    "text": "Les Llars amb Suport estan pensades per a persones amb discapacitat intel·lectual que:",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_274": {
+    "text": "Tenen un nivell d'autonomia suficient per viure fora del campus residencial.",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_275": {
+    "text": "Desitgen tenir el seu propi espai i més independència.",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_276": {
+    "text": "Necessiten un suport intermitent (no 24 hores).",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_277": {
+    "text": "Volen formar part activa de la comunitat de Sitges.",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "p"
+  },
+  "mono_278": {
+    "text": "Dades del servei",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "span"
+  },
+  "mono_279": {
+    "text": "El servei en xifres",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "h2"
+  },
+  "mono_280": {
+    "text": "LS",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "span"
+  },
+  "mono_281": {
+    "text": "Sitges",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "div"
+  },
+  "mono_282": {
+    "text": "Diversos pisos al municipi",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "div"
+  },
+  "mono_283": {
+    "text": "Housing",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "div"
+  },
+  "mono_284": {
+    "text": "First — Model d'atenció",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "div"
+  },
+  "mono_285": {
+    "text": "24/7",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "div"
+  },
+  "mono_286": {
+    "text": "Suport intermitent segons necessitats",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "div"
+  },
+  "mono_287": {
+    "text": "Sol·licitar informació",
+    "section": "LLARS AMB SUPORT",
+    "parent_tag": "a"
+  },
+  "mono_288": {
+    "text": "Inici",
+    "section": "SAD",
+    "parent_tag": "a"
+  },
+  "mono_289": {
+    "text": "Serveis",
+    "section": "SAD",
+    "parent_tag": "a"
+  },
+  "mono_290": {
+    "text": "/ Atenció Domiciliària",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_291": {
+    "text": "Servei d'Atenció Domiciliària",
+    "section": "SAD",
+    "parent_tag": "h1"
+  },
+  "mono_292": {
+    "text": "T'ajudem a casa teva",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_293": {
+    "text": "El servei",
+    "section": "SAD",
+    "parent_tag": "span"
+  },
+  "mono_294": {
+    "text": "T'ajudem a casa teva",
+    "section": "SAD",
+    "parent_tag": "h2"
+  },
+  "mono_295": {
+    "text": "Nou servei 2025",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_296": {
+    "text": "El Servei d'Atenció Domiciliària (SAD) és un nou servei que neix per acompanyar les persones amb dependència al seu propi domicili.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_297": {
+    "text": "Format per un equip de professionals, que acompanya cada persona perquè pugui continuar vivint al seu entorn de sempre, amb la cura, el suport i l'atenció que necessita en el seu dia a dia.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_298": {
+    "text": "Prestacions",
+    "section": "SAD",
+    "parent_tag": "span"
+  },
+  "mono_299": {
+    "text": "Què oferim?",
+    "section": "SAD",
+    "parent_tag": "h2"
+  },
+  "mono_300": {
+    "text": "Activitats de la vida diària",
+    "section": "SAD",
+    "parent_tag": "h3"
+  },
+  "mono_301": {
+    "text": "Ajuda en higiene personal, vestir-se, alimentació, mobilitat.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_302": {
+    "text": "Suport a la llar",
+    "section": "SAD",
+    "parent_tag": "h3"
+  },
+  "mono_303": {
+    "text": "Neteja, cuina, compres i gestió domèstica.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_304": {
+    "text": "Acompanyament",
+    "section": "SAD",
+    "parent_tag": "h3"
+  },
+  "mono_305": {
+    "text": "Visites mèdiques, passejos i gestions del dia a dia.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_306": {
+    "text": "Suport emocional",
+    "section": "SAD",
+    "parent_tag": "h3"
+  },
+  "mono_307": {
+    "text": "Companyia, conversa i escolta activa.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_308": {
+    "text": "Coordinació sociosanitària",
+    "section": "SAD",
+    "parent_tag": "h3"
+  },
+  "mono_309": {
+    "text": "Enllaç amb metges, infermeres i serveis socials.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_310": {
+    "text": "Respir familiar",
+    "section": "SAD",
+    "parent_tag": "h3"
+  },
+  "mono_311": {
+    "text": "Relleu temporal per a cuidadors principals.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_312": {
+    "text": "Perfil",
+    "section": "SAD",
+    "parent_tag": "span"
+  },
+  "mono_313": {
+    "text": "Per a qui és aquest servei?",
+    "section": "SAD",
+    "parent_tag": "h2"
+  },
+  "mono_314": {
+    "text": "Persones grans amb dependència.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_315": {
+    "text": "Persones amb discapacitat.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_316": {
+    "text": "Persones amb malaltia crònica o en recuperació.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_317": {
+    "text": "Famílies que necessiten suport en la cura d'un familiar.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_318": {
+    "text": "Àmbit territorial",
+    "section": "SAD",
+    "parent_tag": "span"
+  },
+  "mono_319": {
+    "text": "Comarca del Garraf",
+    "section": "SAD",
+    "parent_tag": "h2"
+  },
+  "mono_320": {
+    "text": "Estem disponibles en els sis municipis de la comarca, amb desplaçament directe al domicili.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_321": {
+    "text": "SAD",
+    "section": "SAD",
+    "parent_tag": "span"
+  },
+  "mono_322": {
+    "text": "Sitges",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_323": {
+    "text": "Municipi 01",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_324": {
+    "text": "Vilanova",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_325": {
+    "text": "i la Geltrú · Municipi 02",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_326": {
+    "text": "Sant Pere",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_327": {
+    "text": "de Ribes · Municipi 03",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_328": {
+    "text": "Cubelles",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_329": {
+    "text": "Municipi 04",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_330": {
+    "text": "Canyelles",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_331": {
+    "text": "Municipi 05",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_332": {
+    "text": "Olivella",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_333": {
+    "text": "Municipi 06",
+    "section": "SAD",
+    "parent_tag": "div"
+  },
+  "mono_334": {
+    "text": "Contacte SAD",
+    "section": "SAD",
+    "parent_tag": "span"
+  },
+  "mono_335": {
+    "text": "Com sol·licitar-lo?",
+    "section": "SAD",
+    "parent_tag": "h2"
+  },
+  "mono_336": {
+    "text": "Contacta amb nosaltres per telèfon o formulari. Concertarem una visita a domicili per valorar les necessitats i dissenyar un pla d'atenció personalitzat.",
+    "section": "SAD",
+    "parent_tag": "p"
+  },
+  "mono_337": {
+    "text": "Telèfon",
+    "section": "SAD",
+    "parent_tag": "span"
+  },
+  "mono_338": {
+    "text": "sad@avemariafundacio.org",
+    "section": "SAD",
+    "parent_tag": "span"
+  },
+  "mono_339": {
+    "text": "Email",
+    "section": "SAD",
+    "parent_tag": "span"
+  },
+  "mono_340": {
+    "text": "Inici",
+    "section": "FAMÍLIES",
+    "parent_tag": "a"
+  },
+  "mono_341": {
+    "text": "Serveis",
+    "section": "FAMÍLIES",
+    "parent_tag": "a"
+  },
+  "mono_342": {
+    "text": "/ Suport a Famílies i Inclusió Laboral",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_343": {
+    "text": "Suport a Famílies i Inclusió Laboral",
+    "section": "FAMÍLIES",
+    "parent_tag": "h1"
+  },
+  "mono_344": {
+    "text": "Acompanyament i treball amb propòsit",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_345": {
+    "text": "El servei",
+    "section": "FAMÍLIES",
+    "parent_tag": "span"
+  },
+  "mono_346": {
+    "text": "Acompanyament i treball amb propòsit",
+    "section": "FAMÍLIES",
+    "parent_tag": "h2"
+  },
+  "mono_347": {
+    "text": "Un servei doble que combina el suport a les famílies de persones amb discapacitat intel·lectual amb programes d'inclusió laboral, perquè cada persona pugui viure amb autonomia i el seu entorn s'hi senti acompanyat.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_348": {
+    "text": "Sabem que tenir cura d'una persona amb discapacitat és un camí que es fa millor acompanyat, i que les persones amb discapacitat tenen molt a aportar al món del treball. Aquest servei posa les dues realitats al centre.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_349": {
+    "text": "Les famílies són part fonamental del nostre model d'atenció. Quan una família es sent recolzada, l'usuari també ho nota.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_350": {
+    "text": "Suport a famílies",
+    "section": "FAMÍLIES",
+    "parent_tag": "span"
+  },
+  "mono_351": {
+    "text": "Serveis per a famílies",
+    "section": "FAMÍLIES",
+    "parent_tag": "h2"
+  },
+  "mono_352": {
+    "text": "Informació i orientació",
+    "section": "FAMÍLIES",
+    "parent_tag": "h3"
+  },
+  "mono_353": {
+    "text": "Us ajudem a navegar el sistema de serveis socials, sol·licitar ajudes, conèixer els vostres drets i accedir als recursos disponibles.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_354": {
+    "text": "Formació",
+    "section": "FAMÍLIES",
+    "parent_tag": "h3"
+  },
+  "mono_355": {
+    "text": "Tallers i sessions formatives sobre temes d'interès: cura del dependent, gestió emocional, comunicació, sexualitat, envelliment.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_356": {
+    "text": "Grups de suport",
+    "section": "FAMÍLIES",
+    "parent_tag": "h3"
+  },
+  "mono_357": {
+    "text": "Espais per compartir experiències amb altres famílies en situació similar. El millor suport és saber que no estàs sol.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_358": {
+    "text": "Servei de respir",
+    "section": "FAMÍLIES",
+    "parent_tag": "h3"
+  },
+  "mono_359": {
+    "text": "Atenció temporal per donar un descans als cuidadors principals. Per cuidar bé cal cuidar-se també.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_360": {
+    "text": "Comunitat",
+    "section": "FAMÍLIES",
+    "parent_tag": "span"
+  },
+  "mono_361": {
+    "text": "Activitats familiars",
+    "section": "FAMÍLIES",
+    "parent_tag": "h2"
+  },
+  "mono_362": {
+    "text": "Al llarg de l'any organitzem activitats on les famílies són benvingudes:",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_363": {
+    "text": "Festes",
+    "section": "FAMÍLIES",
+    "parent_tag": "h3"
+  },
+  "mono_364": {
+    "text": "Celebracions de Nadal, Sant Joan i aniversaris.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_365": {
+    "text": "Portes obertes",
+    "section": "FAMÍLIES",
+    "parent_tag": "h3"
+  },
+  "mono_366": {
+    "text": "Jornades per conèixer els serveis i el centre.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_367": {
+    "text": "Sortides",
+    "section": "FAMÍLIES",
+    "parent_tag": "h3"
+  },
+  "mono_368": {
+    "text": "Excursions familiars al llarg de l'any.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_369": {
+    "text": "Assemblees",
+    "section": "FAMÍLIES",
+    "parent_tag": "h3"
+  },
+  "mono_370": {
+    "text": "Reunions informatives i de seguiment.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_371": {
+    "text": "Creiem que tothom té talents i capacitats. El nostre objectiu és descobrir-los, potenciar-los i trobar l'entorn laboral adequat per a cada persona.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_372": {
+    "text": "Inclusió laboral",
+    "section": "FAMÍLIES",
+    "parent_tag": "span"
+  },
+  "mono_373": {
+    "text": "Com treballem",
+    "section": "FAMÍLIES",
+    "parent_tag": "h2"
+  },
+  "mono_374": {
+    "text": "Treball intern",
+    "section": "FAMÍLIES",
+    "parent_tag": "h3"
+  },
+  "mono_375": {
+    "text": "Dins de la Fundació, els usuaris participen en el dia a dia del centre fent tasques de suport com la jardineria, la bugaderia, l'ajuda a la cuina, el manteniment o l'acompanyament entre companys. Són feines quotidianes, fetes entre tots, que ajuden a fer rutllar el centre i on cada usuari té un paper i se'l valora.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_376": {
+    "text": "Treball amb suport",
+    "section": "FAMÍLIES",
+    "parent_tag": "h3"
+  },
+  "mono_377": {
+    "text": "Col·laborem amb empreses de l'entorn per crear oportunitats laborals en entorns reals i inclusius. Acompanyem la persona durant tot el procés d'adaptació i fem un seguiment continu tant a la persona treballadora com a l'empresa per garantir que l'experiència funcioni per a tothom.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_378": {
+    "text": "Per a empreses",
+    "section": "FAMÍLIES",
+    "parent_tag": "span"
+  },
+  "mono_379": {
+    "text": "Com us ajudem?",
+    "section": "FAMÍLIES",
+    "parent_tag": "h2"
+  },
+  "mono_380": {
+    "text": "Si la teva empresa vol incorporar persones amb discapacitat, nosaltres t'ajudem:",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_381": {
+    "text": "Assessorament",
+    "section": "FAMÍLIES",
+    "parent_tag": "strong"
+  },
+  "mono_382": {
+    "text": "en la selecció del perfil adequat.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_383": {
+    "text": "Formació prèvia",
+    "section": "FAMÍLIES",
+    "parent_tag": "strong"
+  },
+  "mono_384": {
+    "text": "del treballador.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_385": {
+    "text": "Acompanyament",
+    "section": "FAMÍLIES",
+    "parent_tag": "strong"
+  },
+  "mono_386": {
+    "text": "durant la incorporació.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_387": {
+    "text": "Seguiment",
+    "section": "FAMÍLIES",
+    "parent_tag": "strong"
+  },
+  "mono_388": {
+    "text": "continuat.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_389": {
+    "text": "Informació",
+    "section": "FAMÍLIES",
+    "parent_tag": "strong"
+  },
+  "mono_390": {
+    "text": "sobre bonificacions i avantatges fiscals.",
+    "section": "FAMÍLIES",
+    "parent_tag": "p"
+  },
+  "mono_391": {
+    "text": "Contacta amb nosaltres",
+    "section": "FAMÍLIES",
+    "parent_tag": "a"
+  },
+  "mono_392": {
+    "text": "El servei",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "span"
+  },
+  "mono_393": {
+    "text": "Autonomia i participació",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "h2"
+  },
+  "mono_394": {
+    "text": "Els Centres de Dia són serveis diürns dirigits a persones amb discapacitat intel·lectual lleu i persones grans, orientats a promoure l'autonomia personal i la participació social.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_395": {
+    "text": "Gestionats de forma directa o en col·laboració amb administracions públiques locals, ofereixen un entorn segur i estimulant on cada persona pot desenvolupar les seves capacitats i mantenir vincles amb la comunitat.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_396": {
+    "text": "Un espai diürn on cada persona troba el seu ritme, les seves activitats i les seves relacions per continuar creixent en autonomia.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_397": {
+    "text": "Prestacions",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "span"
+  },
+  "mono_398": {
+    "text": "Què oferim?",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "h2"
+  },
+  "mono_399": {
+    "text": "Estimulació cognitiva",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "h3"
+  },
+  "mono_400": {
+    "text": "Tallers i activitats per mantenir i potenciar les capacitats mentals de cada persona.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_401": {
+    "text": "Activitats creatives",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "h3"
+  },
+  "mono_402": {
+    "text": "Art, música, artesania i expressió corporal per fomentar el benestar emocional.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_403": {
+    "text": "Rehabilitació física",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "h3"
+  },
+  "mono_404": {
+    "text": "Sessions adaptades de fisioteràpia i mobilitat per mantenir la salut corporal.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_405": {
+    "text": "Habilitats socials",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "h3"
+  },
+  "mono_406": {
+    "text": "Grups i dinàmiques per treballar la comunicació i les relacions interpersonals.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_407": {
+    "text": "Sortides i excursions",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "h3"
+  },
+  "mono_408": {
+    "text": "Activitats fora del centre per conèixer l'entorn i participar en la vida comunitària.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_409": {
+    "text": "Àpats i descans",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "h3"
+  },
+  "mono_410": {
+    "text": "Espai de restaurant adaptat i zones de descans per garantir el benestar diari.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_411": {
+    "text": "Perfil",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "span"
+  },
+  "mono_412": {
+    "text": "Per a qui és aquest servei?",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "h2"
+  },
+  "mono_413": {
+    "text": "Persones adultes amb discapacitat intel·lectual lleu o moderada.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_414": {
+    "text": "Persones grans que necessiten un espai diürn adaptat.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_415": {
+    "text": "Persones amb autonomia parcial que viuen a casa.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_416": {
+    "text": "Famílies que necessiten conciliar cura i vida laboral.",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "p"
+  },
+  "mono_417": {
+    "text": "Dades del servei",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "span"
+  },
+  "mono_418": {
+    "text": "El servei en xifres",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "h2"
+  },
+  "mono_419": {
+    "text": "CD",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "span"
+  },
+  "mono_420": {
+    "text": "8h",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "div"
+  },
+  "mono_421": {
+    "text": "De dilluns a divendres",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "div"
+  },
+  "mono_422": {
+    "text": "Sitges",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "div"
+  },
+  "mono_423": {
+    "text": "Centres al territori",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "div"
+  },
+  "mono_424": {
+    "text": "ICASS",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "div"
+  },
+  "mono_425": {
+    "text": "Servei concertat amb la Generalitat",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "div"
+  },
+  "mono_426": {
+    "text": "Sol·licitar informació",
+    "section": "CENTRES DE DIA",
+    "parent_tag": "a"
+  },
+  "mono_427": {
+    "text": "El programa",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "span"
+  },
+  "mono_428": {
+    "text": "Innovació aplicada",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "h2"
+  },
+  "mono_429": {
+    "text": "Desenvolupament de projectes de recerca aplicada i solucions tecnològiques orientades a millorar la qualitat de vida i l'atenció a persones en situació de dependència.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_430": {
+    "text": "A la Fundació Ave Maria apostem per la innovació com a motor de millora contínua. Impulsem projectes que traslladen la recerca acadèmica a la pràctica assistencial i incorporem tecnologia amb sentit humà.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_431": {
+    "text": "La innovació no és una moda: és la nostra manera de continuar oferint la millor atenció possible a cada persona.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_432": {
+    "text": "Línies de treball",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "span"
+  },
+  "mono_433": {
+    "text": "Àmbits de recerca",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "h2"
+  },
+  "mono_434": {
+    "text": "Robòtica assistencial",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "h3"
+  },
+  "mono_435": {
+    "text": "Pioners a Catalunya en la incorporació de robòtica social com a suport terapèutic.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_436": {
+    "text": "Salut digital",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "h3"
+  },
+  "mono_437": {
+    "text": "Eines i aplicacions per al seguiment sanitari, la medicació i l'atenció personalitzada.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_438": {
+    "text": "Estimulació cognitiva",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "h3"
+  },
+  "mono_439": {
+    "text": "Plataformes interactives i realitat virtual per a la rehabilitació neurològica.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_440": {
+    "text": "Accessibilitat",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "h3"
+  },
+  "mono_441": {
+    "text": "Solucions tecnològiques per a l'autonomia diària: veu, gestos, control ambiental.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_442": {
+    "text": "Anàlisi de dades",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "h3"
+  },
+  "mono_443": {
+    "text": "Sistemes d'informació que ajuden a prendre millors decisions clíniques i de gestió.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_444": {
+    "text": "Formació i divulgació",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "h3"
+  },
+  "mono_445": {
+    "text": "Compartim el coneixement generat amb la resta d'entitats i el sector.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_446": {
+    "text": "Aliances",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "span"
+  },
+  "mono_447": {
+    "text": "Amb qui treballem",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "h2"
+  },
+  "mono_448": {
+    "text": "Universitats i centres de recerca catalans.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_449": {
+    "text": "Empreses tecnològiques i startups del sector salut.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_450": {
+    "text": "Fundacions i entitats socials de l'àmbit de la discapacitat.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_451": {
+    "text": "Administracions públiques i programes europeus.",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "p"
+  },
+  "mono_452": {
+    "text": "Dades del programa",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "span"
+  },
+  "mono_453": {
+    "text": "El programa en xifres",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "h2"
+  },
+  "mono_454": {
+    "text": "RI",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "span"
+  },
+  "mono_455": {
+    "text": "R+D",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "div"
+  },
+  "mono_456": {
+    "text": "Aplicat al dia a dia",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "div"
+  },
+  "mono_457": {
+    "text": "Sitges",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "div"
+  },
+  "mono_458": {
+    "text": "Laboratori d'innovació social",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "div"
+  },
+  "mono_459": {
+    "text": "Xarxa",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "div"
+  },
+  "mono_460": {
+    "text": "Universitats i empreses",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "div"
+  },
+  "mono_461": {
+    "text": "Contacta amb el programa",
+    "section": "RECERCA I INNOVACIÓ",
+    "parent_tag": "a"
+  },
+  "mono_462": {
+    "text": "Implica't",
+    "section": "COL·LABORA",
+    "parent_tag": "span"
+  },
+  "mono_463": {
+    "text": "Celebracions",
+    "section": "COL·LABORA",
+    "parent_tag": "h3"
+  },
+  "mono_464": {
+    "text": "Converteix aniversaris, bodes o festes en actes solidaris.",
+    "section": "COL·LABORA",
+    "parent_tag": "p"
+  },
+  "mono_465": {
+    "text": "Més info",
+    "section": "COL·LABORA",
+    "parent_tag": "a"
+  },
+  "mono_466": {
+    "text": "Botiga",
+    "section": "COL·LABORA",
+    "parent_tag": "h3"
+  },
+  "mono_467": {
+    "text": "Compra els nostres productes solidaris: cava, art, complements.",
+    "section": "COL·LABORA",
+    "parent_tag": "p"
+  },
+  "mono_468": {
+    "text": "Veure botiga",
+    "section": "COL·LABORA",
+    "parent_tag": "a"
+  },
+  "mono_469": {
+    "text": "80%",
+    "section": "COL·LABORA",
+    "parent_tag": "td"
+  },
+  "mono_470": {
+    "text": "40%",
+    "section": "COL·LABORA",
+    "parent_tag": "td"
+  },
+  "mono_471": {
+    "text": "45%",
+    "section": "COL·LABORA",
+    "parent_tag": "td"
+  },
+  "mono_472": {
+    "text": "10€/mes:",
+    "section": "DONAR",
+    "parent_tag": "strong"
+  },
+  "mono_473": {
+    "text": "25€/mes:",
+    "section": "DONAR",
+    "parent_tag": "strong"
+  },
+  "mono_474": {
+    "text": "50€/mes:",
+    "section": "DONAR",
+    "parent_tag": "strong"
+  },
+  "mono_475": {
+    "text": "100€/mes:",
+    "section": "DONAR",
+    "parent_tag": "strong"
+  },
+  "mono_476": {
+    "text": "ES00 0000 0000 0000 0000 0000",
+    "section": "DONAR",
+    "parent_tag": "p"
+  },
+  "mono_477": {
+    "text": "/mes",
+    "section": "DONAR",
+    "parent_tag": "div"
+  },
+  "mono_478": {
+    "text": "/mes",
+    "section": "DONAR",
+    "parent_tag": "div"
+  },
+  "mono_479": {
+    "text": "/mes",
+    "section": "DONAR",
+    "parent_tag": "div"
+  },
+  "mono_480": {
+    "text": "/mes",
+    "section": "DONAR",
+    "parent_tag": "div"
+  },
+  "mono_481": {
+    "text": "/mes",
+    "section": "DONAR",
+    "parent_tag": "div"
+  },
+  "mono_482": {
+    "text": "Email",
+    "section": "DONAR",
+    "parent_tag": "label"
+  },
+  "mono_483": {
+    "text": "Inici",
+    "section": "FONS D'ART",
+    "parent_tag": "a"
+  },
+  "mono_484": {
+    "text": "/ Fons d'Art",
+    "section": "FONS D'ART",
+    "parent_tag": "p"
+  },
+  "mono_485": {
+    "text": "Fons d'Art",
+    "section": "FONS D'ART",
+    "parent_tag": "h1"
+  },
+  "mono_486": {
+    "text": "Art i solidaritat, units",
+    "section": "FONS D'ART",
+    "parent_tag": "p"
+  },
+  "mono_487": {
+    "text": "El Fons d'Art de la Fundació Ave Maria és molt més que una col·lecció: és art amb propòsit.",
+    "section": "FONS D'ART",
+    "parent_tag": "p"
+  },
+  "mono_488": {
+    "text": "Nascut de la generositat d'artistes i mecenes compromesos amb la nostra missió, reuneix obres de pintura, escultura i obra gràfica que connecten el talent artístic amb la transformació social.",
+    "section": "FONS D'ART",
+    "parent_tag": "p"
+  },
+  "mono_489": {
+    "text": "Cada obra explica una història que va més enllà de l'art: la d'un projecte que impulsa la inclusió i crea oportunitats reals per a les persones en situació de dependència.",
+    "section": "FONS D'ART",
+    "parent_tag": "p"
+  },
+  "mono_490": {
+    "text": "Aquest fons ens apropa al teixit cultural de Sitges i de Catalunya, convertint la cultura en un pont entre sensibilitat artística i impacte social.",
+    "section": "FONS D'ART",
+    "parent_tag": "p"
+  },
+  "mono_491": {
+    "text": "Quan compres una obra del Fons d'Art, no només t'endús una peça d'alt valor artístic, sinó que contribueixes directament a fer possible la nostra tasca. El 100% dels fons es destinen a projectes socials de la Fundació Ave Maria.",
+    "section": "FONS D'ART",
+    "parent_tag": "p"
+  },
+  "mono_492": {
+    "text": "Descobreix les obres. Tria la teva. I fes que l'art també transformi vides.",
+    "section": "FONS D'ART",
+    "parent_tag": "strong"
+  },
+  "mono_493": {
+    "text": "Artistes a la col·lecció",
+    "section": "FONS D'ART",
+    "parent_tag": "h3"
+  },
+  "mono_494": {
+    "text": "Lluïsa Sallent",
+    "section": "FONS D'ART",
+    "parent_tag": "h4"
+  },
+  "mono_495": {
+    "text": "Escultora i pintora. Elegància i equilibri en pinzellades lliures.",
+    "section": "FONS D'ART",
+    "parent_tag": "p"
+  },
+  "mono_496": {
+    "text": "Frederic Anguera",
+    "section": "FONS D'ART",
+    "parent_tag": "h4"
+  },
+  "mono_497": {
+    "text": "Nous enfocaments, de l'especulació pictòrica a la manipulació d'objectes.",
+    "section": "FONS D'ART",
+    "parent_tag": "p"
+  },
+  "mono_498": {
+    "text": "Pierre Tchetverikoff",
+    "section": "FONS D'ART",
+    "parent_tag": "h4"
+  },
+  "mono_499": {
+    "text": "Art geomètric, joc entre el real i l'irreal.",
+    "section": "FONS D'ART",
+    "parent_tag": "p"
+  },
+  "mono_500": {
+    "text": "Germans Grangel",
+    "section": "FONS D'ART",
+    "parent_tag": "h4"
+  },
+  "mono_501": {
+    "text": "Dissenyadors de personatges per a Hollywood.",
+    "section": "FONS D'ART",
+    "parent_tag": "p"
+  },
+  "mono_502": {
+    "text": "Maria Pilar Igual",
+    "section": "FONS D'ART",
+    "parent_tag": "h4"
+  },
+  "mono_503": {
+    "text": "Llegat complet de la seva obra.",
+    "section": "FONS D'ART",
+    "parent_tag": "p"
+  },
+  "mono_504": {
+    "text": "Veure Botiga Solidària",
+    "section": "FONS D'ART",
+    "parent_tag": "a"
+  },
+  "mono_505": {
+    "text": "Inici",
+    "section": "BOTIGA",
+    "parent_tag": "a"
+  },
+  "mono_506": {
+    "text": "/ Botiga Solidària",
+    "section": "BOTIGA",
+    "parent_tag": "p"
+  },
+  "mono_507": {
+    "text": "Botiga Solidària",
+    "section": "BOTIGA",
+    "parent_tag": "h1"
+  },
+  "mono_508": {
+    "text": "Compra solidària, impacte real",
+    "section": "BOTIGA",
+    "parent_tag": "p"
+  },
+  "mono_509": {
+    "text": "Cava Solidari",
+    "section": "BOTIGA",
+    "parent_tag": "h3"
+  },
+  "mono_510": {
+    "text": "Edició limitada anual. Etiqueta dissenyada per un artista diferent cada any.",
+    "section": "BOTIGA",
+    "parent_tag": "p"
+  },
+  "mono_511": {
+    "text": "Col·lecció Postals",
+    "section": "BOTIGA",
+    "parent_tag": "h3"
+  },
+  "mono_512": {
+    "text": "20 postals de les platges de Sitges, pintades per artistes locals.",
+    "section": "BOTIGA",
+    "parent_tag": "p"
+  },
+  "mono_513": {
+    "text": "Llibre Mirabent i Gatell",
+    "section": "BOTIGA",
+    "parent_tag": "h3"
+  },
+  "mono_514": {
+    "text": "Llibre d'Isabel Coll amb l'obra d'un dels millors decoradors catalans.",
+    "section": "BOTIGA",
+    "parent_tag": "p"
+  },
+  "mono_515": {
+    "text": "Meninas Solidàries",
+    "section": "BOTIGA",
+    "parent_tag": "h3"
+  },
+  "mono_516": {
+    "text": "Peces de terrissa úniques de Lluís Barbadillo. Disseny exclusiu.",
+    "section": "BOTIGA",
+    "parent_tag": "p"
+  },
+  "mono_517": {
+    "text": "Polsera Havemann",
+    "section": "BOTIGA",
+    "parent_tag": "h3"
+  },
+  "mono_518": {
+    "text": "Polsera de plata amb la silueta de la Villa Havemann. Edició limitada.",
+    "section": "BOTIGA",
+    "parent_tag": "p"
+  },
+  "mono_519": {
+    "text": "Pitjapapers Havemann",
+    "section": "BOTIGA",
+    "parent_tag": "h3"
+  },
+  "mono_520": {
+    "text": "Pitjapapers en ferro envellit amb la silueta de la Villa Havemann.",
+    "section": "BOTIGA",
+    "parent_tag": "p"
+  },
+  "mono_521": {
+    "text": "Com comprar",
+    "section": "BOTIGA",
+    "parent_tag": "h3"
+  },
+  "mono_522": {
+    "text": "Per fer una comanda, contacta amb nosaltres per email o telèfon indicant els productes i les dades d'enviament.",
+    "section": "BOTIGA",
+    "parent_tag": "p"
+  },
+  "mono_523": {
+    "text": "Email:",
+    "section": "BOTIGA",
+    "parent_tag": "strong"
+  },
+  "mono_524": {
+    "text": "botiga@avemariafundacio.org ·",
+    "section": "BOTIGA",
+    "parent_tag": "p"
+  },
+  "mono_525": {
+    "text": "Tel:",
+    "section": "BOTIGA",
+    "parent_tag": "strong"
+  },
+  "mono_526": {
+    "text": "Recollida gratuïta a la seu de la Fundació. Enviaments: consultar segons destinació.",
+    "section": "BOTIGA",
+    "parent_tag": "p"
+  },
+  "mono_527": {
+    "text": "Inici",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_528": {
+    "text": "/ Actualitat",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_529": {
+    "text": "Notícies",
+    "section": "ACTUALITAT",
+    "parent_tag": "h1"
+  },
+  "mono_530": {
+    "text": "El bloc de la Fundació",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_531": {
+    "text": "20 gener 2026",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_532": {
+    "text": "La Fundació Ave Maria posa en marxa el nou Servei d'Atenció Domiciliària (SAD)",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_533": {
+    "text": "Ampliem els serveis a la comarca del Garraf per oferir suport integral a les persones al seu propi domicili.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_534": {
+    "text": "18 desembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_535": {
+    "text": "Art, cultura i compromís social: dues obres dels germans Grangel s'incorporen al Fons d'Art",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_536": {
+    "text": "La Fundació acull dues obres originals dels germans Grangel, \"Pinocchio\" i \"Spirit\".",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_537": {
+    "text": "9 desembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_538": {
+    "text": "L'Ajuntament de Vilanova i la Geltrú impulsa el projecte Benviure",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_539": {
+    "text": "Nova proposta d'habitatge inclusiu al territori per oferir suport i autonomia.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_540": {
+    "text": "18 novembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_541": {
+    "text": "Rècord de participació al 20è Torneig Benèfic de Pitch & Putt",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_542": {
+    "text": "182 jugadors i 3.500€ recaptats en la jornada solidària.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_543": {
+    "text": "3 novembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_544": {
+    "text": "Un concert de pel·lícula omple l'Auditori Meliá i recapta més d'11.000€",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_545": {
+    "text": "La Penedès Film Orquestra i el Cor Xamusia van emocionar el públic.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_546": {
+    "text": "20 octubre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_547": {
+    "text": "Maria Pilar Igual: un llegat d'art i generositat",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_548": {
+    "text": "L'artista cedeix la totalitat de la seva obra al fons d'art de la Fundació.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_549": {
+    "text": "← Torna a Notícies",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_550": {
+    "text": "20 gener 2026",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_551": {
+    "text": "Serveis",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_552": {
+    "text": "Lectura 4 min",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_553": {
+    "text": "La Fundació Ave Maria posa en marxa el nou Servei d'Atenció Domiciliària (SAD)",
+    "section": "ACTUALITAT",
+    "parent_tag": "h1"
+  },
+  "mono_554": {
+    "text": "Ampliem els serveis a la comarca del Garraf per oferir suport integral a les persones al seu propi domicili. Un nou pas endavant en el nostre compromís d'acompanyar persones amb dependència en el seu entorn de sempre.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_555": {
+    "text": "El passat mes de gener, la Fundació Ave Maria va inaugurar oficialment el",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_556": {
+    "text": "Servei d'Atenció Domiciliària (SAD)",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_557": {
+    "text": ", una iniciativa pionera pensada per acompanyar les persones amb dependència sense que hagin de deixar la seva llar. Aquest nou servei s'ofereix a tots els municipis de la comarca del Garraf: Sitges, Vilanova i la Geltrú, Sant Pere de Ribes, Cubelles, Canyelles i Olivella.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_558": {
+    "text": "El SAD respon a una necessitat creixent detectada durant els últims anys: cada cop més famílies busquen alternatives per mantenir els seus éssers estimats a casa, envoltats del que els és familiar. \"Volem que ningú es vegi obligat a abandonar la seva llar quan encara pot viure-hi amb els suports adequats\", explica la direcció tècnica de la Fundació.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_559": {
+    "text": "Format per un equip de professionals que acompanya cada persona perquè pugui continuar vivint al seu entorn de sempre, amb la cura, el suport i l'atenció que necessita.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_560": {
+    "text": "— Equip SAD, Fundació Ave Maria",
+    "section": "ACTUALITAT",
+    "parent_tag": "cite"
+  },
+  "mono_561": {
+    "text": "Un model d'atenció integral",
+    "section": "ACTUALITAT",
+    "parent_tag": "h3"
+  },
+  "mono_562": {
+    "text": "El servei inclou ajuda a les activitats de la vida diària (higiene, alimentació, mobilitat), suport a la llar, acompanyament a visites mèdiques, suport emocional i coordinació amb els serveis sanitaris i socials del territori. També ofereix respir familiar per als cuidadors principals, un aspecte sovint oblidat i essencial per a la sostenibilitat de la cura.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_563": {
+    "text": "Com sol·licitar-lo",
+    "section": "ACTUALITAT",
+    "parent_tag": "h3"
+  },
+  "mono_564": {
+    "text": "Les persones interessades poden posar-se en contacte amb l'equip del SAD trucant al 938 94 86 46 o escrivint a sad@avemariafundacio.org. Es concerta una visita a domicili per valorar les necessitats i dissenyar un pla d'atenció personalitzat.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_565": {
+    "text": "Continua llegint",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_566": {
+    "text": "Notícies relacionades",
+    "section": "ACTUALITAT",
+    "parent_tag": "h2"
+  },
+  "mono_567": {
+    "text": "9 desembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_568": {
+    "text": "L'Ajuntament de Vilanova impulsa el projecte Benviure",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_569": {
+    "text": "18 novembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_570": {
+    "text": "Rècord de participació al 20è Torneig Benèfic",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_571": {
+    "text": "3 novembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_572": {
+    "text": "Un concert de pel·lícula omple l'Auditori Meliá",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_573": {
+    "text": "← Torna a Notícies",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_574": {
+    "text": "18 desembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_575": {
+    "text": "Fons d'Art",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_576": {
+    "text": "Lectura 3 min",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_577": {
+    "text": "Art, cultura i compromís social: dues obres dels germans Grangel s'incorporen al Fons d'Art",
+    "section": "ACTUALITAT",
+    "parent_tag": "h1"
+  },
+  "mono_578": {
+    "text": "La Fundació acull dues obres originals dels germans Grangel — \"Pinocchio\" i \"Spirit\" — cedides amb voluntat de contribuir a la comunitat i reforçar el patrimoni artístic que dona identitat als nostres espais.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_579": {
+    "text": "Els",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_580": {
+    "text": "germans Grangel",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_581": {
+    "text": ", il·lustradors reconeguts internacionalment per la seva col·laboració amb estudis com Aardman, Dreamworks i Blue Sky, han cedit a la Fundació Ave Maria dues obres originals que passen a formar part del",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_582": {
+    "text": "Fons d'Art",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_583": {
+    "text": "del centre. Les obres — \"Pinocchio\" i \"Spirit\" — es podran contemplar de manera permanent als espais comuns del Campus Residencial.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_584": {
+    "text": "Aquesta cessió no és només un gest artístic: és un compromís explícit amb el projecte social de la Fundació i amb la comunitat que la sustenta. \"Volíem que aquestes obres visquessin en un lloc on tinguessin sentit, on formessin part del dia a dia de les persones\", han explicat els artistes.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_585": {
+    "text": "L'art té la capacitat de crear vincles i memòria. Quan una obra viu en un espai habitat, es converteix en part de la història de qui l'observa cada dia.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_586": {
+    "text": "— Direcció artística del Fons d'Art",
+    "section": "ACTUALITAT",
+    "parent_tag": "cite"
+  },
+  "mono_587": {
+    "text": "Un fons que creix amb generositat",
+    "section": "ACTUALITAT",
+    "parent_tag": "h3"
+  },
+  "mono_588": {
+    "text": "El Fons d'Art de la Fundació Ave Maria s'ha anat construint gràcies a la generositat d'artistes, col·leccionistes i particulars que han volgut deixar una petjada en el projecte. Cada obra té una història i un context propi, i totes comparteixen la voluntat d'enriquir la vida quotidiana dels usuaris.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_589": {
+    "text": "Visita i accés",
+    "section": "ACTUALITAT",
+    "parent_tag": "h3"
+  },
+  "mono_590": {
+    "text": "Les obres es poden visitar els dies de portes obertes que organitzem periòdicament, així com concertant una visita guiada prèvia. Consulta els propers dies oberts a la nostra pàgina de contacte.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_591": {
+    "text": "Continua llegint",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_592": {
+    "text": "Notícies relacionades",
+    "section": "ACTUALITAT",
+    "parent_tag": "h2"
+  },
+  "mono_593": {
+    "text": "20 octubre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_594": {
+    "text": "Maria Pilar Igual: un llegat d'art i generositat",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_595": {
+    "text": "3 novembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_596": {
+    "text": "Un concert de pel·lícula omple l'Auditori Meliá",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_597": {
+    "text": "20 gener 2026",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_598": {
+    "text": "La Fundació posa en marxa el nou SAD",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_599": {
+    "text": "← Torna a Notícies",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_600": {
+    "text": "9 desembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_601": {
+    "text": "Aliances",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_602": {
+    "text": "Lectura 3 min",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_603": {
+    "text": "L'Ajuntament de Vilanova i la Geltrú impulsa el projecte Benviure",
+    "section": "ACTUALITAT",
+    "parent_tag": "h1"
+  },
+  "mono_604": {
+    "text": "Nova proposta d'habitatge inclusiu al territori per oferir suport i autonomia a persones amb discapacitat intel·lectual, amb la Fundació Ave Maria com a entitat gestora tècnica.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_605": {
+    "text": "L'Ajuntament de Vilanova i la Geltrú, en col·laboració amb la Fundació Ave Maria, ha presentat aquesta setmana el",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_606": {
+    "text": "projecte Benviure",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_607": {
+    "text": ", una iniciativa d'habitatge inclusiu adreçada a persones adultes amb discapacitat intel·lectual que volen viure amb la màxima autonomia possible.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_608": {
+    "text": "El projecte s'inspira en el model",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_609": {
+    "text": "Housing First",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_610": {
+    "text": "que la Fundació ja aplica des de fa anys al programa de Llars amb Suport, i posa a disposició pisos convencionals amb l'acompanyament d'un equip professional que dona suport intermitent adaptat a les necessitats de cada persona.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_611": {
+    "text": "Cada persona té dret a decidir on i com vol viure. Benviure és una manera pràctica de fer real aquest dret, amb tot el suport necessari.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_612": {
+    "text": "— Regidoria de Serveis Socials, Vilanova i la Geltrú",
+    "section": "ACTUALITAT",
+    "parent_tag": "cite"
+  },
+  "mono_613": {
+    "text": "Un projecte compartit amb el territori",
+    "section": "ACTUALITAT",
+    "parent_tag": "h3"
+  },
+  "mono_614": {
+    "text": "Benviure és el resultat de mesos de treball entre l'Ajuntament, la Fundació i les entitats socials del territori. La coordinació amb els serveis municipals de salut i benestar ha estat clau per dissenyar un model que respongui a les necessitats reals de les persones i les seves famílies.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_615": {
+    "text": "Properes fases",
+    "section": "ACTUALITAT",
+    "parent_tag": "h3"
+  },
+  "mono_616": {
+    "text": "La primera fase del projecte començarà amb un pilot de tres habitatges a Vilanova durant el primer semestre de 2026. Les persones interessades poden posar-se en contacte amb els Serveis Socials municipals o directament amb la Fundació Ave Maria.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_617": {
+    "text": "Continua llegint",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_618": {
+    "text": "Notícies relacionades",
+    "section": "ACTUALITAT",
+    "parent_tag": "h2"
+  },
+  "mono_619": {
+    "text": "20 gener 2026",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_620": {
+    "text": "La Fundació posa en marxa el nou SAD",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_621": {
+    "text": "18 novembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_622": {
+    "text": "Rècord de participació al 20è Torneig Benèfic",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_623": {
+    "text": "3 novembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_624": {
+    "text": "Un concert de pel·lícula omple l'Auditori Meliá",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_625": {
+    "text": "← Torna a Notícies",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_626": {
+    "text": "18 novembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_627": {
+    "text": "Esdeveniments",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_628": {
+    "text": "Lectura 2 min",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_629": {
+    "text": "Rècord de participació al 20è Torneig Benèfic de Pitch & Putt",
+    "section": "ACTUALITAT",
+    "parent_tag": "h1"
+  },
+  "mono_630": {
+    "text": "182 jugadors i 3.500 € recaptats en la jornada solidària. La vintena edició del torneig ha superat totes les expectatives i consolida una cita imprescindible al calendari benèfic de Sitges.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_631": {
+    "text": "El passat cap de setmana es va celebrar la",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_632": {
+    "text": "20a edició del Torneig Benèfic de Pitch & Putt",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_633": {
+    "text": "a favor de la Fundació Ave Maria. Una jornada esportiva i festiva que, edició rere edició, es consolida com una cita imprescindible del calendari solidari del Garraf.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_634": {
+    "text": "Amb",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_635": {
+    "text": "182 jugadors inscrits",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_636": {
+    "text": "— nou rècord de participació — i una recaptació final de",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_637": {
+    "text": "3.500 euros",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_638": {
+    "text": ", aquesta vintena edició ha superat totes les expectatives i confirma el compromís d'esportistes i patrocinadors amb el projecte de la Fundació.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_639": {
+    "text": "Vint anys jugant per una mateixa causa. Això és fer comunitat, jugada a jugada.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_640": {
+    "text": "— Comitè organitzador del torneig",
+    "section": "ACTUALITAT",
+    "parent_tag": "cite"
+  },
+  "mono_641": {
+    "text": "Vint anys de complicitat",
+    "section": "ACTUALITAT",
+    "parent_tag": "h3"
+  },
+  "mono_642": {
+    "text": "Des de la seva primera edició, el torneig ha reunit persones vinculades al món del golf i el pitch & putt amb la voluntat comuna de donar suport a projectes socials. Els fons recaptats durant aquestes dues dècades han contribuït a finançar activitats, teràpies i millores a les instal·lacions del Campus Residencial.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_643": {
+    "text": "Agraïments",
+    "section": "ACTUALITAT",
+    "parent_tag": "h3"
+  },
+  "mono_644": {
+    "text": "Volem donar les gràcies a totes les persones i empreses patrocinadores que fan possible aquesta jornada any rere any. Sense el seu suport i la seva generositat, aquest torneig no seria el que és.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_645": {
+    "text": "Continua llegint",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_646": {
+    "text": "Notícies relacionades",
+    "section": "ACTUALITAT",
+    "parent_tag": "h2"
+  },
+  "mono_647": {
+    "text": "3 novembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_648": {
+    "text": "Un concert de pel·lícula omple l'Auditori Meliá",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_649": {
+    "text": "20 octubre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_650": {
+    "text": "Maria Pilar Igual: un llegat d'art i generositat",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_651": {
+    "text": "18 desembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_652": {
+    "text": "Dues obres dels germans Grangel s'incorporen al Fons d'Art",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_653": {
+    "text": "← Torna a Notícies",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_654": {
+    "text": "3 novembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_655": {
+    "text": "Cultura",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_656": {
+    "text": "Lectura 3 min",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_657": {
+    "text": "Un concert de pel·lícula omple l'Auditori Meliá i recapta més d'11.000 €",
+    "section": "ACTUALITAT",
+    "parent_tag": "h1"
+  },
+  "mono_658": {
+    "text": "La Penedès Film Orquestra i el Cor Xamusia van emocionar el públic amb un repertori que va viatjar per les grans bandes sonores del cinema. Una nit inoblidable pel projecte de la Fundació.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_659": {
+    "text": "L'Auditori Meliá va acollir el passat 3 de novembre un concert benèfic a favor de la Fundació Ave Maria que va aconseguir omplir la sala fins a l'últim seient. La",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_660": {
+    "text": "Penedès Film Orquestra",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_661": {
+    "text": ", acompanyada del",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_662": {
+    "text": "Cor Xamusia",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_663": {
+    "text": ", van oferir un repertori d'antologia amb les millors bandes sonores del cinema clàssic i contemporani.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_664": {
+    "text": "La jornada va aconseguir recaptar més de",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_665": {
+    "text": "11.000 euros",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_666": {
+    "text": "que es destinaran íntegrament als programes de teràpies i activitats creatives dels usuaris del Campus Residencial. Una gala emotiva que va posar de manifest la força de la comunitat de Sitges i el Garraf al voltant del projecte de la Fundació.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_667": {
+    "text": "Quan la música es posa al servei d'una causa, els sentiments es multipliquen. Aquesta nit ho hem viscut a l'auditori.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_668": {
+    "text": "— Direcció musical, Penedès Film Orquestra",
+    "section": "ACTUALITAT",
+    "parent_tag": "cite"
+  },
+  "mono_669": {
+    "text": "Un repertori per emocionar",
+    "section": "ACTUALITAT",
+    "parent_tag": "h3"
+  },
+  "mono_670": {
+    "text": "El programa va incloure temes emblemàtics de compositors com John Williams, Ennio Morricone, Hans Zimmer i Alan Silvestri. Especialment ovacionats van ser els fragments de \"El Padrino\", \"Cinema Paradiso\" i \"Interstellar\", interpretats amb una intensitat que va deixar el públic sense paraules.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_671": {
+    "text": "Agraïments especials",
+    "section": "ACTUALITAT",
+    "parent_tag": "h3"
+  },
+  "mono_672": {
+    "text": "Volem agrair a totes les persones intèrprets, tècniques i voluntàries que van fer possible aquesta gala, així com a l'Auditori Meliá per cedir gratuïtament l'espai per a la causa.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_673": {
+    "text": "Continua llegint",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_674": {
+    "text": "Notícies relacionades",
+    "section": "ACTUALITAT",
+    "parent_tag": "h2"
+  },
+  "mono_675": {
+    "text": "18 novembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_676": {
+    "text": "Rècord de participació al 20è Torneig Benèfic",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_677": {
+    "text": "20 octubre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_678": {
+    "text": "Maria Pilar Igual: un llegat d'art i generositat",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_679": {
+    "text": "18 desembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_680": {
+    "text": "Dues obres dels germans Grangel s'incorporen al Fons d'Art",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_681": {
+    "text": "← Torna a Notícies",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_682": {
+    "text": "20 octubre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_683": {
+    "text": "Fons d'Art",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_684": {
+    "text": "Lectura 3 min",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_685": {
+    "text": "Maria Pilar Igual: un llegat d'art i generositat",
+    "section": "ACTUALITAT",
+    "parent_tag": "h1"
+  },
+  "mono_686": {
+    "text": "L'artista cedeix la totalitat de la seva obra al Fons d'Art de la Fundació. Un gest de gran calat que reforça el vincle històric entre l'art contemporani sitgetà i el projecte social de l'Ave Maria.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_687": {
+    "text": "L'artista sitgetana",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_688": {
+    "text": "Maria Pilar Igual",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_689": {
+    "text": "ha decidit cedir la totalitat de la seva obra al Fons d'Art de la Fundació Ave Maria. Es tracta d'una donació de dimensions excepcionals que inclou obra pictòrica, treballs sobre paper i esbossos preparatoris de tota una trajectòria artística que abasta més de quatre dècades.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_690": {
+    "text": "Amb aquest gest, la Fundació passa a ser dipositària d'un patrimoni artístic que reflecteix una part important de la",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_691": {
+    "text": "cultura visual del Sitges contemporani",
+    "section": "ACTUALITAT",
+    "parent_tag": "strong"
+  },
+  "mono_692": {
+    "text": ". Les obres es catalogaran, restauraran quan calgui i s'exposaran de manera rotatòria als espais comuns del Campus i en exposicions temporals obertes al públic.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_693": {
+    "text": "Vull que la meva obra visqui allà on serveixi per a alguna cosa. La Fundació m'ha donat aquesta possibilitat.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_694": {
+    "text": "— Maria Pilar Igual, artista",
+    "section": "ACTUALITAT",
+    "parent_tag": "cite"
+  },
+  "mono_695": {
+    "text": "Un vincle amb el territori",
+    "section": "ACTUALITAT",
+    "parent_tag": "h3"
+  },
+  "mono_696": {
+    "text": "Maria Pilar Igual manté una relació personal amb la Fundació des de fa dècades, tant per la seva activitat artística com per la seva implicació en projectes solidaris del municipi. La seva decisió és un exemple més de com Sitges i la Fundació caminen juntes des de fa gairebé quaranta anys.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_697": {
+    "text": "Propers passos",
+    "section": "ACTUALITAT",
+    "parent_tag": "h3"
+  },
+  "mono_698": {
+    "text": "Durant els propers mesos es procedirà a la catalogació completa del fons rebut i s'anunciaran les primeres exposicions temporals amb selecció d'obra. Estigues atent a les nostres notícies per no perdre-te-les.",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_699": {
+    "text": "Continua llegint",
+    "section": "ACTUALITAT",
+    "parent_tag": "span"
+  },
+  "mono_700": {
+    "text": "Notícies relacionades",
+    "section": "ACTUALITAT",
+    "parent_tag": "h2"
+  },
+  "mono_701": {
+    "text": "18 desembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_702": {
+    "text": "Dues obres dels germans Grangel s'incorporen al Fons d'Art",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_703": {
+    "text": "3 novembre 2025",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_704": {
+    "text": "Un concert de pel·lícula omple l'Auditori Meliá",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_705": {
+    "text": "20 gener 2026",
+    "section": "ACTUALITAT",
+    "parent_tag": "p"
+  },
+  "mono_706": {
+    "text": "La Fundació posa en marxa el nou SAD",
+    "section": "ACTUALITAT",
+    "parent_tag": "a"
+  },
+  "mono_707": {
+    "text": "Av. Artur Carbonell, 11",
+    "section": "CONTACTE",
+    "parent_tag": "div"
+  },
+  "mono_708": {
+    "text": "08870 Sitges (Barcelona)",
+    "section": "CONTACTE",
+    "parent_tag": "div"
+  },
+  "mono_709": {
+    "text": "(+34) 938 94 86 46",
+    "section": "CONTACTE",
+    "parent_tag": "div"
+  },
+  "mono_710": {
+    "text": "Email",
+    "section": "CONTACTE",
+    "parent_tag": "strong"
+  },
+  "mono_711": {
+    "text": "info@avemariafundacio.org",
+    "section": "CONTACTE",
+    "parent_tag": "div"
+  },
+  "mono_712": {
+    "text": "serveis@avemariafundacio.org",
+    "section": "CONTACTE",
+    "parent_tag": "div"
+  },
+  "mono_713": {
+    "text": "sad@avemariafundacio.org",
+    "section": "CONTACTE",
+    "parent_tag": "div"
+  },
+  "mono_714": {
+    "text": "donatius@avemariafundacio.org",
+    "section": "CONTACTE",
+    "parent_tag": "div"
+  },
+  "mono_715": {
+    "text": "empreses@avemariafundacio.org",
+    "section": "CONTACTE",
+    "parent_tag": "div"
+  },
+  "mono_716": {
+    "text": "voluntariat@avemariafundacio.org",
+    "section": "CONTACTE",
+    "parent_tag": "div"
+  },
+  "mono_717": {
+    "text": "llegats@avemariafundacio.org",
+    "section": "CONTACTE",
+    "parent_tag": "div"
+  },
+  "mono_718": {
+    "text": "botiga@avemariafundacio.org",
+    "section": "CONTACTE",
+    "parent_tag": "div"
+  },
+  "mono_719": {
+    "text": "comunicacio@avemariafundacio.org",
+    "section": "CONTACTE",
+    "parent_tag": "div"
+  },
+  "mono_720": {
+    "text": "FB",
+    "section": "CONTACTE",
+    "parent_tag": "a"
+  },
+  "mono_721": {
+    "text": "IG",
+    "section": "CONTACTE",
+    "parent_tag": "a"
+  },
+  "mono_722": {
+    "text": "LI",
+    "section": "CONTACTE",
+    "parent_tag": "a"
+  },
+  "mono_723": {
+    "text": "YT",
+    "section": "CONTACTE",
+    "parent_tag": "a"
+  },
+  "mono_724": {
+    "text": "Google Maps",
+    "section": "CONTACTE",
+    "parent_tag": "span"
+  },
+  "mono_725": {
+    "text": "Email",
+    "section": "CONTACTE",
+    "parent_tag": "label"
+  },
+  "mono_726": {
+    "text": "Selecciona una opció",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_727": {
+    "text": "Selecciona una opción",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_728": {
+    "text": "Informació general",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_729": {
+    "text": "Información general",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_730": {
+    "text": "Serveis i admissions",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_731": {
+    "text": "Servicios y admisiones",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_732": {
+    "text": "Donatius",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_733": {
+    "text": "Donativos",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_734": {
+    "text": "Voluntariat",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_735": {
+    "text": "Voluntariado",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_736": {
+    "text": "Empreses",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_737": {
+    "text": "Empresas",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_738": {
+    "text": "Altres",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_739": {
+    "text": "Otros",
+    "section": "CONTACTE",
+    "parent_tag": "option"
+  },
+  "mono_740": {
+    "text": "Fundació",
+    "section": "FOOTER",
+    "parent_tag": "div"
+  },
+  "mono_741": {
+    "text": "Ave Maria",
+    "section": "FOOTER",
+    "parent_tag": "div"
+  },
+  "mono_742": {
+    "text": "Av. Artur Carbonell, 11",
+    "section": "FOOTER",
+    "parent_tag": "p"
+  },
+  "mono_743": {
+    "text": "08870 Sitges (Barcelona)",
+    "section": "FOOTER",
+    "parent_tag": "p"
+  },
+  "mono_744": {
+    "text": "Tel: 938 94 86 46",
+    "section": "FOOTER",
+    "parent_tag": "p"
+  },
+  "mono_745": {
+    "text": "info@avemariafundacio.org",
+    "section": "FOOTER",
+    "parent_tag": "p"
+  },
+  "mono_746": {
+    "text": "Campus Residencial",
+    "section": "FOOTER",
+    "parent_tag": "a"
+  },
+  "mono_747": {
+    "text": "Cookies",
+    "section": "FOOTER",
+    "parent_tag": "a"
+  }
+}
