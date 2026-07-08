@@ -389,9 +389,20 @@ html, body {
 }
 .btn-present:hover { background: #333; }
 
+.btn-isotip {
+    position: fixed; top: 24px; left: 24px; z-index: 1000;
+    padding: 8px 16px; font-size: 12px; font-weight: 700;
+    background: var(--blau); color: var(--black); border: 1px solid var(--black);
+    border-radius: 999px; cursor: pointer;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    font-family: 'Montserrat', sans-serif;
+    display: flex; align-items: center; gap: 6px;
+    transition: filter 0.2s;
+}
+.btn-isotip:hover { filter: brightness(0.94); }
 /* ════════ PRESENT MODE — només oculta les altres slides ════════ */
-body.presenting .deck-info,
-body.presenting .toolbar { display: none; }
+body.presenting .deck-info { display: none; }
 body.presenting .deck > .slide:not(.is-current) { display: none !important; }
 
 .present-controls {
@@ -482,8 +493,10 @@ body.presenting .present-controls.show { opacity: 1; pointer-events: auto; }
         <button data-lang="ca" class="active" onclick="setLang('ca')">CAT</button>
         <button data-lang="es" onclick="setLang('es')">CAST</button>
     </div>
-    <button class="btn-present" onclick="startPresent()">▶ Presentar</button>
 </div>
+
+<!-- BOTÓ CREAR ISOTIP (fixat a l'esquerra, mateixa alçada que la barra) -->
+<button class="btn-isotip" onclick="goToGenerador()"><span aria-hidden="true">✦</span> Crear Isotip</button>
 
 <!-- PRESENT CONTROLS (només visibles en mode presentació) -->
 <div class="present-controls">
@@ -1384,96 +1397,134 @@ body.presenting .present-controls.show { opacity: 1; pointer-events: auto; }
         </div>
     </div>
 
+    <div style="margin-top: 1cqw;">
+        <a href="https://fonts.google.com/specimen/Montserrat" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5cqw; padding: 0.7cqw 1.4cqw; background: var(--black); color: var(--white); border-radius: 999px; font-size: 0.9cqw; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none;"><span aria-hidden="true">↓</span> Descarregar la Font</a>
+    </div>
+
     <div class="slide-num">39</div>
 </div>
 
-<!-- ═══════════════════════ 34 · DIVIDER 12 ═══════════════════════ -->
-<div class="slide divider rosa">
-    <h2 class="big">Aplicacions</h2>
+<!-- ═══════════════════════ 34 · DIVIDER 12 · LÍNIES SEPARADORES ═══════════════════════ -->
+<div class="slide divider verd">
+    <h2 class="big">Elements<br>de Marca</h2>
     <div class="label">Section 12</div>
     <div class="slide-num">40</div>
 </div>
 
-<!-- ═══════════════════════ 35 · TARGETA + CARTA ═══════════════════════ -->
+<!-- ═══════════════════════ 35 · LÍNIES SEPARADORES · ÚS ═══════════════════════ -->
 <div class="slide full">
-    <span class="slide-tag">12 — Aplicacions</span>
-    <h2 style="font-size: 4cqw; margin-bottom: 0.8cqw;"><small>Section 12</small>Exemples d'Us</h2>
-    <p class="lead">La identitat generativa permet crear materials unics per a cada ocasio, mantenint sempre la coherència de marca.</p>
-    <h3 style="font-size: 1.4cqw; font-weight: 700; margin: 1cqw 0 0.6cqw;">Targeta de Visita · Paper de Carta</h3>
-    <div style="display: flex; gap: 2cqw; align-items: center; justify-content: center; margin-bottom: 1cqw;">
-        <svg viewBox="0 0 400 240" style="width: 24%; filter: drop-shadow(0 0.4cqw 1cqw rgba(0,0,0,0.12));">
-            <rect width="400" height="240" fill="white"/>
-            <image x="32" y="32" width="220" height="67" href="web/BRANDBOOK_MARCA/logos/SVG/logo_horizontal.svg"/>
-            <text x="32" y="160" font-family="Montserrat" font-weight="600" font-size="11" fill="#1a1a1a">Maria Garcia Lopez</text>
-            <text x="32" y="176" font-family="Montserrat" font-weight="400" font-size="9" fill="#666">Directora de Comunicació</text>
-            <text x="32" y="200" font-family="Montserrat" font-weight="400" font-size="8" fill="#999">m.garcia@avemaria.cat</text>
-            <text x="32" y="214" font-family="Montserrat" font-weight="400" font-size="8" fill="#999">+34 938 94 XX XX</text>
-        </svg>
-        <svg viewBox="0 0 400 240" style="width: 24%; filter: drop-shadow(0 0.4cqw 1cqw rgba(0,0,0,0.12));">
-            <rect width="400" height="240" fill="#1a1a1a"/>
-            <image x="125" y="40" width="150" height="160" href="web/BRANDBOOK_MARCA/logos/SVG/LOGO_PARA%20FONDO_NEGRO.svg"/>
-        </svg>
-        <svg viewBox="0 0 210 297" style="width: 13%; filter: drop-shadow(0 0.4cqw 1cqw rgba(0,0,0,0.12));">
-            <rect width="210" height="297" fill="white"/>
-            <image x="20" y="20" width="120" height="36" href="web/BRANDBOOK_MARCA/logos/SVG/logo_horizontal.svg"/>
-            <rect x="20" y="70" width="120" height="2" fill="#eee"/><rect x="20" y="78" width="170" height="2" fill="#eee"/><rect x="20" y="86" width="150" height="2" fill="#eee"/><rect x="20" y="94" width="160" height="2" fill="#eee"/><rect x="20" y="102" width="80" height="2" fill="#eee"/>
-            <rect x="20" y="118" width="170" height="2" fill="#eee"/><rect x="20" y="126" width="165" height="2" fill="#eee"/><rect x="20" y="134" width="140" height="2" fill="#eee"/><rect x="20" y="142" width="170" height="2" fill="#eee"/><rect x="20" y="150" width="100" height="2" fill="#eee"/>
-            <line x1="20" y1="270" x2="190" y2="270" stroke="#eee" stroke-width="0.5"/>
-            <text x="20" y="278" font-family="Montserrat" font-size="3" fill="#999">Fundació Ave Maria de Sitges &middot; Carrer de les Parellades, 52 &middot; 08870 Sitges</text>
-        </svg>
+    <span class="slide-tag">12 — Elements de Marca</span>
+    <h2 style="font-size: 3.5cqw; margin-bottom: 0.6cqw;">Línies Separadores</h2>
+    <p class="lead" style="margin-bottom: 1.1cqw;">Bandes construïdes amb el vocabulari visual i la paleta de la marca. Aporten energia cromàtica i serveixen per separar i delimitar continguts. Hi ha quatre composicions disponibles.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 0.85cqw; margin-bottom: 1.4cqw;">
+        <img src="web/BRANDBOOK_MARCA/lineas/AV_LINE_1.png" alt="Línia separadora · variant 1" style="width: 100%; display: block;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;&quot;>Falta AV_LINE_1.png</div>');">
+        <img src="web/BRANDBOOK_MARCA/lineas/AV_LINE_2.png" alt="Línia separadora · variant 2" style="width: 100%; display: block;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;&quot;>Falta AV_LINE_2.png</div>');">
+        <img src="web/BRANDBOOK_MARCA/lineas/AV_LINE_3.png" alt="Línia separadora · variant 3" style="width: 100%; display: block;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;&quot;>Falta AV_LINE_3.png</div>');">
+        <img src="web/BRANDBOOK_MARCA/lineas/AV_LINE_4.png" alt="Línia separadora · variant 4" style="width: 100%; display: block;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;&quot;>Falta AV_LINE_4.png</div>');">
     </div>
-    <p style="font-size: 0.75cqw; color: var(--gris); text-align: center;">Targeta de visita (anvers · revers) · Paper de carta A4</p>
+
+    <div class="grid-3" style="gap: 1.6cqw;">
+        <div>
+            <h4 style="font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.3cqw;">Orientació</h4>
+            <p style="font-size: 0.75cqw; line-height: 1.5; color: var(--gris);">Només en <strong>horitzontal o vertical</strong>. Mai inclinades, corbes ni deformades.</p>
+        </div>
+        <div>
+            <h4 style="font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.3cqw;">Funció</h4>
+            <p style="font-size: 0.75cqw; line-height: 1.5; color: var(--gris);">Per <strong>delimitar imatges</strong> o separar <strong>seccions i pàgines</strong>, habitualment a la vora.</p>
+        </div>
+        <div>
+            <h4 style="font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.3cqw;">Context</h4>
+            <p style="font-size: 0.75cqw; line-height: 1.5; color: var(--gris);">En pàgines de <strong>fons blanc o negre</strong> amb poc color, on aporten l'accent cromàtic de la marca.</p>
+        </div>
+    </div>
     <div class="slide-num">41</div>
 </div>
 
-<!-- ═══════════════════════ 36 · APLICACIONS REALS ═══════════════════════ -->
+<!-- ═══════════════════════ 35b · LÍNIES SEPARADORES · ÚS EN CONTEXT ═══════════════════════ -->
 <div class="slide full">
-    <span class="slide-tag">12 — Aplicacions</span>
-    <h2 style="font-size: 3.5cqw; margin-bottom: 0.7cqw;">Aplicacions Reals</h2>
-    <p class="lead" style="margin-bottom: 1cqw;">La identitat passa de la pantalla al món físic. Tres exemples reals: un vehicle corporatiu, el vestuari de l'equip i un pin de marca.</p>
-    <div class="grid-2" style="grid-auto-rows: 1fr; gap: 1.3cqw; margin-top: 0.5cqw;">
+    <span class="slide-tag">12 — Elements de Marca</span>
+    <h2 style="font-size: 3.5cqw; margin-bottom: 0.6cqw;">Línies Separadores · Ús en Context</h2>
+    <p class="lead" style="margin-bottom: 0.9cqw;">Exemples reals d'aplicació: sempre en horitzontal o vertical, delimitant imatges o separant seccions i pàgines.</p>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9cqw 2cqw; max-width: 62cqw; margin: 0.2cqw auto 0;">
         <div style="display: flex; flex-direction: column;">
-            <div style="background: #f5f5f5; border: 1px solid var(--line); aspect-ratio: 1/1; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                <img src="web/BRANDBOOK_MARCA/aplicacions/vehicle.png" alt="Vehicle corporatiu" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#999;font-size:0.9cqw;padding:2cqw;&quot;>Falta la imatge<br><code style=&quot;font-size:0.7cqw;&quot;>web/BRANDBOOK_MARCA/aplicacions/vehicle.png</code></div>';">
-            </div>
-            <div style="padding: 0.8cqw 0 0;">
-                <h4 style="font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.3cqw;">Vehicle Corporatiu</h4>
-                <p style="font-size: 0.72cqw; line-height: 1.5; color: var(--gris);">Les formes del vocabulari visual s'amplien a gran escala creant un patró envoltant. El logotip horitzontal en negre s'integra dins una zona neutra per garantir la legibilitat.</p>
-            </div>
+            <img src="web/BRANDBOOK_MARCA/lineas/us-imatge-vertical.png" alt="Línia vertical delimitant una imatge" style="width: 100%; height: auto; display: block; border: 1px solid var(--line);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;padding:1cqw;border:1px solid var(--line);&quot;>Falta us-imatge-vertical.png</div>');">
+            <p style="font-size: 0.72cqw; line-height: 1.45; color: var(--gris); margin-top: 0.5cqw;"><strong>Vertical</strong> · delimitant una imatge a sang.</p>
         </div>
         <div style="display: flex; flex-direction: column;">
-            <div style="background: #f5f5f5; border: 1px solid var(--line); aspect-ratio: 1/1; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                <img src="web/BRANDBOOK_MARCA/aplicacions/polo.png" alt="Vestuari · Polo amb logotip brodat" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#999;font-size:0.9cqw;padding:2cqw;&quot;>Falta la imatge<br><code style=&quot;font-size:0.7cqw;&quot;>web/BRANDBOOK_MARCA/aplicacions/polo.png</code></div>';">
-            </div>
-            <div style="padding: 0.8cqw 0 0;">
-                <h4 style="font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.3cqw;">Vestuari · Polo Equip</h4>
-                <p style="font-size: 0.72cqw; line-height: 1.5; color: var(--gris);">Logotip vertical brodat al pit esquerre del polo blanc, en mida petita per a una presència discreta i elegant. L'isotip a color manté l'energia de la marca.</p>
-            </div>
+            <img src="web/BRANDBOOK_MARCA/aplicacions/exemples/exemple-5.png" alt="Línia vertical al marge de la pàgina" style="width: 100%; height: auto; display: block; border: 1px solid var(--line);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;padding:1cqw;border:1px solid var(--line);&quot;>Falta exemple-5.png</div>');">
+            <p style="font-size: 0.72cqw; line-height: 1.45; color: var(--gris); margin-top: 0.5cqw;"><strong>Vertical</strong> · al marge de la pàgina.</p>
         </div>
         <div style="display: flex; flex-direction: column;">
-            <div style="background: #f5f5f5; border: 1px solid var(--line); aspect-ratio: 1/1; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                <img src="web/BRANDBOOK_MARCA/aplicacions/pin.png" alt="Pin / insígnia de marca" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#999;font-size:0.9cqw;padding:2cqw;&quot;>Falta la imatge<br><code style=&quot;font-size:0.7cqw;&quot;>web/BRANDBOOK_MARCA/aplicacions/pin.png</code></div>';">
-            </div>
-            <div style="padding: 0.8cqw 0 0;">
-                <h4 style="font-size: 1.05cqw; font-weight: 700; margin-bottom: 0.3cqw;">Pin · Insígnia</h4>
-                <p style="font-size: 0.72cqw; line-height: 1.5; color: var(--gris);">El sistema generatiu condensat en una peça quadrada de merchandising. Una variació única de l'isotip esmaltat, amb la cel·la blanca que recorda l'invitació a qui arriba.</p>
-            </div>
+            <img src="web/BRANDBOOK_MARCA/aplicacions/exemples/exemple-2.png" alt="Línia horitzontal al peu de la pàgina" style="width: 100%; height: auto; display: block; border: 1px solid var(--line);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;padding:1cqw;border:1px solid var(--line);&quot;>Falta exemple-2.png</div>');">
+            <p style="font-size: 0.72cqw; line-height: 1.45; color: var(--gris); margin-top: 0.5cqw;"><strong>Horitzontal</strong> · al peu de la pàgina.</p>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+            <img src="web/BRANDBOOK_MARCA/aplicacions/exemples/exemple-6.png" alt="Línia sota una galeria d'imatges" style="width: 100%; height: auto; display: block; border: 1px solid var(--line);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;padding:1cqw;border:1px solid var(--line);&quot;>Falta exemple-6.png</div>');">
+            <p style="font-size: 0.72cqw; line-height: 1.45; color: var(--gris); margin-top: 0.5cqw;"><strong>Horitzontal</strong> · separant una galeria d'imatges.</p>
         </div>
     </div>
     <div class="slide-num">42</div>
 </div>
 
-<!-- ═══════════════════════ 37 · CLOSING ═══════════════════════ -->
+<!-- ═══════════════════════ 36 · DIVIDER 13 · CREADOR D'ISOTIP ═══════════════════════ -->
+<div class="slide divider blau">
+    <h2 class="big">Creador<br>d'Isotip</h2>
+    <div class="label">Section 13</div>
+    <div class="slide-num">43</div>
+</div>
+
+<!-- ═══════════════════════ 35 · CONFIGURADOR D'ISOTIP (EMBED) ═══════════════════════ -->
+<div class="slide" id="slide-generador" style="padding: 0; overflow: hidden; background: var(--white);">
+    <iframe src="generador-isotipo.html" title="Configurador d'Isotip · Ave Maria Fundació" style="width: 100%; height: 100%; border: 0; display: block;"></iframe>
+    <div class="slide-num" style="background: rgba(255,255,255,0.85); padding: 0.2cqw 0.5cqw; border-radius: 0.3cqw; opacity: 0.9;">44</div>
+</div>
+
+<!-- ═══════════════════════ 36 · DIVIDER 13 · APLICACIONS ═══════════════════════ -->
+<div class="slide divider rosa">
+    <h2 class="big">Aplicacions</h2>
+    <div class="label">Section 14</div>
+    <div class="slide-num">45</div>
+</div>
+
+<!-- ═══════════════════════ 37 · EXEMPLES D'US · PRESENTACIONS ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">14 — Aplicacions</span>
+    <h2 style="font-size: 3.5cqw; margin-bottom: 0.6cqw;">Exemples d'Us · Presentacions</h2>
+    <p class="lead" style="margin-bottom: 0.9cqw;">El sistema aplicat a diapositives: portades, processos, dades i galeries mantenint sempre la coherència de marca.</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3cqw;">
+        <img src="web/BRANDBOOK_MARCA/aplicacions/exemples/exemple-1.png" alt="Exemple de diapositiva · propòsit" style="width: 100%; height: auto; display: block; border: 1px solid var(--line);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;padding:1cqw;border:1px solid var(--line);&quot;>Falta exemple-1.png</div>');">
+        <img src="web/BRANDBOOK_MARCA/aplicacions/exemples/exemple-2.png" alt="Exemple de diapositiva · procés" style="width: 100%; height: auto; display: block; border: 1px solid var(--line);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;padding:1cqw;border:1px solid var(--line);&quot;>Falta exemple-2.png</div>');">
+        <img src="web/BRANDBOOK_MARCA/aplicacions/exemples/exemple-3.png" alt="Exemple de diapositiva · dades" style="width: 100%; height: auto; display: block; border: 1px solid var(--line);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;padding:1cqw;border:1px solid var(--line);&quot;>Falta exemple-3.png</div>');">
+        <img src="web/BRANDBOOK_MARCA/aplicacions/exemples/exemple-4.png" alt="Exemple de diapositiva · gràfic" style="width: 100%; height: auto; display: block; border: 1px solid var(--line);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;padding:1cqw;border:1px solid var(--line);&quot;>Falta exemple-4.png</div>');">
+        <img src="web/BRANDBOOK_MARCA/aplicacions/exemples/exemple-5.png" alt="Exemple de diapositiva · àrees" style="width: 100%; height: auto; display: block; border: 1px solid var(--line);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;padding:1cqw;border:1px solid var(--line);&quot;>Falta exemple-5.png</div>');">
+        <img src="web/BRANDBOOK_MARCA/aplicacions/exemples/exemple-6.png" alt="Exemple de diapositiva · galeria" style="width: 100%; height: auto; display: block; border: 1px solid var(--line);" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.7cqw;padding:1cqw;border:1px solid var(--line);&quot;>Falta exemple-6.png</div>');">
+    </div>
+    <div class="slide-num">46</div>
+</div>
+
+<!-- ═══════════════════════ 38 · APLICACIONS REALS (MASONRY) ═══════════════════════ -->
+<div class="slide full">
+    <span class="slide-tag">14 — Aplicacions</span>
+    <h2 style="font-size: 3.5cqw; margin-bottom: 0.7cqw;">Aplicacions Reals</h2>
+    <p class="lead" style="margin-bottom: 1cqw;">La identitat passa de la pantalla al món físic: el vehicle corporatiu, el vestuari de l'equip, el pin de marca i l'uniforme complet amb acreditació.</p>
+    <div style="display: flex; justify-content: center; align-items: center; flex: 1; min-height: 0; margin-top: 0.4cqw;">
+        <img src="web/BRANDBOOK_MARCA/aplicacions/aplicacions-masonry.png" alt="Aplicacions reals de la identitat: uniforme, vehicle, pin i acreditació" style="display: block; max-width: 100%; max-height: 100%; width: auto; height: auto;" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=&quot;color:#999;font-size:0.8cqw;padding:2cqw;border:1px solid var(--line);&quot;>Falta la imatge<br><code style=&quot;font-size:0.7cqw;&quot;>web/BRANDBOOK_MARCA/aplicacions/aplicacions-masonry.png</code></div>');">
+    </div>
+    <div class="slide-num">47</div>
+</div>
+
+<!-- ═══════════════════════ 39 · CLOSING ═══════════════════════ -->
 <div class="slide statement dark">
     <h2 class="headline">Un lloc per<br>a tothom.</h2>
     <p class="body">Cada aplicació de la identitat és una oportunitat de comunicar els nostres valors. L'espai en blanc sempre present ens recorda que la Fundació està oberta a noves persones, noves idees i nous projectes. La identitat, com la propia organitzacio, està viva i en constant evolució.</p>
     <div style="position: absolute; bottom: 4%; left: 3.1%; font-size: 0.75cqw; opacity: 0.6; letter-spacing: 0.06em;">AVE MARIA FUNDACIO · Manual d'Identitat Visual · v2.0 · Marc 2026 · Sitges, Catalunya</div>
-    <div class="slide-num">43</div>
+    <div class="slide-num">48</div>
 </div>
 
 </div>
 
-<div class="deck-info">37 slides · 1920×1080 · Ave Maria Fundació Brand Guidelines v2.0</div>
+<div class="deck-info">42 slides · 1920×1080 · Ave Maria Fundació Brand Guidelines v2.0</div>
 
 <script>
 // CAT → ES dictionary (complet, ~429 entrades)
@@ -1481,6 +1532,8 @@ const ca2es = {
   "Ave Maria Fundació — Brand Guidelines": "Ave María Fundación — Brand Guidelines",
   "CAT": "CAT",
   "CAST": "CAST",
+  "Crear Isotip": "Crear Isotipo",
+  "Descarregar la Font": "Descargar la Fuente",
   "Una identitat viva per a un espai on tot passa. Sistema d'identitat visual generatiu per a la Fundació Ave Maria de Sitges.": "Una identidad viva para un espacio donde todo ocurre. Sistema de identidad visual generativo para la Fundación Ave María de Sitges.",
   "Brand": "Brand",
   "Guidelines": "Guidelines",
@@ -1522,6 +1575,31 @@ const ca2es = {
   "Section 10": "Sección 10",
   "Section 11": "Sección 11",
   "Section 12": "Sección 12",
+  "Section 13": "Sección 13",
+  "Section 14": "Sección 14",
+  "Línies": "Líneas",
+  "Separadores": "Separadoras",
+  "Línies Separadores": "Líneas Separadoras",
+  "Elements": "Elementos",
+  "de Marca": "de Marca",
+  "12 — Elements de Marca": "12 — Elementos de Marca",
+  "Línies Separadores · Ús en Context": "Líneas Separadoras · Uso en Contexto",
+  "Exemples reals d'aplicació: sempre en horitzontal o vertical, delimitant imatges o separant seccions i pàgines.": "Ejemplos reales de aplicación: siempre en horizontal o vertical, delimitando imágenes o separando secciones y páginas.",
+  "<strong>Vertical</strong> · delimitant una imatge a sang.": "<strong>Vertical</strong> · delimitando una imagen a sangre.",
+  "<strong>Vertical</strong> · al marge de la pàgina.": "<strong>Vertical</strong> · en el margen de la página.",
+  "<strong>Horitzontal</strong> · al peu de la pàgina.": "<strong>Horizontal</strong> · al pie de la página.",
+  "<strong>Horitzontal</strong> · separant una galeria d'imatges.": "<strong>Horizontal</strong> · separando una galería de imágenes.",
+  "Bandes construïdes amb el vocabulari visual i la paleta de la marca. Aporten energia cromàtica i serveixen per separar i delimitar continguts. Hi ha quatre composicions disponibles.": "Bandas construidas con el vocabulario visual y la paleta de la marca. Aportan energía cromática y sirven para separar y delimitar contenidos. Hay cuatro composiciones disponibles.",
+  "Orientació": "Orientación",
+  "Només en <strong>horitzontal o vertical</strong>. Mai inclinades, corbes ni deformades.": "Solo en <strong>horizontal o vertical</strong>. Nunca inclinadas, curvas ni deformadas.",
+  "Funció": "Función",
+  "Per <strong>delimitar imatges</strong> o separar <strong>seccions i pàgines</strong>, habitualment a la vora.": "Para <strong>delimitar imágenes</strong> o separar <strong>secciones y páginas</strong>, habitualmente en el borde.",
+  "Context": "Contexto",
+  "En pàgines de <strong>fons blanc o negre</strong> amb poc color, on aporten l'accent cromàtic de la marca.": "En páginas de <strong>fondo blanco o negro</strong> con poco color, donde aportan el acento cromático de la marca.",
+  "14 — Aplicacions": "14 — Aplicaciones",
+  "Creador": "Creador",
+  "d'Isotip": "de Isotipo",
+  "13 — Aplicacions": "13 — Aplicaciones",
   "Section 03 · Stages": "Sección 03 · Stages",
   "Section 03 · Recorregut": "Sección 03 · Recorrido",
   "Section 03 · Aplicacions del to": "Sección 03 · Aplicaciones del tono",
@@ -1887,6 +1965,8 @@ const ca2es = {
   "El cos de text sempre va en Montserrat Regular per a una lectura clara fins i tot a mides petites.": "El cuerpo de texto siempre va en Montserrat Regular para una lectura clara incluso a tamaños pequeños.",
   "Montserrat Regular també per a les notes al peu i metadades.": "Montserrat Regular también para las notas al pie y metadatos.",
   "Exemples d'Us": "Ejemplos de Uso",
+  "Exemples d'Us · Presentacions": "Ejemplos de Uso · Presentaciones",
+  "El sistema aplicat a diapositives: portades, processos, dades i galeries mantenint sempre la coherència de marca.": "El sistema aplicado a diapositivas: portadas, procesos, datos y galerías manteniendo siempre la coherencia de marca.",
   "La identitat generativa permet crear materials unics per a cada ocasio, mantenint sempre la coherència de marca.": "La identidad generativa permite crear materiales únicos para cada ocasión, manteniendo siempre la coherencia de marca.",
   "Targeta de Visita · Paper de Carta": "Tarjeta de Visita · Papel de Carta",
   "Maria Garcia Lopez": "María García López",
@@ -1894,7 +1974,12 @@ const ca2es = {
   "Fundació Ave Maria de Sitges · Carrer de les Parellades, 52 · 08870 Sitges": "Fundación Ave María de Sitges · Carrer de les Parellades, 52 · 08870 Sitges",
   "Targeta de visita (anvers · revers) · Paper de carta A4": "Tarjeta de visita (anverso · reverso) · Papel de carta A4",
   "Aplicacions Reals": "Aplicaciones Reales",
-  "La identitat passa de la pantalla al món físic. Tres exemples reals: un vehicle corporatiu, el vestuari de l'equip i un pin de marca.": "La identidad pasa de la pantalla al mundo físico. Tres ejemplos reales: un vehículo corporativo, el vestuario del equipo y un pin de marca.",
+  "La identitat passa de la pantalla al món físic: el vehicle corporatiu, el vestuari de l'equip, el pin de marca i l'uniforme complet amb acreditació.": "La identidad pasa de la pantalla al mundo físico: el vehículo corporativo, el vestuario del equipo, el pin de marca y el uniforme completo con acreditación.",
+  "Polo bicolor amb l'isotip brodat i el naming a la màniga, combinat amb pantaló en verd institucional.": "Polo bicolor con el isotipo bordado y el naming en la manga, combinado con pantalón en verde institucional.",
+  "Les formes del vocabulari visual s'amplien creant un patró envoltant; el logotip horitzontal s'integra en una zona neutra.": "Las formas del vocabulario visual se amplían creando un patrón envolvente; el logotipo horizontal se integra en una zona neutra.",
+  "Isotip a color brodat al pit del polo blanc, en mida petita per a una presència discreta i elegant.": "Isotipo a color bordado en el pecho del polo blanco, en tamaño pequeño para una presencia discreta y elegante.",
+  "Polo institucional amb la targeta identificativa personal; el cordó recull els colors del vocabulari visual.": "Polo institucional con la tarjeta identificativa personal; el cordón recoge los colores del vocabulario visual.",
+  "La identitat passa de la pantalla al món físic. Exemples reals: un vehicle corporatiu, el vestuari de l'equip, un pin de marca i l'uniforme complet amb acreditació.": "La identidad pasa de la pantalla al mundo físico. Ejemplos reales: un vehículo corporativo, el vestuario del equipo, un pin de marca y el uniforme completo con acreditación.",
   "Falta la imatge": "Falta la imagen",
   "Vehicle Corporatiu": "Vehículo Corporativo",
   "Les formes del vocabulari visual s'amplien a gran escala creant un patró envoltant. El logotip horitzontal en negre s'integra dins una zona neutra per garantir la legibilitat.": "Las formas del vocabulario visual se amplían a gran escala creando un patrón envolvente. El logotipo horizontal en negro se integra dentro de una zona neutra para garantizar la legibilidad.",
@@ -1902,11 +1987,17 @@ const ca2es = {
   "Logotip vertical brodat al pit esquerre del polo blanc, en mida petita per a una presència discreta i elegant. L'isotip a color manté l'energia de la marca.": "Logotipo vertical bordado en el pecho izquierdo del polo blanco, en tamaño pequeño para una presencia discreta y elegante. El isotipo a color mantiene la energía de la marca.",
   "Pin · Insígnia": "Pin · Insignia",
   "El sistema generatiu condensat en una peça quadrada de merchandising. Una variació única de l'isotip esmaltat, amb la cel·la blanca que recorda l'invitació a qui arriba.": "El sistema generativo condensado en una pieza cuadrada de merchandising. Una variación única del isotipo esmaltado, con la celda blanca que recuerda la invitación a quien llega.",
+  "Uniforme Corporatiu": "Uniforme Corporativo",
+  "El vestuari de l'equip com a extensió de la identitat. L'isotip a color i el verd institucional generen una imatge coherent i reconeixible en tots els serveis de la Fundació.": "El vestuario del equipo como extensión de la identidad. El isotipo a color y el verde institucional generan una imagen coherente y reconocible en todos los servicios de la Fundación.",
+  "Uniforme · Acreditació": "Uniforme · Acreditación",
+  "El logotip vertical estampat al pit del polo institucional, acompanyat de la targeta d'identificació personal. El cordó i el revers de la targeta recullen els colors del vocabulari visual per reforçar la pertinença a l'equip.": "El logotipo vertical estampado en el pecho del polo institucional, acompañado de la tarjeta de identificación personal. El cordón y el reverso de la tarjeta recogen los colores del vocabulario visual para reforzar la pertenencia al equipo.",
+  "Uniforme · Conjunt Complet": "Uniforme · Conjunto Completo",
+  "L'uniforme corporatiu en verd institucional: polo bicolor amb l'isotip a color brodat al pit i el naming a la màniga, combinat amb pantaló a joc. Una imatge d'equip coherent i reconeixible en tots els serveis.": "El uniforme corporativo en verde institucional: polo bicolor con el isotipo a color bordado en el pecho y el naming en la manga, combinado con pantalón a juego. Una imagen de equipo coherente y reconocible en todos los servicios.",
   "Un lloc per": "Un lugar para",
   "a tothom.": "todos.",
   "Cada aplicació de la identitat és una oportunitat de comunicar els nostres valors. L'espai en blanc sempre present ens recorda que la Fundació està oberta a noves persones, noves idees i nous projectes. La identitat, com la propia organitzacio, està viva i en constant evolució.": "Cada aplicación de la identidad es una oportunidad de comunicar nuestros valores. El espacio en blanco siempre presente nos recuerda que la Fundación está abierta a nuevas personas, nuevas ideas y nuevos proyectos. La identidad, como la propia organización, está viva y en constante evolución.",
   "AVE MARIA FUNDACIO · Manual d'Identitat Visual · v2.0 · Marc 2026 · Sitges, Catalunya": "AVE MARIA FUNDACIÓN · Manual de Identidad Visual · v2.0 · Marzo 2026 · Sitges, Cataluña",
-  "37 slides · 1920×1080 · Ave Maria Fundació Brand Guidelines v2.0": "37 slides · 1920×1080 · Ave María Fundación Brand Guidelines v2.0"
+  "42 slides · 1920×1080 · Ave Maria Fundació Brand Guidelines v2.0": "42 slides · 1920×1080 · Ave María Fundación Brand Guidelines v2.0"
 };
 
 
@@ -1953,10 +2044,34 @@ function showSlide(idx) {
     if (tot) tot.textContent = slides.length;
 }
 
+function togglePresent() {
+    if (document.body.classList.contains('presenting')) exitPresent();
+    else startPresent();
+}
+
+function goToGenerador() {
+    const target = document.getElementById('slide-generador');
+    if (!target) return;
+    if (document.body.classList.contains('presenting')) {
+        const list = (slides && slides.length) ? slides : getSlides();
+        const idx = list.indexOf(target);
+        if (idx >= 0) showSlide(idx);
+        showControls();
+    } else {
+        target.scrollIntoView({ block: 'start' });
+    }
+}
+
+function setPresentIcon(symbol) {
+    const pi = document.querySelector('.present-icon');
+    if (pi) pi.textContent = symbol;
+}
+
 function startPresent() {
     slides = getSlides();
     document.body.classList.add('presenting');
     document.getElementById('totalSlides').textContent = slides.length;
+    setPresentIcon('✕');
     showSlide(0);
     showControls();
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -1965,6 +2080,7 @@ function startPresent() {
 function exitPresent() {
     document.body.classList.remove('presenting');
     slides.forEach(s => s.classList.remove('is-current'));
+    setPresentIcon('▶');
 }
 
 function nextSlide() {
