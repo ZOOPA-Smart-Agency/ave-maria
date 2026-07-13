@@ -3,7 +3,7 @@
 <!-- ===================== HEADER ===================== -->
 <header id="header">
 <a aria-label="Fundació Ave Maria — inici" class="brand" href="#home" onclick="showPage('home')">
-<img alt="Fundació Ave Maria" class="brand-logo" src="{{img_081}}"/>
+<img alt="Fundació Ave Maria" class="brand-logo" src="{{img_091}}"/>
 </a>
 <nav class="main">
 <div class="nav-item has-sub">
@@ -97,7 +97,11 @@
 </div>
 </div>
 <div class="hero-right">
-<div aria-label="Façana de la Fundació Ave Maria" class="hero-img" role="img"></div>
+<div class="hero-img">
+<video autoplay="" loop="" muted="" playsinline="" style="width:100%;height:100%;object-fit:cover">
+<source src="{{img_090}}" type="video/mp4"/>
+</video>
+</div>
 <div class="hero-card">
 <p class="hc-text"><span data-lang-ca="">{{txt_037_ca}}</span><span data-lang-es="">{{txt_037_es}}</span></p>
 <a class="btn hero-card-btn" href="#donar" onclick="showPage('donar')"><span data-lang-ca="">{{txt_038_ca}}</span><span data-lang-es="">{{txt_038_es}}</span> <span class="arr">→</span></a>
@@ -147,13 +151,61 @@
 <button aria-label="Següent" class="scroller-arrow is-next"><svg viewbox="0 0 24 24"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
 </div>
 <div class="serveis-grid is-scroller" id="homeServScroller">
-
-
-
-
-
-
-{{BLOCK_SERVEIS_HOME}}</div>
+<div class="servei-card" data-reveal="">
+<div class="servei-img" style="background-image:url('{{img_001}}')"></div>
+<div class="servei-content">
+<span class="servei-num">01</span>
+<h3>{{mono_016}}</h3>
+<p><span data-lang-ca="">{{txt_049_ca}}</span><span data-lang-es="">{{txt_049_es}}</span></p>
+<a href="#campus" onclick="showPage('campus')"><span data-lang-ca="">{{txt_050_ca}}</span><span data-lang-es="">{{txt_050_es}}</span> <span class="arr">→</span></a>
+</div>
+</div>
+<div class="servei-card" data-reveal="" data-reveal-d="1">
+<div class="servei-img" style="background-image:url('{{img_002}}')"></div>
+<div class="servei-content">
+<span class="servei-num">02</span>
+<h3><span data-lang-ca="">{{txt_051_ca}}</span><span data-lang-es="">{{txt_051_es}}</span></h3>
+<p><span data-lang-ca="">{{txt_052_ca}}</span><span data-lang-es="">{{txt_052_es}}</span></p>
+<a href="#llars" onclick="showPage('llars')"><span data-lang-ca="">{{txt_053_ca}}</span><span data-lang-es="">{{txt_053_es}}</span> <span class="arr">→</span></a>
+</div>
+</div>
+<div class="servei-card" data-reveal="" data-reveal-d="2">
+<div class="servei-img" style="background-image:url('{{img_003}}')"></div>
+<div class="servei-content">
+<span class="servei-num">03</span>
+<h3><span data-lang-ca="">{{txt_054_ca}}</span><span data-lang-es="">{{txt_054_es}}</span></h3>
+<p><span data-lang-ca="">{{txt_055_ca}}</span><span data-lang-es="">{{txt_055_es}}</span></p>
+<a href="#sad" onclick="showPage('sad')"><span data-lang-ca="">{{txt_056_ca}}</span><span data-lang-es="">{{txt_056_es}}</span> <span class="arr">→</span></a>
+</div>
+</div>
+<div class="servei-card" data-reveal="">
+<div class="servei-img" style="background-image:url('{{img_004}}')"></div>
+<div class="servei-content">
+<span class="servei-num">04</span>
+<h3><span data-lang-ca="">{{txt_057_ca}}</span><span data-lang-es="">{{txt_057_es}}</span></h3>
+<p><span data-lang-ca="">{{txt_058_ca}}</span><span data-lang-es="">{{txt_058_es}}</span></p>
+<a href="#centresdia" onclick="showPage('centresdia')"><span data-lang-ca="">{{txt_059_ca}}</span><span data-lang-es="">{{txt_059_es}}</span> <span class="arr">→</span></a>
+</div>
+</div>
+<div class="servei-card" data-reveal="" data-reveal-d="1">
+<div class="servei-img" style="background-image:url('{{img_005}}')"></div>
+<div class="servei-content">
+<span class="servei-num">05</span>
+<h3><span data-lang-ca="">{{txt_060_ca}}</span><span data-lang-es="">{{txt_060_es}}</span></h3>
+<p><span data-lang-ca="">{{txt_061_ca}}</span><span data-lang-es="">{{txt_061_es}}</span></p>
+<a href="#families" onclick="showPage('families')"><span data-lang-ca="">{{txt_062_ca}}</span><span data-lang-es="">{{txt_062_es}}</span> <span class="arr">→</span></a>
+</div>
+</div>
+<div class="servei-card" data-reveal="" data-reveal-d="2">
+<div class="servei-img" style="background-image:url('{{img_006}}')"></div>
+<div class="servei-content">
+<span class="servei-num">06</span>
+<h3><span data-lang-ca="">{{txt_063_ca}}</span><span data-lang-es="">{{txt_063_es}}</span></h3>
+<p><span data-lang-ca="">{{txt_064_ca}}</span><span data-lang-es="">{{txt_064_es}}</span></p>
+<a href="#recerca" onclick="showPage('recerca')"><span data-lang-ca="">{{txt_065_ca}}</span><span data-lang-es="">{{txt_065_es}}</span> <span class="arr">→</span></a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -216,10 +268,63 @@
 <button aria-label="Anterior" class="tc-arrow tc-prev"><svg viewbox="0 0 24 24"><polyline points="15 6 9 12 15 18"></polyline></svg></button>
 <div class="tc-viewport">
 <div class="tc-track" id="testimonisTrack">
-
-
-
-{{BLOCK_TESTIMONIS}}</div>
+<article class="tc-card" style="--card-acc:var(--coral)">
+<span class="tc-mark">"</span>
+<p class="tc-text">{{mono_021}}</p>
+<div class="tc-foot">
+<p class="tc-author">{{mono_022}}</p>
+<p class="tc-role">{{mono_023}}</p>
+</div>
+</article>
+<article class="tc-card" style="--card-acc:var(--rosa)">
+<span class="tc-mark">"</span>
+<p class="tc-text">{{mono_024}}</p>
+<div class="tc-foot">
+<p class="tc-author">{{mono_025}}</p>
+<p class="tc-role">{{mono_026}}</p>
+</div>
+</article>
+<article class="tc-card" style="--card-acc:var(--verd)">
+<span class="tc-mark">"</span>
+<p class="tc-text">{{mono_027}}</p>
+<div class="tc-foot">
+<p class="tc-author">{{mono_028}}</p>
+<p class="tc-role">{{mono_029}}</p>
+</div>
+</article>
+<article class="tc-card" style="--card-acc:var(--blau)">
+<span class="tc-mark">"</span>
+<p class="tc-text">{{mono_030}}</p>
+<div class="tc-foot">
+<p class="tc-author">{{mono_031}}</p>
+<p class="tc-role">{{mono_032}}</p>
+</div>
+</article>
+<article class="tc-card" style="--card-acc:var(--taronja)">
+<span class="tc-mark">"</span>
+<p class="tc-text">{{mono_033}}</p>
+<div class="tc-foot">
+<p class="tc-author">{{mono_034}}</p>
+<p class="tc-role">{{mono_035}}</p>
+</div>
+</article>
+<article class="tc-card" style="--card-acc:var(--groc)">
+<span class="tc-mark">"</span>
+<p class="tc-text">{{mono_036}}</p>
+<div class="tc-foot">
+<p class="tc-author">{{mono_037}}</p>
+<p class="tc-role">{{mono_038}}</p>
+</div>
+</article>
+<article class="tc-card" style="--card-acc:var(--coral)">
+<span class="tc-mark">"</span>
+<p class="tc-text">{{mono_039}}</p>
+<div class="tc-foot">
+<p class="tc-author">{{mono_040}}</p>
+<p class="tc-role">{{mono_041}}</p>
+</div>
+</article>
+</div>
 </div>
 <button aria-label="Següent" class="tc-arrow tc-next"><svg viewbox="0 0 24 24"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
 <div class="tc-dots" id="testimonisDots"></div>
@@ -231,36 +336,54 @@
 <div class="container">
 <div class="sec-head" data-reveal="">
 <div class="sh-l">
-<span class="eyebrow" style="--acc:var(--verd)">{{mono_024}}</span>
-<h2><span data-lang-ca="">{{txt_088_ca}}</span><span data-lang-es="">{{txt_088_es}}</span></h2>
+<span class="eyebrow" style="--acc:var(--verd)">{{mono_042}}</span>
+<h2><span data-lang-ca="">{{txt_082_ca}}</span><span data-lang-es="">{{txt_082_es}}</span></h2>
 </div>
-<a class="btn btn-ghost" href="#actualitat" onclick="showPage('actualitat')" style="--acc:var(--verd)"><span data-lang-ca="">{{txt_089_ca}}</span><span data-lang-es="">{{txt_089_es}}</span> <span class="arr">→</span></a>
+<a class="btn btn-ghost" href="#actualitat" onclick="showPage('actualitat')" style="--acc:var(--verd)"><span data-lang-ca="">{{txt_083_ca}}</span><span data-lang-es="">{{txt_083_es}}</span> <span class="arr">→</span></a>
 </div>
 <div class="noticies-grid">
-
-
-
-{{BLOCK_NOTICIES_HOME}}</div>
+<div class="noticia-card" data-reveal="">
+<div class="noticia-img" style="background-image:url('{{img_007}}')"></div>
+<div class="noticia-content">
+<p class="noticia-date"><span data-lang-ca="">{{txt_084_ca}}</span><span data-lang-es="">{{txt_084_es}}</span></p>
+<h3><a href="#noticia-1" onclick="showPage('noticia-1')"><span data-lang-ca="">{{txt_085_ca}}</span><span data-lang-es="">{{txt_085_es}}</span></a></h3>
+</div>
+</div>
+<div class="noticia-card" data-reveal="" data-reveal-d="1">
+<div class="noticia-img" style="background-image:url('{{img_008}}')"></div>
+<div class="noticia-content">
+<p class="noticia-date"><span data-lang-ca="">{{txt_086_ca}}</span><span data-lang-es="">{{txt_086_es}}</span></p>
+<h3><a href="#noticia-2" onclick="showPage('noticia-2')"><span data-lang-ca="">{{txt_087_ca}}</span><span data-lang-es="">{{txt_087_es}}</span></a></h3>
+</div>
+</div>
+<div class="noticia-card" data-reveal="" data-reveal-d="2">
+<div class="noticia-img" style="background-image:url('{{img_009}}')"></div>
+<div class="noticia-content">
+<p class="noticia-date"><span data-lang-ca="">{{txt_088_ca}}</span><span data-lang-es="">{{txt_088_es}}</span></p>
+<h3><a href="#noticia-3" onclick="showPage('noticia-3')"><span data-lang-ca="">{{txt_089_ca}}</span><span data-lang-es="">{{txt_089_es}}</span></a></h3>
+</div>
+</div>
+</div>
 </div>
 </section>
 <!-- COL·LABORADORS -->
 <section class="collaboradors" style="--acc:var(--taronja)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--taronja)">{{mono_025}}</span>
-<h2 style="margin-top:18px"><span data-lang-ca="">{{txt_096_ca}}</span><span data-lang-es="">{{txt_096_es}}</span></h2>
+<span class="eyebrow center" style="--acc:var(--taronja)">{{mono_043}}</span>
+<h2 style="margin-top:18px"><span data-lang-ca="">{{txt_090_ca}}</span><span data-lang-es="">{{txt_090_es}}</span></h2>
 </div>
 </div>
 <div class="marquee" data-reveal="">
 <div class="marquee-track">
-<span class="logo-item">{{mono_026}}</span><span class="logo-item">{{mono_027}}</span><span class="logo-item">{{mono_028}}</span><span class="logo-item">{{mono_029}}</span><span class="logo-item">{{mono_030}}</span>
-<span class="logo-item">{{mono_031}}</span><span class="logo-item">{{mono_032}}</span><span class="logo-item">{{mono_033}}</span><span class="logo-item">{{mono_034}}</span><span class="logo-item">{{mono_035}}</span>
+<span class="logo-item">{{mono_044}}</span><span class="logo-item">{{mono_045}}</span><span class="logo-item">{{mono_046}}</span><span class="logo-item">{{mono_047}}</span><span class="logo-item">{{mono_048}}</span>
+<span class="logo-item">{{mono_049}}</span><span class="logo-item">{{mono_050}}</span><span class="logo-item">{{mono_051}}</span><span class="logo-item">{{mono_052}}</span><span class="logo-item">{{mono_053}}</span>
 </div>
 </div>
 <div class="marquee">
 <div class="marquee-track rev">
-<span class="logo-item">{{mono_036}}</span><span class="logo-item">{{mono_037}}</span><span class="logo-item">{{mono_038}}</span><span class="logo-item">{{mono_039}}</span><span class="logo-item">{{mono_040}}</span>
-<span class="logo-item">{{mono_041}}</span><span class="logo-item">{{mono_042}}</span><span class="logo-item">{{mono_043}}</span><span class="logo-item">{{mono_044}}</span><span class="logo-item">{{mono_045}}</span>
+<span class="logo-item">{{mono_054}}</span><span class="logo-item">{{mono_055}}</span><span class="logo-item">{{mono_056}}</span><span class="logo-item">{{mono_057}}</span><span class="logo-item">{{mono_058}}</span>
+<span class="logo-item">{{mono_059}}</span><span class="logo-item">{{mono_060}}</span><span class="logo-item">{{mono_061}}</span><span class="logo-item">{{mono_062}}</span><span class="logo-item">{{mono_063}}</span>
 </div>
 </div>
 </section>
@@ -270,29 +393,29 @@
 <div class="page" id="quisom" style="--acc:var(--blau)">
 <div class="page-header">
 <div class="container">
-<p class="breadcrumb"><a href="#home" onclick="showPage('home')"><span data-lang-ca="">{{txt_097_ca}}</span><span data-lang-es="">{{txt_097_es}}</span></a> / <span data-lang-ca="">{{txt_098_ca}}</span><span data-lang-es="">{{txt_098_es}}</span></p>
-<h1><span data-lang-ca="">{{txt_099_ca}}</span><span data-lang-es="">{{txt_099_es}}</span></h1>
-<p class="subtitle"><span data-lang-ca="">{{txt_100_ca}}</span><span data-lang-es="">{{txt_100_es}}</span></p>
+<p class="breadcrumb"><a href="#home" onclick="showPage('home')"><span data-lang-ca="">{{txt_091_ca}}</span><span data-lang-es="">{{txt_091_es}}</span></a> / <span data-lang-ca="">{{txt_092_ca}}</span><span data-lang-es="">{{txt_092_es}}</span></p>
+<h1><span data-lang-ca="">{{txt_093_ca}}</span><span data-lang-es="">{{txt_093_es}}</span></h1>
+<p class="subtitle"><span data-lang-ca="">{{txt_094_ca}}</span><span data-lang-es="">{{txt_094_es}}</span></p>
 </div>
 </div>
 <nav class="page-nav">
 <div class="page-nav-inner">
-<a class="active" href="#quisom" onclick="showPage('quisom')"><span data-lang-ca="">{{txt_101_ca}}</span><span data-lang-es="">{{txt_101_es}}</span></a>
-<a href="#historia" onclick="showPage('historia')"><span data-lang-ca="">{{txt_102_ca}}</span><span data-lang-es="">{{txt_102_es}}</span></a>
-<a href="#missio" onclick="showPage('missio')"><span data-lang-ca="">{{txt_103_ca}}</span><span data-lang-es="">{{txt_103_es}}</span></a>
-<a href="#equip" onclick="showPage('equip')"><span data-lang-ca="">{{txt_104_ca}}</span><span data-lang-es="">{{txt_104_es}}</span></a>
-<a href="#transparencia" onclick="showPage('transparencia')"><span data-lang-ca="">{{txt_105_ca}}</span><span data-lang-es="">{{txt_105_es}}</span></a>
+<a class="active" href="#quisom" onclick="showPage('quisom')"><span data-lang-ca="">{{txt_095_ca}}</span><span data-lang-es="">{{txt_095_es}}</span></a>
+<a href="#historia" onclick="showPage('historia')"><span data-lang-ca="">{{txt_096_ca}}</span><span data-lang-es="">{{txt_096_es}}</span></a>
+<a href="#missio" onclick="showPage('missio')"><span data-lang-ca="">{{txt_097_ca}}</span><span data-lang-es="">{{txt_097_es}}</span></a>
+<a href="#equip" onclick="showPage('equip')"><span data-lang-ca="">{{txt_098_ca}}</span><span data-lang-es="">{{txt_098_es}}</span></a>
+<a href="#transparencia" onclick="showPage('transparencia')"><span data-lang-ca="">{{txt_099_ca}}</span><span data-lang-es="">{{txt_099_es}}</span></a>
 </div>
 </nav>
 <!-- 1) Presentació: text introductori, ample editorial -->
 <section class="content-section qs-intro" style="--acc:var(--blau)">
 <div class="container">
 <div class="qs-intro-text" data-reveal="">
-<span class="eyebrow" style="--acc:var(--blau)"><span data-lang-ca="">{{txt_106_ca}}</span><span data-lang-es="">{{txt_106_es}}</span></span>
-<h2><span data-lang-ca="">{{txt_107_ca}}</span><span data-lang-es="">{{txt_107_es}}</span></h2>
-<p class="qs-lede"><span data-lang-ca="">{{txt_108_ca}}</span><span data-lang-es="">{{txt_108_es}}</span></p>
-<p><span data-lang-ca="">{{txt_109_ca}}</span><span data-lang-es="">{{txt_109_es}}</span></p>
-<p><span data-lang-ca="">{{txt_110_ca}}</span><span data-lang-es="">{{txt_110_es}}</span></p>
+<span class="eyebrow" style="--acc:var(--blau)"><span data-lang-ca="">{{txt_100_ca}}</span><span data-lang-es="">{{txt_100_es}}</span></span>
+<h2><span data-lang-ca="">{{txt_101_ca}}</span><span data-lang-es="">{{txt_101_es}}</span></h2>
+<p class="qs-lede"><span data-lang-ca="">{{txt_102_ca}}</span><span data-lang-es="">{{txt_102_es}}</span></p>
+<p><span data-lang-ca="">{{txt_103_ca}}</span><span data-lang-es="">{{txt_103_es}}</span></p>
+<p><span data-lang-ca="">{{txt_104_ca}}</span><span data-lang-es="">{{txt_104_es}}</span></p>
 </div>
 </div>
 </section>
@@ -301,35 +424,35 @@
 <div class="container">
 <div class="sec-head" data-reveal="">
 <div class="sh-l">
-<span class="eyebrow" style="--acc:var(--taronja)"><span data-lang-ca="">{{txt_111_ca}}</span><span data-lang-es="">{{txt_111_es}}</span></span>
-<h2><span data-lang-ca="">{{txt_112_ca}}</span><span data-lang-es="">{{txt_112_es}}</span></h2>
+<span class="eyebrow" style="--acc:var(--taronja)"><span data-lang-ca="">{{txt_105_ca}}</span><span data-lang-es="">{{txt_105_es}}</span></span>
+<h2><span data-lang-ca="">{{txt_106_ca}}</span><span data-lang-es="">{{txt_106_es}}</span></h2>
 </div>
-<span class="idx">{{mono_046}}</span>
+<span class="idx">{{mono_064}}</span>
 </div>
 <div class="stats-grid qs-stats-grid">
 <div class="stat-item" data-reveal="">
 <div class="stat-number">1987</div>
-<div class="stat-label"><span data-lang-ca="">{{txt_113_ca}}</span><span data-lang-es="">{{txt_113_es}}</span></div>
+<div class="stat-label"><span data-lang-ca="">{{txt_107_ca}}</span><span data-lang-es="">{{txt_107_es}}</span></div>
 </div>
 <div class="stat-item" data-reveal="" data-reveal-d="1">
-<div class="stat-number">{{mono_047}}</div>
-<div class="stat-label"><span data-lang-ca="">{{txt_114_ca}}</span><span data-lang-es="">{{txt_114_es}}</span></div>
+<div class="stat-number">{{mono_065}}</div>
+<div class="stat-label"><span data-lang-ca="">{{txt_108_ca}}</span><span data-lang-es="">{{txt_108_es}}</span></div>
 </div>
 <div class="stat-item" data-reveal="" data-reveal-d="2">
 <div class="stat-number">+65</div>
-<div class="stat-label"><span data-lang-ca="">{{txt_115_ca}}</span><span data-lang-es="">{{txt_115_es}}</span></div>
+<div class="stat-label"><span data-lang-ca="">{{txt_109_ca}}</span><span data-lang-es="">{{txt_109_es}}</span></div>
 </div>
 <div class="stat-item" data-reveal="">
 <div class="stat-number">60</div>
-<div class="stat-label"><span data-lang-ca="">{{txt_116_ca}}</span><span data-lang-es="">{{txt_116_es}}</span></div>
+<div class="stat-label"><span data-lang-ca="">{{txt_110_ca}}</span><span data-lang-es="">{{txt_110_es}}</span></div>
 </div>
 <div class="stat-item" data-reveal="" data-reveal-d="1">
 <div class="stat-number">5</div>
-<div class="stat-label"><span data-lang-ca="">{{txt_117_ca}}</span><span data-lang-es="">{{txt_117_es}}</span></div>
+<div class="stat-label"><span data-lang-ca="">{{txt_111_ca}}</span><span data-lang-es="">{{txt_111_es}}</span></div>
 </div>
 <div class="stat-item" data-reveal="" data-reveal-d="2">
-<div class="stat-number">{{mono_048}}</div>
-<div class="stat-label"><span data-lang-ca="">{{txt_118_ca}}</span><span data-lang-es="">{{txt_118_es}}</span></div>
+<div class="stat-number">{{mono_066}}</div>
+<div class="stat-label"><span data-lang-ca="">{{txt_112_ca}}</span><span data-lang-es="">{{txt_112_es}}</span></div>
 </div>
 </div>
 </div>
@@ -347,10 +470,10 @@
 <section class="content-section qs-historia" style="--acc:var(--groc);background:var(--paper-2)">
 <div class="container">
 <div class="qs-intro-text" data-reveal="">
-<span class="eyebrow" style="--acc:var(--groc)"><span data-lang-ca="">{{txt_119_ca}}</span><span data-lang-es="">{{txt_119_es}}</span></span>
-<h2><span data-lang-ca="">{{txt_120_ca}}</span><span data-lang-es="">{{txt_120_es}}</span></h2>
-<p><span data-lang-ca="">{{txt_121_ca}}</span><span data-lang-es="">{{txt_121_es}}</span></p>
-<p><span data-lang-ca="">{{txt_122_ca}}</span><span data-lang-es="">{{txt_122_es}}</span></p>
+<span class="eyebrow" style="--acc:var(--groc)"><span data-lang-ca="">{{txt_113_ca}}</span><span data-lang-es="">{{txt_113_es}}</span></span>
+<h2><span data-lang-ca="">{{txt_114_ca}}</span><span data-lang-es="">{{txt_114_es}}</span></h2>
+<p><span data-lang-ca="">{{txt_115_ca}}</span><span data-lang-es="">{{txt_115_es}}</span></p>
+<p><span data-lang-ca="">{{txt_116_ca}}</span><span data-lang-es="">{{txt_116_es}}</span></p>
 </div>
 </div>
 </section>
@@ -358,29 +481,29 @@
 <section class="content-section qs-mvv" style="--acc:var(--verd)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--verd)"><span data-lang-ca="">{{txt_123_ca}}</span><span data-lang-es="">{{txt_123_es}}</span></span>
-<h2><span data-lang-ca="">{{txt_124_ca}}</span><span data-lang-es="">{{txt_124_es}}</span></h2>
+<span class="eyebrow center" style="--acc:var(--verd)"><span data-lang-ca="">{{txt_117_ca}}</span><span data-lang-es="">{{txt_117_es}}</span></span>
+<h2><span data-lang-ca="">{{txt_118_ca}}</span><span data-lang-es="">{{txt_118_es}}</span></h2>
 </div>
 <div class="mvv-grid">
 <article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)">
 <span class="mvv-num">01</span>
-<h3><span data-lang-ca="">{{txt_125_ca}}</span><span data-lang-es="">{{txt_125_es}}</span></h3>
-<p><span data-lang-ca="">{{txt_126_ca}}</span><span data-lang-es="">{{txt_126_es}}</span></p>
+<h3><span data-lang-ca="">{{txt_119_ca}}</span><span data-lang-es="">{{txt_119_es}}</span></h3>
+<p><span data-lang-ca="">{{txt_120_ca}}</span><span data-lang-es="">{{txt_120_es}}</span></p>
 </article>
 <article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--blau)">
 <span class="mvv-num">02</span>
-<h3><span data-lang-ca="">{{txt_127_ca}}</span><span data-lang-es="">{{txt_127_es}}</span></h3>
-<p><span data-lang-ca="">{{txt_128_ca}}</span><span data-lang-es="">{{txt_128_es}}</span></p>
+<h3><span data-lang-ca="">{{txt_121_ca}}</span><span data-lang-es="">{{txt_121_es}}</span></h3>
+<p><span data-lang-ca="">{{txt_122_ca}}</span><span data-lang-es="">{{txt_122_es}}</span></p>
 </article>
 <article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--verd)">
 <span class="mvv-num">03</span>
-<h3><span data-lang-ca="">{{txt_129_ca}}</span><span data-lang-es="">{{txt_129_es}}</span></h3>
+<h3><span data-lang-ca="">{{txt_123_ca}}</span><span data-lang-es="">{{txt_123_es}}</span></h3>
 <ul class="mvv-list">
-<li><span data-lang-ca="">{{txt_130_ca}}</span><span data-lang-es="">{{txt_130_es}}</span></li>
-<li><span data-lang-ca="">{{txt_131_ca}}</span><span data-lang-es="">{{txt_131_es}}</span></li>
-<li><span data-lang-ca="">{{txt_132_ca}}</span><span data-lang-es="">{{txt_132_es}}</span></li>
-<li><span data-lang-ca="">{{txt_133_ca}}</span><span data-lang-es="">{{txt_133_es}}</span></li>
-<li><span data-lang-ca="">{{txt_134_ca}}</span><span data-lang-es="">{{txt_134_es}}</span></li>
+<li><span data-lang-ca="">{{txt_124_ca}}</span><span data-lang-es="">{{txt_124_es}}</span></li>
+<li><span data-lang-ca="">{{txt_125_ca}}</span><span data-lang-es="">{{txt_125_es}}</span></li>
+<li><span data-lang-ca="">{{txt_126_ca}}</span><span data-lang-es="">{{txt_126_es}}</span></li>
+<li><span data-lang-ca="">{{txt_127_ca}}</span><span data-lang-es="">{{txt_127_es}}</span></li>
+<li><span data-lang-ca="">{{txt_128_ca}}</span><span data-lang-es="">{{txt_128_es}}</span></li>
 </ul>
 </article>
 </div>
@@ -390,32 +513,32 @@
 <section class="content-section qs-docs" style="--acc:var(--coral);background:var(--paper-2)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--coral)"><span data-lang-ca="">{{txt_135_ca}}</span><span data-lang-es="">{{txt_135_es}}</span></span>
-<h2><span data-lang-ca="">{{txt_136_ca}}</span><span data-lang-es="">{{txt_136_es}}</span></h2>
-<p><span data-lang-ca="">{{txt_137_ca}}</span><span data-lang-es="">{{txt_137_es}}</span></p>
+<span class="eyebrow center" style="--acc:var(--coral)"><span data-lang-ca="">{{txt_129_ca}}</span><span data-lang-es="">{{txt_129_es}}</span></span>
+<h2><span data-lang-ca="">{{txt_130_ca}}</span><span data-lang-es="">{{txt_130_es}}</span></h2>
+<p><span data-lang-ca="">{{txt_131_ca}}</span><span data-lang-es="">{{txt_131_es}}</span></p>
 </div>
 <div class="docs-grid">
 <a class="doc-card" data-reveal="" href="#" style="--card-acc:var(--taronja)">
 <svg class="doc-icon" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="14 3 14 9 20 9"></polyline></svg>
 <div class="doc-text">
-<span class="doc-name"><span data-lang-ca="">{{txt_138_ca}}</span><span data-lang-es="">{{txt_138_es}}</span></span>
-<span class="doc-meta">{{mono_049}}</span>
+<span class="doc-name"><span data-lang-ca="">{{txt_132_ca}}</span><span data-lang-es="">{{txt_132_es}}</span></span>
+<span class="doc-meta">{{mono_067}}</span>
 </div>
 <span class="doc-arrow">↓</span>
 </a>
 <a class="doc-card" data-reveal="" data-reveal-d="1" href="#" style="--card-acc:var(--blau)">
 <svg class="doc-icon" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="14 3 14 9 20 9"></polyline></svg>
 <div class="doc-text">
-<span class="doc-name"><span data-lang-ca="">{{txt_139_ca}}</span><span data-lang-es="">{{txt_139_es}}</span></span>
-<span class="doc-meta">{{mono_050}}</span>
+<span class="doc-name"><span data-lang-ca="">{{txt_133_ca}}</span><span data-lang-es="">{{txt_133_es}}</span></span>
+<span class="doc-meta">{{mono_068}}</span>
 </div>
 <span class="doc-arrow">↓</span>
 </a>
 <a class="doc-card" data-reveal="" data-reveal-d="2" href="#" style="--card-acc:var(--verd)">
 <svg class="doc-icon" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="14 3 14 9 20 9"></polyline></svg>
 <div class="doc-text">
-<span class="doc-name"><span data-lang-ca="">{{txt_140_ca}}</span><span data-lang-es="">{{txt_140_es}}</span></span>
-<span class="doc-meta">{{mono_051}}</span>
+<span class="doc-name"><span data-lang-ca="">{{txt_134_ca}}</span><span data-lang-es="">{{txt_134_es}}</span></span>
+<span class="doc-meta">{{mono_069}}</span>
 </div>
 <span class="doc-arrow">↓</span>
 </a>
@@ -427,117 +550,112 @@
 <div class="page" id="historia" style="--acc:var(--groc)">
 <div class="page-header">
 <div class="container">
-<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_052}}</a> / <a href="#quisom" onclick="showPage('quisom')">{{mono_053}}</a> {{mono_054}}</p>
-<h1>{{mono_055}}</h1>
-<p class="subtitle">{{mono_056}}</p>
+<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_070}}</a> / <a href="#quisom" onclick="showPage('quisom')">{{mono_071}}</a> {{mono_072}}</p>
+<h1>{{mono_073}}</h1>
+<p class="subtitle">{{mono_074}}</p>
 </div>
 </div>
 <nav class="page-nav">
 <div class="page-nav-inner">
-<a href="#quisom" onclick="showPage('quisom')"><span data-lang-ca="">{{txt_141_ca}}</span><span data-lang-es="">{{txt_141_es}}</span></a>
-<a class="active" href="#historia" onclick="showPage('historia')"><span data-lang-ca="">{{txt_142_ca}}</span><span data-lang-es="">{{txt_142_es}}</span></a>
-<a href="#missio" onclick="showPage('missio')"><span data-lang-ca="">{{txt_143_ca}}</span><span data-lang-es="">{{txt_143_es}}</span></a>
-<a href="#equip" onclick="showPage('equip')"><span data-lang-ca="">{{txt_144_ca}}</span><span data-lang-es="">{{txt_144_es}}</span></a>
-<a href="#transparencia" onclick="showPage('transparencia')"><span data-lang-ca="">{{txt_145_ca}}</span><span data-lang-es="">{{txt_145_es}}</span></a>
+<a href="#quisom" onclick="showPage('quisom')"><span data-lang-ca="">{{txt_135_ca}}</span><span data-lang-es="">{{txt_135_es}}</span></a>
+<a class="active" href="#historia" onclick="showPage('historia')"><span data-lang-ca="">{{txt_136_ca}}</span><span data-lang-es="">{{txt_136_es}}</span></a>
+<a href="#missio" onclick="showPage('missio')"><span data-lang-ca="">{{txt_137_ca}}</span><span data-lang-es="">{{txt_137_es}}</span></a>
+<a href="#equip" onclick="showPage('equip')"><span data-lang-ca="">{{txt_138_ca}}</span><span data-lang-es="">{{txt_138_es}}</span></a>
+<a href="#transparencia" onclick="showPage('transparencia')"><span data-lang-ca="">{{txt_139_ca}}</span><span data-lang-es="">{{txt_139_es}}</span></a>
 </div>
 </nav>
 <section class="content-section">
 <div class="origen-block" data-reveal="">
 <div class="origen-inner">
-<h2 class="origen-title">{{mono_057}}</h2>
+<h2 class="origen-title">{{mono_075}}</h2>
 <div class="origen-cols">
 <div class="origen-col">
-<span class="col-n">{{mono_058}}</span>
-<p>{{mono_059}} <strong>{{mono_060}}</strong>{{mono_061}}</p>
+<span class="col-n">{{mono_076}}</span>
+<p>{{mono_077}} <strong>{{mono_078}}</strong>{{mono_079}}</p>
 </div>
 <div class="origen-col">
-<span class="col-n">{{mono_062}}</span>
-<p>{{mono_063}} <strong>1987</strong>{{mono_064}}</p>
+<span class="col-n">{{mono_080}}</span>
+<p>{{mono_081}} <strong>1987</strong>{{mono_082}}</p>
 </div>
 <div class="origen-col">
-<span class="col-n">{{mono_065}}</span>
-<p>{{mono_066}} <strong>{{mono_067}}</strong>.</p>
+<span class="col-n">{{mono_083}}</span>
+<p>{{mono_084}} <strong>{{mono_085}}</strong>.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="feature-quote" data-reveal="">
-<p><span class="fq-mk">“</span>{{mono_068}}<span class="fq-mk">”</span></p>
+<p><span class="fq-mk">“</span>{{mono_086}}<span class="fq-mk">”</span></p>
 </div>
 </section>
 <!-- LÍNIA TEMPORAL — carrusel horitzontal -->
 <section class="content-section tl-section">
-<div class="container"><h3 class="tl-title">{{mono_069}}</h3></div>
+<div class="container"><h3 class="tl-title">{{mono_087}}</h3></div>
 <div class="timeline-wrap" data-reveal="">
 <div class="timeline" id="timelineHist">
 <div class="timeline-track">
 <div class="tl-item">
-<div class="tl-head"><div class="tl-year">1987</div><p class="tl-desc">{{mono_070}}</p></div>
+<div class="tl-head"><div class="tl-year">1987</div><p class="tl-desc">{{mono_088}}</p></div>
 <div class="tl-rail"><span class="tl-dot"></span></div>
 <div class="tl-media"><div class="ph tl-img" style="background-image:url('{{img_010}}')"></div></div>
 </div>
 <div class="tl-item">
-<div class="tl-head"><div class="tl-year">1995</div><p class="tl-desc">{{mono_071}}</p></div>
+<div class="tl-head"><div class="tl-year">1995</div><p class="tl-desc">{{mono_089}}</p></div>
 <div class="tl-rail"><span class="tl-dot"></span></div>
 <div class="tl-media"><div class="ph tl-img" style="background-image:url('{{img_011}}')"></div></div>
 </div>
 <div class="tl-item">
-<div class="tl-head"><div class="tl-year">2005</div><p class="tl-desc">{{mono_072}}</p></div>
+<div class="tl-head"><div class="tl-year">2005</div><p class="tl-desc">{{mono_090}}</p></div>
 <div class="tl-rail"><span class="tl-dot"></span></div>
 <div class="tl-media"><div class="ph tl-img" style="background-image:url('{{img_012}}')"></div></div>
 </div>
 <div class="tl-item">
-<div class="tl-head"><div class="tl-year">2010</div><p class="tl-desc">{{mono_073}}</p></div>
+<div class="tl-head"><div class="tl-year">2010</div><p class="tl-desc">{{mono_091}}</p></div>
 <div class="tl-rail"><span class="tl-dot"></span></div>
 <div class="tl-media"><div class="ph tl-img" style="background-image:url('{{img_013}}')"></div></div>
 </div>
 <div class="tl-item">
-<div class="tl-head"><div class="tl-year">2015</div><p class="tl-desc">{{mono_074}}</p></div>
+<div class="tl-head"><div class="tl-year">2015</div><p class="tl-desc">{{mono_092}}</p></div>
 <div class="tl-rail"><span class="tl-dot"></span></div>
 <div class="tl-media"><div class="ph tl-img" style="background-image:url('{{img_014}}')"></div></div>
 </div>
 <div class="tl-item">
-<div class="tl-head"><div class="tl-year">2018</div><p class="tl-desc">{{mono_075}}</p></div>
+<div class="tl-head"><div class="tl-year">2018</div><p class="tl-desc">{{mono_093}}</p></div>
 <div class="tl-rail"><span class="tl-dot"></span></div>
 <div class="tl-media"><div class="ph tl-img" style="background-image:url('{{img_015}}')"></div></div>
 </div>
 <div class="tl-item">
-<div class="tl-head"><div class="tl-year">2020</div><p class="tl-desc">{{mono_076}}</p></div>
+<div class="tl-head"><div class="tl-year">2020</div><p class="tl-desc">{{mono_094}}</p></div>
 <div class="tl-rail"><span class="tl-dot"></span></div>
 <div class="tl-media"><div class="ph tl-img" style="background-image:url('{{img_016}}')"></div></div>
 </div>
-<div class="tl-item">
-<div class="tl-head"><div class="tl-year">2024</div><p class="tl-desc">{{mono_077}}</p></div>
+<div class="tl-item current">
+<div class="tl-head"><div class="tl-year">2025</div><p class="tl-desc">{{mono_095}}</p></div>
 <div class="tl-rail"><span class="tl-dot"></span></div>
 <div class="tl-media"><div class="ph tl-img" style="background-image:url('{{img_017}}')"></div></div>
 </div>
-<div class="tl-item current">
-<div class="tl-head"><div class="tl-year">2025</div><p class="tl-desc">{{mono_078}}</p></div>
-<div class="tl-rail"><span class="tl-dot"></span></div>
-<div class="tl-media"><div class="ph tl-img" style="background-image:url('{{img_018}}')"></div></div>
 </div>
 </div>
 </div>
-</div>
-<div class="container"><p class="tl-hint">{{mono_079}}</p></div>
+<div class="container"><p class="tl-hint">{{mono_096}}</p></div>
 </section>
 </div>
 <!-- ==================== MISSIÓ ==================== -->
 <div class="page" id="missio" style="--acc:var(--verd)">
 <div class="page-header">
 <div class="container">
-<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_080}}</a> / <a href="#quisom" onclick="showPage('quisom')">{{mono_081}}</a> {{mono_082}}</p>
-<h1>{{mono_083}}</h1>
-<p class="subtitle">{{mono_084}}</p>
+<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_097}}</a> / <a href="#quisom" onclick="showPage('quisom')">{{mono_098}}</a> {{mono_099}}</p>
+<h1>{{mono_100}}</h1>
+<p class="subtitle">{{mono_101}}</p>
 </div>
 </div>
 <nav class="page-nav">
 <div class="page-nav-inner">
-<a href="#quisom" onclick="showPage('quisom')"><span data-lang-ca="">{{txt_146_ca}}</span><span data-lang-es="">{{txt_146_es}}</span></a>
-<a href="#historia" onclick="showPage('historia')"><span data-lang-ca="">{{txt_147_ca}}</span><span data-lang-es="">{{txt_147_es}}</span></a>
-<a class="active" href="#missio" onclick="showPage('missio')"><span data-lang-ca="">{{txt_148_ca}}</span><span data-lang-es="">{{txt_148_es}}</span></a>
-<a href="#equip" onclick="showPage('equip')"><span data-lang-ca="">{{txt_149_ca}}</span><span data-lang-es="">{{txt_149_es}}</span></a>
-<a href="#transparencia" onclick="showPage('transparencia')"><span data-lang-ca="">{{txt_150_ca}}</span><span data-lang-es="">{{txt_150_es}}</span></a>
+<a href="#quisom" onclick="showPage('quisom')"><span data-lang-ca="">{{txt_140_ca}}</span><span data-lang-es="">{{txt_140_es}}</span></a>
+<a href="#historia" onclick="showPage('historia')"><span data-lang-ca="">{{txt_141_ca}}</span><span data-lang-es="">{{txt_141_es}}</span></a>
+<a class="active" href="#missio" onclick="showPage('missio')"><span data-lang-ca="">{{txt_142_ca}}</span><span data-lang-es="">{{txt_142_es}}</span></a>
+<a href="#equip" onclick="showPage('equip')"><span data-lang-ca="">{{txt_143_ca}}</span><span data-lang-es="">{{txt_143_es}}</span></a>
+<a href="#transparencia" onclick="showPage('transparencia')"><span data-lang-ca="">{{txt_144_ca}}</span><span data-lang-es="">{{txt_144_es}}</span></a>
 </div>
 </nav>
 <section class="content-section">
@@ -545,41 +663,41 @@
 <div class="content-main" data-reveal="" style="max-width:840px;margin:0 auto">
 <div class="mv-wrap" data-reveal="">
 <div class="mv-hero">
-<h2 class="mv-title">{{mono_085}}</h2>
+<h2 class="mv-title">{{mono_102}}</h2>
 </div>
 <div class="mv-cards">
 <div class="mv-card is-verd">
-<div class="mv-label">{{mono_086}}</div>
-<p class="mv-text">{{mono_087}}</p>
+<div class="mv-label">{{mono_103}}</div>
+<p class="mv-text">{{mono_104}}</p>
 </div>
 <div class="mv-card is-blau">
-<div class="mv-label">{{mono_088}}</div>
-<p class="mv-text">{{mono_089}}</p>
+<div class="mv-label">{{mono_105}}</div>
+<p class="mv-text">{{mono_106}}</p>
 </div>
 </div>
 </div>
 <section class="vals-section">
-<h2 class="vals-title">{{mono_090}}</h2>
+<h2 class="vals-title">{{mono_107}}</h2>
 <div class="vals-bands" id="valsBands">
 <div class="vb is-open" data-i="1" style="--c:var(--verd)">
-<div class="vb-spine"><span class="vb-spine-name">{{mono_091}}</span><span class="vb-spine-num">01</span></div>
-<div class="vb-content"><div class="vb-num-big">01</div><h3>{{mono_092}}</h3><p>{{mono_093}}</p></div>
+<div class="vb-spine"><span class="vb-spine-name">{{mono_108}}</span><span class="vb-spine-num">01</span></div>
+<div class="vb-content"><div class="vb-num-big">01</div><h3>{{mono_109}}</h3><p>{{mono_110}}</p></div>
 </div>
 <div class="vb" data-i="2" style="--c:var(--blau)">
-<div class="vb-spine"><span class="vb-spine-name">{{mono_094}}</span><span class="vb-spine-num">02</span></div>
-<div class="vb-content"><div class="vb-num-big">02</div><h3>{{mono_095}}</h3><p>{{mono_096}}</p></div>
+<div class="vb-spine"><span class="vb-spine-name">{{mono_111}}</span><span class="vb-spine-num">02</span></div>
+<div class="vb-content"><div class="vb-num-big">02</div><h3>{{mono_112}}</h3><p>{{mono_113}}</p></div>
 </div>
 <div class="vb" data-i="3" style="--c:var(--coral)">
-<div class="vb-spine"><span class="vb-spine-name">{{mono_097}}</span><span class="vb-spine-num">03</span></div>
-<div class="vb-content"><div class="vb-num-big">03</div><h3>{{mono_098}}</h3><p>{{mono_099}}</p></div>
+<div class="vb-spine"><span class="vb-spine-name">{{mono_114}}</span><span class="vb-spine-num">03</span></div>
+<div class="vb-content"><div class="vb-num-big">03</div><h3>{{mono_115}}</h3><p>{{mono_116}}</p></div>
 </div>
 <div class="vb" data-i="4" style="--c:var(--taronja)">
-<div class="vb-spine"><span class="vb-spine-name">{{mono_100}}</span><span class="vb-spine-num">04</span></div>
-<div class="vb-content"><div class="vb-num-big">04</div><h3>{{mono_101}}</h3><p>{{mono_102}}</p></div>
+<div class="vb-spine"><span class="vb-spine-name">{{mono_117}}</span><span class="vb-spine-num">04</span></div>
+<div class="vb-content"><div class="vb-num-big">04</div><h3>{{mono_118}}</h3><p>{{mono_119}}</p></div>
 </div>
 <div class="vb" data-i="5" style="--c:var(--groc)">
-<div class="vb-spine"><span class="vb-spine-name">{{mono_103}}</span><span class="vb-spine-num">05</span></div>
-<div class="vb-content"><div class="vb-num-big">05</div><h3>{{mono_104}}</h3><p>{{mono_105}}</p></div>
+<div class="vb-spine"><span class="vb-spine-name">{{mono_120}}</span><span class="vb-spine-num">05</span></div>
+<div class="vb-content"><div class="vb-num-big">05</div><h3>{{mono_121}}</h3><p>{{mono_122}}</p></div>
 </div>
 </div>
 </section>
@@ -591,18 +709,18 @@
 <div class="page" id="equip" style="--acc:var(--groc)">
 <div class="page-header">
 <div class="container">
-<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_106}}</a> / <a href="#quisom" onclick="showPage('quisom')">{{mono_107}}</a> {{mono_108}}</p>
-<h1>{{mono_109}}</h1>
-<p class="subtitle">{{mono_110}}</p>
+<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_123}}</a> / <a href="#quisom" onclick="showPage('quisom')">{{mono_124}}</a> {{mono_125}}</p>
+<h1>{{mono_126}}</h1>
+<p class="subtitle">{{mono_127}}</p>
 </div>
 </div>
 <nav class="page-nav">
 <div class="page-nav-inner">
-<a href="#quisom" onclick="showPage('quisom')"><span data-lang-ca="">{{txt_151_ca}}</span><span data-lang-es="">{{txt_151_es}}</span></a>
-<a href="#historia" onclick="showPage('historia')"><span data-lang-ca="">{{txt_152_ca}}</span><span data-lang-es="">{{txt_152_es}}</span></a>
-<a href="#missio" onclick="showPage('missio')"><span data-lang-ca="">{{txt_153_ca}}</span><span data-lang-es="">{{txt_153_es}}</span></a>
-<a class="active" href="#equip" onclick="showPage('equip')"><span data-lang-ca="">{{txt_154_ca}}</span><span data-lang-es="">{{txt_154_es}}</span></a>
-<a href="#transparencia" onclick="showPage('transparencia')"><span data-lang-ca="">{{txt_155_ca}}</span><span data-lang-es="">{{txt_155_es}}</span></a>
+<a href="#quisom" onclick="showPage('quisom')"><span data-lang-ca="">{{txt_145_ca}}</span><span data-lang-es="">{{txt_145_es}}</span></a>
+<a href="#historia" onclick="showPage('historia')"><span data-lang-ca="">{{txt_146_ca}}</span><span data-lang-es="">{{txt_146_es}}</span></a>
+<a href="#missio" onclick="showPage('missio')"><span data-lang-ca="">{{txt_147_ca}}</span><span data-lang-es="">{{txt_147_es}}</span></a>
+<a class="active" href="#equip" onclick="showPage('equip')"><span data-lang-ca="">{{txt_148_ca}}</span><span data-lang-es="">{{txt_148_es}}</span></a>
+<a href="#transparencia" onclick="showPage('transparencia')"><span data-lang-ca="">{{txt_149_ca}}</span><span data-lang-es="">{{txt_149_es}}</span></a>
 </div>
 </nav>
 <!-- INTRO destacada -->
@@ -611,8 +729,8 @@
 <div class="equip-lede" data-reveal="">
 <span class="equip-bignum">+65</span>
 <div class="equip-lede-text">
-<span class="eyebrow" style="--acc:var(--groc)">{{mono_111}}</span>
-<p>{{mono_112}}</p>
+<span class="eyebrow" style="--acc:var(--groc)">{{mono_128}}</span>
+<p>{{mono_129}}</p>
 </div>
 </div>
 </div>
@@ -621,42 +739,86 @@
 <section class="content-section equip-patronat" style="--acc:var(--verd);background:var(--paper-2)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--verd)">{{mono_113}}</span>
-<h2 style="margin-top:18px">{{mono_114}}</h2>
-<p>{{mono_115}}</p>
+<span class="eyebrow center" style="--acc:var(--verd)">{{mono_130}}</span>
+<h2 style="margin-top:18px">{{mono_131}}</h2>
+<p>{{mono_132}}</p>
 </div>
 <div class="patronat-grid">
 <article class="patronat-card" data-reveal="">
-<div aria-label="Pendent de foto" class="team-photo">
-<svg fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><circle cx="12" cy="9" r="3.5"></circle><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
-<span>{{mono_116}}</span>
+<div class="team-photo" style="background:url('{{img_018}}') center/cover no-repeat;border:none">
 </div>
-<h4>{{mono_117}}</h4>
-<p class="patronat-rol">{{mono_118}}</p>
+<h4>{{mono_133}}</h4>
+<p class="patronat-rol">{{mono_134}}</p>
+</article>
+<article class="patronat-card" data-reveal="" data-reveal-d="1">
+<div class="team-photo" style="background:url('{{img_019}}') center/cover no-repeat;border:none">
+</div>
+<h4>{{mono_135}}</h4>
+<p class="patronat-rol">{{mono_136}}</p>
+</article>
+<article class="patronat-card" data-reveal="" data-reveal-d="2">
+<div class="team-photo" style="background:url('{{img_020}}') center/cover no-repeat;border:none">
+</div>
+<h4>{{mono_137}}</h4>
+<p class="patronat-rol">{{mono_138}}</p>
+</article>
+<article class="patronat-card" data-reveal="" data-reveal-d="3">
+<div class="team-photo" style="background:url('{{img_021}}') center/cover no-repeat;border:none">
+</div>
+<h4>{{mono_139}}</h4>
+<p class="patronat-rol">{{mono_140}}</p>
+</article>
+<article class="patronat-card" data-reveal="">
+<div class="team-photo" style="background:url('{{img_022}}') center/cover no-repeat;border:none">
+</div>
+<h4>{{mono_141}}</h4>
+<p class="patronat-rol">{{mono_142}}</p>
+</article>
+<article class="patronat-card" data-reveal="" data-reveal-d="1">
+<div class="team-photo" style="background:url('{{img_023}}') center/cover no-repeat;border:none">
+</div>
+<h4>{{mono_143}}</h4>
+<p class="patronat-rol">{{mono_144}}</p>
+</article>
+<article class="patronat-card" data-reveal="" data-reveal-d="2">
+<div class="team-photo" style="background:url('{{img_024}}') center/cover no-repeat;border:none">
+</div>
+<h4>{{mono_145}}</h4>
+<p class="patronat-rol">{{mono_146}}</p>
+</article>
+<article class="patronat-card" data-reveal="" data-reveal-d="3">
+<div class="team-photo" style="background:url('{{img_025}}') center/cover no-repeat;border:none">
+</div>
+<h4>{{mono_147}}</h4>
+<p class="patronat-rol">{{mono_148}}</p>
+</article>
+<article class="patronat-card" data-reveal="">
+<div class="team-photo" style="background:url('{{img_026}}') center/cover no-repeat;border:none">
+</div>
+<h4>{{mono_149}}</h4>
+<p class="patronat-rol">{{mono_150}}</p>
 </article>
 <article class="patronat-card" data-reveal="" data-reveal-d="1">
 <div aria-label="Pendent de foto" class="team-photo">
 <svg fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><circle cx="12" cy="9" r="3.5"></circle><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
-<span>{{mono_119}}</span>
+<span>{{mono_151}}</span>
 </div>
-<h4>{{mono_120}}</h4>
-<p class="patronat-rol">{{mono_121}}</p>
+<h4>{{mono_152}}</h4>
+<p class="patronat-rol">{{mono_153}}</p>
 </article>
 <article class="patronat-card" data-reveal="" data-reveal-d="2">
 <div aria-label="Pendent de foto" class="team-photo">
 <svg fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><circle cx="12" cy="9" r="3.5"></circle><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
-<span>{{mono_122}}</span>
+<span>{{mono_154}}</span>
 </div>
-<h4>{{mono_123}}</h4>
-<p class="patronat-rol">{{mono_124}}</p>
+<h4>{{mono_155}}</h4>
+<p class="patronat-rol">{{mono_156}}</p>
 </article>
 <article class="patronat-card" data-reveal="" data-reveal-d="3">
-<div aria-label="Pendent de foto" class="team-photo">
-<svg fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><circle cx="12" cy="9" r="3.5"></circle><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
-<span>{{mono_125}}</span>
+<div class="team-photo" style="background:url('{{img_027}}') center/cover no-repeat;border:none">
 </div>
-<h4>{{mono_126}}</h4>
-<p class="patronat-rol">{{mono_127}}</p>
+<h4>{{mono_157}}</h4>
+<p class="patronat-rol">{{mono_158}}</p>
 </article>
 </div>
 </div>
@@ -665,45 +827,45 @@
 <section class="content-section equip-pros" style="--acc:var(--blau)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--blau)">{{mono_128}}</span>
-<h2 style="margin-top:18px">{{mono_129}}</h2>
-<p>{{mono_130}}</p>
+<span class="eyebrow center" style="--acc:var(--blau)">{{mono_159}}</span>
+<h2 style="margin-top:18px">{{mono_160}}</h2>
+<p>{{mono_161}}</p>
 </div>
 <div class="pros-grid">
 <article class="pros-card" data-reveal="" style="--card-acc:var(--taronja)">
 <span class="pros-num">01</span>
-<h3>{{mono_131}}</h3>
+<h3>{{mono_162}}</h3>
 <ul>
-<li>{{mono_132}}</li>
-<li>{{mono_133}}</li>
-<li>{{mono_134}}</li>
+<li>{{mono_163}}</li>
+<li>{{mono_164}}</li>
+<li>{{mono_165}}</li>
 </ul>
 </article>
 <article class="pros-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)">
 <span class="pros-num">02</span>
-<h3>{{mono_135}}</h3>
+<h3>{{mono_166}}</h3>
 <ul>
-<li>{{mono_136}}</li>
-<li>{{mono_137}}</li>
-<li>{{mono_138}}</li>
-<li>{{mono_139}}</li>
-<li>{{mono_140}}</li>
+<li>{{mono_167}}</li>
+<li>{{mono_168}}</li>
+<li>{{mono_169}}</li>
+<li>{{mono_170}}</li>
+<li>{{mono_171}}</li>
 </ul>
 </article>
 <article class="pros-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)">
 <span class="pros-num">03</span>
-<h3>{{mono_141}}</h3>
+<h3>{{mono_172}}</h3>
 <ul>
-<li>{{mono_142}}</li>
-<li>{{mono_143}}</li>
-<li>{{mono_144}}</li>
+<li>{{mono_173}}</li>
+<li>{{mono_174}}</li>
+<li>{{mono_175}}</li>
 </ul>
 </article>
 <article class="pros-card pros-card-wide" data-reveal="" style="--card-acc:var(--coral)">
 <span class="pros-num">04</span>
 <div>
-<h3>{{mono_145}}</h3>
-<p>{{mono_146}}</p>
+<h3>{{mono_176}}</h3>
+<p>{{mono_177}}</p>
 </div>
 </article>
 </div>
@@ -714,47 +876,47 @@
 <div class="page" id="transparencia" style="--acc:var(--coral)">
 <div class="page-header">
 <div class="container">
-<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_147}}</a> / <a href="#quisom" onclick="showPage('quisom')">{{mono_148}}</a> {{mono_149}}</p>
-<h1>{{mono_150}}</h1>
-<p class="subtitle">{{mono_151}}</p>
+<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_178}}</a> / <a href="#quisom" onclick="showPage('quisom')">{{mono_179}}</a> {{mono_180}}</p>
+<h1>{{mono_181}}</h1>
+<p class="subtitle">{{mono_182}}</p>
 </div>
 </div>
 <nav class="page-nav">
 <div class="page-nav-inner">
-<a href="#quisom" onclick="showPage('quisom')"><span data-lang-ca="">{{txt_156_ca}}</span><span data-lang-es="">{{txt_156_es}}</span></a>
-<a href="#historia" onclick="showPage('historia')"><span data-lang-ca="">{{txt_157_ca}}</span><span data-lang-es="">{{txt_157_es}}</span></a>
-<a href="#missio" onclick="showPage('missio')"><span data-lang-ca="">{{txt_158_ca}}</span><span data-lang-es="">{{txt_158_es}}</span></a>
-<a href="#equip" onclick="showPage('equip')"><span data-lang-ca="">{{txt_159_ca}}</span><span data-lang-es="">{{txt_159_es}}</span></a>
-<a class="active" href="#transparencia" onclick="showPage('transparencia')"><span data-lang-ca="">{{txt_160_ca}}</span><span data-lang-es="">{{txt_160_es}}</span></a>
+<a href="#quisom" onclick="showPage('quisom')"><span data-lang-ca="">{{txt_150_ca}}</span><span data-lang-es="">{{txt_150_es}}</span></a>
+<a href="#historia" onclick="showPage('historia')"><span data-lang-ca="">{{txt_151_ca}}</span><span data-lang-es="">{{txt_151_es}}</span></a>
+<a href="#missio" onclick="showPage('missio')"><span data-lang-ca="">{{txt_152_ca}}</span><span data-lang-es="">{{txt_152_es}}</span></a>
+<a href="#equip" onclick="showPage('equip')"><span data-lang-ca="">{{txt_153_ca}}</span><span data-lang-es="">{{txt_153_es}}</span></a>
+<a class="active" href="#transparencia" onclick="showPage('transparencia')"><span data-lang-ca="">{{txt_154_ca}}</span><span data-lang-es="">{{txt_154_es}}</span></a>
 </div>
 </nav>
 <section class="content-section">
 <div class="content-grid">
 <div class="content-main" data-reveal="">
-<p>{{mono_152}}</p>
-<h3>{{mono_153}}</h3>
+<p>{{mono_183}}</p>
+<h3>{{mono_184}}</h3>
 <table>
-<tr><td style="font-weight:600">{{mono_154}}</td><td>{{mono_155}}</td></tr>
-<tr><td style="font-weight:600">{{mono_156}}</td><td>{{mono_157}}</td></tr>
-<tr><td style="font-weight:600">{{mono_158}}</td><td>1987</td></tr>
-<tr><td style="font-weight:600">{{mono_159}}</td><td>{{mono_160}}</td></tr>
-<tr><td style="font-weight:600">{{mono_161}}</td><td>{{mono_162}}</td></tr>
+<tr><td style="font-weight:600">{{mono_185}}</td><td>{{mono_186}}</td></tr>
+<tr><td style="font-weight:600">{{mono_187}}</td><td>{{mono_188}}</td></tr>
+<tr><td style="font-weight:600">{{mono_189}}</td><td>1987</td></tr>
+<tr><td style="font-weight:600">{{mono_190}}</td><td>{{mono_191}}</td></tr>
+<tr><td style="font-weight:600">{{mono_192}}</td><td>{{mono_193}}</td></tr>
 </table>
-<h3>{{mono_163}}</h3>
+<h3>{{mono_194}}</h3>
 <ul>
-<li>{{mono_164}}</li>
-<li>{{mono_165}}</li>
-<li>{{mono_166}}</li>
+<li>{{mono_195}}</li>
+<li>{{mono_196}}</li>
+<li>{{mono_197}}</li>
 </ul>
 </div>
 <div class="sidebar" data-reveal="" data-reveal-d="1">
 <div class="sidebar-box">
-<h4>{{mono_167}}</h4>
-<div class="sidebar-item"><span class="sidebar-icon">↓</span><div class="sidebar-text"><a href="#">{{mono_168}}</a></div></div>
-<div class="sidebar-item"><span class="sidebar-icon">↓</span><div class="sidebar-text"><a href="#">{{mono_169}}</a></div></div>
-<div class="sidebar-item"><span class="sidebar-icon">↓</span><div class="sidebar-text"><a href="#">{{mono_170}}</a></div></div>
-<div class="sidebar-item"><span class="sidebar-icon">↓</span><div class="sidebar-text"><a href="#">{{mono_171}}</a></div></div>
-<div class="sidebar-item"><span class="sidebar-icon">↓</span><div class="sidebar-text"><a href="#">{{mono_172}}</a></div></div>
+<h4>{{mono_198}}</h4>
+<div class="sidebar-item"><span class="sidebar-icon">↓</span><div class="sidebar-text"><a href="#">{{mono_199}}</a></div></div>
+<div class="sidebar-item"><span class="sidebar-icon">↓</span><div class="sidebar-text"><a href="#">{{mono_200}}</a></div></div>
+<div class="sidebar-item"><span class="sidebar-icon">↓</span><div class="sidebar-text"><a href="#">{{mono_201}}</a></div></div>
+<div class="sidebar-item"><span class="sidebar-icon">↓</span><div class="sidebar-text"><a href="#">{{mono_202}}</a></div></div>
+<div class="sidebar-item"><span class="sidebar-icon">↓</span><div class="sidebar-text"><a href="#">{{mono_203}}</a></div></div>
 </div>
 </div>
 </div>
@@ -764,76 +926,76 @@
 <div class="page" id="serveis" style="--acc:var(--blau)">
 <section class="content-section" style="padding-top:clamp(140px,15vh,180px)">
 <div class="container">
-<p data-reveal="" style="max-width:840px;margin:0 auto;text-align:center;font-size:var(--fs-lede);color:var(--ink-soft);font-weight:300"><span data-lang-ca="">{{txt_161_ca}}</span><span data-lang-es="">{{txt_161_es}}</span></p>
+<p data-reveal="" style="max-width:840px;margin:0 auto;text-align:center;font-size:var(--fs-lede);color:var(--ink-soft);font-weight:300"><span data-lang-ca="">{{txt_155_ca}}</span><span data-lang-es="">{{txt_155_es}}</span></p>
 </div>
 </section>
 <section class="serveis-rows">
 <!-- 01 · Campus Residencial — imatge a la DRETA -->
-<div class="sr-tab" data-target="sr-1" style="--acc:var(--blau)"><span class="srt-n">01</span><span class="srt-t">{{mono_173}}</span></div>
+<div class="sr-tab" data-target="sr-1" style="--acc:var(--blau)"><span class="srt-n">01</span><span class="srt-t">{{mono_204}}</span></div>
 <div class="servei-row" data-reveal="" id="sr-1">
 <div class="sr-text">
-<span class="sr-num" style="--acc:var(--blau)">{{mono_174}}</span>
-<h2 class="sr-title">{{mono_175}}</h2>
-<p class="sr-desc"><span data-lang-ca="">{{txt_162_ca}}</span><span data-lang-es="">{{txt_162_es}}</span></p>
-<a class="btn btn-ghost sr-cta" href="#campus" onclick="showPage('campus')" style="--acc:var(--blau)"><span data-lang-ca="">{{txt_163_ca}}</span><span data-lang-es="">{{txt_163_es}}</span> <span class="arr">→</span></a>
+<span class="sr-num" style="--acc:var(--blau)">{{mono_205}}</span>
+<h2 class="sr-title">{{mono_206}}</h2>
+<p class="sr-desc"><span data-lang-ca="">{{txt_156_ca}}</span><span data-lang-es="">{{txt_156_es}}</span></p>
+<a class="btn btn-ghost sr-cta" href="#campus" onclick="showPage('campus')" style="--acc:var(--blau)"><span data-lang-ca="">{{txt_157_ca}}</span><span data-lang-es="">{{txt_157_es}}</span> <span class="arr">→</span></a>
 </div>
-<div aria-label="Campus Residencial" class="sr-img" style="background-image:url('{{img_019}}')"></div>
+<div aria-label="Campus Residencial" class="sr-img" style="background-image:url('{{img_028}}')"></div>
 </div>
 <!-- 02 · Llars amb Suport — imatge a l'ESQUERRA -->
-<div class="sr-tab" data-target="sr-2" style="--acc:var(--verd)"><span class="srt-n">02</span><span class="srt-t"><span data-lang-ca="">{{txt_164_ca}}</span><span data-lang-es="">{{txt_164_es}}</span></span></div>
+<div class="sr-tab" data-target="sr-2" style="--acc:var(--verd)"><span class="srt-n">02</span><span class="srt-t"><span data-lang-ca="">{{txt_158_ca}}</span><span data-lang-es="">{{txt_158_es}}</span></span></div>
 <div class="servei-row flip" data-reveal="" id="sr-2">
 <div class="sr-text">
-<span class="sr-num" style="--acc:var(--verd)">{{mono_176}}</span>
-<h2 class="sr-title"><span data-lang-ca="">{{txt_165_ca}}</span><span data-lang-es="">{{txt_165_es}}</span></h2>
-<p class="sr-desc"><span data-lang-ca="">{{txt_166_ca}}</span><span data-lang-es="">{{txt_166_es}}</span></p>
-<a class="btn btn-ghost sr-cta" href="#llars" onclick="showPage('llars')" style="--acc:var(--verd)"><span data-lang-ca="">{{txt_167_ca}}</span><span data-lang-es="">{{txt_167_es}}</span> <span class="arr">→</span></a>
+<span class="sr-num" style="--acc:var(--verd)">{{mono_207}}</span>
+<h2 class="sr-title"><span data-lang-ca="">{{txt_159_ca}}</span><span data-lang-es="">{{txt_159_es}}</span></h2>
+<p class="sr-desc"><span data-lang-ca="">{{txt_160_ca}}</span><span data-lang-es="">{{txt_160_es}}</span></p>
+<a class="btn btn-ghost sr-cta" href="#llars" onclick="showPage('llars')" style="--acc:var(--verd)"><span data-lang-ca="">{{txt_161_ca}}</span><span data-lang-es="">{{txt_161_es}}</span> <span class="arr">→</span></a>
 </div>
-<div aria-label="Llars amb Suport" class="sr-img" style="background-image:url('{{img_020}}')"></div>
+<div aria-label="Llars amb Suport" class="sr-img" style="background-image:url('{{img_029}}')"></div>
 </div>
 <!-- 03 · Atenció Domiciliària — imatge a la DRETA -->
-<div class="sr-tab" data-target="sr-3" style="--acc:var(--taronja)"><span class="srt-n">03</span><span class="srt-t"><span data-lang-ca="">{{txt_168_ca}}</span><span data-lang-es="">{{txt_168_es}}</span></span></div>
+<div class="sr-tab" data-target="sr-3" style="--acc:var(--taronja)"><span class="srt-n">03</span><span class="srt-t"><span data-lang-ca="">{{txt_162_ca}}</span><span data-lang-es="">{{txt_162_es}}</span></span></div>
 <div class="servei-row" data-reveal="" id="sr-3">
 <div class="sr-text">
-<span class="sr-num" style="--acc:var(--taronja)">{{mono_177}}</span>
-<span class="sr-badge"><span data-lang-ca="">{{txt_169_ca}}</span><span data-lang-es="">{{txt_169_es}}</span></span>
-<h2 class="sr-title"><span data-lang-ca="">{{txt_170_ca}}</span><span data-lang-es="">{{txt_170_es}}</span></h2>
-<p class="sr-desc"><span data-lang-ca="">{{txt_171_ca}}</span><span data-lang-es="">{{txt_171_es}}</span></p>
-<a class="btn btn-ghost sr-cta" href="#sad" onclick="showPage('sad')" style="--acc:var(--taronja)"><span data-lang-ca="">{{txt_172_ca}}</span><span data-lang-es="">{{txt_172_es}}</span> <span class="arr">→</span></a>
+<span class="sr-num" style="--acc:var(--taronja)">{{mono_208}}</span>
+<span class="sr-badge"><span data-lang-ca="">{{txt_163_ca}}</span><span data-lang-es="">{{txt_163_es}}</span></span>
+<h2 class="sr-title"><span data-lang-ca="">{{txt_164_ca}}</span><span data-lang-es="">{{txt_164_es}}</span></h2>
+<p class="sr-desc"><span data-lang-ca="">{{txt_165_ca}}</span><span data-lang-es="">{{txt_165_es}}</span></p>
+<a class="btn btn-ghost sr-cta" href="#sad" onclick="showPage('sad')" style="--acc:var(--taronja)"><span data-lang-ca="">{{txt_166_ca}}</span><span data-lang-es="">{{txt_166_es}}</span> <span class="arr">→</span></a>
 </div>
-<div aria-label="Atenció Domiciliària" class="sr-img" style="background-image:url('{{img_021}}')"></div>
+<div aria-label="Atenció Domiciliària" class="sr-img" style="background-image:url('{{img_030}}')"></div>
 </div>
 <!-- 04 · Centres de Dia — imatge a l'ESQUERRA -->
-<div class="sr-tab" data-target="sr-4" style="--acc:var(--coral)"><span class="srt-n">04</span><span class="srt-t"><span data-lang-ca="">{{txt_173_ca}}</span><span data-lang-es="">{{txt_173_es}}</span></span></div>
+<div class="sr-tab" data-target="sr-4" style="--acc:var(--coral)"><span class="srt-n">04</span><span class="srt-t"><span data-lang-ca="">{{txt_167_ca}}</span><span data-lang-es="">{{txt_167_es}}</span></span></div>
 <div class="servei-row flip" data-reveal="" id="sr-4">
 <div class="sr-text">
-<span class="sr-num" style="--acc:var(--coral)">{{mono_178}}</span>
-<h2 class="sr-title"><span data-lang-ca="">{{txt_174_ca}}</span><span data-lang-es="">{{txt_174_es}}</span></h2>
-<p class="sr-desc"><span data-lang-ca="">{{txt_175_ca}}</span><span data-lang-es="">{{txt_175_es}}</span></p>
-<a class="btn btn-ghost sr-cta" href="#centresdia" onclick="showPage('centresdia')" style="--acc:var(--coral)"><span data-lang-ca="">{{txt_176_ca}}</span><span data-lang-es="">{{txt_176_es}}</span> <span class="arr">→</span></a>
+<span class="sr-num" style="--acc:var(--coral)">{{mono_209}}</span>
+<h2 class="sr-title"><span data-lang-ca="">{{txt_168_ca}}</span><span data-lang-es="">{{txt_168_es}}</span></h2>
+<p class="sr-desc"><span data-lang-ca="">{{txt_169_ca}}</span><span data-lang-es="">{{txt_169_es}}</span></p>
+<a class="btn btn-ghost sr-cta" href="#centresdia" onclick="showPage('centresdia')" style="--acc:var(--coral)"><span data-lang-ca="">{{txt_170_ca}}</span><span data-lang-es="">{{txt_170_es}}</span> <span class="arr">→</span></a>
 </div>
-<div aria-label="Centres de Dia" class="sr-img" style="background-image:url('{{img_022}}')"></div>
+<div aria-label="Centres de Dia" class="sr-img" style="background-image:url('{{img_031}}')"></div>
 </div>
 <!-- 05 · Suport a Famílies i Inclusió Laboral — imatge a la DRETA -->
-<div class="sr-tab" data-target="sr-5" style="--acc:var(--groc)"><span class="srt-n">05</span><span class="srt-t"><span data-lang-ca="">{{txt_177_ca}}</span><span data-lang-es="">{{txt_177_es}}</span></span></div>
+<div class="sr-tab" data-target="sr-5" style="--acc:var(--groc)"><span class="srt-n">05</span><span class="srt-t"><span data-lang-ca="">{{txt_171_ca}}</span><span data-lang-es="">{{txt_171_es}}</span></span></div>
 <div class="servei-row" data-reveal="" id="sr-5">
 <div class="sr-text">
-<span class="sr-num" style="--acc:var(--groc)">{{mono_179}}</span>
-<h2 class="sr-title"><span data-lang-ca="">{{txt_178_ca}}</span><span data-lang-es="">{{txt_178_es}}</span></h2>
-<p class="sr-desc"><span data-lang-ca="">{{txt_179_ca}}</span><span data-lang-es="">{{txt_179_es}}</span></p>
-<a class="btn btn-ghost sr-cta" href="#families" onclick="showPage('families')" style="--acc:var(--groc)"><span data-lang-ca="">{{txt_180_ca}}</span><span data-lang-es="">{{txt_180_es}}</span> <span class="arr">→</span></a>
+<span class="sr-num" style="--acc:var(--groc)">{{mono_210}}</span>
+<h2 class="sr-title"><span data-lang-ca="">{{txt_172_ca}}</span><span data-lang-es="">{{txt_172_es}}</span></h2>
+<p class="sr-desc"><span data-lang-ca="">{{txt_173_ca}}</span><span data-lang-es="">{{txt_173_es}}</span></p>
+<a class="btn btn-ghost sr-cta" href="#families" onclick="showPage('families')" style="--acc:var(--groc)"><span data-lang-ca="">{{txt_174_ca}}</span><span data-lang-es="">{{txt_174_es}}</span> <span class="arr">→</span></a>
 </div>
-<div aria-label="Suport a Famílies i Inclusió Laboral" class="sr-img" style="background-image:url('{{img_023}}')"></div>
+<div aria-label="Suport a Famílies i Inclusió Laboral" class="sr-img" style="background-image:url('{{img_032}}')"></div>
 </div>
 <!-- 06 · Recerca i Innovació — imatge a l'ESQUERRA -->
-<div class="sr-tab" data-target="sr-6" style="--acc:var(--rosa)"><span class="srt-n">06</span><span class="srt-t"><span data-lang-ca="">{{txt_181_ca}}</span><span data-lang-es="">{{txt_181_es}}</span></span></div>
+<div class="sr-tab" data-target="sr-6" style="--acc:var(--rosa)"><span class="srt-n">06</span><span class="srt-t"><span data-lang-ca="">{{txt_175_ca}}</span><span data-lang-es="">{{txt_175_es}}</span></span></div>
 <div class="servei-row flip" data-reveal="" id="sr-6">
 <div class="sr-text">
-<span class="sr-num" style="--acc:var(--rosa)">{{mono_180}}</span>
-<h2 class="sr-title"><span data-lang-ca="">{{txt_182_ca}}</span><span data-lang-es="">{{txt_182_es}}</span></h2>
-<p class="sr-desc"><span data-lang-ca="">{{txt_183_ca}}</span><span data-lang-es="">{{txt_183_es}}</span></p>
-<a class="btn btn-ghost sr-cta" href="#recerca" onclick="showPage('recerca')" style="--acc:var(--rosa)"><span data-lang-ca="">{{txt_184_ca}}</span><span data-lang-es="">{{txt_184_es}}</span> <span class="arr">→</span></a>
+<span class="sr-num" style="--acc:var(--rosa)">{{mono_211}}</span>
+<h2 class="sr-title"><span data-lang-ca="">{{txt_176_ca}}</span><span data-lang-es="">{{txt_176_es}}</span></h2>
+<p class="sr-desc"><span data-lang-ca="">{{txt_177_ca}}</span><span data-lang-es="">{{txt_177_es}}</span></p>
+<a class="btn btn-ghost sr-cta" href="#recerca" onclick="showPage('recerca')" style="--acc:var(--rosa)"><span data-lang-ca="">{{txt_178_ca}}</span><span data-lang-es="">{{txt_178_es}}</span> <span class="arr">→</span></a>
 </div>
-<div aria-label="Recerca i Innovació" class="sr-img" style="background-image:url('{{img_024}}')"></div>
+<div aria-label="Recerca i Innovació" class="sr-img" style="background-image:url('{{img_033}}')"></div>
 </div>
 </section>
 </div>
@@ -841,19 +1003,19 @@
 <div class="page" id="campus" style="--acc:var(--blau)">
 <!-- HERO amb imatge i títol superposat -->
 <section class="svc-hero" style="background-image:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url('ave_maria_Header.jpg')">
-<h1>{{mono_181}}</h1>
+<h1>{{mono_212}}</h1>
 </section>
 <!-- INTRO: sumari + galeria -->
 <section class="svc-intro">
 <div class="svc-intro-inner" data-reveal="">
-<p class="svc-summary">{{mono_182}}</p>
+<p class="svc-summary">{{mono_213}}</p>
 <div class="svc-gallery">
-<div class="ph" style="background-image:url('{{img_025}}')"></div>
-<div class="ph" style="background-image:url('{{img_026}}')"></div>
-<div class="ph" style="background-image:url('{{img_027}}')"></div>
-<div class="ph" style="background-image:url('{{img_028}}')"></div>
-<div class="ph" style="background-image:url('{{img_029}}')"></div>
-<div class="ph" style="background-image:url('{{img_030}}')"></div>
+<div class="ph" style="background-image:url('{{img_034}}')"></div>
+<div class="ph" style="background-image:url('{{img_035}}')"></div>
+<div class="ph" style="background-image:url('{{img_036}}')"></div>
+<div class="ph" style="background-image:url('{{img_037}}')"></div>
+<div class="ph" style="background-image:url('{{img_038}}')"></div>
+<div class="ph" style="background-image:url('{{img_039}}')"></div>
 </div>
 </div>
 </section>
@@ -861,28 +1023,28 @@
 <section class="svc-details">
 <div class="svc-detail-table" data-reveal="">
 <div class="svc-detail-row">
-<div class="label">{{mono_183}}</div>
-<div class="value title">{{mono_184}}</div>
+<div class="label">{{mono_214}}</div>
+<div class="value title">{{mono_215}}</div>
 </div>
 <div class="svc-detail-row">
-<div class="label">{{mono_185}}</div>
-<div class="value">{{mono_186}}</div>
+<div class="label">{{mono_216}}</div>
+<div class="value">{{mono_217}}</div>
 </div>
 <div class="svc-detail-row">
-<div class="label">{{mono_187}}</div>
-<div class="value">{{mono_188}}</div>
+<div class="label">{{mono_218}}</div>
+<div class="value">{{mono_219}}</div>
 </div>
 <div class="svc-detail-row">
-<div class="label">{{mono_189}}</div>
-<div class="value">{{mono_190}}</div>
+<div class="label">{{mono_220}}</div>
+<div class="value">{{mono_221}}</div>
 </div>
 <div class="svc-detail-row">
-<div class="label">{{mono_191}}</div>
-<div class="value">{{mono_192}}</div>
+<div class="label">{{mono_222}}</div>
+<div class="value">{{mono_223}}</div>
 </div>
 <div class="svc-detail-row">
-<div class="label">{{mono_193}}</div>
-<div class="value">{{mono_194}}</div>
+<div class="label">{{mono_224}}</div>
+<div class="value">{{mono_225}}</div>
 </div>
 </div>
 </section>
@@ -890,75 +1052,75 @@
 <section class="svc-stats">
 <!-- Serveis inclosos -->
 <div class="svc-stats-block">
-<p class="svc-stats-title" data-reveal="">{{mono_195}}</p>
+<p class="svc-stats-title" data-reveal="">{{mono_226}}</p>
 <div class="svc-stats-grid">
 <div class="svc-stat-cards">
 <div class="svc-stat-card" data-reveal="">
-<div class="card-desc">{{mono_196}}</div>
+<div class="card-desc">{{mono_227}}</div>
 <div class="card-num">01</div>
-<div class="card-label">{{mono_197}}</div>
+<div class="card-label">{{mono_228}}</div>
 </div>
 <div class="svc-stat-card" data-reveal="">
-<div class="card-desc">{{mono_198}}</div>
+<div class="card-desc">{{mono_229}}</div>
 <div class="card-num">02</div>
-<div class="card-label">{{mono_199}}</div>
+<div class="card-label">{{mono_230}}</div>
 </div>
 <div class="svc-stat-card" data-reveal="">
-<div class="card-desc">{{mono_200}}</div>
+<div class="card-desc">{{mono_231}}</div>
 <div class="card-num">03</div>
-<div class="card-label">{{mono_201}}</div>
+<div class="card-label">{{mono_232}}</div>
 </div>
 <div class="svc-stat-card" data-reveal="">
-<div class="card-desc">{{mono_202}}</div>
+<div class="card-desc">{{mono_233}}</div>
 <div class="card-num">04</div>
-<div class="card-label">{{mono_203}}</div>
+<div class="card-label">{{mono_234}}</div>
 </div>
 <div class="svc-stat-card" data-reveal="">
-<div class="card-desc">{{mono_204}}</div>
+<div class="card-desc">{{mono_235}}</div>
 <div class="card-num">05</div>
-<div class="card-label">{{mono_205}}</div>
+<div class="card-label">{{mono_236}}</div>
 </div>
 </div>
 <div class="svc-stat-imgs" data-reveal="">
-<div class="ph" style="background-image:url('{{img_031}}')"></div>
-<div class="ph" style="background-image:url('{{img_032}}')"></div>
+<div class="ph" style="background-image:url('{{img_040}}')"></div>
+<div class="ph" style="background-image:url('{{img_041}}')"></div>
 </div>
 </div>
 </div>
 <!-- Equip professional -->
 <div class="svc-stats-block">
-<p class="svc-stats-title" data-reveal="">{{mono_206}}</p>
+<p class="svc-stats-title" data-reveal="">{{mono_237}}</p>
 <div class="svc-stats-grid">
 <div class="svc-stat-cards">
 <div class="svc-stat-card" data-reveal="">
-<div class="card-desc">{{mono_207}}</div>
+<div class="card-desc">{{mono_238}}</div>
 <div class="card-num">01</div>
-<div class="card-label">{{mono_208}}</div>
+<div class="card-label">{{mono_239}}</div>
 </div>
 <div class="svc-stat-card" data-reveal="">
-<div class="card-desc">{{mono_209}}</div>
+<div class="card-desc">{{mono_240}}</div>
 <div class="card-num">02</div>
-<div class="card-label">{{mono_210}}</div>
+<div class="card-label">{{mono_241}}</div>
 </div>
 <div class="svc-stat-card" data-reveal="">
-<div class="card-desc">{{mono_211}}</div>
+<div class="card-desc">{{mono_242}}</div>
 <div class="card-num">03</div>
-<div class="card-label">{{mono_212}}</div>
+<div class="card-label">{{mono_243}}</div>
 </div>
 <div class="svc-stat-card" data-reveal="">
-<div class="card-desc">{{mono_213}}</div>
+<div class="card-desc">{{mono_244}}</div>
 <div class="card-num">04</div>
-<div class="card-label">{{mono_214}}</div>
+<div class="card-label">{{mono_245}}</div>
 </div>
 <div class="svc-stat-card" data-reveal="">
-<div class="card-desc">{{mono_215}}</div>
+<div class="card-desc">{{mono_246}}</div>
 <div class="card-num">05</div>
-<div class="card-label">{{mono_216}}</div>
+<div class="card-label">{{mono_247}}</div>
 </div>
 </div>
 <div class="svc-stat-imgs" data-reveal="">
-<div class="ph" style="background-image:url('{{img_033}}')"></div>
-<div class="ph" style="background-image:url('{{img_034}}')"></div>
+<div class="ph" style="background-image:url('{{img_042}}')"></div>
+<div class="ph" style="background-image:url('{{img_043}}')"></div>
 </div>
 </div>
 </div>
@@ -966,33 +1128,33 @@
 <!-- COS DESCRIPTIU -->
 <section class="svc-body">
 <div class="svc-body-inner" data-reveal="">
-<div class="col-l-label">{{mono_217}}</div>
+<div class="col-l-label">{{mono_248}}</div>
 <div class="col-r">
-<p>{{mono_218}} <strong>{{mono_219}}</strong> {{mono_220}}</p>
-<p>{{mono_221}} <strong>{{mono_222}}</strong>{{mono_223}}</p>
-<p>{{mono_224}} <strong>{{mono_225}}</strong>{{mono_226}}</p>
-<h3>{{mono_227}}</h3>
+<p>{{mono_249}} <strong>{{mono_250}}</strong> {{mono_251}}</p>
+<p>{{mono_252}} <strong>{{mono_253}}</strong>{{mono_254}}</p>
+<p>{{mono_255}} <strong>{{mono_256}}</strong>{{mono_257}}</p>
+<h3>{{mono_258}}</h3>
 <div class="faq-list">
-<div class="faq-item"><div class="faq-question">{{mono_228}}</div><div class="faq-answer">{{mono_229}}</div></div>
-<div class="faq-item"><div class="faq-question">{{mono_230}}</div><div class="faq-answer">{{mono_231}}</div></div>
-<div class="faq-item"><div class="faq-question">{{mono_232}}</div><div class="faq-answer">{{mono_233}}</div></div>
-<div class="faq-item"><div class="faq-question">{{mono_234}}</div><div class="faq-answer">{{mono_235}}</div></div>
+<div class="faq-item"><div class="faq-question">{{mono_259}}</div><div class="faq-answer">{{mono_260}}</div></div>
+<div class="faq-item"><div class="faq-question">{{mono_261}}</div><div class="faq-answer">{{mono_262}}</div></div>
+<div class="faq-item"><div class="faq-question">{{mono_263}}</div><div class="faq-answer">{{mono_264}}</div></div>
+<div class="faq-item"><div class="faq-question">{{mono_265}}</div><div class="faq-answer">{{mono_266}}</div></div>
 </div>
-<div style="margin-top:36px"><a class="btn btn-ghost" href="#contacte" onclick="showPage('contacte')" style="--acc:var(--blau)">{{mono_236}} <span class="arr">→</span></a></div>
+<div style="margin-top:36px"><a class="btn btn-ghost" href="#contacte" onclick="showPage('contacte')" style="--acc:var(--blau)">{{mono_267}} <span class="arr">→</span></a></div>
 </div>
 </div>
 </section>
 <div class="container" style="margin-bottom:80px">
 <div class="form-section" style="margin:0">
-<h3>{{mono_237}}</h3>
-<p style="text-align:center;opacity:.8;margin-bottom:30px">{{mono_238}}</p>
+<h3>{{mono_268}}</h3>
+<p style="text-align:center;opacity:.8;margin-bottom:30px">{{mono_269}}</p>
 <div class="form-grid">
-<div class="form-group"><label>{{mono_239}}</label><input placeholder="El teu nom" type="text"/></div>
-<div class="form-group"><label>{{mono_240}}</label><input placeholder="email@exemple.com" type="email"/></div>
-<div class="form-group"><label>{{mono_241}}</label><input placeholder="+34 600 000 000" type="tel"/></div>
-<div class="form-group full"><label>{{mono_242}}</label><textarea placeholder="Com et podem ajudar?"></textarea></div>
+<div class="form-group"><label>{{mono_270}}</label><input placeholder="El teu nom" type="text"/></div>
+<div class="form-group"><label>{{mono_271}}</label><input placeholder="email@exemple.com" type="email"/></div>
+<div class="form-group"><label>{{mono_272}}</label><input placeholder="+34 600 000 000" type="tel"/></div>
+<div class="form-group full"><label>{{mono_273}}</label><textarea placeholder="Com et podem ajudar?"></textarea></div>
 </div>
-<div class="form-submit"><button class="btn btn-primary">{{mono_243}}</button></div>
+<div class="form-submit"><button class="btn btn-primary">{{mono_274}}</button></div>
 </div>
 </div>
 </div>
@@ -1000,43 +1162,43 @@
 <div class="page" id="llars" style="--acc:var(--blau)">
 <div class="page-header">
 <div class="container">
-<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_244}}</a> / <a href="#serveis" onclick="showPage('serveis')">{{mono_245}}</a> {{mono_246}}</p>
-<h1>{{mono_247}}</h1>
-<p class="subtitle">{{mono_248}}</p>
+<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_275}}</a> / <a href="#serveis" onclick="showPage('serveis')">{{mono_276}}</a> {{mono_277}}</p>
+<h1>{{mono_278}}</h1>
+<p class="subtitle">{{mono_279}}</p>
 </div>
 </div>
 <!-- 1) Intro -->
 <section class="content-section qs-intro" style="--acc:var(--blau)">
 <div class="container">
 <div class="qs-intro-text" data-reveal="">
-<span class="eyebrow" style="--acc:var(--blau)">{{mono_249}}</span>
-<h2>{{mono_250}}</h2>
-<p class="qs-lede">{{mono_251}}</p>
-<p>{{mono_252}} <strong>{{mono_253}}</strong>{{mono_254}}</p>
+<span class="eyebrow" style="--acc:var(--blau)">{{mono_280}}</span>
+<h2>{{mono_281}}</h2>
+<p class="qs-lede">{{mono_282}}</p>
+<p>{{mono_283}} <strong>{{mono_284}}</strong>{{mono_285}}</p>
 </div>
 </div>
 </section>
 <!-- 2) Cita destacada -->
 <div class="feature-quote" data-reveal="">
 <p>
-<span class="fq-mk">"</span>{{mono_255}}<span class="fq-mk">"</span>
+<span class="fq-mk">"</span>{{mono_286}}<span class="fq-mk">"</span>
 </p>
 </div>
 <!-- 3) Com funciona — 6 cards numerades -->
 <section class="content-section" style="--acc:var(--blau);background:var(--paper-2)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--blau)">{{mono_256}}</span>
-<h2>{{mono_257}}</h2>
-<p>{{mono_258}}</p>
+<span class="eyebrow center" style="--acc:var(--blau)">{{mono_287}}</span>
+<h2>{{mono_288}}</h2>
+<p>{{mono_289}}</p>
 </div>
 <div class="mvv-grid" style="grid-template-columns:repeat(3,1fr)">
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>{{mono_259}}</h3><p>{{mono_260}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>{{mono_261}}</h3><p>{{mono_262}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>{{mono_263}}</h3><p>{{mono_264}}</p></article>
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--groc)"><span class="mvv-num">04</span><h3>{{mono_265}}</h3><p>{{mono_266}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--rosa)"><span class="mvv-num">05</span><h3>{{mono_267}}</h3><p>{{mono_268}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--coral)"><span class="mvv-num">06</span><h3>{{mono_269}}</h3><p>{{mono_270}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>{{mono_290}}</h3><p>{{mono_291}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>{{mono_292}}</h3><p>{{mono_293}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>{{mono_294}}</h3><p>{{mono_295}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--groc)"><span class="mvv-num">04</span><h3>{{mono_296}}</h3><p>{{mono_297}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--rosa)"><span class="mvv-num">05</span><h3>{{mono_298}}</h3><p>{{mono_299}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--coral)"><span class="mvv-num">06</span><h3>{{mono_300}}</h3><p>{{mono_301}}</p></article>
 </div>
 </div>
 </section>
@@ -1044,15 +1206,15 @@
 <section class="content-section" style="--acc:var(--verd)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--verd)">{{mono_271}}</span>
-<h2>{{mono_272}}</h2>
-<p>{{mono_273}}</p>
+<span class="eyebrow center" style="--acc:var(--verd)">{{mono_302}}</span>
+<h2>{{mono_303}}</h2>
+<p>{{mono_304}}</p>
 </div>
 <div class="mvv-grid" style="grid-template-columns:repeat(4,1fr);max-width:1180px;margin:0 auto">
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">A</span><p>{{mono_274}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">B</span><p>{{mono_275}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">C</span><p>{{mono_276}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">D</span><p>{{mono_277}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">A</span><p>{{mono_305}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">B</span><p>{{mono_306}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">C</span><p>{{mono_307}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">D</span><p>{{mono_308}}</p></article>
 </div>
 </div>
 </section>
@@ -1061,17 +1223,17 @@
 <div class="container">
 <div class="sec-head" data-reveal="">
 <div class="sh-l">
-<span class="eyebrow" style="--acc:var(--blau)">{{mono_278}}</span>
-<h2>{{mono_279}}</h2>
+<span class="eyebrow" style="--acc:var(--blau)">{{mono_309}}</span>
+<h2>{{mono_310}}</h2>
 </div>
-<span class="idx">{{mono_280}}</span>
+<span class="idx">{{mono_311}}</span>
 </div>
 <div class="stats-grid qs-stats-grid" style="grid-template-columns:repeat(3,1fr)">
-<div class="stat-item" data-reveal=""><div class="stat-number">{{mono_281}}</div><div class="stat-label">{{mono_282}}</div></div>
-<div class="stat-item" data-reveal="" data-reveal-d="1"><div class="stat-number">{{mono_283}}</div><div class="stat-label">{{mono_284}}</div></div>
-<div class="stat-item" data-reveal="" data-reveal-d="2"><div class="stat-number">{{mono_285}}</div><div class="stat-label">{{mono_286}}</div></div>
+<div class="stat-item" data-reveal=""><div class="stat-number">{{mono_312}}</div><div class="stat-label">{{mono_313}}</div></div>
+<div class="stat-item" data-reveal="" data-reveal-d="1"><div class="stat-number">{{mono_314}}</div><div class="stat-label">{{mono_315}}</div></div>
+<div class="stat-item" data-reveal="" data-reveal-d="2"><div class="stat-number">{{mono_316}}</div><div class="stat-label">{{mono_317}}</div></div>
 </div>
-<div style="text-align:center;margin-top:48px"><a class="btn btn-primary" href="#contacte" onclick="showPage('contacte')">{{mono_287}} <span class="arr">→</span></a></div>
+<div style="text-align:center;margin-top:48px"><a class="btn btn-primary" href="#contacte" onclick="showPage('contacte')">{{mono_318}} <span class="arr">→</span></a></div>
 </div>
 </section>
 </div>
@@ -1079,20 +1241,20 @@
 <div class="page" id="sad" style="--acc:var(--verd)">
 <div class="page-header">
 <div class="container">
-<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_288}}</a> / <a href="#serveis" onclick="showPage('serveis')">{{mono_289}}</a> {{mono_290}}</p>
-<h1>{{mono_291}}</h1>
-<p class="subtitle">{{mono_292}}</p>
+<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_319}}</a> / <a href="#serveis" onclick="showPage('serveis')">{{mono_320}}</a> {{mono_321}}</p>
+<h1>{{mono_322}}</h1>
+<p class="subtitle">{{mono_323}}</p>
 </div>
 </div>
 <!-- 1) Intro amb badge -->
 <section class="content-section qs-intro" style="--acc:var(--verd)">
 <div class="container">
 <div class="qs-intro-text" data-reveal="">
-<span class="eyebrow" style="--acc:var(--verd)">{{mono_293}}</span>
-<h2>{{mono_294}}</h2>
-<div class="badge sad-badge" style="display:flex;width:fit-content;margin:18px auto 26px;background:var(--verd);color:#fff;padding:8px 16px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;border-radius:30px">{{mono_295}}</div>
-<p class="qs-lede">{{mono_296}}</p>
-<p>{{mono_297}}</p>
+<span class="eyebrow" style="--acc:var(--verd)">{{mono_324}}</span>
+<h2>{{mono_325}}</h2>
+<div class="badge sad-badge" style="display:flex;width:fit-content;margin:18px auto 26px;background:var(--verd);color:#fff;padding:8px 16px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;border-radius:30px">{{mono_326}}</div>
+<p class="qs-lede">{{mono_327}}</p>
+<p>{{mono_328}}</p>
 </div>
 </div>
 </section>
@@ -1100,16 +1262,16 @@
 <section class="content-section" style="--acc:var(--verd);background:var(--paper-2)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--verd)">{{mono_298}}</span>
-<h2>{{mono_299}}</h2>
+<span class="eyebrow center" style="--acc:var(--verd)">{{mono_329}}</span>
+<h2>{{mono_330}}</h2>
 </div>
 <div class="mvv-grid" style="grid-template-columns:repeat(3,1fr)">
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>{{mono_300}}</h3><p>{{mono_301}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>{{mono_302}}</h3><p>{{mono_303}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>{{mono_304}}</h3><p>{{mono_305}}</p></article>
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--groc)"><span class="mvv-num">04</span><h3>{{mono_306}}</h3><p>{{mono_307}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--rosa)"><span class="mvv-num">05</span><h3>{{mono_308}}</h3><p>{{mono_309}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--coral)"><span class="mvv-num">06</span><h3>{{mono_310}}</h3><p>{{mono_311}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>{{mono_331}}</h3><p>{{mono_332}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>{{mono_333}}</h3><p>{{mono_334}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>{{mono_335}}</h3><p>{{mono_336}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--groc)"><span class="mvv-num">04</span><h3>{{mono_337}}</h3><p>{{mono_338}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--rosa)"><span class="mvv-num">05</span><h3>{{mono_339}}</h3><p>{{mono_340}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--coral)"><span class="mvv-num">06</span><h3>{{mono_341}}</h3><p>{{mono_342}}</p></article>
 </div>
 </div>
 </section>
@@ -1117,14 +1279,14 @@
 <section class="content-section" style="--acc:var(--blau)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--blau)">{{mono_312}}</span>
-<h2>{{mono_313}}</h2>
+<span class="eyebrow center" style="--acc:var(--blau)">{{mono_343}}</span>
+<h2>{{mono_344}}</h2>
 </div>
 <div class="mvv-grid" style="grid-template-columns:repeat(4,1fr);max-width:1180px;margin:0 auto">
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">A</span><p>{{mono_314}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">B</span><p>{{mono_315}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">C</span><p>{{mono_316}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">D</span><p>{{mono_317}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">A</span><p>{{mono_345}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">B</span><p>{{mono_346}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">C</span><p>{{mono_347}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">D</span><p>{{mono_348}}</p></article>
 </div>
 </div>
 </section>
@@ -1133,19 +1295,19 @@
 <div class="container">
 <div class="sec-head" data-reveal="">
 <div class="sh-l">
-<span class="eyebrow" style="--acc:var(--groc)">{{mono_318}}</span>
-<h2>{{mono_319}}</h2>
-<p style="color:rgba(255,255,255,.65);margin-top:14px;max-width:48ch">{{mono_320}}</p>
+<span class="eyebrow" style="--acc:var(--groc)">{{mono_349}}</span>
+<h2>{{mono_350}}</h2>
+<p style="color:rgba(255,255,255,.65);margin-top:14px;max-width:48ch">{{mono_351}}</p>
 </div>
-<span class="idx">{{mono_321}}</span>
+<span class="idx">{{mono_352}}</span>
 </div>
 <div class="stats-grid">
-<div class="stat-item" data-reveal=""><div class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">{{mono_322}}</div><div class="stat-label">{{mono_323}}</div></div>
-<div class="stat-item" data-reveal="" data-reveal-d="1"><div class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">{{mono_324}}</div><div class="stat-label">{{mono_325}}</div></div>
-<div class="stat-item" data-reveal="" data-reveal-d="2"><div class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">{{mono_326}}</div><div class="stat-label">{{mono_327}}</div></div>
-<div class="stat-item" data-reveal=""><div class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">{{mono_328}}</div><div class="stat-label">{{mono_329}}</div></div>
-<div class="stat-item" data-reveal="" data-reveal-d="1"><div class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">{{mono_330}}</div><div class="stat-label">{{mono_331}}</div></div>
-<div class="stat-item" data-reveal="" data-reveal-d="2"><div class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">{{mono_332}}</div><div class="stat-label">{{mono_333}}</div></div>
+<div class="stat-item" data-reveal=""><div class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">{{mono_353}}</div><div class="stat-label">{{mono_354}}</div></div>
+<div class="stat-item" data-reveal="" data-reveal-d="1"><div class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">{{mono_355}}</div><div class="stat-label">{{mono_356}}</div></div>
+<div class="stat-item" data-reveal="" data-reveal-d="2"><div class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">{{mono_357}}</div><div class="stat-label">{{mono_358}}</div></div>
+<div class="stat-item" data-reveal=""><div class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">{{mono_359}}</div><div class="stat-label">{{mono_360}}</div></div>
+<div class="stat-item" data-reveal="" data-reveal-d="1"><div class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">{{mono_361}}</div><div class="stat-label">{{mono_362}}</div></div>
+<div class="stat-item" data-reveal="" data-reveal-d="2"><div class="stat-number" style="font-size:clamp(1.6rem,3vw,2.6rem)">{{mono_363}}</div><div class="stat-label">{{mono_364}}</div></div>
 </div>
 </div>
 </section>
@@ -1153,19 +1315,19 @@
 <section class="content-section" style="--acc:var(--coral)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--coral)">{{mono_334}}</span>
-<h2>{{mono_335}}</h2>
-<p>{{mono_336}}</p>
+<span class="eyebrow center" style="--acc:var(--coral)">{{mono_365}}</span>
+<h2>{{mono_366}}</h2>
+<p>{{mono_367}}</p>
 </div>
 <div class="docs-grid" style="grid-template-columns:repeat(2,1fr);max-width:720px">
 <a class="doc-card" data-reveal="" href="tel:938948646" style="--card-acc:var(--verd)">
 <svg class="doc-icon" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-<div class="doc-text"><span class="doc-name">938 94 86 46</span><span class="doc-meta">{{mono_337}}</span></div>
+<div class="doc-text"><span class="doc-name">938 94 86 46</span><span class="doc-meta">{{mono_368}}</span></div>
 <span class="doc-arrow">→</span>
 </a>
 <a class="doc-card" data-reveal="" data-reveal-d="1" href="mailto:sad@avemariafundacio.org" style="--card-acc:var(--coral)">
 <svg class="doc-icon" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-<div class="doc-text"><span class="doc-name">{{mono_338}}</span><span class="doc-meta">{{mono_339}}</span></div>
+<div class="doc-text"><span class="doc-name">{{mono_369}}</span><span class="doc-meta">{{mono_370}}</span></div>
 <span class="doc-arrow">→</span>
 </a>
 </div>
@@ -1176,40 +1338,40 @@
 <div class="page" id="families" style="--acc:var(--groc)">
 <div class="page-header">
 <div class="container">
-<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_340}}</a> / <a href="#serveis" onclick="showPage('serveis')">{{mono_341}}</a> {{mono_342}}</p>
-<h1>{{mono_343}}</h1>
-<p class="subtitle">{{mono_344}}</p>
+<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_371}}</a> / <a href="#serveis" onclick="showPage('serveis')">{{mono_372}}</a> {{mono_373}}</p>
+<h1>{{mono_374}}</h1>
+<p class="subtitle">{{mono_375}}</p>
 </div>
 </div>
 <!-- 1) Intro -->
 <section class="content-section qs-intro" style="--acc:var(--groc)">
 <div class="container">
 <div class="qs-intro-text" data-reveal="">
-<span class="eyebrow" style="--acc:var(--groc)">{{mono_345}}</span>
-<h2>{{mono_346}}</h2>
-<p class="qs-lede">{{mono_347}}</p>
-<p>{{mono_348}}</p>
+<span class="eyebrow" style="--acc:var(--groc)">{{mono_376}}</span>
+<h2>{{mono_377}}</h2>
+<p class="qs-lede">{{mono_378}}</p>
+<p>{{mono_379}}</p>
 </div>
 </div>
 </section>
 <!-- 2) Cita destacada Famílies -->
 <div class="feature-quote" data-reveal="">
 <p>
-<span class="fq-mk">"</span>{{mono_349}}<span class="fq-mk">"</span>
+<span class="fq-mk">"</span>{{mono_380}}<span class="fq-mk">"</span>
 </p>
 </div>
 <!-- 3) Serveis per a famílies — 4 cards -->
 <section class="content-section" style="--acc:var(--rosa);background:var(--paper-2)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--rosa)">{{mono_350}}</span>
-<h2>{{mono_351}}</h2>
+<span class="eyebrow center" style="--acc:var(--rosa)">{{mono_381}}</span>
+<h2>{{mono_382}}</h2>
 </div>
 <div class="mvv-grid" style="grid-template-columns:repeat(2,1fr);max-width:1080px;margin:0 auto">
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>{{mono_352}}</h3><p>{{mono_353}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>{{mono_354}}</h3><p>{{mono_355}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>{{mono_356}}</h3><p>{{mono_357}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">04</span><h3>{{mono_358}}</h3><p>{{mono_359}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>{{mono_383}}</h3><p>{{mono_384}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>{{mono_385}}</h3><p>{{mono_386}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>{{mono_387}}</h3><p>{{mono_388}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">04</span><h3>{{mono_389}}</h3><p>{{mono_390}}</p></article>
 </div>
 </div>
 </section>
@@ -1217,41 +1379,41 @@
 <section class="content-section" style="--acc:var(--verd)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--verd)">{{mono_360}}</span>
-<h2>{{mono_361}}</h2>
-<p>{{mono_362}}</p>
+<span class="eyebrow center" style="--acc:var(--verd)">{{mono_391}}</span>
+<h2>{{mono_392}}</h2>
+<p>{{mono_393}}</p>
 </div>
 <div class="mvv-grid" style="grid-template-columns:repeat(4,1fr);max-width:1180px;margin:0 auto">
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>{{mono_363}}</h3><p>{{mono_364}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>{{mono_365}}</h3><p>{{mono_366}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>{{mono_367}}</h3><p>{{mono_368}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">04</span><h3>{{mono_369}}</h3><p>{{mono_370}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>{{mono_394}}</h3><p>{{mono_395}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>{{mono_396}}</h3><p>{{mono_397}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>{{mono_398}}</h3><p>{{mono_399}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">04</span><h3>{{mono_400}}</h3><p>{{mono_401}}</p></article>
 </div>
 </div>
 </section>
 <!-- 5) Cita destacada Inclusió Laboral -->
 <div class="feature-quote" data-reveal="">
 <p>
-<span class="fq-mk">"</span>{{mono_371}}<span class="fq-mk">"</span>
+<span class="fq-mk">"</span>{{mono_402}}<span class="fq-mk">"</span>
 </p>
 </div>
 <!-- 6) Modalitats laborals — 2 cards grans -->
 <section class="content-section" style="--acc:var(--taronja);background:var(--paper-2)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--taronja)">{{mono_372}}</span>
-<h2>{{mono_373}}</h2>
+<span class="eyebrow center" style="--acc:var(--taronja)">{{mono_403}}</span>
+<h2>{{mono_404}}</h2>
 </div>
 <div class="mvv-grid" style="grid-template-columns:repeat(2,1fr);max-width:1080px;margin:0 auto">
 <article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)">
 <span class="mvv-num">01</span>
-<h3>{{mono_374}}</h3>
-<p>{{mono_375}}</p>
+<h3>{{mono_405}}</h3>
+<p>{{mono_406}}</p>
 </article>
 <article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)">
 <span class="mvv-num">02</span>
-<h3>{{mono_376}}</h3>
-<p>{{mono_377}}</p>
+<h3>{{mono_407}}</h3>
+<p>{{mono_408}}</p>
 </article>
 </div>
 </div>
@@ -1260,18 +1422,18 @@
 <section class="content-section" style="--acc:var(--blau)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--blau)">{{mono_378}}</span>
-<h2>{{mono_379}}</h2>
-<p>{{mono_380}}</p>
+<span class="eyebrow center" style="--acc:var(--blau)">{{mono_409}}</span>
+<h2>{{mono_410}}</h2>
+<p>{{mono_411}}</p>
 </div>
 <div class="mvv-grid" style="grid-template-columns:repeat(5,1fr);max-width:1280px;margin:0 auto;gap:clamp(14px,1.8vw,24px)">
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><p><strong>{{mono_381}}</strong> {{mono_382}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><p><strong>{{mono_383}}</strong> {{mono_384}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><p><strong>{{mono_385}}</strong> {{mono_386}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--groc)"><span class="mvv-num">04</span><p><strong>{{mono_387}}</strong> {{mono_388}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="4" style="--card-acc:var(--coral)"><span class="mvv-num">05</span><p><strong>{{mono_389}}</strong> {{mono_390}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><p><strong>{{mono_412}}</strong> {{mono_413}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><p><strong>{{mono_414}}</strong> {{mono_415}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><p><strong>{{mono_416}}</strong> {{mono_417}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--groc)"><span class="mvv-num">04</span><p><strong>{{mono_418}}</strong> {{mono_419}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="4" style="--card-acc:var(--coral)"><span class="mvv-num">05</span><p><strong>{{mono_420}}</strong> {{mono_421}}</p></article>
 </div>
-<div style="text-align:center;margin-top:48px"><a class="btn btn-primary" href="#contacte" onclick="showPage('contacte')">{{mono_391}} <span class="arr">→</span></a></div>
+<div style="text-align:center;margin-top:48px"><a class="btn btn-primary" href="#contacte" onclick="showPage('contacte')">{{mono_422}} <span class="arr">→</span></a></div>
 </div>
 </section>
 </div>
@@ -1285,33 +1447,33 @@
 <section class="content-section qs-intro" style="--acc:var(--coral)">
 <div class="container">
 <div class="qs-intro-text" data-reveal="">
-<span class="eyebrow" style="--acc:var(--coral)">{{mono_392}}</span>
-<h2>{{mono_393}}</h2>
-<p class="qs-lede">{{mono_394}}</p>
-<p>{{mono_395}}</p>
+<span class="eyebrow" style="--acc:var(--coral)">{{mono_423}}</span>
+<h2>{{mono_424}}</h2>
+<p class="qs-lede">{{mono_425}}</p>
+<p>{{mono_426}}</p>
 </div>
 </div>
 </section>
 <!-- 2) Cita destacada -->
 <div class="feature-quote" data-reveal="">
 <p>
-<span class="fq-mk">"</span>{{mono_396}}<span class="fq-mk">"</span>
+<span class="fq-mk">"</span>{{mono_427}}<span class="fq-mk">"</span>
 </p>
 </div>
 <!-- 3) Què oferim — 6 cards numerades -->
 <section class="content-section" style="--acc:var(--coral);background:var(--paper-2)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--coral)">{{mono_397}}</span>
-<h2>{{mono_398}}</h2>
+<span class="eyebrow center" style="--acc:var(--coral)">{{mono_428}}</span>
+<h2>{{mono_429}}</h2>
 </div>
 <div class="mvv-grid" style="grid-template-columns:repeat(3,1fr)">
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>{{mono_399}}</h3><p>{{mono_400}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>{{mono_401}}</h3><p>{{mono_402}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>{{mono_403}}</h3><p>{{mono_404}}</p></article>
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--groc)"><span class="mvv-num">04</span><h3>{{mono_405}}</h3><p>{{mono_406}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--rosa)"><span class="mvv-num">05</span><h3>{{mono_407}}</h3><p>{{mono_408}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--coral)"><span class="mvv-num">06</span><h3>{{mono_409}}</h3><p>{{mono_410}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>{{mono_430}}</h3><p>{{mono_431}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>{{mono_432}}</h3><p>{{mono_433}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>{{mono_434}}</h3><p>{{mono_435}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--groc)"><span class="mvv-num">04</span><h3>{{mono_436}}</h3><p>{{mono_437}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--rosa)"><span class="mvv-num">05</span><h3>{{mono_438}}</h3><p>{{mono_439}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--coral)"><span class="mvv-num">06</span><h3>{{mono_440}}</h3><p>{{mono_441}}</p></article>
 </div>
 </div>
 </section>
@@ -1319,14 +1481,14 @@
 <section class="content-section" style="--acc:var(--blau)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--blau)">{{mono_411}}</span>
-<h2>{{mono_412}}</h2>
+<span class="eyebrow center" style="--acc:var(--blau)">{{mono_442}}</span>
+<h2>{{mono_443}}</h2>
 </div>
 <div class="mvv-grid" style="grid-template-columns:repeat(4,1fr);max-width:1180px;margin:0 auto">
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">A</span><p>{{mono_413}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">B</span><p>{{mono_414}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">C</span><p>{{mono_415}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">D</span><p>{{mono_416}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">A</span><p>{{mono_444}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">B</span><p>{{mono_445}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">C</span><p>{{mono_446}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">D</span><p>{{mono_447}}</p></article>
 </div>
 </div>
 </section>
@@ -1335,17 +1497,17 @@
 <div class="container">
 <div class="sec-head" data-reveal="">
 <div class="sh-l">
-<span class="eyebrow" style="--acc:var(--coral)">{{mono_417}}</span>
-<h2>{{mono_418}}</h2>
+<span class="eyebrow" style="--acc:var(--coral)">{{mono_448}}</span>
+<h2>{{mono_449}}</h2>
 </div>
-<span class="idx">{{mono_419}}</span>
+<span class="idx">{{mono_450}}</span>
 </div>
 <div class="stats-grid qs-stats-grid" style="grid-template-columns:repeat(3,1fr)">
-<div class="stat-item" data-reveal=""><div class="stat-number">{{mono_420}}</div><div class="stat-label">{{mono_421}}</div></div>
-<div class="stat-item" data-reveal="" data-reveal-d="1"><div class="stat-number">{{mono_422}}</div><div class="stat-label">{{mono_423}}</div></div>
-<div class="stat-item" data-reveal="" data-reveal-d="2"><div class="stat-number">{{mono_424}}</div><div class="stat-label">{{mono_425}}</div></div>
+<div class="stat-item" data-reveal=""><div class="stat-number">{{mono_451}}</div><div class="stat-label">{{mono_452}}</div></div>
+<div class="stat-item" data-reveal="" data-reveal-d="1"><div class="stat-number">{{mono_453}}</div><div class="stat-label">{{mono_454}}</div></div>
+<div class="stat-item" data-reveal="" data-reveal-d="2"><div class="stat-number">{{mono_455}}</div><div class="stat-label">{{mono_456}}</div></div>
 </div>
-<div style="text-align:center;margin-top:48px"><a class="btn btn-primary" href="#contacte" onclick="showPage('contacte')">{{mono_426}} <span class="arr">→</span></a></div>
+<div style="text-align:center;margin-top:48px"><a class="btn btn-primary" href="#contacte" onclick="showPage('contacte')">{{mono_457}} <span class="arr">→</span></a></div>
 </div>
 </section>
 </div>
@@ -1355,33 +1517,33 @@
 <section class="content-section qs-intro" style="--acc:var(--rosa)">
 <div class="container">
 <div class="qs-intro-text" data-reveal="">
-<span class="eyebrow" style="--acc:var(--rosa)">{{mono_427}}</span>
-<h2>{{mono_428}}</h2>
-<p class="qs-lede">{{mono_429}}</p>
-<p>{{mono_430}}</p>
+<span class="eyebrow" style="--acc:var(--rosa)">{{mono_458}}</span>
+<h2>{{mono_459}}</h2>
+<p class="qs-lede">{{mono_460}}</p>
+<p>{{mono_461}}</p>
 </div>
 </div>
 </section>
 <!-- 2) Cita destacada -->
 <div class="feature-quote" data-reveal="">
 <p>
-<span class="fq-mk">"</span>{{mono_431}}<span class="fq-mk">"</span>
+<span class="fq-mk">"</span>{{mono_462}}<span class="fq-mk">"</span>
 </p>
 </div>
 <!-- 3) Línies de treball -->
 <section class="content-section" style="--acc:var(--rosa);background:var(--paper-2)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--rosa)">{{mono_432}}</span>
-<h2>{{mono_433}}</h2>
+<span class="eyebrow center" style="--acc:var(--rosa)">{{mono_463}}</span>
+<h2>{{mono_464}}</h2>
 </div>
 <div class="mvv-grid" style="grid-template-columns:repeat(3,1fr)">
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>{{mono_434}}</h3><p>{{mono_435}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>{{mono_436}}</h3><p>{{mono_437}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>{{mono_438}}</h3><p>{{mono_439}}</p></article>
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--groc)"><span class="mvv-num">04</span><h3>{{mono_440}}</h3><p>{{mono_441}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--rosa)"><span class="mvv-num">05</span><h3>{{mono_442}}</h3><p>{{mono_443}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--coral)"><span class="mvv-num">06</span><h3>{{mono_444}}</h3><p>{{mono_445}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">01</span><h3>{{mono_465}}</h3><p>{{mono_466}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">02</span><h3>{{mono_467}}</h3><p>{{mono_468}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">03</span><h3>{{mono_469}}</h3><p>{{mono_470}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--groc)"><span class="mvv-num">04</span><h3>{{mono_471}}</h3><p>{{mono_472}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--rosa)"><span class="mvv-num">05</span><h3>{{mono_473}}</h3><p>{{mono_474}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--coral)"><span class="mvv-num">06</span><h3>{{mono_475}}</h3><p>{{mono_476}}</p></article>
 </div>
 </div>
 </section>
@@ -1389,14 +1551,14 @@
 <section class="content-section" style="--acc:var(--blau)">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center" style="--acc:var(--blau)">{{mono_446}}</span>
-<h2>{{mono_447}}</h2>
+<span class="eyebrow center" style="--acc:var(--blau)">{{mono_477}}</span>
+<h2>{{mono_478}}</h2>
 </div>
 <div class="mvv-grid" style="grid-template-columns:repeat(4,1fr);max-width:1180px;margin:0 auto">
-<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">A</span><p>{{mono_448}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">B</span><p>{{mono_449}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">C</span><p>{{mono_450}}</p></article>
-<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">D</span><p>{{mono_451}}</p></article>
+<article class="mvv-card" data-reveal="" style="--card-acc:var(--taronja)"><span class="mvv-num">A</span><p>{{mono_479}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="1" style="--card-acc:var(--verd)"><span class="mvv-num">B</span><p>{{mono_480}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="2" style="--card-acc:var(--blau)"><span class="mvv-num">C</span><p>{{mono_481}}</p></article>
+<article class="mvv-card" data-reveal="" data-reveal-d="3" style="--card-acc:var(--coral)"><span class="mvv-num">D</span><p>{{mono_482}}</p></article>
 </div>
 </div>
 </section>
@@ -1405,17 +1567,17 @@
 <div class="container">
 <div class="sec-head" data-reveal="">
 <div class="sh-l">
-<span class="eyebrow" style="--acc:var(--rosa)">{{mono_452}}</span>
-<h2>{{mono_453}}</h2>
+<span class="eyebrow" style="--acc:var(--rosa)">{{mono_483}}</span>
+<h2>{{mono_484}}</h2>
 </div>
-<span class="idx">{{mono_454}}</span>
+<span class="idx">{{mono_485}}</span>
 </div>
 <div class="stats-grid qs-stats-grid" style="grid-template-columns:repeat(3,1fr)">
-<div class="stat-item" data-reveal=""><div class="stat-number">{{mono_455}}</div><div class="stat-label">{{mono_456}}</div></div>
-<div class="stat-item" data-reveal="" data-reveal-d="1"><div class="stat-number">{{mono_457}}</div><div class="stat-label">{{mono_458}}</div></div>
-<div class="stat-item" data-reveal="" data-reveal-d="2"><div class="stat-number">{{mono_459}}</div><div class="stat-label">{{mono_460}}</div></div>
+<div class="stat-item" data-reveal=""><div class="stat-number">{{mono_486}}</div><div class="stat-label">{{mono_487}}</div></div>
+<div class="stat-item" data-reveal="" data-reveal-d="1"><div class="stat-number">{{mono_488}}</div><div class="stat-label">{{mono_489}}</div></div>
+<div class="stat-item" data-reveal="" data-reveal-d="2"><div class="stat-number">{{mono_490}}</div><div class="stat-label">{{mono_491}}</div></div>
 </div>
-<div style="text-align:center;margin-top:48px"><a class="btn btn-primary" href="#contacte" onclick="showPage('contacte')">{{mono_461}} <span class="arr">→</span></a></div>
+<div style="text-align:center;margin-top:48px"><a class="btn btn-primary" href="#contacte" onclick="showPage('contacte')">{{mono_492}} <span class="arr">→</span></a></div>
 </div>
 </section>
 </div>
@@ -1424,27 +1586,27 @@
 <section class="content-section">
 <div class="container">
 <div class="section-header" data-reveal="">
-<span class="eyebrow center">{{mono_462}}</span>
-<h2 style="margin-top:18px"><span data-lang-ca="">{{txt_185_ca}}</span><span data-lang-es="">{{txt_185_es}}</span></h2>
+<span class="eyebrow center">{{mono_493}}</span>
+<h2 style="margin-top:18px"><span data-lang-ca="">{{txt_179_ca}}</span><span data-lang-es="">{{txt_179_es}}</span></h2>
 </div>
 <div class="collabora-grid">
-<div class="collabora-card" data-reveal=""><div class="collabora-icon">€</div><h3><span data-lang-ca="">{{txt_186_ca}}</span><span data-lang-es="">{{txt_186_es}}</span></h3><p><span data-lang-ca="">{{txt_187_ca}}</span><span data-lang-es="">{{txt_187_es}}</span></p><a class="btn btn-dark" href="#donar" onclick="showPage('donar')"><span data-lang-ca="">{{txt_188_ca}}</span><span data-lang-es="">{{txt_188_es}}</span></a></div>
-<div class="collabora-card" data-reveal="" data-reveal-d="1"><div class="collabora-icon">◇</div><h3>{{mono_463}}</h3><p>{{mono_464}}</p><a class="btn btn-dark" href="#contacte" onclick="showPage('contacte')">{{mono_465}}</a></div>
-<div class="collabora-card" data-reveal="" data-reveal-d="2"><div class="collabora-icon">▥</div><h3>{{mono_466}}</h3><p>{{mono_467}}</p><a class="btn btn-dark" href="#botiga" onclick="showPage('botiga')">{{mono_468}}</a></div>
+<div class="collabora-card" data-reveal=""><div class="collabora-icon">€</div><h3><span data-lang-ca="">{{txt_180_ca}}</span><span data-lang-es="">{{txt_180_es}}</span></h3><p><span data-lang-ca="">{{txt_181_ca}}</span><span data-lang-es="">{{txt_181_es}}</span></p><a class="btn btn-dark" href="#donar" onclick="showPage('donar')"><span data-lang-ca="">{{txt_182_ca}}</span><span data-lang-es="">{{txt_182_es}}</span></a></div>
+<div class="collabora-card" data-reveal="" data-reveal-d="1"><div class="collabora-icon">◇</div><h3>{{mono_494}}</h3><p>{{mono_495}}</p><a class="btn btn-dark" href="#contacte" onclick="showPage('contacte')">{{mono_496}}</a></div>
+<div class="collabora-card" data-reveal="" data-reveal-d="2"><div class="collabora-icon">▥</div><h3>{{mono_497}}</h3><p>{{mono_498}}</p><a class="btn btn-dark" href="#botiga" onclick="showPage('botiga')">{{mono_499}}</a></div>
 </div>
 </div>
 </section>
 <section class="content-section">
 <div class="container">
 <div class="desgravacio-box" data-reveal="">
-<h3><span data-lang-ca="">{{txt_189_ca}}</span><span data-lang-es="">{{txt_189_es}}</span></h3>
-<p><span data-lang-ca="">{{txt_190_ca}}</span><span data-lang-es="">{{txt_190_es}}</span></p>
+<h3><span data-lang-ca="">{{txt_183_ca}}</span><span data-lang-es="">{{txt_183_es}}</span></h3>
+<p><span data-lang-ca="">{{txt_184_ca}}</span><span data-lang-es="">{{txt_184_es}}</span></p>
 <table class="desgravacio-table">
-<tr><td><span data-lang-ca="">{{txt_191_ca}}</span><span data-lang-es="">{{txt_191_es}}</span></td><td>{{mono_469}}</td></tr>
-<tr><td><span data-lang-ca="">{{txt_192_ca}}</span><span data-lang-es="">{{txt_192_es}}</span></td><td>{{mono_470}}</td></tr>
-<tr><td><span data-lang-ca="">{{txt_193_ca}}</span><span data-lang-es="">{{txt_193_es}}</span></td><td>{{mono_471}}</td></tr>
+<tr><td><span data-lang-ca="">{{txt_185_ca}}</span><span data-lang-es="">{{txt_185_es}}</span></td><td>{{mono_500}}</td></tr>
+<tr><td><span data-lang-ca="">{{txt_186_ca}}</span><span data-lang-es="">{{txt_186_es}}</span></td><td>{{mono_501}}</td></tr>
+<tr><td><span data-lang-ca="">{{txt_187_ca}}</span><span data-lang-es="">{{txt_187_es}}</span></td><td>{{mono_502}}</td></tr>
 </table>
-<p><strong><span data-lang-ca="">{{txt_194_ca}}</span><span data-lang-es="">{{txt_194_es}}</span></strong> <span data-lang-ca="">{{txt_195_ca}}</span><span data-lang-es="">{{txt_195_es}}</span></p>
+<p><strong><span data-lang-ca="">{{txt_188_ca}}</span><span data-lang-es="">{{txt_188_es}}</span></strong> <span data-lang-ca="">{{txt_189_ca}}</span><span data-lang-es="">{{txt_189_es}}</span></p>
 </div>
 </div>
 </section>
@@ -1455,45 +1617,45 @@
 <div class="container">
 <div class="donacio-grid">
 <div class="donacio-info" data-reveal="">
-<h1 style="font-size:var(--fs-hero);font-weight:200;letter-spacing:-.03em;line-height:1;margin-bottom:30px"><span data-lang-ca="">{{txt_196_ca}}</span><span data-lang-es="">{{txt_196_es}}</span></h1>
-<div class="quote-box" style="margin-bottom:40px"><span data-lang-ca="">{{txt_197_ca}}</span><span data-lang-es="">{{txt_197_es}}</span><div class="quote-author"><span data-lang-ca="">{{txt_198_ca}}</span><span data-lang-es="">{{txt_198_es}}</span></div></div>
-<p style="font-size:var(--fs-lede);margin-bottom:30px;font-weight:300;color:var(--ink)"><span data-lang-ca="">{{txt_199_ca}}</span><span data-lang-es="">{{txt_199_es}}</span></p>
-<h3><span data-lang-ca="">{{txt_200_ca}}</span><span data-lang-es="">{{txt_200_es}}</span></h3>
+<h1 style="font-size:var(--fs-hero);font-weight:200;letter-spacing:-.03em;line-height:1;margin-bottom:30px"><span data-lang-ca="">{{txt_190_ca}}</span><span data-lang-es="">{{txt_190_es}}</span></h1>
+<div class="quote-box" style="margin-bottom:40px"><span data-lang-ca="">{{txt_191_ca}}</span><span data-lang-es="">{{txt_191_es}}</span><div class="quote-author"><span data-lang-ca="">{{txt_192_ca}}</span><span data-lang-es="">{{txt_192_es}}</span></div></div>
+<p style="font-size:var(--fs-lede);margin-bottom:30px;font-weight:300;color:var(--ink)"><span data-lang-ca="">{{txt_193_ca}}</span><span data-lang-es="">{{txt_193_es}}</span></p>
+<h3><span data-lang-ca="">{{txt_194_ca}}</span><span data-lang-es="">{{txt_194_es}}</span></h3>
 <ul>
-<li><strong>{{mono_472}}</strong> <span data-lang-ca="">{{txt_201_ca}}</span><span data-lang-es="">{{txt_201_es}}</span></li>
-<li><strong>{{mono_473}}</strong> <span data-lang-ca="">{{txt_202_ca}}</span><span data-lang-es="">{{txt_202_es}}</span></li>
-<li><strong>{{mono_474}}</strong> <span data-lang-ca="">{{txt_203_ca}}</span><span data-lang-es="">{{txt_203_es}}</span></li>
-<li><strong>{{mono_475}}</strong> <span data-lang-ca="">{{txt_204_ca}}</span><span data-lang-es="">{{txt_204_es}}</span></li>
+<li><strong>{{mono_503}}</strong> <span data-lang-ca="">{{txt_195_ca}}</span><span data-lang-es="">{{txt_195_es}}</span></li>
+<li><strong>{{mono_504}}</strong> <span data-lang-ca="">{{txt_196_ca}}</span><span data-lang-es="">{{txt_196_es}}</span></li>
+<li><strong>{{mono_505}}</strong> <span data-lang-ca="">{{txt_197_ca}}</span><span data-lang-es="">{{txt_197_es}}</span></li>
+<li><strong>{{mono_506}}</strong> <span data-lang-ca="">{{txt_198_ca}}</span><span data-lang-es="">{{txt_198_es}}</span></li>
 </ul>
 <div style="margin-top:40px;padding:26px;background:var(--white);border:1px solid var(--line)">
-<h4 style="margin-bottom:15px"><span data-lang-ca="">{{txt_205_ca}}</span><span data-lang-es="">{{txt_205_es}}</span></h4>
-<p style="margin-bottom:10px"><strong><span data-lang-ca="">{{txt_206_ca}}</span><span data-lang-es="">{{txt_206_es}}</span></strong> {{mono_476}}</p>
-<p style="margin-bottom:0"><strong><span data-lang-ca="">{{txt_207_ca}}</span><span data-lang-es="">{{txt_207_es}}</span></strong> 00000</p>
+<h4 style="margin-bottom:15px"><span data-lang-ca="">{{txt_199_ca}}</span><span data-lang-es="">{{txt_199_es}}</span></h4>
+<p style="margin-bottom:10px"><strong><span data-lang-ca="">{{txt_200_ca}}</span><span data-lang-es="">{{txt_200_es}}</span></strong> {{mono_507}}</p>
+<p style="margin-bottom:0"><strong><span data-lang-ca="">{{txt_201_ca}}</span><span data-lang-es="">{{txt_201_es}}</span></strong> 00000</p>
 </div>
 </div>
 <div class="donacio-form-box" data-reveal="" data-reveal-d="1">
-<h3><span data-lang-ca="">{{txt_208_ca}}</span><span data-lang-es="">{{txt_208_es}}</span></h3>
+<h3><span data-lang-ca="">{{txt_202_ca}}</span><span data-lang-es="">{{txt_202_es}}</span></h3>
 <div class="type-selector">
-<div class="type-option"><span data-lang-ca="">{{txt_209_ca}}</span><span data-lang-es="">{{txt_209_es}}</span></div>
-<div class="type-option active"><span data-lang-ca="">{{txt_210_ca}}</span><span data-lang-es="">{{txt_210_es}}</span></div>
+<div class="type-option"><span data-lang-ca="">{{txt_203_ca}}</span><span data-lang-es="">{{txt_203_es}}</span></div>
+<div class="type-option active"><span data-lang-ca="">{{txt_204_ca}}</span><span data-lang-es="">{{txt_204_es}}</span></div>
 </div>
 <div class="amount-selector">
-<div class="amount-option"><div class="amount">10€</div><div class="period">{{mono_477}}</div></div>
-<div class="amount-option active"><div class="amount">25€</div><div class="period">{{mono_478}}</div></div>
-<div class="amount-option"><div class="amount">50€</div><div class="period">{{mono_479}}</div></div>
-<div class="amount-option"><div class="amount">100€</div><div class="period">{{mono_480}}</div></div>
-<div class="amount-option"><div class="amount">200€</div><div class="period">{{mono_481}}</div></div>
-<div class="amount-option"><div class="amount"><span data-lang-ca="">{{txt_211_ca}}</span><span data-lang-es="">{{txt_211_es}}</span></div></div>
+<div class="amount-option"><div class="amount">10€</div><div class="period">{{mono_508}}</div></div>
+<div class="amount-option active"><div class="amount">25€</div><div class="period">{{mono_509}}</div></div>
+<div class="amount-option"><div class="amount">50€</div><div class="period">{{mono_510}}</div></div>
+<div class="amount-option"><div class="amount">100€</div><div class="period">{{mono_511}}</div></div>
+<div class="amount-option"><div class="amount">200€</div><div class="period">{{mono_512}}</div></div>
+<div class="amount-option"><div class="amount"><span data-lang-ca="">{{txt_205_ca}}</span><span data-lang-es="">{{txt_205_es}}</span></div></div>
 </div>
 <div class="impacte-box">
-<h4><span data-lang-ca="">{{txt_212_ca}}</span><span data-lang-es="">{{txt_212_es}}</span></h4>
-<p><span data-lang-ca="">{{txt_213_ca}}</span><span data-lang-es="">{{txt_213_es}}</span></p>
+<h4><span data-lang-ca="">{{txt_206_ca}}</span><span data-lang-es="">{{txt_206_es}}</span></h4>
+<p><span data-lang-ca="">{{txt_207_ca}}</span><span data-lang-es="">{{txt_207_es}}</span></p>
 </div>
-<div class="form-group" style="margin-bottom:15px"><label><span data-lang-ca="">{{txt_214_ca}}</span><span data-lang-es="">{{txt_214_es}}</span></label><input type="text"/></div>
-<div class="form-group" style="margin-bottom:15px"><label>{{mono_482}}</label><input type="email"/></div>
-<div class="form-group" style="margin-bottom:25px"><label><span data-lang-ca="">{{txt_215_ca}}</span><span data-lang-es="">{{txt_215_es}}</span></label><input type="text"/></div>
-<button class="btn btn-dark" style="width:100%;justify-content:center;padding:18px"><span data-lang-ca="">{{txt_216_ca}}</span><span data-lang-es="">{{txt_216_es}}</span> <span class="arr">→</span></button>
-<p style="text-align:center;margin-top:15px;font-size:.84rem;color:var(--muted)"><span data-lang-ca="">{{txt_217_ca}}</span><span data-lang-es="">{{txt_217_es}}</span></p>
+<div class="form-group" style="margin-bottom:15px"><label><span data-lang-ca="">{{txt_208_ca}}</span><span data-lang-es="">{{txt_208_es}}</span></label><input type="text"/></div>
+<div class="form-group" style="margin-bottom:15px"><label>{{mono_513}}</label><input type="email"/></div>
+<div class="form-group" style="margin-bottom:25px"><label><span data-lang-ca="">{{txt_209_ca}}</span><span data-lang-es="">{{txt_209_es}}</span></label><input type="text"/></div>
+<button class="btn btn-dark" style="width:100%;justify-content:center;padding:18px"><span data-lang-ca="">{{txt_210_ca}}</span><span data-lang-es="">{{txt_210_es}}</span> <span class="arr">→</span></button>
+<p style="text-align:center;margin-top:15px;font-size:.84rem;color:var(--muted)"><span data-lang-ca="">{{txt_211_ca}}</span><span data-lang-es="">{{txt_211_es}}</span></p>
 </div>
 </div>
 </div>
@@ -1503,37 +1665,37 @@
 <div class="page" id="art" style="--acc:var(--rosa)">
 <div class="page-header">
 <div class="container">
-<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_483}}</a> {{mono_484}}</p>
-<h1>{{mono_485}}</h1>
-<p class="subtitle">{{mono_486}}</p>
+<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_514}}</a> {{mono_515}}</p>
+<h1>{{mono_516}}</h1>
+<p class="subtitle">{{mono_517}}</p>
 </div>
 </div>
 <section class="content-section">
 <div class="container">
-<p data-reveal="" style="max-width:840px;margin:0 auto 50px;text-align:center;font-size:var(--fs-lede);color:var(--ink-soft);font-weight:300">{{mono_487}}</p>
+<p data-reveal="" style="max-width:840px;margin:0 auto 50px;text-align:center;font-size:var(--fs-lede);color:var(--ink-soft);font-weight:300">{{mono_518}}</p>
 <div class="galeria-grid" data-reveal="">
-<div class="galeria-item large" style="background-image:url('{{img_035}}')"></div>
-<div class="galeria-item" style="background-image:url('{{img_036}}')"></div>
-<div class="galeria-item" style="background-image:url('{{img_037}}')"></div>
-<div class="galeria-item" style="background-image:url('{{img_038}}')"></div>
-<div class="galeria-item" style="background-image:url('{{img_039}}')"></div>
+<div class="galeria-item large" style="background-image:url('{{img_044}}')"></div>
+<div class="galeria-item" style="background-image:url('{{img_045}}')"></div>
+<div class="galeria-item" style="background-image:url('{{img_046}}')"></div>
+<div class="galeria-item" style="background-image:url('{{img_047}}')"></div>
+<div class="galeria-item" style="background-image:url('{{img_048}}')"></div>
 </div>
 <div class="content-main" data-reveal="" style="max-width:840px;margin:0 auto">
-<p>{{mono_488}}</p>
-<p>{{mono_489}}</p>
-<p>{{mono_490}}</p>
-<p>{{mono_491}}</p>
-<p><strong>{{mono_492}}</strong></p>
+<p>{{mono_519}}</p>
+<p>{{mono_520}}</p>
+<p>{{mono_521}}</p>
+<p>{{mono_522}}</p>
+<p><strong>{{mono_523}}</strong></p>
 </div>
-<h3 data-reveal="" style="text-align:center;margin:60px 0 30px">{{mono_493}}</h3>
+<h3 data-reveal="" style="text-align:center;margin:60px 0 30px">{{mono_524}}</h3>
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
-<div data-reveal="" style="text-align:center"><div <="" class="ph" div="" style="aspect-ratio:1;margin-bottom:15px;background-image:url('{{img_040}}')"><h4>{{mono_494}}</h4><p style="color:var(--muted);font-size:.9rem">{{mono_495}}</p></div>
-<div data-reveal="" data-reveal-d="1" style="text-align:center"><div <="" class="ph" div="" style="aspect-ratio:1;margin-bottom:15px;background-image:url('{{img_041}}')"><h4>{{mono_496}}</h4><p style="color:var(--muted);font-size:.9rem">{{mono_497}}</p></div>
-<div data-reveal="" data-reveal-d="2" style="text-align:center"><div <="" class="ph" div="" style="aspect-ratio:1;margin-bottom:15px;background-image:url('{{img_042}}')"><h4>{{mono_498}}</h4><p style="color:var(--muted);font-size:.9rem">{{mono_499}}</p></div>
-<div data-reveal="" style="text-align:center"><div <="" class="ph" div="" style="aspect-ratio:1;margin-bottom:15px;background-image:url('{{img_043}}')"><h4>{{mono_500}}</h4><p style="color:var(--muted);font-size:.9rem">{{mono_501}}</p></div>
-<div data-reveal="" data-reveal-d="1" style="text-align:center"><div <="" class="ph" div="" style="aspect-ratio:1;margin-bottom:15px;background-image:url('{{img_044}}')"><h4>{{mono_502}}</h4><p style="color:var(--muted);font-size:.9rem">{{mono_503}}</p></div>
+<div data-reveal="" style="text-align:center"><div <="" class="ph" div="" style="aspect-ratio:1;margin-bottom:15px;background-image:url('{{img_049}}')"><h4>{{mono_525}}</h4><p style="color:var(--muted);font-size:.9rem">{{mono_526}}</p></div>
+<div data-reveal="" data-reveal-d="1" style="text-align:center"><div <="" class="ph" div="" style="aspect-ratio:1;margin-bottom:15px;background-image:url('{{img_050}}')"><h4>{{mono_527}}</h4><p style="color:var(--muted);font-size:.9rem">{{mono_528}}</p></div>
+<div data-reveal="" data-reveal-d="2" style="text-align:center"><div <="" class="ph" div="" style="aspect-ratio:1;margin-bottom:15px;background-image:url('{{img_051}}')"><h4>{{mono_529}}</h4><p style="color:var(--muted);font-size:.9rem">{{mono_530}}</p></div>
+<div data-reveal="" style="text-align:center"><div <="" class="ph" div="" style="aspect-ratio:1;margin-bottom:15px;background-image:url('{{img_052}}')"><h4>{{mono_531}}</h4><p style="color:var(--muted);font-size:.9rem">{{mono_532}}</p></div>
+<div data-reveal="" data-reveal-d="1" style="text-align:center"><div <="" class="ph" div="" style="aspect-ratio:1;margin-bottom:15px;background-image:url('{{img_053}}')"><h4>{{mono_533}}</h4><p style="color:var(--muted);font-size:.9rem">{{mono_534}}</p></div>
 </div>
-<div data-reveal="" style="text-align:center;margin-top:50px"><a class="btn btn-dark" href="#botiga" onclick="showPage('botiga')">{{mono_504}} <span class="arr">→</span></a></div>
+<div data-reveal="" style="text-align:center;margin-top:50px"><a class="btn btn-dark" href="#botiga" onclick="showPage('botiga')">{{mono_535}} <span class="arr">→</span></a></div>
 </div>
 </div></div></div></div></div></section>
 </div>
@@ -1541,26 +1703,26 @@
 <div class="page" id="botiga" style="--acc:var(--taronja)">
 <div class="page-header">
 <div class="container">
-<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_505}}</a> {{mono_506}}</p>
-<h1>{{mono_507}}</h1>
-<p class="subtitle">{{mono_508}}</p>
+<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_536}}</a> {{mono_537}}</p>
+<h1>{{mono_538}}</h1>
+<p class="subtitle">{{mono_539}}</p>
 </div>
 </div>
 <section class="content-section">
 <div class="container">
 <div class="serveis-grid">
-<div class="servei-card" data-reveal=""><div class="servei-img" style="background-image:url('{{img_045}}')"></div><div class="servei-content"><h3>{{mono_509}}</h3><p>{{mono_510}}</p><p style="font-size:1.3em;font-weight:500;margin-bottom:0">12,00€</p></div></div>
-<div class="servei-card" data-reveal="" data-reveal-d="1"><div class="servei-img" style="background-image:url('{{img_046}}')"></div><div class="servei-content"><h3>{{mono_511}}</h3><p>{{mono_512}}</p><p style="font-size:1.3em;font-weight:500;margin-bottom:0">7,00€</p></div></div>
-<div class="servei-card" data-reveal="" data-reveal-d="2"><div class="servei-img" style="background-image:url('{{img_047}}')"></div><div class="servei-content"><h3>{{mono_513}}</h3><p>{{mono_514}}</p><p style="font-size:1.3em;font-weight:500;margin-bottom:0">35,00€</p></div></div>
-<div class="servei-card" data-reveal=""><div class="servei-img" style="background-image:url('{{img_048}}')"></div><div class="servei-content"><h3>{{mono_515}}</h3><p>{{mono_516}}</p><p style="font-size:1.3em;font-weight:500;margin-bottom:0">50,00€</p></div></div>
-<div class="servei-card" data-reveal="" data-reveal-d="1"><div class="servei-img" style="background-image:url('{{img_049}}')"></div><div class="servei-content"><h3>{{mono_517}}</h3><p>{{mono_518}}</p><p style="font-size:1.3em;font-weight:500;margin-bottom:0">59,00€</p></div></div>
-<div class="servei-card" data-reveal="" data-reveal-d="2"><div class="servei-img" style="background-image:url('{{img_050}}')"></div><div class="servei-content"><h3>{{mono_519}}</h3><p>{{mono_520}}</p><p style="font-size:1.3em;font-weight:500;margin-bottom:0">36,05€</p></div></div>
+<div class="servei-card" data-reveal=""><div class="servei-img" style="background-image:url('{{img_054}}')"></div><div class="servei-content"><h3>{{mono_540}}</h3><p>{{mono_541}}</p><p style="font-size:1.3em;font-weight:500;margin-bottom:0">12,00€</p></div></div>
+<div class="servei-card" data-reveal="" data-reveal-d="1"><div class="servei-img" style="background-image:url('{{img_055}}')"></div><div class="servei-content"><h3>{{mono_542}}</h3><p>{{mono_543}}</p><p style="font-size:1.3em;font-weight:500;margin-bottom:0">7,00€</p></div></div>
+<div class="servei-card" data-reveal="" data-reveal-d="2"><div class="servei-img" style="background-image:url('{{img_056}}')"></div><div class="servei-content"><h3>{{mono_544}}</h3><p>{{mono_545}}</p><p style="font-size:1.3em;font-weight:500;margin-bottom:0">35,00€</p></div></div>
+<div class="servei-card" data-reveal=""><div class="servei-img" style="background-image:url('{{img_057}}')"></div><div class="servei-content"><h3>{{mono_546}}</h3><p>{{mono_547}}</p><p style="font-size:1.3em;font-weight:500;margin-bottom:0">50,00€</p></div></div>
+<div class="servei-card" data-reveal="" data-reveal-d="1"><div class="servei-img" style="background-image:url('{{img_058}}')"></div><div class="servei-content"><h3>{{mono_548}}</h3><p>{{mono_549}}</p><p style="font-size:1.3em;font-weight:500;margin-bottom:0">59,00€</p></div></div>
+<div class="servei-card" data-reveal="" data-reveal-d="2"><div class="servei-img" style="background-image:url('{{img_059}}')"></div><div class="servei-content"><h3>{{mono_550}}</h3><p>{{mono_551}}</p><p style="font-size:1.3em;font-weight:500;margin-bottom:0">36,05€</p></div></div>
 </div>
 <div data-reveal="" style="background:var(--white);border:1px solid var(--line);padding:40px;margin-top:60px;text-align:center">
-<h3>{{mono_521}}</h3>
-<p style="color:var(--muted);margin-bottom:20px">{{mono_522}}</p>
-<p><strong>{{mono_523}}</strong> {{mono_524}} <strong>{{mono_525}}</strong> 938 94 86 46</p>
-<p style="font-size:.9rem;color:var(--muted);margin-top:20px">{{mono_526}}</p>
+<h3>{{mono_552}}</h3>
+<p style="color:var(--muted);margin-bottom:20px">{{mono_553}}</p>
+<p><strong>{{mono_554}}</strong> {{mono_555}} <strong>{{mono_556}}</strong> 938 94 86 46</p>
+<p style="font-size:.9rem;color:var(--muted);margin-top:20px">{{mono_557}}</p>
 </div>
 </div>
 </section>
@@ -1569,260 +1731,260 @@
 <div class="page" id="actualitat" style="--acc:var(--verd)">
 <div class="page-header">
 <div class="container">
-<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_527}}</a> {{mono_528}}</p>
-<h1>{{mono_529}}</h1>
-<p class="subtitle">{{mono_530}}</p>
+<p class="breadcrumb"><a href="#home" onclick="showPage('home')">{{mono_558}}</a> {{mono_559}}</p>
+<h1>{{mono_560}}</h1>
+<p class="subtitle">{{mono_561}}</p>
 </div>
 </div>
 <section class="content-section">
 <div class="container">
 <div class="noticies-grid">
-<div class="noticia-card" data-reveal=""><div class="noticia-img" style="background-image:url('{{img_051}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_531}}</p><h3><a href="#noticia-1" onclick="showPage('noticia-1')">{{mono_532}}</a></h3><p>{{mono_533}}</p></div></div>
-<div class="noticia-card" data-reveal="" data-reveal-d="1"><div class="noticia-img" style="background-image:url('{{img_052}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_534}}</p><h3><a href="#noticia-2" onclick="showPage('noticia-2')">{{mono_535}}</a></h3><p>{{mono_536}}</p></div></div>
-<div class="noticia-card" data-reveal="" data-reveal-d="2"><div class="noticia-img" style="background-image:url('{{img_053}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_537}}</p><h3><a href="#noticia-3" onclick="showPage('noticia-3')">{{mono_538}}</a></h3><p>{{mono_539}}</p></div></div>
-<div class="noticia-card" data-reveal=""><div class="noticia-img" style="background-image:url('{{img_054}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_540}}</p><h3><a href="#noticia-4" onclick="showPage('noticia-4')">{{mono_541}}</a></h3><p>{{mono_542}}</p></div></div>
-<div class="noticia-card" data-reveal="" data-reveal-d="1"><div class="noticia-img" style="background-image:url('{{img_055}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_543}}</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">{{mono_544}}</a></h3><p>{{mono_545}}</p></div></div>
-<div class="noticia-card" data-reveal="" data-reveal-d="2"><div class="noticia-img" style="background-image:url('{{img_056}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_546}}</p><h3><a href="#noticia-6" onclick="showPage('noticia-6')">{{mono_547}}</a></h3><p>{{mono_548}}</p></div></div>
+<div class="noticia-card" data-reveal=""><div class="noticia-img" style="background-image:url('{{img_060}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_562}}</p><h3><a href="#noticia-1" onclick="showPage('noticia-1')">{{mono_563}}</a></h3><p>{{mono_564}}</p></div></div>
+<div class="noticia-card" data-reveal="" data-reveal-d="1"><div class="noticia-img" style="background-image:url('{{img_061}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_565}}</p><h3><a href="#noticia-2" onclick="showPage('noticia-2')">{{mono_566}}</a></h3><p>{{mono_567}}</p></div></div>
+<div class="noticia-card" data-reveal="" data-reveal-d="2"><div class="noticia-img" style="background-image:url('{{img_062}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_568}}</p><h3><a href="#noticia-3" onclick="showPage('noticia-3')">{{mono_569}}</a></h3><p>{{mono_570}}</p></div></div>
+<div class="noticia-card" data-reveal=""><div class="noticia-img" style="background-image:url('{{img_063}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_571}}</p><h3><a href="#noticia-4" onclick="showPage('noticia-4')">{{mono_572}}</a></h3><p>{{mono_573}}</p></div></div>
+<div class="noticia-card" data-reveal="" data-reveal-d="1"><div class="noticia-img" style="background-image:url('{{img_064}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_574}}</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">{{mono_575}}</a></h3><p>{{mono_576}}</p></div></div>
+<div class="noticia-card" data-reveal="" data-reveal-d="2"><div class="noticia-img" style="background-image:url('{{img_065}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_577}}</p><h3><a href="#noticia-6" onclick="showPage('noticia-6')">{{mono_578}}</a></h3><p>{{mono_579}}</p></div></div>
 </div>
 </div>
 </section>
 </div>
 <!-- ==================== NOTÍCIA 1 — SAD ==================== -->
 <div class="page" id="noticia-1" style="--acc:var(--verd)">
-<div class="article-hero" style="background-image:url('{{img_057}}')"></div>
+<div class="article-hero" style="background-image:url('{{img_066}}')"></div>
 <div class="article-back-bar container">
-<a href="#actualitat" onclick="showPage('actualitat')">{{mono_549}}</a>
+<a href="#actualitat" onclick="showPage('actualitat')">{{mono_580}}</a>
 </div>
 <article class="article-container">
 <div class="article-meta">
-<span>{{mono_550}}</span>
+<span>{{mono_581}}</span>
 <span class="dot"></span>
-<span class="a-cat">{{mono_551}}</span>
+<span class="a-cat">{{mono_582}}</span>
 <span class="dot"></span>
-<span class="a-cat">{{mono_552}}</span>
+<span class="a-cat">{{mono_583}}</span>
 </div>
-<h1 class="article-title">{{mono_553}}</h1>
-<p class="article-lede">{{mono_554}}</p>
+<h1 class="article-title">{{mono_584}}</h1>
+<p class="article-lede">{{mono_585}}</p>
 <div class="article-body">
-<p>{{mono_555}} <strong>{{mono_556}}</strong>{{mono_557}}</p>
-<p>{{mono_558}}</p>
+<p>{{mono_586}} <strong>{{mono_587}}</strong>{{mono_588}}</p>
+<p>{{mono_589}}</p>
 <div class="article-quote">
-<p>{{mono_559}}</p>
-<cite>{{mono_560}}</cite>
+<p>{{mono_590}}</p>
+<cite>{{mono_591}}</cite>
 </div>
-<h3>{{mono_561}}</h3>
-<p>{{mono_562}}</p>
-<h3>{{mono_563}}</h3>
-<p>{{mono_564}}</p>
+<h3>{{mono_592}}</h3>
+<p>{{mono_593}}</p>
+<h3>{{mono_594}}</h3>
+<p>{{mono_595}}</p>
 </div>
 </article>
 <section class="article-related">
 <div class="article-related-inner">
-<div class="section-header"><span class="eyebrow center">{{mono_565}}</span><h2>{{mono_566}}</h2></div>
+<div class="section-header"><span class="eyebrow center">{{mono_596}}</span><h2>{{mono_597}}</h2></div>
 <div class="noticies-grid">
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_058}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_567}}</p><h3><a href="#noticia-3" onclick="showPage('noticia-3')">{{mono_568}}</a></h3></div></div>
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_059}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_569}}</p><h3><a href="#noticia-4" onclick="showPage('noticia-4')">{{mono_570}}</a></h3></div></div>
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_060}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_571}}</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">{{mono_572}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_067}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_598}}</p><h3><a href="#noticia-3" onclick="showPage('noticia-3')">{{mono_599}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_068}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_600}}</p><h3><a href="#noticia-4" onclick="showPage('noticia-4')">{{mono_601}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_069}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_602}}</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">{{mono_603}}</a></h3></div></div>
 </div>
 </div>
 </section>
 </div>
 <!-- ==================== NOTÍCIA 2 — GRANGEL ==================== -->
 <div class="page" id="noticia-2" style="--acc:var(--rosa)">
-<div class="article-hero" style="background-image:url('{{img_061}}')"></div>
+<div class="article-hero" style="background-image:url('{{img_070}}')"></div>
 <div class="article-back-bar container">
-<a href="#actualitat" onclick="showPage('actualitat')">{{mono_573}}</a>
+<a href="#actualitat" onclick="showPage('actualitat')">{{mono_604}}</a>
 </div>
 <article class="article-container">
 <div class="article-meta">
-<span>{{mono_574}}</span>
+<span>{{mono_605}}</span>
 <span class="dot"></span>
-<span class="a-cat">{{mono_575}}</span>
+<span class="a-cat">{{mono_606}}</span>
 <span class="dot"></span>
-<span class="a-cat">{{mono_576}}</span>
+<span class="a-cat">{{mono_607}}</span>
 </div>
-<h1 class="article-title">{{mono_577}}</h1>
-<p class="article-lede">{{mono_578}}</p>
+<h1 class="article-title">{{mono_608}}</h1>
+<p class="article-lede">{{mono_609}}</p>
 <div class="article-body">
-<p>{{mono_579}} <strong>{{mono_580}}</strong>{{mono_581}} <strong>{{mono_582}}</strong> {{mono_583}}</p>
-<p>{{mono_584}}</p>
+<p>{{mono_610}} <strong>{{mono_611}}</strong>{{mono_612}} <strong>{{mono_613}}</strong> {{mono_614}}</p>
+<p>{{mono_615}}</p>
 <div class="article-quote">
-<p>{{mono_585}}</p>
-<cite>{{mono_586}}</cite>
+<p>{{mono_616}}</p>
+<cite>{{mono_617}}</cite>
 </div>
-<h3>{{mono_587}}</h3>
-<p>{{mono_588}}</p>
-<h3>{{mono_589}}</h3>
-<p>{{mono_590}}</p>
+<h3>{{mono_618}}</h3>
+<p>{{mono_619}}</p>
+<h3>{{mono_620}}</h3>
+<p>{{mono_621}}</p>
 </div>
 </article>
 <section class="article-related">
 <div class="article-related-inner">
-<div class="section-header"><span class="eyebrow center">{{mono_591}}</span><h2>{{mono_592}}</h2></div>
+<div class="section-header"><span class="eyebrow center">{{mono_622}}</span><h2>{{mono_623}}</h2></div>
 <div class="noticies-grid">
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_062}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_593}}</p><h3><a href="#noticia-6" onclick="showPage('noticia-6')">{{mono_594}}</a></h3></div></div>
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_063}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_595}}</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">{{mono_596}}</a></h3></div></div>
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_064}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_597}}</p><h3><a href="#noticia-1" onclick="showPage('noticia-1')">{{mono_598}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_071}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_624}}</p><h3><a href="#noticia-6" onclick="showPage('noticia-6')">{{mono_625}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_072}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_626}}</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">{{mono_627}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_073}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_628}}</p><h3><a href="#noticia-1" onclick="showPage('noticia-1')">{{mono_629}}</a></h3></div></div>
 </div>
 </div>
 </section>
 </div>
 <!-- ==================== NOTÍCIA 3 — BENVIURE ==================== -->
 <div class="page" id="noticia-3" style="--acc:var(--blau)">
-<div class="article-hero" style="background-image:url('{{img_065}}')"></div>
+<div class="article-hero" style="background-image:url('{{img_074}}')"></div>
 <div class="article-back-bar container">
-<a href="#actualitat" onclick="showPage('actualitat')">{{mono_599}}</a>
+<a href="#actualitat" onclick="showPage('actualitat')">{{mono_630}}</a>
 </div>
 <article class="article-container">
 <div class="article-meta">
-<span>{{mono_600}}</span>
+<span>{{mono_631}}</span>
 <span class="dot"></span>
-<span class="a-cat">{{mono_601}}</span>
+<span class="a-cat">{{mono_632}}</span>
 <span class="dot"></span>
-<span class="a-cat">{{mono_602}}</span>
+<span class="a-cat">{{mono_633}}</span>
 </div>
-<h1 class="article-title">{{mono_603}}</h1>
-<p class="article-lede">{{mono_604}}</p>
+<h1 class="article-title">{{mono_634}}</h1>
+<p class="article-lede">{{mono_635}}</p>
 <div class="article-body">
-<p>{{mono_605}} <strong>{{mono_606}}</strong>{{mono_607}}</p>
-<p>{{mono_608}} <strong>{{mono_609}}</strong> {{mono_610}}</p>
+<p>{{mono_636}} <strong>{{mono_637}}</strong>{{mono_638}}</p>
+<p>{{mono_639}} <strong>{{mono_640}}</strong> {{mono_641}}</p>
 <div class="article-quote">
-<p>{{mono_611}}</p>
-<cite>{{mono_612}}</cite>
+<p>{{mono_642}}</p>
+<cite>{{mono_643}}</cite>
 </div>
-<h3>{{mono_613}}</h3>
-<p>{{mono_614}}</p>
-<h3>{{mono_615}}</h3>
-<p>{{mono_616}}</p>
+<h3>{{mono_644}}</h3>
+<p>{{mono_645}}</p>
+<h3>{{mono_646}}</h3>
+<p>{{mono_647}}</p>
 </div>
 </article>
 <section class="article-related">
 <div class="article-related-inner">
-<div class="section-header"><span class="eyebrow center">{{mono_617}}</span><h2>{{mono_618}}</h2></div>
+<div class="section-header"><span class="eyebrow center">{{mono_648}}</span><h2>{{mono_649}}</h2></div>
 <div class="noticies-grid">
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_066}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_619}}</p><h3><a href="#noticia-1" onclick="showPage('noticia-1')">{{mono_620}}</a></h3></div></div>
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_067}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_621}}</p><h3><a href="#noticia-4" onclick="showPage('noticia-4')">{{mono_622}}</a></h3></div></div>
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_068}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_623}}</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">{{mono_624}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_075}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_650}}</p><h3><a href="#noticia-1" onclick="showPage('noticia-1')">{{mono_651}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_076}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_652}}</p><h3><a href="#noticia-4" onclick="showPage('noticia-4')">{{mono_653}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_077}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_654}}</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">{{mono_655}}</a></h3></div></div>
 </div>
 </div>
 </section>
 </div>
 <!-- ==================== NOTÍCIA 4 — TORNEIG ==================== -->
 <div class="page" id="noticia-4" style="--acc:var(--groc)">
-<div class="article-hero" style="background-image:url('{{img_069}}')"></div>
+<div class="article-hero" style="background-image:url('{{img_078}}')"></div>
 <div class="article-back-bar container">
-<a href="#actualitat" onclick="showPage('actualitat')">{{mono_625}}</a>
+<a href="#actualitat" onclick="showPage('actualitat')">{{mono_656}}</a>
 </div>
 <article class="article-container">
 <div class="article-meta">
-<span>{{mono_626}}</span>
+<span>{{mono_657}}</span>
 <span class="dot"></span>
-<span class="a-cat">{{mono_627}}</span>
+<span class="a-cat">{{mono_658}}</span>
 <span class="dot"></span>
-<span class="a-cat">{{mono_628}}</span>
+<span class="a-cat">{{mono_659}}</span>
 </div>
-<h1 class="article-title">{{mono_629}}</h1>
-<p class="article-lede">{{mono_630}}</p>
+<h1 class="article-title">{{mono_660}}</h1>
+<p class="article-lede">{{mono_661}}</p>
 <div class="article-body">
-<p>{{mono_631}} <strong>{{mono_632}}</strong> {{mono_633}}</p>
-<p>{{mono_634}} <strong>{{mono_635}}</strong> {{mono_636}} <strong>{{mono_637}}</strong>{{mono_638}}</p>
+<p>{{mono_662}} <strong>{{mono_663}}</strong> {{mono_664}}</p>
+<p>{{mono_665}} <strong>{{mono_666}}</strong> {{mono_667}} <strong>{{mono_668}}</strong>{{mono_669}}</p>
 <div class="article-quote">
-<p>{{mono_639}}</p>
-<cite>{{mono_640}}</cite>
+<p>{{mono_670}}</p>
+<cite>{{mono_671}}</cite>
 </div>
-<h3>{{mono_641}}</h3>
-<p>{{mono_642}}</p>
-<h3>{{mono_643}}</h3>
-<p>{{mono_644}}</p>
+<h3>{{mono_672}}</h3>
+<p>{{mono_673}}</p>
+<h3>{{mono_674}}</h3>
+<p>{{mono_675}}</p>
 </div>
 </article>
 <section class="article-related">
 <div class="article-related-inner">
-<div class="section-header"><span class="eyebrow center">{{mono_645}}</span><h2>{{mono_646}}</h2></div>
+<div class="section-header"><span class="eyebrow center">{{mono_676}}</span><h2>{{mono_677}}</h2></div>
 <div class="noticies-grid">
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_070}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_647}}</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">{{mono_648}}</a></h3></div></div>
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_071}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_649}}</p><h3><a href="#noticia-6" onclick="showPage('noticia-6')">{{mono_650}}</a></h3></div></div>
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_072}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_651}}</p><h3><a href="#noticia-2" onclick="showPage('noticia-2')">{{mono_652}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_079}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_678}}</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">{{mono_679}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_080}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_680}}</p><h3><a href="#noticia-6" onclick="showPage('noticia-6')">{{mono_681}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_081}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_682}}</p><h3><a href="#noticia-2" onclick="showPage('noticia-2')">{{mono_683}}</a></h3></div></div>
 </div>
 </div>
 </section>
 </div>
 <!-- ==================== NOTÍCIA 5 — CONCERT ==================== -->
 <div class="page" id="noticia-5" style="--acc:var(--coral)">
-<div class="article-hero" style="background-image:url('{{img_073}}')"></div>
+<div class="article-hero" style="background-image:url('{{img_082}}')"></div>
 <div class="article-back-bar container">
-<a href="#actualitat" onclick="showPage('actualitat')">{{mono_653}}</a>
+<a href="#actualitat" onclick="showPage('actualitat')">{{mono_684}}</a>
 </div>
 <article class="article-container">
 <div class="article-meta">
-<span>{{mono_654}}</span>
+<span>{{mono_685}}</span>
 <span class="dot"></span>
-<span class="a-cat">{{mono_655}}</span>
+<span class="a-cat">{{mono_686}}</span>
 <span class="dot"></span>
-<span class="a-cat">{{mono_656}}</span>
+<span class="a-cat">{{mono_687}}</span>
 </div>
-<h1 class="article-title">{{mono_657}}</h1>
-<p class="article-lede">{{mono_658}}</p>
+<h1 class="article-title">{{mono_688}}</h1>
+<p class="article-lede">{{mono_689}}</p>
 <div class="article-body">
-<p>{{mono_659}} <strong>{{mono_660}}</strong>{{mono_661}} <strong>{{mono_662}}</strong>{{mono_663}}</p>
-<p>{{mono_664}} <strong>{{mono_665}}</strong> {{mono_666}}</p>
+<p>{{mono_690}} <strong>{{mono_691}}</strong>{{mono_692}} <strong>{{mono_693}}</strong>{{mono_694}}</p>
+<p>{{mono_695}} <strong>{{mono_696}}</strong> {{mono_697}}</p>
 <div class="article-quote">
-<p>{{mono_667}}</p>
-<cite>{{mono_668}}</cite>
+<p>{{mono_698}}</p>
+<cite>{{mono_699}}</cite>
 </div>
-<h3>{{mono_669}}</h3>
-<p>{{mono_670}}</p>
-<h3>{{mono_671}}</h3>
-<p>{{mono_672}}</p>
+<h3>{{mono_700}}</h3>
+<p>{{mono_701}}</p>
+<h3>{{mono_702}}</h3>
+<p>{{mono_703}}</p>
 </div>
 </article>
 <section class="article-related">
 <div class="article-related-inner">
-<div class="section-header"><span class="eyebrow center">{{mono_673}}</span><h2>{{mono_674}}</h2></div>
+<div class="section-header"><span class="eyebrow center">{{mono_704}}</span><h2>{{mono_705}}</h2></div>
 <div class="noticies-grid">
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_074}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_675}}</p><h3><a href="#noticia-4" onclick="showPage('noticia-4')">{{mono_676}}</a></h3></div></div>
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_075}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_677}}</p><h3><a href="#noticia-6" onclick="showPage('noticia-6')">{{mono_678}}</a></h3></div></div>
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_076}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_679}}</p><h3><a href="#noticia-2" onclick="showPage('noticia-2')">{{mono_680}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_083}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_706}}</p><h3><a href="#noticia-4" onclick="showPage('noticia-4')">{{mono_707}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_084}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_708}}</p><h3><a href="#noticia-6" onclick="showPage('noticia-6')">{{mono_709}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_085}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_710}}</p><h3><a href="#noticia-2" onclick="showPage('noticia-2')">{{mono_711}}</a></h3></div></div>
 </div>
 </div>
 </section>
 </div>
 <!-- ==================== NOTÍCIA 6 — MARIA PILAR ==================== -->
 <div class="page" id="noticia-6" style="--acc:var(--taronja)">
-<div class="article-hero" style="background-image:url('{{img_077}}')"></div>
+<div class="article-hero" style="background-image:url('{{img_086}}')"></div>
 <div class="article-back-bar container">
-<a href="#actualitat" onclick="showPage('actualitat')">{{mono_681}}</a>
+<a href="#actualitat" onclick="showPage('actualitat')">{{mono_712}}</a>
 </div>
 <article class="article-container">
 <div class="article-meta">
-<span>{{mono_682}}</span>
+<span>{{mono_713}}</span>
 <span class="dot"></span>
-<span class="a-cat">{{mono_683}}</span>
+<span class="a-cat">{{mono_714}}</span>
 <span class="dot"></span>
-<span class="a-cat">{{mono_684}}</span>
+<span class="a-cat">{{mono_715}}</span>
 </div>
-<h1 class="article-title">{{mono_685}}</h1>
-<p class="article-lede">{{mono_686}}</p>
+<h1 class="article-title">{{mono_716}}</h1>
+<p class="article-lede">{{mono_717}}</p>
 <div class="article-body">
-<p>{{mono_687}} <strong>{{mono_688}}</strong> {{mono_689}}</p>
-<p>{{mono_690}} <strong>{{mono_691}}</strong>{{mono_692}}</p>
+<p>{{mono_718}} <strong>{{mono_719}}</strong> {{mono_720}}</p>
+<p>{{mono_721}} <strong>{{mono_722}}</strong>{{mono_723}}</p>
 <div class="article-quote">
-<p>{{mono_693}}</p>
-<cite>{{mono_694}}</cite>
+<p>{{mono_724}}</p>
+<cite>{{mono_725}}</cite>
 </div>
-<h3>{{mono_695}}</h3>
-<p>{{mono_696}}</p>
-<h3>{{mono_697}}</h3>
-<p>{{mono_698}}</p>
+<h3>{{mono_726}}</h3>
+<p>{{mono_727}}</p>
+<h3>{{mono_728}}</h3>
+<p>{{mono_729}}</p>
 </div>
 </article>
 <section class="article-related">
 <div class="article-related-inner">
-<div class="section-header"><span class="eyebrow center">{{mono_699}}</span><h2>{{mono_700}}</h2></div>
+<div class="section-header"><span class="eyebrow center">{{mono_730}}</span><h2>{{mono_731}}</h2></div>
 <div class="noticies-grid">
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_078}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_701}}</p><h3><a href="#noticia-2" onclick="showPage('noticia-2')">{{mono_702}}</a></h3></div></div>
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_079}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_703}}</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">{{mono_704}}</a></h3></div></div>
-<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_080}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_705}}</p><h3><a href="#noticia-1" onclick="showPage('noticia-1')">{{mono_706}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_087}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_732}}</p><h3><a href="#noticia-2" onclick="showPage('noticia-2')">{{mono_733}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_088}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_734}}</p><h3><a href="#noticia-5" onclick="showPage('noticia-5')">{{mono_735}}</a></h3></div></div>
+<div class="noticia-card"><div class="noticia-img" style="background-image:url('{{img_089}}')"></div><div class="noticia-content"><p class="noticia-date">{{mono_736}}</p><h3><a href="#noticia-1" onclick="showPage('noticia-1')">{{mono_737}}</a></h3></div></div>
 </div>
 </div>
 </section>
@@ -1831,75 +1993,75 @@
 <div class="page" id="contacte" style="--acc:var(--blau)">
 <div class="page-header">
 <div class="container">
-<p class="breadcrumb"><a href="#home" onclick="showPage('home')"><span data-lang-ca="">{{txt_218_ca}}</span><span data-lang-es="">{{txt_218_es}}</span></a> / <span data-lang-ca="">{{txt_219_ca}}</span><span data-lang-es="">{{txt_219_es}}</span></p>
-<h1><span data-lang-ca="">{{txt_220_ca}}</span><span data-lang-es="">{{txt_220_es}}</span></h1>
-<p class="subtitle"><span data-lang-ca="">{{txt_221_ca}}</span><span data-lang-es="">{{txt_221_es}}</span></p>
+<p class="breadcrumb"><a href="#home" onclick="showPage('home')"><span data-lang-ca="">{{txt_212_ca}}</span><span data-lang-es="">{{txt_212_es}}</span></a> / <span data-lang-ca="">{{txt_213_ca}}</span><span data-lang-es="">{{txt_213_es}}</span></p>
+<h1><span data-lang-ca="">{{txt_214_ca}}</span><span data-lang-es="">{{txt_214_es}}</span></h1>
+<p class="subtitle"><span data-lang-ca="">{{txt_215_ca}}</span><span data-lang-es="">{{txt_215_es}}</span></p>
 </div>
 </div>
 <section class="content-section">
 <div class="container">
 <div class="contacte-grid">
 <div class="contacte-info" data-reveal="">
-<h3><span data-lang-ca="">{{txt_222_ca}}</span><span data-lang-es="">{{txt_222_es}}</span></h3>
-<div class="contacte-item"><span class="contacte-icon">◇</span><div><strong><span data-lang-ca="">{{txt_223_ca}}</span><span data-lang-es="">{{txt_223_es}}</span></strong><br/>{{mono_707}}<br/>{{mono_708}}</div></div>
-<div class="contacte-item"><span class="contacte-icon">☏</span><div><strong><span data-lang-ca="">{{txt_224_ca}}</span><span data-lang-es="">{{txt_224_es}}</span></strong><br/>{{mono_709}}</div></div>
-<div class="contacte-item"><span class="contacte-icon">✉</span><div><strong>{{mono_710}}</strong><br/>{{mono_711}}</div></div>
-<h3 style="margin-top:30px"><span data-lang-ca="">{{txt_225_ca}}</span><span data-lang-es="">{{txt_225_es}}</span></h3>
+<h3><span data-lang-ca="">{{txt_216_ca}}</span><span data-lang-es="">{{txt_216_es}}</span></h3>
+<div class="contacte-item"><span class="contacte-icon">◇</span><div><strong><span data-lang-ca="">{{txt_217_ca}}</span><span data-lang-es="">{{txt_217_es}}</span></strong><br/>{{mono_738}}<br/>{{mono_739}}</div></div>
+<div class="contacte-item"><span class="contacte-icon">☏</span><div><strong><span data-lang-ca="">{{txt_218_ca}}</span><span data-lang-es="">{{txt_218_es}}</span></strong><br/>{{mono_740}}</div></div>
+<div class="contacte-item"><span class="contacte-icon">✉</span><div><strong>{{mono_741}}</strong><br/>{{mono_742}}</div></div>
+<h3 style="margin-top:30px"><span data-lang-ca="">{{txt_219_ca}}</span><span data-lang-es="">{{txt_219_es}}</span></h3>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:15px;font-size:.9rem;color:var(--ink-soft)">
-<div><strong><span data-lang-ca="">{{txt_226_ca}}</span><span data-lang-es="">{{txt_226_es}}</span></strong><br/>{{mono_712}}</div>
-<div><strong><span data-lang-ca="">{{txt_227_ca}}</span><span data-lang-es="">{{txt_227_es}}</span></strong><br/>{{mono_713}}</div>
-<div><strong><span data-lang-ca="">{{txt_228_ca}}</span><span data-lang-es="">{{txt_228_es}}</span></strong><br/>{{mono_714}}</div>
-<div><strong><span data-lang-ca="">{{txt_229_ca}}</span><span data-lang-es="">{{txt_229_es}}</span></strong><br/>{{mono_715}}</div>
-<div><strong><span data-lang-ca="">{{txt_230_ca}}</span><span data-lang-es="">{{txt_230_es}}</span></strong><br/>{{mono_716}}</div>
-<div><strong><span data-lang-ca="">{{txt_231_ca}}</span><span data-lang-es="">{{txt_231_es}}</span></strong><br/>{{mono_717}}</div>
-<div><strong><span data-lang-ca="">{{txt_232_ca}}</span><span data-lang-es="">{{txt_232_es}}</span></strong><br/>{{mono_718}}</div>
-<div><strong><span data-lang-ca="">{{txt_233_ca}}</span><span data-lang-es="">{{txt_233_es}}</span></strong><br/>{{mono_719}}</div>
+<div><strong><span data-lang-ca="">{{txt_220_ca}}</span><span data-lang-es="">{{txt_220_es}}</span></strong><br/>{{mono_743}}</div>
+<div><strong><span data-lang-ca="">{{txt_221_ca}}</span><span data-lang-es="">{{txt_221_es}}</span></strong><br/>{{mono_744}}</div>
+<div><strong><span data-lang-ca="">{{txt_222_ca}}</span><span data-lang-es="">{{txt_222_es}}</span></strong><br/>{{mono_745}}</div>
+<div><strong><span data-lang-ca="">{{txt_223_ca}}</span><span data-lang-es="">{{txt_223_es}}</span></strong><br/>{{mono_746}}</div>
+<div><strong><span data-lang-ca="">{{txt_224_ca}}</span><span data-lang-es="">{{txt_224_es}}</span></strong><br/>{{mono_747}}</div>
+<div><strong><span data-lang-ca="">{{txt_225_ca}}</span><span data-lang-es="">{{txt_225_es}}</span></strong><br/>{{mono_748}}</div>
+<div><strong><span data-lang-ca="">{{txt_226_ca}}</span><span data-lang-es="">{{txt_226_es}}</span></strong><br/>{{mono_749}}</div>
+<div><strong><span data-lang-ca="">{{txt_227_ca}}</span><span data-lang-es="">{{txt_227_es}}</span></strong><br/>{{mono_750}}</div>
 </div>
-<div class="contacte-item" style="margin-top:30px"><span class="contacte-icon">◷</span><div><strong><span data-lang-ca="">{{txt_234_ca}}</span><span data-lang-es="">{{txt_234_es}}</span></strong><br/><span data-lang-ca="">{{txt_235_ca}}</span><span data-lang-es="">{{txt_235_es}}</span></div></div>
-<h3><span data-lang-ca="">{{txt_236_ca}}</span><span data-lang-es="">{{txt_236_es}}</span></h3>
+<div class="contacte-item" style="margin-top:30px"><span class="contacte-icon">◷</span><div><strong><span data-lang-ca="">{{txt_228_ca}}</span><span data-lang-es="">{{txt_228_es}}</span></strong><br/><span data-lang-ca="">{{txt_229_ca}}</span><span data-lang-es="">{{txt_229_es}}</span></div></div>
+<h3><span data-lang-ca="">{{txt_230_ca}}</span><span data-lang-es="">{{txt_230_es}}</span></h3>
 <div class="social-links">
-<a class="social-link" href="https://www.facebook.com/avemariafundacio" title="Facebook">{{mono_720}}</a>
-<a class="social-link" href="https://www.instagram.com/funavemaria/" title="Instagram @funavemaria">{{mono_721}}</a>
+<a class="social-link" href="https://www.facebook.com/avemariafundacio" title="Facebook">{{mono_751}}</a>
+<a class="social-link" href="https://www.instagram.com/funavemaria/" title="Instagram @funavemaria">{{mono_752}}</a>
 <a class="social-link" href="https://x.com/funavemaria" title="X @funavemaria">X</a>
-<a class="social-link" href="https://www.linkedin.com/company/funavemaria" title="LinkedIn">{{mono_722}}</a>
-<a class="social-link" href="https://www.youtube.com/@funavemaria" title="YouTube @funavemaria">{{mono_723}}</a>
+<a class="social-link" href="https://www.linkedin.com/company/funavemaria" title="LinkedIn">{{mono_753}}</a>
+<a class="social-link" href="https://www.youtube.com/@funavemaria" title="YouTube @funavemaria">{{mono_754}}</a>
 </div>
-<h3 style="margin-top:30px"><span data-lang-ca="">{{txt_237_ca}}</span><span data-lang-es="">{{txt_237_es}}</span></h3>
+<h3 style="margin-top:30px"><span data-lang-ca="">{{txt_231_ca}}</span><span data-lang-es="">{{txt_231_es}}</span></h3>
 <div style="display:flex;flex-direction:column;gap:10px;margin-top:15px">
-<a href="#contacte" onclick="showPage('contacte')" style="display:flex;align-items:center;gap:12px;color:var(--ink);padding:13px 16px;background:var(--white);border:1px solid var(--line)"><span data-lang-ca="">{{txt_238_ca}}</span><span data-lang-es="">{{txt_238_es}}</span></a>
-<a href="#donar" onclick="showPage('donar')" style="display:flex;align-items:center;gap:12px;color:var(--ink);padding:13px 16px;background:var(--white);border:1px solid var(--line)"><span data-lang-ca="">{{txt_239_ca}}</span><span data-lang-es="">{{txt_239_es}}</span></a>
+<a href="#contacte" onclick="showPage('contacte')" style="display:flex;align-items:center;gap:12px;color:var(--ink);padding:13px 16px;background:var(--white);border:1px solid var(--line)"><span data-lang-ca="">{{txt_232_ca}}</span><span data-lang-es="">{{txt_232_es}}</span></a>
+<a href="#donar" onclick="showPage('donar')" style="display:flex;align-items:center;gap:12px;color:var(--ink);padding:13px 16px;background:var(--white);border:1px solid var(--line)"><span data-lang-ca="">{{txt_233_ca}}</span><span data-lang-es="">{{txt_233_es}}</span></a>
 </div>
-<div class="mapa-placeholder"><div class="ph-label"><svg viewbox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"></path><circle cx="12" cy="9" r="2.4"></circle></svg><span>{{mono_724}}</span></div></div>
+<div class="mapa-placeholder"><div class="ph-label"><svg viewbox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"></path><circle cx="12" cy="9" r="2.4"></circle></svg><span>{{mono_755}}</span></div></div>
 </div>
 <div data-reveal="" data-reveal-d="1">
 <div class="form-section" style="margin:0">
-<h3><span data-lang-ca="">{{txt_240_ca}}</span><span data-lang-es="">{{txt_240_es}}</span></h3>
+<h3><span data-lang-ca="">{{txt_234_ca}}</span><span data-lang-es="">{{txt_234_es}}</span></h3>
 <div class="form-grid" style="grid-template-columns:1fr 1fr">
-<div class="form-group"><label><span data-lang-ca="">{{txt_241_ca}}</span><span data-lang-es="">{{txt_241_es}}</span></label><input type="text"/></div>
-<div class="form-group"><label><span data-lang-ca="">{{txt_242_ca}}</span><span data-lang-es="">{{txt_242_es}}</span></label><input type="text"/></div>
-<div class="form-group"><label>{{mono_725}}</label><input type="email"/></div>
-<div class="form-group"><label><span data-lang-ca="">{{txt_243_ca}}</span><span data-lang-es="">{{txt_243_es}}</span></label><input type="tel"/></div>
-<div class="form-group full"><label><span data-lang-ca="">{{txt_244_ca}}</span><span data-lang-es="">{{txt_244_es}}</span></label>
+<div class="form-group"><label><span data-lang-ca="">{{txt_235_ca}}</span><span data-lang-es="">{{txt_235_es}}</span></label><input type="text"/></div>
+<div class="form-group"><label><span data-lang-ca="">{{txt_236_ca}}</span><span data-lang-es="">{{txt_236_es}}</span></label><input type="text"/></div>
+<div class="form-group"><label>{{mono_756}}</label><input type="email"/></div>
+<div class="form-group"><label><span data-lang-ca="">{{txt_237_ca}}</span><span data-lang-es="">{{txt_237_es}}</span></label><input type="tel"/></div>
+<div class="form-group full"><label><span data-lang-ca="">{{txt_238_ca}}</span><span data-lang-es="">{{txt_238_es}}</span></label>
 <select>
-<option data-lang-ca="">{{mono_726}}</option>
-<option data-lang-es="">{{mono_727}}</option>
-<option data-lang-ca="">{{mono_728}}</option>
-<option data-lang-es="">{{mono_729}}</option>
-<option data-lang-ca="">{{mono_730}}</option>
-<option data-lang-es="">{{mono_731}}</option>
-<option data-lang-ca="">{{mono_732}}</option>
-<option data-lang-es="">{{mono_733}}</option>
-<option data-lang-ca="">{{mono_734}}</option>
-<option data-lang-es="">{{mono_735}}</option>
-<option data-lang-ca="">{{mono_736}}</option>
-<option data-lang-es="">{{mono_737}}</option>
-<option data-lang-ca="">{{mono_738}}</option>
-<option data-lang-es="">{{mono_739}}</option>
+<option data-lang-ca="">{{mono_757}}</option>
+<option data-lang-es="">{{mono_758}}</option>
+<option data-lang-ca="">{{mono_759}}</option>
+<option data-lang-es="">{{mono_760}}</option>
+<option data-lang-ca="">{{mono_761}}</option>
+<option data-lang-es="">{{mono_762}}</option>
+<option data-lang-ca="">{{mono_763}}</option>
+<option data-lang-es="">{{mono_764}}</option>
+<option data-lang-ca="">{{mono_765}}</option>
+<option data-lang-es="">{{mono_766}}</option>
+<option data-lang-ca="">{{mono_767}}</option>
+<option data-lang-es="">{{mono_768}}</option>
+<option data-lang-ca="">{{mono_769}}</option>
+<option data-lang-es="">{{mono_770}}</option>
 </select>
 </div>
-<div class="form-group full"><label><span data-lang-ca="">{{txt_245_ca}}</span><span data-lang-es="">{{txt_245_es}}</span></label><textarea></textarea></div>
+<div class="form-group full"><label><span data-lang-ca="">{{txt_239_ca}}</span><span data-lang-es="">{{txt_239_es}}</span></label><textarea></textarea></div>
 </div>
-<div class="form-submit"><button class="btn btn-primary"><span data-lang-ca="">{{txt_246_ca}}</span><span data-lang-es="">{{txt_246_es}}</span></button></div>
+<div class="form-submit"><button class="btn btn-primary"><span data-lang-ca="">{{txt_240_ca}}</span><span data-lang-es="">{{txt_240_es}}</span></button></div>
 </div>
 </div>
 </div>
@@ -1911,45 +2073,45 @@
 <footer>
 <div class="footer-top">
 <div class="footer-brand footer-col">
-<div class="fb-mark">{{mono_740}}<br/>{{mono_741}}</div>
-<p><span data-lang-ca="">{{txt_247_ca}}</span><span data-lang-es="">{{txt_247_es}}</span></p>
-<p style="margin-top:20px">{{mono_742}}<br/>{{mono_743}}<br/>{{mono_744}}<br/>{{mono_745}}</p>
+<div class="fb-mark">{{mono_771}}<br/>{{mono_772}}</div>
+<p><span data-lang-ca="">{{txt_241_ca}}</span><span data-lang-es="">{{txt_241_es}}</span></p>
+<p style="margin-top:20px">{{mono_773}}<br/>{{mono_774}}<br/>{{mono_775}}<br/>{{mono_776}}</p>
+</div>
+<div class="footer-col">
+<h4><span data-lang-ca="">{{txt_242_ca}}</span><span data-lang-es="">{{txt_242_es}}</span></h4>
+<ul>
+<li><a href="#campus" onclick="showPage('campus')">{{mono_777}}</a></li>
+<li><a href="#llars" onclick="showPage('llars')"><span data-lang-ca="">{{txt_243_ca}}</span><span data-lang-es="">{{txt_243_es}}</span></a></li>
+<li><a href="#sad" onclick="showPage('sad')"><span data-lang-ca="">{{txt_244_ca}}</span><span data-lang-es="">{{txt_244_es}}</span></a></li>
+<li><a href="#centresdia" onclick="showPage('centresdia')"><span data-lang-ca="">{{txt_245_ca}}</span><span data-lang-es="">{{txt_245_es}}</span></a></li>
+<li><a href="#families" onclick="showPage('families')"><span data-lang-ca="">{{txt_246_ca}}</span><span data-lang-es="">{{txt_246_es}}</span></a></li>
+<li><a href="#recerca" onclick="showPage('recerca')"><span data-lang-ca="">{{txt_247_ca}}</span><span data-lang-es="">{{txt_247_es}}</span></a></li>
+</ul>
 </div>
 <div class="footer-col">
 <h4><span data-lang-ca="">{{txt_248_ca}}</span><span data-lang-es="">{{txt_248_es}}</span></h4>
 <ul>
-<li><a href="#campus" onclick="showPage('campus')">{{mono_746}}</a></li>
-<li><a href="#llars" onclick="showPage('llars')"><span data-lang-ca="">{{txt_249_ca}}</span><span data-lang-es="">{{txt_249_es}}</span></a></li>
-<li><a href="#sad" onclick="showPage('sad')"><span data-lang-ca="">{{txt_250_ca}}</span><span data-lang-es="">{{txt_250_es}}</span></a></li>
-<li><a href="#centresdia" onclick="showPage('centresdia')"><span data-lang-ca="">{{txt_251_ca}}</span><span data-lang-es="">{{txt_251_es}}</span></a></li>
-<li><a href="#families" onclick="showPage('families')"><span data-lang-ca="">{{txt_252_ca}}</span><span data-lang-es="">{{txt_252_es}}</span></a></li>
-<li><a href="#recerca" onclick="showPage('recerca')"><span data-lang-ca="">{{txt_253_ca}}</span><span data-lang-es="">{{txt_253_es}}</span></a></li>
+<li><a href="#donar" onclick="showPage('donar')"><span data-lang-ca="">{{txt_249_ca}}</span><span data-lang-es="">{{txt_249_es}}</span></a></li>
+<li><a href="#botiga" onclick="showPage('botiga')"><span data-lang-ca="">{{txt_250_ca}}</span><span data-lang-es="">{{txt_250_es}}</span></a></li>
 </ul>
 </div>
 <div class="footer-col">
-<h4><span data-lang-ca="">{{txt_254_ca}}</span><span data-lang-es="">{{txt_254_es}}</span></h4>
+<h4><span data-lang-ca="">{{txt_251_ca}}</span><span data-lang-es="">{{txt_251_es}}</span></h4>
 <ul>
-<li><a href="#donar" onclick="showPage('donar')"><span data-lang-ca="">{{txt_255_ca}}</span><span data-lang-es="">{{txt_255_es}}</span></a></li>
-<li><a href="#botiga" onclick="showPage('botiga')"><span data-lang-ca="">{{txt_256_ca}}</span><span data-lang-es="">{{txt_256_es}}</span></a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4><span data-lang-ca="">{{txt_257_ca}}</span><span data-lang-es="">{{txt_257_es}}</span></h4>
-<ul>
-<li><a href="#quisom" onclick="showPage('quisom')"><span data-lang-ca="">{{txt_258_ca}}</span><span data-lang-es="">{{txt_258_es}}</span></a></li>
-<li><a href="#transparencia" onclick="showPage('transparencia')"><span data-lang-ca="">{{txt_259_ca}}</span><span data-lang-es="">{{txt_259_es}}</span></a></li>
-<li><a href="#actualitat" onclick="showPage('actualitat')"><span data-lang-ca="">{{txt_260_ca}}</span><span data-lang-es="">{{txt_260_es}}</span></a></li>
-<li><a href="#contacte" onclick="showPage('contacte')"><span data-lang-ca="">{{txt_261_ca}}</span><span data-lang-es="">{{txt_261_es}}</span></a></li>
-<li><a href="#contacte" onclick="showPage('contacte')"><span data-lang-ca="">{{txt_262_ca}}</span><span data-lang-es="">{{txt_262_es}}</span></a></li>
+<li><a href="#quisom" onclick="showPage('quisom')"><span data-lang-ca="">{{txt_252_ca}}</span><span data-lang-es="">{{txt_252_es}}</span></a></li>
+<li><a href="#transparencia" onclick="showPage('transparencia')"><span data-lang-ca="">{{txt_253_ca}}</span><span data-lang-es="">{{txt_253_es}}</span></a></li>
+<li><a href="#actualitat" onclick="showPage('actualitat')"><span data-lang-ca="">{{txt_254_ca}}</span><span data-lang-es="">{{txt_254_es}}</span></a></li>
+<li><a href="#contacte" onclick="showPage('contacte')"><span data-lang-ca="">{{txt_255_ca}}</span><span data-lang-es="">{{txt_255_es}}</span></a></li>
+<li><a href="#contacte" onclick="showPage('contacte')"><span data-lang-ca="">{{txt_256_ca}}</span><span data-lang-es="">{{txt_256_es}}</span></a></li>
 </ul>
 </div>
 </div>
 <div class="footer-bottom">
-<div><span data-lang-ca="">{{txt_263_ca}}</span><span data-lang-es="">{{txt_263_es}}</span></div>
+<div><span data-lang-ca="">{{txt_257_ca}}</span><span data-lang-es="">{{txt_257_es}}</span></div>
 <div>
-<a href="#"><span data-lang-ca="">{{txt_264_ca}}</span><span data-lang-es="">{{txt_264_es}}</span></a>
-<a href="#"><span data-lang-ca="">{{txt_265_ca}}</span><span data-lang-es="">{{txt_265_es}}</span></a>
-<a href="#">{{mono_747}}</a>
+<a href="#"><span data-lang-ca="">{{txt_258_ca}}</span><span data-lang-es="">{{txt_258_es}}</span></a>
+<a href="#"><span data-lang-ca="">{{txt_259_ca}}</span><span data-lang-es="">{{txt_259_es}}</span></a>
+<a href="#">{{mono_778}}</a>
 </div>
 </div>
 </footer>

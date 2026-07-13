@@ -44,3 +44,7 @@ wp-*.jpeg
 web/wordpress/wp-content/uploads/
 web/wordpress/wp-content/upgrade/
 web/wordpress/wp-content/cache/
+
+# WordPress deploy ZIPs (regenerable, muy grandes >100MB)
+web/wordpress/deploy/avemaria-theme.zip
+web/wordpress/deploy/avemaria-DEPLOY-PACKAGE.zip

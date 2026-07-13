@@ -405,921 +405,891 @@
     "section": "HOME"
   },
   "txt_082": {
-    "ca": "El meu fill ha trobat a l'Ave Maria una segona família. Després de 10 anys, veig com cada dia és més feliç i autònom. Els professionals l'estimen i el cuiden com si fos seu.",
-    "es": "Mi hijo ha encontrado en Ave Maria una segunda familia. Después de 10 años, veo cómo cada día es más feliz y autónomo. Los profesionales le quieren y le cuidan como si fuera suyo.",
-    "section": "HOME"
-  },
-  "txt_083": {
-    "ca": "Mare d'usuari",
-    "es": "Madre de usuario",
-    "section": "HOME"
-  },
-  "txt_084": {
-    "ca": "Quan vaig arribar no coneixia ningú. Ara tinc molts amics i fem moltes coses junts. M'agrada anar a la piscina i fer teatre.",
-    "es": "Cuando llegué no conocía a nadie. Ahora tengo muchos amigos y hacemos muchas cosas juntos. Me gusta ir a la piscina y hacer teatro.",
-    "section": "HOME"
-  },
-  "txt_085": {
-    "ca": "Usuari del Campus Residencial",
-    "es": "Usuario del Campus Residencial",
-    "section": "HOME"
-  },
-  "txt_086": {
-    "ca": "Com a voluntària, he rebut molt més del que he donat. Les persones de l'Ave Maria t'ensenyen a veure la vida d'una altra manera.",
-    "es": "Como voluntaria, he recibido mucho más de lo que he dado. Las personas del Ave Maria te enseñan a ver la vida de otra manera.",
-    "section": "HOME"
-  },
-  "txt_087": {
-    "ca": "Voluntària",
-    "es": "Voluntaria",
-    "section": "HOME"
-  },
-  "txt_088": {
     "ca": "Últimes notícies",
     "es": "Últimas noticias",
     "section": "HOME"
   },
-  "txt_089": {
+  "txt_083": {
     "ca": "Totes les notícies",
     "es": "Todas las noticias",
     "section": "HOME"
   },
-  "txt_090": {
+  "txt_084": {
     "ca": "20 gener 2026",
     "es": "20 enero 2026",
     "section": "HOME"
   },
-  "txt_091": {
+  "txt_085": {
     "ca": "La Fundació posa en marxa el nou Servei d'Atenció Domiciliària",
     "es": "La Fundación pone en marcha el nuevo Servicio de Atención Domiciliaria",
     "section": "HOME"
   },
-  "txt_092": {
+  "txt_086": {
     "ca": "18 desembre 2025",
     "es": "18 diciembre 2025",
     "section": "HOME"
   },
-  "txt_093": {
+  "txt_087": {
     "ca": "Dues obres dels germans Grangel s'incorporen al Fons d'Art",
     "es": "Dos obras de los hermanos Grangel se incorporan al Fondo de Arte",
     "section": "HOME"
   },
-  "txt_094": {
+  "txt_088": {
     "ca": "9 desembre 2025",
     "es": "9 diciembre 2025",
     "section": "HOME"
   },
-  "txt_095": {
+  "txt_089": {
     "ca": "L'Ajuntament de Vilanova impulsa el projecte Benviure",
     "es": "El Ayuntamiento de Vilanova impulsa el proyecto Benviure",
     "section": "HOME"
   },
-  "txt_096": {
+  "txt_090": {
     "ca": "Col·laboren amb nosaltres",
     "es": "Colaboran con nosotros",
     "section": "HOME"
   },
-  "txt_097": {
+  "txt_091": {
     "ca": "Inici",
     "es": "Inicio",
     "section": "QUI SOM"
   },
-  "txt_098": {
+  "txt_092": {
     "ca": "Qui Som",
     "es": "Quiénes Somos",
     "section": "QUI SOM"
   },
-  "txt_099": {
+  "txt_093": {
     "ca": "Qui Som",
     "es": "Quiénes Somos",
     "section": "QUI SOM"
   },
-  "txt_100": {
+  "txt_094": {
     "ca": "Des del 1987 al servei de les persones amb diversitat funcional",
     "es": "Desde 1987 al servicio de las personas con diversidad funcional",
     "section": "QUI SOM"
   },
-  "txt_101": {
+  "txt_095": {
     "ca": "Presentació",
     "es": "Presentación",
     "section": "QUI SOM"
   },
-  "txt_102": {
+  "txt_096": {
     "ca": "Història",
     "es": "Historia",
     "section": "QUI SOM"
   },
-  "txt_103": {
+  "txt_097": {
     "ca": "Missió i Valors",
     "es": "Misión y Valores",
     "section": "QUI SOM"
   },
-  "txt_104": {
+  "txt_098": {
     "ca": "Equip",
     "es": "Equipo",
     "section": "QUI SOM"
   },
-  "txt_105": {
+  "txt_099": {
     "ca": "Transparència",
     "es": "Transparencia",
     "section": "QUI SOM"
   },
-  "txt_106": {
+  "txt_100": {
     "ca": "Presentació",
     "es": "Presentación",
     "section": "QUI SOM"
   },
-  "txt_107": {
+  "txt_101": {
     "ca": "Una fundació compromesa amb l'atenció i el suport a les persones",
     "es": "Una fundación comprometida con la atención y el apoyo a las personas",
     "section": "QUI SOM"
   },
-  "txt_108": {
+  "txt_102": {
     "ca": "La Fundació Ave Maria és una entitat sense ànim de lucre que treballa per millorar la qualitat de vida de les persones amb discapacitat intel·lectual i en situació de dependència, oferint suports personalitzats i acompanyament al llarg de totes les etapes de la seva vida.",
     "es": "La Fundación Ave María es una entidad sin ánimo de lucro que trabaja para mejorar la calidad de vida de las personas con discapacidad intelectual y en situación de dependencia, ofreciendo apoyos personalizados y acompañamiento a lo largo de todas las etapas de su vida.",
     "section": "QUI SOM"
   },
-  "txt_109": {
+  "txt_103": {
     "ca": "Des del 1987, quan va néixer el servei residencial, hem crescut i ens hem anat adaptant a les necessitats reals de les persones que acompanyem. Amb el temps, hem incorporat nous serveis com l'atenció domiciliària, les llars amb suport i iniciatives d'inclusió laboral, sempre amb un mateix objectiu: donar resposta al que cada persona necessita per viure amb més autonomia i formar part activa de la comunitat.",
     "es": "Desde 1987 desarrollamos servicios residenciales, atención domiciliaria, redes de vivienda con apoyo e iniciativas de inclusión laboral, promoviendo la autonomía personal y la participación activa en la comunidad.",
     "section": "QUI SOM"
   },
-  "txt_110": {
+  "txt_104": {
     "ca": "Treballem des d'un model d'atenció centrat en la persona, respectant la seva identitat, les seves decisions i el seu projecte de vida.",
     "es": "Trabajamos desde un modelo de atención centrada en la persona, respetando su identidad, sus decisiones y su proyecto de vida.",
     "section": "QUI SOM"
   },
-  "txt_111": {
+  "txt_105": {
     "ca": "Dades clau",
     "es": "Datos clave",
     "section": "QUI SOM"
   },
-  "txt_112": {
+  "txt_106": {
     "ca": "La Fundació en xifres",
     "es": "La Fundación en cifras",
     "section": "QUI SOM"
   },
-  "txt_113": {
+  "txt_107": {
     "ca": "Any de fundació",
     "es": "Año de fundación",
     "section": "QUI SOM"
   },
-  "txt_114": {
+  "txt_108": {
     "ca": "Ubicació · Barcelona",
     "es": "Ubicación · Barcelona",
     "section": "QUI SOM"
   },
-  "txt_115": {
+  "txt_109": {
     "ca": "Professionals a l'equip",
     "es": "Profesionales en el equipo",
     "section": "QUI SOM"
   },
-  "txt_116": {
+  "txt_110": {
     "ca": "Places residencials",
     "es": "Plazas residenciales",
     "section": "QUI SOM"
   },
-  "txt_117": {
+  "txt_111": {
     "ca": "Serveis especialitzats",
     "es": "Servicios especializados",
     "section": "QUI SOM"
   },
-  "txt_118": {
+  "txt_112": {
     "ca": "Certificació 9001:2015",
     "es": "Certificación 9001:2015",
     "section": "QUI SOM"
   },
-  "txt_119": {
+  "txt_113": {
     "ca": "Origen",
     "es": "Origen",
     "section": "QUI SOM"
   },
-  "txt_120": {
+  "txt_114": {
     "ca": "La nostra història",
     "es": "Nuestra historia",
     "section": "QUI SOM"
   },
-  "txt_121": {
+  "txt_115": {
     "ca": "Tot va començar gràcies a la generositat de <strong>Rosalía Dalmau</strong>, una sitgetana que va decidir destinar el seu patrimoni a crear un espai d'atenció per a persones amb discapacitat intel·lectual.",
     "es": "Todo comenzó gracias a la generosidad de <strong>Rosalía Dalmau</strong>, una sitgetana que decidió destinar su patrimonio a crear un espacio de atención para personas con discapacidad intelectual.",
     "section": "QUI SOM"
   },
-  "txt_122": {
+  "txt_116": {
     "ca": "L'any 1987, el seu llegat es va fer realitat amb la inauguració de la Fundació Ave Maria, ubicada a la Villa Havemann, un edifici modernista emblemàtic al centre de Sitges.",
     "es": "En el año 1987, su legado se hizo realidad con la inauguración de la Fundación Ave Maria, ubicada en la Villa Havemann, un edificio modernista emblemático en el centro de Sitges.",
     "section": "QUI SOM"
   },
-  "txt_123": {
+  "txt_117": {
     "ca": "Pilars",
     "es": "Pilares",
     "section": "QUI SOM"
   },
-  "txt_124": {
+  "txt_118": {
     "ca": "Missió, Visió i Valors",
     "es": "Misión, Visión y Valores",
     "section": "QUI SOM"
   },
-  "txt_125": {
+  "txt_119": {
     "ca": "Missió",
     "es": "Misión",
     "section": "QUI SOM"
   },
-  "txt_126": {
+  "txt_120": {
     "ca": "Oferir atenció integral i de qualitat a persones adultes amb discapacitat intel·lectual, promovent el seu desenvolupament personal, la seva autonomia i la seva integració social, en un entorn de respecte, dignitat i afecte.",
     "es": "Ofrecer atención integral y de calidad a personas adultas con discapacidad intelectual, promoviendo su desarrollo personal, su autonomía y su integración social, en un entorno de respeto, dignidad y afecto.",
     "section": "QUI SOM"
   },
-  "txt_127": {
+  "txt_121": {
     "ca": "Visió",
     "es": "Visión",
     "section": "QUI SOM"
   },
-  "txt_128": {
+  "txt_122": {
     "ca": "Ser una entitat de referència a Catalunya en l'atenció a persones amb diversitat funcional, reconeguda per la innovació, la qualitat dels seus serveis i l'impacte positiu en la vida dels usuaris i les seves famílies.",
     "es": "Ser una entidad de referencia en Cataluña en la atención a personas con diversidad funcional, reconocida por la innovación, la calidad de sus servicios y el impacto positivo en la vida de los usuarios y sus familias.",
     "section": "QUI SOM"
   },
-  "txt_129": {
+  "txt_123": {
     "ca": "Valors",
     "es": "Valores",
     "section": "QUI SOM"
   },
-  "txt_130": {
+  "txt_124": {
     "ca": "<strong>Qualitat:</strong> Busquem l'excel·lència en tot el que fem.",
     "es": "<strong>Calidad:</strong> Buscamos la excelencia en todo lo que hacemos.",
     "section": "QUI SOM"
   },
-  "txt_131": {
+  "txt_125": {
     "ca": "<strong>Innovació:</strong> Apostem per la recerca i les noves tecnologies.",
     "es": "<strong>Innovación:</strong> Apostamos por la investigación y las nuevas tecnologías.",
     "section": "QUI SOM"
   },
-  "txt_132": {
+  "txt_126": {
     "ca": "<strong>Compromís:</strong> Cada persona de l'equip està compromesa amb el benestar dels usuaris.",
     "es": "<strong>Compromiso:</strong> Cada persona del equipo está comprometida con el bienestar de los usuarios.",
     "section": "QUI SOM"
   },
-  "txt_133": {
+  "txt_127": {
     "ca": "<strong>Proximitat:</strong> Tractem cada usuari com una persona única.",
     "es": "<strong>Proximidad:</strong> Tratamos a cada usuario como una persona única.",
     "section": "QUI SOM"
   },
-  "txt_134": {
+  "txt_128": {
     "ca": "<strong>Transparència:</strong> Rendim comptes a la societat.",
     "es": "<strong>Transparencia:</strong> Rendimos cuentas a la sociedad.",
     "section": "QUI SOM"
   },
-  "txt_135": {
+  "txt_129": {
     "ca": "Documentació",
     "es": "Documentación",
     "section": "QUI SOM"
   },
-  "txt_136": {
+  "txt_130": {
     "ca": "Documents",
     "es": "Documentos",
     "section": "QUI SOM"
   },
-  "txt_137": {
+  "txt_131": {
     "ca": "Descarrega la informació institucional de la Fundació.",
     "es": "Descarga la información institucional de la Fundación.",
     "section": "QUI SOM"
   },
-  "txt_138": {
+  "txt_132": {
     "ca": "Memòria 2025",
     "es": "Memoria 2025",
     "section": "QUI SOM"
   },
-  "txt_139": {
+  "txt_133": {
     "ca": "Comptes auditats",
     "es": "Cuentas auditadas",
     "section": "QUI SOM"
   },
-  "txt_140": {
+  "txt_134": {
     "ca": "Estatuts",
     "es": "Estatutos",
     "section": "QUI SOM"
   },
-  "txt_141": {
+  "txt_135": {
     "ca": "Presentació",
     "es": "Presentación",
     "section": "HISTÒRIA"
+  },
+  "txt_136": {
+    "ca": "Història",
+    "es": "Historia",
+    "section": "HISTÒRIA"
+  },
+  "txt_137": {
+    "ca": "Missió i Valors",
+    "es": "Misión y Valores",
+    "section": "HISTÒRIA"
+  },
+  "txt_138": {
+    "ca": "Equip",
+    "es": "Equipo",
+    "section": "HISTÒRIA"
+  },
+  "txt_139": {
+    "ca": "Transparència",
+    "es": "Transparencia",
+    "section": "HISTÒRIA"
+  },
+  "txt_140": {
+    "ca": "Presentació",
+    "es": "Presentación",
+    "section": "MISSIÓ"
+  },
+  "txt_141": {
+    "ca": "Història",
+    "es": "Historia",
+    "section": "MISSIÓ"
   },
   "txt_142": {
-    "ca": "Història",
-    "es": "Historia",
-    "section": "HISTÒRIA"
+    "ca": "Missió i Valors",
+    "es": "Misión y Valores",
+    "section": "MISSIÓ"
   },
   "txt_143": {
-    "ca": "Missió i Valors",
-    "es": "Misión y Valores",
-    "section": "HISTÒRIA"
+    "ca": "Equip",
+    "es": "Equipo",
+    "section": "MISSIÓ"
   },
   "txt_144": {
-    "ca": "Equip",
-    "es": "Equipo",
-    "section": "HISTÒRIA"
+    "ca": "Transparència",
+    "es": "Transparencia",
+    "section": "MISSIÓ"
   },
   "txt_145": {
-    "ca": "Transparència",
-    "es": "Transparencia",
-    "section": "HISTÒRIA"
+    "ca": "Presentació",
+    "es": "Presentación",
+    "section": "EQUIP"
   },
   "txt_146": {
-    "ca": "Presentació",
-    "es": "Presentación",
-    "section": "MISSIÓ"
+    "ca": "Història",
+    "es": "Historia",
+    "section": "EQUIP"
   },
   "txt_147": {
-    "ca": "Història",
-    "es": "Historia",
-    "section": "MISSIÓ"
+    "ca": "Missió i Valors",
+    "es": "Misión y Valores",
+    "section": "EQUIP"
   },
   "txt_148": {
-    "ca": "Missió i Valors",
-    "es": "Misión y Valores",
-    "section": "MISSIÓ"
+    "ca": "Equip",
+    "es": "Equipo",
+    "section": "EQUIP"
   },
   "txt_149": {
-    "ca": "Equip",
-    "es": "Equipo",
-    "section": "MISSIÓ"
+    "ca": "Transparència",
+    "es": "Transparencia",
+    "section": "EQUIP"
   },
   "txt_150": {
-    "ca": "Transparència",
-    "es": "Transparencia",
-    "section": "MISSIÓ"
+    "ca": "Presentació",
+    "es": "Presentación",
+    "section": "TRANSPARÈNCIA"
   },
   "txt_151": {
-    "ca": "Presentació",
-    "es": "Presentación",
-    "section": "EQUIP"
+    "ca": "Història",
+    "es": "Historia",
+    "section": "TRANSPARÈNCIA"
   },
   "txt_152": {
-    "ca": "Història",
-    "es": "Historia",
-    "section": "EQUIP"
+    "ca": "Missió i Valors",
+    "es": "Misión y Valores",
+    "section": "TRANSPARÈNCIA"
   },
   "txt_153": {
-    "ca": "Missió i Valors",
-    "es": "Misión y Valores",
-    "section": "EQUIP"
+    "ca": "Equip",
+    "es": "Equipo",
+    "section": "TRANSPARÈNCIA"
   },
   "txt_154": {
-    "ca": "Equip",
-    "es": "Equipo",
-    "section": "EQUIP"
+    "ca": "Transparència",
+    "es": "Transparencia",
+    "section": "TRANSPARÈNCIA"
   },
   "txt_155": {
-    "ca": "Transparència",
-    "es": "Transparencia",
-    "section": "EQUIP"
-  },
-  "txt_156": {
-    "ca": "Presentació",
-    "es": "Presentación",
-    "section": "TRANSPARÈNCIA"
-  },
-  "txt_157": {
-    "ca": "Història",
-    "es": "Historia",
-    "section": "TRANSPARÈNCIA"
-  },
-  "txt_158": {
-    "ca": "Missió i Valors",
-    "es": "Misión y Valores",
-    "section": "TRANSPARÈNCIA"
-  },
-  "txt_159": {
-    "ca": "Equip",
-    "es": "Equipo",
-    "section": "TRANSPARÈNCIA"
-  },
-  "txt_160": {
-    "ca": "Transparència",
-    "es": "Transparencia",
-    "section": "TRANSPARÈNCIA"
-  },
-  "txt_161": {
     "ca": "A la Fundació Ave Maria oferim un model d'atenció integral i personalitzat, adaptat a les necessitats de cada persona. Tots els nostres serveis estan concertats o homologats per la Generalitat de Catalunya.",
     "es": "En la Fundación Ave Maria ofrecemos un modelo de atención integral y personalizado, adaptado a las necesidades de cada persona. Todos nuestros servicios están concertados u homologados por la Generalitat de Catalunya.",
     "section": "SERVEIS"
   },
-  "txt_162": {
+  "txt_156": {
     "ca": "60 places al cor de Sitges. Atenció integral les 24 hores del dia, els 365 dies de l'any, amb un equip multidisciplinar.",
     "es": "60 plazas en el corazón de Sitges. Atención integral las 24 horas del día, los 365 días del año, con un equipo multidisciplinar.",
     "section": "SERVEIS"
   },
-  "txt_163": {
+  "txt_157": {
     "ca": "Més informació",
     "es": "Más información",
     "section": "SERVEIS"
   },
-  "txt_164": {
+  "txt_158": {
     "ca": "Llars amb Suport",
     "es": "Hogares con Apoyo",
     "section": "SERVEIS"
   },
-  "txt_165": {
+  "txt_159": {
     "ca": "Llars amb Suport",
     "es": "Hogares con Apoyo",
     "section": "SERVEIS"
   },
-  "txt_166": {
+  "txt_160": {
     "ca": "Pisos a Sitges on persones amb discapacitat viuen de manera semi-autònoma amb suport intermitent.",
     "es": "Pisos en Sitges donde personas con discapacidad viven de manera semi-autónoma con apoyo intermitente.",
     "section": "SERVEIS"
   },
-  "txt_167": {
+  "txt_161": {
     "ca": "Més informació",
     "es": "Más información",
     "section": "SERVEIS"
   },
-  "txt_168": {
+  "txt_162": {
     "ca": "Atenció Domiciliària",
     "es": "Atención Domiciliaria",
     "section": "SERVEIS"
   },
-  "txt_169": {
+  "txt_163": {
     "ca": "Nou servei",
     "es": "Nuevo servicio",
     "section": "SERVEIS"
   },
-  "txt_170": {
+  "txt_164": {
     "ca": "Atenció Domiciliària",
     "es": "Atención Domiciliaria",
     "section": "SERVEIS"
   },
-  "txt_171": {
+  "txt_165": {
     "ca": "Suport professional a casa teva. Disponible per a residents de la comarca del Garraf.",
     "es": "Apoyo profesional en tu casa. Disponible para residentes de la comarca del Garraf.",
     "section": "SERVEIS"
   },
-  "txt_172": {
+  "txt_166": {
     "ca": "Més informació",
     "es": "Más información",
     "section": "SERVEIS"
   },
-  "txt_173": {
+  "txt_167": {
     "ca": "Centres de Dia",
     "es": "Centros de Día",
     "section": "SERVEIS"
   },
-  "txt_174": {
+  "txt_168": {
     "ca": "Centres de Dia",
     "es": "Centros de Día",
     "section": "SERVEIS"
   },
-  "txt_175": {
+  "txt_169": {
     "ca": "Serveis dirigits a persones amb discapacitat intel·lectual lleu i persones grans, orientats a promoure l'autonomia personal i la participació social.",
     "es": "Servicios dirigidos a personas con discapacidad intelectual leve y personas mayores, orientados a promover la autonomía personal y la participación social.",
     "section": "SERVEIS"
   },
-  "txt_176": {
+  "txt_170": {
     "ca": "Més informació",
     "es": "Más información",
     "section": "SERVEIS"
   },
-  "txt_177": {
+  "txt_171": {
     "ca": "Suport a Famílies i Inclusió Laboral",
     "es": "Apoyo a Familias e Inclusión Laboral",
     "section": "SERVEIS"
   },
-  "txt_178": {
+  "txt_172": {
     "ca": "Suport a Famílies i Inclusió Laboral",
     "es": "Apoyo a Familias e Inclusión Laboral",
     "section": "SERVEIS"
   },
-  "txt_179": {
+  "txt_173": {
     "ca": "Programes d'orientació, acompanyament i suport a famílies, així com iniciatives de capacitació i inserció laboral dirigides a afavorir l'autonomia i l'accés a l'ocupació en entorns ordinaris.",
     "es": "Programas de orientación, acompañamiento y apoyo a familias, así como iniciativas de capacitación e inserción laboral dirigidas a favorecer la autonomía y el acceso al empleo en entornos ordinarios.",
     "section": "SERVEIS"
   },
-  "txt_180": {
+  "txt_174": {
     "ca": "Més informació",
     "es": "Más información",
     "section": "SERVEIS"
   },
-  "txt_181": {
+  "txt_175": {
     "ca": "Recerca i Innovació",
     "es": "Investigación e Innovación",
     "section": "SERVEIS"
   },
-  "txt_182": {
+  "txt_176": {
     "ca": "Recerca i Innovació",
     "es": "Investigación e Innovación",
     "section": "SERVEIS"
   },
-  "txt_183": {
+  "txt_177": {
     "ca": "Desenvolupament de projectes de recerca aplicada i solucions tecnològiques orientades a millorar la qualitat de vida i l'atenció a persones en situació de dependència.",
     "es": "Desarrollo de proyectos de investigación aplicada y soluciones tecnológicas orientadas a mejorar la calidad de vida y la atención a personas en situación de dependencia.",
     "section": "SERVEIS"
   },
-  "txt_184": {
+  "txt_178": {
     "ca": "Més informació",
     "es": "Más información",
     "section": "SERVEIS"
   },
-  "txt_185": {
+  "txt_179": {
     "ca": "Maneres de col·laborar",
     "es": "Formas de colaborar",
     "section": "COL·LABORA"
   },
-  "txt_186": {
+  "txt_180": {
     "ca": "Donatiu",
     "es": "Donativo",
     "section": "COL·LABORA"
   },
-  "txt_187": {
+  "txt_181": {
     "ca": "Fes una aportació puntual o periòdica. Desgrava fins al 80% a la renda!",
     "es": "Haz una aportación puntual o periódica. ¡Desgrava hasta el 80% en la renta!",
     "section": "COL·LABORA"
   },
-  "txt_188": {
+  "txt_182": {
     "ca": "Donar",
     "es": "Donar",
     "section": "COL·LABORA"
   },
-  "txt_189": {
+  "txt_183": {
     "ca": "El teu donatiu desgrava",
     "es": "Tu donativo desgrava",
     "section": "COL·LABORA"
   },
-  "txt_190": {
+  "txt_184": {
     "ca": "Ara ser solidari costa menys. Els donatius a entitats sense ànim de lucre desgraven a la declaració de la Renda:",
     "es": "Ahora ser solidario cuesta menos. Los donativos a entidades sin ánimo de lucro desgravan en la declaración de la Renta:",
     "section": "COL·LABORA"
   },
-  "txt_191": {
+  "txt_185": {
     "ca": "Primers 250€ donats",
     "es": "Primeros 250€ donados",
     "section": "COL·LABORA"
   },
-  "txt_192": {
+  "txt_186": {
     "ca": "Resta de l'import",
     "es": "Resto del importe",
     "section": "COL·LABORA"
   },
-  "txt_193": {
+  "txt_187": {
     "ca": "Si dones 3 anys seguits",
     "es": "Si donas 3 años seguidos",
     "section": "COL·LABORA"
   },
-  "txt_194": {
+  "txt_188": {
     "ca": "Exemple:",
     "es": "Ejemplo:",
     "section": "COL·LABORA"
   },
-  "txt_195": {
+  "txt_189": {
     "ca": "Si dones 300€, et retornaran aproximadament 220€. El cost real serà de només 80€!",
     "es": "Si donas 300€, te devolverán aproximadamente 220€. ¡El coste real será de solo 80€!",
     "section": "COL·LABORA"
   },
-  "txt_196": {
+  "txt_190": {
     "ca": "Fes el teu donatiu",
     "es": "Haz tu donativo",
     "section": "DONAR"
   },
-  "txt_197": {
+  "txt_191": {
     "ca": "“Gràcies a vosaltres, el meu germà té una vida plena. No sé què faríem sense l'Ave Maria.”",
     "es": "“Gracias a vosotros, mi hermano tiene una vida plena. No sé qué haríamos sin el Ave Maria.”",
     "section": "DONAR"
   },
-  "txt_198": {
+  "txt_192": {
     "ca": "— Anna, germana d'usuari",
     "es": "— Anna, hermana de usuario",
     "section": "DONAR"
   },
-  "txt_199": {
+  "txt_193": {
     "ca": "Cada euro suma. Darrere de cada aportació hi ha teràpies, activitats, sortides i una atenció que millora el dia a dia de persones amb discapacitat intel·lectual.",
     "es": "Cada euro cuenta. Con tu ayuda, personas con discapacidad intelectual pueden disfrutar de una vida plena: terapias, actividades, salidas, y la atención y el afecto que merecen.",
     "section": "DONAR"
   },
-  "txt_200": {
+  "txt_194": {
     "ca": "Què aconseguim amb el teu suport",
     "es": "Qué conseguimos con tu apoyo",
     "section": "DONAR"
   },
-  "txt_201": {
+  "txt_195": {
     "ca": "Material per a tallers creatius",
     "es": "Material para talleres creativos",
     "section": "DONAR"
   },
-  "txt_202": {
+  "txt_196": {
     "ca": "1 sessió setmanal de fisioteràpia",
     "es": "1 sesión semanal de fisioterapia",
     "section": "DONAR"
   },
-  "txt_203": {
+  "txt_197": {
     "ca": "1 sortida comunitària mensual",
     "es": "1 salida comunitaria mensual",
     "section": "DONAR"
   },
-  "txt_204": {
+  "txt_198": {
     "ca": "Programa d'estimulació cognitiva",
     "es": "Programa de estimulación cognitiva",
     "section": "DONAR"
   },
-  "txt_205": {
+  "txt_199": {
     "ca": "Altres maneres de donar",
     "es": "Otras formas de donar",
     "section": "DONAR"
   },
-  "txt_206": {
+  "txt_200": {
     "ca": "Transferència:",
     "es": "Transferencia:",
     "section": "DONAR"
   },
-  "txt_207": {
+  "txt_201": {
     "ca": "Bizum solidari:",
     "es": "Bizum solidario:",
     "section": "DONAR"
   },
-  "txt_208": {
+  "txt_202": {
     "ca": "Selecciona el teu donatiu",
     "es": "Selecciona tu donativo",
     "section": "DONAR"
   },
-  "txt_209": {
+  "txt_203": {
     "ca": "Puntual",
     "es": "Puntual",
     "section": "DONAR"
   },
-  "txt_210": {
+  "txt_204": {
     "ca": "Mensual",
     "es": "Mensual",
     "section": "DONAR"
   },
-  "txt_211": {
+  "txt_205": {
     "ca": "Altre",
     "es": "Otro",
     "section": "DONAR"
   },
-  "txt_212": {
+  "txt_206": {
     "ca": "El teu impacte",
     "es": "Tu impacto",
     "section": "DONAR"
   },
-  "txt_213": {
+  "txt_207": {
     "ca": "Amb <strong>25€/mes</strong> finances 1 sessió setmanal de fisioteràpia per a un usuari.",
     "es": "Con <strong>25€/mes</strong> financias 1 sesión semanal de fisioterapia para un usuario.",
     "section": "DONAR"
   },
-  "txt_214": {
+  "txt_208": {
     "ca": "Nom",
     "es": "Nombre",
     "section": "DONAR"
   },
-  "txt_215": {
+  "txt_209": {
     "ca": "DNI (per al certificat fiscal)",
     "es": "DNI (para el certificado fiscal)",
     "section": "DONAR"
   },
-  "txt_216": {
+  "txt_210": {
     "ca": "Donar ara",
     "es": "Donar ahora",
     "section": "DONAR"
   },
-  "txt_217": {
+  "txt_211": {
     "ca": "Pagament 100% segur",
     "es": "Pago 100% seguro",
     "section": "DONAR"
   },
-  "txt_218": {
+  "txt_212": {
     "ca": "Inici",
     "es": "Inicio",
     "section": "CONTACTE"
   },
-  "txt_219": {
+  "txt_213": {
     "ca": "Contacte",
     "es": "Contacto",
     "section": "CONTACTE"
   },
-  "txt_220": {
+  "txt_214": {
     "ca": "Contacta amb nosaltres",
     "es": "Contacta con nosotros",
     "section": "CONTACTE"
   },
-  "txt_221": {
+  "txt_215": {
     "ca": "Estem aquí per ajudar-te",
     "es": "Estamos aquí para ayudarte",
     "section": "CONTACTE"
   },
-  "txt_222": {
+  "txt_216": {
     "ca": "Dades de contacte",
     "es": "Datos de contacto",
     "section": "CONTACTE"
   },
-  "txt_223": {
+  "txt_217": {
     "ca": "Adreça",
     "es": "Dirección",
     "section": "CONTACTE"
   },
-  "txt_224": {
+  "txt_218": {
     "ca": "Telèfon",
     "es": "Teléfono",
     "section": "CONTACTE"
   },
-  "txt_225": {
+  "txt_219": {
     "ca": "Emails específics",
     "es": "Emails específicos",
     "section": "CONTACTE"
   },
-  "txt_226": {
+  "txt_220": {
     "ca": "Serveis i admissions:",
     "es": "Servicios y admisiones:",
     "section": "CONTACTE"
   },
-  "txt_227": {
+  "txt_221": {
     "ca": "Atenció domiciliària:",
     "es": "Atención domiciliaria:",
     "section": "CONTACTE"
   },
-  "txt_228": {
+  "txt_222": {
     "ca": "Donatius:",
     "es": "Donativos:",
     "section": "CONTACTE"
   },
-  "txt_229": {
+  "txt_223": {
     "ca": "Empreses i RSC:",
     "es": "Empresas y RSC:",
     "section": "CONTACTE"
   },
-  "txt_230": {
+  "txt_224": {
     "ca": "Voluntariat:",
     "es": "Voluntariado:",
     "section": "CONTACTE"
   },
-  "txt_231": {
+  "txt_225": {
     "ca": "Llegats:",
     "es": "Legados:",
     "section": "CONTACTE"
   },
-  "txt_232": {
+  "txt_226": {
     "ca": "Botiga:",
     "es": "Tienda:",
     "section": "CONTACTE"
   },
-  "txt_233": {
+  "txt_227": {
     "ca": "Premsa:",
     "es": "Prensa:",
     "section": "CONTACTE"
   },
-  "txt_234": {
+  "txt_228": {
     "ca": "Horari d'atenció",
     "es": "Horario de atención",
     "section": "CONTACTE"
   },
-  "txt_235": {
+  "txt_229": {
     "ca": "Dilluns a divendres: 9:00-14:00 i 15:00-18:00",
     "es": "Lunes a viernes: 9:00-14:00 y 15:00-18:00",
     "section": "CONTACTE"
   },
-  "txt_236": {
+  "txt_230": {
     "ca": "Segueix-nos",
     "es": "Síguenos",
     "section": "CONTACTE"
   },
-  "txt_237": {
+  "txt_231": {
     "ca": "Accessos ràpids",
     "es": "Accesos rápidos",
     "section": "CONTACTE"
   },
-  "txt_238": {
+  "txt_232": {
     "ca": "Vull treballar amb vosaltres",
     "es": "Quiero trabajar con vosotros",
     "section": "CONTACTE"
   },
-  "txt_239": {
+  "txt_233": {
     "ca": "Vull fer un donatiu",
     "es": "Quiero hacer un donativo",
     "section": "CONTACTE"
   },
-  "txt_240": {
+  "txt_234": {
     "ca": "Envia'ns un missatge",
     "es": "Envíanos un mensaje",
     "section": "CONTACTE"
   },
-  "txt_241": {
+  "txt_235": {
     "ca": "Nom",
     "es": "Nombre",
     "section": "CONTACTE"
   },
-  "txt_242": {
+  "txt_236": {
     "ca": "Cognoms",
     "es": "Apellidos",
     "section": "CONTACTE"
   },
-  "txt_243": {
+  "txt_237": {
     "ca": "Telèfon",
     "es": "Teléfono",
     "section": "CONTACTE"
   },
-  "txt_244": {
+  "txt_238": {
     "ca": "Motiu",
     "es": "Motivo",
     "section": "CONTACTE"
   },
-  "txt_245": {
+  "txt_239": {
     "ca": "Missatge",
     "es": "Mensaje",
     "section": "CONTACTE"
   },
-  "txt_246": {
+  "txt_240": {
     "ca": "Enviar",
     "es": "Enviar",
     "section": "CONTACTE"
   },
-  "txt_247": {
+  "txt_241": {
     "ca": "Des del 1987 oferint atenció especialitzada a persones adultes amb discapacitat intel·lectual a Sitges.",
     "es": "Desde 1987 ofreciendo atención especializada a personas adultas con discapacidad intelectual en Sitges.",
     "section": "FOOTER"
   },
-  "txt_248": {
+  "txt_242": {
     "ca": "Serveis",
     "es": "Servicios",
     "section": "FOOTER"
   },
-  "txt_249": {
+  "txt_243": {
     "ca": "Llars amb Suport",
     "es": "Hogares con Apoyo",
     "section": "FOOTER"
   },
-  "txt_250": {
+  "txt_244": {
     "ca": "Atenció Domiciliària",
     "es": "Atención Domiciliaria",
     "section": "FOOTER"
   },
-  "txt_251": {
+  "txt_245": {
     "ca": "Centres de Dia",
     "es": "Centros de Día",
     "section": "FOOTER"
   },
-  "txt_252": {
+  "txt_246": {
     "ca": "Suport a Famílies i Inclusió Laboral",
     "es": "Apoyo a Familias e Inclusión Laboral",
     "section": "FOOTER"
   },
-  "txt_253": {
+  "txt_247": {
     "ca": "Recerca i Innovació",
     "es": "Investigación e Innovación",
     "section": "FOOTER"
   },
-  "txt_254": {
+  "txt_248": {
     "ca": "Col·labora",
     "es": "Colabora",
     "section": "FOOTER"
   },
-  "txt_255": {
+  "txt_249": {
     "ca": "Fes un donatiu",
     "es": "Haz un donativo",
     "section": "FOOTER"
   },
-  "txt_256": {
+  "txt_250": {
     "ca": "Botiga solidària",
     "es": "Tienda solidaria",
     "section": "FOOTER"
   },
-  "txt_257": {
+  "txt_251": {
     "ca": "Informació",
     "es": "Información",
     "section": "FOOTER"
   },
-  "txt_258": {
+  "txt_252": {
     "ca": "Qui som",
     "es": "Quiénes somos",
     "section": "FOOTER"
   },
-  "txt_259": {
+  "txt_253": {
     "ca": "Transparència",
     "es": "Transparencia",
     "section": "FOOTER"
   },
-  "txt_260": {
+  "txt_254": {
     "ca": "Notícies",
     "es": "Noticias",
     "section": "FOOTER"
   },
-  "txt_261": {
+  "txt_255": {
     "ca": "Contacte",
     "es": "Contacto",
     "section": "FOOTER"
   },
-  "txt_262": {
+  "txt_256": {
     "ca": "Treballa amb nosaltres",
     "es": "Trabaja con nosotros",
     "section": "FOOTER"
   },
-  "txt_263": {
+  "txt_257": {
     "ca": "© 2026 Fundació Ave Maria de Sitges. Tots els drets reservats.",
     "es": "© 2026 Fundación Ave Maria de Sitges. Todos los derechos reservados.",
     "section": "FOOTER"
   },
-  "txt_264": {
+  "txt_258": {
     "ca": "Avís legal",
     "es": "Aviso legal",
     "section": "FOOTER"
   },
-  "txt_265": {
+  "txt_259": {
     "ca": "Privacitat",
     "es": "Privacidad",
     "section": "FOOTER"
